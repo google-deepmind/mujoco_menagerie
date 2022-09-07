@@ -1,0 +1,377 @@
+<mujoco model="anymal_b">
+  <compiler angle="radian" meshdir="assets" texturedir="assets"/>
+
+  <option cone="elliptic" impratio="100"/>
+
+  <default>
+    <default class="anymal_b">
+      <mesh scale="0.001 0.001 0.001"/>
+      <site group="3" rgba="1 0 0 0.66"/>
+      <joint type="hinge" damping="1" frictionloss="0.1"/>
+      <default class="HAA">
+        <joint axis="1 0 0"/>
+      </default>
+      <default class="HFE">
+        <joint axis="0 1 0"/>
+      </default>
+      <default class="KFE">
+        <joint axis="0 1 0"/>
+      </default>
+      <geom mass="0"/>
+      <default class="visual">
+        <geom type="mesh" contype="0" conaffinity="0" group="2"/>
+        <default class="visual_zflip">
+          <geom quat="0 0 0 1"/>
+        </default>
+      </default>
+      <default class="collision">
+        <geom group="3"/>
+        <default class="haa_actuator">
+          <geom type="cylinder" size="0.05 0.05" euler="0 1.57079632679 0"/>
+        </default>
+        <default class="belly_plate_bump">
+          <geom type="box" size="0.05 0.05 0.035"/>
+        </default>
+        <default class="mount">
+          <geom type="box" size="0.01 0.135 0.045"/>
+        </default>
+        <default class="protector">
+          <geom type="cylinder" size="0.08 0.05"/>
+        </default>
+        <default class="heatfins">
+          <geom type="cylinder" size="0.045 0.015"/>
+        </default>
+        <default class="thigh_with_fins">
+          <geom type="box" size="0.04 0.02 0.125"/>
+        </default>
+        <default class="kfe_actuator">
+          <geom type="cylinder" size="0.06 0.06"/>
+        </default>
+        <default class="upper_protector">
+          <geom type="cylinder" size="0.066 0.06"/>
+        </default>
+        <default class="shank">
+          <geom type="box" size="0.04 0.034 0.065" euler="0 1.57079632679 0"/>
+        </default>
+        <default class="adapter">
+          <geom type="cylinder" size="0.015 0.14" pos="0 0 -0.14"/>
+        </default>
+        <default class="foot">
+          <geom type="sphere" size="0.031" pos="0 0 0.02325" priority="1" solimp="0.015 1 0.031"
+                condim="6" friction="0.8 0.02 0.01"/>
+        </default>
+      </default>
+      <default class="affine">
+        <position kp="100" ctrllimited="true" ctrlrange="-6.28 6.28" forcelimited="true"
+            forcerange="-40 40"/>
+      </default>
+    </default>
+  </default>
+
+  <asset>
+    <material name="light_gray" rgba="0.8 0.8 0.8 1"/>
+    <material name="dark_gray" rgba="0.64 0.64 0.64 1"/>
+    <material name="alu_eloxiert" rgba="0.1139 0.1139 0.1139 1"/>
+    <material name="any_blau" rgba="0.2399 0.3499 0.5899 1"/>
+    <texture name="base_uv_texture" type="2d" file="base_uv_texture.png"/>
+    <material name="carbon_fibre_logo" texture="base_uv_texture" specular="1" shininess="1"/>
+    <material name="rot_emcy" rgba="0.2611 0.09645 0.0735 1"/>
+    <material name="yellow_emcy" rgba="0.5987 0.4607 0.2442 1"/>
+    <material name="copper" rgba="0.8 0.4673 0.284 1"/>
+    <material name="foam_dark" rgba="0.1 0.1 0.1 1"/>
+    <texture name="carbon_uv_texture" type="2d" file="carbon_uv_texture.png"/>
+    <material name="carbon_fibre" texture="carbon_uv_texture" specular="1" shininess="1"/>
+
+    <mesh class="anymal_b" file="anymal_base_0.obj"/>
+    <mesh class="anymal_b" file="anymal_base_1.obj"/>
+    <mesh class="anymal_b" file="anymal_base_2.obj"/>
+    <mesh class="anymal_b" file="anymal_base_3.obj"/>
+    <mesh class="anymal_b" file="anymal_base_4.obj"/>
+    <mesh class="anymal_b" file="anymal_base_5.obj"/>
+    <mesh class="anymal_b" file="anymal_base_6.obj"/>
+    <mesh class="anymal_b" file="anymal_base_7.obj"/>
+    <mesh class="anymal_b" file="anymal_hip_l_0.obj"/>
+    <mesh class="anymal_b" file="anymal_hip_l_1.obj"/>
+    <mesh class="anymal_b" file="anymal_hip_l_2.obj"/>
+    <mesh class="anymal_b" file="anymal_hip_l_3.obj"/>
+    <mesh class="anymal_b" file="anymal_hip_l_4.obj"/>
+    <mesh class="anymal_b" file="anymal_hip_l_5.obj"/>
+    <mesh class="anymal_b" file="anymal_hip_l_6.obj"/>
+    <mesh class="anymal_b" file="anymal_thigh_l_0.obj"/>
+    <mesh class="anymal_b" file="anymal_thigh_l_1.obj"/>
+    <mesh class="anymal_b" file="anymal_thigh_l_2.obj"/>
+    <mesh class="anymal_b" file="anymal_thigh_l_3.obj"/>
+    <mesh class="anymal_b" file="anymal_thigh_l_4.obj"/>
+    <mesh class="anymal_b" file="anymal_thigh_l_5.obj"/>
+    <mesh class="anymal_b" file="anymal_shank_l_0.obj"/>
+    <mesh class="anymal_b" file="anymal_shank_l_1.obj"/>
+    <mesh class="anymal_b" file="anymal_shank_l_2.obj"/>
+    <mesh class="anymal_b" file="anymal_shank_l_3.obj"/>
+    <mesh class="anymal_b" file="anymal_hip_r_0.obj"/>
+    <mesh class="anymal_b" file="anymal_hip_r_1.obj"/>
+    <mesh class="anymal_b" file="anymal_hip_r_2.obj"/>
+    <mesh class="anymal_b" file="anymal_hip_r_3.obj"/>
+    <mesh class="anymal_b" file="anymal_hip_r_4.obj"/>
+    <mesh class="anymal_b" file="anymal_hip_r_5.obj"/>
+    <mesh class="anymal_b" file="anymal_hip_r_6.obj"/>
+    <mesh class="anymal_b" file="anymal_thigh_r_0.obj"/>
+    <mesh class="anymal_b" file="anymal_thigh_r_1.obj"/>
+    <mesh class="anymal_b" file="anymal_thigh_r_2.obj"/>
+    <mesh class="anymal_b" file="anymal_thigh_r_3.obj"/>
+    <mesh class="anymal_b" file="anymal_thigh_r_4.obj"/>
+    <mesh class="anymal_b" file="anymal_thigh_r_5.obj"/>
+    <mesh class="anymal_b" file="anymal_shank_r_0.obj"/>
+    <mesh class="anymal_b" file="anymal_shank_r_1.obj"/>
+    <mesh class="anymal_b" file="anymal_shank_r_2.obj"/>
+    <mesh class="anymal_b" file="anymal_shank_r_3.obj"/>
+    <mesh class="anymal_b" file="anymal_foot_0.obj"/>
+    <mesh class="anymal_b" file="anymal_foot_1.obj"/>
+    <mesh class="anymal_b" file="anymal_foot_2.obj"/>
+    <mesh class="anymal_b" file="anymal_foot_3.obj"/>
+  </asset>
+
+  <worldbody>
+    <light name="spotlight" mode="targetbodycom" target="base" pos="0 -1 2" cutoff="30"/>
+    <body name="base" pos="0 0 0.58" quat="0 0 0 1" childclass="anymal_b">
+      <freejoint/>
+      <inertial mass="19.2035" pos="0.0025 0 0.0502071" quat="0.5 0.5 0.5 0.5"
+          diaginertia="0.639559 0.624031 0.217374"/>
+      <geom class="visual" mesh="anymal_base_0" material="yellow_emcy"/>
+      <geom class="visual" mesh="anymal_base_1" material="rot_emcy"/>
+      <geom class="visual" mesh="anymal_base_2" material="dark_gray"/>
+      <geom class="visual" mesh="anymal_base_3" material="any_blau"/>
+      <geom class="visual" mesh="anymal_base_4" material="alu_eloxiert"/>
+      <geom class="visual" mesh="anymal_base_5" material="carbon_fibre_logo"/>
+      <geom class="visual" mesh="anymal_base_6" material="foam_dark"/>
+      <geom class="visual" mesh="anymal_base_7" material="light_gray"/>
+      <geom class="collision" size="0.2655 0.135 0.12" pos="0 0 0.08" type="box"/>
+      <geom class="haa_actuator" pos="0.227 0.116 0"/>
+      <geom class="haa_actuator" pos="0.227 -0.116 0"/>
+      <geom class="haa_actuator" pos="-0.227 0.116 0"/>
+      <geom class="haa_actuator" pos="-0.227 -0.116 0"/>
+      <geom class="belly_plate_bump" pos="0.2155 0 -0.09"/>
+      <geom class="belly_plate_bump" pos="-0.2155 0 -0.09"/>
+      <geom class="collision" size="0.2655 0.01 0.035" pos="0 0 -0.09" type="box"/>
+      <body name="LF_HIP" pos="0.277 0.116 0">
+        <inertial mass="1.42462" pos="0.0645163 -0.0037871 -0.000152184"
+            quat="0.996866 0.0379822 0.0252009 -0.0646548"
+            diaginertia="0.00243341 0.00230249 0.00197758"/>
+        <joint name="LF_HAA" class="HAA"/>
+        <geom class="visual" mesh="anymal_hip_l_0" material="light_gray"/>
+        <geom class="visual" mesh="anymal_hip_l_1" material="copper"/>
+        <geom class="visual" mesh="anymal_hip_l_2" material="foam_dark"/>
+        <geom class="visual" mesh="anymal_hip_l_3" material="alu_eloxiert"/>
+        <geom class="visual" mesh="anymal_hip_l_4" material="any_blau"/>
+        <geom class="visual" mesh="anymal_hip_l_5" material="dark_gray"/>
+        <geom class="visual" mesh="anymal_hip_l_6" material="light_gray"/>
+        <geom class="protector" pos="0.0635 -0.009 0" quat="1 1 0 0"/>
+        <geom class="heatfins" pos="0.0635 -0.074 0" quat="1 1 0 0"/>
+        <body name="LF_THIGH" pos="0.0635 0.041 0">
+          <inertial mass="1.63498" pos="-0.00389797 0.0542266 -0.214583"
+              quat="0.74395 -0.0633414 0.0362707 0.664237"
+              diaginertia="0.0122697 0.0120427 0.00228302"/>
+          <joint name="LF_HFE" class="HFE"/>
+          <geom class="visual" material="any_blau" mesh="anymal_thigh_l_0"/>
+          <geom class="visual" material="dark_gray" mesh="anymal_thigh_l_1"/>
+          <geom class="visual" material="copper" mesh="anymal_thigh_l_2"/>
+          <geom class="visual" material="alu_eloxiert" mesh="anymal_thigh_l_3"/>
+          <geom class="visual" material="foam_dark" mesh="anymal_thigh_l_4"/>
+          <geom class="visual" material="light_gray" mesh="anymal_thigh_l_5"/>
+          <geom class="thigh_with_fins" pos="0 0.035 -0.125" quat="0.997373 0.0724365 0 0"/>
+          <geom class="kfe_actuator" pos="0 0.069 -0.25" quat="1 1 0 0"/>
+          <geom class="upper_protector" pos="0 -0.005 0" quat="0.654029 0.75647 0 0"/>
+          <body name="LF_SHANK" pos="0 0.109 -0.25">
+            <inertial mass="0.472163" pos="0.0696396 -0.0132494 -0.150905"
+                quat="0.677954 -0.0950614 -0.0578104 0.726636"
+                diaginertia="0.0116034 0.0110666 0.000723761"/>
+            <joint name="LF_KFE" class="KFE"/>
+            <geom class="visual" material="foam_dark" mesh="anymal_shank_l_0"/>
+            <geom class="visual" material="dark_gray" mesh="anymal_shank_l_1"/>
+            <geom class="visual" material="light_gray" mesh="anymal_shank_l_2"/>
+            <geom class="visual" material="light_gray" mesh="anymal_shank_l_3"/>
+            <geom class="shank" pos="0.065 -0.015 0.01" quat="1 0 1 0"/>
+            <geom class="visual" material="carbon_fibre" mesh="anymal_foot_0"
+                pos="0.1 -0.02 0.032"/>
+            <geom class="visual" material="foam_dark" mesh="anymal_foot_1" pos="0.1 -0.02 0.032"/>
+            <geom class="visual" material="dark_gray" mesh="anymal_foot_2" pos="0.1 -0.02 0.032"/>
+            <geom class="visual" material="light_gray" mesh="anymal_foot_3" pos="0.1 -0.02 0.032"/>
+            <geom class="adapter" pos="0.1 -0.02 -0.160625"/>
+            <geom class="foot" pos="0.1 -0.02 -0.298"/>
+          </body>
+        </body>
+      </body>
+      <body name="RF_HIP" pos="0.277 -0.116 0">
+        <inertial mass="1.42462" pos="0.0645163 0.0037871 -0.000152184"
+            quat="0.996866 -0.0379822 0.0252009 0.0646548"
+            diaginertia="0.00243341 0.00230249 0.00197758"/>
+        <joint name="RF_HAA" class="HAA"/>
+        <geom class="visual" material="light_gray" mesh="anymal_hip_r_0"/>
+        <geom class="visual" material="copper" mesh="anymal_hip_r_1"/>
+        <geom class="visual" material="foam_dark" mesh="anymal_hip_r_2"/>
+        <geom class="visual" material="alu_eloxiert" mesh="anymal_hip_r_3"/>
+        <geom class="visual" material="any_blau" mesh="anymal_hip_r_4"/>
+        <geom class="visual" material="dark_gray" mesh="anymal_hip_r_5"/>
+        <geom class="visual" material="light_gray" mesh="anymal_hip_r_6"/>
+        <geom class="protector" pos="0.0635 0.009 0" quat="1 1 0 0"/>
+        <geom class="heatfins" pos="0.0635 0.074 0" quat="1 1 0 0"/>
+        <body name="RF_THIGH" pos="0.0635 -0.041 0">
+          <inertial mass="1.63498" pos="-0.00389797 -0.0542266 -0.214583"
+              quat="0.664237 0.0362707 -0.0633414 0.74395"
+              diaginertia="0.0122697 0.0120427 0.00228302"/>
+          <joint name="RF_HFE" class="HFE"/>
+          <geom class="visual" material="any_blau" mesh="anymal_thigh_r_0"/>
+          <geom class="visual" material="dark_gray" mesh="anymal_thigh_r_1"/>
+          <geom class="visual" material="copper" mesh="anymal_thigh_r_2"/>
+          <geom class="visual" material="alu_eloxiert" mesh="anymal_thigh_r_3"/>
+          <geom class="visual" material="foam_dark" mesh="anymal_thigh_r_4"/>
+          <geom class="visual" material="light_gray" mesh="anymal_thigh_r_5"/>
+          <geom class="thigh_with_fins" pos="0 -0.035 -0.125" quat="0.997373 -0.0724365 0 0"/>
+          <geom class="kfe_actuator" pos="0 -0.069 -0.25" quat="1 1 0 0"/>
+          <geom class="upper_protector" pos="0 0.005 0" quat="0.654029 -0.75647 0 0"/>
+          <body name="RF_SHANK" pos="0 -0.109 -0.25">
+            <inertial mass="0.472163" pos="0.0696396 0.0132494 -0.150905"
+                quat="0.726636 -0.0578104 -0.0950614 0.677954"
+                diaginertia="0.0116034 0.0110666 0.000723761"/>
+            <joint name="RF_KFE" class="KFE"/>
+            <geom class="visual" material="foam_dark" mesh="anymal_shank_r_0"/>
+            <geom class="visual" material="dark_gray" mesh="anymal_shank_r_1"/>
+            <geom class="visual" material="light_gray" mesh="anymal_shank_r_2"/>
+            <geom class="visual" material="light_gray" mesh="anymal_shank_r_3"/>
+            <geom class="shank" pos="0.065 0.015 0.01" quat="1 0 1 0"/>
+            <geom class="visual" material="carbon_fibre" mesh="anymal_foot_0" pos="0.1 0.02 0.032"/>
+            <geom class="visual" material="foam_dark" mesh="anymal_foot_1" pos="0.1 0.02 0.032"/>
+            <geom class="visual" material="dark_gray" mesh="anymal_foot_2" pos="0.1 0.02 0.032"/>
+            <geom class="visual" material="light_gray" mesh="anymal_foot_3" pos="0.1 0.02 0.032"/>
+            <geom class="adapter" pos="0.1 0.02 -0.160625"/>
+            <geom class="foot" pos="0.1 0.02 -0.298"/>
+          </body>
+        </body>
+      </body>
+      <body name="LH_HIP" pos="-0.277 0.116 0">
+        <inertial mass="1.42462" pos="-0.0645163 -0.0037871 -0.000152184"
+            quat="0.996866 0.0379822 -0.0252009 0.0646548"
+            diaginertia="0.00243341 0.00230249 0.00197758"/>
+        <joint name="LH_HAA" class="HAA"/>
+        <geom class="visual_zflip" material="light_gray" mesh="anymal_hip_r_0"/>
+        <geom class="visual_zflip" material="copper" mesh="anymal_hip_r_1"/>
+        <geom class="visual_zflip" material="foam_dark" mesh="anymal_hip_r_2"/>
+        <geom class="visual_zflip" material="alu_eloxiert" mesh="anymal_hip_r_3"/>
+        <geom class="visual_zflip" material="any_blau" mesh="anymal_hip_r_4"/>
+        <geom class="visual_zflip" material="dark_gray" mesh="anymal_hip_r_5"/>
+        <geom class="visual_zflip" material="light_gray" mesh="anymal_hip_r_6"/>
+        <geom class="protector" pos="-0.0635 -0.009 0" quat="1 -1 0 0"/>
+        <geom class="heatfins" pos="-0.0635 -0.074 0" quat="1 -1 0 0"/>
+        <body name="LH_THIGH" pos="-0.0635 0.041 0">
+          <inertial mass="1.63498" pos="0.00389797 0.0542266 -0.214583"
+              quat="0.664237 -0.0362707 0.0633414 0.74395"
+              diaginertia="0.0122697 0.0120427 0.00228302"/>
+          <joint name="LH_HFE" class="HFE"/>
+          <geom class="visual_zflip" material="any_blau" mesh="anymal_thigh_r_0"/>
+          <geom class="visual_zflip" material="dark_gray" mesh="anymal_thigh_r_1"/>
+          <geom class="visual_zflip" material="copper" mesh="anymal_thigh_r_2"/>
+          <geom class="visual_zflip" material="alu_eloxiert" mesh="anymal_thigh_r_3"/>
+          <geom class="visual_zflip" material="foam_dark" mesh="anymal_thigh_r_4"/>
+          <geom class="visual_zflip" material="light_gray" mesh="anymal_thigh_r_5"/>
+          <geom class="thigh_with_fins" pos="0 0.035 -0.125" quat="0.997373 0.0724365 0 0"/>
+          <geom class="kfe_actuator" pos="0 0.069 -0.25" quat="1 1 0 0"/>
+          <geom class="upper_protector" pos="0 -0.005 0" quat="0.654029 0.75647 0 0"/>
+          <body name="LH_SHANK" pos="0 0.109 -0.25">
+            <inertial mass="0.472163" pos="-0.0696396 -0.0132494 -0.150905"
+                quat="0.726636 0.0578104 0.0950615 0.677954"
+                diaginertia="0.0116034 0.0110666 0.000723761"/>
+            <joint name="LH_KFE" class="KFE"/>
+            <geom class="visual_zflip" material="foam_dark" mesh="anymal_shank_r_0"/>
+            <geom class="visual_zflip" material="dark_gray" mesh="anymal_shank_r_1"/>
+            <geom class="visual_zflip" material="light_gray" mesh="anymal_shank_r_2"/>
+            <geom class="visual_zflip" material="light_gray" mesh="anymal_shank_r_3"/>
+            <geom class="shank" pos="-0.065 -0.015 0.01" quat="1 0 1 0"/>
+            <geom class="visual_zflip" material="carbon_fibre" mesh="anymal_foot_0"
+                pos="-0.1 -0.02 0.032"/>
+            <geom class="visual_zflip" material="foam_dark" mesh="anymal_foot_1"
+                pos="-0.1 -0.02 0.032"/>
+            <geom class="visual_zflip" material="dark_gray" mesh="anymal_foot_2"
+                pos="-0.1 -0.02 0.032"/>
+            <geom class="visual_zflip" material="light_gray" mesh="anymal_foot_3"
+                pos="-0.1 -0.02 0.032"/>
+            <geom class="adapter" pos="-0.1 -0.02 -0.160625"/>
+            <geom class="foot" pos="-0.1 -0.02 -0.298"/>
+          </body>
+        </body>
+      </body>
+      <body name="RH_HIP" pos="-0.277 -0.116 0">
+        <inertial mass="1.42462" pos="-0.0645163 0.0037871 -0.000152184"
+            quat="0.996866 -0.0379822 -0.0252009 -0.0646548"
+            diaginertia="0.00243341 0.00230249 0.00197758"/>
+        <joint name="RH_HAA" class="HAA"/>
+        <geom class="visual_zflip" mesh="anymal_hip_l_0" material="light_gray"/>
+        <geom class="visual_zflip" mesh="anymal_hip_l_1" material="copper"/>
+        <geom class="visual_zflip" mesh="anymal_hip_l_2" material="foam_dark"/>
+        <geom class="visual_zflip" mesh="anymal_hip_l_3" material="alu_eloxiert"/>
+        <geom class="visual_zflip" mesh="anymal_hip_l_4" material="any_blau"/>
+        <geom class="visual_zflip" mesh="anymal_hip_l_5" material="dark_gray"/>
+        <geom class="visual_zflip" mesh="anymal_hip_l_6" material="light_gray"/>
+        <geom class="protector" pos="-0.0635 0.009 0" quat="1 -1 0 0"/>
+        <geom class="heatfins" pos="-0.0635 0.074 0" quat="1 -1 0 0"/>
+        <body name="RH_THIGH" pos="-0.0635 -0.041 0">
+          <inertial mass="1.63498" pos="0.00389797 -0.0542266 -0.214583"
+              quat="0.74395 0.0633414 -0.0362707 0.664237"
+              diaginertia="0.0122697 0.0120427 0.00228302"/>
+          <joint name="RH_HFE" class="HFE"/>
+          <geom class="visual_zflip" material="any_blau" mesh="anymal_thigh_l_0"/>
+          <geom class="visual_zflip" material="dark_gray" mesh="anymal_thigh_l_1"/>
+          <geom class="visual_zflip" material="copper" mesh="anymal_thigh_l_2"/>
+          <geom class="visual_zflip" material="alu_eloxiert" mesh="anymal_thigh_l_3"/>
+          <geom class="visual_zflip" material="foam_dark" mesh="anymal_thigh_l_4"/>
+          <geom class="visual_zflip" material="light_gray" mesh="anymal_thigh_l_5"/>
+          <geom class="thigh_with_fins" pos="0 -0.035 -0.125" quat="0.997373 -0.0724365 0 0"/>
+          <geom class="kfe_actuator" pos="0 -0.069 -0.25" quat="1 1 0 0"/>
+          <geom class="upper_protector" pos="0 0.005 0" quat="0.654029 -0.75647 0 0"/>
+          <body name="RH_SHANK" pos="0 -0.109 -0.25">
+            <inertial  mass="0.472163" pos="-0.0696396 0.0132494 -0.150905"
+                quat="0.677954 0.0950614 0.0578104 0.726636"
+                diaginertia="0.0116034 0.0110666 0.000723761"/>
+            <joint name="RH_KFE" class="KFE"/>
+            <geom class="visual_zflip" material="foam_dark" mesh="anymal_shank_l_0"/>
+            <geom class="visual_zflip" material="dark_gray" mesh="anymal_shank_l_1"/>
+            <geom class="visual_zflip" material="light_gray" mesh="anymal_shank_l_2"/>
+            <geom class="visual_zflip" material="light_gray" mesh="anymal_shank_l_3"/>
+            <geom class="shank" pos="-0.065 0.015 0.01" quat="1 0 1 0"/>
+            <geom class="visual_zflip" material="carbon_fibre" mesh="anymal_foot_0"
+                pos="-0.1 0.02 0.032"/>
+            <geom class="visual_zflip" material="foam_dark" mesh="anymal_foot_1"
+                pos="-0.1 0.02 0.032"/>
+            <geom class="visual_zflip" material="dark_gray" mesh="anymal_foot_2"
+                pos="-0.1 0.02 0.032"/>
+            <geom class="visual_zflip" material="light_gray" mesh="anymal_foot_3"
+                pos="-0.1 0.02 0.032"/>
+            <geom class="adapter" pos="-0.1 0.02 -0.160625"/>
+            <geom class="foot" pos="-0.1 0.02 -0.298"/>
+          </body>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+
+  <contact>
+    <exclude body1="base" body2="LF_THIGH"/>
+    <exclude body1="base" body2="RF_THIGH"/>
+    <exclude body1="base" body2="LH_THIGH"/>
+    <exclude body1="base" body2="RH_THIGH"/>
+  </contact>
+
+  <actuator>
+    <position class="affine" joint="LF_HAA" name="LF_HAA"/>
+    <position class="affine" joint="LF_HFE" name="LF_HFE"/>
+    <position class="affine" joint="LF_KFE" name="LF_KFE"/>
+    <position class="affine" joint="RF_HAA" name="RF_HAA"/>
+    <position class="affine" joint="RF_HFE" name="RF_HFE"/>
+    <position class="affine" joint="RF_KFE" name="RF_KFE"/>
+    <position class="affine" joint="LH_HAA" name="LH_HAA"/>
+    <position class="affine" joint="LH_HFE" name="LH_HFE"/>
+    <position class="affine" joint="LH_KFE" name="LH_KFE"/>
+    <position class="affine" joint="RH_HAA" name="RH_HAA"/>
+    <position class="affine" joint="RH_HFE" name="RH_HFE"/>
+    <position class="affine" joint="RH_KFE" name="RH_KFE"/>
+  </actuator>
+
+</mujoco>

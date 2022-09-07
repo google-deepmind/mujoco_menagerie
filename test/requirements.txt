@@ -1,0 +1,3 @@
+mujoco>=2.2.2
+absl-py
+pytest-xdist
