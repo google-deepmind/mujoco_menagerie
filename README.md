@@ -123,7 +123,7 @@ Menagerie, see [CONTRIBUTING](CONTRIBUTING.md).
 | [Panda](franka_emika_panda/README.md)|[<img src="franka_emika_panda/panda.png" width="400">](franka_emika_panda/README.md)|B|
 | [UR5e](universal_robots_ur5e/README.md)|[<img src="universal_robots_ur5e/ur5e.png" width="400">](universal_robots_ur5e/README.md)|B|
 
-For corresponding embedded videos, see the MuJoCo [documentation](https://mujoco.readthedocs.io/en/latest/Models.html).
+For corresponding embedded videos, see the MuJoCo [documentation](https://mujoco.readthedocs.io/en/latest/models.html).
 
 ## Citing Menagerie
 
