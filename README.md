@@ -1,5 +1,6 @@
-![MuJoCo Menagerie](banner.png)
-===============================
+<h1>
+  <<a href="#"><img alt="MuJoCo Menagerie" src="banner.png" width="100%"></a>
+</h1>
 
 <p>
   <a href="https://github.com/deepmind/mujoco_menagerie/actions/workflows/build.yml?query=branch%3Amain" alt="GitHub Actions">
