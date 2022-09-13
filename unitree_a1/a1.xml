@@ -1,13 +1,13 @@
 <mujoco model="a1">
-  <compiler angle="radian" meshdir="assets" texturedir="assets"/>
+  <compiler angle="radian" meshdir="assets" texturedir="assets" autolimits="true"/>
 
   <option cone="elliptic" impratio="100"/>
 
   <default>
     <default class="a1">
       <geom friction="0.6" margin="0.001"/>
-      <joint axis="0 1 0" damping="2" armature="0.01" frictionloss="0.2" limited="true"/>
-      <position kp="100" ctrllimited="true" forcelimited="true" forcerange="-33.5 33.5"/>
+      <joint axis="0 1 0" damping="2" armature="0.01" frictionloss="0.2"/>
+      <position kp="100" forcerange="-33.5 33.5"/>
       <default class="abduction">
         <joint axis="1 0 0" damping="1" range="-0.802851 0.802851"/>
         <position ctrlrange="-0.802851 0.802851"/>

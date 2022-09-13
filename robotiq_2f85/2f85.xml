@@ -1,5 +1,5 @@
 <mujoco model="robotiq_2f85">
-  <compiler angle="radian" meshdir="assets"/>
+  <compiler angle="radian" meshdir="assets" autolimits="true"/>
 
   <option impratio="10"/>
 
@@ -22,23 +22,22 @@
   <default>
     <default class="2f85">
       <mesh scale="0.001 0.001 0.001"/>
-      <general ctrllimited="true" forcelimited="true" biastype="affine"/>
+      <general biastype="affine"/>
 
-      <joint axis="1 0 0" limited="false"/>
+      <joint axis="1 0 0"/>
       <default class="driver">
-        <joint limited="true" range="0 0.8" armature="0.005" damping="0.1"
-            solimplimit="0.95 0.99 0.001" solreflimit="0.005 1"/>
+        <joint range="0 0.8" armature="0.005" damping="0.1" solimplimit="0.95 0.99 0.001"
+            solreflimit="0.005 1"/>
       </default>
       <default class="follower">
-        <joint limited="true" range="-0.872664 0.872664" pos="0 -0.018 0.0065"
-            solimplimit="0.95 0.99 0.001" solreflimit="0.005 1"/>
+        <joint range="-0.872664 0.872664" pos="0 -0.018 0.0065" solimplimit="0.95 0.99 0.001"
+            solreflimit="0.005 1"/>
       </default>
       <default class="spring_link">
-        <joint limited="true" range="-0.29670597283 0.8" stiffness="0.05" springref="2.62"
-            damping="0.00125"/>
+        <joint range="-0.29670597283 0.8" stiffness="0.05" springref="2.62" damping="0.00125"/>
       </default>
       <default class="coupler">
-        <joint limited="true" range="-1.57 0" solimplimit="0.95 0.99 0.001" solreflimit="0.005 1"/>
+        <joint range="-1.57 0" solimplimit="0.95 0.99 0.001" solreflimit="0.005 1"/>
       </default>
 
       <default class="visual">

@@ -1,6 +1,6 @@
 <mujoco model="2f85 scene">
 
-  <!-- Adding some fluid viscosity to prevent the hanging box from jiggling forever -->
+  <!-- Add some fluid viscosity to prevent the hanging box from jiggling forever -->
   <option viscosity="0.1"/>
 
   <include file="2f85.xml"/>

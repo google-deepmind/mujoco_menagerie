@@ -1,13 +1,13 @@
 <mujoco model="left_shadow_hand">
-  <compiler angle="radian" meshdir="assets"/>
+  <compiler angle="radian" meshdir="assets" autolimits="true"/>
 
   <option impratio="10"/>
 
   <default>
     <default class="left_hand">
       <mesh scale="0.001 0.001 0.001"/>
-      <joint axis="1 0 0" limited="true" damping="0.05" armature="0.0002" frictionloss="0.01"/>
-      <position ctrllimited="true" forcelimited="true" forcerange="-1 1"/>
+      <joint axis="1 0 0" damping="0.05" armature="0.0002" frictionloss="0.01"/>
+      <position forcerange="-1 1"/>
 
       <default class="wrist">
         <joint damping="0.5"/>

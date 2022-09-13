@@ -1,5 +1,5 @@
 <mujoco model="anymal_b">
-  <compiler angle="radian" meshdir="assets" texturedir="assets"/>
+  <compiler angle="radian" meshdir="assets" texturedir="assets" autolimits="true"/>
 
   <option cone="elliptic" impratio="100"/>
 
@@ -62,8 +62,7 @@
         </default>
       </default>
       <default class="affine">
-        <position kp="100" ctrllimited="true" ctrlrange="-6.28 6.28" forcelimited="true"
-            forcerange="-40 40"/>
+        <position kp="100" ctrlrange="-6.28 6.28" forcerange="-40 40"/>
       </default>
     </default>
   </default>

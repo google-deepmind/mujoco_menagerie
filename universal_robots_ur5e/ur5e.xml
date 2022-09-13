@@ -1,9 +1,9 @@
 <mujoco model="ur5e">
-  <compiler angle="radian" meshdir="assets"/>
+  <compiler angle="radian" meshdir="assets" autolimits="true"/>
 
   <default>
-    <joint limited="true" axis="0 1 0" range="-6.28319 6.28319"/>
-    <position ctrllimited="true" forcelimited="true" ctrlrange="-6.2831 6.2831"/>
+    <joint axis="0 1 0" range="-6.28319 6.28319"/>
+    <position ctrlrange="-6.2831 6.2831"/>
 
     <default class="visual">
       <geom type="mesh" contype="0" conaffinity="0" group="2"/>

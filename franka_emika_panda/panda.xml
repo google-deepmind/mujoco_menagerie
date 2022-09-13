@@ -1,14 +1,13 @@
 <mujoco model="panda">
-  <compiler angle="radian" meshdir="assets"/>
+  <compiler angle="radian" meshdir="assets" autolimits="true"/>
 
   <option integrator="implicit"/>
 
   <default>
     <default class="panda">
       <material specular="0.5" shininess="0.25"/>
-      <joint armature="0.1" damping="1" axis="0 0 1" limited="true" range="-2.8973 2.8973"/>
-      <general ctrllimited="true" forcelimited="true" dyntype="none" biastype="affine"
-          ctrlrange="-2.8973 2.8973" forcerange="-87 87"/>
+      <joint armature="0.1" damping="1" axis="0 0 1" range="-2.8973 2.8973"/>
+      <general dyntype="none" biastype="affine" ctrlrange="-2.8973 2.8973" forcerange="-87 87"/>
       <default class="finger">
         <joint axis="0 1 0" type="slide" range="0 0.04"/>
       </default>
