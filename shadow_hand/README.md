@@ -3,9 +3,10 @@
 ## Overview
 
 This package contains assets of the "E3M5" version of the Shadow Hand robot,
-including both right-handed and left-handed versions. Note these assets are not
-based on the publicly available models (under GPL), but rather on models
-licensed under Apache 2.0.
+including both right-handed and left-handed versions.
+The original URDF and assets were provided directly by
+[Shadow Robot Company](https://www.shadowrobot.com/) under the
+[Apache 2.0 License](LICENSE).
 
 <p float="left">
   <img src="shadow_hand.png" width="400">

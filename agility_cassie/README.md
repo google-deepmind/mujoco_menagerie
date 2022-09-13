@@ -3,7 +3,9 @@
 ## Overview
 
 This package contains a simplified robot description (MJCF) of the Cassie
-bipedal robot, provided by [Agility Robotics](http://www.agilityrobotics.com/).
+bipedal robot. The original MJCF and assets were provided directly by
+[Agility Robotics](http://www.agilityrobotics.com/) under an
+[MIT License](LICENSE).
 
 <p float="left">
   <img src="cassie.png" width="400">
