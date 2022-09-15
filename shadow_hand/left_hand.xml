@@ -23,15 +23,15 @@
 
       <default class="thumb">
         <default class="thbase">
-          <joint axis="0 0 -1" range="-1.0472 1.0472"/>
+          <joint axis="0 0 1" range="-1.0472 1.0472"/>
           <position kp="0.4" ctrlrange="-1.0472 1.0472" forcerange="-3 3"/>
         </default>
         <default class="thproximal">
-          <joint range="0 1.22173"/>
+          <joint axis="-1 0 0" range="0 1.22173"/>
           <position ctrlrange="0 1.22173" forcerange="-2 2"/>
         </default>
         <default class="thhub">
-          <joint range="-0.20944 0.20944"/>
+          <joint axis="-1 0 0" range="-0.20944 0.20944"/>
           <position kp="0.5" ctrlrange="-0.20944 0.20944"/>
         </default>
         <default class="thmiddle">
