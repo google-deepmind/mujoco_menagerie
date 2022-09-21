@@ -60,7 +60,7 @@
   </default>
 
   <worldbody>
-    <body name="base_mount" pos="0 0 0.007" quat="1 0 0 1" childclass="2f85">
+    <body name="base_mount" pos="0 0 0.007" childclass="2f85">
       <geom class="visual" mesh="base_mount" material="black"/>
       <geom class="collision" mesh="base_mount"/>
       <body name="base" pos="0 0 0.0038" quat="1 0 0 -1">
