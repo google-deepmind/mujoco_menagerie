@@ -14,6 +14,7 @@
         <geom type="cylinder"/>
       </default>
     </default>
+    <site size="0.001" rgba="0.5 0.5 0.5 0.3" group="4"/>
 
     <!-- Reference:
       https://www.universal-robots.com/articles/ur/robot-care-maintenance/max-joint-torques/ -->
@@ -111,6 +112,7 @@
                   <joint name="wrist_3_joint" class="size1"/>
                   <geom material="linkgray" mesh="wrist3" class="visual"/>
                   <geom class="eef_collision" pos="0 0.08 0" quat="1 1 0 0" size="0.04 0.02"/>
+                  <site name="attachment_site" pos="0 0.1 0" quat="-1 1 0 0"/>
                 </body>
               </body>
             </body>
