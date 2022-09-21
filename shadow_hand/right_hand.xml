@@ -197,7 +197,7 @@
           <body name="rh_rfknuckle" pos="-0.011 0 0.095">
             <inertial mass="0.008" pos="0 0 0" quat="0.5 0.5 -0.5 0.5"
                 diaginertia="3.2e-07 2.6e-07 2.6e-07"/>
-            <joint name="rh_RFJ4" class="knuckle"/>
+            <joint name="rh_RFJ4" class="knuckle" axis="0 1 0"/>
             <geom pos="0 0 0.0005" class="plastic_visual" mesh="f_knuckle" material="metallic"/>
             <geom size="0.009 0.009" quat="1 0 1 0" type="cylinder" class="plastic_collision"/>
             <body name="rh_rfproximal">
@@ -233,7 +233,7 @@
             <body name="rh_lfknuckle" pos="0 0 0.06579">
               <inertial mass="0.008" pos="0 0 0" quat="0.5 0.5 -0.5 0.5"
                   diaginertia="3.2e-07 2.6e-07 2.6e-07"/>
-              <joint name="rh_LFJ4" class="knuckle"/>
+              <joint name="rh_LFJ4" class="knuckle" axis="0 1 0"/>
               <geom pos="0 0 0.0005" class="plastic_visual" mesh="f_knuckle" material="metallic"/>
               <geom size="0.009 0.009" quat="1 0 1 0" type="cylinder" class="plastic_collision"/>
               <body name="rh_lfproximal">

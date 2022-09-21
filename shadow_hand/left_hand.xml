@@ -12,7 +12,7 @@
       <default class="wrist">
         <joint damping="0.5"/>
         <default class="wrist_y">
-          <joint axis="0 1 0" range="-0.523599 0.174533"/>
+          <joint axis="0 -1 0" range="-0.523599 0.174533"/>
           <position kp="10" ctrlrange="-0.523599 0.174533" forcerange="-10 10"/>
         </default>
         <default class="wrist_x">
@@ -138,7 +138,7 @@
           <body name="lh_ffknuckle" pos="-0.033 0 0.095">
             <inertial mass="0.008" pos="0 0 0" quat="0.5 0.5 -0.5 0.5"
                 diaginertia="3.2e-07 2.6e-07 2.6e-07"/>
-            <joint name="lh_FFJ4" class="knuckle"/>
+            <joint name="lh_FFJ4" class="knuckle" axis="0 1 0"/>
             <geom pos="0 0 0.0005" class="plastic_visual" mesh="f_knuckle" material="metallic"/>
             <geom size="0.009 0.009" quat="1 0 1 0" type="cylinder" class="plastic_collision"/>
             <body name="lh_ffproximal">
@@ -167,7 +167,7 @@
           <body name="lh_mfknuckle" pos="-0.011 0 0.099">
             <inertial mass="0.008" pos="0 0 0" quat="0.5 0.5 -0.5 0.5"
                 diaginertia="3.2e-07 2.6e-07 2.6e-07"/>
-            <joint name="lh_MFJ4" class="knuckle"/>
+            <joint name="lh_MFJ4" class="knuckle" axis="0 1 0"/>
             <geom pos="0 0 0.0005" class="plastic_visual" mesh="f_knuckle" material="metallic"/>
             <geom size="0.009 0.009" quat="1 0 1 0" type="cylinder" class="plastic_collision"/>
             <body name="lh_mfproximal">
@@ -225,7 +225,7 @@
           <body name="lh_lfmetacarpal" pos="0.033 0 0.02071">
             <inertial mass="0.03" pos="0 0 0.04" quat="1 0 0 1"
                 diaginertia="1.638e-05 1.45e-05 4.272e-06"/>
-            <joint name="lh_LFJ5" class="metacarpal"/>
+            <joint name="lh_LFJ5" class="metacarpal" axis="0.573576 0 -0.819152"/>
             <geom class="plastic_visual" mesh="lf_metacarpal"/>
             <geom size="0.011 0.012 0.025" pos="-0.002 0 0.033" type="box"
                 class="plastic_collision"/>
