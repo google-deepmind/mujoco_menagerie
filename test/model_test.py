@@ -43,7 +43,7 @@ def _pseudorandom_ctrlnoise(
     data: mujoco.MjData,
     i: int,
     noise: float,
-) -> np.ndarray:
+) -> None:
   for j in range(model.nu):
     ctrlrange = model.actuator_ctrlrange[j]
     if model.actuator_ctrllimited[j]:
