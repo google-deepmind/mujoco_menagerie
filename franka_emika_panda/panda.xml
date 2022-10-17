@@ -207,42 +207,37 @@
                     <geom mesh="link7_6" material="black" class="visual"/>
                     <geom mesh="link7_7" material="white" class="visual"/>
                     <geom mesh="link7_c" class="collision"/>
-                    <body name="link8" pos="0 0 0.107">
-                      <body name="hand" quat="0.9238795 0 0 -0.3826834">
-                        <inertial mass="0.73" pos="-0.01 0 0.03"
-                            diaginertia="0.001 0.0025 0.0017"/>
-                        <geom mesh="hand_0" material="off_white" class="visual"/>
-                        <geom mesh="hand_1" material="black" class="visual"/>
-                        <geom mesh="hand_2" material="black" class="visual"/>
-                        <geom mesh="hand_3" material="white" class="visual"/>
-                        <geom mesh="hand_4" material="off_white" class="visual"/>
-                        <geom mesh="hand_c" class="collision"/>
-                        <body name="left_finger" pos="0 0 0.0584">
-                          <inertial mass="0.015" pos="0 0 0"
-                              diaginertia="2.375e-6 2.375e-6 7.5e-7"/>
-                          <joint name="finger_joint1" class="finger"/>
-                          <geom mesh="finger_0" material="off_white" class="visual"/>
-                          <geom mesh="finger_1" material="black" class="visual"/>
-                          <geom mesh="finger_0" class="collision"/>
-                          <geom class="fingertip_pad_collision_1"/>
-                          <geom class="fingertip_pad_collision_2"/>
-                          <geom class="fingertip_pad_collision_3"/>
-                          <geom class="fingertip_pad_collision_4"/>
-                          <geom class="fingertip_pad_collision_5"/>
-                        </body>
-                        <body name="right_finger" pos="0 0 0.0584" quat="0 0 0 1">
-                          <inertial mass="0.015" pos="0 0 0"
-                              diaginertia="2.375e-6 2.375e-6 7.5e-7"/>
-                          <joint name="finger_joint2" class="finger"/>
-                          <geom mesh="finger_0" material="off_white" class="visual"/>
-                          <geom mesh="finger_1" material="black" class="visual"/>
-                          <geom mesh="finger_0" class="collision"/>
-                          <geom class="fingertip_pad_collision_1"/>
-                          <geom class="fingertip_pad_collision_2"/>
-                          <geom class="fingertip_pad_collision_3"/>
-                          <geom class="fingertip_pad_collision_4"/>
-                          <geom class="fingertip_pad_collision_5"/>
-                        </body>
+                    <body name="hand" pos="0 0 0.107" quat="0.9238795 0 0 -0.3826834">
+                      <inertial mass="0.73" pos="-0.01 0 0.03" diaginertia="0.001 0.0025 0.0017"/>
+                      <geom mesh="hand_0" material="off_white" class="visual"/>
+                      <geom mesh="hand_1" material="black" class="visual"/>
+                      <geom mesh="hand_2" material="black" class="visual"/>
+                      <geom mesh="hand_3" material="white" class="visual"/>
+                      <geom mesh="hand_4" material="off_white" class="visual"/>
+                      <geom mesh="hand_c" class="collision"/>
+                      <body name="left_finger" pos="0 0 0.0584">
+                        <inertial mass="0.015" pos="0 0 0" diaginertia="2.375e-6 2.375e-6 7.5e-7"/>
+                        <joint name="finger_joint1" class="finger"/>
+                        <geom mesh="finger_0" material="off_white" class="visual"/>
+                        <geom mesh="finger_1" material="black" class="visual"/>
+                        <geom mesh="finger_0" class="collision"/>
+                        <geom class="fingertip_pad_collision_1"/>
+                        <geom class="fingertip_pad_collision_2"/>
+                        <geom class="fingertip_pad_collision_3"/>
+                        <geom class="fingertip_pad_collision_4"/>
+                        <geom class="fingertip_pad_collision_5"/>
+                      </body>
+                      <body name="right_finger" pos="0 0 0.0584" quat="0 0 0 1">
+                        <inertial mass="0.015" pos="0 0 0" diaginertia="2.375e-6 2.375e-6 7.5e-7"/>
+                        <joint name="finger_joint2" class="finger"/>
+                        <geom mesh="finger_0" material="off_white" class="visual"/>
+                        <geom mesh="finger_1" material="black" class="visual"/>
+                        <geom mesh="finger_0" class="collision"/>
+                        <geom class="fingertip_pad_collision_1"/>
+                        <geom class="fingertip_pad_collision_2"/>
+                        <geom class="fingertip_pad_collision_3"/>
+                        <geom class="fingertip_pad_collision_4"/>
+                        <geom class="fingertip_pad_collision_5"/>
                       </body>
                     </body>
                   </body>
@@ -254,10 +249,6 @@
       </body>
     </body>
   </worldbody>
-
-  <contact>
-    <exclude body1="link7" body2="link8"/>
-  </contact>
 
   <tendon>
     <fixed name="split">
