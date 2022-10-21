@@ -89,6 +89,8 @@ data = mujoco.MjData(model)
 mujoco.mj_step(model, data)
 ```
 
+If you have further questions, please check out our [FAQ](FAQ.md).
+
 ## Model Quality and Contributing
 
 Our goal is to eventually make all Menagerie models as faithful as possible to
