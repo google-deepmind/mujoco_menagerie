@@ -27,7 +27,7 @@ description](https://github.com/frankaemika/franka_ros/tree/develop/franka_descr
    `<robot>` clause in order to preserve visual geometries.
 6. Loaded the URDF into MuJoCo and saved a corresponding MJCF.
 7. Matched inertial parameters with [inertial.yaml](
-   https://github.com/frankaemika/franka_ros/blob/develop/franka_description/robots/inertial.yaml).
+   https://github.com/frankaemika/franka_ros/blob/develop/franka_description/robots/common/inertial.yaml).
 8. Added a tracking light to the base.
 9. Manually edited the MJCF to extract common properties into the `<default>` section.
 10. Added `<exclude>` clauses to prevent collisions between `link7` and `link8`.

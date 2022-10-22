@@ -2,7 +2,7 @@
 
 ## How do I attach a hand to an arm?
 
-In Menagerie, the convention is to add a site called "attachment_site" to each
+In Menagerie, the convention is to add a site called `"attachment_site"` to each
 arm. This site can subsequently be used to rigidly attach an end-effector,
 like a gripper, to the arm.
 
