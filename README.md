@@ -4,7 +4,7 @@
 
 <p>
   <a href="https://github.com/deepmind/mujoco_menagerie/actions/workflows/build.yml?query=branch%3Amain" alt="GitHub Actions">
-    <img src="https://img.shields.io/github/workflow/status/deepmind/mujoco_menagerie/build/main">
+    <img src="https://img.shields.io/github/actions/workflow/status/deepmind/mujoco_menagerie/build.yml?branch=main">
   </a>
   <a href="https://mujoco.readthedocs.io/en/latest/models.html" alt="Documentation">
     <img src="https://readthedocs.org/projects/mujoco/badge/?version=latest">
