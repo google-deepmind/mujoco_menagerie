@@ -125,6 +125,7 @@ Menagerie, see [CONTRIBUTING](CONTRIBUTING.md).
 | [Unitree A1](unitree_a1/README.md)|[<img src="unitree_a1/a1.png" width="400">](unitree_a1/README.md)|B|
 | [Panda](franka_emika_panda/README.md)|[<img src="franka_emika_panda/panda.png" width="400">](franka_emika_panda/README.md)|B|
 | [UR5e](universal_robots_ur5e/README.md)|[<img src="universal_robots_ur5e/ur5e.png" width="400">](universal_robots_ur5e/README.md)|B|
+| [UR10e](universal_robots_ur10e/README.md)|[<img src="universal_robots_ur10e/ur10e.png" width="400">](universal_robots_ur10e/README.md)|C|
 
 For corresponding embedded videos, see the MuJoCo [documentation](https://mujoco.readthedocs.io/en/latest/models.html).
 
