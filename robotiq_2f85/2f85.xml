@@ -68,6 +68,7 @@
             diaginertia="0.000260285 0.000225381 0.000152708"/>
         <geom class="visual" mesh="base" material="black"/>
         <geom class="collision" mesh="base"/>
+        <site name="pinch" pos="0 0 0.145" type="sphere" group="5" rgba="0.9 0.9 0.9 1" size="0.005"/>
         <!-- Right-hand side 4-bar linkage -->
         <body name="right_driver" pos="0 0.0306011 0.054904">
           <inertial mass="0.00899563" pos="2.96931e-12 0.0177547 0.00107314"
