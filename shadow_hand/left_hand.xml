@@ -99,64 +99,51 @@
       <geom class="plastic_visual" mesh="forearm_0" material="gray"/>
       <geom class="plastic_visual" mesh="forearm_1"/>
       <geom class="plastic_collision" type="mesh" mesh="forearm_collision"/>
-      <geom class="plastic_collision" size="0.035 0.035 0.035" pos="0 -0.01 0.181"
-          quat="0.924909 0 0.380188 0" type="box"/>
+      <geom class="plastic_collision" size="0.035 0.035 0.035" pos="0 -0.01 0.181" quat="0.924909 0 0.380188 0"
+        type="box"/>
       <body name="lh_wrist" pos="0 -0.01 0.21301">
-        <inertial mass="0.1" pos="0 0 0.029" quat="0.5 0.5 0.5 0.5"
-            diaginertia="6.4e-05 4.38e-05 3.5e-05"/>
+        <inertial mass="0.1" pos="0 0 0.029" quat="0.5 0.5 0.5 0.5" diaginertia="6.4e-05 4.38e-05 3.5e-05"/>
         <joint class="wrist_y" name="lh_WRJ2"/>
         <geom class="plastic_visual" mesh="wrist" material="metallic"/>
-        <geom size="0.0135 0.015" quat="0.499998 0.5 0.5 -0.500002" type="cylinder"
-            class="plastic_collision"/>
-        <geom size="0.011 0.005" pos="0.026 0 0.034" quat="1 0 1 0" type="cylinder"
-            class="plastic_collision"/>
-        <geom size="0.011 0.005" pos="-0.031 0 0.034" quat="1 0 1 0" type="cylinder"
-            class="plastic_collision"/>
+        <geom size="0.0135 0.015" quat="0.499998 0.5 0.5 -0.500002" type="cylinder" class="plastic_collision"/>
+        <geom size="0.011 0.005" pos="0.026 0 0.034" quat="1 0 1 0" type="cylinder" class="plastic_collision"/>
+        <geom size="0.011 0.005" pos="-0.031 0 0.034" quat="1 0 1 0" type="cylinder" class="plastic_collision"/>
         <geom size="0.0135 0.009 0.005" pos="0.021 0 0.011" quat="-0.923879 0 0.382684 0" type="box"
-            class="plastic_collision"/>
+          class="plastic_collision"/>
         <geom size="0.0135 0.009 0.005" pos="-0.026 0 0.01" quat="-0.923879 0 -0.382684 0" type="box"
-            class="plastic_collision"/>
+          class="plastic_collision"/>
         <body name="lh_palm" pos="0 0 0.034">
-          <inertial mass="0.3" pos="0 0 0.035" quat="1 0 0 1"
-              diaginertia="0.0005287 0.0003581 0.000191"/>
+          <inertial mass="0.3" pos="0 0 0.035" quat="1 0 0 1" diaginertia="0.0005287 0.0003581 0.000191"/>
           <joint class="wrist_x" name="lh_WRJ1"/>
           <geom class="plastic_visual" mesh="palm"/>
-          <geom size="0.031 0.0035 0.049" pos="-0.011 0.0085 0.038" type="box"
-              class="plastic_collision"/>
-          <geom size="0.018 0.0085 0.049" pos="0.002 -0.0035 0.038" type="box"
-              class="plastic_collision"/>
-          <geom size="0.013 0.0085 0.005" pos="-0.029 -0.0035 0.082" type="box"
-              class="plastic_collision"/>
-          <geom size="0.013 0.007 0.009" pos="-0.0265 -0.001 0.07"
-              quat="0.987241 0.0990545 0.0124467 -0.124052" type="box" class="plastic_collision"/>
-          <geom size="0.0105 0.0135 0.0112" pos="-0.0315 -0.0085 0.001" type="box"
-              class="plastic_collision"/>
-          <geom size="0.011 0.0025 0.015" pos="-0.0125 -0.015 0.004" quat="-0.971338 0 0 -0.237703"
-              type="box" class="plastic_collision"/>
+          <geom size="0.031 0.0035 0.049" pos="-0.011 0.0085 0.038" type="box" class="plastic_collision"/>
+          <geom size="0.018 0.0085 0.049" pos="0.002 -0.0035 0.038" type="box" class="plastic_collision"/>
+          <geom size="0.013 0.0085 0.005" pos="-0.029 -0.0035 0.082" type="box" class="plastic_collision"/>
+          <geom size="0.013 0.007 0.009" pos="-0.0265 -0.001 0.07" quat="0.987241 0.0990545 0.0124467 -0.124052"
+            type="box" class="plastic_collision"/>
+          <geom size="0.0105 0.0135 0.0112" pos="-0.0315 -0.0085 0.001" type="box" class="plastic_collision"/>
+          <geom size="0.011 0.0025 0.015" pos="-0.0125 -0.015 0.004" quat="-0.971338 0 0 -0.237703" type="box"
+            class="plastic_collision"/>
           <geom size="0.009 0.012 0.002" pos="-0.011 0 0.089" type="box" class="plastic_collision"/>
           <geom size="0.01 0.012 0.02" pos="0.03 0 0.009" type="box" class="plastic_collision"/>
           <body name="lh_ffknuckle" pos="-0.033 0 0.095">
-            <inertial mass="0.008" pos="0 0 0" quat="0.5 0.5 -0.5 0.5"
-                diaginertia="3.2e-07 2.6e-07 2.6e-07"/>
+            <inertial mass="0.008" pos="0 0 0" quat="0.5 0.5 -0.5 0.5" diaginertia="3.2e-07 2.6e-07 2.6e-07"/>
             <joint name="lh_FFJ4" class="knuckle" axis="0 1 0"/>
             <geom pos="0 0 0.0005" class="plastic_visual" mesh="f_knuckle" material="metallic"/>
             <geom size="0.009 0.009" quat="1 0 1 0" type="cylinder" class="plastic_collision"/>
             <body name="lh_ffproximal">
-              <inertial mass="0.03" pos="0 0 0.0225" quat="1 0 0 1"
-                  diaginertia="1e-05 9.8e-06 1.8e-06"/>
+              <inertial mass="0.03" pos="0 0 0.0225" quat="1 0 0 1" diaginertia="1e-05 9.8e-06 1.8e-06"/>
               <joint name="lh_FFJ3" class="proximal"/>
               <geom class="plastic_visual" mesh="f_proximal"/>
               <geom size="0.009 0.02" pos="0 0 0.025" type="capsule" class="plastic_collision"/>
               <body name="lh_ffmiddle" pos="0 0 0.045">
-                <inertial mass="0.017" pos="0 0 0.0125" quat="1 0 0 1"
-                    diaginertia="2.7e-06 2.6e-06 8.7e-07"/>
+                <inertial mass="0.017" pos="0 0 0.0125" quat="1 0 0 1" diaginertia="2.7e-06 2.6e-06 8.7e-07"/>
                 <joint name="lh_FFJ2" class="middle_distal"/>
                 <geom class="plastic_visual" mesh="f_middle"/>
-                <geom size="0.009 0.0125" pos="0 0 0.0125" type="capsule"
-                    class="plastic_collision"/>
+                <geom size="0.009 0.0125" pos="0 0 0.0125" type="capsule" class="plastic_collision"/>
                 <body name="lh_ffdistal" pos="0 0 0.025">
                   <inertial mass="0.013" pos="0 0 0.0130769" quat="1 0 0 1"
-                      diaginertia="1.28092e-06 1.12092e-06 5.3e-07"/>
+                    diaginertia="1.28092e-06 1.12092e-06 5.3e-07"/>
                   <joint name="lh_FFJ1" class="middle_distal"/>
                   <geom class="plastic_visual" mesh="f_distal_pst"/>
                   <geom class="plastic_collision" type="mesh" mesh="f_distal_pst"/>
@@ -165,27 +152,23 @@
             </body>
           </body>
           <body name="lh_mfknuckle" pos="-0.011 0 0.099">
-            <inertial mass="0.008" pos="0 0 0" quat="0.5 0.5 -0.5 0.5"
-                diaginertia="3.2e-07 2.6e-07 2.6e-07"/>
+            <inertial mass="0.008" pos="0 0 0" quat="0.5 0.5 -0.5 0.5" diaginertia="3.2e-07 2.6e-07 2.6e-07"/>
             <joint name="lh_MFJ4" class="knuckle" axis="0 1 0"/>
             <geom pos="0 0 0.0005" class="plastic_visual" mesh="f_knuckle" material="metallic"/>
             <geom size="0.009 0.009" quat="1 0 1 0" type="cylinder" class="plastic_collision"/>
             <body name="lh_mfproximal">
-              <inertial mass="0.03" pos="0 0 0.0225" quat="1 0 0 1"
-                  diaginertia="1e-05 9.8e-06 1.8e-06"/>
+              <inertial mass="0.03" pos="0 0 0.0225" quat="1 0 0 1" diaginertia="1e-05 9.8e-06 1.8e-06"/>
               <joint name="lh_MFJ3" class="proximal"/>
               <geom class="plastic_visual" mesh="f_proximal"/>
               <geom size="0.009 0.02" pos="0 0 0.025" type="capsule" class="plastic_collision"/>
               <body name="lh_mfmiddle" pos="0 0 0.045">
-                <inertial mass="0.017" pos="0 0 0.0125" quat="1 0 0 1"
-                    diaginertia="2.7e-06 2.6e-06 8.7e-07"/>
+                <inertial mass="0.017" pos="0 0 0.0125" quat="1 0 0 1" diaginertia="2.7e-06 2.6e-06 8.7e-07"/>
                 <joint name="lh_MFJ2" class="middle_distal"/>
                 <geom class="plastic_visual" mesh="f_middle"/>
-                <geom size="0.009 0.0125" pos="0 0 0.0125" type="capsule"
-                    class="plastic_collision"/>
+                <geom size="0.009 0.0125" pos="0 0 0.0125" type="capsule" class="plastic_collision"/>
                 <body name="lh_mfdistal" pos="0 0 0.025">
                   <inertial mass="0.013" pos="0 0 0.0130769" quat="1 0 0 1"
-                      diaginertia="1.28092e-06 1.12092e-06 5.3e-07"/>
+                    diaginertia="1.28092e-06 1.12092e-06 5.3e-07"/>
                   <joint name="lh_MFJ1" class="middle_distal"/>
                   <geom class="plastic_visual" mesh="f_distal_pst"/>
                   <geom class="plastic_collision" type="mesh" mesh="f_distal_pst"/>
@@ -194,27 +177,23 @@
             </body>
           </body>
           <body name="lh_rfknuckle" pos="0.011 0 0.095">
-            <inertial mass="0.008" pos="0 0 0" quat="0.5 0.5 -0.5 0.5"
-                diaginertia="3.2e-07 2.6e-07 2.6e-07"/>
+            <inertial mass="0.008" pos="0 0 0" quat="0.5 0.5 -0.5 0.5" diaginertia="3.2e-07 2.6e-07 2.6e-07"/>
             <joint name="lh_RFJ4" class="knuckle"/>
             <geom pos="0 0 0.0005" class="plastic_visual" mesh="f_knuckle" material="metallic"/>
             <geom size="0.009 0.009" quat="1 0 1 0" type="cylinder" class="plastic_collision"/>
             <body name="lh_rfproximal">
-              <inertial mass="0.03" pos="0 0 0.0225" quat="1 0 0 1"
-                  diaginertia="1e-05 9.8e-06 1.8e-06"/>
+              <inertial mass="0.03" pos="0 0 0.0225" quat="1 0 0 1" diaginertia="1e-05 9.8e-06 1.8e-06"/>
               <joint name="lh_RFJ3" class="proximal"/>
               <geom class="plastic_visual" mesh="f_proximal"/>
               <geom size="0.009 0.02" pos="0 0 0.025" type="capsule" class="plastic_collision"/>
               <body name="lh_rfmiddle" pos="0 0 0.045">
-                <inertial mass="0.017" pos="0 0 0.0125" quat="1 0 0 1"
-                    diaginertia="2.7e-06 2.6e-06 8.7e-07"/>
+                <inertial mass="0.017" pos="0 0 0.0125" quat="1 0 0 1" diaginertia="2.7e-06 2.6e-06 8.7e-07"/>
                 <joint name="lh_RFJ2" class="middle_distal"/>
                 <geom class="plastic_visual" mesh="f_middle"/>
-                <geom size="0.009 0.0125" pos="0 0 0.0125" type="capsule"
-                    class="plastic_collision"/>
+                <geom size="0.009 0.0125" pos="0 0 0.0125" type="capsule" class="plastic_collision"/>
                 <body name="lh_rfdistal" pos="0 0 0.025">
                   <inertial mass="0.013" pos="0 0 0.0130769" quat="1 0 0 1"
-                      diaginertia="1.28092e-06 1.12092e-06 5.3e-07"/>
+                    diaginertia="1.28092e-06 1.12092e-06 5.3e-07"/>
                   <joint name="lh_RFJ1" class="middle_distal"/>
                   <geom class="plastic_visual" mesh="f_distal_pst"/>
                   <geom class="plastic_collision" type="mesh" mesh="f_distal_pst"/>
@@ -223,34 +202,28 @@
             </body>
           </body>
           <body name="lh_lfmetacarpal" pos="0.033 0 0.02071">
-            <inertial mass="0.03" pos="0 0 0.04" quat="1 0 0 1"
-                diaginertia="1.638e-05 1.45e-05 4.272e-06"/>
+            <inertial mass="0.03" pos="0 0 0.04" quat="1 0 0 1" diaginertia="1.638e-05 1.45e-05 4.272e-06"/>
             <joint name="lh_LFJ5" class="metacarpal" axis="0.573576 0 -0.819152"/>
             <geom class="plastic_visual" mesh="lf_metacarpal"/>
-            <geom size="0.011 0.012 0.025" pos="-0.002 0 0.033" type="box"
-                class="plastic_collision"/>
+            <geom size="0.011 0.012 0.025" pos="-0.002 0 0.033" type="box" class="plastic_collision"/>
             <body name="lh_lfknuckle" pos="0 0 0.06579">
-              <inertial mass="0.008" pos="0 0 0" quat="0.5 0.5 -0.5 0.5"
-                  diaginertia="3.2e-07 2.6e-07 2.6e-07"/>
+              <inertial mass="0.008" pos="0 0 0" quat="0.5 0.5 -0.5 0.5" diaginertia="3.2e-07 2.6e-07 2.6e-07"/>
               <joint name="lh_LFJ4" class="knuckle"/>
               <geom pos="0 0 0.0005" class="plastic_visual" mesh="f_knuckle" material="metallic"/>
               <geom size="0.009 0.009" quat="1 0 1 0" type="cylinder" class="plastic_collision"/>
               <body name="lh_lfproximal">
-                <inertial mass="0.03" pos="0 0 0.0225" quat="1 0 0 1"
-                    diaginertia="1e-05 9.8e-06 1.8e-06"/>
+                <inertial mass="0.03" pos="0 0 0.0225" quat="1 0 0 1" diaginertia="1e-05 9.8e-06 1.8e-06"/>
                 <joint name="lh_LFJ3" class="proximal"/>
                 <geom class="plastic_visual" mesh="f_proximal"/>
                 <geom size="0.009 0.02" pos="0 0 0.025" type="capsule" class="plastic_collision"/>
                 <body name="lh_lfmiddle" pos="0 0 0.045">
-                  <inertial mass="0.017" pos="0 0 0.0125" quat="1 0 0 1"
-                      diaginertia="2.7e-06 2.6e-06 8.7e-07"/>
+                  <inertial mass="0.017" pos="0 0 0.0125" quat="1 0 0 1" diaginertia="2.7e-06 2.6e-06 8.7e-07"/>
                   <joint name="lh_LFJ2" class="middle_distal"/>
                   <geom class="plastic_visual" mesh="f_middle"/>
-                  <geom size="0.009 0.0125" pos="0 0 0.0125" type="capsule"
-                      class="plastic_collision"/>
+                  <geom size="0.009 0.0125" pos="0 0 0.0125" type="capsule" class="plastic_collision"/>
                   <body name="lh_lfdistal" pos="0 0 0.025">
                     <inertial mass="0.013" pos="0 0 0.0130769" quat="1 0 0 1"
-                        diaginertia="1.28092e-06 1.12092e-06 5.3e-07"/>
+                      diaginertia="1.28092e-06 1.12092e-06 5.3e-07"/>
                     <joint name="lh_LFJ1" class="middle_distal"/>
                     <geom class="plastic_visual" mesh="f_distal_pst"/>
                     <geom class="plastic_collision" type="mesh" mesh="f_distal_pst"/>
@@ -276,12 +249,11 @@
                   <inertial mass="0.02" pos="0 0 0.016" diaginertia="5.1e-06 5.1e-06 1.21e-06"/>
                   <joint name="lh_THJ2" class="thmiddle"/>
                   <geom class="plastic_visual" mesh="th_middle"/>
-                  <geom size="0.009 0.009" pos="0 0 0.012" type="capsule"
-                      class="plastic_collision"/>
+                  <geom size="0.009 0.009" pos="0 0 0.012" type="capsule" class="plastic_collision"/>
                   <geom size="0.01" pos="0 0 0.03" class="plastic_collision"/>
                   <body name="lh_thdistal" pos="0 0 0.032" quat="1 0 0 -1">
                     <inertial mass="0.017" pos="0 0 0.0145588" quat="1 0 0 1"
-                        diaginertia="2.37794e-06 2.27794e-06 1e-06"/>
+                      diaginertia="2.37794e-06 2.27794e-06 1e-06"/>
                     <joint name="lh_THJ1" class="thdistal"/>
                     <geom class="plastic_visual" mesh="th_distal_pst"/>
                     <geom class="plastic_collision" type="mesh" mesh="th_distal_pst"/>

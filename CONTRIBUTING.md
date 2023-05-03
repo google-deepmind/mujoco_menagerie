@@ -14,7 +14,7 @@ Whether you want to fix an issue with an existing model, improve it, or add a co
 
 Once we reach an agreement on the proposed change, please submit a [pull request](https://github.com/deepmind/mujoco_menagerie/pulls) (PR) so that we can review your implementation.
 
-## Code Style
+## XML Style
 
 You can browse existing models to get a general sense of the style we adopt for our MJCF (XML) files. In no particular order, we try to adhere to the following guidelines:
 
@@ -22,6 +22,17 @@ You can browse existing models to get a general sense of the style we adopt for 
 - Make generous use of default classes to reduce redundancies in the kinematic tree
 - Preserve attribute ordering: compiler, asset and default class definitions first, then worldbody and actuators, etc.
 - Always have a `scene.xml` that includes the model
+
+Furthermore, we automatically format our XMLs in [Visual Studio Code](https://code.visualstudio.com/) using the [XML Language Support by Red Hat](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-xml) extension. Once installed, you will need to edit its settings as follows:
+
+- View > Command Palette > `Preferences: Open User Settings`
+- Search for XML
+- `Enforce quote style` → preferred
+- `Max line width` → 120
+- `Preserve attribute line breaks` → toggle OFF
+- `Xml › Format: Space Before Empty Close Tag` → toggle OFF
+
+Once installed, you can format an XML file by opening the command palette and executing `Format Document`.
 
 ## Unit Tests
 

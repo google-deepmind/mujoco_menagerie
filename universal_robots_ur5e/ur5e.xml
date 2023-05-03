@@ -108,7 +108,7 @@
                 <geom class="collision" pos="0 0.02 0.1" quat="1 1 0 0" size="0.04 0.04"/>
                 <body name="wrist_3_link" pos="0 0 0.1">
                   <inertial mass="0.1889" pos="0 0.0771683 0" quat="1 0 0 1"
-                      diaginertia="0.000132134 9.90863e-05 9.90863e-05"/>
+                    diaginertia="0.000132134 9.90863e-05 9.90863e-05"/>
                   <joint name="wrist_3_joint" class="size1"/>
                   <geom material="linkgray" mesh="wrist3" class="visual"/>
                   <geom class="eef_collision" pos="0 0.08 0" quat="1 1 0 0" size="0.04 0.02"/>
@@ -132,7 +132,6 @@
   </actuator>
 
   <keyframe>
-    <key name="home" qpos="-1.5708 -1.5708 1.5708 -1.5708 -1.5708 0"
-        ctrl="-1.5708 -1.5708 1.5708 -1.5708 -1.5708 0"/>
+    <key name="home" qpos="-1.5708 -1.5708 1.5708 -1.5708 -1.5708 0" ctrl="-1.5708 -1.5708 1.5708 -1.5708 -1.5708 0"/>
   </keyframe>
 </mujoco>
