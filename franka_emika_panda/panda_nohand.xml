@@ -1,7 +1,7 @@
 <mujoco model="panda nohand">
   <compiler angle="radian" meshdir="assets" autolimits="true"/>
 
-  <option integrator="implicit" impratio="10"/>
+  <option integrator="implicitfast" impratio="10"/>
 
   <default>
     <default class="panda">
