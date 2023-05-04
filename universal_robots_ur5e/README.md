@@ -23,9 +23,8 @@ description](https://github.com/ros-industrial/universal_robot/tree/kinetic-deve
 4. Loaded the URDF into MuJoCo and saved a corresponding MJCF.
 5. Added a tracking light to the base.
 6. Manually edited the MJCF to extract common properties into the `<default>` section.
-7. Added position-controlled actuators and joint damping and armature. Note
-   that these values have not been carefully tuned -- contributions are more
-   than welcome to improve them.
+7. Added position-controlled actuators. Max joint torque values were taken from
+   [here](https://www.universal-robots.com/articles/ur/robot-care-maintenance/max-joint-torques/).
 8. Added home joint configuration as a `keyframe`.
 9. Manually designed collision geometries.
 10. Added `scene.xml` which includes the robot, with a textured ground plane, skybox and haze.
