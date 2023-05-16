@@ -1,5 +1,7 @@
 # Shadow Hand E3M5 Description (MJCF)
 
+Requires MuJoCo 2.2.2 or later.
+
 ## Overview
 
 This package contains assets of the "E3M5" version of the Shadow Hand robot,

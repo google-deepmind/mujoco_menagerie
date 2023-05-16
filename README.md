@@ -32,7 +32,7 @@ A physics simulator is only as good as the model it is simulating, and in a powe
 
 ### Prerequisites
 
-Menagerie's only requirement is MuJoCo version 2.2.2 or higher. You can download prebuilt binaries from the GitHub [releases page](https://github.com/deepmind/mujoco/releases/), or if you are working with Python, you can install the native bindings from [PyPI](https://pypi.org/project/mujoco/) via `pip install mujoco>=2.2.2`. For alternative installation instructions, see [here](https://github.com/deepmind/mujoco#installation).
+The minimum required MuJoCo version for each model is specified in its respective README. You can download prebuilt binaries from the GitHub [releases page](https://github.com/deepmind/mujoco/releases/), or if you are working with Python, you can install the native bindings from [PyPI](https://pypi.org/project/mujoco/) via `pip install mujoco`. For alternative installation instructions, see [here](https://github.com/deepmind/mujoco#installation).
 
 ### Overview
 

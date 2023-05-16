@@ -1,5 +1,7 @@
 # Robotiq 2F-85 Description (MJCF)
 
+Requires MuJoCo 2.2.2 or later.
+
 ## Overview
 
 This package contains a simplified robot description (MJCF) of the [Robotiq 85mm

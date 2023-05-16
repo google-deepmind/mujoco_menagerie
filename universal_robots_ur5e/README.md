@@ -1,5 +1,7 @@
 # Universal Robots UR5e Description (MJCF)
 
+Requires MuJoCo 2.3.3 or later.
+
 ## Overview
 
 This package contains a simplified robot description (MJCF) of the
