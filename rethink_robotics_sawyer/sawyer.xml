@@ -1,0 +1,230 @@
+<mujoco model="sawyer">
+  <compiler angle="radian" meshdir="assets" autolimits="true"/>
+
+  <option integrator="implicit"/>
+
+  <default>
+    <default class="sawyer">
+      <material specular="0.5" shininess="0.25"/>
+      <joint axis="0 0 1"/>
+      <general dyntype="none" biastype="affine"/>
+      <default class="visual">
+        <geom group="2" type="mesh" contype="0" conaffinity="0"/>
+      </default>
+      <default class="collision">
+        <geom group="3" type="capsule" rgba="0.5 0.5 0.5 1"/>
+        <default class="eef_collision">
+          <geom type="cylinder"/>
+        </default>
+      </default>
+      <site size="0.001" rgba="0.5 0.5 0.5 0.3" group="4"/>
+
+      <default class="large_joint">
+        <joint frictionloss="0.3" armature="1" damping="0.1"/>
+        <general gainprm="800" biasprm="0 -800 -80" forcerange="-80 80"/>
+      </default>
+      <default class="medium_joint">
+        <joint frictionloss="0.3" armature="1" damping="0.1"/>
+        <general gainprm="800" biasprm="0 -800 -80" forcerange="-40 40"/>
+      </default>
+      <default class="small_joint">
+        <joint frictionloss="0.1" armature="1" damping="0.1"/>
+        <general gainprm="500" biasprm="0 -500 -50" forcerange="-9 9"/>
+      </default>
+    </default>
+  </default>
+
+  <asset>
+    <material class="sawyer" name="red" rgba="0.5 0.1 0.1 1"/>
+    <material class="sawyer" name="black" rgba="0.2 0.2 0.2 1"/>
+    <material class="sawyer" name="white" rgba="1 1 1 1"/>
+    <material class="sawyer" name="off_white" rgba="0.792157 0.819608 0.929412 1"/>
+    <material class="sawyer" name="Mtl3" rgba="0.168627 0.152941 0.141176 1"/>
+    <material class="sawyer" name="Mtl4" rgba="1 0.403922 0.121569 1"/>
+    <material class="sawyer" name="Mtl7" rgba="0.250980 0.250980 0.250980 1"/>
+    <material class="sawyer" name="dark_black" specular="0.0" shininess="0.25" rgba="0 0 0 1"/>
+    <material class="sawyer" name="Mtl5.001" rgba="0.870588 0.309804 0.086275 1"/>
+    <material class="sawyer" name="Mtl7.001" rgba="0.698039 0.698039 0.698039 1"/>
+    <material class="sawyer" name="Mtl5.002" rgba="0.105882 0.105882 0.105882 1"/>
+    <material class="sawyer" name="Mtl6.002" rgba="0.749020 0.749020 0.749020 1"/>
+    <material class="sawyer" name="Mtl4_001" rgba="0.866667 0.905882 1 1"/>
+    <material class="sawyer" name="Mtl5_001" rgba="0.501961 0.501961 0.501961 1"/>
+
+    <mesh file="pedestal.obj"/>
+    <mesh file="base_0.obj"/>
+    <mesh file="base_1.obj"/>
+    <mesh file="l0_0.obj"/>
+    <mesh file="l0_1.obj"/>
+    <mesh file="l0_2.obj"/>
+    <mesh file="l0_3.obj"/>
+    <mesh file="l0_4.obj"/>
+    <mesh file="l0_5.obj"/>
+    <mesh file="l0_6.obj"/>
+    <mesh file="l1_0.obj"/>
+    <mesh file="l1_1.obj"/>
+    <mesh file="l1_2.obj"/>
+    <mesh file="l2_0.obj"/>
+    <mesh file="l2_1.obj"/>
+    <mesh file="l2_2.obj"/>
+    <mesh file="l2_3.obj"/>
+    <mesh file="l2_4.obj"/>
+    <mesh file="l3_0.obj"/>
+    <mesh file="l3_1.obj"/>
+    <mesh file="l3_2.obj"/>
+    <mesh file="l3_3.obj"/>
+    <mesh file="l4_0.obj"/>
+    <mesh file="l4_1.obj"/>
+    <mesh file="l4_2.obj"/>
+    <mesh file="l4_3.obj"/>
+    <mesh file="l4_4.obj"/>
+    <mesh file="l4_5.obj"/>
+    <mesh file="l4_6.obj"/>
+    <mesh file="l4_7.obj"/>
+    <mesh file="l5_0.obj"/>
+    <mesh file="l5_1.obj"/>
+    <mesh file="l5_2.obj"/>
+    <mesh file="l5_3.obj"/>
+    <mesh file="l5_4.obj"/>
+    <mesh file="l6_0.obj"/>
+    <mesh file="l6_1.obj"/>
+    <mesh file="l6_2.obj"/>
+    <mesh file="l6_3.obj"/>
+    <mesh file="l6_4.obj"/>
+    <mesh file="l6_5.obj"/>
+    <mesh file="head_0.obj"/>
+    <mesh file="head_2.obj"/>
+    <mesh file="head_3.obj"/>
+    <mesh file="head_5.obj"/>
+    <mesh file="head_6.obj"/>
+    <mesh file="head_7.obj"/>
+    <mesh file="head_8.obj"/>
+    <mesh file="head_9.obj"/>
+  </asset>
+
+  <worldbody>
+    <light name="top" pos="0 0 2" mode="trackcom"/>
+    <body name="base" childclass="sawyer">
+      <inertial mass="2.0687" pos="-0.0006241 -2.8025E-05 0.065404"
+        fullinertia="0.0067599 0.0067877 0.0074031 -4.2024E-05 -6.1904E-07 1.5888E-05"/>
+      <geom mesh="base_0" material="black" class="visual"/>
+      <geom mesh="base_1" material="red" class="visual"/>
+      <body name="right_l0" pos="0 0 0.08">
+        <inertial mass="5.3213" pos="0.0243645 0.0109688 0.143631" quat="0.894821 0.0089945 -0.17028 0.412576"
+          diaginertia="0.0651599 0.0510954 0.0186221"/>
+        <joint name="right_j0" class="large_joint" range="-3.0503 3.0503"/>
+        <geom mesh="l0_0" material="Mtl7" class="visual"/>
+        <geom mesh="l0_1" material="off_white" class="visual"/>
+        <geom mesh="l0_2" material="red" class="visual"/>
+        <geom mesh="l0_3" material="Mtl4" class="visual"/>
+        <geom mesh="l0_4" material="Mtl3" class="visual"/>
+        <geom mesh="l0_5" material="white" class="visual"/>
+        <geom mesh="l0_6" material="black" class="visual"/>
+        <geom class="collision" fromto="0 0 -0.005 0 0 0.25" size="0.07"/>
+        <body name="head" pos="0 0 0.2965">
+          <inertial mass="1.5795" pos="0.00532226 -2.65473e-05 0.1021"
+            quat="0.999993 7.08384e-05 -0.00359812 -0.000626267" diaginertia="0.0118334 0.00827097 0.00496582"/>
+          <!-- <joint name="head_pan" range="-5.0952 0.9064"/> -->
+          <geom mesh="head_0" material="black" class="visual"/>
+          <geom mesh="head_2" material="off_white" class="visual"/>
+          <geom mesh="head_3" material="Mtl7" class="visual"/>
+          <geom mesh="head_5" material="black" class="visual"/>
+          <geom mesh="head_6" material="white" class="visual"/>
+          <geom mesh="head_7" material="dark_black" class="visual"/>
+          <geom mesh="head_8" material="red" class="visual"/>
+          <geom mesh="head_9" material="Mtl5.001" class="visual"/>
+          <geom class="collision" fromto="-0.005 0 0.02 -0.005 0 0.205" size="0.04"/>
+          <geom class="collision" type="box" pos="0.025 0 0.1" size="0.01 0.13 0.08"/>
+        </body>
+        <body name="right_l1" pos="0.081 0.05 0.237" quat="1 -1 1 1">
+          <inertial mass="4.505" pos="-0.0030849 -0.026811 0.092521" quat="0.424888 0.891987 0.132364 -0.0794294"
+            diaginertia="0.0224339 0.0221624 0.00970971"/>
+          <joint name="right_j1" class="large_joint" range="-3.8095 2.2736"/>
+          <geom mesh="l1_0" material="black" class="visual"/>
+          <geom mesh="l1_1" material="red" class="visual"/>
+          <geom mesh="l1_2" material="white" class="visual"/>
+          <geom class="collision" fromto="0 0 -0.06 0 0 0.13" size="0.068"/>
+          <body name="right_l2" pos="0 -0.14 0.1425" quat="1 1 0 0">
+            <inertial mass="1.745" pos="-0.00016044 -0.014967 0.13582" quat="0.707831 -0.0524761 0.0516006 0.702537"
+              diaginertia="0.0257928 0.025506 0.00292516"/>
+            <joint name="right_j2" class="medium_joint" range="-3.0426 3.0426"/>
+            <geom mesh="l2_0" material="off_white" class="visual"/>
+            <geom mesh="l2_1" material="Mtl5.002" class="visual"/>
+            <geom mesh="l2_2" material="white" class="visual"/>
+            <geom mesh="l2_3" material="black" class="visual"/>
+            <geom mesh="l2_4" material="red" class="visual"/>
+            <geom class="collision" fromto="0 0 -0.15 0 0 0.26" size="0.055"/>
+            <body name="right_l3" pos="0 -0.042 0.26" quat="1 -1 0 0">
+              <inertial mass="2.5097" pos="-0.0048135 -0.0281 -0.084154" quat="0.902999 0.385391 -0.0880901 0.168247"
+                diaginertia="0.0102404 0.0096997 0.00369622"/>
+              <joint name="right_j3" class="medium_joint" range="-3.0439 3.0439"/>
+              <geom mesh="l3_0" material="off_white" class="visual"/>
+              <geom mesh="l3_1" material="red" class="visual"/>
+              <geom mesh="l3_2" material="white" class="visual"/>
+              <geom mesh="l3_3" material="black" class="visual"/>
+              <geom class="collision" fromto="0 0 -0.115 0 0 0.03" size="0.055"/>
+              <body name="right_l4" pos="0 -0.125 -0.1265" quat="1 1 0 0">
+                <inertial mass="1.1136" pos="-0.00188917 0.00689948 0.134095"
+                  quat="0.803247 0.031244 -0.0298409 0.594077" diaginertia="0.0136555 0.0135498 0.00127385"/>
+                <joint name="right_j4" class="small_joint" range="-2.9761 2.9761"/>
+                <geom mesh="l4_0" material="Mtl7" class="visual"/>
+                <geom mesh="l4_1" material="black" class="visual"/>
+                <geom mesh="l4_2" material="Mtl6.002" class="visual"/>
+                <geom mesh="l4_3" material="white" class="visual"/>
+                <geom mesh="l4_4" material="off_white" class="visual"/>
+                <geom mesh="l4_5" material="dark_black" class="visual"/>
+                <geom mesh="l4_6" material="red" class="visual"/>
+                <geom mesh="l4_7" material="black" class="visual"/>
+                <geom class="collision" fromto="0 0 -0.13 0 0 0.27" size="0.045"/>
+                <body name="right_l5" pos="0 0.031 0.275" quat="1 -1 0 0">
+                  <inertial mass="1.5625" pos="0.0061133 -0.023697 0.076416" quat="0.404076 0.9135 0.0473125 0.00158335"
+                    diaginertia="0.00474131 0.00422857 0.00190672"/>
+                  <joint name="right_j5" class="small_joint" range="-2.9761 2.9761"/>
+                  <geom mesh="l5_0" material="Mtl5_001" class="visual"/>
+                  <geom mesh="l5_1" material="Mtl4_001" class="visual"/>
+                  <geom mesh="l5_2" material="white" class="visual"/>
+                  <geom mesh="l5_3" material="red" class="visual"/>
+                  <geom mesh="l5_4" material="black" class="visual"/>
+                  <geom fromto="0 0 -0.02 0 0 0.1" size="0.045" class="collision"/>
+                  <geom fromto="0 0 0.105 0 -0.082 0.105" size="0.045" class="collision"/>
+                  <body name="right_l6" pos="0 -0.11 0.1053" quat="0.0616248 0.06163 -0.704416 0.704416">
+                    <inertial mass="0.3292" pos="-8.0726e-06 0.0085838 -0.0049566"
+                      quat="0.479044 0.515636 -0.513069 0.491321" diaginertia="0.000360268 0.000311078 0.000214984"/>
+                    <joint name="right_j6" class="small_joint" range="-4.7124 4.7124"/>
+                    <geom mesh="l6_0" material="Mtl4" class="visual"/>
+                    <geom mesh="l6_1" material="white" class="visual"/>
+                    <geom mesh="l6_2" material="red" class="visual"/>
+                    <geom mesh="l6_3" material="black" class="visual"/>
+                    <geom mesh="l6_4" material="black" class="visual"/>
+                    <geom mesh="l6_5" material="black" class="visual"/>
+                    <geom class="eef_collision" size="0.045 0.02"/>
+                    <site name="attachment_site" pos="0 0 0.0245" quat="0 0 0 1"/>
+                  </body>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+
+  <contact>
+    <exclude body1="base" body2="right_l0"/>
+  </contact>
+
+  <actuator>
+    <general name="a0" joint="right_j0" class="large_joint" ctrlrange="-3.0503 3.0503"/>
+    <!-- <general name="head" joint="head_pan" class="small_joint" ctrlrange="-5.0952 0.9064" forcerange="-8 8"/> -->
+    <general name="a1" joint="right_j1" class="large_joint" ctrlrange="-3.8095 2.2736"/>
+    <general name="a2" joint="right_j2" class="medium_joint" ctrlrange="-3.0426 3.0426"/>
+    <general name="a3" joint="right_j3" class="medium_joint" ctrlrange="-3.0439 3.0439"/>
+    <general name="a4" joint="right_j4" class="small_joint" ctrlrange="-2.9761 2.9761"/>
+    <general name="a5" joint="right_j5" class="small_joint" ctrlrange="-2.9761 2.9761"/>
+    <general name="a6" joint="right_j6" class="small_joint" ctrlrange="-4.7124 4.7124"/>
+  </actuator>
+
+  <keyframe>
+    <key name="home" qpos="0 -1.18 0 2.18 0 0.57 3.3161" ctrl="0 -1.18 0 2.18 0 0.57 3.3161"/>
+    <!-- <key name="home" qpos="0 0 -1.18 0 2.18 0 0.57 3.3161" ctrl="0 0 -1.18 0 2.18 0 0.57 3.3161"/> -->
+  </keyframe>
+</mujoco>

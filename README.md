@@ -19,9 +19,9 @@
 A physics simulator is only as good as the model it is simulating, and in a powerful simulator like MuJoCo with many modeling options, it is easy to create "bad" models which do not behave as expected. The goal of this collection is to provide the community with a curated library of well-designed models that work well right out of the gate.
 
 - [Getting Started](#getting-started)
-    - [Prerequisites](#prerequisites)
-    - [Overview](#overview)
-    - [Installation and Usage](#installation-and-usage)
+  - [Prerequisites](#prerequisites)
+  - [Overview](#overview)
+  - [Installation and Usage](#installation-and-usage)
 - [Model Quality and Contributing](#model-quality-and-contributing)
 - [Menagerie Models](#menagerie-models)
 - [Citing Menagerie](#citing-menagerie)
@@ -118,13 +118,19 @@ Menagerie, see [CONTRIBUTING](CONTRIBUTING.md).
 | Robot             | Preview       | Grade   |
 | ----------------- | ------------- | :-----: |
 | [Shadow E3M5](shadow_hand/README.md)|[<img src="shadow_hand/shadow_hand.png" width="400">](shadow_hand/README.md)|A|
+| [Allegro V3](wonik_allegro/README.md)|[<img src="wonik_allegro/allegro_hand.png" width="400">](wonik_allegro/README.md)|C|
 | [Robotiq 2F-85](robotiq_2f85/README.md)|[<img src="robotiq_2f85/2f85.png" width="400">](robotiq_2f85/README.md)|B|
 | [Cassie](agility_cassie/README.md)|[<img src="agility_cassie/cassie.png" width="400">](agility_cassie/README.md)|C|
+| [Robotis OP3](robotis_op3/README.md)|[<img src="robotis_op3/op3.png" width="400">](robotis_op3/README.md)|A|
 | [ANYmal B](anybotics_anymal_b/README.md)|[<img src="anybotics_anymal_b/anymal_b.png" width="400">](anybotics_anymal_b/README.md)|A|
 | [ANYmal C](anybotics_anymal_c/README.md)|[<img src="anybotics_anymal_c/anymal_c.png" width="400">](anybotics_anymal_c/README.md)|B|
 | [Unitree A1](unitree_a1/README.md)|[<img src="unitree_a1/a1.png" width="400">](unitree_a1/README.md)|B|
+| [Unitree Go1](unitree_go1/README.md)|[<img src="unitree_go1/go1.png" width="400">](unitree_go1/README.md)|B|
 | [Panda](franka_emika_panda/README.md)|[<img src="franka_emika_panda/panda.png" width="400">](franka_emika_panda/README.md)|B|
 | [UR5e](universal_robots_ur5e/README.md)|[<img src="universal_robots_ur5e/ur5e.png" width="400">](universal_robots_ur5e/README.md)|B|
+| [KUKA iiwa 14](kuka_iiwa_14/README.md)|[<img src="kuka_iiwa_14/iiwa_14.png" width="400">](kuka_iiwa_14/README.md)|B|
+| [Sawyer](rethink_robotics_sawyer/README.md)|[<img src="rethink_robotics_sawyer/sawyer.png" width="400">](rethink_robotics_sawyer/README.md)|C|
+| [Realsense D435i](realsense_d435i/README.md)|[<img src="realsense_d435i/d435i.png" width="400">](realsense_d435i/README.md)|B|
 
 For corresponding embedded videos, see the MuJoCo [documentation](https://mujoco.readthedocs.io/en/latest/models.html).
 
