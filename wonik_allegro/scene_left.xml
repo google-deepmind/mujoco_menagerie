@@ -17,6 +17,8 @@
     <material name="groundplane" texture="groundplane" texuniform="true" texrepeat="5 5" reflectance="0.2"/>
   </asset>
 
+  <option cone="elliptic"/>
+
   <worldbody>
     <light pos="0 0 1"/>
     <light pos="0.3 0 1.5" dir="0 0 -1" directional="true"/>
@@ -24,7 +26,7 @@
     <body name="object" pos="0 0 0.1">
       <freejoint/>
       <geom type="ellipsoid" size="0.03 0.04 0.02" rgba="0.5 0.7 0.5 1" condim="6" priority="1"
-        friction="0.5 0.01 0.003"/>
+        friction="0.7 0.002 0.002"/>
     </body>
   </worldbody>
 
