@@ -14,7 +14,7 @@
   </a>
 </p>
 
-**Menagerie** is a collection of high-quality models for the [MuJoCo](https://mujoco.org/) physics engine, curated by DeepMind.
+**Menagerie** is a collection of high-quality models for the [MuJoCo](https://mujoco.org/) physics engine, curated by Google DeepMind.
 
 A physics simulator is only as good as the model it is simulating, and in a powerful simulator like MuJoCo with many modeling options, it is easy to create "bad" models which do not behave as expected. The goal of this collection is to provide the community with a curated library of well-designed models that work well right out of the gate.
 
@@ -157,8 +157,8 @@ and engineers who made MuJoCo Menagerie possible.
 We'd like to thank Pedro Vergani for his help with visuals and design.
 
 The main effort required to make this repository publicly available was
-undertaken by [Kevin Zakka](https://kzakka.com/), with help from the DeepMind
-Robotics Simulation team.
+undertaken by [Kevin Zakka](https://kzakka.com/), with help from the Robotics
+Simulation team at Google DeepMind.
 
 ## License and Disclaimer
 
