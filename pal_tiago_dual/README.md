@@ -5,12 +5,15 @@ Requires MuJoCo 2.2.2 or later.
 
 This package contains a simplified robot description (MJCF) of the [Tiago Dual Robot](https://pal-robotics.com/robots/tiago/) with omnidirectional base by [PAL Robotics](https://pal-robotics.com/). It is derived from the publicy available [URDF description](https://github.com/pal-robotics/tiago_dual_robot/blob/kinetic-devel/tiago_dual_description/robots/tiago_dual.urdf.xacro). 
 
-`![image](./tiago_dual.png)`
+<p float="left">
+  <img src="tiago_dual.png" width="400">
+</p>
+
 
 ### URDF -> MJCF derivation steps
 
  1. Converted the .DAE meshes to .STL format
- 2.  Added   `<mujoco>  <compiler meshdir="../meshes/" strippath="false"balanceinertia="true" 		autolimits="true" discardvisual="false"/> </mujoco>` to the URDF in order to preserve visual geometries and configure other [parameters](https://mujoco.readthedocs.io/en/stable/XMLreference.html#compiler).
+ 2.  Added   `<mujoco>  <compiler meshdir="../meshes/" strippath="false"balanceinertia="true" autolimits="true" discardvisual="false"/> </mujoco>` to the URDF in order to preserve visual geometries and configure other [parameters](https://mujoco.readthedocs.io/en/stable/XMLreference.html#compiler).
  3.  Removed all `<collision>` elements in the URDF that created a bug with geometries.
  4. Removed `package://` shortcuts and fixed file paths to use assets only from the local `assets` folder. 
  5.  Used the MuJoCo compiler with `compile` command to convert the URDF file to MJCF  format.

@@ -5,7 +5,10 @@ Requires MuJoCo 2.2.2 or later.
 
 This package contains a simplified robot description (MJCF) of the [Tiago Robot](https://pal-robotics.com/robots/tiago/) by [PAL Robotics](https://pal-robotics.com/). It is derived from the publicy available [URDF description](https://github.com/pal-robotics/tiago_robot/blob/kinetic-devel/tiago_description/robots/tiago.urdf.xacro). 
 
-`![image](./tiago.png)`
+<p float="left">
+  <img src="tiago.png" width="400">
+</p>
+
 
 ### URDF -> MJCF derivation steps
 
