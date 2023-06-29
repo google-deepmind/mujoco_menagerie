@@ -1,0 +1,29 @@
+<mujoco model="tiago">
+
+  <include file="tiago.xml"/>
+  <actuator>
+    <!-- Arm actuators -->
+    <motor name="arm_1_joint_motor" joint="arm_1_joint"/>
+    <motor name="arm_2_joint_motor" joint="arm_2_joint"/>
+    <motor name="arm_3_joint_motor" joint="arm_3_joint"/>
+    <motor name="arm_4_joint_motor" joint="arm_4_joint"/>
+    <!-- Wrist actuators -->
+    <motor name="arm_5_joint_motor" joint="arm_5_joint"/>
+    <motor name="arm_6_joint_motor" joint="arm_6_joint"/>
+    <motor name="arm_7_joint_motor" joint="arm_7_joint"/>
+    <!-- End effector actuators -->
+    <position name="gripper_left_finger_position" joint="gripper_left_finger_joint" inheritrange="0.999"
+      forcerange="-64 64" kp="1000"/>
+    <position name="gripper_right_finger_position" joint="gripper_right_finger_joint" inheritrange="0.999"
+      forcerange="-64 64" kp="1000"/>
+    <!-- Head actuators -->
+    <position name="head_1_joint_position" joint="head_1_joint" inheritrange="1.0" kp="20"/>
+    <position name="head_2_joint_position" joint="head_2_joint" inheritrange="1.0" kp="20"/>
+    <!-- Torso actuators -->
+    <position name="torso_lift_joint_position" joint="torso_lift_joint" inheritrange="1.0" kp="5000"/>
+    <!-- Wheel actuators -->
+    <velocity name="wheel_left_joint_vel" joint="wheel_left_joint" ctrlrange="-5 5" kv="100"/>
+    <velocity name="wheel_right_joint_vel" joint="wheel_right_joint" ctrlrange="-5 5" kv="100"/>
+  </actuator>
+
+</mujoco>
