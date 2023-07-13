@@ -1,9 +1,10 @@
-## Tiago Dual Description (MJCF)
+## TIAGo++ Description (MJCF)
+
 Requires MuJoCo 2.2.2 or later.
 
 ### Overiew
 
-This package contains a simplified robot description (MJCF) of the [Tiago Dual Robot](https://pal-robotics.com/robots/tiago/) with omnidirectional base by [PAL Robotics](https://pal-robotics.com/). It is derived from the publicy available [URDF description](https://github.com/pal-robotics/tiago_dual_robot/blob/kinetic-devel/tiago_dual_description/robots/tiago_dual.urdf.xacro). 
+This package contains a simplified robot description (MJCF) of the [TIAGo++ Robot](https://pal-robotics.com/robots/tiago/) with omnidirectional base by [PAL Robotics](https://pal-robotics.com/). It is derived from the publicy available [URDF description](https://github.com/pal-robotics/tiago_dual_robot/blob/kinetic-devel/tiago_dual_description/). 
 
 <p float="left">
   <img src="tiago_dual.png" width="400">
@@ -25,3 +26,5 @@ This package contains a simplified robot description (MJCF) of the [Tiago Dual R
 
 
 ### License
+
+This model is released under an [Apache-2.0 License](LICENSE).
