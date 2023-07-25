@@ -1,7 +1,6 @@
 <mujoco model="tiago">
   <compiler angle="radian" meshdir="./assets/" autolimits="true"/>
 
-
   <option timestep="0.001" />
 
   <asset>
@@ -172,16 +171,10 @@
   </worldbody>
 
   <actuator>
-
-    <!-- THAT PART WAS NOT AUTOMATICALY GENERATED: MISTAKES MAY SUBSIST -->
-
-
-    <!-- ARM ACTUATORS-->
-
+    <!-- Arm Actuators-->
     <motor name="arm_1_joint_motor" joint="arm_1_joint" />
     <position name="arm_position_1_servo" joint="arm_1_joint" kp="50000"/>
     <velocity name="arm_velocity_1_servo" joint="arm_1_joint" ctrlrange="-1.95 1.95" kv="10"/>
-
 
     <motor name="arm_2_joint_motor" joint="arm_2_joint" />
     <position name="arm_position_2_servo" joint="arm_2_joint" kp="5000" />
@@ -195,16 +188,10 @@
     <position name="arm_position_4_servo" joint="arm_4_joint" kp="500"/>
     <velocity name="arm_velocity_4_servo" joint="arm_4_joint" ctrlrange="-2.35 2.35" kv="10"/>
 
-
-
-
-    <!-- WRIST ACTUATORS-->
-
+    <!-- Wrist Actuators -->
     <motor name="arm_5_joint_motor" joint="arm_5_joint" forcerange="-3 3"/>
     <position name="arm_position_5_servo" joint="arm_5_joint" forcerange="-3 3" kp="20"/>
     <velocity name="arm_velocity_5_servo" joint="arm_5_joint" ctrlrange="-1.95 1.95" forcerange="-3 3" kv="1"/>
-
-
 
     <motor name="arm_6_joint_motor" joint="arm_6_joint" forcerange="-6.6 6.6"/>
     <position name="arm_position_6_servo" joint="arm_6_joint" forcerange="-6.6 6.6" kp="20"/>
@@ -214,11 +201,7 @@
     <position name="arm_position_7_servo" joint="arm_7_joint" kp="20"/>
     <velocity name="arm_velocity_7_servo" joint="arm_7_joint" ctrlrange="-1.76 1.76" kv="1"/>
 
-
-    <!-- END EFFECTOR ACTUATORS-->
-
-
-
+    <!-- End-effector Actuators -->
     <motor name="gripper_left_finger_joint_motor" joint="gripper_left_finger_joint" forcerange="-64 64"/>
     <position name="gripper_left_finger_position" joint="gripper_left_finger_joint" forcerange="-64 64" kp="20"/>
     <velocity name="gripper_left_finger_velocity" joint="gripper_left_finger_joint" ctrlrange="-0.05 0.05" forcerange="-64 64" kv="1"/>
@@ -227,10 +210,7 @@
     <position name="gripper_right_finger_position" joint="gripper_right_finger_joint" forcerange="-64 64" kp="20"/>
     <velocity name="gripper_right_finger_velocity" joint="gripper_right_finger_joint" ctrlrange="-0.05 0.05" forcerange="-64 64" kv="1"/>
 
-
-    <!-- HEAD ACTUATORS-->
-
-
+    <!-- Head Actuators -->
     <motor name="head_1_joint_motor" joint="head_1_joint" />
     <position name="head_1_joint_position" joint="head_1_joint" kp="20"/>
     <velocity name="head_1_joint_vel" joint="head_1_joint" ctrlrange="-3 3" kv="1"/>
@@ -239,60 +219,40 @@
     <position name="head_2_joint_position" joint="head_2_joint" forcerange="-2.77 2.77" kp="20"/>
     <velocity name="head_2_joint_vel" joint="head_2_joint" ctrlrange="-3 3" forcerange="-2.77 2.77" kv="1"/>
 
-    <!-- TORSO ACTUATORS-->
-
-
-
+    <!-- Torso Actuators -->
     <motor name="torso_lift_joint_motor" joint="torso_lift_joint" forcerange="-6 6" />
     <position name="torso_lift_joint_position" joint="torso_lift_joint" kp="5000"/>
     <velocity name="torso_lift_joint_vel" joint="torso_lift_joint" ctrlrange="-0.07 0.07" forcerange="-6 6" kv="20"/>
 
-
-
-
+    <!-- Base Suspensions -->
     <motor name="suspension_right_joint_motor" joint="suspension_right_joint" forcerange="-100 100" />
     <position name="suspension_right_joint_position" joint="suspension_right_joint" forcerange="-100 100" kp="500"/>
     <velocity name="suspension_right_joint_vel" joint="suspension_right_joint" ctrlrange="-1 1" forcerange="-100 100" kv="1"/>
-
 
     <motor name="suspension_left_joint_motor" joint="suspension_left_joint" forcerange="-100 100" />
     <position name="suspension_left_joint_position" joint="suspension_left_joint" forcerange="-100 100" kp="500"/>
     <velocity name="suspension_left_joint_vel" joint="suspension_left_joint" ctrlrange="-1 1" forcerange="-100 100" kv="1"/>
 
-
-
-    <!-- WHEEL ACTUATORS -->
-
+    <!-- Wheel Actuators -->
     <position name="wheel_left_joint_position" joint="wheel_left_joint" forcerange="-6 6" kp="10000"/>
     <velocity name="wheel_left_joint_vel" joint="wheel_left_joint" ctrlrange="-5 5" forcerange="-100 100" kv="100"/>
 
-
     <position name="wheel_right_joint_position" joint="wheel_right_joint" forcerange="-6 6" kp="10000"/>
     <velocity name="wheel_right_joint_vel" joint="wheel_right_joint" ctrlrange="-5 5" forcerange="-100 100" kv="100"/>
-
-
-
   </actuator>
 
-
-
-
   <!-- Added collision exclude to avoid unwanted contact forces between robot bodies -->
-
   <contact>
     <exclude body1="arm_1_link" body2="base_link"/>
     <exclude body1="arm_2_link" body2="base_link"/>
     <exclude body1="arm_2_link" body2="arm_1_link"/>
     <exclude body1="torso_lift_link" body2="arm_2_link"/>
-
-
     <exclude body1="wheel_left_link" body2="base_link"/>
     <exclude body1="wheel_right_link" body2="base_link"/>
   </contact>
 
-
   <keyframe>
-    <key name="home3" ctrl="0 0.2 0 0 -1.34 0 0 -0.2 0 0 1.94 0 0 -1.57 0 0 1.37 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.15 0 0 0 0 0 0 0 0 0 0 0" qpos="0 0 -0.985 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.15 0 0 0.20 -1.34 -0.20 1.94 -1.57 1.37 0.0 0 0"/>
+    <key name="home" ctrl="0 0.2 0 0 -1.34 0 0 -0.2 0 0 1.94 0 0 -1.57 0 0 1.37 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.15 0 0 0 0 0 0 0 0 0 0 0" qpos="0 0 -0.985 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.15 0 0 0.20 -1.34 -0.20 1.94 -1.57 1.37 0.0 0 0"/>
   </keyframe>
 
 
