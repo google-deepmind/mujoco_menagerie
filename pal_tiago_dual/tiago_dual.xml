@@ -77,25 +77,29 @@
         <inertial pos="5.4922e-09 6.9775e-05 0.011144" quat="-0.0015583 0.707105 -0.0015583 0.707105" mass="0.70767"
           diaginertia="0.000401311 0.000355289 0.00035492"/>
         <joint name="wheel_front_right_joint" pos="0 0 0" axis="0 0 1"/>
-        <geom type="mesh" density="0" rgba="0.1 0.1 0.1 1" mesh="wheel_link1" condim="6"/>
+        <geom type="mesh" density="0" rgba="0.1 0.1 0.1 1" mesh="wheel_link1" conaffinity="0"/>
+        <geom type="cylinder" size="0.0762 0.025" condim="6" group="3"/>
       </body>
       <body name="wheel_front_left_link" pos="0.244 0.223175 0.0762" quat="0.707107 -0.707107 0 0">
         <inertial pos="5.4922e-09 -6.9775e-05 -0.011144" quat="-0.0015583 0.707105 -0.0015583 0.707105" mass="0.70767"
           diaginertia="0.000401311 0.000355289 0.00035492"/>
         <joint name="wheel_front_left_joint" pos="0 0 0" axis="0 0 1"/>
-        <geom type="mesh" density="0" rgba="0.1 0.1 0.1 1" mesh="wheel_link2" condim="6"/>
+        <geom type="mesh" density="0" rgba="0.1 0.1 0.1 1" mesh="wheel_link2" conaffinity="0"/>
+        <geom type="cylinder" size="0.0762 0.025" condim="6" group="3"/>
       </body>
       <body name="wheel_rear_right_link" pos="-0.244 -0.223175 0.0762" quat="0.707107 -0.707107 0 0">
         <inertial pos="-5.4922e-09 -6.9775e-05 0.011144" quat="0.0015583 0.707105 0.0015583 0.707105" mass="0.70767"
           diaginertia="0.000401311 0.000355289 0.00035492"/>
         <joint name="wheel_rear_right_joint" pos="0 0 0" axis="0 0 1"/>
-        <geom type="mesh" density="0" rgba="0.1 0.1 0.1 1" mesh="wheel_link3" condim="6"/>
+        <geom type="mesh" density="0" rgba="0.1 0.1 0.1 1" mesh="wheel_link3" conaffinity="0"/>
+        <geom type="cylinder" size="0.0762 0.025" condim="6" group="3"/>
       </body>
       <body name="wheel_rear_left_link" pos="-0.244 0.223175 0.0762" quat="0.707107 -0.707107 0 0">
         <inertial pos="-5.4922e-09 6.9775e-05 -0.011144" quat="0.0015583 0.707105 0.0015583 0.707105" mass="0.70767"
           diaginertia="0.000401311 0.000355289 0.00035492"/>
         <joint name="wheel_rear_left_joint" pos="0 0 0" axis="0 0 1"/>
-        <geom type="mesh" density="0" rgba="0.1 0.1 0.1 1" mesh="wheel_link4" condim="6"/>
+        <geom type="mesh" density="0" rgba="0.1 0.1 0.1 1" mesh="wheel_link4" conaffinity="0"/>
+        <geom type="cylinder" size="0.0762 0.025" condim="6" group="3"/>
       </body>
       <body name="torso_lift_link" pos="-0.062 0 0.8662">
         <inertial pos="0.04361 -0.00116 -0.17334" quat="0.995594 0.0693915 0.06131 -0.0148054" mass="9.59421"
