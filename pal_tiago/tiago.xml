@@ -2,7 +2,7 @@
 
   <compiler angle="radian" meshdir="./assets/" autolimits="true"/>
 
-  <option timestep="0.001" />
+  <option timestep="0.001" integrator="implicit" />
 
   <asset>
     <mesh name="sick_tim551" file="sensors/sick_tim551.stl"/>
