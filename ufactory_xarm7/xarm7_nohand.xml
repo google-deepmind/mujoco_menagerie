@@ -79,6 +79,7 @@
                       diaginertia="0.000132176 9.3e-05 5.85236e-05"/>
                     <joint name="joint7" class="size3"/>
                     <geom material="gray" mesh="end_tool"/>
+                    <site name="attachment_site"/>
                   </body>
                 </body>
               </body>
