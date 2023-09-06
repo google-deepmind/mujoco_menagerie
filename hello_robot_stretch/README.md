@@ -1,10 +1,10 @@
-# Hello Robot Stretch RE1 Description (MJCF)
+# Hello Robot Stretch 2 Description (MJCF)
 
 Requires MuJoCo 2.3.3 or later.
 
 ## Overview
 
-This package contains a simplified robot description (MJCF) of the [Hello Robot Stretch RE1](https://hello-robot.com/product) developed by [Hello Robot](https://hello-robot.com/). The original URDF and assets were provided directly by Hello Robot under the [Clear BSD License](LICENSE).
+This package contains a simplified robot description (MJCF) of the [Hello Robot Stretch 2](https://hello-robot.com/product) developed by [Hello Robot](https://hello-robot.com/). The original URDF and assets were provided directly by Hello Robot under the [Clear BSD License](LICENSE).
 
 <p float="left">
   <img src="stretch.png" width="400">
