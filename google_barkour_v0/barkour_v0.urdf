@@ -1,0 +1,829 @@
+<!-- For export to MJCF for menagerie. -->
+<robot name="barkour">
+<link name="torso_asm_1">
+<visual>
+<origin xyz="-0.00448404 -0.000225838 0.0576402" rpy="-5.58442e-14 -1.34961e-15 0" />
+<geometry>
+<mesh filename="meshes/head.stl"/>
+</geometry>
+<material name="head_material">
+<color rgba="0.647059 0.647059 0.647059 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="-0.00448404 -0.000225838 0.0576402" rpy="-5.58442e-14 -1.34961e-15 0" />
+<geometry>
+<mesh filename="meshes/head.stl"/>
+</geometry>
+<material name="head_material">
+<color rgba="0.647059 0.647059 0.647059 1.0"/>
+</material>
+</collision>
+<visual>
+<origin xyz="-0.00448404 -0.000225838 0.0576402" rpy="-5.58442e-14 -1.34961e-15 0" />
+<geometry>
+<mesh filename="meshes/powercable.stl"/>
+</geometry>
+<material name="powercable_material">
+<color rgba="0.768627 0.886275 0.952941 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="-0.00448404 -0.000225838 0.0576402" rpy="-5.58442e-14 -1.34961e-15 0" />
+<geometry>
+<mesh filename="meshes/powercable.stl"/>
+</geometry>
+<material name="powercable_material">
+<color rgba="0.768627 0.886275 0.952941 1.0"/>
+</material>
+</collision>
+<visual>
+<origin xyz="-0.00448404 -0.000225838 0.0576402" rpy="-5.58442e-14 -1.34961e-15 0" />
+<geometry>
+<mesh filename="meshes/handle.stl"/>
+</geometry>
+<material name="handle_material">
+<color rgba="0.917647 0.917647 0.917647 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="-0.00448404 -0.000225838 0.0576402" rpy="-5.58442e-14 -1.34961e-15 0" />
+<geometry>
+<mesh filename="meshes/handle.stl"/>
+</geometry>
+<material name="handle_material">
+<color rgba="0.917647 0.917647 0.917647 1.0"/>
+</material>
+</collision>
+<visual>
+<origin xyz="-0.00448404 -0.000225838 0.0576402" rpy="-5.58442e-14 -1.34961e-15 0" />
+<geometry>
+<mesh filename="meshes/head_mount.stl"/>
+</geometry>
+<material name="head_mount_material">
+<color rgba="0.231373 0.380392 0.705882 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="-0.00448404 -0.000225838 0.0576402" rpy="-5.58442e-14 -1.34961e-15 0" />
+<geometry>
+<mesh filename="meshes/head_mount.stl"/>
+</geometry>
+<material name="head_mount_material">
+<color rgba="0.231373 0.380392 0.705882 1.0"/>
+</material>
+</collision>
+<visual>
+<origin xyz="-0.00448404 -0.000225838 0.0576402" rpy="-5.58442e-14 -1.34961e-15 0" />
+<geometry>
+<mesh filename="meshes/body.stl"/>
+</geometry>
+<material name="body_material">
+<color rgba="0.984314 0.517647 0.862745 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="-0.00448404 -0.000225838 0.0576402" rpy="-5.58442e-14 -1.34961e-15 0" />
+<geometry>
+<mesh filename="meshes/body.stl"/>
+</geometry>
+<material name="body_material">
+<color rgba="0.984314 0.517647 0.862745 1.0"/>
+</material>
+</collision>
+<inertial>
+<origin xyz="0.0196226 -0.00015133 0.0611588" rpy="0 0 0"/>
+<mass value="4.48878" />
+<inertia ixx="0.0194142" ixy="4.37444e-05"  ixz="-0.00289412" iyy="0.0619567" iyz="1.82477e-05" izz="0.0708707" />
+</inertial>
+</link>
+
+<link name="abduction_1">
+<visual>
+<origin xyz="-0.0540394 0.0217 0.0181312" rpy="1.03897e-31 3.60895e-17 -1.98435e-33" />
+<geometry>
+<mesh filename="meshes/abduction.stl"/>
+</geometry>
+<material name="abduction_material">
+<color rgba="0.537255 0.854902 0.827451 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="-0.0540394 0.0217 0.0181312" rpy="1.03897e-31 3.60895e-17 -1.98435e-33" />
+<geometry>
+<mesh filename="meshes/abduction.stl"/>
+</geometry>
+<material name="abduction_material">
+<color rgba="0.537255 0.854902 0.827451 1.0"/>
+</material>
+</collision>
+<inertial>
+<origin xyz="-0.0521152 0.00350917 0.0171912" rpy="0 0 0"/>
+<mass value="0.639437" />
+<inertia ixx="0.000493798" ixy="1.04846e-06"  ixz="3.17928e-05" iyy="0.000865999" iyz="-1.44315e-06" izz="0.000551844" />
+</inertial>
+</link>
+
+<link name="upper_right_asm_1">
+<visual>
+<origin xyz="-1.66533e-16 1.38778e-17 0" rpy="2.78994e-31 -3.27796e-31 5.41884e-17" />
+<geometry>
+<mesh filename="meshes/upper_right_2.stl"/>
+</geometry>
+<material name="upper_right_2_material">
+<color rgba="0.972549 0.529412 0.00392157 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="-1.66533e-16 1.38778e-17 0" rpy="2.78994e-31 -3.27796e-31 5.41884e-17" />
+<geometry>
+<mesh filename="meshes/upper_right_2.stl"/>
+</geometry>
+<material name="upper_right_2_material">
+<color rgba="0.972549 0.529412 0.00392157 1.0"/>
+</material>
+</collision>
+<visual>
+<origin xyz="-1.66533e-16 1.38778e-17 0" rpy="2.78994e-31 -3.27796e-31 5.41884e-17" />
+<geometry>
+<mesh filename="meshes/upper_right_3.stl"/>
+</geometry>
+<material name="upper_right_3_material">
+<color rgba="0.972549 0.529412 0.00392157 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="-1.66533e-16 1.38778e-17 0" rpy="2.78994e-31 -3.27796e-31 5.41884e-17" />
+<geometry>
+<mesh filename="meshes/upper_right_3.stl"/>
+</geometry>
+<material name="upper_right_3_material">
+<color rgba="0.972549 0.529412 0.00392157 1.0"/>
+</material>
+</collision>
+<visual>
+<origin xyz="-1.66533e-16 1.38778e-17 0" rpy="2.78994e-31 -3.27796e-31 5.41884e-17" />
+<geometry>
+<mesh filename="meshes/upper_right_1.stl"/>
+</geometry>
+<material name="upper_right_1_material">
+<color rgba="0.768627 0.886275 0.952941 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="-1.66533e-16 1.38778e-17 0" rpy="2.78994e-31 -3.27796e-31 5.41884e-17" />
+<geometry>
+<mesh filename="meshes/upper_right_1.stl"/>
+</geometry>
+<material name="upper_right_1_material">
+<color rgba="0.768627 0.886275 0.952941 1.0"/>
+</material>
+</collision>
+<inertial>
+<origin xyz="-0.0253655 -0.0179374 -0.0465027" rpy="0 0 0"/>
+<mass value="0.942155" />
+<inertia ixx="0.00212532" ixy="-0.00195491"  ixz="-0.000513206" iyy="0.00395127" iyz="-0.000349708" izz="0.00530677" />
+</inertial>
+</link>
+
+<link name="lower_leg_1to1_front_right">
+<visual>
+<origin xyz="0.00320019 0.0240604 -0.0141615" rpy="4.79414e-18 -1.21843e-19 -4.13622e-17" />
+<geometry>
+<mesh filename="meshes/lower_leg_1to1.stl"/>
+</geometry>
+<material name="lower_leg_1to1_material">
+<color rgba="0.32549 0.529412 0.980392 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="0.00320019 0.0240604 -0.0141615" rpy="4.79414e-18 -1.21843e-19 -4.13622e-17" />
+<geometry>
+<mesh filename="meshes/lower_leg_1to1.stl"/>
+</geometry>
+<material name="lower_leg_1to1_material">
+<color rgba="0.32549 0.529412 0.980392 1.0"/>
+</material>
+</collision>
+<visual>
+<origin xyz="0.00320019 0.0240604 -0.0141615" rpy="4.79414e-18 -1.21843e-19 -4.13622e-17" />
+<geometry>
+<mesh filename="meshes/foot.stl"/>
+</geometry>
+<material name="foot_material">
+<color rgba="0.301961 0.301961 0.301961 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="0.00320019 0.0240604 -0.0141615" rpy="4.79414e-18 -1.21843e-19 -4.13622e-17" />
+<geometry>
+<mesh filename="meshes/foot.stl"/>
+</geometry>
+<material name="foot_material">
+<color rgba="0.301961 0.301961 0.301961 1.0"/>
+</material>
+</collision>
+<inertial>
+<origin xyz="-0.0577509 -0.0097034 0.0114624" rpy="0 0 0"/>
+<mass value="0.169623" />
+<inertia ixx="3.71103e-05" ixy="-4.04168e-05"  ixz="-3.68485e-06" iyy="0.000811958" iyz="-1.38547e-06" izz="0.000828626" />
+</inertial>
+</link>
+
+<joint name="knee_front_right" type="revolute">
+<origin xyz="-0.193523 -0.104637 -0.0792" rpy="-0.0775787 3.42624e-15 -2.50494" />
+<parent link="upper_right_asm_1" />
+<child link="lower_leg_1to1_front_right" />
+<axis xyz="0 -0.0775009 0.996992"/>
+<limit effort="1" velocity="20" lower="0" upper="2.5132" />
+<joint_properties friction="0.0"/>
+</joint>
+
+<joint name="hip_front_right" type="revolute">
+<origin xyz="-0.0540394 0.0217 0.0181312" rpy="-1.5708 -0.828554 3.14159" />
+<parent link="abduction_1" />
+<child link="upper_right_asm_1" />
+<axis xyz="0 0 -1"/>
+<limit effort="1" velocity="20" lower="-1.22173" upper="3.24631" />
+<joint_properties friction="0.0"/>
+</joint>
+
+<joint name="abduction_front_right" type="revolute">
+<origin xyz="0.130533 -0.056 0.0508" rpy="5.67952e-15 -0.323716 3.14159" />
+<parent link="torso_asm_1" />
+<child link="abduction_1" />
+<axis xyz="-0.94806 0 0.318092"/>
+<limit effort="1" velocity="20" lower="-1.0472" upper="1.0472" />
+<joint_properties friction="0.0"/>
+</joint>
+
+<link name="abduction_2">
+<visual>
+<origin xyz="-0.0540394 0.0217 0.0181312" rpy="-1.23171e-33 2.12523e-17 2.19975e-32" />
+<geometry>
+<mesh filename="meshes/abduction.stl"/>
+</geometry>
+<material name="abduction_material">
+<color rgba="0.537255 0.854902 0.827451 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="-0.0540394 0.0217 0.0181312" rpy="-1.23171e-33 2.12523e-17 2.19975e-32" />
+<geometry>
+<mesh filename="meshes/abduction.stl"/>
+</geometry>
+<material name="abduction_material">
+<color rgba="0.537255 0.854902 0.827451 1.0"/>
+</material>
+</collision>
+<inertial>
+<origin xyz="-0.0521152 0.00350917 0.0171912" rpy="0 0 0"/>
+<mass value="0.639437" />
+<inertia ixx="0.000493798" ixy="1.04846e-06"  ixz="3.17928e-05" iyy="0.000865999" iyz="-1.44315e-06" izz="0.000551844" />
+</inertial>
+</link>
+
+<link name="upper_left_asm_1">
+<visual>
+<origin xyz="2.77556e-17 -1.38778e-17 0" rpy="-4.63464e-32 1.14089e-33 -2.56137e-17" />
+<geometry>
+<mesh filename="meshes/upper_left_2.stl"/>
+</geometry>
+<material name="upper_left_2_material">
+<color rgba="0.980392 0.713725 0.00392157 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="2.77556e-17 -1.38778e-17 0" rpy="-4.63464e-32 1.14089e-33 -2.56137e-17" />
+<geometry>
+<mesh filename="meshes/upper_left_2.stl"/>
+</geometry>
+<material name="upper_left_2_material">
+<color rgba="0.980392 0.713725 0.00392157 1.0"/>
+</material>
+</collision>
+<visual>
+<origin xyz="2.77556e-17 -1.38778e-17 0" rpy="-4.63464e-32 1.14089e-33 -2.56137e-17" />
+<geometry>
+<mesh filename="meshes/upper_left_1.stl"/>
+</geometry>
+<material name="upper_left_1_material">
+<color rgba="0.498039 0.498039 0.498039 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="2.77556e-17 -1.38778e-17 0" rpy="-4.63464e-32 1.14089e-33 -2.56137e-17" />
+<geometry>
+<mesh filename="meshes/upper_left_1.stl"/>
+</geometry>
+<material name="upper_left_1_material">
+<color rgba="0.498039 0.498039 0.498039 1.0"/>
+</material>
+</collision>
+<visual>
+<origin xyz="2.77556e-17 -1.38778e-17 0" rpy="-4.63464e-32 1.14089e-33 -2.56137e-17" />
+<geometry>
+<mesh filename="meshes/upper_left_3.stl"/>
+</geometry>
+<material name="upper_left_3_material">
+<color rgba="1 0.756863 0.054902 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="2.77556e-17 -1.38778e-17 0" rpy="-4.63464e-32 1.14089e-33 -2.56137e-17" />
+<geometry>
+<mesh filename="meshes/upper_left_3.stl"/>
+</geometry>
+<material name="upper_left_3_material">
+<color rgba="1 0.756863 0.054902 1.0"/>
+</material>
+</collision>
+<inertial>
+<origin xyz="0.0306562 0.00629189 -0.0466005" rpy="0 0 0"/>
+<mass value="0.938791" />
+<inertia ixx="0.00113317" ixy="-0.00102481"  ixz="0.000600216" iyy="0.00492728" iyz="0.000131479" izz="0.00529592" />
+</inertial>
+</link>
+
+<link name="lower_leg_1to1_front_left">
+<visual>
+<origin xyz="0.00320019 0.0259591 -0.0385878" rpy="1.88307e-18 -6.27421e-19 8.01069e-18" />
+<geometry>
+<mesh filename="meshes/foot.stl"/>
+</geometry>
+<material name="foot_material">
+<color rgba="0.301961 0.301961 0.301961 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="0.00320019 0.0259591 -0.0385878" rpy="1.88307e-18 -6.27421e-19 8.01069e-18" />
+<geometry>
+<mesh filename="meshes/foot.stl"/>
+</geometry>
+<material name="foot_material">
+<color rgba="0.301961 0.301961 0.301961 1.0"/>
+</material>
+</collision>
+<visual>
+<origin xyz="0.00320019 0.0259591 -0.0385878" rpy="1.88307e-18 -6.27421e-19 8.01069e-18" />
+<geometry>
+<mesh filename="meshes/lower_leg_1to1.stl"/>
+</geometry>
+<material name="lower_leg_1to1_material">
+<color rgba="0.32549 0.529412 0.980392 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="0.00320019 0.0259591 -0.0385878" rpy="1.88307e-18 -6.27421e-19 8.01069e-18" />
+<geometry>
+<mesh filename="meshes/lower_leg_1to1.stl"/>
+</geometry>
+<material name="lower_leg_1to1_material">
+<color rgba="0.32549 0.529412 0.980392 1.0"/>
+</material>
+</collision>
+<inertial>
+<origin xyz="-0.0577509 -0.00780463 -0.0129639" rpy="0 0 0"/>
+<mass value="0.169623" />
+<inertia ixx="3.71103e-05" ixy="-4.04168e-05"  ixz="-3.68485e-06" iyy="0.000811958" iyz="-1.38547e-06" izz="0.000828626" />
+</inertial>
+</link>
+
+
+
+
+<joint name="knee_front_left" type="revolute">
+<origin xyz="0.208835 0.0691954 -0.0792" rpy="3.06401 -7.0451e-16 0.178978" />
+<parent link="upper_left_asm_1" />
+<child link="lower_leg_1to1_front_left" />
+<axis xyz="0 -0.0775009 0.996992"/>
+<limit effort="1" velocity="20" lower="0" upper="2.5132" />
+<joint_properties friction="0.0"/>
+</joint>
+
+<joint name="hip_front_left" type="revolute">
+<origin xyz="-0.0540394 0.0217 0.0181312" rpy="1.5708 0.634505 -3.18484e-18" />
+<parent link="abduction_2" />
+<child link="upper_left_asm_1" />
+<axis xyz="0 0 1"/>
+<limit effort="1" velocity="20" lower="-1.22173" upper="3.24631" />
+<joint_properties friction="0.0"/>
+</joint>
+
+<joint name="abduction_front_left" type="revolute">
+<origin xyz="0.130533 0.056 0.0508" rpy="3.14159 0.323716 3.14159" />
+<parent link="torso_asm_1" />
+<child link="abduction_2" />
+<axis xyz="0.94806 0 -0.318092"/>
+<limit effort="1" velocity="20" lower="-1.0472" upper="1.0472" />
+<joint_properties friction="0.0"/>
+</joint>
+
+<link name="abduction_3">
+<visual>
+<origin xyz="-0.0540394 0.0217 0.0181312" rpy="7.98901e-31 4.50967e-17 9.06404e-32" />
+<geometry>
+<mesh filename="meshes/abduction.stl"/>
+</geometry>
+<material name="abduction_material">
+<color rgba="0.537255 0.854902 0.827451 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="-0.0540394 0.0217 0.0181312" rpy="7.98901e-31 4.50967e-17 9.06404e-32" />
+<geometry>
+<mesh filename="meshes/abduction.stl"/>
+</geometry>
+<material name="abduction_material">
+<color rgba="0.537255 0.854902 0.827451 1.0"/>
+</material>
+</collision>
+<inertial>
+<origin xyz="-0.0521152 0.00350917 0.0171912" rpy="0 0 0"/>
+<mass value="0.639437" />
+<inertia ixx="0.000493798" ixy="1.04846e-06"  ixz="3.17928e-05" iyy="0.000865999" iyz="-1.44315e-06" izz="0.000551844" />
+</inertial>
+</link>
+
+<link name="upper_right_asm_2">
+<visual>
+<origin xyz="-1.66533e-16 0 0" rpy="1.36877e-31 6.99178e-32 -1.11197e-17" />
+<geometry>
+<mesh filename="meshes/upper_right_2.stl"/>
+</geometry>
+<material name="upper_right_2_material">
+<color rgba="0.972549 0.529412 0.00392157 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="-1.66533e-16 0 0" rpy="1.36877e-31 6.99178e-32 -1.11197e-17" />
+<geometry>
+<mesh filename="meshes/upper_right_2.stl"/>
+</geometry>
+<material name="upper_right_2_material">
+<color rgba="0.972549 0.529412 0.00392157 1.0"/>
+</material>
+</collision>
+<visual>
+<origin xyz="-1.66533e-16 0 0" rpy="1.36877e-31 6.99178e-32 -1.11197e-17" />
+<geometry>
+<mesh filename="meshes/upper_right_3.stl"/>
+</geometry>
+<material name="upper_right_3_material">
+<color rgba="0.972549 0.529412 0.00392157 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="-1.66533e-16 0 0" rpy="1.36877e-31 6.99178e-32 -1.11197e-17" />
+<geometry>
+<mesh filename="meshes/upper_right_3.stl"/>
+</geometry>
+<material name="upper_right_3_material">
+<color rgba="0.972549 0.529412 0.00392157 1.0"/>
+</material>
+</collision>
+<visual>
+<origin xyz="-1.66533e-16 0 0" rpy="1.36877e-31 6.99178e-32 -1.11197e-17" />
+<geometry>
+<mesh filename="meshes/upper_right_1.stl"/>
+</geometry>
+<material name="upper_right_1_material">
+<color rgba="0.768627 0.886275 0.952941 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="-1.66533e-16 0 0" rpy="1.36877e-31 6.99178e-32 -1.11197e-17" />
+<geometry>
+<mesh filename="meshes/upper_right_1.stl"/>
+</geometry>
+<material name="upper_right_1_material">
+<color rgba="0.768627 0.886275 0.952941 1.0"/>
+</material>
+</collision>
+<inertial>
+<origin xyz="-0.0253655 -0.0179374 -0.0465027" rpy="0 0 0"/>
+<mass value="0.942155" />
+<inertia ixx="0.00212532" ixy="-0.00195491"  ixz="-0.000513206" iyy="0.00395127" iyz="-0.000349708" izz="0.00530677" />
+</inertial>
+</link>
+
+<link name="lower_leg_1to1_hind_right">
+<visual>
+<origin xyz="0.00320019 0.0240604 -0.0141615" rpy="6.47535e-18 2.0231e-18 -3.64484e-18" />
+<geometry>
+<mesh filename="meshes/lower_leg_1to1.stl"/>
+</geometry>
+<material name="lower_leg_1to1_material">
+<color rgba="0.32549 0.529412 0.980392 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="0.00320019 0.0240604 -0.0141615" rpy="6.47535e-18 2.0231e-18 -3.64484e-18" />
+<geometry>
+<mesh filename="meshes/lower_leg_1to1.stl"/>
+</geometry>
+<material name="lower_leg_1to1_material">
+<color rgba="0.32549 0.529412 0.980392 1.0"/>
+</material>
+</collision>
+<visual>
+<origin xyz="0.00320019 0.0240604 -0.0141615" rpy="6.47535e-18 2.0231e-18 -3.64484e-18" />
+<geometry>
+<mesh filename="meshes/foot.stl"/>
+</geometry>
+<material name="foot_material">
+<color rgba="0.301961 0.301961 0.301961 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="0.00320019 0.0240604 -0.0141615" rpy="6.47535e-18 2.0231e-18 -3.64484e-18" />
+<geometry>
+<mesh filename="meshes/foot.stl"/>
+</geometry>
+<material name="foot_material">
+<color rgba="0.301961 0.301961 0.301961 1.0"/>
+</material>
+</collision>
+<inertial>
+<origin xyz="-0.0577509 -0.0097034 0.0114624" rpy="0 0 0"/>
+<mass value="0.169623" />
+<inertia ixx="3.71103e-05" ixy="-4.04168e-05"  ixz="-3.68485e-06" iyy="0.000811958" iyz="-1.38547e-06" izz="0.000828626" />
+</inertial>
+</link>
+
+<joint name="knee_hind_right" type="revolute">
+<origin xyz="-0.193523 -0.104637 -0.0792" rpy="-0.0775787 3.61262e-15 -2.50494" />
+<parent link="upper_right_asm_2" />
+<child link="lower_leg_1to1_hind_right" />
+<axis xyz="0 -0.0775009 0.996992"/>
+<limit effort="1" velocity="20" lower="0" upper="2.5132" />
+<joint_properties friction="0.0"/>
+</joint>
+
+<joint name="hip_hind_right" type="revolute">
+<origin xyz="-0.0540394 0.0217 0.0181312" rpy="1.5708 0.828554 4.09391e-17" />
+<parent link="abduction_3" />
+<child link="upper_right_asm_2" />
+<axis xyz="0 0 -1"/>
+<limit effort="1" velocity="20" lower="-1.98968" upper="2.46091" />
+<joint_properties friction="0.0"/>
+</joint>
+
+<joint name="abduction_hind_right" type="revolute">
+<origin xyz="-0.134667 -0.056 0.0508" rpy="3.14159 0.323716 -2.05868e-15" />
+<parent link="torso_asm_1" />
+<child link="abduction_3" />
+<axis xyz="0.94806 0 -0.318092"/>
+<limit effort="1" velocity="20" lower="-1.0472" upper="1.0472" />
+<joint_properties friction="0.0"/>
+</joint>
+
+<link name="abduction_4">
+<visual>
+<origin xyz="-0.0540394 0.0217 0.0181312" rpy="1.21579e-32 2.80169e-17 -5.2183e-32" />
+<geometry>
+<mesh filename="meshes/abduction.stl"/>
+</geometry>
+<material name="abduction_material">
+<color rgba="0.537255 0.854902 0.827451 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="-0.0540394 0.0217 0.0181312" rpy="1.21579e-32 2.80169e-17 -5.2183e-32" />
+<geometry>
+<mesh filename="meshes/abduction.stl"/>
+</geometry>
+<material name="abduction_material">
+<color rgba="0.537255 0.854902 0.827451 1.0"/>
+</material>
+</collision>
+<inertial>
+<origin xyz="-0.0521152 0.00350917 0.0171912" rpy="0 0 0"/>
+<mass value="0.639437" />
+<inertia ixx="0.000493798" ixy="1.04846e-06"  ixz="3.17928e-05" iyy="0.000865999" iyz="-1.44315e-06" izz="0.000551844" />
+</inertial>
+</link>
+
+<link name="upper_left_asm_2">
+<visual>
+<origin xyz="2.77556e-17 -1.21431e-17 1.38778e-17" rpy="2.47534e-31 -2.75561e-33 -2.17703e-17" />
+<geometry>
+<mesh filename="meshes/upper_left_1.stl"/>
+</geometry>
+<material name="upper_left_1_material">
+<color rgba="0.498039 0.498039 0.498039 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="2.77556e-17 -1.21431e-17 1.38778e-17" rpy="2.47534e-31 -2.75561e-33 -2.17703e-17" />
+<geometry>
+<mesh filename="meshes/upper_left_1.stl"/>
+</geometry>
+<material name="upper_left_1_material">
+<color rgba="0.498039 0.498039 0.498039 1.0"/>
+</material>
+</collision>
+<visual>
+<origin xyz="2.77556e-17 -1.21431e-17 1.38778e-17" rpy="2.47534e-31 -2.75561e-33 -2.17703e-17" />
+<geometry>
+<mesh filename="meshes/upper_left_3.stl"/>
+</geometry>
+<material name="upper_left_3_material">
+<color rgba="1 0.756863 0.054902 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="2.77556e-17 -1.21431e-17 1.38778e-17" rpy="2.47534e-31 -2.75561e-33 -2.17703e-17" />
+<geometry>
+<mesh filename="meshes/upper_left_3.stl"/>
+</geometry>
+<material name="upper_left_3_material">
+<color rgba="1 0.756863 0.054902 1.0"/>
+</material>
+</collision>
+<visual>
+<origin xyz="2.77556e-17 -1.21431e-17 1.38778e-17" rpy="2.47534e-31 -2.75561e-33 -2.17703e-17" />
+<geometry>
+<mesh filename="meshes/upper_left_2.stl"/>
+</geometry>
+<material name="upper_left_2_material">
+<color rgba="0.980392 0.713725 0.00392157 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="2.77556e-17 -1.21431e-17 1.38778e-17" rpy="2.47534e-31 -2.75561e-33 -2.17703e-17" />
+<geometry>
+<mesh filename="meshes/upper_left_2.stl"/>
+</geometry>
+<material name="upper_left_2_material">
+<color rgba="0.980392 0.713725 0.00392157 1.0"/>
+</material>
+</collision>
+<inertial>
+<origin xyz="0.0306562 0.00629189 -0.0466005" rpy="0 0 0"/>
+<mass value="0.938791" />
+<inertia ixx="0.00113317" ixy="-0.00102481"  ixz="0.000600216" iyy="0.00492728" iyz="0.000131479" izz="0.00529592" />
+</inertial>
+</link>
+
+<link name="lower_leg_1to1_hind_left">
+<visual>
+<origin xyz="0.00320019 0.0259591 -0.0385878" rpy="1.95359e-18 1.46565e-18 -2.06625e-17" />
+<geometry>
+<mesh filename="meshes/foot.stl"/>
+</geometry>
+<material name="foot_material">
+<color rgba="0.301961 0.301961 0.301961 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="0.00320019 0.0259591 -0.0385878" rpy="1.95359e-18 1.46565e-18 -2.06625e-17" />
+<geometry>
+<mesh filename="meshes/foot.stl"/>
+</geometry>
+<material name="foot_material">
+<color rgba="0.301961 0.301961 0.301961 1.0"/>
+</material>
+</collision>
+<visual>
+<origin xyz="0.00320019 0.0259591 -0.0385878" rpy="1.95359e-18 1.46565e-18 -2.06625e-17" />
+<geometry>
+<mesh filename="meshes/lower_leg_1to1.stl"/>
+</geometry>
+<material name="lower_leg_1to1_material">
+<color rgba="0.32549 0.529412 0.980392 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="0.00320019 0.0259591 -0.0385878" rpy="1.95359e-18 1.46565e-18 -2.06625e-17" />
+<geometry>
+<mesh filename="meshes/lower_leg_1to1.stl"/>
+</geometry>
+<material name="lower_leg_1to1_material">
+<color rgba="0.32549 0.529412 0.980392 1.0"/>
+</material>
+</collision>
+<inertial>
+<origin xyz="-0.0577509 -0.00780463 -0.0129639" rpy="0 0 0"/>
+<mass value="0.169623" />
+<inertia ixx="3.71103e-05" ixy="-4.04168e-05"  ixz="-3.68485e-06" iyy="0.000811958" iyz="-1.38547e-06" izz="0.000828626" />
+</inertial>
+</link>
+
+<joint name="knee_hind_left" type="revolute">
+<origin xyz="0.208835 0.0691954 -0.0792" rpy="3.06401 -2.22446e-16 0.178978" />
+<parent link="upper_left_asm_2" />
+<child link="lower_leg_1to1_hind_left" />
+<axis xyz="0 -0.0775009 0.996992"/>
+<limit effort="1" velocity="20" lower="0" upper="2.5132" />
+<joint_properties friction="0.0"/>
+</joint>
+
+<joint name="hip_hind_left" type="revolute">
+<origin xyz="-0.0540394 0.0217 0.0181312" rpy="-1.5708 -0.634505 -3.14159" />
+<parent link="abduction_4" />
+<child link="upper_left_asm_2" />
+<axis xyz="0 0 1"/>
+<limit effort="1" velocity="20" lower="-1.98968" upper="2.46091" />
+<joint_properties friction="0.0"/>
+</joint>
+
+<joint name="abduction_hind_left" type="revolute">
+<origin xyz="-0.134667 0.056 0.0508" rpy="-5.10944e-18 -0.323716 1.04617e-15" />
+<parent link="torso_asm_1" />
+<child link="abduction_4" />
+<axis xyz="-0.94806 0 0.318092"/>
+<limit effort="1" velocity="20" lower="-1.0472" upper="1.0472" />
+<joint_properties friction="0.0"/>
+</joint>
+
+<!-- Manually inserted items below -->
+<!-- Sphere on front left foot -->
+<link name="foot_sphere_front_left">
+<visual>
+<origin xyz="0 0 0" rpy="0 0 0" />
+<geometry>
+<sphere radius="0.001"/>
+</geometry>
+</visual>
+<inertial>
+<mass value="0"/>
+<inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+</inertial>
+</link>
+
+<joint name="ankle_front_left" type="fixed">
+<origin xyz="-0.1912844960077991 -0.019163825853112996 -0.013" rpy="0 0 0" />
+<parent link="lower_leg_1to1_front_left" />
+<child link="foot_sphere_front_left" />
+<axis xyz="0 0 0"/>
+</joint>
+<!-- End sphere on front left foot -->
+
+<!-- Sphere on hind left foot -->
+<link name="foot_sphere_hind_left">
+<visual>
+<origin xyz="0 0 0" rpy="0 0 0" />
+<geometry>
+<sphere radius="0.001"/>
+</geometry>
+</visual>
+<inertial>
+<mass value="0"/>
+<inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+</inertial>
+</link>
+
+<joint name="ankle_hind_left" type="fixed">
+<origin xyz="-0.1912844960077991 -0.019163825853112996 -0.013" rpy="0 0 0" />
+<parent link="lower_leg_1to1_hind_left" />
+<child link="foot_sphere_hind_left" />
+<axis xyz="0 0 0"/>
+</joint>
+<!-- End sphere on hind left foot -->
+
+<!-- Sphere on front right foot -->
+<link name="foot_sphere_front_right">
+<visual>
+<origin xyz="0 0 0" rpy="0 0 0" />
+<geometry>
+<sphere radius="0.001"/>
+</geometry>
+</visual>
+<inertial>
+<mass value="0"/>
+<inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+</inertial>
+</link>
+
+<joint name="ankle_front_right" type="fixed">
+<origin xyz="-0.1912844960077991 -0.019163825853112996 0.01" rpy="0 0 0" />
+<parent link="lower_leg_1to1_front_right" />
+<child link="foot_sphere_front_right" />
+<axis xyz="0 0 0"/>
+</joint>
+<!-- End sphere on front_right foot -->
+
+<!-- Sphere on hind right foot -->
+<link name="foot_sphere_hind_right">
+<visual>
+<origin xyz="0 0 0" rpy="0 0 0" />
+<geometry>
+<sphere radius="0.001"/>
+</geometry>
+</visual>
+<inertial>
+<mass value="0"/>
+<inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+</inertial>
+</link>
+
+<joint name="ankle_hind_right" type="fixed">
+<origin xyz="-0.1912844960077991 -0.019163825853112996 0.01" rpy="0 0 0" />
+<parent link="lower_leg_1to1_hind_right" />
+<child link="foot_sphere_hind_right" />
+<axis xyz="0 0 0"/>
+</joint>
+<!-- End sphere on hind right foot -->
+
+</robot>
