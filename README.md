@@ -3,20 +3,26 @@
 </h1>
 
 <p>
-  <a href="https://github.com/deepmind/mujoco_menagerie/actions/workflows/build.yml?query=branch%3Amain" alt="GitHub Actions">
-    <img src="https://img.shields.io/github/actions/workflow/status/deepmind/mujoco_menagerie/build.yml?branch=main">
+  <a href="https://github.com/google-deepmind/mujoco_menagerie/actions/workflows/build.yml?query=branch%3Amain" alt="GitHub Actions">
+    <img src="https://img.shields.io/github/actions/workflow/status/google-deepmind/mujoco_menagerie/build.yml?branch=main">
   </a>
   <a href="https://mujoco.readthedocs.io/en/latest/models.html" alt="Documentation">
     <img src="https://readthedocs.org/projects/mujoco/badge/?version=latest">
   </a>
-  <a href="https://github.com/deepmind/mujoco_menagerie/blob/main/CONTRIBUTING.md">
+  <a href="https://github.com/google-deepmind/mujoco_menagerie/blob/main/CONTRIBUTING.md">
     <img src="https://img.shields.io/badge/PRs-welcome-green.svg" alt="PRs" height="20">
   </a>
 </p>
 
-**Menagerie** is a collection of high-quality models for the [MuJoCo](https://mujoco.org/) physics engine, curated by Google DeepMind.
+**Menagerie** is a collection of high-quality models for the
+[MuJoCo](https://github.com/google-deepmind/mujoco) physics engine, curated by
+Google DeepMind.
 
-A physics simulator is only as good as the model it is simulating, and in a powerful simulator like MuJoCo with many modeling options, it is easy to create "bad" models which do not behave as expected. The goal of this collection is to provide the community with a curated library of well-designed models that work well right out of the gate.
+A physics simulator is only as good as the model it is simulating, and in a
+powerful simulator like MuJoCo with many modeling options, it is easy to create
+"bad" models which do not behave as expected. The goal of this collection is to
+provide the community with a curated library of well-designed models that work
+well right out of the gate.
 
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
@@ -32,11 +38,18 @@ A physics simulator is only as good as the model it is simulating, and in a powe
 
 ### Prerequisites
 
-The minimum required MuJoCo version for each model is specified in its respective README. You can download prebuilt binaries from the GitHub [releases page](https://github.com/deepmind/mujoco/releases/), or if you are working with Python, you can install the native bindings from [PyPI](https://pypi.org/project/mujoco/) via `pip install mujoco`. For alternative installation instructions, see [here](https://github.com/deepmind/mujoco#installation).
+The minimum required MuJoCo version for each model is specified in its
+respective README. You can download prebuilt binaries from the GitHub
+[releases page](https://github.com/google-deepmind/mujoco/releases/), or if you
+are working with Python, you can install the native bindings from
+[PyPI](https://pypi.org/project/mujoco/) via `pip install mujoco`. For
+alternative installation instructions, see
+[here](https://github.com/google-deepmind/mujoco#installation).
 
 ### Overview
 
-The structure of Menagerie is illustrated below. For brevity, we have only included one model directory since all others follow the exact same pattern.
+The structure of Menagerie is illustrated below. For brevity, we have only
+included one model directory since all others follow the exact same pattern.
 
 ```bash
 ├── agility_cassie
@@ -50,26 +63,39 @@ The structure of Menagerie is illustrated below. For brevity, we have only inclu
 │   └── scene.xml
 ```
 
-- `assets`: stores the 3D meshes (.stl or .obj) of the model used for visual and collision purposes
+- `assets`: stores the 3D meshes (.stl or .obj) of the model used for visual and
+  collision purposes
 - `LICENSE`: describes the copyright and licensing terms of the model
-- `README.md`: contains detailed steps describing how the model's MJCF XML file was generated
+- `README.md`: contains detailed steps describing how the model's MJCF XML file
+  was generated
 - `<model>.xml`: contains the MJCF definition of the model
-- `scene.xml`: includes `<model>.xml` with a plane, a light source and potentially other objects
+- `scene.xml`: includes `<model>.xml` with a plane, a light source and
+  potentially other objects
 - `<model>.png`: a PNG image of `scene.xml`
 
-Note that `<model>.xml` solely describes the model, i.e., no other entity is defined in the kinematic tree. We leave additional body definitions for the `scene.xml` file, as can be seen in the Shadow Hand [`scene.xml`](shadow_hand/scene_right.xml).
+Note that `<model>.xml` solely describes the model, i.e., no other entity is
+defined in the kinematic tree. We leave additional body definitions for the
+`scene.xml` file, as can be seen in the Shadow Hand
+[`scene.xml`](shadow_hand/scene_right.xml).
 
 ### Installation and Usage
 
-To install Menagerie, simply clone the repository in the directory of your choice:
+To install Menagerie, simply clone the repository in the directory of your
+choice:
 
 ```bash
-git clone https://github.com/deepmind/mujoco_menagerie.git
+git clone https://github.com/google-deepmind/mujoco_menagerie.git
 ```
 
-The easiest way to interactively explore a model is to load it in the [simulate](https://github.com/deepmind/mujoco/tree/main/simulate) binary which ships with every MuJoCo distribution. This amounts to simply dragging then dropping the `scene.xml` file into the simulate window. If you prefer, you can also use the command line to launch `simulate` and directly pass in the path to the XML.
+The easiest way to interactively explore a model is to load it in the
+[simulate](https://github.com/google-deepmind/mujoco/tree/main/simulate) binary
+which ships with every MuJoCo distribution. This amounts to simply dragging then
+dropping the `scene.xml` file into the simulate window. If you prefer, you can
+also use the command line to launch `simulate` and directly pass in the path to
+the XML.
 
-Outside of interactive simulation, you can load a model exactly as you would with any other XML file in MuJoCo, either via the C/C++ API:
+Outside of interactive simulation, you can load a model exactly as you would
+with any other XML file in MuJoCo, either via the C/C++ API:
 
 ```c++
 #include <mujoco.h>
@@ -135,7 +161,8 @@ Menagerie, see [CONTRIBUTING](CONTRIBUTING.md).
 | [Stretch 2](hello_robot_stretch/README.md)|[<img src="hello_robot_stretch/stretch.png" width="400">](hello_robot_stretch/README.md)|C|
 | [Google Barkour v0](google_barkour_v0/README.md)|[<img src="google_barkour_v0/barkour_v0.png" width="400">](google_barkour_v0/README.md)|A|
 
-For corresponding embedded videos, see the MuJoCo [documentation](https://mujoco.readthedocs.io/en/latest/models.html).
+For corresponding embedded videos, see the MuJoCo
+[documentation](https://mujoco.readthedocs.io/en/latest/models.html).
 
 ## Citing Menagerie
 
@@ -145,7 +172,7 @@ If you use Menagerie in your work, please use the following citation:
 @software{menagerie2022github,
   author = {MuJoCo Menagerie Contributors},
   title = {{MuJoCo Menagerie: A collection of high-quality simulation models for MuJoCo}},
-  url = {http://github.com/deepmind/mujoco_menagerie},
+  url = {http://github.com/google-deepmind/mujoco_menagerie},
   year = {2022},
 }
 ```

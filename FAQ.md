@@ -7,10 +7,10 @@ arm. This site can subsequently be used to rigidly attach an end-effector,
 like a gripper, to the arm.
 
 If you are using
-[PyMJCF](https://github.com/deepmind/dm_control/tree/main/dm_control/mjcf), you
-can use the following code snippet to do this. Any `qpos` or `ctrl` keyframes
-defined in the arm will be automatically modified to account for the added
-degrees of freedom.
+[PyMJCF](https://github.com/google-deepmind/dm_control/tree/main/dm_control/mjcf),
+you can use the following code snippet to do this. Any `qpos` or `ctrl`
+keyframes defined in the arm will be automatically modified to account for the
+added degrees of freedom.
 
 ```python
 def attach_hand_to_arm(
