@@ -143,24 +143,31 @@ Menagerie, see [CONTRIBUTING](CONTRIBUTING.md).
 
 | Robot             | Preview       | Grade   |
 | ----------------- | ------------- | :-----: |
+| Hands             |               |         |
 | [Shadow E3M5](shadow_hand/README.md)|[<img src="shadow_hand/shadow_hand.png" width="400">](shadow_hand/README.md)|A|
 | [Allegro V3](wonik_allegro/README.md)|[<img src="wonik_allegro/allegro_hand.png" width="400">](wonik_allegro/README.md)|C|
 | [Robotiq 2F-85](robotiq_2f85/README.md)|[<img src="robotiq_2f85/2f85.png" width="400">](robotiq_2f85/README.md)|B|
+| Humanoids         |               |         |
 | [Cassie](agility_cassie/README.md)|[<img src="agility_cassie/cassie.png" width="400">](agility_cassie/README.md)|C|
 | [Robotis OP3](robotis_op3/README.md)|[<img src="robotis_op3/op3.png" width="400">](robotis_op3/README.md)|A+|
+| Quadrupeds         |              |         |
 | [ANYmal B](anybotics_anymal_b/README.md)|[<img src="anybotics_anymal_b/anymal_b.png" width="400">](anybotics_anymal_b/README.md)|A|
 | [ANYmal C](anybotics_anymal_c/README.md)|[<img src="anybotics_anymal_c/anymal_c.png" width="400">](anybotics_anymal_c/README.md)|B|
 | [Unitree A1](unitree_a1/README.md)|[<img src="unitree_a1/a1.png" width="400">](unitree_a1/README.md)|B|
 | [Unitree Go1](unitree_go1/README.md)|[<img src="unitree_go1/go1.png" width="400">](unitree_go1/README.md)|B|
+| [Google Barkour v0](google_barkour_v0/README.md)|[<img src="google_barkour_v0/barkour_v0.png" width="400">](google_barkour_v0/README.md)|A|
+| Arms               |              |         |
 | [Panda](franka_emika_panda/README.md)|[<img src="franka_emika_panda/panda.png" width="400">](franka_emika_panda/README.md)|B|
 | [UR5e](universal_robots_ur5e/README.md)|[<img src="universal_robots_ur5e/ur5e.png" width="400">](universal_robots_ur5e/README.md)|B|
 | [KUKA iiwa 14](kuka_iiwa_14/README.md)|[<img src="kuka_iiwa_14/iiwa_14.png" width="400">](kuka_iiwa_14/README.md)|B|
 | [Sawyer](rethink_robotics_sawyer/README.md)|[<img src="rethink_robotics_sawyer/sawyer.png" width="400">](rethink_robotics_sawyer/README.md)|C|
 | [xArm7](ufactory_xarm7/README.md)|[<img src="ufactory_xarm7/xarm7.png" width="400">](ufactory_xarm7/README.md)|C|
-| [Realsense D435i](realsense_d435i/README.md)|[<img src="realsense_d435i/d435i.png" width="400">](realsense_d435i/README.md)|B|
+| Mobile Manipulators|              |         |
 | [Stretch 2](hello_robot_stretch/README.md)|[<img src="hello_robot_stretch/stretch.png" width="400">](hello_robot_stretch/README.md)|C|
-| [Google Barkour v0](google_barkour_v0/README.md)|[<img src="google_barkour_v0/barkour_v0.png" width="400">](google_barkour_v0/README.md)|A|
+| Drones             |              |         |
 | [Skydio X2](skydio_x2/README.md)|[<img src="skydio_x2/x2.png" width="400">](skydio_x2/README.md)|A|
+| Other              |              |         |
+| [Realsense D435i](realsense_d435i/README.md)|[<img src="realsense_d435i/d435i.png" width="400">](realsense_d435i/README.md)|B|
 
 For corresponding embedded videos, see the MuJoCo
 [documentation](https://mujoco.readthedocs.io/en/latest/models.html).
