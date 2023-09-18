@@ -20,6 +20,8 @@ The source of truth for the Barkour v0 Quadruped can be found in `barkour.xml`. 
 
 ## License
 
+Copyright 2023 DeepMind Technologies Limited.
+
 This model is released under an [Apache-2.0 License](LICENSE).
 
 ## Publications
