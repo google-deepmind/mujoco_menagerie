@@ -1,0 +1,264 @@
+<mujoco model="robotis_op3">
+
+  <compiler angle="radian" meshdir="assets" autolimits="true"/>
+
+  <asset>
+    <material name="black" rgba="0.2 0.2 0.2 1"/>
+    <mesh file="body.stl"/>
+    <mesh file="ll1.stl"/>
+    <mesh file="ll2.stl"/>
+    <mesh file="ll3.stl"/>
+    <mesh file="ll4.stl"/>
+    <mesh file="ll5.stl"/>
+    <mesh file="ll6.stl"/>
+    <mesh file="rl1.stl"/>
+    <mesh file="rl2.stl"/>
+    <mesh file="rl3.stl"/>
+    <mesh file="rl4.stl"/>
+    <mesh file="rl5.stl"/>
+    <mesh file="rl6.stl"/>
+    <mesh file="la1.stl"/>
+    <mesh file="la2.stl"/>
+    <mesh file="la3.stl"/>
+    <mesh file="ra1.stl"/>
+    <mesh file="ra2.stl"/>
+    <mesh file="ra3.stl"/>
+    <mesh file="h1.stl"/>
+    <mesh file="h2.stl"/>
+    <mesh name="bodyc" file="simplified_convex/body.stl"/>
+    <mesh name="body1c" file="simplified_convex/body_sub1.stl"/>
+    <mesh name="body2c" file="simplified_convex/body_sub2.stl"/>
+    <mesh name="body3c" file="simplified_convex/body_sub3.stl"/>
+    <mesh name="body4c" file="simplified_convex/body_sub4.stl"/>
+    <mesh name="ll1c" file="simplified_convex/ll1.stl"/>
+    <mesh name="ll2c" file="simplified_convex/ll2.stl"/>
+    <mesh name="ll3c" file="simplified_convex/ll3.stl"/>
+    <mesh name="ll4c" file="simplified_convex/ll4.stl"/>
+    <mesh name="ll5c" file="simplified_convex/ll5.stl"/>
+    <mesh name="ll6c" file="simplified_convex/ll6.stl"/>
+    <mesh name="rl1c" file="simplified_convex/rl1.stl"/>
+    <mesh name="rl2c" file="simplified_convex/rl2.stl"/>
+    <mesh name="rl3c" file="simplified_convex/rl3.stl"/>
+    <mesh name="rl4c" file="simplified_convex/rl4.stl"/>
+    <mesh name="rl5c" file="simplified_convex/rl5.stl"/>
+    <mesh name="rl6c" file="simplified_convex/rl6.stl"/>
+    <mesh name="la1c" file="simplified_convex/la1.stl"/>
+    <mesh name="la2c" file="simplified_convex/la2.stl"/>
+    <mesh name="la3c" file="simplified_convex/la3.stl"/>
+    <mesh name="ra1c" file="simplified_convex/ra1.stl"/>
+    <mesh name="ra2c" file="simplified_convex/ra2.stl"/>
+    <mesh name="ra3c" file="simplified_convex/ra3.stl"/>
+    <mesh name="h1c" file="simplified_convex/h1.stl"/>
+    <mesh name="h2c" file="simplified_convex/h2.stl"/>
+    <mesh name="h21c" file="simplified_convex/h2_sub1.stl"/>
+    <mesh name="h22c" file="simplified_convex/h2_sub2.stl"/>
+  </asset>
+
+  <default>
+    <mesh scale="0.001 0.001 0.001"/>
+    <geom type="mesh" solref=".004 1"/>
+    <joint damping="1.084" armature="0.045" frictionloss="0.03"/>
+    <site group="5" type="sphere"/>
+    <position kp="21.1" ctrlrange="-3.141592 3.141592" forcerange="-5 5"/>
+    <default class="collision">
+      <geom group="3"/>
+      <default class="foot">
+        <geom mass="0" type="box"/>
+      </default>
+    </default>
+    <default class="visual">
+      <geom material="black" contype="0" conaffinity="0" group="2"/>
+    </default>
+  </default>
+
+  <worldbody>
+    <light name="spotlight" mode="targetbodycom" target="body_link" pos="0 -1 2"/>
+    <body name="body_link" pos="0 0 0.3">
+      <inertial pos="-0.01501 0.00013 0.06582" quat="0.704708 0.704003 0.0667707 -0.0575246" mass="1.34928"
+        diaginertia="0.00341264 0.00316574 0.00296931"/>
+      <freejoint/>
+      <geom mesh="body" class="visual"/>
+      <geom mesh="bodyc" class="collision"/>
+      <geom mesh="body1c" class="collision"/>
+      <geom mesh="body2c" class="collision"/>
+      <geom mesh="body3c" class="collision"/>
+      <geom mesh="body4c" class="collision"/>
+      <site name="torso"/>
+      <body name="head_pan_link" pos="-0.001 0 0.1365">
+        <inertial pos="0.00233 0 0.00823" quat="0.663575 0.663575 0.244272 -0.244272" mass="0.01176"
+          diaginertia="4.23401e-06 3.60599e-06 1.65e-06"/>
+        <joint name="head_pan" axis="0 0 1"/>
+        <geom mesh="h1" class="visual"/>
+        <geom mesh="h1c" class="collision"/>
+        <body name="head_tilt_link" pos="0.01 0.019 0.0285">
+          <inertial pos="0.0023 -0.01863 0.0277" quat="0.997312 0.00973825 0.0726131 -0.00102702" mass="0.13631"
+            diaginertia="0.000107452 8.72266e-05 4.39413e-05"/>
+          <joint name="head_tilt" axis="0 -1 0"/>
+          <geom mesh="h2" class="visual"/>
+          <geom mesh="h2c" class="collision"/>
+          <geom mesh="h21c" class="collision"/>
+          <geom mesh="h22c" class="collision"/>
+          <camera name="egocentric" pos="0.01425 -0.019 0.04975" fovy="43.3" mode="fixed"
+            euler="0.0 -1.570796 -1.570796"/>
+        </body>
+      </body>
+      <body name="l_sho_pitch_link" pos="-0.001 0.06 0.111">
+        <inertial pos="0 0.00823 -0.00233" quat="0.244272 0.663575 0.244272 0.663575" mass="0.01176"
+          diaginertia="4.23401e-06 3.60599e-06 1.65e-06"/>
+        <joint name="l_sho_pitch" axis="0 1 0"/>
+        <geom mesh="la1" class="visual"/>
+        <geom mesh="la1c" class="collision"/>
+        <body name="l_sho_roll_link" pos="0.019 0.0285 -0.01">
+          <inertial pos="-0.01844 0.04514 0.00028" quat="0.501853 0.50038 -0.498173 0.499588" mass="0.17758"
+            diaginertia="0.000234742 0.00022804 3.04183e-05"/>
+          <joint name="l_sho_roll" axis="-1 0 0"/>
+          <geom mesh="la2" class="visual"/>
+          <geom mesh="la2c" class="collision"/>
+          <body name="l_el_link" pos="0 0.0904 -0.0001">
+            <inertial pos="-0.019 0.07033 0.0038" quat="0.483289 0.51617 -0.51617 0.483289" mass="0.04127"
+              diaginertia="6.8785e-05 6.196e-05 1.2065e-05"/>
+            <joint name="l_el" axis="1 0 0"/>
+            <geom mesh="la3" class="visual"/>
+            <geom mesh="la3c" class="collision"/>
+          </body>
+        </body>
+      </body>
+      <body name="r_sho_pitch_link" pos="-0.001 -0.06 0.111">
+        <inertial pos="0 -0.00823 -0.00233" quat="-0.244272 0.663575 -0.244272 0.663575" mass="0.01176"
+          diaginertia="4.23401e-06 3.60599e-06 1.65e-06"/>
+        <joint name="r_sho_pitch" axis="0 -1 0"/>
+        <geom mesh="ra1" class="visual"/>
+        <geom mesh="ra1c" class="collision"/>
+        <body name="r_sho_roll_link" pos="0.019 -0.0285 -0.01">
+          <inertial pos="-0.01844 -0.04514 0.00028" quat="0.50038 0.501853 -0.499588 0.498173" mass="0.17758"
+            diaginertia="0.000234742 0.00022804 3.04183e-05"/>
+          <joint name="r_sho_roll" axis="-1 0 0"/>
+          <geom mesh="ra2" class="visual"/>
+          <geom mesh="ra2c" class="collision"/>
+          <body name="r_el_link" pos="0 -0.0904 -0.0001">
+            <inertial pos="-0.019 -0.07033 0.0038" quat="0.51617 0.483289 -0.483289 0.51617" mass="0.04127"
+              diaginertia="6.8785e-05 6.196e-05 1.2065e-05"/>
+            <joint name="r_el" axis="1 0 0"/>
+            <geom mesh="ra3" class="visual"/>
+            <geom mesh="ra3c" class="collision"/>
+          </body>
+        </body>
+      </body>
+      <body name="l_hip_yaw_link" pos="0 0.035 0">
+        <inertial pos="-0.00157 0 -0.00774" quat="0.499041 0.500957 0.500957 0.499041" mass="0.01181"
+          diaginertia="4.3e-06 4.12004e-06 1.50996e-06"/>
+        <joint name="l_hip_yaw" axis="0 0 -1"/>
+        <geom mesh="ll1" class="visual"/>
+        <geom mesh="ll1c" class="collision"/>
+        <body name="l_hip_roll_link" pos="-0.024 0 -0.0285">
+          <inertial pos="0.00388 0.00028 -0.01214" quat="0.502657 0.490852 0.498494 0.507842" mass="0.17886"
+            diaginertia="0.000125243 0.000108598 4.65693e-05"/>
+          <joint name="l_hip_roll" axis="-1 0 0"/>
+          <geom mesh="ll2" class="visual"/>
+          <geom mesh="ll2c" class="collision"/>
+          <body name="l_hip_pitch_link" pos="0.0241 0.019 0">
+            <inertial pos="0.00059 -0.01901 -0.08408" quat="0.999682 0.0246915 0.00447825 -0.002482" mass="0.11543"
+              diaginertia="0.000104996 9.63044e-05 2.47492e-05"/>
+            <joint name="l_hip_pitch" axis="0 1 0"/>
+            <geom mesh="ll3" class="visual"/>
+            <geom mesh="ll3c" class="collision"/>
+            <body name="l_knee_link" pos="0 0 -0.11015">
+              <inertial pos="0 -0.02151 -0.055" mass="0.04015" diaginertia="3.715e-05 2.751e-05 1.511e-05"/>
+              <joint name="l_knee" axis="0 1 0"/>
+              <geom mesh="ll4" class="visual"/>
+              <geom mesh="ll4c" class="collision"/>
+              <body name="l_ank_pitch_link" pos="0 0 -0.11">
+                <inertial pos="-0.02022 -0.01872 0.01214" quat="0.490852 0.502657 0.507842 0.498494" mass="0.17886"
+                  diaginertia="0.000125243 0.000108598 4.65693e-05"/>
+                <joint name="l_ank_pitch" axis="0 -1 0"/>
+                <geom mesh="ll5" class="visual"/>
+                <geom mesh="ll5c" class="collision"/>
+                <body name="l_ank_roll_link" pos="-0.0241 -0.019 0">
+                  <inertial pos="0.02373 0.01037 -0.0276" quat="0.0078515 0.707601 0.0113965 0.706477" mass="0.06934"
+                    diaginertia="0.000115818 7.87135e-05 4.03389e-05"/>
+                  <joint name="l_ank_roll" axis="1 0 0"/>
+                  <geom mesh="ll6" class="visual"/>
+                  <!-- <geom mesh="ll6c" class="collision" /> -->
+                  <geom class="foot" pos="0.024 0.013 -0.0265" size="0.0635 0.028 0.004"/>
+                  <geom class="foot" pos="0.024 0.0125 -0.0265" size="0.057 0.039 0.004"/>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+      <body name="r_hip_yaw_link" pos="0 -0.035 0">
+        <inertial pos="-0.00157 0 -0.00774" quat="0.499041 0.500957 0.500957 0.499041" mass="0.01181"
+          diaginertia="4.3e-06 4.12004e-06 1.50996e-06"/>
+        <joint name="r_hip_yaw" axis="0 0 -1"/>
+        <geom mesh="rl1" class="visual"/>
+        <geom mesh="rl1c" class="collision"/>
+        <body name="r_hip_roll_link" pos="-0.024 0 -0.0285">
+          <inertial pos="0.00388 -0.00028 -0.01214" quat="0.507842 0.498494 0.490852 0.502657" mass="0.17886"
+            diaginertia="0.000125243 0.000108598 4.65693e-05"/>
+          <joint name="r_hip_roll" axis="-1 0 0"/>
+          <geom mesh="rl2" class="visual"/>
+          <geom mesh="rl2c" class="collision"/>
+          <body name="r_hip_pitch_link" pos="0.0241 -0.019 0">
+            <inertial pos="0.00059 0.01901 -0.08408" quat="0.999682 -0.0246915 0.00447825 0.002482" mass="0.11543"
+              diaginertia="0.000104996 9.63044e-05 2.47492e-05"/>
+            <joint name="r_hip_pitch" axis="0 -1 0"/>
+            <geom mesh="rl3" class="visual"/>
+            <geom mesh="rl3c" class="collision"/>
+            <body name="r_knee_link" pos="0 0 -0.11015">
+              <inertial pos="0 0.02151 -0.055" mass="0.04015" diaginertia="3.715e-05 2.751e-05 1.511e-05"/>
+              <joint name="r_knee" axis="0 -1 0"/>
+              <geom mesh="rl4" class="visual"/>
+              <geom mesh="rl4c" class="collision"/>
+              <body name="r_ank_pitch_link" pos="0 0 -0.11">
+                <inertial pos="-0.02022 0.01872 0.01214" quat="0.498494 0.507842 0.502657 0.490852" mass="0.17886"
+                  diaginertia="0.000125243 0.000108598 4.65693e-05"/>
+                <joint name="r_ank_pitch" axis="0 1 0"/>
+                <geom mesh="rl5" class="visual"/>
+                <geom mesh="rl5c" class="collision"/>
+                <body name="r_ank_roll_link" pos="-0.0241 0.019 0">
+                  <inertial pos="0.02373 -0.01037 -0.0276" quat="-0.0078515 0.707601 -0.0113965 0.706477" mass="0.06934"
+                    diaginertia="0.000115818 7.87135e-05 4.03389e-05"/>
+                  <joint name="r_ank_roll" axis="1 0 0"/>
+                  <geom mesh="rl6" class="visual"/>
+                  <!-- <geom mesh="rl6c" class="collision" /> -->
+                  <geom class="foot" pos="0.024 -0.013 -0.0265" size="0.0635 0.028 0.004"/>
+                  <geom class="foot" pos="0.024 -0.0125 -0.0265" size="0.057 0.039 0.004"/>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+
+  <contact>
+    <exclude body1="l_hip_yaw_link" body2="l_hip_pitch_link"/>
+    <exclude body1="r_hip_yaw_link" body2="r_hip_pitch_link"/>
+  </contact>
+
+  <actuator>
+    <position name="head_pan_act" joint="head_pan"/>
+    <position name="head_tilt_act" joint="head_tilt"/>
+    <position name="l_sho_pitch_act" joint="l_sho_pitch"/>
+    <position name="l_sho_roll_act" joint="l_sho_roll"/>
+    <position name="l_el_act" joint="l_el"/>
+    <position name="r_sho_pitch_act" joint="r_sho_pitch"/>
+    <position name="r_sho_roll_act" joint="r_sho_roll"/>
+    <position name="r_el_act" joint="r_el"/>
+    <position name="l_hip_yaw_act" joint="l_hip_yaw"/>
+    <position name="l_hip_roll_act" joint="l_hip_roll"/>
+    <position name="l_hip_pitch_act" joint="l_hip_pitch"/>
+    <position name="l_knee_act" joint="l_knee"/>
+    <position name="l_ank_pitch_act" joint="l_ank_pitch"/>
+    <position name="l_ank_roll_act" joint="l_ank_roll"/>
+    <position name="r_hip_yaw_act" joint="r_hip_yaw"/>
+    <position name="r_hip_roll_act" joint="r_hip_roll"/>
+    <position name="r_hip_pitch_act" joint="r_hip_pitch"/>
+    <position name="r_knee_act" joint="r_knee"/>
+    <position name="r_ank_pitch_act" joint="r_ank_pitch"/>
+    <position name="r_ank_roll_act" joint="r_ank_roll"/>
+  </actuator>
+
+</mujoco>

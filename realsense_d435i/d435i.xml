@@ -1,0 +1,54 @@
+<mujoco model="d435i">
+  <compiler meshdir="assets/" fitaabb="true"/>
+
+  <visual>
+    <global azimuth="90" elevation="-90"/>
+  </visual>
+
+  <default>
+    <default class="d435i">
+      <material specular="0" shininess="0.25"/>
+      <default class="visual">
+        <geom group="2" type="mesh" contype="0" conaffinity="0" mass="0"/>
+      </default>
+      <default class="collision">
+        <geom group="3" type="mesh" mass="0"/>
+      </default>
+    </default>
+  </default>
+
+  <asset>
+    <material class="d435i" name="Black_Acrylic" rgba="0.070360 0.070360 0.070360 1"/>
+    <material class="d435i" name="Cameras_Gray" rgba="0.296138 0.296138 0.296138 1"/>
+    <material class="d435i" name="IR_Emitter_Lens" rgba="0.287440 0.665387 0.327778 1"/>
+    <material class="d435i" name="IR_Lens" rgba="0.035601 0.035601 0.035601 1"/>
+    <material class="d435i" name="IR_Rim" rgba="0.799102 0.806952 0.799103 1"/>
+    <material class="d435i" name="Metal_Casing" rgba="1 1 1 1"/>
+    <material class="d435i" name="RGB_Pupil" rgba="0.087140 0.002866 0.009346 1"/>
+    <mesh file="d435i_0.obj"/>
+    <mesh file="d435i_1.obj"/>
+    <mesh file="d435i_2.obj"/>
+    <mesh file="d435i_3.obj"/>
+    <mesh file="d435i_4.obj"/>
+    <mesh file="d435i_5.obj"/>
+    <mesh file="d435i_6.obj"/>
+    <mesh file="d435i_7.obj"/>
+    <mesh file="d435i_8.obj"/>
+  </asset>
+
+  <worldbody>
+    <light pos="0 0 1.5" dir="0 0 -1" directional="true"/>
+    <body name="d435i" childclass="d435i">
+      <geom mesh="d435i_0" material="IR_Lens" class="visual"/>
+      <geom mesh="d435i_1" material="IR_Emitter_Lens" class="visual"/>
+      <geom mesh="d435i_2" material="IR_Rim" class="visual"/>
+      <geom mesh="d435i_3" material="IR_Lens" class="visual"/>
+      <geom mesh="d435i_4" material="Cameras_Gray" class="visual"/>
+      <geom mesh="d435i_5" material="Black_Acrylic" class="visual"/>
+      <geom mesh="d435i_6" material="Black_Acrylic" class="visual"/>
+      <geom mesh="d435i_7" material="RGB_Pupil" class="visual"/>
+      <geom mesh="d435i_8" mass="0.072" material="Metal_Casing" class="visual"/>
+      <geom class="collision" type="capsule" mesh="d435i_8"/>
+    </body>
+  </worldbody>
+</mujoco>

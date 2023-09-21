@@ -1,5 +1,7 @@
 # Franka Emika Panda Description (MJCF)
 
+Requires MuJoCo 2.3.3 or later.
+
 ## Overview
 
 This package contains a simplified robot description (MJCF) of the [Franka Emika

@@ -1,7 +1,7 @@
 <mujoco model="panda">
   <compiler angle="radian" meshdir="assets" autolimits="true"/>
 
-  <option integrator="implicit"/>
+  <option integrator="implicitfast"/>
 
   <default>
     <default class="panda">
@@ -119,7 +119,7 @@
     <light name="top" pos="0 0 2" mode="trackcom"/>
     <body name="link0" childclass="panda">
       <inertial mass="0.629769" pos="-0.041018 -0.00014 0.049974"
-          fullinertia="0.00315 0.00388 0.004285 8.2904e-7 0.00015 8.2299e-6"/>
+        fullinertia="0.00315 0.00388 0.004285 8.2904e-7 0.00015 8.2299e-6"/>
       <geom mesh="link0_0" material="off_white" class="visual"/>
       <geom mesh="link0_1" material="black" class="visual"/>
       <geom mesh="link0_2" material="off_white" class="visual"/>
@@ -134,20 +134,20 @@
       <geom mesh="link0_c" class="collision"/>
       <body name="link1" pos="0 0 0.333">
         <inertial mass="4.970684" pos="0.003875 0.002081 -0.04762"
-            fullinertia="0.70337 0.70661 0.0091170 -0.00013900 0.0067720 0.019169"/>
+          fullinertia="0.70337 0.70661 0.0091170 -0.00013900 0.0067720 0.019169"/>
         <joint name="joint1"/>
         <geom material="white" mesh="link1" class="visual"/>
         <geom mesh="link1_c" class="collision"/>
         <body name="link2" quat="1 -1 0 0">
           <inertial mass="0.646926" pos="-0.003141 -0.02872 0.003495"
-              fullinertia="0.0079620 2.8110e-2 2.5995e-2 -3.925e-3 1.0254e-2 7.04e-4"/>
+            fullinertia="0.0079620 2.8110e-2 2.5995e-2 -3.925e-3 1.0254e-2 7.04e-4"/>
           <joint name="joint2" range="-1.7628 1.7628"/>
           <geom material="white" mesh="link2" class="visual"/>
           <geom mesh="link2_c" class="collision"/>
           <body name="link3" pos="0 -0.316 0" quat="1 1 0 0">
             <joint name="joint3"/>
             <inertial mass="3.228604" pos="2.7518e-2 3.9252e-2 -6.6502e-2"
-                fullinertia="3.7242e-2 3.6155e-2 1.083e-2 -4.761e-3 -1.1396e-2 -1.2805e-2"/>
+              fullinertia="3.7242e-2 3.6155e-2 1.083e-2 -4.761e-3 -1.1396e-2 -1.2805e-2"/>
             <geom mesh="link3_0" material="white" class="visual"/>
             <geom mesh="link3_1" material="white" class="visual"/>
             <geom mesh="link3_2" material="white" class="visual"/>
@@ -155,7 +155,7 @@
             <geom mesh="link3_c" class="collision"/>
             <body name="link4" pos="0.0825 0 0" quat="1 1 0 0">
               <inertial mass="3.587895" pos="-5.317e-2 1.04419e-1 2.7454e-2"
-                  fullinertia="2.5853e-2 1.9552e-2 2.8323e-2 7.796e-3 -1.332e-3 8.641e-3"/>
+                fullinertia="2.5853e-2 1.9552e-2 2.8323e-2 7.796e-3 -1.332e-3 8.641e-3"/>
               <joint name="joint4" range="-3.0718 -0.0698"/>
               <geom mesh="link4_0" material="white" class="visual"/>
               <geom mesh="link4_1" material="white" class="visual"/>
@@ -164,7 +164,7 @@
               <geom mesh="link4_c" class="collision"/>
               <body name="link5" pos="-0.0825 0.384 0" quat="1 -1 0 0">
                 <inertial mass="1.225946" pos="-1.1953e-2 4.1065e-2 -3.8437e-2"
-                    fullinertia="3.5549e-2 2.9474e-2 8.627e-3 -2.117e-3 -4.037e-3 2.29e-4"/>
+                  fullinertia="3.5549e-2 2.9474e-2 8.627e-3 -2.117e-3 -4.037e-3 2.29e-4"/>
                 <joint name="joint5"/>
                 <geom mesh="link5_0" material="black" class="visual"/>
                 <geom mesh="link5_1" material="white" class="visual"/>
@@ -174,7 +174,7 @@
                 <geom mesh="link5_c2" class="collision"/>
                 <body name="link6" quat="1 1 0 0">
                   <inertial mass="1.666555" pos="6.0149e-2 -1.4117e-2 -1.0517e-2"
-                      fullinertia="1.964e-3 4.354e-3 5.433e-3 1.09e-4 -1.158e-3 3.41e-4"/>
+                    fullinertia="1.964e-3 4.354e-3 5.433e-3 1.09e-4 -1.158e-3 3.41e-4"/>
                   <joint name="joint6" range="-0.0175 3.7525"/>
                   <geom mesh="link6_0" material="off_white" class="visual"/>
                   <geom mesh="link6_1" material="white" class="visual"/>
@@ -196,7 +196,7 @@
                   <geom mesh="link6_c" class="collision"/>
                   <body name="link7" pos="0.088 0 0" quat="1 1 0 0">
                     <inertial mass="7.35522e-01" pos="1.0517e-2 -4.252e-3 6.1597e-2"
-                        fullinertia="1.2516e-2 1.0027e-2 4.815e-3 -4.28e-4 -1.196e-3 -7.41e-4"/>
+                      fullinertia="1.2516e-2 1.0027e-2 4.815e-3 -4.28e-4 -1.196e-3 -7.41e-4"/>
                     <joint name="joint7"/>
                     <geom mesh="link7_0" material="white" class="visual"/>
                     <geom mesh="link7_1" material="black" class="visual"/>
@@ -264,23 +264,20 @@
   <actuator>
     <general class="panda" name="actuator1" joint="joint1" gainprm="4500" biasprm="0 -4500 -450"/>
     <general class="panda" name="actuator2" joint="joint2" gainprm="4500" biasprm="0 -4500 -450"
-        ctrlrange="-1.7628 1.7628"/>
+      ctrlrange="-1.7628 1.7628"/>
     <general class="panda" name="actuator3" joint="joint3" gainprm="3500" biasprm="0 -3500 -350"/>
     <general class="panda" name="actuator4" joint="joint4" gainprm="3500" biasprm="0 -3500 -350"
-        ctrlrange="-3.0718 -0.0698"/>
-    <general class="panda" name="actuator5" joint="joint5" gainprm="2000" biasprm="0 -2000 -200"
-        forcerange="-12 12"/>
-    <general class="panda" name="actuator6" joint="joint6" gainprm="2000" biasprm="0 -2000 -200"
-        forcerange="-12 12" ctrlrange="-0.0175 3.7525"/>
-    <general class="panda" name="actuator7" joint="joint7" gainprm="2000" biasprm="0 -2000 -200"
-        forcerange="-12 12"/>
+      ctrlrange="-3.0718 -0.0698"/>
+    <general class="panda" name="actuator5" joint="joint5" gainprm="2000" biasprm="0 -2000 -200" forcerange="-12 12"/>
+    <general class="panda" name="actuator6" joint="joint6" gainprm="2000" biasprm="0 -2000 -200" forcerange="-12 12"
+      ctrlrange="-0.0175 3.7525"/>
+    <general class="panda" name="actuator7" joint="joint7" gainprm="2000" biasprm="0 -2000 -200" forcerange="-12 12"/>
     <!-- Remap original ctrlrange (0, 0.04) to (0, 255): 0.04 * 100 / 255 = 0.01568627451 -->
     <general class="panda" name="actuator8" tendon="split" forcerange="-100 100" ctrlrange="0 255"
-        gainprm="0.01568627451 0 0" biasprm="0 -100 -10"/>
+      gainprm="0.01568627451 0 0" biasprm="0 -100 -10"/>
   </actuator>
 
   <keyframe>
-    <key name="home" qpos="0 0 0 -1.57079 0 1.57079 -0.7853 0.04 0.04"
-        ctrl="0 0 0 -1.57079 0 1.57079 -0.7853 255"/>
+    <key name="home" qpos="0 0 0 -1.57079 0 1.57079 -0.7853 0.04 0.04" ctrl="0 0 0 -1.57079 0 1.57079 -0.7853 255"/>
   </keyframe>
 </mujoco>

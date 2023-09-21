@@ -1,0 +1,51 @@
+<mujoco model="barkour scene with obstacles">
+
+  <include file="barkour_v0.xml"/>
+
+  <visual>
+    <headlight diffuse="0.6 0.6 0.6" ambient="0.3 0.3 0.3" specular="0 0 0"/>
+    <rgba haze="0.15 0.25 0.35 1"/>
+    <global azimuth="120" elevation="-20"/>
+  </visual>
+
+  <asset>
+    <mesh file="30degree_aframe__1default.stl"/>
+    <mesh file="aframe_side__1default.stl"/>
+    <mesh file="aframe_side__2default.stl"/>
+    <mesh file="cone1__1default.stl"/>
+    <texture type="skybox" builtin="gradient" rgb1="0.3 0.5 0.7" rgb2="0 0 0" width="512" height="3072"/>
+    <texture type="2d" name="floor" builtin="checker" mark="edge" rgb1="0.8203125 0.88671875 0.984375" rgb2="0.6796875 0.79296875 0.9765625"
+      markrgb="0 0 0" width="1000" height="1000"/>
+    <material name="floor" texture="floor" texuniform="true" texrepeat="2 2" reflectance="0.2"/>
+    <texture type="2d" name="broadjump" file="broadjump_texture.png"/>
+    <material name="broadjump" texture="broadjump" texuniform="true" texrepeat="1 4" reflectance="0.2"/>
+  </asset>
+
+  <worldbody>
+    <camera name="default" pos="-1.947 -0.590 5.008" xyaxes="-0.351 -0.936 -0.000 0.728 -0.273 0.628"/>
+    <geom pos="2.5 -2.5 -0.005" type="box" material="floor" size="2.5 2.5 0.005"/>
+    <!-- start table -->
+    <geom pos="0.5 -0.5 0.05" type="box" rgba="0.76953125 0.1328125 0.12109375 1" size="0.5 0.5 0.05"/>
+    <!-- weave poles -->
+    <geom pos="1.7 -0.7 0.02" quat="0 0 -1 0" type="mesh" rgba="0.9453125 0.59765625 0 1" mesh="cone1__1default"/>
+    <geom pos="2.5 -0.5 0.02" quat="0 0 -1 0" type="mesh" rgba="0.203125 0.65625 0.32421875 1" mesh="cone1__1default"/>
+    <geom pos="3.2 -0.7 0.02" quat="0 0 -1 0" type="mesh" rgba="0.9453125 0.59765625 0 1" mesh="cone1__1default"/>
+    <geom pos="3.8 -0.5 0.02" quat="0 0 -1 0" type="mesh" rgba="0.203125 0.65625 0.32421875 1" mesh="cone1__1default"/>
+    <geom pos="4.3 -0.7 0.02" quat="0 0 -1 0" type="mesh" rgba="0.9453125 0.59765625 0 1" mesh="cone1__1default"/>
+    <!-- A-frame -->
+    <body pos="2.5 -2.5 0" quat="1.0 0 0 -1.0">
+    <geom pos="0.3871 0.377082 0" quat="0.62721 0.627213 -0.326506 -0.326505" type="mesh" rgba="0.203125 0.65625 0.32421875 1" mesh="30degree_aframe__1default"/>
+    <geom pos="0.3871 0.377082 0" quat="0.62721 0.627213 -0.326506 -0.326505" type="mesh" rgba="0.9921875 0.93359375 0.76171875 0.2" mesh="aframe_side__1default"/>
+    <geom pos="1.20216 0.94779 0" quat="0.62721 0.627213 -0.326506 -0.326505" type="mesh" rgba="0.9921875 0.93359375 0.76171875 0.2" mesh="aframe_side__2default"/>
+    </body>
+    <!-- broad jump table -->
+    <geom pos="2.75 -4.5 0.0005" type="box" material="broadjump" size="0.5 0.25 0.0005" quat="1.0 0 0 -1.0"/>
+    <!-- end table -->
+    <geom pos="4.5 -4.5 0.05" type="box" rgba="0.98828125 0.8359375 0.38671875 1" size="0.5 0.5 0.05"/>
+  </worldbody>
+
+  <keyframe>
+    <key name="start" qpos="0.5 -0.5 0.3 1 0 0 0 0 0.5 1.0 0 0.5 1.0 0 0.5 1.0 0 0.5 1.0"
+      ctrl="0 0.5 1.0 0 0.5 1.0 0 0.5 1.0 0 0.5 1.0"/>
+  </keyframe>
+</mujoco>
