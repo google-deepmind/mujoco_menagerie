@@ -22,8 +22,7 @@ This package contains a simplified robot description (MJCF) of the [TIAGo++ Robo
  7. Added `<inertial  pos="0 0 0"  mass="28.26649"  fullinertia="0.465408937 0.483193291 0.550939703 0.002160024 -0.001760255 -0.000655952"/>` base inertia that was not automatically converted.
  8. Added force, velocity and position controlled actuators (manually) .
  9. Added visuals improvements: plane, skybox and light. 
- 10. Added `scene.xml` which includes the robot, with a textured groundplane, skybox, and haze.
-
+ 10. Added `scene_position.xml`, `scene_velocity.xml` and `scene_motor.xml` which allows to control the both arms of the robot in different control modes and which also includes the robot, with a textured groundplane, skybox, and haze.
 
 ### License
 
