@@ -124,7 +124,7 @@
       <body name="torso_lift_link" pos="-0.062 0 0.8885">
         <inertial pos="0.04361 -0.00116 -0.17334" quat="0.562536 0.0400112 -0.00365739 0.825796" mass="6.93198"
           diaginertia="0.250465 0.244703 0.0893652"/>
-        <joint name="torso_lift_joint" pos="0 0 0" axis="0 0 1" type="slide" range="0 0.35" damping="1000"/>
+        <joint name="torso_lift_joint" pos="0 0 0" axis="0 0 1" type="slide" range="0 0.35" damping="2000"/>
         <geom type="mesh" density="0" rgba="1 1 1 1" mesh="torso_lift_with_arm"/>
         <body name="head_1_link" pos="0.182 0 0">
           <inertial pos="-0.00508 0.00237 0.07229" quat="0.688669 -0.0973979 -0.101834 0.711251" mass="0.6222"
@@ -141,22 +141,22 @@
         <body name="arm_1_link" pos="0.15505 0.014 -0.151" quat="0.707107 0 0 -0.707107">
           <inertial pos="0.061191 -0.022397 -0.012835" quat="0.161963 0.538347 0.345223 0.751513" mass="1.56343"
             diaginertia="0.00510233 0.00510233 0.00510233"/>
-          <joint name="arm_1_joint" pos="0 0 0" axis="0 0 1" range="0 2.74889" damping="1" frictionloss="1"/>
+          <joint name="arm_1_joint" pos="0 0 0" axis="0 0 1" range="0 2.74889" damping="10" frictionloss="1"/>
           <geom type="mesh" density="0" rgba="1 1 1 1" mesh="arm_1"/>
           <body name="arm_2_link" pos="0.125 0.0195 -0.031" quat="0.707107 0.707107 0 0">
             <inertial pos="0.030432 0.000229 -0.005942" quat="0.126897 0.72859 0.136233 0.659161" mass="1.8004"
               diaginertia="0.00437229 0.00432701 0.0017837"/>
-            <joint name="arm_2_joint" pos="0 0 0" axis="0 0 1" range="-1.5708 1.09083" damping="1" frictionloss="1"/>
+            <joint name="arm_2_joint" pos="0 0 0" axis="0 0 1" range="-1.5708 1.09083" damping="10" frictionloss="1"/>
             <geom type="mesh" density="0" rgba="0.1 0.1 0.1 1" mesh="arm_2"/>
             <body name="arm_3_link" pos="0.0895 0 -0.0015" quat="0.5 -0.5 -0.5 0.5">
               <inertial pos="0.007418 -0.004361 -0.134194" quat="0.516615 0.0556881 0.00536911 0.854388" mass="1.8"
                 diaginertia="0.0200771 0.0196154 0.00264853"/>
-              <joint name="arm_3_joint" pos="0 0 0" axis="0 0 1" range="-3.53429 1.5708" damping="1" frictionloss="1"/>
+              <joint name="arm_3_joint" pos="0 0 0" axis="0 0 1" range="-3.53429 1.5708" damping="10" frictionloss="1"/>
               <geom type="mesh" density="0" rgba="0.1 0.1 0.1 1" mesh="arm_3"/>
               <body name="arm_4_link" pos="-0.02 -0.027 -0.222" quat="0.5 -0.5 -0.5 -0.5">
                 <inertial pos="-0.095658 0.014666 0.018133" quat="-0.161572 0.615556 -0.202229 0.744371" mass="1.4327"
                   diaginertia="0.00906004 0.00831328 0.00177669"/>
-                <joint name="arm_4_joint" pos="0 0 0" axis="0 0 1" range="-0.392699 2.35619" damping="1"
+                <joint name="arm_4_joint" pos="0 0 0" axis="0 0 1" range="-0.392699 2.35619" damping="10"
                   frictionloss="1"/>
                 <geom type="mesh" density="0" rgba="0.1 0.1 0.1 1" mesh="arm_4"/>
                 <body name="arm_5_link" pos="-0.162 0.02 0.027" quat="0.707107 0 -0.707107 0">
@@ -210,58 +210,6 @@
     </body>
   </worldbody>
 
-  <actuator>
-    <!-- Arm actuators -->
-    <motor name="arm_1_joint_motor" joint="arm_1_joint"/>
-    <position name="arm_position_1_servo" joint="arm_1_joint" ctrlrange="0 2.74889" kp="50000"/>
-    <velocity name="arm_velocity_1_servo" joint="arm_1_joint" ctrlrange="-1.95 1.95" kv="10"/>
-    <motor name="arm_2_joint_motor" joint="arm_2_joint"/>
-    <position name="arm_position_2_servo" joint="arm_2_joint" ctrlrange="-1.5708 1.09083" kp="5000"/>
-    <velocity name="arm_velocity_2_servo" joint="arm_2_joint" ctrlrange="-1.95 1.95" kv="10"/>
-    <motor name="arm_3_joint_motor" joint="arm_3_joint"/>
-    <position name="arm_position_3_servo" joint="arm_3_joint" ctrlrange="-3.53429 1.5708" kp="500"/>
-    <velocity name="arm_velocity_3_servo" joint="arm_3_joint" ctrlrange="-2.35 2.35" kv="10"/>
-    <motor name="arm_4_joint_motor" joint="arm_4_joint"/>
-    <position name="arm_position_4_servo" joint="arm_4_joint" ctrlrange="-0.392699 2.35619" kp="500"/>
-    <velocity name="arm_velocity_4_servo" joint="arm_4_joint" ctrlrange="-2.35 2.35" kv="10"/>
-    <!-- Wrist actuators -->
-    <motor name="arm_5_joint_motor" joint="arm_5_joint" forcerange="-3 3"/>
-    <position name="arm_position_5_servo" joint="arm_5_joint" forcerange="-3 3" ctrlrange="-2.0944 2.0944" kp="20"/>
-    <velocity name="arm_velocity_5_servo" joint="arm_5_joint" ctrlrange="-1.95 1.95" forcerange="-3 3" kv="1"/>
-    <motor name="arm_6_joint_motor" joint="arm_6_joint" forcerange="-6.6 6.6"/>
-    <position name="arm_position_6_servo" joint="arm_6_joint" forcerange="-6.6 6.6" ctrlrange="-1.41372 1.41372" kp="20"/>
-    <velocity name="arm_velocity_6_servo" joint="arm_6_joint" ctrlrange="-1.76 1.76" forcerange="-6.6 6.6" kv="1"/>
-    <motor name="arm_7_joint_motor" joint="arm_7_joint"/>
-    <position name="arm_position_7_servo" joint="arm_7_joint"  ctrlrange="-2.0944 2.0944" kp="20"/>
-    <velocity name="arm_velocity_7_servo" joint="arm_7_joint" ctrlrange="-1.76 1.76" kv="1"/>
-    <!-- End effector actuators -->
-    <motor name="gripper_left_finger_joint_motor" joint="gripper_left_finger_joint" forcerange="-64 64"/>
-    <position name="gripper_left_finger_position" joint="gripper_left_finger_joint" ctrlrange="0 0.045" forcerange="-64 64" kp="1000"/>
-    <velocity name="gripper_left_finger_velocity" joint="gripper_left_finger_joint" ctrlrange="-0.05 0.05"
-      forcerange="-64 64" kv="1"/>
-    <motor name="gripper_right_finger_joint_motor" joint="gripper_right_finger_joint" forcerange="-64 64"/>
-    <position name="gripper_right_finger_position" joint="gripper_right_finger_joint" ctrlrange="0 0.045" forcerange="-64 64" kp="1000"/>
-    <velocity name="gripper_right_finger_velocity" joint="gripper_right_finger_joint" ctrlrange="-0.05 0.05"
-      forcerange="-64 64" kv="10"/>
-    <!-- Head actuators -->
-    <motor name="head_1_joint_motor" joint="head_1_joint"/>
-    <position name="head_1_joint_position" joint="head_1_joint" ctrlrange="-1.309 1.309" kp="20"/>
-    <velocity name="head_1_joint_vel" joint="head_1_joint" ctrlrange="-3 3" kv="1"/>
-    <motor name="head_2_joint_motor" joint="head_2_joint" forcerange="-2.77 2.77"/>
-    <position name="head_2_joint_position" joint="head_2_joint" ctrlrange="-1.0472 0.785398" forcerange="-2.77 2.77" kp="20"/>
-    <velocity name="head_2_joint_vel" joint="head_2_joint" ctrlrange="-3 3" forcerange="-2.77 2.77" kv="1"/>
-    <!-- Torso actuators -->
-    <motor name="torso_lift_joint_motor" joint="torso_lift_joint" forcerange="-6 6"/>
-    <position name="torso_lift_joint_position" joint="torso_lift_joint" ctrlrange="0 0.35" kp="5000"/>
-    <!-- Suspension actuators -->
-
-    <!-- Wheel actuators -->
-    <position name="wheel_left_joint_position" joint="wheel_left_joint" forcerange="-6 6" kp="10000"/>
-    <velocity name="wheel_left_joint_vel" joint="wheel_left_joint" ctrlrange="-5 5" forcerange="-100 100" kv="100"/>
-    <position name="wheel_right_joint_position" joint="wheel_right_joint" forcerange="-6 6" kp="10000"/>
-    <velocity name="wheel_right_joint_vel" joint="wheel_right_joint" ctrlrange="-5 5" forcerange="-100 100" kv="100"/>
-  </actuator>
-
   <!-- Added collision exclude to avoid unwanted contact forces between robot bodies -->
   <contact>
     <exclude body1="arm_1_link" body2="base_link"/>
@@ -271,11 +219,5 @@
     <exclude body1="wheel_left_link" body2="base_link"/>
     <exclude body1="wheel_right_link" body2="base_link"/>
   </contact>
-
-  <keyframe>
-    <key name="home"
-      ctrl="0 0.2 0 0 -1.34 0 0 -0.2 0 0 1.94 0 0 -1.57 0 0 1.37 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.15 0 0 0 0"
-      qpos="0 0 -0.985 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.15 0 0 0.20 -1.34 -0.20 1.94 -1.57 1.37 0.0 0 0"/>
-  </keyframe>
 
 </mujoco>

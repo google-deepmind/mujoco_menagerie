@@ -24,7 +24,7 @@ This package contains a simplified robot description (MJCF) of the [TIAGo Robot]
  9. Added `home` keyframe
  10. Added visuals improvements: plane, skybox and light. 
  11.  Added contact `<exclude>` to prevent unwanted collisions between some of the bodies.
- 12. Added `scene.xml` which includes the robot, with a textured groundplane, skybox, and haze.
+ 12. Added `scene_position.xml`, `scene_velocity.xml` and `scene_motor.xml` which allows to control the arms of the robot in different control modes and which also includes the robot, with a textured groundplane, skybox, and haze.
 
 
 ### License
