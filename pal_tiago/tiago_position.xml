@@ -12,8 +12,8 @@
     <position name="arm_position_6_servo" joint="arm_6_joint" forcerange="-6.6 6.6" ctrlrange="-1.41372 1.41372" kp="60"/>
     <position name="arm_position_7_servo" joint="arm_7_joint"  ctrlrange="-2.0944 2.0944" kp="60"/>
     <!-- End effector actuators -->
-    <position name="gripper_left_finger_position" joint="gripper_left_finger_joint" ctrlrange="0 0.045" forcerange="-64 64" kp="150"/>
-    <position name="gripper_right_finger_position" joint="gripper_right_finger_joint" ctrlrange="0 0.045" forcerange="-64 64" kp="150"/>
+    <position name="gripper_left_finger_position" joint="gripper_left_finger_joint" ctrlrange="0 0.045" forcerange="-64 64" kp="500"/>
+    <position name="gripper_right_finger_position" joint="gripper_right_finger_joint" ctrlrange="0 0.045" forcerange="-64 64" kp="500"/>
     <!-- Head actuators -->
     <position name="head_1_joint_position" joint="head_1_joint" ctrlrange="-1.309 1.309" kp="20"/>
     <position name="head_2_joint_position" joint="head_2_joint" ctrlrange="-1.0472 0.785398" forcerange="-2.77 2.77" kp="20"/>

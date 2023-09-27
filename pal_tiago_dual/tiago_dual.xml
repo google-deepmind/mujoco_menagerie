@@ -45,6 +45,9 @@
 
   <default class="main">
     <geom contype="0" conaffinity="1" group="1"/>
+    <default class="arm">
+      <geom contype="1" conaffinity="1"/>
+    </default>
   </default>
 
   <worldbody>
@@ -118,7 +121,7 @@
             <geom type="mesh" density="0" rgba="1 1 1 1" mesh="head_2"/>
           </body>
         </body>
-        <body name="arm_left_1_link" pos="0.02556 0.19 -0.171" quat="0 0.707107 0.707107 0">
+        <body name="arm_left_1_link" pos="0.02556 0.19 -0.171" quat="0 0.707107 0.707107 0" childclass="arm">
           <inertial pos="0.061191 -0.022397 0.012835" quat="0.751513 0.345223 0.538347 0.161963" mass="1.56343"
             diaginertia="0.00510233 0.00510233 0.00510233"/>
           <joint name="arm_left_1_joint" pos="0 0 0" axis="0 0 1" range="-1.1781 1.5708" damping="10" frictionloss="1"/>
@@ -188,7 +191,7 @@
             </body>
           </body>
         </body>
-        <body name="arm_right_1_link" pos="0.02556 -0.19 -0.171" quat="0.707107 0 0 -0.707107">
+        <body name="arm_right_1_link" pos="0.02556 -0.19 -0.171" quat="0.707107 0 0 -0.707107" childclass="arm">
           <inertial pos="0.061191 -0.022397 -0.012835" quat="0.161963 0.538347 0.345223 0.751513" mass="1.56343"
             diaginertia="0.00510233 0.00510233 0.00510233"/>
           <joint name="arm_right_1_joint" pos="0 0 0" axis="0 0 1" range="-1.1781 1.5708" damping="10" frictionloss="1"/>
@@ -262,5 +265,12 @@
       </body>
     </body>
   </worldbody>
+
+  <contact>
+    <exclude body1="arm_left_2_link" body2="torso_lift_link" />
+    <exclude body1="arm_right_2_link" body2="torso_lift_link" />
+    <exclude body1="gripper_left_right_finger_link" body2="gripper_left_left_finger_link" />
+    <exclude body1="gripper_right_right_finger_link" body2="gripper_right_left_finger_link" />
+  </contact>
 
 </mujoco>
