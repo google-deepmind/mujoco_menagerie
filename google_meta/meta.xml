@@ -1,0 +1,217 @@
+<mujoco model="meta">
+
+  <compiler angle="radian" assetdir="assets" autolimits="true"/>
+
+  <option timestep="0.004" integrator="implicitfast"/>
+
+  <asset>
+    <texture type="2d" name="meta_texture" file="meta_texture.png"/>
+    <texture type="2d" name="meta_finger_base_texture" file="meta_finger_base_texture.png"/>
+    <texture type="2d" name="meta_finger_tip_texture" file="meta_finger_tip_texture.png"/>
+    <material name="meta_mtl" texture="meta_texture"/>
+    <material name="meta_finger_base_mtl" texture="meta_finger_base_texture"/>
+    <material name="meta_finger_tip_mtl" texture="meta_finger_tip_texture"/>
+
+    <!-- Collision meshes -->
+    <mesh file="link_base_0_00.stl"/>
+    <mesh file="link_base_0_01.stl"/>
+    <mesh file="link_base_1_00.stl"/>
+    <mesh file="link_base_1_01.stl"/>
+    <mesh file="link_base_1_02.stl"/>
+    <mesh file="link_base_1_03.stl"/>
+    <mesh file="link_base_1_04.stl"/>
+    <mesh file="link_base_1_05.stl"/>
+    <mesh file="link_base_1_06.stl"/>
+    <mesh file="link_base_1_07.stl"/>
+    <mesh file="link_base_1_08.stl"/>
+    <mesh file="link_base_1_09.stl"/>
+    <mesh file="link_base_1_10.stl"/>
+    <mesh file="link_base_1_11.stl"/>
+    <mesh file="link_base_1_12.stl"/>
+    <mesh file="link_base_1_13.stl"/>
+    <mesh file="link_base_1_14.stl"/>
+    <mesh file="link_base_1_15.stl"/>
+    <mesh file="link_base_1_16.stl"/>
+    <mesh file="link_base_1_17.stl"/>
+    <mesh file="link_base_1_18.stl"/>
+    <mesh file="link_base_1_19.stl"/>
+    <mesh file="link_torso_00.stl"/>
+    <mesh file="link_torso_01.stl"/>
+    <mesh file="link_shoulder.stl"/>
+    <mesh file="link_bicep.stl"/>
+    <mesh file="link_elbow.stl"/>
+    <mesh file="link_forearm.stl"/>
+    <mesh file="link_wrist.stl"/>
+    <mesh file="link_gripper.stl"/>
+    <mesh file="link_head_pan.stl"/>
+    <mesh file="link_head_tilt.stl"/>
+    <mesh file="link_finger_base.stl"/>
+    <mesh file="link_finger_tip.stl"/>
+
+    <!-- Visual meshes -->
+    <mesh class="visual" file="link_base_v.obj"/>
+    <mesh class="visual" file="link_torso_v.obj"/>
+    <mesh class="visual" file="link_shoulder_v.obj"/>
+    <mesh class="visual" file="link_bicep_v.obj"/>
+    <mesh class="visual" file="link_elbow_v.obj"/>
+    <mesh class="visual" file="link_forearm_v.obj"/>
+    <mesh class="visual" file="link_wrist_v.obj"/>
+    <mesh class="visual" file="link_gripper_v.obj"/>
+    <mesh class="visual" file="link_finger_base_v.obj"/>
+    <mesh class="visual" file="link_finger_tip_v.obj"/>
+    <mesh class="visual" file="link_wheel_v.obj"/>
+    <mesh class="visual" file="link_head_pan_v.obj"/>
+    <mesh class="visual" file="link_head_tilt_v.obj"/>
+  </asset>
+
+  <default>
+    <default class="meta">
+      <joint damping="10.0" frictionloss="1" armature=".1"/>
+      <default class="visual">
+        <geom type="mesh" contype="0" conaffinity="0" group="2" material="meta_mtl"/>
+      </default>
+      <default class="collision">
+        <geom type="mesh" rgba="1 1 1 1" group="3" contype="1" conaffinity="1"/>
+          <default class="finger_base">
+            <geom type="capsule" rgba="1 1 1 1" size="0.015 0.01" quat="1 0 1 0" mass="0.0133245" pos="0 -0.005 0.03"/>
+          </default>
+          <default class="finger_tip">
+            <geom type="capsule" rgba="1 1 1 1" size="0.01 0.008" quat="1 0 1 0" mass="0.0161862"/>
+          </default>
+        </default>
+    </default>
+  </default>
+
+  <worldbody>
+    <light pos="0 0 3"/>
+    <body name="base_link" childclass="meta" pos="0 0 0.06205">
+      <!-- geom for base -->
+      <geom class="visual" mesh="link_base_v"/>
+      <geom class="collision" mesh="link_base_0_00"/>
+      <geom class="collision" mesh="link_base_0_01"/>
+      <geom class="collision" mesh="link_base_1_00"/>
+      <geom class="collision" mesh="link_base_1_01"/>
+      <geom class="collision" mesh="link_base_1_02"/>
+      <geom class="collision" mesh="link_base_1_03"/>
+      <geom class="collision" mesh="link_base_1_04"/>
+      <geom class="collision" mesh="link_base_1_05"/>
+      <geom class="collision" mesh="link_base_1_06"/>
+      <geom class="collision" mesh="link_base_1_07"/>
+      <geom class="collision" mesh="link_base_1_08"/>
+      <geom class="collision" mesh="link_base_1_09"/>
+      <geom class="collision" mesh="link_base_1_10"/>
+      <geom class="collision" mesh="link_base_1_11"/>
+      <geom class="collision" mesh="link_base_1_12"/>
+      <geom class="collision" mesh="link_base_1_13"/>
+      <geom class="collision" mesh="link_base_1_14"/>
+      <geom class="collision" mesh="link_base_1_15"/>
+      <geom class="collision" mesh="link_base_1_16"/>
+      <geom class="collision" mesh="link_base_1_17"/>
+      <geom class="collision" mesh="link_base_1_18"/>
+      <geom class="collision" mesh="link_base_1_19"/>
+      <!-- geom for wheels -->
+      <geom class="visual" pos="0 0.18283 0" mesh="link_wheel_v"/>
+      <geom class="visual" pos="0 -0.18283 0" mesh="link_wheel_v"/>
+      <geom class="collision" pos="0 0.18283 0" size="0.06035 0.00925" quat="1 1 0 0" type="cylinder"/>
+      <geom class="collision" pos="0 0.18283 0" size="0.06435 5e-06" quat="1 1 0 0" type="cylinder"/>
+      <geom class="collision" pos="0 -0.18283 0" size="0.06035 0.00925" quat="1 1 0 0" type="cylinder"/>
+      <geom class="collision" pos="0 -0.18283 0" size="0.06435 5e-06" quat="1 1 0 0" type="cylinder"/>
+      <geom class="visual" pos="0 0 1.16902"  mesh="link_head_pan_v"/>
+      <geom class="collision" pos="0 0 1.16902" mesh="link_head_pan"/>
+      <geom class="visual" pos="0.07181 0 1.2875" mesh="link_head_tilt_v"/>
+      <geom class="collision" pos="0.07181 0 1.2875" mesh="link_head_tilt"/>
+      <!-- arm -->
+      <body name="link_torso" pos="0 0 0.5945">
+        <inertial pos="0 0 0.108398" diaginertia="0.0184592 0.0154173 0.0102031" mass="2.46883"/>
+        <joint name="joint_torso" axis="0 0 1" range="-4.49 1.35"/>
+        <geom class="visual" mesh="link_torso_v"/>
+        <geom class="collision" mesh="link_torso_00"/>
+        <geom class="collision" mesh="link_torso_01"/>
+        <body name="link_shoulder" pos="0 -0.167289 0.113" gravcomp="1">
+          <inertial pos="0.00108994 0.00565406 0.103479" mass="2.08054" diaginertia="0.0162136 0.0158994 0.00367842"/>
+          <joint name="joint_shoulder" axis="0 1 0" range="-2.66 3.18"/>
+          <geom class="visual" mesh="link_shoulder_v"/>
+          <geom class="collision" mesh="link_shoulder" />
+          <body name="link_bicep" pos="0 0.002289 0.215029" gravcomp="1">
+            <inertial pos="9.39565e-05 -0.0191308 0.130972" mass="1.3989" diaginertia="0.00828463 0.00826766 0.00210613"/>
+            <joint name="joint_bicep" axis="0 0 1" range="-2.13 3.71"/>
+            <geom class="visual" mesh="link_bicep_v"/>
+            <geom class="collision" mesh="link_bicep"/>
+            <body name="link_elbow" pos="1.9206e-12 -0.064 0.185036" gravcomp="1">
+              <joint name="joint_elbow" axis="0 1 0" range="-2.05 3.79"/>
+              <geom class="visual" mesh="link_elbow_v"/>
+              <geom class="collision" mesh="link_elbow" mass="0.788999"/>
+              <body name="link_forearm" pos="-1.92032e-12 -0.101 0.0914359" gravcomp="1">
+                <joint name="joint_forearm" axis="0 0 1" range="-2.92 2.92"/>
+                <geom class="visual" mesh="link_forearm_v"/>
+                <geom class="collision" mesh="link_forearm" mass="0.819369"/>
+                <body name="link_wrist" pos="0 -0.00604 0.2735" gravcomp="1">
+                  <site name="wrist" pos="0 0 0.14"/>
+                  <joint name="joint_wrist" axis="0 1 0" range="-1.79 1.79"/>
+                  <geom class="visual" mesh="link_wrist_v"/>
+                  <geom class="collision" mesh="link_wrist" mass="0.543658"/>
+                  <body name="link_gripper" pos="0 0.0060384 0.10911" gravcomp="1">
+                    <site name="gripper" pos="0 0 0.13" group="5"/>
+                    <inertial pos="-3.20302e-05 0.000371384 0.0387883" quat="0.997934 0.0574504 -0.0278948 -0.00699571" mass="0.41474" diaginertia="0.000327698 0.000308611 0.000272392"/>
+                    <joint name="joint_gripper" axis="0 0 1" range="-4.49 1.35"/>
+                    <geom class="visual" mesh="link_gripper_v"/>
+                    <geom class="collision" name="gripper" quat="1 0 0 -1" type="mesh" mesh="link_gripper"/>
+                    <!-- right finger -->
+                    <body name="link_finger_right" pos="0 0.025 0.05886" quat="0.879969 -0.475032 0 0" gravcomp="1">
+                      <joint name="joint_finger_right" axis="1 0 0" range="0.01 1.3" damping="2.0" frictionloss="1" armature=".1"/>
+                      <geom class="visual" mesh="link_finger_base_v" material="meta_finger_base_mtl"/>
+                      <geom class="collision" mesh="link_finger_base" mass="0.0333245"/>
+                      <geom class="finger_base"/>
+                      <geom class="finger_base" pos="0 -0.005 0.04"/>
+                      <geom class="finger_base" pos="0 -0.005 0.05"/>
+                      <body name="link_finger_tip_right" pos="0 -0.0103567 0.0641556" quat="0.995004 0.0998334 0 0" gravcomp="1">
+                        <geom class="visual" mesh="link_finger_tip_v" material="meta_finger_tip_mtl"/>
+                        <geom class="collision" mesh="link_finger_tip_v" mass="0.0161862"/>
+                        <geom class="finger_tip"/>
+                        <geom class="finger_tip" pos="0 0 0.01"/>
+                        <geom class="finger_tip" pos="0 0 0.02"/>
+                        <geom class="finger_tip" pos="0 0 0.03"/>
+                        <geom class="finger_tip" pos="0 0 0.04"/>
+                      </body>
+                    </body>
+                    <!-- left finger -->
+                    <body name="link_finger_left" pos="0 -0.025 0.05886" quat="0 0 -0.475032 0.879969" gravcomp="1">
+                      <joint name="joint_finger_left" axis="1 0 0" range="0.01 1.3" damping="2.0" frictionloss="1" armature=".1"/>
+                      <geom class="visual" mesh="link_finger_base_v" material="meta_finger_base_mtl"/>
+                      <geom class="collision" mesh="link_finger_base_v" mass="0.0333245" />
+                        <geom class="finger_base"/>
+                        <geom class="finger_base" pos="0 -0.005 0.04"/>
+                        <geom class="finger_base" pos="0 -0.005 0.05"/>
+                      <body name="link_finger_tip_left" pos="0 -0.0103567 0.0641556" quat="0.995004 0.0998334 0 0" gravcomp="1">
+                        <geom class="visual" mesh="link_finger_tip_v" material="meta_finger_tip_mtl"/>
+                        <geom class="collision" mesh="link_finger_tip" mass="0.0161862"/>
+                        <geom class="finger_tip"/>
+                        <geom class="finger_tip" pos="0 0 0.01"/>
+                        <geom class="finger_tip" pos="0 0 0.02"/>
+                        <geom class="finger_tip" pos="0 0 0.03"/>
+                        <geom class="finger_tip" pos="0 0 0.04"/>
+                      </body>
+                    </body>
+                  </body>  <!-- gripper -->
+                </body>  <!-- wrist -->
+              </body>  <!-- forearm -->
+            </body>  <!-- elbow -->
+          </body>  <!-- bicep -->
+        </body>  <!-- shoulder -->
+      </body>  <!-- torso -->
+    </body>
+  </worldbody>
+
+   <actuator>
+     <position joint="joint_torso"        kp="40" ctrlrange="-4.49 1.35" forcerange="-150 150"/>
+     <position joint="joint_shoulder"     kp="40" ctrlrange="-2.66 3.18" forcerange="-150 150"/>
+     <position joint="joint_bicep"        kp="40" ctrlrange="-2.13 3.71" forcerange="-30 30"/>
+     <position joint="joint_elbow"        kp="20" ctrlrange="-2.05 3.79" forcerange="-30 30"/>
+     <position joint="joint_forearm"      kp="20" ctrlrange="-2.92 2.92" forcerange="-30 30"/>
+     <position joint="joint_wrist"        kp="10" ctrlrange="-1.79 1.79" forcerange="-30 30"/>
+     <position joint="joint_gripper"      kp="10" ctrlrange="-4.49 1.35" forcerange="-30 30"/>
+     <position joint="joint_finger_right" kp="20" ctrlrange="0.01 1.3"   forcerange="-30 30"/>
+     <position joint="joint_finger_left"  kp="20" ctrlrange="0.01 1.3"   forcerange="-30 30"/>
+   </actuator>
+
+</mujoco>
