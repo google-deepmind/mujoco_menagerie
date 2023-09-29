@@ -62,6 +62,7 @@
     <site name="origin"/>
     <body name="chassis">
       <freejoint/>
+      <camera name="track" pos="0.846 -1.465 0.916" xyaxes="0.866 0.500 0.000 -0.171 0.296 0.940" mode="trackcom"/>
       <inertial pos="0.0196226 -0.00015133 0.0611588" quat="0.000990813 0.68703 0.000216603 0.726628" mass="4.48878" diaginertia="0.071033 0.0619567 0.0192519"/>
       <geom pos="-0.00448404 -0.000225838 0.0576402" rgba="0.647059 0.647059 0.647059 1" mesh="head"/>
       <geom pos="-0.00448404 -0.000225838 0.0576402" rgba="0.768627 0.886275 0.952941 1" mesh="powercable"/>
