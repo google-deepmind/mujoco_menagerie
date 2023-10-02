@@ -1,5 +1,7 @@
 # Universal Robots UR10e Description (MJCF)
 
+Requires MuJoCo 2.3.3 or later.
+
 ## Overview
 
 This package contains a simplified robot description (MJCF) of the
@@ -9,7 +11,7 @@ This package contains a simplified robot description (MJCF) of the
 description](https://github.com/ros-industrial/universal_robot/tree/kinetic-devel/ur_e_description).
 
 <p float="left">
- <img src="ur10e.png" width="400">
+  <img src="ur10e.png" width="400">
 </p>
 
 ### URDF → MJCF derivation steps
@@ -29,10 +31,11 @@ description](https://github.com/ros-industrial/universal_robot/tree/kinetic-deve
    that these values have not been carefully tuned -- contributions are more
    than welcome to improve them.
 9. Added home joint configuration as a `keyframe`.
-10. Manually designed collision geometries to be as realistic as UR10's shape.
-10. Added `scene.xml`, which includes the robot, with a textured ground plane, skybox, and haze.
+10. Manually designed collision geometries to be as realistic as the UR10's shape.
+11. Added `scene.xml`, which includes the robot, with a textured ground plane, skybox, and haze.
 
 ### Notes
+
 Although the model is stable in the `scene.xml`, you might see unstable behavior when combined with
 other models (i.e., Robotiq-2F85 gripper). Switching the integrator from `Euler` to `RK4` helps in
 these cases.
