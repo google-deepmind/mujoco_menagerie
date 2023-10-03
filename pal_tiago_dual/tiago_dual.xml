@@ -5,42 +5,42 @@
   <option integrator="implicitfast"/>
 
   <asset>
-    <mesh name="sick_tim5511" file="sensors/sick_tim5511.stl"/>
-    <mesh name="sick_tim5512" file="sensors/sick_tim5512.stl"/>
-    <mesh name="base_link" file="base/base_link.stl"/>
-    <mesh name="base_dock_link" file="base/base_dock_link.stl"/>
-    <mesh name="base_antena_link1" file="base/base_antena_link1.stl"/>
-    <mesh name="base_antena_link2" file="base/base_antena_link2.stl" scale="1 -1 1"/>
-    <mesh name="suspension_front_link1" file="wheels/suspension_front_link1.stl"/>
-    <mesh name="wheel_link1" file="wheels/wheel_link1.stl"/>
-    <mesh name="suspension_front_link2" file="wheels/suspension_front_link2.stl" scale="1 -1 1"/>
-    <mesh name="wheel_link2" file="wheels/wheel_link2.stl" scale="1 1 -1"/>
-    <mesh name="suspension_rear_link1" file="wheels/suspension_rear_link1.stl"/>
-    <mesh name="wheel_link3" file="wheels/wheel_link3.stl"/>
-    <mesh name="suspension_rear_link2" file="wheels/suspension_rear_link2.stl" scale="1 -1 1"/>
-    <mesh name="wheel_link4" file="wheels/wheel_link4.stl" scale="1 1 -1"/>
-    <mesh name="torso_fix" file="torso/torso_fix.stl"/>
-    <mesh name="torso_lift_dual_arm" file="torso/torso_lift_dual_arm.stl"/>
-    <mesh name="head_1" file="head/head_1.stl"/>
-    <mesh name="head_2" file="head/head_2.stl"/>
-    <mesh name="arm_11" file="arm/arm_11.stl" scale="1 -1 -1"/>
-    <mesh name="arm_21" file="arm/arm_21.stl" scale="1 1 -1"/>
-    <mesh name="arm_31" file="arm/arm_31.stl" scale="1 1 -1"/>
-    <mesh name="arm_41" file="arm/arm_41.stl" scale="-1 -1 -1"/>
-    <mesh name="arm_5-wrist-20101" file="arm/arm_5-wrist-20101.stl" scale="-1 -1 -1"/>
-    <mesh name="arm_6-wrist-20101" file="arm/arm_6-wrist-20101.stl" scale="-1 1 1"/>
-    <mesh name="gripper_link1" file="gripper_link1.stl"/>
-    <mesh name="gripper_finger_link1" file="gripper_finger_link1.stl" scale="-1 -1 1"/>
-    <mesh name="gripper_finger_link2" file="gripper_finger_link2.stl"/>
-    <mesh name="arm_12" file="arm/arm_12.stl" scale="1 -1 1"/>
-    <mesh name="arm_22" file="arm/arm_22.stl"/>
-    <mesh name="arm_32" file="arm/arm_32.stl"/>
-    <mesh name="arm_42" file="arm/arm_42.stl"/>
-    <mesh name="arm_5-wrist-20102" file="arm/arm_5-wrist-20102.stl"/>
-    <mesh name="arm_6-wrist-20102" file="arm/arm_6-wrist-20102.stl"/>
-    <mesh name="gripper_link2" file="gripper_link2.stl"/>
-    <mesh name="gripper_finger_link3" file="gripper_finger_link3.stl" scale="-1 -1 1"/>
-    <mesh name="gripper_finger_link4" file="gripper_finger_link4.stl"/>
+    <mesh file="sensors/sick_tim5511.stl"/>
+    <mesh file="sensors/sick_tim5512.stl"/>
+    <mesh file="base/base_link.stl"/>
+    <mesh file="base/base_dock_link.stl"/>
+    <mesh file="base/base_antena_link1.stl"/>
+    <mesh file="base/base_antena_link2.stl" scale="1 -1 1"/>
+    <mesh file="wheels/suspension_front_link1.stl"/>
+    <mesh file="wheels/wheel_link1.stl"/>
+    <mesh file="wheels/suspension_front_link2.stl" scale="1 -1 1"/>
+    <mesh file="wheels/wheel_link2.stl" scale="1 1 -1"/>
+    <mesh file="wheels/suspension_rear_link1.stl"/>
+    <mesh file="wheels/wheel_link3.stl"/>
+    <mesh file="wheels/suspension_rear_link2.stl" scale="1 -1 1"/>
+    <mesh file="wheels/wheel_link4.stl" scale="1 1 -1"/>
+    <mesh file="torso/torso_fix.stl"/>
+    <mesh file="torso/torso_lift_dual_arm.stl"/>
+    <mesh file="head/head_1.stl"/>
+    <mesh file="head/head_2.stl"/>
+    <mesh file="arm/arm_11.stl" scale="1 -1 -1"/>
+    <mesh file="arm/arm_21.stl" scale="1 1 -1"/>
+    <mesh file="arm/arm_31.stl" scale="1 1 -1"/>
+    <mesh file="arm/arm_41.stl" scale="-1 -1 -1"/>
+    <mesh file="arm/arm_5-wrist-20101.stl" scale="-1 -1 -1"/>
+    <mesh file="arm/arm_6-wrist-20101.stl" scale="-1 1 1"/>
+    <mesh file="gripper_link1.stl"/>
+    <mesh file="gripper_finger_link1.stl" scale="-1 -1 1"/>
+    <mesh file="gripper_finger_link2.stl"/>
+    <mesh file="arm/arm_12.stl" scale="1 -1 1"/>
+    <mesh file="arm/arm_22.stl"/>
+    <mesh file="arm/arm_32.stl"/>
+    <mesh file="arm/arm_42.stl"/>
+    <mesh file="arm/arm_5-wrist-20102.stl"/>
+    <mesh file="arm/arm_6-wrist-20102.stl"/>
+    <mesh file="gripper_link2.stl"/>
+    <mesh file="gripper_finger_link3.stl" scale="-1 -1 1"/>
+    <mesh file="gripper_finger_link4.stl"/>
   </asset>
 
   <default class="main">

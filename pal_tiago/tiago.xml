@@ -5,27 +5,27 @@
   <option integrator="implicitfast"/>
 
   <asset>
-    <mesh name="sick_tim551" file="sensors/sick_tim551.stl"/>
-    <mesh name="srf05" file="sensors/srf05.stl"/>
-    <mesh name="base" file="base/base.stl"/>
-    <mesh name="base_ring" file="base/base_ring.stl"/>
-    <mesh name="antenna" file="objects/antenna.stl"/>
-    <mesh name="wheel" file="wheels/wheel.stl"/>
-    <mesh name="caster_1" file="wheels/caster_1.stl"/>
-    <mesh name="caster_2" file="wheels/caster_2.stl"/>
-    <mesh name="torso_fix" file="torso/torso_fix.stl"/>
-    <mesh name="torso_lift_with_arm" file="torso/torso_lift_with_arm.stl"/>
-    <mesh name="head_1" file="head/head_1.stl"/>
-    <mesh name="head_2" file="head/head_2.stl"/>
-    <mesh name="arm_1" file="arm/arm_1.stl"/>
-    <mesh name="arm_2" file="arm/arm_2.stl"/>
-    <mesh name="arm_3" file="arm/arm_3.stl"/>
-    <mesh name="arm_4" file="arm/arm_4.stl"/>
-    <mesh name="arm_5-wrist-2017" file="arm/arm_5-wrist-2017.stl"/>
-    <mesh name="arm_6-wrist-2017" file="arm/arm_6-wrist-2017.stl"/>
-    <mesh name="gripper_link" file="gripper_link.stl"/>
-    <mesh name="gripper_finger_link" file="gripper_finger_link.stl" scale="-1 -1 1"/>
-    <mesh name="gripper_finger_link1" file="gripper_finger_link.stl"/>
+    <mesh file="sensors/sick_tim551.stl"/>
+    <mesh file="sensors/srf05.stl"/>
+    <mesh file="base/base.stl"/>
+    <mesh file="base/base_ring.stl"/>
+    <mesh file="objects/antenna.stl"/>
+    <mesh file="wheels/wheel.stl"/>
+    <mesh file="wheels/caster_1.stl"/>
+    <mesh file="wheels/caster_2.stl"/>
+    <mesh file="torso/torso_fix.stl"/>
+    <mesh file="torso/torso_lift_with_arm.stl"/>
+    <mesh file="head/head_1.stl"/>
+    <mesh file="head/head_2.stl"/>
+    <mesh file="arm/arm_1.stl"/>
+    <mesh file="arm/arm_2.stl"/>
+    <mesh file="arm/arm_3.stl"/>
+    <mesh file="arm/arm_4.stl"/>
+    <mesh file="arm/arm_5-wrist-2017.stl"/>
+    <mesh file="arm/arm_6-wrist-2017.stl"/>
+    <mesh file="gripper_link.stl"/>
+    <mesh file="gripper_finger_link1.stl" scale="-1 -1 1"/>
+    <mesh file="gripper_finger_link.stl"/>
   </asset>
 
   <default class="main">
