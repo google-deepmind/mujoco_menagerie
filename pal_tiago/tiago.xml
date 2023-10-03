@@ -59,7 +59,7 @@
       <body name="suspension_right_link" pos="0 0 0.0985">
         <inertial pos="0 0 -0.02" mass="10" diaginertia="1 1 1"/>
         <joint name="suspension_right_joint" axis="0 0 1" type="slide" range="-0.005 0.005" damping="100"/>
-        <body name="wheel_right_link" pos="0 -0.2022 0" quat="0.707107 -0.707107 0 0">
+        <body name="wheel_right_link" pos="0 -0.2022 0" quat="1 -1 0 0">
           <inertial pos="0 0 -0.00207" quat="0.296456 0.641958 -0.296458 0.641963" mass="1.82362"
             diaginertia="0.0083924 0.00499747 0.00499738"/>
           <joint name="wheel_right_joint" axis="0 0 1"/>
@@ -69,7 +69,7 @@
       <body name="suspension_left_link" pos="0 0 0.0985">
         <inertial pos="0 0 -0.02" mass="10" diaginertia="1 1 1"/>
         <joint name="suspension_left_joint" axis="0 0 1" type="slide" range="-0.005 0.005" damping="100"/>
-        <body name="wheel_left_link" pos="0 0.2022 0" quat="0.707107 -0.707107 0 0">
+        <body name="wheel_left_link" pos="0 0.2022 0" quat="1 -1 0 0">
           <inertial pos="0 0 0.00207" quat="0.641958 0.296456 -0.641963 0.296458" mass="1.82362"
             diaginertia="0.0083924 0.00499747 0.00499738"/>
           <joint name="wheel_left_joint" axis="0 0 1"/>
@@ -81,8 +81,8 @@
           mass="0.0514476" diaginertia="1.66556e-05 1.30896e-05 1.04548e-05"/>
         <joint name="caster_front_right_1_joint" axis="0 0 1" damping="0.5"/>
         <geom type="mesh" density="0" rgba="0.7 0.7 0.7 1" mesh="caster_1" condim="6"/>
-        <body name="caster_front_right_2_link" pos="-0.016 0 -0.04" quat="0.707107 -0.707107 0 0">
-          <inertial pos="0 0 0" quat="0.707107 0 0 0.707107" mass="0.0885578"
+        <body name="caster_front_right_2_link" pos="-0.016 0 -0.04" quat="1 -1 0 0">
+          <inertial pos="0 0 0" quat="1 0 0 1" mass="0.0885578"
             diaginertia="1.541e-05 1.075e-05 1.075e-05"/>
           <joint name="caster_front_right_2_joint" axis="0 0 1"/>
           <geom type="mesh" density="0" rgba="0.1 0.1 0.1 1" mesh="caster_2" condim="6"/>
@@ -93,8 +93,8 @@
           mass="0.0514476" diaginertia="1.66556e-05 1.30896e-05 1.04548e-05"/>
         <joint name="caster_front_left_1_joint" axis="0 0 1" damping="0.5"/>
         <geom type="mesh" density="0" rgba="0.7 0.7 0.7 1" mesh="caster_1" condim="6"/>
-        <body name="caster_front_left_2_link" pos="-0.016 0 -0.04" quat="0.707107 -0.707107 0 0">
-          <inertial pos="0 0 0" quat="0.707107 0 0 0.707107" mass="0.0885578"
+        <body name="caster_front_left_2_link" pos="-0.016 0 -0.04" quat="1 -1 0 0">
+          <inertial pos="0 0 0" quat="1 0 0 1" mass="0.0885578"
             diaginertia="1.541e-05 1.075e-05 1.075e-05"/>
           <joint name="caster_front_left_2_joint" axis="0 0 1"/>
           <geom type="mesh" density="0" rgba="0.1 0.1 0.1 1" mesh="caster_2" condim="6"/>
@@ -105,8 +105,8 @@
           mass="0.0514476" diaginertia="1.66556e-05 1.30896e-05 1.04548e-05"/>
         <joint name="caster_back_right_1_joint" axis="0 0 1" damping="0.5"/>
         <geom type="mesh" density="0" rgba="0.7 0.7 0.7 1" mesh="caster_1" condim="6"/>
-        <body name="caster_back_right_2_link" pos="-0.016 0 -0.04" quat="0.707107 -0.707107 0 0">
-          <inertial pos="0 0 0" quat="0.707107 0 0 0.707107" mass="0.0885578"
+        <body name="caster_back_right_2_link" pos="-0.016 0 -0.04" quat="1 -1 0 0">
+          <inertial pos="0 0 0" quat="1 0 0 1" mass="0.0885578"
             diaginertia="1.541e-05 1.075e-05 1.075e-05"/>
           <joint name="caster_back_right_2_joint" axis="0 0 1"/>
           <geom type="mesh" density="0" rgba="0.1 0.1 0.1 1" mesh="caster_2" condim="6"/>
@@ -117,8 +117,8 @@
           mass="0.0514476" diaginertia="1.66556e-05 1.30896e-05 1.04548e-05"/>
         <joint name="caster_back_left_1_joint" axis="0 0 1" damping="0.5"/>
         <geom type="mesh" density="0" rgba="0.7 0.7 0.7 1" mesh="caster_1" condim="6"/>
-        <body name="caster_back_left_2_link" pos="-0.016 0 -0.04" quat="0.707107 -0.707107 0 0">
-          <inertial pos="0 0 0" quat="0.707107 0 0 0.707107" mass="0.0885578"
+        <body name="caster_back_left_2_link" pos="-0.016 0 -0.04" quat="1 -1 0 0">
+          <inertial pos="0 0 0" quat="1 0 0 1" mass="0.0885578"
             diaginertia="1.541e-05 1.075e-05 1.075e-05"/>
           <joint name="caster_back_left_2_joint" axis="0 0 1"/>
           <geom type="mesh" density="0" rgba="0.1 0.1 0.1 1" mesh="caster_2" condim="6"/>
@@ -134,19 +134,19 @@
             diaginertia="0.00140223 0.00121968 0.000861083"/>
           <joint name="head_1_joint" axis="0 0 1" range="-1.309 1.309" damping="0.5" frictionloss="1"/>
           <geom type="mesh" density="0" rgba="1 1 1 1" mesh="head_1"/>
-          <body name="head_2_link" pos="0.005 0 0.098" quat="0.707107 0.707107 0 0">
+          <body name="head_2_link" pos="0.005 0 0.098" quat="1 1 0 0">
             <inertial pos="0.0558274 0.0609987 1.58542e-05" quat="0.89114 -0.000495756 -0.00420876 0.453708"
               mass="0.88693" diaginertia="0.00554181 0.00436261 0.00347586"/>
             <joint name="head_2_joint" axis="0 0 1" range="-1.0472 0.785398" damping="0.5" frictionloss="1"/>
             <geom type="mesh" density="0" rgba="1 1 1 1" mesh="head_2"/>
           </body>
         </body>
-        <body name="arm_1_link" pos="0.15505 0.014 -0.151" quat="0.707107 0 0 -0.707107" childclass="arm">
+        <body name="arm_1_link" pos="0.15505 0.014 -0.151" quat="1 0 0 -1" childclass="arm">
           <inertial pos="0.061191 -0.022397 -0.012835" quat="0.161963 0.538347 0.345223 0.751513" mass="1.56343"
             diaginertia="0.00510233 0.00510233 0.00510233"/>
           <joint name="arm_1_joint" axis="0 0 1" range="0 2.74889" damping="10" frictionloss="1"/>
           <geom type="mesh" density="0" rgba="1 1 1 1" mesh="arm_1"/>
-          <body name="arm_2_link" pos="0.125 0.0195 -0.031" quat="0.707107 0.707107 0 0">
+          <body name="arm_2_link" pos="0.125 0.0195 -0.031" quat="1 1 0 0">
             <inertial pos="0.030432 0.000229 -0.005942" quat="0.126897 0.72859 0.136233 0.659161" mass="1.8004"
               diaginertia="0.00437229 0.00432701 0.0017837"/>
             <joint name="arm_2_joint" axis="0 0 1" range="-1.5708 1.09083" damping="10" frictionloss="1"/>
@@ -162,7 +162,7 @@
                 <joint name="arm_4_joint" axis="0 0 1" range="-0.392699 2.35619" damping="10"
                   frictionloss="1"/>
                 <geom type="mesh" density="0" rgba="0.1 0.1 0.1 1" mesh="arm_4"/>
-                <body name="arm_5_link" pos="-0.162 0.02 0.027" quat="0.707107 0 -0.707107 0">
+                <body name="arm_5_link" pos="-0.162 0.02 0.027" quat="1 0 -1 0">
                   <inertial pos="0.001078 -0.000151 -0.077173" quat="0.999999 -0.000362286 -0.00167006 0.000217394"
                     mass="0.935914" diaginertia="0.00103619 0.000794527 0.000439824"/>
                   <joint name="arm_5_joint" axis="0 0 1" range="-2.0944 2.0944" damping="1" frictionloss="1"/>
@@ -179,22 +179,22 @@
                         diaginertia="0.0025841 0.0022568 0.000746434"/>
                       <joint name="arm_7_joint" axis="0 0 1" range="-2.0944 2.0944" damping="1"
                         frictionloss="1"/>
-                      <geom size="0.005 0.0025" pos="0 0 0.047" quat="-0.707107 0 0 0.707107" type="cylinder"
+                      <geom size="0.005 0.0025" pos="0 0 0.047" quat="-1 0 0 1" type="cylinder"
                         density="0" rgba="0.9 0.9 0.9 1"/>
                       <geom size="0.0225 0.00785" pos="0 0 0.05385" quat="-1 0 0 0" type="cylinder" density="0"
                         rgba="0.9 0.9 0.9 1"/>
-                      <geom size="0.025 0.004875" pos="0 0 0.066575" quat="-0.707107 0 0 0.707107" type="cylinder"
+                      <geom size="0.025 0.004875" pos="0 0 0.066575" quat="-1 0 0 1" type="cylinder"
                         density="0" rgba="0.09 0.09 0.09 1"/>
-                      <geom pos="0 0 0.076575" quat="0 -0.707107 0.707107 0" type="mesh" density="0" rgba="1 1 1 1"
+                      <geom pos="0 0 0.076575" quat="0 -1 1 0" type="mesh" density="0" rgba="1 1 1 1"
                         mesh="gripper_link"/>
-                      <body name="gripper_right_finger_link" pos="0 0 0.076575" quat="0 -0.707107 0.707107 0">
+                      <body name="gripper_right_finger_link" pos="0 0 0.076575" quat="0 -1 1 0">
                         <inertial pos="-0.00447 0.010766 -0.121013" quat="0.944415 0.0576483 0.0941322 -0.309671"
                           mass="0.10998" diaginertia="0.000161667 0.000161667 0.000161667"/>
                         <joint name="gripper_right_finger_joint" axis="1 0 0" type="slide" range="0 0.045"
                           damping="1"/>
                         <geom quat="4.63268e-05 0 0 1" type="mesh" density="0" rgba="0 0 0 1" mesh="gripper_finger_link"/>
                       </body>
-                      <body name="gripper_left_finger_link" pos="0 0 0.076575" quat="0 -0.707107 0.707107 0">
+                      <body name="gripper_left_finger_link" pos="0 0 0.076575" quat="0 -1 1 0">
                         <inertial pos="-0.00447 0.010766 -0.121013" quat="0.944415 0.0576483 0.0941322 -0.309671"
                           mass="0.10998" diaginertia="0.000161667 0.000161667 0.000161667"/>
                         <joint name="gripper_left_finger_joint" axis="-1 0 0" type="slide" range="0 0.045"
