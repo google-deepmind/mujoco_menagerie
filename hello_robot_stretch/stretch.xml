@@ -245,11 +245,6 @@
         <geom mesh="link_lift_7" class="collision"/>
         <geom mesh="link_lift_8" class="collision" mass="1.5"/>
         <geom mesh="link_lift_9" class="collision" mass="1.5"/>
-        <body name="link_aruco_shoulder" pos="-0.015 0.054 0.087" quat="1 0 0 1">
-          <geom material="Aruco_Shoulder_Sticker" mesh="link_aruco_shoulder" class="visual" mass="3.6E-06"
-            shellinertia="true"/>
-          <geom mesh="link_aruco_shoulder" class="collision"/>
-        </body>
         <body name="link_arm_l4" gravcomp="1">
           <geom mesh="link_arm_l4_0" pos="-0.2547 0 0" quat="0.5 0.5 -0.5 -0.5" material="Carbon_Fiber" class="visual"/>
           <geom mesh="link_arm_l4_1" pos="-0.2547 0 0" quat="0.5 0.5 -0.5 -0.5" material="3D_Print_Black" class="visual"/>
@@ -340,6 +335,11 @@
               </body>
             </body>
           </body>
+        </body>
+        <body name="link_aruco_shoulder" pos="-0.0133769 0.0558541 0.0865" quat="1 0 0 0">
+          <geom material="Aruco_Shoulder_Sticker" mesh="link_aruco_shoulder" class="visual" mass="3.6E-06"
+          shellinertia="true"/>
+          <geom mesh="link_aruco_shoulder" class="collision"/>
         </body>
       </body>
       <body name="link_head_pan" pos="0.00610002 0 1.3552" quat="-1 0 0 0">
