@@ -1,13 +1,13 @@
-# Google MetA Description (MJCF)
+# Google Robot Description (MJCF)
 
 Requires MuJoCo 2.3.3 or later.
 
 ## Overview
 
-This package contains a simplified robot description (MJCF) of the [MetA robot](https://everydayrobots.com/technology) developed by Google.
+This package contains a simplified robot description (MJCF) of a [mobile manipulator](https://rl-at-scale.github.io/) with a 7 degree-of-freedom (DoF) arm and a parallel jaw gripper developed by Google.
 
 <p float="left">
-  <img src="meta.png" width="400">
+  <img src="robot.png" width="400">
 </p>
 
 ## License

@@ -1,16 +1,16 @@
-<mujoco model="meta">
+<mujoco model="robot">
 
   <compiler angle="radian" assetdir="assets" autolimits="true"/>
 
   <option timestep="0.004" integrator="implicitfast"/>
 
   <asset>
-    <texture type="2d" name="meta_texture" file="meta_texture.png"/>
-    <texture type="2d" name="meta_finger_base_texture" file="meta_finger_base_texture.png"/>
-    <texture type="2d" name="meta_finger_tip_texture" file="meta_finger_tip_texture.png"/>
-    <material name="meta_mtl" texture="meta_texture"/>
-    <material name="meta_finger_base_mtl" texture="meta_finger_base_texture"/>
-    <material name="meta_finger_tip_mtl" texture="meta_finger_tip_texture"/>
+    <texture type="2d" name="robot_texture" file="robot_texture.png"/>
+    <texture type="2d" name="finger_base_texture" file="finger_base_texture.png"/>
+    <texture type="2d" name="finger_tip_texture" file="finger_tip_texture.png"/>
+    <material name="robot_mtl" texture="robot_texture"/>
+    <material name="finger_base_mtl" texture="finger_base_texture"/>
+    <material name="finger_tip_mtl" texture="finger_tip_texture"/>
 
     <!-- Collision meshes -->
     <mesh file="link_base_0_00.stl"/>
@@ -65,10 +65,10 @@
   </asset>
 
   <default>
-    <default class="meta">
+    <default class="robot">
       <joint damping="10.0" frictionloss="1" armature=".1"/>
       <default class="visual">
-        <geom type="mesh" contype="0" conaffinity="0" group="2" material="meta_mtl"/>
+        <geom type="mesh" contype="0" conaffinity="0" group="2" material="robot_mtl"/>
       </default>
       <default class="collision">
         <geom type="mesh" rgba="1 1 1 1" group="3" contype="1" conaffinity="1"/>
@@ -84,7 +84,7 @@
 
   <worldbody>
     <light pos="0 0 3"/>
-    <body name="base_link" childclass="meta" pos="0 0 0.06205">
+    <body name="base_link" childclass="robot" pos="0 0 0.06205">
       <!-- geom for base -->
       <geom class="visual" mesh="link_base_v"/>
       <geom class="collision" mesh="link_base_0_00"/>
@@ -159,13 +159,13 @@
                     <!-- right finger -->
                     <body name="link_finger_right" pos="0 0.025 0.05886" quat="0.879969 -0.475032 0 0" gravcomp="1">
                       <joint name="joint_finger_right" axis="1 0 0" range="0.01 1.3" damping="2.0" frictionloss="1" armature=".1"/>
-                      <geom class="visual" mesh="link_finger_base_v" material="meta_finger_base_mtl"/>
+                      <geom class="visual" mesh="link_finger_base_v" material="finger_base_mtl"/>
                       <geom class="collision" mesh="link_finger_base" mass="0.0333245"/>
                       <geom class="finger_base"/>
                       <geom class="finger_base" pos="0 -0.005 0.04"/>
                       <geom class="finger_base" pos="0 -0.005 0.05"/>
                       <body name="link_finger_tip_right" pos="0 -0.0103567 0.0641556" quat="0.995004 0.0998334 0 0" gravcomp="1">
-                        <geom class="visual" mesh="link_finger_tip_v" material="meta_finger_tip_mtl"/>
+                        <geom class="visual" mesh="link_finger_tip_v" material="finger_tip_mtl"/>
                         <geom class="collision" mesh="link_finger_tip_v" mass="0.0161862"/>
                         <geom class="finger_tip"/>
                         <geom class="finger_tip" pos="0 0 0.01"/>
@@ -177,13 +177,13 @@
                     <!-- left finger -->
                     <body name="link_finger_left" pos="0 -0.025 0.05886" quat="0 0 -0.475032 0.879969" gravcomp="1">
                       <joint name="joint_finger_left" axis="1 0 0" range="0.01 1.3" damping="2.0" frictionloss="1" armature=".1"/>
-                      <geom class="visual" mesh="link_finger_base_v" material="meta_finger_base_mtl"/>
+                      <geom class="visual" mesh="link_finger_base_v" material="finger_base_mtl"/>
                       <geom class="collision" mesh="link_finger_base_v" mass="0.0333245" />
                         <geom class="finger_base"/>
                         <geom class="finger_base" pos="0 -0.005 0.04"/>
                         <geom class="finger_base" pos="0 -0.005 0.05"/>
                       <body name="link_finger_tip_left" pos="0 -0.0103567 0.0641556" quat="0.995004 0.0998334 0 0" gravcomp="1">
-                        <geom class="visual" mesh="link_finger_tip_v" material="meta_finger_tip_mtl"/>
+                        <geom class="visual" mesh="link_finger_tip_v" material="finger_tip_mtl"/>
                         <geom class="collision" mesh="link_finger_tip" mass="0.0161862"/>
                         <geom class="finger_tip"/>
                         <geom class="finger_tip" pos="0 0 0.01"/>

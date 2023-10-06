@@ -1,6 +1,6 @@
-<mujoco model="meta scene">
+<mujoco model="robot scene">
 
-  <include file="meta.xml"/>
+  <include file="robot.xml"/>
 
   <statistic center="0 0 0.8" extent="2"/>
 
