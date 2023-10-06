@@ -67,6 +67,7 @@
     <texture type="2d" file="hand_pinch.png"/>
     <texture type="2d" file="arm_inner_wrist_aruco_sticker.png"/>
     <texture type="2d" file="arm_top_wrist_aruco_sticker.png"/>
+    <texture type="2d" file="shoulder_aruco_sticker.png"/>
 
     <material name="Caster_Rollers_Red" rgba="0.8 0.001381 0 1"/>
     <material name="Generic_Black" rgba="0.036889 0.036889 0.036889 1"/>
@@ -95,6 +96,7 @@
     <material name="Aruco_Inner_Wrist_Sticker" texture="arm_inner_wrist_aruco_sticker"/>
     <material name="Aruco_Top_Wrist_Sticker" texture="arm_top_wrist_aruco_sticker"/>
     <material name="suction_rubber" rgba="0.25098 0.25098 0.25098 1"/>
+    <material name="Aruco_Shoulder_Sticker" texture="shoulder_aruco_sticker"/>
 
     <mesh file="base_link_0.obj"/>
     <mesh file="base_link_2.obj"/>
@@ -139,6 +141,7 @@
     <mesh file="link_lift_7.obj"/>
     <mesh file="link_lift_8.obj"/>
     <mesh file="link_lift_9.obj"/>
+    <mesh file="link_aruco_shoulder.obj"/>
     <mesh file="link_arm_l4_0.obj"/>
     <mesh file="link_arm_l4_1.obj"/>
     <mesh file="link_arm_l3_0.obj"/>
@@ -242,6 +245,11 @@
         <geom mesh="link_lift_7" class="collision"/>
         <geom mesh="link_lift_8" class="collision" mass="1.5"/>
         <geom mesh="link_lift_9" class="collision" mass="1.5"/>
+        <body name="link_aruco_shoulder" pos="-0.015 0.054 0.087" quat="1 0 0 1">
+          <geom material="Aruco_Shoulder_Sticker" mesh="link_aruco_shoulder" class="visual" mass="3.6E-06"
+            shellinertia="true"/>
+          <geom mesh="link_aruco_shoulder" class="collision"/>
+        </body>
         <body name="link_arm_l4" gravcomp="1">
           <geom mesh="link_arm_l4_0" pos="-0.2547 0 0" quat="0.5 0.5 -0.5 -0.5" material="Carbon_Fiber" class="visual"/>
           <geom mesh="link_arm_l4_1" pos="-0.2547 0 0" quat="0.5 0.5 -0.5 -0.5" material="3D_Print_Black" class="visual"/>
