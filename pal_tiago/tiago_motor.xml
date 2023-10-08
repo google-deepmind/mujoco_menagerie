@@ -12,11 +12,14 @@
     <motor name="arm_6_joint_motor" joint="arm_6_joint" forcerange="-6.6 6.6"/>
     <motor name="arm_7_joint_motor" joint="arm_7_joint"/>
     <!-- End effector actuators -->
-    <position name="gripper_left_finger_position" joint="gripper_left_finger_joint" ctrlrange="0 0.045" forcerange="-64 64" kp="1000"/>
-    <position name="gripper_right_finger_position" joint="gripper_right_finger_joint" ctrlrange="0 0.045" forcerange="-64 64" kp="1000"/>
+    <position name="gripper_left_finger_position" joint="gripper_left_finger_joint" ctrlrange="0 0.045"
+      forcerange="-64 64" kp="1000"/>
+    <position name="gripper_right_finger_position" joint="gripper_right_finger_joint" ctrlrange="0 0.045"
+      forcerange="-64 64" kp="1000"/>
     <!-- Head actuators -->
     <position name="head_1_joint_position" joint="head_1_joint" ctrlrange="-1.309 1.309" kp="20"/>
-    <position name="head_2_joint_position" joint="head_2_joint" ctrlrange="-1.0472 0.785398" forcerange="-2.77 2.77" kp="20"/>
+    <position name="head_2_joint_position" joint="head_2_joint" ctrlrange="-1.0472 0.785398" forcerange="-2.77 2.77"
+      kp="20"/>
     <!-- Torso actuators -->
     <position name="torso_lift_joint_position" joint="torso_lift_joint" ctrlrange="0 0.35" kp="5000"/>
     <!-- Wheel actuators -->
