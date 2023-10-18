@@ -7,13 +7,13 @@
     <material name="white" rgba="1 1 1 1"/>
     <material name="black" rgba="0.149 0.149 0.149 1"/>
 
-    <mesh file="base_link.STL"/>
-    <mesh file="left_outer_knuckle.STL"/>
-    <mesh file="left_finger.STL"/>
-    <mesh file="left_inner_knuckle.STL"/>
-    <mesh file="right_outer_knuckle.STL"/>
-    <mesh file="right_finger.STL"/>
-    <mesh file="right_inner_knuckle.STL"/>
+    <mesh file="base_link.stl"/>
+    <mesh file="left_outer_knuckle.stl"/>
+    <mesh file="left_finger.stl"/>
+    <mesh file="left_inner_knuckle.stl"/>
+    <mesh file="right_outer_knuckle.stl"/>
+    <mesh file="right_finger.stl"/>
+    <mesh file="right_inner_knuckle.stl"/>
   </asset>
 
   <default>

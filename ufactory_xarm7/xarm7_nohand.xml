@@ -7,15 +7,15 @@
     <material name="white" rgba="1 1 1 1"/>
     <material name="gray" rgba="0.753 0.753 0.753 1"/>
 
-    <mesh file="link_base.STL"/>
-    <mesh file="link1.STL"/>
-    <mesh file="link2.STL"/>
-    <mesh file="link3.STL"/>
-    <mesh file="link4.STL"/>
-    <mesh file="link5.STL"/>
-    <mesh file="link6.STL"/>
-    <mesh file="link7.STL"/>
-    <mesh file="end_tool.STL"/>
+    <mesh file="link_base.stl"/>
+    <mesh file="link1.stl"/>
+    <mesh file="link2.stl"/>
+    <mesh file="link3.stl"/>
+    <mesh file="link4.stl"/>
+    <mesh file="link5.stl"/>
+    <mesh file="link6.stl"/>
+    <mesh file="link7.stl"/>
+    <mesh file="end_tool.stl"/>
   </asset>
 
   <default>

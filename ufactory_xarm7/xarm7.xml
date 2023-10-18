@@ -8,22 +8,22 @@
     <material name="gray" rgba="0.753 0.753 0.753 1"/>
     <material name="black" rgba="0.149 0.149 0.149 1"/>
 
-    <mesh file="link_base.STL"/>
-    <mesh file="link1.STL"/>
-    <mesh file="link2.STL"/>
-    <mesh file="link3.STL"/>
-    <mesh file="link4.STL"/>
-    <mesh file="link5.STL"/>
-    <mesh file="link6.STL"/>
-    <mesh file="link7.STL"/>
-    <mesh file="end_tool.STL"/>
-    <mesh file="base_link.STL"/>
-    <mesh file="left_outer_knuckle.STL"/>
-    <mesh file="left_finger.STL"/>
-    <mesh file="left_inner_knuckle.STL"/>
-    <mesh file="right_outer_knuckle.STL"/>
-    <mesh file="right_finger.STL"/>
-    <mesh file="right_inner_knuckle.STL"/>
+    <mesh file="link_base.stl"/>
+    <mesh file="link1.stl"/>
+    <mesh file="link2.stl"/>
+    <mesh file="link3.stl"/>
+    <mesh file="link4.stl"/>
+    <mesh file="link5.stl"/>
+    <mesh file="link6.stl"/>
+    <mesh file="link7.stl"/>
+    <mesh file="end_tool.stl"/>
+    <mesh file="base_link.stl"/>
+    <mesh file="left_outer_knuckle.stl"/>
+    <mesh file="left_finger.stl"/>
+    <mesh file="left_inner_knuckle.stl"/>
+    <mesh file="right_outer_knuckle.stl"/>
+    <mesh file="right_finger.stl"/>
+    <mesh file="right_inner_knuckle.stl"/>
   </asset>
 
   <default>
