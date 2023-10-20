@@ -16,7 +16,7 @@ This package contains a simplified robot description (MJCF) of the [Barkour v0 Q
 
 ## MJCF and URDF
 
-The source of truth for the Barkour v0 Quadruped can be found in `barkour.xml`. The URDF in `barkour_v0.urdf` is provided for convenience.
+The source of truth for the Barkour v0 Quadruped can be found in `barkour_v0.xml`. The URDF in `barkour_v0.urdf` is provided for convenience.
 
 ## License
 
