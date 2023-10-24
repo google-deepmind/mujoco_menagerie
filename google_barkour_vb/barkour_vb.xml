@@ -1,0 +1,241 @@
+<mujoco model="barkour_vb">
+  <compiler angle="radian" autolimits="true"/>
+
+  <default>
+    <default class="bkvb">
+      <geom type="mesh"/>
+      <!-- hide sites by default -->
+      <site group="5"/>
+      <default class="bkvb/vicon">
+        <!-- show vicon markers with a small sphere -->
+        <site group="0"/>
+      </default>
+
+      <joint damping="0.024" frictionloss="0.13" armature="0.011"/>
+      <general forcerange="-18 18" biastype="affine" gainprm="50 0 0" biasprm="0 -50 -0.5"/>
+      <default class="bkvb/abduction">
+        <joint range="-1.0472 1.0472"/>
+        <general ctrlrange="-0.9472 0.9472"/>
+        <geom rgba="0.980392 0.713726 0.00392157 1" mesh="abduction"/>
+      </default>
+      <default class="bkvb/hip">
+        <joint range="-1.54706 3.02902"/>
+        <general ctrlrange="-1.44706 2.92902"/>
+      </default>
+      <default class="bkvb/knee">
+        <joint range="0 2.44346"/>
+        <general ctrlrange="0.1 2.34346"/>
+      </default>
+      <default class="bkvb/foot">
+        <site pos="-0.21425 -0.0779806 0" quat="0.664463 0.664463 -0.241845 -0.241845"/>
+        <geom rgba="0.231373 0.380392 0.705882 1" mesh="foot"/>
+      </default>
+      <default class="bkvb/lower_leg">
+        <geom rgba="0.615686 0.811765 0.929412 1" mesh="lower_leg"/>
+      </default>
+      <default class="bkvb/upper_leg">
+        <geom rgba="0.615686 0.811765 0.929412 1" mesh="upper_leg"/>
+      </default>
+      <default class="bkvb/upper_leg_left">
+        <geom rgba="0.972549 0.529412 0.00392157 1" mesh="upper_leg_left"/>
+      </default>
+      <default class="bkvb/upper_leg_right">
+        <geom rgba="0.513726 0.737255 0.407843 1" mesh="upper_leg_right"/>
+      </default>
+      <default class="bkvb/torso">
+        <geom rgba="0.8 0.74902 0.913725 1"/>
+      </default>
+    </default>
+  </default>
+
+  <asset>
+    <mesh name="camera_cover" file="assets/camera_cover.stl"/>
+    <mesh name="neck" file="assets/neck.stl"/>
+    <mesh name="intel_realsense_depth_camera_d435" file="assets/intel_realsense_depth_camera_d435.stl"/>
+    <mesh name="handle" file="assets/handle.stl"/>
+    <mesh name="torso" file="assets/torso.stl"/>
+    <mesh name="abduction" file="assets/abduction.stl"/>
+    <mesh name="upper_leg" file="assets/upper_leg.stl"/>
+    <mesh name="upper_leg_left" file="assets/upper_leg_left.stl"/>
+    <mesh name="upper_leg_right" file="assets/upper_leg_right.stl"/>
+    <mesh name="lower_leg" file="assets/lower_leg.stl"/>
+    <mesh name="foot" file="assets/foot.stl"/>
+  </asset>
+
+  <worldbody>
+    <body name="torso" childclass="bkvb">
+      <freejoint name="torso"/>
+      <camera name="track" pos="0.846 -1.465 0.916" xyaxes="0.866 0.500 0.000 -0.171 0.296 0.940" mode="trackcom"/>
+      <inertial pos="0.0055238 -0.000354563 0.00835899" quat="-0.00150849 0.694899 -0.000198355 0.719106" mass="6.04352"
+        diaginertia="0.144664 0.12027 0.0511405"/>
+      <geom class="bkvb/torso" pos="-7.85127e-05 -0.000500734 0" mesh="neck"/>
+      <geom class="bkvb/torso" pos="-7.85127e-05 -0.000500734 0" mesh="camera_cover"/>
+      <geom class="bkvb/torso" pos="-7.85127e-05 -0.000500734 0" mesh="handle"/>
+      <geom class="bkvb/torso" pos="0.319921 -0.000500734 0.0651248" quat="1 0 0 1"
+        mesh="intel_realsense_depth_camera_d435"/>
+      <geom class="bkvb/torso" pos="-7.85127e-05 -0.000500734 0" mesh="torso"/>
+      <site name="imu_frame" pos="0.010715 -0.00025 -0.06" quat="0 0 0 1"/>
+      <site name="base_frame"/>
+      <site name="vicon_frame"/>
+      <!-- dummy bodies for the cameras -->
+      <body pos="0.3176 0.017 0.065" quat="1 -1 1 -1">
+        <site name="head_camera_frame"/>
+        <camera name="realsense/depth" fovy="62" quat="0 1 0 0"/>
+        <site name="realsense/depth_frame" quat="0 1 0 0"/>
+        <camera name="realsense/rgb" fovy="42.5" pos="0 0.015 0" quat="0 1 0 0"/>
+        <site name="realsense/rgb_frame" pos="0 0.015 0" quat="0 1 0 0"/>
+        <site name="realsense/imu"/>
+      </body>
+      <body pos="0.08632 0 0.1213" quat="1 -1 1 -1" name="oak/">
+        <site name="handle_camera_frame"/>
+        <camera name="oak/rgb" pos="0 0 0.0125" quat="0 -1 -0 -0" resolution="96 60"
+          focalpixel="66.55567095 66.53559105" principalpixel="-1.1446674 -1.8664293" sensorsize="0.000288 0.00018"/>
+      </body>
+      <site name="vicon_0" class="bkvb/vicon" pos="-0.110864 -0.117663 0.061736"/>
+      <site name="vicon_1" class="bkvb/vicon" pos="-0.110864 0.116662 0.0617363"
+        quat="0.965087 -0.209027 0.154269 -0.0334129"/>
+      <site name="vicon_2" class="bkvb/vicon" pos="-0.0625744 0.11068 0.0458139" quat="0.900548 -0.434757 0 0"/>
+      <site name="vicon_3" class="bkvb/vicon" pos="0.0561715 0.100042 0.0527394" quat="0.98926 -0.146166 0 0"/>
+      <site name="vicon_4" class="bkvb/vicon" pos="0.0960704 0.129697 0.0389732"
+        quat="0.767626 -0.517423 -0.313596 0.211381"/>
+      <site name="vicon_5" class="bkvb/vicon" pos="-0.0962327 0.13163 -0.0388594"
+        quat="0.529619 -0.759572 0.215948 -0.309709"/>
+      <site name="vicon_6" class="bkvb/vicon" pos="-7.85127e-05 -0.0778626 0.070357" quat="0.94293 0.33299 0 0"/>
+      <site name="vicon_8" class="bkvb/vicon" pos="-0.0962274 -0.130699 0.0389732"
+        quat="0.767626 0.517423 0.313596 0.211381"/>
+      <site name="vicon_9" class="bkvb/vicon" pos="0.0561715 -0.101043 0.0527394" quat="0.98926 0.146166 0 0"/>
+      <body name="leg_front_left" pos="0.171671 0.0892493 -9.8e-06" quat="1 -1 -1 1">
+        <inertial pos="0.00547726 -0.000288034 -0.0602191" quat="0.999837 0.0103892 -0.0143715 -0.00325656" mass="0.787"
+          diaginertia="0.00143831 0.00117023 0.00100011"/>
+        <joint name="abduction_front_left" class="bkvb/abduction"/>
+        <geom class="bkvb/abduction" pos="0 0.000111373 0.0029" quat="1 1 0 0"/>
+        <body name="upper_leg_front_left" pos="0.03085 0 -0.065" quat="0 -1 0 1">
+          <inertial pos="-0.0241397 0.00402429 -0.0453038" quat="0.0673193 0.647966 -0.00518142 0.75867" mass="1.155"
+            diaginertia="0.00562022 0.00519471 0.0012633"/>
+          <joint name="hip_front_left" class="bkvb/hip"/>
+          <geom class="bkvb/upper_leg" pos="0.0679 0.000111373 0.03085" quat="1 1 1 -1"/>
+          <geom class="bkvb/upper_leg_left" pos="0 0 -0.05075" quat="0 0 1 0"/>
+          <body name="lower_leg_front_left" pos="-0.19 0 -0.069575" quat="0 0 1 0">
+            <inertial pos="-0.0895493 -0.0301957 -3.02082e-08" quat="-0.101465 0.699789 0.101465 0.699789"
+              mass="0.171238" diaginertia="0.00137406 0.00135746 3.05521e-05"/>
+            <joint name="knee_front_left" class="bkvb/knee"/>
+            <geom class="bkvb/foot" pos="-0.0649838 0.178542 0" quat="0.819152 0 0 -0.573576"/>
+            <geom class="bkvb/lower_leg" pos="-0.0649838 0.178542 0" quat="0.819152 0 0 -0.573576"/>
+            <site name="foot_front_left" class="bkvb/foot"/>
+          </body>
+        </body>
+      </body>
+      <body name="leg_hind_left" pos="-0.171829 0.0892493 -9.8e-06" quat="1 -1 -1 1">
+        <inertial pos="0.00547726 0.000288034 0.0602191" quat="0.999837 0.0103892 0.0143715 0.00325656" mass="0.787"
+          diaginertia="0.00143831 0.00117023 0.00100011"/>
+        <joint name="abduction_hind_left" class="bkvb/abduction"/>
+        <geom class="bkvb/abduction" pos="0 -0.000111373 -0.0029" quat="1 -1 0 0"/>
+        <body name="upper_leg_hind_left" pos="0.03085 0 0.065" quat="0 1 0 -1">
+          <inertial pos="-0.0241397 0.00402429 -0.0453038" quat="0.0673193 0.647966 -0.00518142 0.75867" mass="1.155"
+            diaginertia="0.00562022 0.00519471 0.0012633"/>
+          <joint name="hip_hind_left" class="bkvb/hip"/>
+          <geom class="bkvb/upper_leg" pos="0.0679 0.000111373 0.03085" quat="1 1 1 -1"/>
+          <geom class="bkvb/upper_leg_left" pos="0 0 -0.05075" quat="0 0 1 0"/>
+          <body name="lower_leg_2" pos="-0.19 0 -0.069925" quat="0 0 1 0">
+            <inertial pos="-0.0895493 -0.0301957 -3.02082e-08" quat="-0.101465 0.699789 0.101465 0.699789"
+              mass="0.171238" diaginertia="0.00137406 0.00135746 3.05521e-05"/>
+            <joint name="knee_hind_left" class="bkvb/knee"/>
+            <geom class="bkvb/lower_leg" pos="-0.0649838 0.178542 0" quat="0.819152 0 0 -0.573576"/>
+            <geom class="bkvb/foot" pos="-0.0649838 0.178542 0" quat="0.819152 0 0 -0.573576"/>
+            <site name="foot_hind_left" class="bkvb/foot"/>
+          </body>
+        </body>
+      </body>
+      <body name="leg_front_right" pos="0.171671 -0.0907507 -9.8e-06" quat="1 -1 1 -1">
+        <inertial pos="0.00547726 0.000288034 0.0602191" quat="0.999837 0.0103892 0.0143715 0.00325656" mass="0.787"
+          diaginertia="0.00143831 0.00117023 0.00100011"/>
+        <joint name="abduction_front_right" class="bkvb/abduction"/>
+        <geom class="bkvb/abduction" pos="0 -0.000111373 -0.0029" quat="1 -1 0 0"/>
+        <body name="upper_leg_front_right" pos="0.03085 0 0.065" quat="0 -1 0 -1">
+          <inertial pos="-0.0241393 0.00324567 0.0453036" quat="-0.00604983 0.756969 -0.0854547 0.64781" mass="1.155"
+            diaginertia="0.00563107 0.00519539 0.00126472"/>
+          <joint name="hip_front_right" class="bkvb/hip"/>
+          <geom class="bkvb/upper_leg" pos="0.0679 -0.000111373 -0.03085" quat="1 -1 -1 -1"/>
+          <geom class="bkvb/upper_leg_right" pos="0 0 0.05075" quat="0 0 -1 0"/>
+          <body name="lower_leg_3" pos="-0.19 0 0.069575" quat="0 0 -1 0">
+            <inertial pos="-0.0895493 -0.0301957 -3.02082e-08" quat="-0.101465 0.699789 0.101465 0.699789"
+              mass="0.171238" diaginertia="0.00137406 0.00135746 3.05521e-05"/>
+            <joint name="knee_front_right" class="bkvb/knee"/>
+            <geom class="bkvb/foot" pos="-0.0649838 0.178542 0" quat="0.819152 0 0 -0.573576"/>
+            <geom class="bkvb/lower_leg" pos="-0.0649838 0.178542 0" quat="0.819152 0 0 -0.573576"/>
+            <site name="foot_front_right" class="bkvb/foot"/>
+          </body>
+        </body>
+      </body>
+      <body name="leg_hind_right" pos="-0.171829 -0.0907507 -9.8e-06" quat="1 -1 1 -1">
+        <inertial pos="0.00547726 -0.000288034 -0.0600191" quat="0.999837 0.0103892 -0.0143715 -0.00325656" mass="0.787"
+          diaginertia="0.00143831 0.00117023 0.00100011"/>
+        <joint name="abduction_hind_right" class="bkvb/abduction"/>
+        <geom class="bkvb/abduction" pos="0 0.000111373 0.0031" quat="1 1 0 0"/>
+        <body name="upper_leg_hind_right" pos="0.03085 0 -0.0648" quat="0 1 0 1">
+          <inertial pos="-0.0241393 0.00324567 0.0453036" quat="-0.00604983 0.756969 -0.0854547 0.64781" mass="1.155"
+            diaginertia="0.00563107 0.00519539 0.00126472"/>
+          <joint name="hip_hind_right" class="bkvb/hip"/>
+          <geom class="bkvb/upper_leg" pos="0.0679 -0.000111373 -0.03085" quat="1 -1 -1 -1"/>
+          <geom class="bkvb/upper_leg_right" pos="0 0 0.05075" quat="0 0 -1 0"/>
+          <body name="lower_leg_4" pos="-0.19 0 0.069575" quat="0 0 -1 0">
+            <inertial pos="-0.0895493 -0.0301957 -3.02082e-08" quat="-0.101465 0.699789 0.101465 0.699789"
+              mass="0.171238" diaginertia="0.00137406 0.00135746 3.05521e-05"/>
+            <joint name="knee_hind_right" class="bkvb/knee"/>
+            <geom class="bkvb/lower_leg" pos="-0.0649838 0.178542 0" quat="0.819152 0 0 -0.573576"/>
+            <geom class="bkvb/foot" pos="-0.0649838 0.178542 0" quat="0.819152 0 0 -0.573576"/>
+            <site name="foot_hind_right" class="bkvb/foot"/>
+          </body>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+
+  <actuator>
+    <general name="abduction_front_left" class="bkvb/abduction" joint="abduction_front_left"/>
+    <general name="hip_front_left" class="bkvb/hip" joint="hip_front_left"/>
+    <general name="knee_front_left" class="bkvb/knee" joint="knee_front_left"/>
+    <general name="abduction_hind_left" class="bkvb/abduction" joint="abduction_hind_left"/>
+    <general name="hip_hind_left" class="bkvb/hip" joint="hip_hind_left"/>
+    <general name="knee_hind_left" class="bkvb/knee" joint="knee_hind_left"/>
+    <general name="abduction_front_right" class="bkvb/abduction" joint="abduction_front_right"/>
+    <general name="hip_front_right" class="bkvb/hip" joint="hip_front_right"/>
+    <general name="knee_front_right" class="bkvb/knee" joint="knee_front_right"/>
+    <general name="abduction_hind_right" class="bkvb/abduction" joint="abduction_hind_right"/>
+    <general name="hip_hind_right" class="bkvb/hip" joint="hip_hind_right"/>
+    <general name="knee_hind_right" class="bkvb/knee" joint="knee_hind_right"/>
+  </actuator>
+
+  <sensor>
+    <jointpos joint="abduction_front_left" name="abduction_front_left_pos"/>
+    <jointpos joint="hip_front_left" name="hip_front_left_pos"/>
+    <jointpos joint="knee_front_left" name="knee_front_left_pos"/>
+    <jointpos joint="abduction_hind_left" name="abduction_hind_left_pos"/>
+    <jointpos joint="hip_hind_left" name="hip_hind_left_pos"/>
+    <jointpos joint="knee_hind_left" name="knee_hind_left_pos"/>
+    <jointpos joint="abduction_front_right" name="abduction_front_right_pos"/>
+    <jointpos joint="hip_front_right" name="hip_front_right_pos"/>
+    <jointpos joint="knee_front_right" name="knee_front_right_pos"/>
+    <jointpos joint="abduction_hind_right" name="abduction_hind_right_pos"/>
+    <jointpos joint="hip_hind_right" name="hip_hind_right_pos"/>
+    <jointpos joint="knee_hind_right" name="knee_hind_right_pos"/>
+    <jointvel joint="abduction_front_left" name="abduction_front_left_vel"/>
+    <jointvel joint="hip_front_left" name="hip_front_left_vel"/>
+    <jointvel joint="knee_front_left" name="knee_front_left_vel"/>
+    <jointvel joint="abduction_hind_left" name="abduction_hind_left_vel"/>
+    <jointvel joint="hip_hind_left" name="hip_hind_left_vel"/>
+    <jointvel joint="knee_hind_left" name="knee_hind_left_vel"/>
+    <jointvel joint="abduction_front_right" name="abduction_front_right_vel"/>
+    <jointvel joint="hip_front_right" name="hip_front_right_vel"/>
+    <jointvel joint="knee_front_right" name="knee_front_right_vel"/>
+    <jointvel joint="abduction_hind_right" name="abduction_hind_right_vel"/>
+    <jointvel joint="hip_hind_right" name="hip_hind_right_vel"/>
+    <jointvel joint="knee_hind_right" name="knee_hind_right_vel"/>
+    <gyro site="imu_frame" name="gyro"/>
+    <accelerometer site="imu_frame" name="accelerometer"/>
+    <framequat objtype="site" objname="imu_frame" name="orientation"/>
+    <framepos objtype="site" objname="imu_frame" name="global_position"/>
+    <framelinvel objtype="site" objname="imu_frame" name="global_linvel"/>
+    <frameangvel objtype="site" objname="imu_frame" name="global_angvel"/>
+  </sensor>
+</mujoco>

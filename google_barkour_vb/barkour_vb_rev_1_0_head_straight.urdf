@@ -1,0 +1,784 @@
+<?xml version="1.0"?>
+<robot name="barkour_vb">
+  <link name="torso_asm_1">
+    <inertial>
+      <mass value="6.0435187992921655"/>
+      <origin xyz="0.005523803494648026 -3.54562665913517e-4 0.008358992027777457" rpy="0 -0 0"/>
+      <inertia ixx="0.05125030564288343" ixy="-1.2309385414172502e-4" ixz="-0.0031995036900812944" iyy="0.12027011393337123" iyz="-6.389885553167508e-5" izz="0.1445542994133994"/>
+    </inertial>
+    <visual name="mesh_visual_torso_asm_1_neck_1">
+      <origin xyz="-7.851268126597352e-5 -5.007337028185305e-4 5.551115123125783e-17" rpy="-1.1591837685679553e-25 -7.068193710780266e-27 9.138164726094376e-27"/>
+      <geometry>
+        <mesh filename="package://assets/neck.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="material_torso_asm_1_neck_1">
+        <color rgba="0.615686274509804 0.8117647058823529 0.9294117647058824 1"/>
+      </material>
+    </visual>
+    <visual name="mesh_visual_torso_asm_1_camera_cover_1">
+      <origin xyz="-7.851268126597352e-5 -5.007337028185305e-4 5.551115123125783e-17" rpy="-1.1591837685679553e-25 -7.068193710780266e-27 9.138164726094376e-27"/>
+      <geometry>
+        <mesh filename="package://assets/camera_cover.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="material_torso_asm_1_camera_cover_1">
+        <color rgba="0.6470588235294118 0.6470588235294118 0.6470588235294118 1"/>
+      </material>
+    </visual>
+    <visual name="mesh_visual_torso_asm_1_handle_1">
+      <origin xyz="-7.851268126597352e-5 -5.007337028185305e-4 5.551115123125783e-17" rpy="-1.1591837685679553e-25 -7.068193710780266e-27 9.138164726094376e-27"/>
+      <geometry>
+        <mesh filename="package://assets/handle.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="material_torso_asm_1_handle_1">
+        <color rgba="0.9725490196078431 0.5294117647058824 0.00392156862745098 1"/>
+      </material>
+    </visual>
+    <visual name="mesh_visual_torso_asm_1_intel_realsense_depth_camera_d435_1">
+      <origin xyz="0.3199214873187563 -5.00733702828467e-4 0.06512479372904838" rpy="-7.169167906648349e-27 1.1591837685679884e-25 1.5707963267948966"/>
+      <geometry>
+        <mesh filename="package://assets/intel_realsense_depth_camera_d435.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="material_torso_asm_1_intel_realsense_depth_camera_d435_1">
+        <color rgba="0.9725490196078431 0.5294117647058824 0.00392156862745098 1"/>
+      </material>
+    </visual>
+    <visual name="mesh_visual_torso_asm_1_torso_1">
+      <origin xyz="-7.851268126600128e-5 -5.007337028184195e-4 5.551115123125783e-17" rpy="-1.1591837685679553e-25 -7.068193710780266e-27 9.138164726094376e-27"/>
+      <geometry>
+        <mesh filename="package://assets/torso.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="material_torso_asm_1_torso_1">
+        <color rgba="0.8 0.7490196078431373 0.9137254901960784 1"/>
+      </material>
+    </visual>
+    <collision name="mesh_collision_torso_asm_1_neck_1">
+      <origin xyz="-7.851268126597352e-5 -5.007337028185305e-4 5.551115123125783e-17" rpy="-1.1591837685679553e-25 -7.068193710780266e-27 9.138164726094376e-27"/>
+      <geometry>
+        <mesh filename="package://assets/neck.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="material_torso_asm_1_neck_1">
+        <color rgba="0.615686274509804 0.8117647058823529 0.9294117647058824 1"/>
+      </material>
+    </collision>
+    <collision name="mesh_collision_torso_asm_1_camera_cover_1">
+      <origin xyz="-7.851268126597352e-5 -5.007337028185305e-4 5.551115123125783e-17" rpy="-1.1591837685679553e-25 -7.068193710780266e-27 9.138164726094376e-27"/>
+      <geometry>
+        <mesh filename="package://assets/camera_cover.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="material_torso_asm_1_camera_cover_1">
+        <color rgba="0.6470588235294118 0.6470588235294118 0.6470588235294118 1"/>
+      </material>
+    </collision>
+    <collision name="mesh_collision_torso_asm_1_handle_1">
+      <origin xyz="-7.851268126597352e-5 -5.007337028185305e-4 5.551115123125783e-17" rpy="-1.1591837685679553e-25 -7.068193710780266e-27 9.138164726094376e-27"/>
+      <geometry>
+        <mesh filename="package://assets/handle.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="material_torso_asm_1_handle_1">
+        <color rgba="0.9725490196078431 0.5294117647058824 0.00392156862745098 1"/>
+      </material>
+    </collision>
+    <collision name="mesh_collision_torso_asm_1_intel_realsense_depth_camera_d435_1">
+      <origin xyz="0.3199214873187563 -5.00733702828467e-4 0.06512479372904838" rpy="-7.169167906648349e-27 1.1591837685679884e-25 1.5707963267948966"/>
+      <geometry>
+        <mesh filename="package://assets/intel_realsense_depth_camera_d435.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="material_torso_asm_1_intel_realsense_depth_camera_d435_1">
+        <color rgba="0.9725490196078431 0.5294117647058824 0.00392156862745098 1"/>
+      </material>
+    </collision>
+    <collision name="mesh_collision_torso_asm_1_torso_1">
+      <origin xyz="-7.851268126600128e-5 -5.007337028184195e-4 5.551115123125783e-17" rpy="-1.1591837685679553e-25 -7.068193710780266e-27 9.138164726094376e-27"/>
+      <geometry>
+        <mesh filename="package://assets/torso.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="material_torso_asm_1_torso_1">
+        <color rgba="0.8 0.7490196078431373 0.9137254901960784 1"/>
+      </material>
+    </collision>
+  </link>
+  <joint name="abduction_front_left" type="revolute">
+    <origin xyz="0.171671487318734 0.08924926629717829 -9.80000000315705e-6" rpy="-1.570796326794818 -3.399112597086179e-27 1.5707963267949399"/>
+    <axis xyz="2.672703018845418e-40 0 1"/>
+    <parent link="torso_asm_1"/>
+    <child link="abduction_1"/>
+    <limit lower="-1.0471975511965976" upper="1.0471975511965976" effort="1e+9" velocity="1e+9"/>
+  </joint>
+  <link name="abduction_1">
+    <inertial>
+      <mass value="0.7870000000000004"/>
+      <origin xyz="0.005477257952806026 -2.880342934476473e-4 -0.06021907612587555" rpy="0 -0 0"/>
+      <inertia ixx="0.0014379326033092518" ixy="-1.9263529901593276e-6" ixz="1.258009598205964e-5" iyy="0.001170167935614302" iyz="3.463780265707665e-6" izz="0.0010005419149179914"/>
+    </inertial>
+    <visual name="mesh_visual_abduction_1_abduction_1">
+      <origin xyz="5.83993472149866e-18 1.1137316600633152e-4 0.002900000000000005" rpy="1.5707963267948966 -3.78951442209809e-16 0"/>
+      <geometry>
+        <mesh filename="package://assets/abduction.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="material_abduction_1_abduction_1">
+        <color rgba="0.9803921568627451 0.7137254901960784 0.00392156862745098 1"/>
+      </material>
+    </visual>
+    <collision name="mesh_collision_abduction_1_abduction_1">
+      <origin xyz="5.83993472149866e-18 1.1137316600633152e-4 0.002900000000000005" rpy="1.5707963267948966 -3.78951442209809e-16 0"/>
+      <geometry>
+        <mesh filename="package://assets/abduction.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="material_abduction_1_abduction_1">
+        <color rgba="0.9803921568627451 0.7137254901960784 0.00392156862745098 1"/>
+      </material>
+    </collision>
+  </link>
+  <joint name="abduction_hind_left" type="revolute">
+    <origin xyz="-0.17182851268126573 0.08924926629718143 -9.799999998367492e-6" rpy="-1.5707963267948988 -5.775159592936519e-29 1.570796326794869"/>
+    <axis xyz="-1.2098169819453001e-43 0 1"/>
+    <parent link="torso_asm_1"/>
+    <child link="abduction_2"/>
+    <limit lower="-1.0471975511965976" upper="1.0471975511965976" effort="1e+9" velocity="1e+9"/>
+  </joint>
+  <link name="abduction_2">
+    <inertial>
+      <mass value="0.7870000000000004"/>
+      <origin xyz="0.005477257952806026 2.880342934476473e-4 0.06021907612587555" rpy="0 -0 0"/>
+      <inertia ixx="0.0014379326033092518" ixy="1.9263529901593276e-6" ixz="-1.258009598205964e-5" iyy="0.001170167935614302" iyz="3.463780265707665e-6" izz="0.0010005419149179914"/>
+    </inertial>
+    <visual name="mesh_visual_abduction_2_abduction_2">
+      <origin xyz="5.83993472149866e-18 -1.1137316600633152e-4 -0.002900000000000005" rpy="-1.5707963267948968 3.78951442209809e-16 0"/>
+      <geometry>
+        <mesh filename="package://assets/abduction.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="material_abduction_2_abduction_2">
+        <color rgba="0.9803921568627451 0.7137254901960784 0.00392156862745098 1"/>
+      </material>
+    </visual>
+    <collision name="mesh_collision_abduction_2_abduction_2">
+      <origin xyz="5.83993472149866e-18 -1.1137316600633152e-4 -0.002900000000000005" rpy="-1.5707963267948968 3.78951442209809e-16 0"/>
+      <geometry>
+        <mesh filename="package://assets/abduction.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="material_abduction_2_abduction_2">
+        <color rgba="0.9803921568627451 0.7137254901960784 0.00392156862745098 1"/>
+      </material>
+    </collision>
+  </link>
+  <joint name="abduction_front_right" type="revolute">
+    <origin xyz="0.17167148731873405 -0.09075073370281865 -9.79999999449241e-6" rpy="-1.5707963267948195 3.522303502572385e-27 -1.5707963267949423"/>
+    <axis xyz="-2.71461045742394e-40 0 1"/>
+    <parent link="torso_asm_1"/>
+    <child link="abduction_3"/>
+    <limit lower="-1.0471975511965976" upper="1.0471975511965976" effort="1e+9" velocity="1e+9"/>
+  </joint>
+  <link name="abduction_3">
+    <inertial>
+      <mass value="0.7870000000000004"/>
+      <origin xyz="0.005477257952806026 2.880342934476473e-4 0.06021907612587555" rpy="0 -0 0"/>
+      <inertia ixx="0.0014379326033092518" ixy="1.9263529901593276e-6" ixz="-1.258009598205964e-5" iyy="0.001170167935614302" iyz="3.463780265707665e-6" izz="0.0010005419149179914"/>
+    </inertial>
+    <visual name="mesh_visual_abduction_3_abduction_3">
+      <origin xyz="5.83993472149866e-18 -1.1137316600633152e-4 -0.002900000000000005" rpy="-1.5707963267948968 3.78951442209809e-16 0"/>
+      <geometry>
+        <mesh filename="package://assets/abduction.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="material_abduction_3_abduction_3">
+        <color rgba="0.9803921568627451 0.7137254901960784 0.00392156862745098 1"/>
+      </material>
+    </visual>
+    <collision name="mesh_collision_abduction_3_abduction_3">
+      <origin xyz="5.83993472149866e-18 -1.1137316600633152e-4 -0.002900000000000005" rpy="-1.5707963267948968 3.78951442209809e-16 0"/>
+      <geometry>
+        <mesh filename="package://assets/abduction.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="material_abduction_3_abduction_3">
+        <color rgba="0.9803921568627451 0.7137254901960784 0.00392156862745098 1"/>
+      </material>
+    </collision>
+  </link>
+  <joint name="abduction_hind_right" type="revolute">
+    <origin xyz="-0.17182851268126592 -0.09075073370281862 -9.800000003691252e-6" rpy="-1.5707963267948255 -2.639992626226621e-27 -1.5707963267948595"/>
+    <axis xyz="1.8745546754473815e-40 0 1"/>
+    <parent link="torso_asm_1"/>
+    <child link="abduction_4"/>
+    <limit lower="-1.0471975511965976" upper="1.0471975511965976" effort="1e+9" velocity="1e+9"/>
+  </joint>
+  <link name="abduction_4">
+    <inertial>
+      <mass value="0.7870000000000004"/>
+      <origin xyz="0.005477257952806026 -2.880342934476473e-4 -0.06001907612587555" rpy="0 -0 0"/>
+      <inertia ixx="0.0014379326033092518" ixy="-1.9263529901593276e-6" ixz="1.258009598205964e-5" iyy="0.0011701679356143023" iyz="3.463780265707665e-6" izz="0.0010005419149179914"/>
+    </inertial>
+    <visual name="mesh_visual_abduction_4_abduction_4">
+      <origin xyz="5.764144433056697e-18 1.1137316600633152e-4 0.0031000000000000073" rpy="1.5707963267948966 -3.78951442209809e-16 0"/>
+      <geometry>
+        <mesh filename="package://assets/abduction.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="material_abduction_4_abduction_4">
+        <color rgba="0.9803921568627451 0.7137254901960784 0.00392156862745098 1"/>
+      </material>
+    </visual>
+    <collision name="mesh_collision_abduction_4_abduction_4">
+      <origin xyz="5.764144433056697e-18 1.1137316600633152e-4 0.0031000000000000073" rpy="1.5707963267948966 -3.78951442209809e-16 0"/>
+      <geometry>
+        <mesh filename="package://assets/abduction.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="material_abduction_4_abduction_4">
+        <color rgba="0.9803921568627451 0.7137254901960784 0.00392156862745098 1"/>
+      </material>
+    </collision>
+  </link>
+  <joint name="hip_hind_right" type="revolute">
+    <origin xyz="0.030849999999999947 -9.934002405398434e-18 -0.06480000000000001" rpy="0 -1.5707963267948966 3.141592653589791"/>
+    <axis xyz="0 2.3352054777656043e-31 1"/>
+    <parent link="abduction_4"/>
+    <child link="upper_leg_4"/>
+    <limit lower="-1.5470598489677738" upper="3.029018916836159" effort="1e+9" velocity="1e+9"/>
+  </joint>
+  <link name="upper_leg_4">
+    <inertial>
+      <mass value="0.825"/>
+      <origin xyz="-2.6386651911913805e-4 -5.445989762948878e-4 0.035395424597901" rpy="0 -0 0"/>
+      <inertia ixx="8.52398289651261e-4" ixy="2.4616395855082435e-7" ixz="-4.6651751688711196e-6" iyy="8.405258907741872e-4" iyz="-6.967907262754442e-6" izz="0.0013010489365589857"/>
+    </inertial>
+    <visual name="mesh_visual_upper_leg_4_upper_leg_4">
+      <origin xyz="0.06789999999999927 -1.1137316600626203e-4 -0.030850000000000394" rpy="0 -1.5707963267948966 -1.5707963267948966"/>
+      <geometry>
+        <mesh filename="package://assets/upper_leg.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="material_upper_leg_4_upper_leg_4">
+        <color rgba="0.615686274509804 0.8117647058823529 0.9294117647058824 1"/>
+      </material>
+    </visual>
+    <collision name="mesh_collision_upper_leg_4_upper_leg_4">
+      <origin xyz="0.06789999999999927 -1.1137316600626203e-4 -0.030850000000000394" rpy="0 -1.5707963267948966 -1.5707963267948966"/>
+      <geometry>
+        <mesh filename="package://assets/upper_leg.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="material_upper_leg_4_upper_leg_4">
+        <color rgba="0.615686274509804 0.8117647058823529 0.9294117647058824 1"/>
+      </material>
+    </collision>
+  </link>
+  <joint name="hind_right_upper_leg_fixed_joint" type="fixed">
+    <origin xyz="6.106226635438361e-16 -7.137031850928954e-16 0.05345000000000068" rpy="3.141592653589756 -3.5623460654715196e-14 -3.141592653589793"/>
+    <parent link="upper_leg_4"/>
+    <child link="upper_leg_right_2"/>
+  </joint>
+  <link name="upper_leg_right_2">
+    <inertial>
+      <mass value="0.3299999999999993"/>
+      <origin xyz="0.08382799919114345 0.012721325959740851 -0.016623921851364253" rpy="0 -0 0"/>
+      <inertia ixx="2.3860417928824114e-4" ixy="-1.216354606968332e-4" ixz="3.7481873671363786e-6" iyy="0.0023930713505869285" iyz="7.275442766044627e-6" izz="0.0025236642422561927"/>
+    </inertial>
+    <visual name="mesh_visual_upper_leg_right_2_upper_leg_right_2">
+      <origin xyz="-3.278627369596165e-16 3.43475248243408e-16 0.0027" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/upper_leg_right.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="material_upper_leg_right_2_upper_leg_right_2">
+        <color rgba="0.5137254901960784 0.7372549019607844 0.40784313725490196 1"/>
+      </material>
+    </visual>
+    <collision name="mesh_collision_upper_leg_right_2_upper_leg_right_2">
+      <origin xyz="-3.278627369596165e-16 3.43475248243408e-16 0.0027" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/upper_leg_right.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="material_upper_leg_right_2_upper_leg_right_2">
+        <color rgba="0.5137254901960784 0.7372549019607844 0.40784313725490196 1"/>
+      </material>
+    </collision>
+  </link>
+  <joint name="knee_hind_right" type="revolute">
+    <origin xyz="0.18999999999999967 3.439038746231096e-16 -0.016125" rpy="0 -0 0"/>
+    <axis xyz="0 0 1"/>
+    <parent link="upper_leg_right_2"/>
+    <child link="lower_leg_4"/>
+    <limit lower="0" upper="2.443460952792061" effort="1e+9" velocity="1e+9"/>
+  </joint>
+  <link name="lower_leg_4">
+    <inertial>
+      <mass value="0.17123781480870356"/>
+      <origin xyz="-0.08954932795302636 -0.030195681911853636 -3.020816199673174e-8" rpy="0 -0 0"/>
+      <inertia ixx="1.3758856610050898e-4" ixy="-3.613463998914471e-4" ixz="-1.7085639729527853e-10" iyy="0.0012504281176954784" iyz="-1.2166564380831712e-10" izz="0.0013740618472343744"/>
+    </inertial>
+    <visual name="mesh_visual_lower_leg_4_lower_leg_1">
+      <origin xyz="-0.06498382723187707 0.17854159794932262 0" rpy="0 -0 -1.2217304763960306"/>
+      <geometry>
+        <mesh filename="package://assets/lower_leg.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="material_lower_leg_4_lower_leg_1">
+        <color rgba="0.615686274509804 0.8117647058823529 0.9294117647058824 1"/>
+      </material>
+    </visual>
+    <visual name="mesh_visual_lower_leg_4_foot_1">
+      <origin xyz="-0.06498382723187707 0.17854159794932262 0" rpy="0 -0 -1.2217304763960306"/>
+      <geometry>
+        <mesh filename="package://assets/foot.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="material_lower_leg_4_foot_1">
+        <color rgba="0.23137254901960785 0.3803921568627451 0.7058823529411765 1"/>
+      </material>
+    </visual>
+    <collision name="mesh_collision_lower_leg_4_lower_leg_1">
+      <origin xyz="-0.06498382723187707 0.17854159794932262 0" rpy="0 -0 -1.2217304763960306"/>
+      <geometry>
+        <mesh filename="package://assets/lower_leg.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="material_lower_leg_4_lower_leg_1">
+        <color rgba="0.615686274509804 0.8117647058823529 0.9294117647058824 1"/>
+      </material>
+    </collision>
+    <collision name="mesh_collision_lower_leg_4_foot_1">
+      <origin xyz="-0.06498382723187707 0.17854159794932262 0" rpy="0 -0 -1.2217304763960306"/>
+      <geometry>
+        <mesh filename="package://assets/foot.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="material_lower_leg_4_foot_1">
+        <color rgba="0.23137254901960785 0.3803921568627451 0.7058823529411765 1"/>
+      </material>
+    </collision>
+  </link>
+  <joint name="hip_front_right" type="revolute">
+    <origin xyz="0.030849999999999947 9.934002405398434e-18 0.06500000000000002" rpy="0 -1.5707963267948966 -3.141592653589791"/>
+    <axis xyz="0 -2.3352054777656043e-31 1"/>
+    <parent link="abduction_3"/>
+    <child link="upper_leg_3"/>
+    <limit lower="-1.5470598489677738" upper="3.029018916836159" effort="1e+9" velocity="1e+9"/>
+  </joint>
+  <link name="upper_leg_3">
+    <inertial>
+      <mass value="0.825"/>
+      <origin xyz="-2.6386651911913805e-4 -5.445989762948878e-4 0.035395424597901" rpy="0 -0 0"/>
+      <inertia ixx="8.52398289651261e-4" ixy="2.4616395855082435e-7" ixz="-4.6651751688711196e-6" iyy="8.405258907741872e-4" iyz="-6.967907262754442e-6" izz="0.0013010489365589857"/>
+    </inertial>
+    <visual name="mesh_visual_upper_leg_3_upper_leg_3">
+      <origin xyz="0.06789999999999927 -1.1137316600626203e-4 -0.030850000000000394" rpy="0 -1.5707963267948966 -1.5707963267948966"/>
+      <geometry>
+        <mesh filename="package://assets/upper_leg.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="material_upper_leg_3_upper_leg_3">
+        <color rgba="0.615686274509804 0.8117647058823529 0.9294117647058824 1"/>
+      </material>
+    </visual>
+    <collision name="mesh_collision_upper_leg_3_upper_leg_3">
+      <origin xyz="0.06789999999999927 -1.1137316600626203e-4 -0.030850000000000394" rpy="0 -1.5707963267948966 -1.5707963267948966"/>
+      <geometry>
+        <mesh filename="package://assets/upper_leg.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="material_upper_leg_3_upper_leg_3">
+        <color rgba="0.615686274509804 0.8117647058823529 0.9294117647058824 1"/>
+      </material>
+    </collision>
+  </link>
+  <joint name="front_right_upper_leg_fixed_joint" type="fixed">
+    <origin xyz="6.106226635438361e-16 -7.137031850928954e-16 0.05345000000000068" rpy="3.141592653589756 -3.5623460654715196e-14 -3.141592653589793"/>
+    <parent link="upper_leg_3"/>
+    <child link="upper_leg_right_1"/>
+  </joint>
+  <link name="upper_leg_right_1">
+    <inertial>
+      <mass value="0.3299999999999993"/>
+      <origin xyz="0.08382799919114343 0.012721325959740168 -0.016623921851364253" rpy="0 -0 0"/>
+      <inertia ixx="2.3860417928824108e-4" ixy="-1.216354606968332e-4" ixz="3.7481873671363244e-6" iyy="0.002393071350586927" iyz="7.275442766044613e-6" izz="0.0025236642422561927"/>
+    </inertial>
+    <visual name="mesh_visual_upper_leg_right_1_upper_leg_right_1">
+      <origin xyz="-3.5214886562329204e-16 -3.41740524767431e-16 0.0027" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/upper_leg_right.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="material_upper_leg_right_1_upper_leg_right_1">
+        <color rgba="0.5137254901960784 0.7372549019607844 0.40784313725490196 1"/>
+      </material>
+    </visual>
+    <collision name="mesh_collision_upper_leg_right_1_upper_leg_right_1">
+      <origin xyz="-3.5214886562329204e-16 -3.41740524767431e-16 0.0027" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/upper_leg_right.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="material_upper_leg_right_1_upper_leg_right_1">
+        <color rgba="0.5137254901960784 0.7372549019607844 0.40784313725490196 1"/>
+      </material>
+    </collision>
+  </link>
+  <joint name="knee_front_right" type="revolute">
+    <origin xyz="0.18999999999999964 -3.413118983877294e-16 -0.016125" rpy="0 -0 0"/>
+    <axis xyz="0 0 1"/>
+    <parent link="upper_leg_right_1"/>
+    <child link="lower_leg_3"/>
+    <limit lower="0" upper="2.443460952792061" effort="1e+9" velocity="1e+9"/>
+  </joint>
+  <link name="lower_leg_3">
+    <inertial>
+      <mass value="0.17123781480870356"/>
+      <origin xyz="-0.08954932795302636 -0.030195681911853636 -3.020816199673174e-8" rpy="0 -0 0"/>
+      <inertia ixx="1.3758856610050898e-4" ixy="-3.613463998914471e-4" ixz="-1.7085639729527853e-10" iyy="0.0012504281176954784" iyz="-1.2166564380831712e-10" izz="0.0013740618472343744"/>
+    </inertial>
+    <visual name="mesh_visual_lower_leg_3_foot_1">
+      <origin xyz="-0.06498382723187707 0.17854159794932262 0" rpy="0 -0 -1.2217304763960306"/>
+      <geometry>
+        <mesh filename="package://assets/foot.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="material_lower_leg_3_foot_1">
+        <color rgba="0.23137254901960785 0.3803921568627451 0.7058823529411765 1"/>
+      </material>
+    </visual>
+    <visual name="mesh_visual_lower_leg_3_lower_leg_1">
+      <origin xyz="-0.06498382723187707 0.17854159794932262 0" rpy="0 -0 -1.2217304763960306"/>
+      <geometry>
+        <mesh filename="package://assets/lower_leg.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="material_lower_leg_3_lower_leg_1">
+        <color rgba="0.615686274509804 0.8117647058823529 0.9294117647058824 1"/>
+      </material>
+    </visual>
+    <collision name="mesh_collision_lower_leg_3_foot_1">
+      <origin xyz="-0.06498382723187707 0.17854159794932262 0" rpy="0 -0 -1.2217304763960306"/>
+      <geometry>
+        <mesh filename="package://assets/foot.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="material_lower_leg_3_foot_1">
+        <color rgba="0.23137254901960785 0.3803921568627451 0.7058823529411765 1"/>
+      </material>
+    </collision>
+    <collision name="mesh_collision_lower_leg_3_lower_leg_1">
+      <origin xyz="-0.06498382723187707 0.17854159794932262 0" rpy="0 -0 -1.2217304763960306"/>
+      <geometry>
+        <mesh filename="package://assets/lower_leg.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="material_lower_leg_3_lower_leg_1">
+        <color rgba="0.615686274509804 0.8117647058823529 0.9294117647058824 1"/>
+      </material>
+    </collision>
+  </link>
+  <joint name="hip_hind_left" type="revolute">
+    <origin xyz="0.030849999999999947 9.934002405398434e-18 0.06500000000000002" rpy="0 1.5707963267948966 -3.141592653589791"/>
+    <axis xyz="0 2.3352054777656043e-31 1"/>
+    <parent link="abduction_2"/>
+    <child link="upper_leg_2"/>
+    <limit lower="-1.5470598489677738" upper="3.029018916836159" effort="1e+9" velocity="1e+9"/>
+  </joint>
+  <link name="upper_leg_2">
+    <inertial>
+      <mass value="0.825"/>
+      <origin xyz="-2.6386651911913805e-4 5.445989762948878e-4 -0.035395424597900994" rpy="0 -0 0"/>
+      <inertia ixx="8.52398289651261e-4" ixy="-2.4616395855082435e-7" ixz="4.665175168871121e-6" iyy="8.40525890774187e-4" iyz="-6.967907262754442e-6" izz="0.0013010489365589857"/>
+    </inertial>
+    <visual name="mesh_visual_upper_leg_2_upper_leg_2">
+      <origin xyz="0.06789999999999927 1.1137316600626203e-4 0.030850000000000398" rpy="0 1.5707963267948966 -1.5707963267948966"/>
+      <geometry>
+        <mesh filename="package://assets/upper_leg.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="material_upper_leg_2_upper_leg_2">
+        <color rgba="0.615686274509804 0.8117647058823529 0.9294117647058824 1"/>
+      </material>
+    </visual>
+    <collision name="mesh_collision_upper_leg_2_upper_leg_2">
+      <origin xyz="0.06789999999999927 1.1137316600626203e-4 0.030850000000000398" rpy="0 1.5707963267948966 -1.5707963267948966"/>
+      <geometry>
+        <mesh filename="package://assets/upper_leg.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="material_upper_leg_2_upper_leg_2">
+        <color rgba="0.615686274509804 0.8117647058823529 0.9294117647058824 1"/>
+      </material>
+    </collision>
+  </link>
+  <joint name="hind_left_upper_leg_fixed_joint" type="fixed">
+    <origin xyz="6.106226635438361e-16 7.137031850928954e-16 -0.05345000000000067" rpy="-3.7453189364967224e-14 3.5623460654715196e-14 3.141592653589793"/>
+    <parent link="upper_leg_2"/>
+    <child link="upper_leg_left_2"/>
+  </joint>
+  <link name="upper_leg_left_2">
+    <inertial>
+      <mass value="0.33000000000000085"/>
+      <origin xyz="0.08382914304820145 -0.012723520393110832 -0.016624685691380245" rpy="0 -0 0"/>
+      <inertia ixx="2.3866809459552823e-4" ixy="1.2155436586242527e-4" ixz="3.757565033927644e-6" iyy="0.0023929926074393966" iyz="-7.2716334781216895e-6" izz="0.002523649755617038"/>
+    </inertial>
+    <visual name="mesh_visual_upper_leg_left_2_upper_leg_left_2">
+      <origin xyz="3.3480163086352397e-16 -3.5214886562329204e-16 0.0027" rpy="3.141592653589793 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/upper_leg_left.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="material_upper_leg_left_2_upper_leg_left_2">
+        <color rgba="0.9725490196078431 0.5294117647058824 0.00392156862745098 1"/>
+      </material>
+    </visual>
+    <collision name="mesh_collision_upper_leg_left_2_upper_leg_left_2">
+      <origin xyz="3.3480163086352397e-16 -3.5214886562329204e-16 0.0027" rpy="3.141592653589793 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/upper_leg_left.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="material_upper_leg_left_2_upper_leg_left_2">
+        <color rgba="0.9725490196078431 0.5294117647058824 0.00392156862745098 1"/>
+      </material>
+    </collision>
+  </link>
+  <joint name="knee_hind_left" type="revolute">
+    <origin xyz="0.19000000000000034 -3.5257749200299363e-16 -0.016474999999999997" rpy="3.141592653589793 -0 0"/>
+    <axis xyz="0 0 1"/>
+    <parent link="upper_leg_left_2"/>
+    <child link="lower_leg_2"/>
+    <limit lower="0" upper="2.443460952792061" effort="1e+9" velocity="1e+9"/>
+  </joint>
+  <link name="lower_leg_2">
+    <inertial>
+      <mass value="0.17123781480870356"/>
+      <origin xyz="-0.08954932795302636 -0.030195681911853636 -3.020816199673174e-8" rpy="0 -0 0"/>
+      <inertia ixx="1.3758856610050898e-4" ixy="-3.613463998914471e-4" ixz="-1.7085639729527853e-10" iyy="0.0012504281176954784" iyz="-1.2166564380831712e-10" izz="0.0013740618472343744"/>
+    </inertial>
+    <visual name="mesh_visual_lower_leg_2_lower_leg_1">
+      <origin xyz="-0.06498382723187707 0.17854159794932262 0" rpy="0 -0 -1.2217304763960306"/>
+      <geometry>
+        <mesh filename="package://assets/lower_leg.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="material_lower_leg_2_lower_leg_1">
+        <color rgba="0.615686274509804 0.8117647058823529 0.9294117647058824 1"/>
+      </material>
+    </visual>
+    <visual name="mesh_visual_lower_leg_2_foot_1">
+      <origin xyz="-0.06498382723187707 0.17854159794932262 0" rpy="0 -0 -1.2217304763960306"/>
+      <geometry>
+        <mesh filename="package://assets/foot.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="material_lower_leg_2_foot_1">
+        <color rgba="0.23137254901960785 0.3803921568627451 0.7058823529411765 1"/>
+      </material>
+    </visual>
+    <collision name="mesh_collision_lower_leg_2_lower_leg_1">
+      <origin xyz="-0.06498382723187707 0.17854159794932262 0" rpy="0 -0 -1.2217304763960306"/>
+      <geometry>
+        <mesh filename="package://assets/lower_leg.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="material_lower_leg_2_lower_leg_1">
+        <color rgba="0.615686274509804 0.8117647058823529 0.9294117647058824 1"/>
+      </material>
+    </collision>
+    <collision name="mesh_collision_lower_leg_2_foot_1">
+      <origin xyz="-0.06498382723187707 0.17854159794932262 0" rpy="0 -0 -1.2217304763960306"/>
+      <geometry>
+        <mesh filename="package://assets/foot.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="material_lower_leg_2_foot_1">
+        <color rgba="0.23137254901960785 0.3803921568627451 0.7058823529411765 1"/>
+      </material>
+    </collision>
+  </link>
+  <joint name="hip_front_left" type="revolute">
+    <origin xyz="0.030849999999999947 -9.934002405398434e-18 -0.06500000000000002" rpy="0 1.5707963267948966 3.141592653589791"/>
+    <axis xyz="0 -2.3352054777656043e-31 1"/>
+    <parent link="abduction_1"/>
+    <child link="upper_leg_1"/>
+    <limit lower="-1.5470598489677738" upper="3.029018916836159" effort="1e+9" velocity="1e+9"/>
+  </joint>
+  <link name="upper_leg_1">
+    <inertial>
+      <mass value="0.825"/>
+      <origin xyz="-2.6386651911913805e-4 5.445989762948878e-4 -0.035395424597900994" rpy="0 -0 0"/>
+      <inertia ixx="8.52398289651261e-4" ixy="-2.4616395855082435e-7" ixz="4.665175168871121e-6" iyy="8.40525890774187e-4" iyz="-6.967907262754442e-6" izz="0.0013010489365589857"/>
+    </inertial>
+    <visual name="mesh_visual_upper_leg_1_upper_leg_1">
+      <origin xyz="0.06789999999999927 1.1137316600626203e-4 0.030850000000000398" rpy="0 1.5707963267948966 -1.5707963267948966"/>
+      <geometry>
+        <mesh filename="package://assets/upper_leg.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="material_upper_leg_1_upper_leg_1">
+        <color rgba="0.615686274509804 0.8117647058823529 0.9294117647058824 1"/>
+      </material>
+    </visual>
+    <collision name="mesh_collision_upper_leg_1_upper_leg_1">
+      <origin xyz="0.06789999999999927 1.1137316600626203e-4 0.030850000000000398" rpy="0 1.5707963267948966 -1.5707963267948966"/>
+      <geometry>
+        <mesh filename="package://assets/upper_leg.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="material_upper_leg_1_upper_leg_1">
+        <color rgba="0.615686274509804 0.8117647058823529 0.9294117647058824 1"/>
+      </material>
+    </collision>
+  </link>
+  <joint name="front_left_upper_leg_fixed_joint" type="fixed">
+    <origin xyz="6.106226635438361e-16 7.137031850928954e-16 -0.05345000000000067" rpy="-3.7453189364967224e-14 3.5623460654715196e-14 3.141592653589793"/>
+    <parent link="upper_leg_1"/>
+    <child link="upper_leg_left_1"/>
+  </joint>
+  <link name="upper_leg_left_1">
+    <inertial>
+      <mass value="0.33000000000000085"/>
+      <origin xyz="0.08382914304820145 -0.012723520393110832 -0.016624685691380245" rpy="0 -0 0"/>
+      <inertia ixx="2.3866809459552823e-4" ixy="1.2155436586242527e-4" ixz="3.757565033927644e-6" iyy="0.0023929926074393966" iyz="-7.2716334781216895e-6" izz="0.002523649755617038"/>
+    </inertial>
+    <visual name="mesh_visual_upper_leg_left_1_upper_leg_left_1">
+      <origin xyz="3.3480163086352397e-16 -3.5214886562329204e-16 0.0027" rpy="3.141592653589793 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/upper_leg_left.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="material_upper_leg_left_1_upper_leg_left_1">
+        <color rgba="0.9725490196078431 0.5294117647058824 0.00392156862745098 1"/>
+      </material>
+    </visual>
+    <collision name="mesh_collision_upper_leg_left_1_upper_leg_left_1">
+      <origin xyz="3.3480163086352397e-16 -3.5214886562329204e-16 0.0027" rpy="3.141592653589793 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/upper_leg_left.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="material_upper_leg_left_1_upper_leg_left_1">
+        <color rgba="0.9725490196078431 0.5294117647058824 0.00392156862745098 1"/>
+      </material>
+    </collision>
+  </link>
+  <joint name="knee_front_left" type="revolute">
+    <origin xyz="0.19000000000000034 -3.5257749200299363e-16 -0.016125" rpy="3.141592653589793 -0 0"/>
+    <axis xyz="0 0 1"/>
+    <parent link="upper_leg_left_1"/>
+    <child link="lower_leg_1"/>
+    <limit lower="0" upper="2.443460952792061" effort="1e+9" velocity="1e+9"/>
+  </joint>
+  <link name="lower_leg_1">
+    <inertial>
+      <mass value="0.17123781480870356"/>
+      <origin xyz="-0.08954932795302636 -0.030195681911853636 -3.020816199673174e-8" rpy="0 -0 0"/>
+      <inertia ixx="1.3758856610050898e-4" ixy="-3.613463998914471e-4" ixz="-1.7085639729527853e-10" iyy="0.0012504281176954784" iyz="-1.2166564380831712e-10" izz="0.0013740618472343744"/>
+    </inertial>
+    <visual name="mesh_visual_lower_leg_1_foot_1">
+      <origin xyz="-0.06498382723187707 0.17854159794932262 0" rpy="0 -0 -1.2217304763960306"/>
+      <geometry>
+        <mesh filename="package://assets/foot.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="material_lower_leg_1_foot_1">
+        <color rgba="0.23137254901960785 0.3803921568627451 0.7058823529411765 1"/>
+      </material>
+    </visual>
+    <visual name="mesh_visual_lower_leg_1_lower_leg_1">
+      <origin xyz="-0.06498382723187707 0.17854159794932262 0" rpy="0 -0 -1.2217304763960306"/>
+      <geometry>
+        <mesh filename="package://assets/lower_leg.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="material_lower_leg_1_lower_leg_1">
+        <color rgba="0.615686274509804 0.8117647058823529 0.9294117647058824 1"/>
+      </material>
+    </visual>
+    <collision name="mesh_collision_lower_leg_1_foot_1">
+      <origin xyz="-0.06498382723187707 0.17854159794932262 0" rpy="0 -0 -1.2217304763960306"/>
+      <geometry>
+        <mesh filename="package://assets/foot.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="material_lower_leg_1_foot_1">
+        <color rgba="0.23137254901960785 0.3803921568627451 0.7058823529411765 1"/>
+      </material>
+    </collision>
+    <collision name="mesh_collision_lower_leg_1_lower_leg_1">
+      <origin xyz="-0.06498382723187707 0.17854159794932262 0" rpy="0 -0 -1.2217304763960306"/>
+      <geometry>
+        <mesh filename="package://assets/lower_leg.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="material_lower_leg_1_lower_leg_1">
+        <color rgba="0.615686274509804 0.8117647058823529 0.9294117647058824 1"/>
+      </material>
+    </collision>
+  </link>
+  <link name="imu_frame"/>
+  <joint name="imu_frame_fixed_joint" type="fixed">
+    <origin xyz="0.010715 -0.00025 -0.060000000000000005" rpy="0 -0 3.141592653589793"/>
+    <parent link="torso_asm_1"/>
+    <child link="imu_frame"/>
+  </joint>
+  <link name="base_frame"/>
+  <joint name="base_frame_fixed_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 -0 0"/>
+    <parent link="torso_asm_1"/>
+    <child link="base_frame"/>
+  </joint>
+  <link name="vicon_frame"/>
+  <joint name="vicon_frame_fixed_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 -0 0"/>
+    <parent link="torso_asm_1"/>
+    <child link="vicon_frame"/>
+  </joint>
+  <link name="head_camera_frame"/>
+  <joint name="head_camera_frame_fixed_joint" type="fixed">
+    <origin xyz="0.3176 0.017 0.065" rpy="-1.5707963267948968 -0 -1.5707963267948966"/>
+    <parent link="torso_asm_1"/>
+    <child link="head_camera_frame"/>
+  </joint>
+  <link name="handle_camera_frame"/>
+  <joint name="handle_camera_frame_fixed_joint" type="fixed">
+    <origin xyz="0.08632 0 0.12130000000000002" rpy="-1.5707963267948966 -0 -1.5707963267948966"/>
+    <parent link="torso_asm_1"/>
+    <child link="handle_camera_frame"/>
+  </joint>
+  <link name="foot_front_left"/>
+  <joint name="foot_front_left_fixed_joint" type="fixed">
+    <origin xyz="-0.2142499175391871 -0.07798059267825252 0" rpy="1.5707963267948966 -0 -0.6981317007977274"/>
+    <parent link="lower_leg_1"/>
+    <child link="foot_front_left"/>
+  </joint>
+  <link name="foot_hind_left"/>
+  <joint name="foot_hind_left_fixed_joint" type="fixed">
+    <origin xyz="-0.2142499175391871 -0.07798059267825252 0" rpy="1.5707963267948966 -0 -0.6981317007977274"/>
+    <parent link="lower_leg_2"/>
+    <child link="foot_hind_left"/>
+  </joint>
+  <link name="foot_front_right"/>
+  <joint name="foot_front_right_fixed_joint" type="fixed">
+    <origin xyz="-0.2142499175391871 -0.07798059267825252 0" rpy="1.5707963267948966 -0 -0.6981317007977274"/>
+    <parent link="lower_leg_3"/>
+    <child link="foot_front_right"/>
+  </joint>
+  <link name="foot_hind_right"/>
+  <joint name="foot_hind_right_fixed_joint" type="fixed">
+    <origin xyz="-0.2142499175391871 -0.07798059267825252 0" rpy="1.5707963267948966 -0 -0.6981317007977274"/>
+    <parent link="lower_leg_4"/>
+    <child link="foot_hind_right"/>
+  </joint>
+  <link name="vicon_0"/>
+  <joint name="vicon_0_fixed_joint" type="fixed">
+    <origin xyz="-0.110864 -0.117663 0.06173600000000001" rpy="0 -0 0"/>
+    <parent link="torso_asm_1"/>
+    <child link="vicon_0"/>
+  </joint>
+  <link name="vicon_1"/>
+  <joint name="vicon_1_fixed_joint" type="fixed">
+    <origin xyz="-0.11086397162174805 0.11666158305348172 0.061736334671828284" rpy="-0.44616454242534054 0.28775262365143545 -0.1349252661420002"/>
+    <parent link="torso_asm_1"/>
+    <child link="vicon_1"/>
+  </joint>
+  <link name="vicon_2"/>
+  <joint name="vicon_2_fixed_joint" type="fixed">
+    <origin xyz="-0.06257435272789177 0.11067959100429141 0.04581394356253389" rpy="-0.8995379524293106 -1.726318633044941e-17 2.173371517884319e-17"/>
+    <parent link="torso_asm_1"/>
+    <child link="vicon_2"/>
+  </joint>
+  <link name="vicon_3"/>
+  <joint name="vicon_3_fixed_joint" type="fixed">
+    <origin xyz="0.056171487318734045 0.10004168241738749 0.05273939551019303" rpy="-0.29338255303143024 2.6569611700883698e-17 -8.026687474865261e-18"/>
+    <parent link="torso_asm_1"/>
+    <child link="vicon_3"/>
+  </joint>
+  <link name="vicon_4"/>
+  <joint name="vicon_4_fixed_joint" type="fixed">
+    <origin xyz="0.09607041683195405 0.12969731718554708 0.03897324888141357" rpy="-1.2894866763746446 -0.26582137638808234 0.7378138017435335"/>
+    <parent link="torso_asm_1"/>
+    <child link="vicon_4"/>
+  </joint>
+  <link name="vicon_5"/>
+  <joint name="vicon_5_fixed_joint" type="fixed">
+    <origin xyz="-0.09623272680660265 0.13162963620635834 -0.03885941947525901" rpy="-1.8283573842880605 -0.24417217639409064 -0.7425501801995231"/>
+    <parent link="torso_asm_1"/>
+    <child link="vicon_5"/>
+  </joint>
+  <link name="vicon_6"/>
+  <joint name="vicon_6_fixed_joint" type="fixed">
+    <origin xyz="-7.851268126593551e-5 -0.07786255693226492 0.07035700359743703" rpy="0.6789450150998522 -2.1600378515202505e-17 -1.7429733955366978e-17"/>
+    <parent link="torso_asm_1"/>
+    <child link="vicon_6"/>
+  </joint>
+  <link name="vicon_8"/>
+  <joint name="vicon_8_fixed_joint" type="fixed">
+    <origin xyz="-0.09622744219448613 -0.13069878459118428 0.03897324888141333" rpy="1.289486676374684 0.26582137638804976 0.737813801743547"/>
+    <parent link="torso_asm_1"/>
+    <child link="vicon_8"/>
+  </joint>
+  <link name="vicon_9"/>
+  <joint name="vicon_9_fixed_joint" type="fixed">
+    <origin xyz="0.056171487318734045 -0.10104314982302455 0.05273939551019303" rpy="0.29338255303143024 2.6569611700883698e-17 8.026687474865261e-18"/>
+    <parent link="torso_asm_1"/>
+    <child link="vicon_9"/>
+  </joint>
+</robot>
