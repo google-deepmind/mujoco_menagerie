@@ -157,6 +157,7 @@ Menagerie, see [CONTRIBUTING](CONTRIBUTING.md).
 | [Unitree Go1](unitree_go1/README.md)|[<img src="unitree_go1/go1.png" width="400">](unitree_go1/README.md)|B|
 | [Unitree Go2](unitree_go2/README.md)|[<img src="unitree_go2/go2.png" width="400">](unitree_go2/README.md)|B|
 | [Google Barkour v0](google_barkour_v0/README.md)|[<img src="google_barkour_v0/barkour_v0.png" width="400">](google_barkour_v0/README.md)|A|
+| [Google Barkour vb](google_barkour_vb/README.md)|[<img src="google_barkour_vb/barkour_vb.png" width="400">](google_barkour_vb/README.md)|A|
 | Arms               |              |         |
 | [Panda](franka_emika_panda/README.md)|[<img src="franka_emika_panda/panda.png" width="400">](franka_emika_panda/README.md)|B|
 | [UR5e](universal_robots_ur5e/README.md)|[<img src="universal_robots_ur5e/ur5e.png" width="400">](universal_robots_ur5e/README.md)|B|
