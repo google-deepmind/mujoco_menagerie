@@ -182,7 +182,7 @@ If you use Menagerie in your work, please use the following citation:
 
 ```bibtex
 @software{menagerie2022github,
-  author = {MuJoCo Menagerie Contributors},
+  author = {Zakka, Kevin and Tassa, Yuval and {MuJoCo Menagerie Contributors}},
   title = {{MuJoCo Menagerie: A collection of high-quality simulation models for MuJoCo}},
   url = {http://github.com/google-deepmind/mujoco_menagerie},
   year = {2022},

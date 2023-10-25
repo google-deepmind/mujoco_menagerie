@@ -1,6 +1,10 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite it as below."
 authors:
+  - family-names: Zakka
+    given-names: Kevin
+  - family-names: Tassa
+    given-names: Yuval
   - name: "MuJoCo Menagerie Contributors"
 title: "MuJoCo Menagerie: A collection of high-quality simulation models for MuJoCo"
 date-released: 2022-09-07
