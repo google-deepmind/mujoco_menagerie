@@ -1,0 +1,113 @@
+<mujoco model="ufactory_lite6">
+  <compiler angle="radian" meshdir="assets"/>
+
+  <option integrator="implicitfast"/>
+
+  <default>
+    <default class="lite6">
+      <geom type="mesh"/>
+      <joint axis="0 0 1" damping="1" armature="0.1"/>
+      <general gaintype="fixed" biastype="affine" gainprm="2000" biasprm="0 -2000 -200"/>
+      <default class="size1">
+        <general forcerange="-50 50"/>
+      </default>
+      <default class="size2">
+        <general forcerange="-32 32"/>
+      </default>
+      <default class="size3">
+        <general forcerange="-20 20"/>
+      </default>
+      <default class="visual">
+        <geom contype="0" conaffinity="0" group="2" material="white"/>
+      </default>
+      <default class="collision">
+        <geom group="3" mass="0" density="0"/>
+      </default>
+      <site size="0.001" rgba="0.5 0.5 0.5 0.3" group="4"/>
+    </default>
+  </default>
+
+  <asset>
+    <material name="white" rgba="1 1 1 1"/>
+    <material name="silver" rgba=".753 .753 .753 1"/>
+
+    <mesh file="visual/link_base.stl"/>
+    <mesh file="visual/link1.stl"/>
+    <mesh file="visual/link2.stl"/>
+    <mesh file="visual/link3.stl"/>
+    <mesh file="visual/link4.stl"/>
+    <mesh file="visual/link5.stl"/>
+    <mesh file="visual/link6.stl"/>
+    <mesh name="link_base_c" file="collision/link_base.stl"/>
+    <mesh name="link1_c" file="collision/link1.stl"/>
+    <mesh name="link2_c" file="collision/link2.stl"/>
+    <mesh name="link3_c" file="collision/link3.stl"/>
+    <mesh name="link4_c" file="collision/link4.stl"/>
+    <mesh name="link5_c" file="collision/link5.stl"/>
+    <mesh name="link6_c" file="collision/link6.stl"/>
+  </asset>
+
+  <worldbody>
+    <body name="link_base" childclass="lite6">
+      <inertial pos="-0.00829545 3.26357e-05 0.0631195" mass="1.65394" diaginertia="0 0 0"/>
+      <geom class="visual" mesh="link_base"/>
+      <geom class="collision" mesh="link_base_c"/>
+      <body name="link1" pos="0 0 0.2435">
+        <inertial pos="-0.00036 0.04195 -0.0025" quat="0.608059 0.792349 -0.0438707 0.0228718" mass="1.411"
+          diaginertia="0.00145276 0.00135275 0.000853355"/>
+        <joint name="joint1" range="-6.28319 6.28319"/>
+        <geom class="visual" mesh="link1"/>
+        <geom class="collision" mesh="link1_c"/>
+        <body name="link2" quat="-1 1 1 1">
+          <inertial pos="0.179 0 0.0584" quat="0.417561 0.571619 0.569585 0.417693" mass="1.34"
+            diaginertia="0.00560971 0.0052152 0.00122018"/>
+          <joint name="joint2" range="-2.61799 2.61799"/>
+          <geom class="visual" mesh="link2"/>
+          <geom class="collision" mesh="link2_c"/>
+          <body name="link3" pos="0.2002 0 0" quat="-2.59734e-06 -0.707105 -0.707108 -2.59735e-06">
+            <inertial pos="0.072 -0.0357 -0.001" quat="0.128259 0.662963 -0.167256 0.71837" mass="0.953"
+              diaginertia="0.0018521 0.00175546 0.000703807"/>
+            <joint name="joint3" range="-0.061087 5.23599"/>
+            <geom class="visual" mesh="link3"/>
+            <geom class="collision" mesh="link3_c"/>
+            <body name="link4" pos="0.087 -0.22761 0" quat="0.707105 0.707108 0 0">
+              <inertial pos="-0.002 -0.0285 -0.0813" quat="0.975248 0.22109 0.00203498 -0.00262178" mass="1.284"
+                diaginertia="0.00370503 0.00349091 0.00109586"/>
+              <joint name="joint4" range="-6.28319 6.28319"/>
+              <geom class="visual" mesh="link4"/>
+              <geom class="collision" mesh="link4_c"/>
+              <body name="link5" quat="1 1 0 0">
+                <inertial pos="0 0.01 0.0019" quat="0.71423 0.696388 -0.0531933 0.0456997" mass="0.804"
+                  diaginertia="0.000567553 0.000529266 0.000507681"/>
+                <joint name="joint5" range="-2.1642 2.1642"/>
+                <geom class="visual" mesh="link5"/>
+                <geom class="collision" mesh="link5_c"/>
+                <body name="link6" pos="0 0.0625 0" quat="1 -1 0 0">
+                  <inertial pos="0 -0.00194 -0.0102" quat="-0.0376023 0.704057 0.0446838 0.707738" mass="0.13"
+                    diaginertia="0.000148148 8.57757e-05 7.71412e-05"/>
+                  <joint name="joint6" range="-6.28319 6.28319"/>
+                  <geom class="visual" mesh="link6" material="silver"/>
+                  <geom class="collision" mesh="link6_c"/>
+                  <site name="attachment_site"/>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+
+  <actuator>
+    <general joint="joint1" class="size1" ctrlrange="-6.28319 6.28319"/>
+    <general joint="joint2" class="size1" ctrlrange="-2.61799 2.61799"/>
+    <general joint="joint3" class="size2" ctrlrange="-0.061087 5.23599"/>
+    <general joint="joint4" class="size2" ctrlrange="-6.28319 6.28319"/>
+    <general joint="joint5" class="size2" ctrlrange="-2.1642 2.1642"/>
+    <general joint="joint6" class="size3" ctrlrange="-6.28319 6.28319"/>
+  </actuator>
+
+  <keyframe>
+    <key name="home" qpos="0 0 1.57 0 1.57 0" ctrl="0 0 1.57 0 1.57 0"/>
+  </keyframe>
+</mujoco>

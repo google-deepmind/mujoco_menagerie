@@ -165,6 +165,7 @@ Menagerie, see [CONTRIBUTING](CONTRIBUTING.md).
 | [KUKA iiwa 14](kuka_iiwa_14/README.md)|[<img src="kuka_iiwa_14/iiwa_14.png" width="400">](kuka_iiwa_14/README.md)|B|
 | [Sawyer](rethink_robotics_sawyer/README.md)|[<img src="rethink_robotics_sawyer/sawyer.png" width="400">](rethink_robotics_sawyer/README.md)|C|
 | [xArm7](ufactory_xarm7/README.md)|[<img src="ufactory_xarm7/xarm7.png" width="400">](ufactory_xarm7/README.md)|C|
+| [Lite 6](ufactory_lite6/README.md)|[<img src="ufactory_lite6/lite6.png" width="400">](ufactory_lite6/README.md)|C|
 | Mobile Manipulators|              |         |
 | [Google Robot](google_robot/README.md)|[<img src="google_robot/robot.png" width="400">](google_robot/README.md)|B|
 | [Stretch 2](hello_robot_stretch/README.md)|[<img src="hello_robot_stretch/stretch.png" width="400">](hello_robot_stretch/README.md)|C|
