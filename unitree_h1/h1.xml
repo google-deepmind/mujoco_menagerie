@@ -189,28 +189,25 @@
   </worldbody>
 
   <actuator>
-    <motor class="h1" name="left_hip_yaw" joint="left_hip_yaw" ctrlrange="-0.43 0.43" forcerange="-200 200"/>
-    <motor class="h1" name="left_hip_roll" joint="left_hip_roll" ctrlrange="-0.43 0.43" forcerange="-200 200"/>
-    <motor class="h1" name="left_hip_pitch" joint="left_hip_pitch" ctrlrange="-1.57 1.57" forcerange="-200 200"/>
-    <motor class="h1" name="left_knee" joint="left_knee" ctrlrange="-0.26 2.05" forcerange="-300 300"/>
-    <motor class="h1" name="left_ankle" joint="left_ankle" ctrlrange="-0.87 0.52" forcerange="-40 40"/>
-    <motor class="h1" name="right_hip_yaw" joint="right_hip_yaw" ctrlrange="-0.43 0.43" forcerange="-200 200"/>
-    <motor class="h1" name="right_hip_roll" joint="right_hip_roll" ctrlrange="-0.43 0.43" forcerange="-200 200"/>
-    <motor class="h1" name="right_hip_pitch" joint="right_hip_pitch" ctrlrange="-1.57 1.57" forcerange="-200 200"/>
-    <motor class="h1" name="right_knee" joint="right_knee" ctrlrange="-0.26 2.05" forcerange="-300 300"/>
-    <motor class="h1" name="right_ankle" joint="right_ankle" ctrlrange="-0.87 0.52" forcerange="-40 40"/>
-    <motor class="h1" name="torso" joint="torso" ctrlrange="-2.35 2.35" forcerange="-200 200"/>
-    <motor class="h1" name="left_shoulder_pitch" joint="left_shoulder_pitch" ctrlrange="-2.87 2.87"
-      forcerange="-40 40"/>
-    <motor class="h1" name="left_shoulder_roll" joint="left_shoulder_roll" ctrlrange="-0.34 3.11" forcerange="-40 40"/>
-    <motor class="h1" name="left_shoulder_yaw" joint="left_shoulder_yaw" ctrlrange="-1.3 4.45" forcerange="-18 18"/>
-    <motor class="h1" name="left_elbow" joint="left_elbow" ctrlrange="-1.25 2.61" forcerange="-18 18"/>
-    <motor class="h1" name="right_shoulder_pitch" joint="right_shoulder_pitch" ctrlrange="-2.87 2.87"
-      forcerange="-40 40"/>
-    <motor class="h1" name="right_shoulder_roll" joint="right_shoulder_roll" ctrlrange="-3.11 0.34"
-      forcerange="-40 40"/>
-    <motor class="h1" name="right_shoulder_yaw" joint="right_shoulder_yaw" ctrlrange="-4.45 1.3" forcerange="-18 18"/>
-    <motor class="h1" name="right_elbow" joint="right_elbow" ctrlrange="-1.25 2.61" forcerange="-18 18"/>
+    <motor class="h1" name="left_hip_yaw" joint="left_hip_yaw" ctrlrange="-200 200"/>
+    <motor class="h1" name="left_hip_roll" joint="left_hip_roll" ctrlrange="-200 200"/>
+    <motor class="h1" name="left_hip_pitch" joint="left_hip_pitch" ctrlrange="-200 200"/>
+    <motor class="h1" name="left_knee" joint="left_knee" ctrlrange="-300 300"/>
+    <motor class="h1" name="left_ankle" joint="left_ankle" ctrlrange="-40 40"/>
+    <motor class="h1" name="right_hip_yaw" joint="right_hip_yaw" ctrlrange="-200 200"/>
+    <motor class="h1" name="right_hip_roll" joint="right_hip_roll" ctrlrange="-200 200"/>
+    <motor class="h1" name="right_hip_pitch" joint="right_hip_pitch" ctrlrange="-200 200"/>
+    <motor class="h1" name="right_knee" joint="right_knee" ctrlrange="-300 300"/>
+    <motor class="h1" name="right_ankle" joint="right_ankle" ctrlrange="-40 40"/>
+    <motor class="h1" name="torso" joint="torso" ctrlrange="-200 200"/>
+    <motor class="h1" name="left_shoulder_pitch" joint="left_shoulder_pitch" ctrlrange="-40 40"/>
+    <motor class="h1" name="left_shoulder_roll" joint="left_shoulder_roll" ctrlrange="-40 40"/>
+    <motor class="h1" name="left_shoulder_yaw" joint="left_shoulder_yaw" ctrlrange="-18 18"/>
+    <motor class="h1" name="left_elbow" joint="left_elbow" ctrlrange="-18 18"/>
+    <motor class="h1" name="right_shoulder_pitch" joint="right_shoulder_pitch" ctrlrange="-40 40"/>
+    <motor class="h1" name="right_shoulder_roll" joint="right_shoulder_roll" ctrlrange="-40 40"/>
+    <motor class="h1" name="right_shoulder_yaw" joint="right_shoulder_yaw" ctrlrange="-18 18"/>
+    <motor class="h1" name="right_elbow" joint="right_elbow" ctrlrange="-18 18"/>
   </actuator>
 
   <keyframe>
