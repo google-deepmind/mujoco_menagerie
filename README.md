@@ -169,6 +169,8 @@ Menagerie, see [CONTRIBUTING](CONTRIBUTING.md).
 | Mobile Manipulators|              |         |
 | [Google Robot](google_robot/README.md)|[<img src="google_robot/robot.png" width="400">](google_robot/README.md)|B|
 | [Stretch 2](hello_robot_stretch/README.md)|[<img src="hello_robot_stretch/stretch.png" width="400">](hello_robot_stretch/README.md)|C|
+| Humanoids          |              |         |
+| [Unitree H1](unitree_h1/README.md)|[<img src="unitree_h1/h1.png" width="400">](unitree_h1/README.md)|B|
 | Drones             |              |         |
 | [Skydio X2](skydio_x2/README.md)|[<img src="skydio_x2/x2.png" width="400">](skydio_x2/README.md)|A|
 | Other              |              |         |
