@@ -94,14 +94,14 @@
   </asset>
 
   <worldbody>
-    <body name="rh_forearm" childclass="right_hand" quat="1 -1 1 -1">
+    <body name="rh_forearm" childclass="right_hand" quat="0 1 0 1">
       <inertial mass="3" pos="0 0 0.09" diaginertia="0.0138 0.0138 0.00744"/>
       <geom class="plastic_visual" mesh="forearm_0" material="gray"/>
       <geom class="plastic_visual" mesh="forearm_1"/>
       <geom class="plastic_collision" type="mesh" mesh="forearm_collision"/>
       <geom class="plastic_collision" size="0.035 0.035 0.035" pos="0 -0.01 0.181" quat="0.924909 0 0.380188 0"
         type="box"/>
-      <body name="rh_wrist" pos="0 -0.01 0.21301">
+      <body name="rh_wrist" pos="0.01 0 0.21301" quat="1 0 0 1">
         <inertial mass="0.1" pos="0 0 0.029" quat="0.5 0.5 0.5 0.5" diaginertia="6.4e-05 4.38e-05 3.5e-05"/>
         <joint class="wrist_y" name="rh_WRJ2"/>
         <geom class="plastic_visual" mesh="wrist" material="metallic"/>
