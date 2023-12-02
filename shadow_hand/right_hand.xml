@@ -99,7 +99,7 @@
       <geom class="plastic_visual" mesh="forearm_0" material="gray"/>
       <geom class="plastic_visual" mesh="forearm_1"/>
       <geom class="plastic_collision" type="mesh" mesh="forearm_collision"/>
-      <geom class="plastic_collision" size="0.035 0.035 0.035" pos="0 -0.01 0.181" quat="0.924909 0 0.380188 0"
+      <geom class="plastic_collision" size="0.035 0.035 0.035" pos="0.01 0.0 0.181" quat="0.380188 0.924909 0 0"
         type="box"/>
       <body name="rh_wrist" pos="0.01 0 0.21301" quat="1 0 0 1">
         <inertial mass="0.1" pos="0 0 0.029" quat="0.5 0.5 0.5 0.5" diaginertia="6.4e-05 4.38e-05 3.5e-05"/>
