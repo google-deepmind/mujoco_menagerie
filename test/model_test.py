@@ -88,10 +88,8 @@ class MjxModelsTest(parameterized.TestCase):
 
   @parameterized.parameters(_MJX_MODEL_XMLS)
   def test_compiles_and_steps(self, xml_path: pathlib.Path) -> None:
-    mj_model = mujoco.MjModel.from_xml_path(
-        resources.GetResourceFilename(xml_path)
-    )
-    model = mjx.device_put(mj_model)
+    model = mujoco.MjModel.from_xml_path(str(xml_path))
+    model = mjx.device_put(model)
     data = mjx.make_data(model)
     ctrlrange = jp.where(
         model.actuator_ctrllimited[:, None],
