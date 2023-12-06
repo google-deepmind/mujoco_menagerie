@@ -18,7 +18,10 @@ from typing import List
 
 from absl.testing import absltest
 from absl.testing import parameterized
+import jax
+import jax.numpy as jp
 import mujoco
+from mujoco import mjx
 
 # Internal import.
 
@@ -26,10 +29,15 @@ import mujoco
 _ROOT_DIR = pathlib.Path(__file__).parent.parent
 _MODEL_DIRS = [f for f in _ROOT_DIR.iterdir() if f.is_dir()]
 _MODEL_XMLS: List[pathlib.Path] = []
-for model_dir in _MODEL_DIRS:
-  xmls = model_dir.glob('scene*.xml')
-  for xml in xmls:
-    _MODEL_XMLS.append(xml)
+_MJX_MODEL_XMLS: List[pathlib.Path] = []
+
+
+def _get_xmls(pattern: str) -> List[pathlib.Path]:
+  for d in _MODEL_DIRS:
+    yield from d.glob(pattern)
+
+_MODEL_XMLS = list(_get_xmls('scene*.xml'))
+_MJX_MODEL_XMLS = list(_get_xmls('scene*mjx.xml'))
 
 # Total simulation duration, in seconds.
 _MAX_SIM_TIME = 1.0
@@ -55,6 +63,7 @@ def _pseudorandom_ctrlnoise(
 
 
 class ModelsTest(parameterized.TestCase):
+  """Tests that MuJoCo models load and do not emit warnings."""
 
   @parameterized.parameters(_MODEL_XMLS)
   def test_compiles_and_steps(self, xml_path: pathlib.Path) -> None:
@@ -72,6 +81,44 @@ class ModelsTest(parameterized.TestCase):
           for enum_value, count in enumerate(data.warning.number) if count
       ])
       self.fail(f'MuJoCo warning(s) encountered:\n{warning_info}')
+
+
+class MjxModelsTest(parameterized.TestCase):
+  """Tests that MJX models load and do not return NaNs."""
+
+  @parameterized.parameters(_MJX_MODEL_XMLS)
+  def test_compiles_and_steps(self, xml_path: pathlib.Path) -> None:
+    mj_model = mujoco.MjModel.from_xml_path(
+        resources.GetResourceFilename(xml_path)
+    )
+    model = mjx.device_put(mj_model)
+    data = mjx.make_data(model)
+    ctrlrange = jp.where(
+        model.actuator_ctrllimited[:, None],
+        model.actuator_ctrlrange,
+        jp.array([-10.0, 10.0]),
+    )
+
+    def step(x, _):
+      data, rng = x
+      rng, key = jax.random.split(rng)
+      ctrl = jax.random.uniform(
+          key,
+          shape=(model.nu,),
+          minval=ctrlrange[:, 0],
+          maxval=ctrlrange[:, 1],
+      )
+      data = mjx.step(model, data.replace(ctrl=ctrl))
+      return (data, rng), ()
+
+    (data, _), _ = jax.lax.scan(
+        step,
+        (data, jax.random.PRNGKey(0)),
+        (),
+        length=min(_MAX_SIM_TIME // model.opt.timestep, 100),
+    )
+
+    self.assertFalse(jp.isnan(data.qpos).any())
 
 
 if __name__ == '__main__':
