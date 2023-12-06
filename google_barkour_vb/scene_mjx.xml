@@ -1,7 +1,5 @@
 <mujoco model="barkour vB scene">
-  <option timestep="0.001" cone="elliptic" integrator="implicitfast"/>
-
-  <include file="barkour_vb.xml"/>
+  <include file="barkour_vb_mjx.xml"/>
 
   <statistic center="0 0 0.1" extent="0.8"/>
 

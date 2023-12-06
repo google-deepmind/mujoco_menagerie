@@ -12,7 +12,15 @@ This package contains a simplified robot description (MJCF) of the Barkour vB Qu
 
 ## MJCF and URDF
 
-The source of truth for the Barkour v0 Quadruped can be found in `barkour_vb.xml`. The URDF in `barkour_vb_rev_1_0_head_straight.urdf` is provided for convenience.
+The source of truth for the Barkour vB Quadruped can be found in `barkour_vb.xml`. The URDF in `barkour_vb_rev_1_0_head_straight.urdf` is provided for convenience.
+
+### MJX
+
+A version of the Barkour vB for use in [MJX](https://mujoco.readthedocs.io/en/stable/mjx.html) is available in `scene_mjx.xml` with the following changes:
+
+* The solver `iterations` and `ls_iterations` are modified for performance.
+* The `eulerdamp` flag is disabled.
+* Collision geometries are only enabled between the feet and the plane.
 
 ## License
 
