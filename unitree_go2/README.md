@@ -5,7 +5,7 @@ Requires MuJoCo 2.2.2 or later.
 ## Overview
 
 This package contains a simplified robot description (MJCF) of the [Go2
-Quadruped Robot](https://www.unitree.com/products/go2/) developed by [Unitree
+Quadruped Robot](https://www.unitree.com/go2/) developed by [Unitree
 Robotics](https://www.unitree.com/). It is derived from the [publicly available
 URDF
 description](https://github.com/unitreerobotics/unitree_ros/tree/master/robots/go2_description).

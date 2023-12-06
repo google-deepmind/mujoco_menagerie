@@ -5,7 +5,7 @@ Requires MuJoCo 2.2.2 or later.
 ## Overview
 
 This package contains a simplified robot description (MJCF) of the [A1 Quadruped
-Robot](https://www.unitree.com/products/a1/) developed by [Unitree
+Robot](https://www.unitree.com/a1/) developed by [Unitree
 Robotics](https://www.unitree.com/). It is derived from the [publicly available
 URDF
 description](https://github.com/unitreerobotics/unitree_mujoco/tree/main/data/a1/urdf).
