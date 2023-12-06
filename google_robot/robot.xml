@@ -1,5 +1,4 @@
 <mujoco model="robot">
-
   <compiler angle="radian" assetdir="assets" autolimits="true"/>
 
   <option timestep="0.004" integrator="implicitfast"/>
@@ -213,5 +212,4 @@
      <position joint="joint_finger_right" kp="20" ctrlrange="0.01 1.3"   forcerange="-30 30"/>
      <position joint="joint_finger_left"  kp="20" ctrlrange="0.01 1.3"   forcerange="-30 30"/>
    </actuator>
-
 </mujoco>

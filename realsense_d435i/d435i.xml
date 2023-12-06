@@ -1,5 +1,5 @@
 <mujoco model="d435i">
-  <compiler meshdir="assets/" fitaabb="true"/>
+  <compiler meshdir="assets" fitaabb="true"/>
 
   <visual>
     <global azimuth="90" elevation="-90"/>
@@ -25,6 +25,7 @@
     <material class="d435i" name="IR_Rim" rgba="0.799102 0.806952 0.799103 1"/>
     <material class="d435i" name="Metal_Casing" rgba="1 1 1 1"/>
     <material class="d435i" name="RGB_Pupil" rgba="0.087140 0.002866 0.009346 1"/>
+
     <mesh file="d435i_0.obj"/>
     <mesh file="d435i_1.obj"/>
     <mesh file="d435i_2.obj"/>

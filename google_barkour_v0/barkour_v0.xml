@@ -1,5 +1,4 @@
 <mujoco model="barkour v0">
-
   <compiler angle="radian" meshdir="assets" texturedir="assets" autolimits="true"/>
 
   <option timestep="0.001"/>
@@ -193,5 +192,4 @@
     <key name="standing" qpos="0 0 0.21 1 0 0 0 0 0.5 1.0 0 0.5 1.0 0 0.5 1.0 0 0.5 1.0"
       ctrl="0 0.5 1.0 0 0.5 1.0 0 0.5 1.0 0 0.5 1.0"/>
   </keyframe>
-
 </mujoco>

@@ -1,7 +1,7 @@
 <mujoco model="robotiq_2f85">
   <compiler angle="radian" meshdir="assets" autolimits="true"/>
 
-  <option impratio="10"/>
+  <option cone="elliptic" impratio="10"/>
 
   <asset>
     <material name="metal" rgba="0.58 0.58 0.58 1"/>

@@ -1,5 +1,4 @@
 <mujoco model="right_allegro_hand scene">
-
   <include file="right_hand.xml"/>
 
   <statistic center="0 0 0" extent="0.3"/>
@@ -17,8 +16,6 @@
     <material name="groundplane" texture="groundplane" texuniform="true" texrepeat="5 5" reflectance="0.2"/>
   </asset>
 
-  <option cone="elliptic"/>
-
   <worldbody>
     <light pos="0 0 1"/>
     <light pos="0.3 0 1.5" dir="0 0 -1" directional="true"/>
@@ -29,5 +26,4 @@
         friction="0.7 0.002 0.002"/>
     </body>
   </worldbody>
-
 </mujoco>

@@ -1,5 +1,4 @@
 <mujoco model="cassie scene">
-
   <include file="cassie.xml"/>
 
   <statistic center="0 0 0.55" extent="1.1"/>
@@ -21,5 +20,4 @@
     <light pos="0 0 3" dir="0 0 -1" directional="false"/>
     <geom name="floor" size="0 0 .125" type="plane" material="groundplane" conaffinity="15" condim="3"/>
   </worldbody>
-
 </mujoco>

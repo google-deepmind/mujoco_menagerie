@@ -1,5 +1,4 @@
 <mujoco model="stretch scene">
-
   <include file="stretch.xml"/>
 
   <statistic center="0 0 .75" extent="1.2" meansize="0.05"/>

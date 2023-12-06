@@ -1,5 +1,4 @@
 <mujoco model="robot scene">
-
   <include file="robot.xml"/>
 
   <statistic center="0 0 0.8" extent="2"/>
@@ -21,5 +20,4 @@
     <light pos="1 -1 1.5" dir="-1 1 -1" diffuse="0.5 0.5 0.5" directional="true"/>
     <geom name="floor" size="0 0 0.05" type="plane" material="groundplane"/>
   </worldbody>
-
 </mujoco>

@@ -1,5 +1,4 @@
 <mujoco model="right_shadow_hand scene">
-
   <include file="right_hand.xml"/>
 
   <statistic extent="0.3" center="0.3 0 0"/>
@@ -27,5 +26,4 @@
         friction="0.5 0.01 0.003"/>
     </body>
   </worldbody>
-
 </mujoco>

@@ -350,5 +350,4 @@
     <position class="affine" joint="RH_HFE" name="RH_HFE"/>
     <position class="affine" joint="RH_KFE" name="RH_KFE"/>
   </actuator>
-
 </mujoco>

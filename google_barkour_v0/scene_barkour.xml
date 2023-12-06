@@ -1,5 +1,4 @@
 <mujoco model="barkour scene with obstacles">
-
   <include file="barkour_v0.xml"/>
 
   <visual>

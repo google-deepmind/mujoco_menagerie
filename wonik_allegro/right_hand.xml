@@ -1,6 +1,7 @@
 <mujoco model="allegro_right">
-
   <compiler angle="radian" meshdir="assets" autolimits="true"/>
+
+  <option cone="elliptic" impratio="10"/>
 
   <default>
     <default class="allegro_right">

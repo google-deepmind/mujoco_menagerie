@@ -1,9 +1,9 @@
 <mujoco model="robotis_op3">
-
   <compiler angle="radian" meshdir="assets" autolimits="true"/>
 
   <asset>
     <material name="black" rgba="0.2 0.2 0.2 1"/>
+
     <mesh file="body.stl"/>
     <mesh file="ll1.stl"/>
     <mesh file="ll2.stl"/>
@@ -260,5 +260,4 @@
     <position name="r_ank_pitch_act" joint="r_ank_pitch"/>
     <position name="r_ank_roll_act" joint="r_ank_roll"/>
   </actuator>
-
 </mujoco>
