@@ -167,6 +167,7 @@ Menagerie, see [CONTRIBUTING](CONTRIBUTING.md).
 | [xArm7](ufactory_xarm7/README.md)|[<img src="ufactory_xarm7/xarm7.png" width="400">](ufactory_xarm7/README.md)|C|
 | [Lite 6](ufactory_lite6/README.md)|[<img src="ufactory_lite6/lite6.png" width="400">](ufactory_lite6/README.md)|C|
 | [ViperX 300 6DOF](trossen_vx300s/README.md)|[<img src="trossen_vx300s/vx300s.png" width="400">](trossen_vx300s/README.md)|A|
+| [Unitree Z1](unitree_z1/README.md)|[<img src="unitree_z1/z1.png" width="400">](unitree_z1/README.md)|B|
 | Mobile Manipulators|              |         |
 | [Google Robot](google_robot/README.md)|[<img src="google_robot/robot.png" width="400">](google_robot/README.md)|B|
 | [Stretch 2](hello_robot_stretch/README.md)|[<img src="hello_robot_stretch/stretch.png" width="400">](hello_robot_stretch/README.md)|C|
