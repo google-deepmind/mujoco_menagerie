@@ -11,7 +11,7 @@
       <default class="bkvb/collision">
         <geom group="3" contype="0" conaffinity="1"/>
         <default class="bkvb/collision/foot">
-          <geom type="sphere" size="0.0175" pos="-0.21425 -0.0779806 0" rgba="1 0 0 1"/>
+          <geom type="sphere" size="0.0175" pos="-0.21425 -0.0779806 0" rgba="1 0 0 1" solimp="0.015 1 0.031" friction="0.8 0.02 0.01"/>
         </default>
       </default>
 

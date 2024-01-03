@@ -35,7 +35,7 @@
         <geom rgba="0.537255 0.854902 0.827451 1"/>
       </default>
       <default class="foot">
-        <geom rgba="0.301961 0.301961 0.301961 1"/>
+        <geom rgba="0.301961 0.301961 0.301961 1" solimp="0.015 1 0.031" friction="0.8 0.02 0.01"/>
       </default>
     </default>
   </default>

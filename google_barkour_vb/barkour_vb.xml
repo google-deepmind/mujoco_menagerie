@@ -28,7 +28,7 @@
       </default>
       <default class="bkvb/foot">
         <site pos="-0.21425 -0.0779806 0" quat="0.664463 0.664463 -0.241845 -0.241845"/>
-        <geom rgba="0.231373 0.380392 0.705882 1" mesh="foot"/>
+        <geom rgba="0.231373 0.380392 0.705882 1" mesh="foot" solimp="0.015 1 0.031" friction="0.8 0.02 0.01"/>
       </default>
       <default class="bkvb/lower_leg">
         <geom rgba="0.615686 0.811765 0.929412 1" mesh="lower_leg"/>
