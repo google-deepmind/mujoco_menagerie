@@ -22,7 +22,7 @@
         <site group="0"/>
       </default>
 
-      <joint damping="0.024" frictionloss="0.13" armature="0.011"/>
+      <joint damping="0.024" armature="0.011"/>
       <general forcerange="-18 18" biastype="affine" gainprm="50 0 0" biasprm="0 -50 -0.5"/>
       <default class="bkvb/abduction">
         <joint range="-1.0472 1.0472"/>

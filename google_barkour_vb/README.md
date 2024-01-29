@@ -20,6 +20,7 @@ A version of the Barkour vB for use in [MJX](https://mujoco.readthedocs.io/en/st
 
 * The solver `iterations` and `ls_iterations` are modified for performance.
 * The `eulerdamp` flag is disabled.
+* Frictionloss is removed.
 * Collision geometries are only enabled between the feet and the plane.
 
 ## License
