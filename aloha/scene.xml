@@ -1,4 +1,6 @@
 <mujoco model="aloha scene">
+  <compiler meshdir="assets" texturedir="assets"/>
+
   <include file="aloha.xml"/>
 
   <statistic center="0 -0.1 0.2" extent="0.6" meansize="0.05"/>
