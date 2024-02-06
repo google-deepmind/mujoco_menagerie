@@ -1,0 +1,97 @@
+<mujoco model="aloha scene">
+  <include file="aloha.xml"/>
+
+  <statistic center="0 -0.1 0.2" extent="0.6" meansize="0.05"/>
+
+  <visual>
+    <headlight diffuse="0.6 0.6 0.6" ambient="0.3 0.3 0.3" specular="0 0 0"/>
+    <rgba haze="0.15 0.25 0.35 1"/>
+    <global azimuth="90" elevation="-20"/>
+    <quality shadowsize="8192"/>
+  </visual>
+
+  <asset>
+    <!-- table extrusions and frame -->
+    <mesh file="extrusion_2040_880.stl"/>
+    <mesh file="extrusion_150.stl"/>
+    <mesh file="corner_bracket.stl"/>
+    <mesh file="extrusion_1220.stl"/>
+    <mesh file="extrusion_1000.stl"/>
+    <mesh file="angled_extrusion.stl"/>
+    <mesh file="extrusion_600.stl"/>
+    <mesh file="overhead_mount.stl"/>
+    <mesh file="extrusion_2040_1000.stl"/>
+    <mesh file="wormseye_mount.stl"/>
+
+    <!-- Table dimensions (length x width x height in meters): 1.21x0.76x0.75 -->
+    <mesh file="tablelegs.obj"/>
+    <mesh file="tabletop.obj"/>
+
+    <texture type="skybox" builtin="gradient" rgb1="0.3 0.5 0.7" rgb2="0 0 0" width="512" height="3072"/>
+    <texture type="2d" name="groundplane" builtin="checker" mark="edge" rgb1="0.2 0.3 0.4" rgb2="0.1 0.2 0.3"
+      markrgb="0.8 0.8 0.8" width="300" height="300"/>
+    <texture type="2d" file="small_meta_table_diffuse.png"/>
+    <material name="groundplane" texture="groundplane" texuniform="true" texrepeat="5 5" reflectance="0.2"/>
+    <material name="table" texture="small_meta_table_diffuse"/>
+    <material name="metal" rgba="0.517 0.529 0.537 1"/>
+  </asset>
+
+  <default>
+    <default class="frame">
+      <geom group="1" type="mesh" material="black"/>
+    </default>
+  </default>
+
+  <worldbody>
+    <light pos="0 0.1 2.5"/>
+    <geom name="floor" size="2 2 0.05" type="plane" material="groundplane" pos="0 0 -.75"/>
+    <body name="table" pos="0 0 -0.75">
+      <site name="worldref"/>
+      <geom mesh="tabletop" material="table" class="visual" quat="1 0 0 1"/>
+      <geom mesh="tablelegs" material="table" class="visual" quat="1 0 0 1"/>
+      <geom name="table" pos="0 0 0.6509" size="0.61 0.37 0.1" type="box" class="collision"/>
+    </body>
+    <camera name="overhead_cam" pos="0 -0.303794 1.02524" fovy="58" mode="fixed" quat="0.976332 0.216277 0 0"/>
+    <camera name="worms_eye_cam" pos="0 -0.377167 0.0316055" fovy="58" mode="fixed" quat="0.672659 0.739953 0 0"/>
+    <geom class="frame" pos="0.44 -0.361 1.03" quat="0 1 0 1" mesh="extrusion_2040_880"/>
+    <geom class="frame" pos="0.44 -0.371 0.61" quat="1 0 -1 0" mesh="extrusion_150"/>
+    <geom class="frame" pos="0 -0.303794 1.02524" quat="0 0 0.976296 0.21644" mesh="d405_solid"/>
+    <geom class="frame" pos="0.44 -0.383 1.04" quat="0 0 -1 1" mesh="corner_bracket"/>
+    <geom class="frame" pos="-0.61 -0.391 -0.01" quat="0 -1 0 1" mesh="extrusion_1220"/>
+    <geom class="frame" pos="-0.59 -0.371 0.61" quat="0 -1 0 1" mesh="extrusion_150"/>
+    <geom class="frame" pos="0.42 -0.383 0.62" quat="1 1 1 -1" mesh="corner_bracket"/>
+    <geom class="frame" pos="0 -0.377167 0.0316055" quat="0 0 -0.672367 -0.740218" mesh="d405_solid"/>
+    <geom class="frame" pos="0.61 -0.383 0.62" quat="0 0 1 -1" mesh="corner_bracket"/>
+    <geom class="frame" pos="-0.43 -0.361 1.02" quat="0 0 0 1" mesh="extrusion_2040_1000"/>
+    <geom class="frame" pos="-0.61 -0.383 0.62" quat="1 1 1 -1" mesh="corner_bracket"/>
+    <geom class="frame" pos="-0.43 -0.24 0.12" quat="0.923 0.382 0 0" material="metal" mesh="angled_extrusion"/>
+    <geom class="frame" pos="-0.59 -0.066 0.01" quat="0 1 0 -1" mesh="extrusion_150"/>
+    <geom class="frame" pos="-0.6 -0.371 0.62" quat="0 0 0 -1" mesh="extrusion_600"/>
+    <geom class="frame" pos="0.44 -0.631 0.01" quat="1 0 -1 0" mesh="extrusion_150"/>
+    <geom class="frame" pos="0 -0.351 1.03" quat="0 0 1 1" mesh="overhead_mount"/>
+    <geom class="frame" pos="-0.43 -0.641 0.01" quat="1 1 -1 1" mesh="extrusion_1000"/>
+    <geom class="frame" pos="0.6 -0.26 0.12" quat="0.923 0.382 0 0" material="metal" mesh="angled_extrusion"/>
+    <geom class="frame" pos="0.44 -0.066 0.01" quat="1 0 -1 0" mesh="extrusion_150"/>
+    <geom class="frame" pos="-0.44 -0.383 1.04" quat="1 1 1 -1" mesh="corner_bracket"/>
+    <geom class="frame" pos="-0.61 0.369 0.01" quat="0 1 0 -1" mesh="extrusion_1220"/>
+    <geom class="frame" pos="0.43 -0.641 0.01" quat="0 0 -1 1" mesh="extrusion_1000"/>
+    <geom class="frame" pos="0.6 -0.641 0.01" quat="0 0 -1 1" mesh="extrusion_1000"/>
+    <geom class="frame" pos="-0.59 -0.631 0.01" quat="0 1 0 -1" mesh="extrusion_150"/>
+    <geom class="frame" pos="-0.42 -0.383 0.62" quat="0 0 -1 1" mesh="corner_bracket"/>
+    <geom class="frame" pos="-0.6 -0.641 0.01" quat="0 0 -1 1" mesh="extrusion_1000"/>
+    <geom class="frame" pos="0.6 -0.371 0.62" quat="1 0 0 1" mesh="extrusion_600"/>
+    <geom class="frame" pos="0.43 -0.24 0.12" quat="0.923 0.382 0 0" material="metal" mesh="angled_extrusion"/>
+    <geom class="frame" pos="-0.6 -0.26 0.12" quat="0.923 0.382 0 0" material="metal" mesh="angled_extrusion"/>
+    <geom class="frame" pos="0.43 -0.361 1.02" quat="0 0 0 1" mesh="extrusion_2040_1000"/>
+    <geom class="frame" pos="0 -0.391 -0.01" quat="0 0 0 1" mesh="wormseye_mount"/>
+  </worldbody>
+
+  <keyframe>
+    <key name="home" qpos="
+    0 -0.96 1.16 0 -0.3 0 0.0084 0.0084
+    0 -0.96 1.16 0 -0.3 0 0.0084 0.0084"
+      ctrl="
+    0 -0.96 1.16 0 -0.3 0 0.0084
+    0 -0.96 1.16 0 -0.3 0 0.0084"/>
+  </keyframe>
+</mujoco>

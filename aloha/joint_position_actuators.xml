@@ -1,0 +1,19 @@
+<mujoco>
+  <actuator>
+    <position class="waist" name="left/waist" joint="left/waist"/>
+    <position class="shoulder" name="left/shoulder" joint="left/shoulder"/>
+    <position class="elbow" name="left/elbow" joint="left/elbow"/>
+    <position class="forearm_roll" name="left/forearm_roll" joint="left/forearm_roll"/>
+    <position class="wrist_angle" name="left/wrist_angle" joint="left/wrist_angle"/>
+    <position class="wrist_rotate" name="left/wrist_rotate" joint="left/wrist_rotate"/>
+    <position class="finger" name="left/gripper" joint="left/left_finger"/>
+
+    <position class="waist" name="right/waist" joint="right/waist"/>
+    <position class="shoulder" name="right/shoulder" joint="right/shoulder"/>
+    <position class="elbow" name="right/elbow" joint="right/elbow"/>
+    <position class="forearm_roll" name="right/forearm_roll" joint="right/forearm_roll"/>
+    <position class="wrist_angle" name="right/wrist_angle" joint="right/wrist_angle"/>
+    <position class="wrist_rotate" name="right/wrist_rotate" joint="right/wrist_rotate"/>
+    <position class="finger" name="right/gripper" joint="right/left_finger"/>
+  </actuator>
+</mujoco>
