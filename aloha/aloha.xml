@@ -227,8 +227,7 @@
                   <inertial pos="0.0395662 -2.56311e-07 0.00400649" quat="0.62033 0.619916 -0.339682 0.339869"
                     mass="0.251652" diaginertia="0.000689546 0.000650316 0.000468142"/>
                   <joint name="right/wrist_rotate" class="wrist_rotate"/>
-                  <site name="right/gripper" pos="0.15 0 0"/>
-                  <site name="right/gripper_flipped" pos="0.15 0 0" quat="0 0 0 1" group="5"/>
+                  <site name="right/gripper" pos="0.15 0 0" group="5"/>
                   <body name="right/gripper_base" euler="0 1.57 -1.57" pos="0.035 0 0">
                     <inertial pos="0.000182154 -0.0341589 -0.0106026" quat="0.435286 0.557074 -0.551539 0.442718"
                       mass="0.42158" diaginertia="0.00110438 0.000790537 0.000469727"/>

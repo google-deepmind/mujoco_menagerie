@@ -16,4 +16,13 @@
     <position class="wrist_rotate" name="right/wrist_rotate" joint="right/wrist_rotate"/>
     <position class="finger" name="right/gripper" joint="right/left_finger"/>
   </actuator>
+
+  <keyframe>
+    <key name="home" qpos="
+    0 -0.96 1.16 0 -0.3 0 0.0084 0.0084
+    0 -0.96 1.16 0 -0.3 0 0.0084 0.0084"
+      ctrl="
+    0 -0.96 1.16 0 -0.3 0 0.0084
+    0 -0.96 1.16 0 -0.3 0 0.0084"/>
+  </keyframe>
 </mujoco>

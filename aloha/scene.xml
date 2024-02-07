@@ -87,13 +87,4 @@
     <geom class="frame" pos="0.43 -0.361 1.02" quat="0 0 0 1" mesh="extrusion_2040_1000"/>
     <geom class="frame" pos="0 -0.391 -0.01" quat="0 0 0 1" mesh="wormseye_mount"/>
   </worldbody>
-
-  <keyframe>
-    <key name="home" qpos="
-    0 -0.96 1.16 0 -0.3 0 0.0084 0.0084
-    0 -0.96 1.16 0 -0.3 0 0.0084 0.0084"
-      ctrl="
-    0 -0.96 1.16 0 -0.3 0 0.0084
-    0 -0.96 1.16 0 -0.3 0 0.0084"/>
-  </keyframe>
 </mujoco>

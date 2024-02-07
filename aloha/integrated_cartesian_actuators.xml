@@ -2,14 +2,25 @@
 <!-- The dynamical parameters in this file are not the result of system identification.
 They were chosen for MJPC efficiency. The resulting qfrc is still limited by every joint's actuator_frcrange,
 as specified in the main model. -->
+  <option integrator="implicitfast"/>
+
   <default>
     <default class="act">
-      <general dyntype="filter" biastype="affine" dynprm="1"/>
+      <general dyntype="none" biastype="affine" dynprm="0.5"/>
       <default class="act_position">
-        <general gainprm="1000" biasprm="0 -1000 -100" ctrlrange="-0.5 0.5"/>
+        <general gainprm="1000" biasprm="0 -1000 -300"/>
+        <default class="act_position_x">
+          <general ctrlrange="-0.2 0.3"/>
+        </default>
+        <default class="act_position_y">
+          <general ctrlrange="-0.3 0.3"/>
+        </default>
+        <default class="act_position_z">
+          <general ctrlrange="-0.2 0.5"/>
+        </default>
       </default>
       <default class="act_rotation">
-        <general gainprm="10" biasprm="0 -10 -2" ctrlrange="-1.3 1.3"/>
+        <general gainprm="50" biasprm="0 -50 -15" ctrlrange="-1.3 1.3"/>
       </default>
       <default class="act_gripper">
         <general gainprm="365" biasprm="0 -365 -50" dynprm="0.1" ctrlrange="0.002 0.037"/>
@@ -18,23 +29,31 @@ as specified in the main model. -->
   </default>
 
   <worldbody>
-    <site name="actuation_center" pos="0 0 0.25"/>
+    <site name="left/actuation_center" pos="0 0 0.25" group="5"/>
+    <site name="right/actuation_center" pos="0 0 0.25" group="5" xyaxes="-1 0 0 0 -1 0"/>
   </worldbody>
 
   <actuator>
-    <general class="act_position" name="left/X" site="left/gripper" refsite="actuation_center" gear="1 0 0 0 0 0"/>
-    <general class="act_position" name="left/Y" site="left/gripper" refsite="actuation_center" gear="0 1 0 0 0 0"/>
-    <general class="act_position" name="left/Z" site="left/gripper" refsite="actuation_center" gear="0 0 1 0 0 0"/>
-    <general class="act_rotation" name="left/RX" site="left/gripper" refsite="actuation_center" gear="0 0 0 1 0 0"/>
-    <general class="act_rotation" name="left/RY" site="left/gripper" refsite="actuation_center" gear="0 0 0 0 1 0"/>
-    <general class="act_rotation" name="left/RZ" site="left/gripper" refsite="actuation_center" gear="0 0 0 0 0 1"/>
+    <general name="left/X" class="act_position_x" site="left/gripper" refsite="left/actuation_center" gear="1 0 0 0 0 0"/>
+    <general name="left/Y" class="act_position_y" site="left/gripper" refsite="left/actuation_center" gear="0 1 0 0 0 0"/>
+    <general name="left/Z" class="act_position_z" site="left/gripper" refsite="left/actuation_center" gear="0 0 1 0 0 0"/>
+    <general name="left/RX" class="act_rotation" site="left/gripper" refsite="left/actuation_center" gear="0 0 0 1 0 0"/>
+    <general name="left/RY" class="act_rotation" site="left/gripper" refsite="left/actuation_center" gear="0 0 0 0 1 0"/>
+    <general name="left/RZ" class="act_rotation" site="left/gripper" refsite="left/actuation_center" gear="0 0 0 0 0 1"/>
     <general class="act_gripper" name="left/finger" joint="left/left_finger"/>
-    <general class="act_position" name="right/X" site="right/gripper" refsite="actuation_center" gear="1 0 0 0 0 0"/>
-    <general class="act_position" name="right/Y" site="right/gripper" refsite="actuation_center" gear="0 1 0 0 0 0"/>
-    <general class="act_position" name="right/Z" site="right/gripper" refsite="actuation_center" gear="0 0 1 0 0 0"/>
-    <general class="act_rotation" name="right/RX" site="right/gripper" refsite="actuation_center" gear="0 0 0 1 0 0"/>
-    <general class="act_rotation" name="right/RY" site="right/gripper" refsite="actuation_center" gear="0 0 0 0 1 0"/>
-    <general class="act_rotation" name="right/RZ" site="right/gripper_flipped" refsite="actuation_center" gear="0 0 0 0 0 1"/>
+
+    <general name="right/X"  class="act_position_x" site="right/gripper" refsite="right/actuation_center" gear="1 0 0 0 0 0"/>
+    <general name="right/Y"  class="act_position_y" site="right/gripper" refsite="right/actuation_center" gear="0 1 0 0 0 0"/>
+    <general name="right/Z"  class="act_position_z" site="right/gripper" refsite="right/actuation_center" gear="0 0 1 0 0 0"/>
+    <general name="right/RX" class="act_rotation" site="right/gripper" refsite="right/actuation_center" gear="0 0 0 1 0 0"/>
+    <general name="right/RY" class="act_rotation" site="right/gripper" refsite="right/actuation_center" gear="0 0 0 0 1 0"/>
+    <general name="right/RZ" class="act_rotation" site="right/gripper" refsite="right/actuation_center" gear="0 0 0 0 0 1"/>
     <general class="act_gripper" name="right/finger" joint="right/left_finger"/>
   </actuator>
+
+  <keyframe>
+    <key name="home" qpos="
+    0 -0.96 1.16 0 -0.3 0 0.0084 0.0084
+    0 -0.96 1.16 0 -0.3 0 0.0084 0.0084"/>
+  </keyframe>
 </mujoco>
