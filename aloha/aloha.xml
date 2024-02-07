@@ -49,7 +49,7 @@
         <position ctrlrange="-3.14158 3.14158" kp="10.4"/>
       </default>
       <default class="finger">
-        <joint type="slide" armature="0.243" damping="10.1"/>
+        <joint type="slide" armature="0.243" damping="40"/>
         <!--
           The joint and control ranges are in meters, representing the linear displacement of the
           finger on the rail. Note that the real robot takes in a float value representing the
@@ -72,7 +72,7 @@
           where the gripper is actuated to its fully closed and fully open positions. Therefore the
           control range represents limits enforced by _software_ on the real robot.
         -->
-        <position ctrlrange="0.002 0.037" kp="365"/>
+        <position ctrlrange="0.002 0.037" kp="2000" kv="124"/>
         <default class="left_finger">
           <joint range="0 0.041" axis="0 0 -1"/>
         </default>
