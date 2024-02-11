@@ -50,10 +50,4 @@ as specified in the main model. -->
     <general name="right/RZ" class="act_rotation" site="right/gripper" refsite="right/actuation_center" gear="0 0 0 0 0 1"/>
     <general class="act_gripper" name="right/finger" joint="right/left_finger"/>
   </actuator>
-
-  <keyframe>
-    <key name="neutral_pose" qpos="
-    0 -0.96 1.16 0 -0.3 0 0.0084 0.0084
-    0 -0.96 1.16 0 -0.3 0 0.0084 0.0084"/>
-  </keyframe>
 </mujoco>
