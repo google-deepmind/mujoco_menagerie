@@ -6,24 +6,25 @@ as specified in the main model. -->
 
   <default>
     <default class="act">
-      <general dyntype="none" biastype="affine" dynprm="0.5"/>
+      <!-- filtered actuators produce smoother motion -->
+      <general dyntype="filterexact" biastype="affine" dynprm="1"/>
       <default class="act_position">
         <general gainprm="1000" biasprm="0 -1000 -300"/>
         <default class="act_position_x">
-          <general ctrlrange="-0.2 0.3"/>
+          <general ctrlrange="-0.45 0.2"/>
         </default>
         <default class="act_position_y">
-          <general ctrlrange="-0.3 0.3"/>
+          <general ctrlrange="-0.35 0.35"/>
         </default>
         <default class="act_position_z">
-          <general ctrlrange="-0.2 0.5"/>
+          <general ctrlrange="-0.25 0.5"/>
         </default>
       </default>
       <default class="act_rotation">
         <general gainprm="50" biasprm="0 -50 -15" ctrlrange="-1.3 1.3"/>
       </default>
       <default class="act_gripper">
-        <general gainprm="365" biasprm="0 -365 -50" dynprm="0.1" ctrlrange="0.002 0.037"/>
+        <general ctrlrange="0.002 0.037" gainprm="2000" biasprm="0 -2000 -124" dynprm="0.1"/>
       </default>
     </default>
   </default>
