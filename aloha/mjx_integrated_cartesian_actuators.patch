@@ -1,0 +1,36 @@
+diff --git a/mjx_integrated_cartesian_actuators.xml b/mjx_integrated_cartesian_actuators.xml
+--- a/mjx_integrated_cartesian_actuators.xml
++++ b/mjx_integrated_cartesian_actuators.xml
+@@ -2,16 +2,13 @@
+ <!-- The dynamical parameters in this file are not the result of system identification.
+ They were chosen for MJPC efficiency. The resulting qfrc is still limited by every joint's actuator_frcrange,
+ as specified in the main model. -->
+-  <option integrator="implicitfast"/>
+-
+   <default>
+     <default class="act">
+-      <!-- filtered actuators produce smoother motion -->
+-      <general dyntype="filterexact" biastype="affine" dynprm="1"/>
++      <general dyntype="filterexact" biastype="affine" dynprm="0.5"/>
+       <default class="act_position">
+-        <general gainprm="1000" biasprm="0 -1000 -300"/>
++        <general gainprm="1000" biasprm="0 -1000 0"/>
+         <default class="act_position_x">
+-          <general ctrlrange="-0.45 0.2"/>
++          <general ctrlrange="-0.45 0.3"/>
+         </default>
+         <default class="act_position_y">
+           <general ctrlrange="-0.35 0.35"/>
+@@ -21,10 +18,10 @@
+         </default>
+       </default>
+       <default class="act_rotation">
+-        <general gainprm="50" biasprm="0 -50 -15" ctrlrange="-1.3 1.3"/>
++        <general gainprm="50" biasprm="0 -50 0" ctrlrange="-1.3 1.3"/>
+       </default>
+       <default class="act_gripper">
+-        <general ctrlrange="0.002 0.037" gainprm="2000" biasprm="0 -2000 -124" dynprm="0.1"/>
++        <general gainprm="365" biasprm="0 -365 0" dynprm="0.1" ctrlrange="0.002 0.037"/>
+       </default>
+     </default>
+   </default>

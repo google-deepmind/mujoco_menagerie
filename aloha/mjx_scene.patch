@@ -1,0 +1,59 @@
+diff --git a/mjx_scene.xml b/mjx_scene.xml
+--- a/mjx_scene.xml
++++ b/mjx_scene.xml
+@@ -1,7 +1,13 @@
+ <mujoco model="aloha scene">
+   <compiler meshdir="assets" texturedir="assets"/>
+ 
+-  <include file="aloha.xml"/>
++  <include file="mjx_aloha.xml"/>
++
++  <custom>
++    <numeric data="8" name="max_contact_points"/>
++  </custom>
++
++  <option iterations="6" ls_iterations="6" timestep="0.01"/>
+ 
+   <statistic center="0 -0.1 0.2" extent="0.6" meansize="0.05"/>
+ 
+@@ -40,18 +46,23 @@
+ 
+   <default>
+     <default class="frame">
+-      <geom group="1" type="mesh" material="black"/>
++      <geom group="1" type="mesh" material="black" contype="0" conaffinity="0"/>
+     </default>
+   </default>
+ 
+   <worldbody>
+     <light pos="0 0.1 2.5"/>
+-    <geom name="floor" size="2 2 0.05" type="plane" material="groundplane" pos="0 0 -.75"/>
+-    <body name="table" pos="0 0 -0.75">
++    <geom name="floor" size="2 2 0.05" type="plane" material="groundplane" pos="0 0 -.75" contype="0" conaffinity="0"/>
++    <frame name="table" pos="0 0 -0.75">
+       <site name="worldref"/>
+       <geom mesh="tabletop" material="table" class="visual" quat="1 0 0 1"/>
+       <geom mesh="tablelegs" material="table" class="visual" quat="1 0 0 1"/>
+-      <geom name="table" pos="0 0 0.6509" size="0.61 0.37 0.1" type="box" class="collision"/>
++      <geom name="table" pos="0 0 0.7509" size="0.61 0.37 0.1" type="plane" class="collision" contype="0" conaffinity="1"/>
++    </frame>
++    <body name="box">
++      <freejoint/>
++      <geom name="box" type="box" size="0.02 0.02 0.02" condim="3"
++        friction="2.5 .03 .003" rgba="0 1 0 1" contype="1" conaffinity="1"/>
+     </body>
+     <camera name="overhead_cam" pos="0 -0.303794 1.02524" fovy="58" mode="fixed" quat="0.976332 0.216277 0 0"/>
+     <camera name="worms_eye_cam" pos="0 -0.377167 0.0316055" fovy="58" mode="fixed" quat="0.672659 0.739953 0 0"/>
+@@ -87,4 +98,12 @@
+     <geom class="frame" pos="0.43 -0.361 1.02" quat="0 0 0 1" mesh="extrusion_2040_1000"/>
+     <geom class="frame" pos="0 -0.391 -0.01" quat="0 0 0 1" mesh="wormseye_mount"/>
+   </worldbody>
++
++  <keyframe>
++    <key name="home" qpos="
++    0 -0.96 1.16 0 -0.3 0 0.0084 0.0084
++    0 -0.96 1.16 0 -0.3 0 0.0084 0.0084
++    0.35 0.2 0.025 1 0 0 0"
++      />
++  </keyframe>
+ </mujoco>
