@@ -17,7 +17,7 @@ description](https://github.com/unitreerobotics/unitree_ros/tree/master/robots/g
 ## URDF → MJCF derivation steps
 
 1. Converted the DAE [mesh
-   files](https://github.com/unitreerobotics/unitree_mujoco/tree/main/data/a1/meshes)
+   files](https://github.com/unitreerobotics/unitree_ros/tree/master/robots/go2_description/meshes)
 to OBJ format using [Blender](https://www.blender.org/).
   - When exporting, ensure "up axis" is `+Z`, and "forward axis" is `+Y`.
 2. Processed `.obj` files with [`obj2mjcf`](https://github.com/kevinzakka/obj2mjcf).
