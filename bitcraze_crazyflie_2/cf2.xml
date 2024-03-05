@@ -1,6 +1,8 @@
 <mujoco model="cf2">
-  <option integrator="RK4"/>
-  <compiler inertiafromgeom="false" coordinate="local" meshdir="cf2"/>
+  <option integrator="RK4" density="1.225" viscosity="1.8e-5"/>
+
+  <compiler inertiafromgeom="false" meshdir="cf2" autolimits="true"/>
+
   <default>
     <default class="visual">
       <geom group="2" type="mesh" contype="0" conaffinity="0"/>
@@ -9,20 +11,16 @@
       <geom group="3" type="mesh"/>
     </default>
   </default>
+
   <asset>
-    <material name="Material10-polished_plastic1_001" specular="0.5" shininess="0.225"
-      rgba="0.631373 0.658824 0.678431 1.000000"/>
-    <material name="Material12-polished_gold_001" specular="0.5" shininess="0.225"
-      rgba="0.968627 0.878431 0.600000 1.000000"/>
-    <material name="Material14-green_medium_gloss_plastic_001" specular="0.5" shininess="0.225"
-      rgba="0.109804 0.184314 0.000000 1.000000"/>
-    <material name="Material15_001" specular="0.5" shininess="0.225" rgba="0.792157 0.819608 0.933333 1.000000"/>
-    <material name="Material3-polypropylene2_001" specular="0.5" shininess="0.225"
-      rgba="1.000000 1.000000 1.000000 1.000000"/>
-    <material name="Material6-black_medium_gloss_plastic_001" specular="0.5" shininess="0.225"
-      rgba="0.101961 0.101961 0.101961 1.000000"/>
-    <material name="Material8-burnished_chrome_001" specular="0.5" shininess="0.225"
-      rgba="0.898039 0.898039 0.898039 1.000000"/>
+    <material name="polished_plastic1_1" specular="0.5" shininess="0.225" rgba="0.631373 0.658824 0.678431 1.000000"/>
+    <material name="polished_gold_1" specular="0.5" shininess="0.225" rgba="0.968627 0.878431 0.600000 1.000000"/>
+    <material name="medium_gloss_plastic_1" specular="0.5" shininess="0.225" rgba="0.109804 0.184314 0.000000 1.000000"/>
+    <material name="Material15_001" specular="0.5" shininess="0.225" rgba="0.792 0.820 0.933 1.000"/>
+    <material name="polypropylene2_1" specular="0.5" shininess="0.225" rgba="1.000000 1.000000 1.000000 1.000000"/>
+    <material name="medium_gloss_plastic_2" specular="0.5" shininess="0.225" rgba="0.101961 0.101961 0.101961 1.000000"/>
+    <material name="burnished_chrome_1" specular="0.5" shininess="0.225" rgba="0.898039 0.898039 0.898039 1.000000"/>
+
     <mesh file="cf2_0.obj"/>
     <mesh file="cf2_1.obj"/>
     <mesh file="cf2_2.obj"/>
@@ -30,6 +28,7 @@
     <mesh file="cf2_4.obj"/>
     <mesh file="cf2_5.obj"/>
     <mesh file="cf2_6.obj"/>
+
     <mesh file="cf2_collision_0.obj"/>
     <mesh file="cf2_collision_1.obj"/>
     <mesh file="cf2_collision_2.obj"/>
@@ -63,17 +62,20 @@
     <mesh file="cf2_collision_30.obj"/>
     <mesh file="cf2_collision_31.obj"/>
   </asset>
+
   <worldbody>
     <body name="cf2" pos="0 0 0.1">
+      <freejoint/>
       <inertial pos="0 0 0" mass="0.027" diaginertia="2.3951e-5 2.3951e-5 3.2347e-5"/>
-      <joint name="root" type="free" damping="0" armature="0" pos="0 0 0" limited="false"/>
+
       <geom mesh="cf2_0" material="Material15_001" class="visual"/>
-      <geom mesh="cf2_1" material="Material14-green_medium_gloss_plastic_001" class="visual"/>
-      <geom mesh="cf2_2" material="Material12-polished_gold_001" class="visual"/>
-      <geom mesh="cf2_3" material="Material10-polished_plastic1_001" class="visual"/>
-      <geom mesh="cf2_4" material="Material8-burnished_chrome_001" class="visual"/>
-      <geom mesh="cf2_5" material="Material6-black_medium_gloss_plastic_001" class="visual"/>
-      <geom mesh="cf2_6" material="Material3-polypropylene2_001" class="visual"/>
+      <geom mesh="cf2_1" material="medium_gloss_plastic_1" class="visual"/>
+      <geom mesh="cf2_2" material="polished_gold_1" class="visual"/>
+      <geom mesh="cf2_3" material="polished_plastic1_1" class="visual"/>
+      <geom mesh="cf2_4" material="burnished_chrome_1" class="visual"/>
+      <geom mesh="cf2_5" material="medium_gloss_plastic_2" class="visual"/>
+      <geom mesh="cf2_6" material="polypropylene2_1" class="visual"/>
+
       <geom mesh="cf2_collision_0" class="collision"/>
       <geom mesh="cf2_collision_1" class="collision"/>
       <geom mesh="cf2_collision_2" class="collision"/>
@@ -110,10 +112,15 @@
       <site name="actuation" type="sphere" size="0.001 0.001 0.001" rgba="1 0 0 1" pos="0 0 0"/>
     </body>
   </worldbody>
+
   <actuator>
-    <motor ctrllimited="true" ctrlrange="0 0.35" gear="0 0 1 0 0 0" site="actuation" name="body_thrust"/>
+    <motor ctrlrange="0 0.35" gear="0 0 1 0 0 0" site="actuation" name="body_thrust"/>
     <motor ctrllimited="true" ctrlrange="-0.00001 0.00001" gear="0 0 0 -1 0 0" site="actuation" name="x_moment"/>
     <motor ctrllimited="true" ctrlrange="-0.00001 0.00001" gear="0 0 0 0 -1 0" site="actuation" name="y_moment"/>
-    <motor ctrllimited="true" ctrlrange="-0.00001 0.00001" gear="0 0 0 0 0 -1" site="actuation" name="z_moment"/>
+    <motor ctrlrange="-0.00001 0.00001" gear="0 0 0 0 0 -1" site="actuation" name="z_moment"/>
   </actuator>
+
+  <keyframe>
+    <key name="hover" qpos="0 0 0.3 1 0 0 0" ctrl="0.26487 0.0 0.0 0.0"/>
+  </keyframe>
 </mujoco>
