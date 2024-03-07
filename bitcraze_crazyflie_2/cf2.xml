@@ -13,13 +13,13 @@
   </default>
 
   <asset>
-    <material name="polished_plastic1_1" specular="0.5" shininess="0.225" rgba="0.631373 0.658824 0.678431 1.000000"/>
-    <material name="polished_gold_1" specular="0.5" shininess="0.225" rgba="0.968627 0.878431 0.600000 1.000000"/>
-    <material name="medium_gloss_plastic_1" specular="0.5" shininess="0.225" rgba="0.109804 0.184314 0.000000 1.000000"/>
-    <material name="Material15_001" specular="0.5" shininess="0.225" rgba="0.792 0.820 0.933 1.000"/>
-    <material name="polypropylene2_1" specular="0.5" shininess="0.225" rgba="1.000000 1.000000 1.000000 1.000000"/>
-    <material name="medium_gloss_plastic_2" specular="0.5" shininess="0.225" rgba="0.101961 0.101961 0.101961 1.000000"/>
-    <material name="burnished_chrome_1" specular="0.5" shininess="0.225" rgba="0.898039 0.898039 0.898039 1.000000"/>
+    <material name="polished_plastic" specular="0.5" shininess="0.225" rgba="0.631 0.659 0.678 1.0"/>
+    <material name="polished_gold" specular="0.5" shininess="0.225" rgba="0.969 0.878 0.6 1.0"/>
+    <material name="medium_gloss_plastic" specular="0.5" shininess="0.225" rgba="0.109 0.184 0.0 1.0"/>
+    <material name="propeller_plastic" specular="0.5" shininess="0.225" rgba="0.792 0.820 0.933 1.0"/>
+    <material name="polypropylene" specular="0.5" shininess="0.225" rgba="1.0 1.0 1.0 1.0"/>
+    <material name="body_frame_plastic" specular="0.5" shininess="0.225" rgba="0.102 0.102 0.102 1.0"/>
+    <material name="burnished_chrome" specular="0.5" shininess="0.225" rgba="0.898 0.898 0.898 1.0"/>
 
     <mesh file="cf2_0.obj"/>
     <mesh file="cf2_1.obj"/>
@@ -28,7 +28,6 @@
     <mesh file="cf2_4.obj"/>
     <mesh file="cf2_5.obj"/>
     <mesh file="cf2_6.obj"/>
-
     <mesh file="cf2_collision_0.obj"/>
     <mesh file="cf2_collision_1.obj"/>
     <mesh file="cf2_collision_2.obj"/>
@@ -68,14 +67,13 @@
       <freejoint/>
       <inertial pos="0 0 0" mass="0.027" diaginertia="2.3951e-5 2.3951e-5 3.2347e-5"/>
 
-      <geom mesh="cf2_0" material="Material15_001" class="visual"/>
-      <geom mesh="cf2_1" material="medium_gloss_plastic_1" class="visual"/>
-      <geom mesh="cf2_2" material="polished_gold_1" class="visual"/>
-      <geom mesh="cf2_3" material="polished_plastic1_1" class="visual"/>
-      <geom mesh="cf2_4" material="burnished_chrome_1" class="visual"/>
-      <geom mesh="cf2_5" material="medium_gloss_plastic_2" class="visual"/>
-      <geom mesh="cf2_6" material="polypropylene2_1" class="visual"/>
-
+      <geom mesh="cf2_0" material="propeller_plastic" class="visual"/>
+      <geom mesh="cf2_1" material="medium_gloss_plastic" class="visual"/>
+      <geom mesh="cf2_2" material="polished_gold" class="visual"/>
+      <geom mesh="cf2_3" material="polished_plastic" class="visual"/>
+      <geom mesh="cf2_4" material="burnished_chrome" class="visual"/>
+      <geom mesh="cf2_5" material="body_frame_plastic" class="visual"/>
+      <geom mesh="cf2_6" material="polypropylene" class="visual"/>
       <geom mesh="cf2_collision_0" class="collision"/>
       <geom mesh="cf2_collision_1" class="collision"/>
       <geom mesh="cf2_collision_2" class="collision"/>
