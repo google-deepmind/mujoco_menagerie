@@ -19,4 +19,4 @@ This package contains a simplified robot description (MJCF) of the Crazyflie2 mo
 
 ## License
 
-This model is released under the MIT License.
+This model is released under an [MIT License](LICENSE).
