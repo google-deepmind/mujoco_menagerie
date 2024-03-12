@@ -1,0 +1,46 @@
+<mujoco model="talos">
+
+  <include file="talos.xml"/>
+
+  <actuator>
+    <motor name="torso_1_joint_torque" joint="torso_1_joint" forcerange="-200.0 200.0" ctrlrange="-200 200"/>
+    <motor name="torso_2_joint_torque" joint="torso_2_joint" forcerange="-200.0 200.0" ctrlrange="-200.0 200.0"/>
+    <motor name="head_1_joint_torque" joint="head_1_joint" forcerange="-8.0 8.0" ctrlrange="-8.0 8.0"/>
+    <motor name="head_2_joint_torque" joint="head_2_joint" forcerange="-4.0 4.0" ctrlrange="-4.0 4.0"/>
+    <motor name="arm_left_5_joint_torque" joint="arm_left_5_joint" forcerange="-20.0 20.0" ctrlrange="-20.0 20.0"/>
+    <motor name="arm_left_6_joint_torque" joint="arm_left_6_joint" forcerange="-8.0 8.0" ctrlrange="-8.0 8.0"/>
+    <motor name="arm_left_7_joint_torque" joint="arm_left_7_joint" forcerange="-8.0 8.0" ctrlrange="-8.0 8.0"/>
+    <motor name="arm_left_1_joint_torque" joint="arm_left_1_joint" forcerange="-100.0 100.0" ctrlrange="-100.0 100.0"/>
+    <motor name="arm_left_2_joint_torque" joint="arm_left_2_joint" forcerange="-100.0 100.0" ctrlrange="-100.0 100.0"/>
+    <motor name="arm_left_3_joint_torque" joint="arm_left_3_joint" forcerange="-70.0 70.0" ctrlrange="-70.0 70.0"/>
+    <motor name="arm_left_4_joint_torque" joint="arm_left_4_joint" forcerange="-70.0 70.0" ctrlrange="-70.0 70.0"/>
+    <motor name="arm_right_5_joint_torque" joint="arm_right_5_joint" forcerange="-20.0 20.0" ctrlrange="-20.0 20.0"/>
+    <motor name="arm_right_6_joint_torque" joint="arm_right_6_joint" forcerange="-8.0 8.0" ctrlrange="-8.0 8.0"/>
+    <motor name="arm_right_7_joint_torque" joint="arm_right_7_joint" forcerange="-8.0 8.0" ctrlrange="-8.0 8.0"/>
+    <motor name="arm_right_1_joint_torque" joint="arm_right_1_joint" forcerange="-100.0 100.0" ctrlrange="-100.0 100.0"/>
+    <motor name="arm_right_2_joint_torque" joint="arm_right_2_joint" forcerange="-100.0 100.0" ctrlrange="-100.0 100.0"/>
+    <motor name="arm_right_3_joint_torque" joint="arm_right_3_joint" forcerange="-70.0 70.0" ctrlrange="-70.0 70.0"/>
+    <motor name="arm_right_4_joint_torque" joint="arm_right_4_joint" forcerange="-70.0 70.0" ctrlrange="-70.0 70.0"/>
+    <motor name="gripper_left_joint_torque" joint="gripper_left_joint" forcerange="-1.0 1.0" ctrlrange="-1.0 1.0"/>
+    <motor name="gripper_right_joint_torque" joint="gripper_right_joint" forcerange="-1.0 1.0" ctrlrange="-1.0 1.0"/>
+    <motor name="leg_left_1_joint_torque" joint="leg_left_1_joint" forcerange="-100 100" ctrlrange="-100.0 100.0"/>
+    <motor name="leg_left_2_joint_torque" joint="leg_left_2_joint" forcerange="-160 160" ctrlrange="-160.0 160.0"/>
+    <motor name="leg_left_3_joint_torque" joint="leg_left_3_joint" forcerange="-160 160" ctrlrange="-160.0 160.0"/>
+    <motor name="leg_left_4_joint_torque" joint="leg_left_4_joint" forcerange="-400 400" ctrlrange="-400.0 400.0"/>
+    <motor name="leg_left_5_joint_torque" joint="leg_left_5_joint" forcerange="-160 160" ctrlrange="-160.0 160.0"/>
+    <motor name="leg_left_6_joint_torque" joint="leg_left_6_joint" forcerange="-100 100" ctrlrange="-100.0 100.0"/>
+    <motor name="leg_right_1_joint_torque" joint="leg_right_1_joint" forcerange="-100 100" ctrlrange="-100.0 100.0"/>
+    <motor name="leg_right_2_joint_torque" joint="leg_right_2_joint" forcerange="-160 160" ctrlrange="-160.0 160.0"/>
+    <motor name="leg_right_3_joint_torque" joint="leg_right_3_joint" forcerange="-160 160" ctrlrange="-160.0 160.0"/>
+    <motor name="leg_right_4_joint_torque" joint="leg_right_4_joint" forcerange="-400 400" ctrlrange="-400.0 400.0"/>
+    <motor name="leg_right_5_joint_torque" joint="leg_right_5_joint" forcerange="-160 160" ctrlrange="-160.0 160.0"/>
+    <motor name="leg_right_6_joint_torque" joint="leg_right_6_joint" forcerange="-100 100" ctrlrange="-100.0 100.0"/>
+  </actuator>
+
+
+  <keyframe>
+    <key
+      qpos="0 0 0.08 1 0 0 0 0 0 0 0 0 0.16 0 0 0 0 0 0 0 0 0 0 0 0 0 -0.16 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"/>
+  </keyframe>
+
+</mujoco>

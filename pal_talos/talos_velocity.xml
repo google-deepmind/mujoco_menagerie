@@ -1,0 +1,49 @@
+<mujoco model="talos">
+
+  <include file="talos.xml"/>
+
+
+  <actuator>
+    <velocity name="torso_1_joint_velocity" joint="torso_1_joint" kv="2000" forcerange="-200.0 200.0"/>
+    <velocity name="torso_2_joint_velocity" joint="torso_2_joint" kv="5000" forcerange="-200.0 200.0"/>
+    <velocity name="head_1_joint_velocity" joint="head_1_joint" kv="100" forcerange="-8.0 8.0"/>
+    <velocity name="head_2_joint_velocity" joint="head_2_joint" kv="100" forcerange="-4.0 4.0"/>
+    <velocity name="arm_left_5_joint_velocity" joint="arm_left_5_joint" kv="500" forcerange="-20.0 20.0"/>
+    <velocity name="arm_left_6_joint_velocity" joint="arm_left_6_joint" kv="500" forcerange="-8.0 8.0"/>
+    <velocity name="arm_left_7_joint_velocity" joint="arm_left_7_joint" kv="500" forcerange="-8.0 8.0"/>
+    <velocity name="arm_left_1_joint_velocity" joint="arm_left_1_joint" kv="2000" forcerange="-100.0 100.0"/>
+    <velocity name="arm_left_2_joint_velocity" joint="arm_left_2_joint" kv="4000" forcerange="-100.0 100.0"/>
+    <velocity name="arm_left_3_joint_velocity" joint="arm_left_3_joint" kv="7000" forcerange="-70.0 70.0"/>
+    <velocity name="arm_left_4_joint_velocity" joint="arm_left_4_joint" kv="4000" forcerange="-70.0 70.0"/>
+    <velocity name="arm_right_5_joint_velocity" joint="arm_right_5_joint" kv="500" forcerange="-20.0 20.0"/>
+    <velocity name="arm_right_6_joint_velocity" joint="arm_right_6_joint" kv="500" forcerange="-8.0 8.0"/>
+    <velocity name="arm_right_7_joint_velocity" joint="arm_right_7_joint" kv="500" forcerange="-8.0 8.0"/>
+    <velocity name="arm_right_1_joint_velocity" joint="arm_right_1_joint" kv="2000" forcerange="-100.0 100.0"/>
+    <velocity name="arm_right_2_joint_velocity" joint="arm_right_2_joint" kv="4000" forcerange="-100.0 100.0"/>
+    <velocity name="arm_right_3_joint_velocity" joint="arm_right_3_joint" kv="7000" forcerange="-70.0 70.0"/>
+    <velocity name="arm_right_4_joint_velocity" joint="arm_right_4_joint" kv="4000" forcerange="-70.0 70.0"/>
+    <velocity name="gripper_left_joint_velocity" joint="gripper_left_joint" kv="500" forcerange="-10.0 10.0"/>
+    <velocity name="gripper_right_joint_velocity" joint="gripper_right_joint" kv="500" forcerange="-10.0 10.0"/>
+    <velocity name="leg_left_1_joint_velocity" joint="leg_left_1_joint" kv="25000" forcerange="-100 100"/>
+    <velocity name="leg_left_2_joint_velocity" joint="leg_left_2_joint" kv="50000" forcerange="-160 160"/>
+    <velocity name="leg_left_3_joint_velocity" joint="leg_left_3_joint" kv="25000" forcerange="-160 160"/>
+    <velocity name="leg_left_4_joint_velocity" joint="leg_left_4_joint" kv="25000" forcerange="-400 400"/>
+    <velocity name="leg_left_5_joint_velocity" joint="leg_left_5_joint" kv="10000" forcerange="-160 160"/>
+    <velocity name="leg_left_6_joint_velocity" joint="leg_left_6_joint" kv="10000" forcerange="-100 100"/>
+    <velocity name="leg_right_1_joint_velocity" joint="leg_right_1_joint" kv="25000" forcerange="-100 100"/>
+    <velocity name="leg_right_2_joint_velocity" joint="leg_right_2_joint" kv="50000" forcerange="-160 160"/>
+    <velocity name="leg_right_3_joint_velocity" joint="leg_right_3_joint" kv="25000" forcerange="-160 160"/>
+    <velocity name="leg_right_4_joint_velocity" joint="leg_right_4_joint" kv="25000" forcerange="-400 400"/>
+    <velocity name="leg_right_5_joint_velocity" joint="leg_right_5_joint" kv="10000" forcerange="-160 160"/>
+    <velocity name="leg_right_6_joint_velocity" joint="leg_right_6_joint" kv="10000" forcerange="-100 100"/>
+  </actuator>
+
+
+  <keyframe>
+    <key name="walk_pose"
+      qpos="0 0 0.03 0 0 0 0 0 0.15 0 0 0.3 0.4 -0.5 -1.5 0 0 0 0 -0.4 0 0 0 0 0 -0.3 -0.4 0.5 -1.5 0 0 0 0 -0.4 0 0 0 0 0 0 0 -0.4 0.8 -0.4 0 0 0 -0.4 0.8 -0.4 0"
+      ctrl="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"/>
+  </keyframe>
+
+
+</mujoco>

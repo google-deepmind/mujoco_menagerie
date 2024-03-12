@@ -150,6 +150,7 @@ Menagerie, see [CONTRIBUTING](CONTRIBUTING.md).
 | Bipeds             |               |         |
 | [Cassie](agility_cassie/README.md)|[<img src="agility_cassie/cassie.png" width="400">](agility_cassie/README.md)|C|
 | [Robotis OP3](robotis_op3/README.md)|[<img src="robotis_op3/op3.png" width="400">](robotis_op3/README.md)|A+|
+| [PAL TALOS](pal_talos/README.md)|[<img src="pal_talos/talos.png" width="400">](pal_talos/README.md)|C|
 | Quadrupeds         |              |         |
 | [ANYmal B](anybotics_anymal_b/README.md)|[<img src="anybotics_anymal_b/anymal_b.png" width="400">](anybotics_anymal_b/README.md)|A|
 | [ANYmal C](anybotics_anymal_c/README.md)|[<img src="anybotics_anymal_c/anymal_c.png" width="400">](anybotics_anymal_c/README.md)|B|
