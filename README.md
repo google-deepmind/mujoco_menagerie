@@ -176,6 +176,7 @@ Menagerie, see [CONTRIBUTING](CONTRIBUTING.md).
 | [Unitree H1](unitree_h1/README.md)|[<img src="unitree_h1/h1.png" width="400">](unitree_h1/README.md)|B|
 | Drones             |              |         |
 | [Skydio X2](skydio_x2/README.md)|[<img src="skydio_x2/x2.png" width="400">](skydio_x2/README.md)|A|
+| [Crazyflie 2](bitcraze_crazyflie_2/README.md)|[<img src="bitcraze_crazyflie_2/cf2.png" width="400">](bitcraze_crazyflie_2/README.md)|B|
 | Other              |              |         |
 | [Realsense D435i](realsense_d435i/README.md)|[<img src="realsense_d435i/d435i.png" width="400">](realsense_d435i/README.md)|B|
 
