@@ -6,9 +6,11 @@ Requires MuJoCo 2.2.2 or later.
 
 This package contains a simplified robot description (MJCF) of the Crazyflie 2
 model from [Bitcraze](https://www.bitcraze.io/). It is derived from the publicly
-available, ROS description:
-[crazyflie_ros](https://github.com/whoenig/crazyflie_ros). ![Crazyflie2
-Model](cf2.png)
+available [ROS description](https://github.com/whoenig/crazyflie_ros).
+
+<p float="left">
+  <img src="cf2.png" width="400">
+</p>
 
 ## URDF → MJCF Conversion
 
