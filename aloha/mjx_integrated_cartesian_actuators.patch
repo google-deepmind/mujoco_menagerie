@@ -11,7 +11,7 @@ diff --git a/mjx_integrated_cartesian_actuators.xml b/mjx_integrated_cartesian_a
      <default class="act">
 -      <!-- filtered actuators produce smoother motion -->
 -      <general dyntype="filterexact" biastype="affine" dynprm="1"/>
-+      <general dyntype="filterexact" biastype="affine" dynprm="0.5"/>
++      <general dyntype="filterexact" biastype="affine" dynprm="1.5"/>
        <default class="act_position">
 -        <general gainprm="1000" biasprm="0 -1000 -300"/>
 +        <general gainprm="1000" biasprm="0 -1000 0"/>
@@ -30,7 +30,7 @@ diff --git a/mjx_integrated_cartesian_actuators.xml b/mjx_integrated_cartesian_a
        </default>
        <default class="act_gripper">
 -        <general ctrlrange="0.002 0.037" gainprm="2000" biasprm="0 -2000 -124" dynprm="0.1"/>
-+        <general gainprm="365" biasprm="0 -365 0" dynprm="0.1" ctrlrange="0.002 0.037"/>
++        <general gainprm="365" biasprm="0 -365 0" dynprm="0.3" ctrlrange="0.002 0.037"/>
        </default>
      </default>
    </default>

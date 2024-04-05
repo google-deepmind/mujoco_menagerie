@@ -35,7 +35,7 @@ diff --git a/mjx_scene.xml b/mjx_scene.xml
        <geom mesh="tabletop" material="table" class="visual" quat="1 0 0 1"/>
        <geom mesh="tablelegs" material="table" class="visual" quat="1 0 0 1"/>
 -      <geom name="table" pos="0 0 0.6509" size="0.61 0.37 0.1" type="box" class="collision"/>
-+      <geom name="table" pos="0 0 0.7509" size="0.61 0.37 0.1" type="plane" class="collision" contype="0" conaffinity="1"/>
++      <geom name="table" pos="0 0 0.7508" size="0.61 0.37 0.1" type="plane" class="collision" contype="1" conaffinity="1"/>
 +    </frame>
 +    <body name="box">
 +      <freejoint/>
