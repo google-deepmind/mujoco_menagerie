@@ -39,7 +39,7 @@ diff --git a/mjx_scene.xml b/mjx_scene.xml
 +    </frame>
 +    <body name="box">
 +      <freejoint/>
-+      <geom name="box" type="box" size="0.02 0.02 0.02" condim="3"
++      <geom name="box" type="box" size="0.015 0.02 0.025" condim="3"
 +        friction="2.5 .03 .003" rgba="0 1 0 1" contype="1" conaffinity="1"/>
      </body>
      <camera name="overhead_cam" pos="0 -0.303794 1.02524" fovy="58" mode="fixed" quat="0.976332 0.216277 0 0"/>
