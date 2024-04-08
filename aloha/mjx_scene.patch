@@ -1,7 +1,7 @@
 diff --git a/mjx_scene.xml b/mjx_scene.xml
 --- a/mjx_scene.xml
 +++ b/mjx_scene.xml
-@@ -1,7 +1,13 @@
+@@ -1,7 +1,14 @@
  <mujoco model="aloha scene">
    <compiler meshdir="assets" texturedir="assets"/>
  
@@ -11,12 +11,13 @@ diff --git a/mjx_scene.xml b/mjx_scene.xml
 +  <custom>
 +    <numeric data="8" name="max_contact_points"/>
 +  </custom>
++  <size nuserdata="1"/>
 +
 +  <option iterations="6" ls_iterations="6" timestep="0.01"/>
  
    <statistic center="0 -0.1 0.2" extent="0.6" meansize="0.05"/>
  
-@@ -40,18 +46,23 @@
+@@ -40,19 +47,32 @@
  
    <default>
      <default class="frame">
@@ -39,12 +40,21 @@ diff --git a/mjx_scene.xml b/mjx_scene.xml
 +    </frame>
 +    <body name="box">
 +      <freejoint/>
-+      <geom name="box" type="box" size="0.015 0.02 0.025" condim="3"
++      <geom name="box" type="box" size="0.015 0.02 0.03" condim="3"
 +        friction="2.5 .03 .003" rgba="0 1 0 1" contype="1" conaffinity="1"/>
      </body>
++    <geom type="box" pos="0.031 0 0" size="0.015 0.02 0.041" condim="3"
++      friction="2.5 .03 .003" rgba="1 1 0 1" contype="1" conaffinity="1"/>
++    <geom type="box" pos="-.031 0 0" size="0.015 0.02 0.041" condim="3"
++      friction="2.5 .03 .003" rgba="1 1 0 1" contype="1" conaffinity="1"/>
++    <geom type="box" pos="0 0.041 0" size="0.015 0.02 0.041" condim="3"
++      friction="2.5 .03 .003" rgba="1 1 0 1" contype="1" conaffinity="1"/>
++    <geom type="box" pos="0 -0.041 0" size="0.015 0.02 0.041" condim="3"
++      friction="2.5 .03 .003" rgba="1 1 0 1" contype="1" conaffinity="1"/>
      <camera name="overhead_cam" pos="0 -0.303794 1.02524" fovy="58" mode="fixed" quat="0.976332 0.216277 0 0"/>
      <camera name="worms_eye_cam" pos="0 -0.377167 0.0316055" fovy="58" mode="fixed" quat="0.672659 0.739953 0 0"/>
-@@ -87,4 +98,14 @@
+     <geom class="frame" pos="0.44 -0.361 1.03" quat="0 1 0 1" mesh="extrusion_2040_880"/>
+@@ -87,4 +107,14 @@
      <geom class="frame" pos="0.43 -0.361 1.02" quat="0 0 0 1" mesh="extrusion_2040_1000"/>
      <geom class="frame" pos="0 -0.391 -0.01" quat="0 0 0 1" mesh="wormseye_mount"/>
    </worldbody>
