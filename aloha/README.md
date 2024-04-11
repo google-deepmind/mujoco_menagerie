@@ -1,6 +1,6 @@
 # ALOHA Description (MJCF)
 
-Requires MuJoCo 3.1.1 or later.
+Requires MuJoCo 3.1.4 or later.
 
 ## Overview
 
