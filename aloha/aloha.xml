@@ -22,7 +22,7 @@
 
   <default>
     <default class="vx300s">
-      <joint axis="0 1 0" actuatorfrcrange="-35 35" actuatorgravcomp="true"/>
+      <joint axis="0 1 0" actuatorfrcrange="-35 35"/>
       <site group="4"/>
       <default class="waist">
         <joint axis="0 0 1" range="-3.14158 3.14158" damping="5.76"/>
@@ -103,42 +103,42 @@
         diaginertia="0.0071633 0.00602451 0.00169819"/>
       <geom quat="1 0 0 1" class="visual" mesh="vx300s_1_base"/>
       <geom quat="1 0 0 1" mesh="vx300s_1_base" class="collision"/>
-      <body name="left/shoulder_link" pos="0 0 0.079" gravcomp="1">
+      <body name="left/shoulder_link" pos="0 0 0.079">
         <inertial pos="0.000259233 -3.3552e-06 0.0116129" quat="-0.476119 0.476083 0.52279 0.522826" mass="0.798614"
           diaginertia="0.00120156 0.00113744 0.0009388"/>
         <joint name="left/waist" class="waist"/>
         <geom pos="0 0 -0.003" quat="1 0 0 1" class="visual" mesh="vx300s_2_shoulder"/>
         <geom pos="0 0 -0.003" quat="1 0 0 1" mesh="vx300s_2_shoulder" class="collision"/>
-        <body name="left/upper_arm_link" pos="0 0 0.04805" gravcomp="1">
+        <body name="left/upper_arm_link" pos="0 0 0.04805">
           <inertial pos="0.0206949 4e-10 0.226459" quat="0 0.0728458 0 0.997343" mass="0.792592"
             diaginertia="0.00911338 0.008925 0.000759317"/>
           <joint name="left/shoulder" class="shoulder"/>
           <geom quat="1 0 0 1" class="visual" mesh="vx300s_3_upper_arm"/>
           <geom quat="1 0 0 1" class="collision" mesh="vx300s_3_upper_arm"/>
-          <body name="left/upper_forearm_link" pos="0.05955 0 0.3" gravcomp="1">
+          <body name="left/upper_forearm_link" pos="0.05955 0 0.3">
             <inertial pos="0.105723 0 0" quat="-0.000621631 0.704724 0.0105292 0.709403" mass="0.322228"
               diaginertia="0.00144107 0.00134228 0.000152047"/>
             <joint name="left/elbow" class="elbow"/>
             <geom class="visual" mesh="vx300s_4_upper_forearm"/>
             <geom class="collision" mesh="vx300s_4_upper_forearm"/>
-            <body name="left/lower_forearm_link" pos="0.2 0 0" gravcomp="1">
+            <body name="left/lower_forearm_link" pos="0.2 0 0">
               <inertial pos="0.0513477 0.00680462 0" quat="-0.702604 -0.0796724 -0.702604 0.0796724" mass="0.414823"
                 diaginertia="0.0005911 0.000546493 0.000155707"/>
               <joint name="left/forearm_roll" class="forearm_roll"/>
               <geom quat="0 1 0 0" class="visual" mesh="vx300s_5_lower_forearm"/>
               <geom quat="0 1 0 0" class="collision" mesh="vx300s_5_lower_forearm"/>
-              <body name="left/wrist_link" pos="0.1 0 0" gravcomp="1">
+              <body name="left/wrist_link" pos="0.1 0 0">
                 <inertial pos="0.046743 -7.6652e-06 0.010565" quat="-0.00100191 0.544586 0.0026583 0.8387"
                   mass="0.115395" diaginertia="5.45707e-05 4.63101e-05 4.32692e-05"/>
                 <joint name="left/wrist_angle" class="wrist_angle"/>
                 <geom quat="1 0 0 1" class="visual" mesh="vx300s_6_wrist"/>
                 <geom quat="1 0 0 1" class="collision" mesh="vx300s_6_wrist"/>
-                <body name="left/gripper_link" pos="0.069744 0 0" gravcomp="1">
+                <body name="left/gripper_link" pos="0.069744 0 0">
                   <inertial pos="0.0395662 -2.56311e-07 0.00400649" quat="0.62033 0.619916 -0.339682 0.339869"
                     mass="0.251652" diaginertia="0.000689546 0.000650316 0.000468142"/>
                   <joint name="left/wrist_rotate" class="wrist_rotate"/>
                   <site name="left/gripper" pos="0.13 0 -.003" group="5"/>
-                  <body name="left/gripper_base" euler="0 1.57 -1.57" pos="0.035 0 0" gravcomp="1">
+                  <body name="left/gripper_base" euler="0 1.57 -1.57" pos="0.035 0 0">
                     <inertial pos="0.000182154 -0.0341589 -0.0106026" quat="0.435286 0.557074 -0.551539 0.442718"
                       mass="0.42158" diaginertia="0.00110438 0.000790537 0.000469727"/>
                     <geom class="visual" mesh="vx300s_7_gripper_prop"/>
@@ -150,7 +150,7 @@
                     <geom class="visual" pos="0 -0.0824748 -0.0095955" quat="0 0 -0.21644 -0.976296" type="mesh" mesh="d405_solid"/>
                     <geom class="collision" pos="0 -0.0824748 -0.0095955" quat="0 0 -0.21644 -0.976296" type="mesh" mesh="d405_solid"/>
                     <camera name="wrist_cam_left" pos="0 -0.0824748 -0.0095955" fovy="58" mode="fixed" euler="2.70525955359 0 0"/>
-                   <body name="left/left_finger_link" pos="0.0191 -0.0141637 0.0211727" quat="1 -1 -1 1" gravcomp="1">
+                   <body name="left/left_finger_link" pos="0.0191 -0.0141637 0.0211727" quat="1 -1 -1 1">
                       <inertial pos="0.0143478 -0.0284791 0.0122897" quat="0.535486 0.458766 -0.450407 0.547651"
                         mass="0.0862937" diaginertia="5.86848e-05 4.46887e-05 1.8397e-05"/>
                       <joint name="left/left_finger" class="left_finger"/>
@@ -163,7 +163,7 @@
                       <geom pos="0.0182 -0.0845 0.0266" class="sphere_collision"/>
                       <site name="left/left_finger" pos="0.015 -0.06 0.02"/>
                     </body>
-                    <body name="left/right_finger_link" pos="-0.0191 -0.0141637 0.0211727" quat="1 1 1 1" gravcomp="1">
+                    <body name="left/right_finger_link" pos="-0.0191 -0.0141637 0.0211727" quat="1 1 1 1">
                       <inertial pos="0.0143711 0.0284792 0.0121421" quat="0.461317 0.537615 -0.545478 0.447894"
                         mass="0.0862932" diaginertia="5.86828e-05 4.46887e-05 1.83949e-05"/>
                       <joint name="left/right_finger" class="right_finger"/>
@@ -190,42 +190,42 @@
         diaginertia="0.0071633 0.00602451 0.00169819"/>
       <geom quat="1 0 0 1" class="visual" mesh="vx300s_1_base"/>
       <geom quat="1 0 0 1" mesh="vx300s_1_base" class="collision"/>
-      <body name="right/shoulder_link" pos="0 0 0.079" gravcomp="1">
+      <body name="right/shoulder_link" pos="0 0 0.079">
         <inertial pos="0.000259233 -3.3552e-06 0.0116129" quat="-0.476119 0.476083 0.52279 0.522826" mass="0.798614"
           diaginertia="0.00120156 0.00113744 0.0009388"/>
         <joint name="right/waist" class="waist"/>
         <geom pos="0 0 -0.003" quat="1 0 0 1" class="visual" mesh="vx300s_2_shoulder"/>
         <geom pos="0 0 -0.003" quat="1 0 0 1" mesh="vx300s_2_shoulder" class="collision"/>
-        <body name="right/upper_arm_link" pos="0 0 0.04805" gravcomp="1">
+        <body name="right/upper_arm_link" pos="0 0 0.04805">
           <inertial pos="0.0206949 4e-10 0.226459" quat="0 0.0728458 0 0.997343" mass="0.792592"
             diaginertia="0.00911338 0.008925 0.000759317"/>
           <joint name="right/shoulder" class="shoulder"/>
           <geom quat="1 0 0 1" class="visual" mesh="vx300s_3_upper_arm"/>
           <geom quat="1 0 0 1" class="collision" mesh="vx300s_3_upper_arm"/>
-          <body name="right/upper_forearm_link" pos="0.05955 0 0.3" gravcomp="1">
+          <body name="right/upper_forearm_link" pos="0.05955 0 0.3">
             <inertial pos="0.105723 0 0" quat="-0.000621631 0.704724 0.0105292 0.709403" mass="0.322228"
               diaginertia="0.00144107 0.00134228 0.000152047"/>
             <joint name="right/elbow" class="elbow"/>
             <geom class="visual" mesh="vx300s_4_upper_forearm"/>
             <geom class="collision" mesh="vx300s_4_upper_forearm"/>
-            <body name="right/lower_forearm_link" pos="0.2 0 0" gravcomp="1">
+            <body name="right/lower_forearm_link" pos="0.2 0 0">
               <inertial pos="0.0513477 0.00680462 0" quat="-0.702604 -0.0796724 -0.702604 0.0796724" mass="0.414823"
                 diaginertia="0.0005911 0.000546493 0.000155707"/>
               <joint name="right/forearm_roll" class="forearm_roll"/>
               <geom quat="0 1 0 0" class="visual" mesh="vx300s_5_lower_forearm"/>
               <geom quat="0 1 0 0" class="collision" mesh="vx300s_5_lower_forearm"/>
-              <body name="right/wrist_link" pos="0.1 0 0" gravcomp="1">
+              <body name="right/wrist_link" pos="0.1 0 0">
                 <inertial pos="0.046743 -7.6652e-06 0.010565" quat="-0.00100191 0.544586 0.0026583 0.8387"
                   mass="0.115395" diaginertia="5.45707e-05 4.63101e-05 4.32692e-05"/>
                 <joint name="right/wrist_angle" class="wrist_angle"/>
                 <geom quat="1 0 0 1" class="visual" mesh="vx300s_6_wrist"/>
                 <geom quat="1 0 0 1" class="collision" mesh="vx300s_6_wrist"/>
-                <body name="right/gripper_link" pos="0.069744 0 0" gravcomp="1">
+                <body name="right/gripper_link" pos="0.069744 0 0">
                   <inertial pos="0.0395662 -2.56311e-07 0.00400649" quat="0.62033 0.619916 -0.339682 0.339869"
                     mass="0.251652" diaginertia="0.000689546 0.000650316 0.000468142"/>
                   <joint name="right/wrist_rotate" class="wrist_rotate"/>
                   <site name="right/gripper" pos="0.13 0 -.003" group="5"/>
-                  <body name="right/gripper_base" euler="0 1.57 -1.57" pos="0.035 0 0" gravcomp="1">
+                  <body name="right/gripper_base" euler="0 1.57 -1.57" pos="0.035 0 0">
                     <inertial pos="0.000182154 -0.0341589 -0.0106026" quat="0.435286 0.557074 -0.551539 0.442718"
                       mass="0.42158" diaginertia="0.00110438 0.000790537 0.000469727"/>
                     <geom class="visual" mesh="vx300s_7_gripper_prop"/>
@@ -237,7 +237,7 @@
                     <geom class="visual" pos="0 -0.0824748 -0.0095955" quat="0 0 -0.21644 -0.976296" type="mesh" mesh="d405_solid"/>
                     <geom class="collision" pos="0 -0.0824748 -0.0095955" quat="0 0 -0.21644 -0.976296" type="mesh" mesh="d405_solid"/>
                     <camera name="wrist_cam_right" pos="0 -0.0824748 -0.0095955" fovy="58" mode="fixed" euler="2.70525955359 0 0"/>
-                    <body name="right/left_finger_link" pos="0.0191 -0.0141637 0.0211727" quat="1 -1 -1 1" gravcomp="1">
+                    <body name="right/left_finger_link" pos="0.0191 -0.0141637 0.0211727" quat="1 -1 -1 1">
                       <inertial pos="0.0143478 -0.0284791 0.0122897" quat="0.535486 0.458766 -0.450407 0.547651"
                         mass="0.0862937" diaginertia="5.86848e-05 4.46887e-05 1.8397e-05"/>
                       <joint name="right/left_finger" class="left_finger"/>
@@ -250,7 +250,7 @@
                       <geom pos="0.0182 -0.0845 0.0266" class="sphere_collision"/>
                       <site name="right/left_finger" pos="0.015 -0.06 0.02"/>
                     </body>
-                    <body name="right/right_finger_link" pos="-0.0191 -0.0141637 0.0211727" quat="1 1 1 1" gravcomp="1">
+                    <body name="right/right_finger_link" pos="-0.0191 -0.0141637 0.0211727" quat="1 1 1 1">
                       <inertial pos="0.0143711 0.0284792 0.0121421" quat="0.461317 0.537615 -0.545478 0.447894"
                         mass="0.0862932" diaginertia="5.86828e-05 4.46887e-05 1.83949e-05"/>
                       <joint name="right/right_finger" class="right_finger"/>
