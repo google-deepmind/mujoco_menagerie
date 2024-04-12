@@ -1,5 +1,5 @@
---- aloha.xml	2024-04-12 14:11:27.000000000 +0100
-+++ mjx_aloha.xml	2024-02-23 14:06:07.000000000 +0000
+--- aloha.xml	2024-04-12 14:28:24.000000000 +0100
++++ mjx_aloha.xml	2024-04-12 14:29:57.000000000 +0100
 @@ -1,7 +1,7 @@
  <mujoco model="aloha">
    <compiler angle="radian" meshdir="assets" autolimits="true"/>
@@ -150,5 +150,5 @@
    </equality>
  
 -  <include file="joint_position_actuators.xml"/>
-+  <include file="mjx_integrated_cartesian_actuators.xml"/>
++  <include file="mjx_filtered_cartesian_actuators.xml"/>
  </mujoco>
