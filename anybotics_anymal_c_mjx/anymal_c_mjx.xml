@@ -5,12 +5,6 @@
   </option>
   <option cone="pyramidal" impratio="100"/>
 
-  <visual>
-    <headlight diffuse="0.6 0.6 0.6" ambient="0.3 0.3 0.3" specular="0 0 0"/>
-    <rgba haze="0.15 0.25 0.35 1"/>
-    <global azimuth="120" elevation="-20"/>
-  </visual>
-
   <default>
     <material specular="0" shininess="0.25"/>
     <default class="anymal_c">
@@ -108,16 +102,9 @@
     <mesh file="hip_r.obj"/>
     <mesh file="hatch.obj"/>
     <mesh file="shank_r.obj"/>
-    <!-- Skybox makes the sky light blue rather than black. Groundplane makes an infinite ground area. -->
-    <texture type="skybox" builtin="gradient" rgb1="0.3 0.5 0.7" rgb2="0 0 0" width="512" height="3072"/>
-    <texture type="2d" name="groundplane" builtin="checker" mark="edge" rgb1="0.2 0.3 0.4" rgb2="0.1 0.2 0.3"
-      markrgb="0.8 0.8 0.8" width="300" height="300"/>
-    <material name="groundplane" texture="groundplane" texuniform="true" texrepeat="5 5" reflectance="0.2"/>
   </asset>
 
   <worldbody>
-    <geom name="floor" size="0 0 0.05" type="plane" conaffinity="1" material="groundplane"/>
-    <light pos="0 0 1.5" dir="0 0 -1" directional="true"/>
     <body name="base" pos="0 0 0.62" quat="0 0 0 1" childclass="anymal_c">
       <camera name="track" pos="0 -2.5 0" xyaxes="1 0 0 0 1 5" mode="trackcom"/>
       <camera name="fwd" pos="0 0.45 0" xyaxes="1 0 0 0 0 1"/>
