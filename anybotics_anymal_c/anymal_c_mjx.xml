@@ -1,7 +1,7 @@
 <mujoco model="anymal_c">
   <compiler angle="radian" meshdir="assets" texturedir="assets" autolimits="true"/>
   <option timestep="0.002" iterations="1" ls_iterations="4" solver="Newton">
-      <flag eulerdamp="disable"/>
+    <flag eulerdamp="disable"/>
   </option>
   <option cone="pyramidal" impratio="100"/>
 
@@ -26,7 +26,7 @@
       </default>
 
       <default class="affine">
-        <position kp="230" ctrlrange="-6.28 6.28" forcerange="-80 80"/>
+        <position kp="100" ctrlrange="-6.28 6.28" forcerange="-80 80"/>
       </default>
 
     </default>
