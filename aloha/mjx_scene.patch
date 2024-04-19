@@ -1,7 +1,6 @@
-diff --git a/mjx_scene.xml b/mjx_scene.xml
---- a/mjx_scene.xml
-+++ b/mjx_scene.xml
-@@ -1,7 +1,14 @@
+--- scene.xml	2024-04-19 17:28:59.000000000 +0100
++++ mjx_scene.xml	2024-04-19 17:32:13.000000000 +0100
+@@ -1,7 +1,13 @@
  <mujoco model="aloha scene">
    <compiler meshdir="assets" texturedir="assets"/>
  
@@ -11,13 +10,12 @@ diff --git a/mjx_scene.xml b/mjx_scene.xml
 +  <custom>
 +    <numeric data="8" name="max_contact_points"/>
 +  </custom>
-+  <size nuserdata="1"/>
 +
 +  <option iterations="6" ls_iterations="6" timestep="0.01"/>
  
    <statistic center="0 -0.1 0.2" extent="0.6" meansize="0.05"/>
  
-@@ -40,19 +47,32 @@
+@@ -40,17 +46,17 @@
  
    <default>
      <default class="frame">
@@ -29,43 +27,12 @@ diff --git a/mjx_scene.xml b/mjx_scene.xml
    <worldbody>
      <light pos="0 0.1 2.5"/>
 -    <geom name="floor" size="2 2 0.05" type="plane" material="groundplane" pos="0 0 -.75"/>
--    <body name="table" pos="0 0 -0.75">
 +    <geom name="floor" size="2 2 0.05" type="plane" material="groundplane" pos="0 0 -.75" contype="0" conaffinity="0"/>
-+    <frame name="table" pos="0 0 -0.75">
-       <site name="worldref"/>
-       <geom mesh="tabletop" material="table" class="visual" quat="1 0 0 1"/>
-       <geom mesh="tablelegs" material="table" class="visual" quat="1 0 0 1"/>
--      <geom name="table" pos="0 0 0.6509" size="0.61 0.37 0.1" type="box" class="collision"/>
-+      <geom name="table" pos="0 0 0.7508" size="0.61 0.37 0.1" type="plane" class="collision" contype="1" conaffinity="1"/>
-+    </frame>
-+    <body name="box">
-+      <freejoint/>
-+      <geom name="box" type="box" size="0.015 0.02 0.03" condim="3"
-+        friction="2.5 .03 .003" rgba="0 1 0 1" contype="1" conaffinity="1"/>
-     </body>
-+    <geom type="box" pos="0.031 0 0" size="0.015 0.02 0.041" condim="3"
-+      friction="2.5 .03 .003" rgba="1 1 0 1" contype="1" conaffinity="1"/>
-+    <geom type="box" pos="-.031 0 0" size="0.015 0.02 0.041" condim="3"
-+      friction="2.5 .03 .003" rgba="1 1 0 1" contype="1" conaffinity="1"/>
-+    <geom type="box" pos="0 0.041 0" size="0.015 0.02 0.041" condim="3"
-+      friction="2.5 .03 .003" rgba="1 1 0 1" contype="1" conaffinity="1"/>
-+    <geom type="box" pos="0 -0.041 0" size="0.015 0.02 0.041" condim="3"
-+      friction="2.5 .03 .003" rgba="1 1 0 1" contype="1" conaffinity="1"/>
+     <site name="worldref" pos="0 0 -0.75"/>
+     <geom mesh="tabletop" material="table" class="visual" pos="0 0 -0.75" quat="1 0 0 1"/>
+     <geom mesh="tablelegs" material="table" class="visual" pos="0 0 -0.75" quat="1 0 0 1"/>
+-    <geom name="table" pos="0 0 -0.1009" size="0.61 0.37 0.1" type="box" class="collision"/>
++    <geom name="table" pos="0 0 0.0008" size="0.61 0.37 0.1" type="plane" class="collision" contype="1" conaffinity="1"/>
      <camera name="overhead_cam" pos="0 -0.303794 1.02524" fovy="58" mode="fixed" quat="0.976332 0.216277 0 0"/>
      <camera name="worms_eye_cam" pos="0 -0.377167 0.0316055" fovy="58" mode="fixed" quat="0.672659 0.739953 0 0"/>
      <geom class="frame" pos="0.44 -0.361 1.03" quat="0 1 0 1" mesh="extrusion_2040_880"/>
-@@ -87,4 +107,14 @@
-     <geom class="frame" pos="0.43 -0.361 1.02" quat="0 0 0 1" mesh="extrusion_2040_1000"/>
-     <geom class="frame" pos="0 -0.391 -0.01" quat="0 0 0 1" mesh="wormseye_mount"/>
-   </worldbody>
-+
-+  <keyframe>
-+    <key name="home" qpos="
-+      0 -0.96 1.16 0 -0.3 0 0.0084 0.0084
-+      0 -0.96 1.16 0 -0.3 0 0.0084 0.0084
-+      0.35 0.2 0.025 1 0 0 0"
-+      act= "-0.1 0 0 0 0 0 0.03 0.1 0 0 0 0 0 0.03"
-+      ctrl="-0.1 0 0 0 0 0 0.03 0.1 0 0 0 0 0 0.03"
-+    />
-+  </keyframe>
- </mujoco>

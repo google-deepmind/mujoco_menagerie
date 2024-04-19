@@ -81,7 +81,7 @@
         </default>
       </default>
       <default class="visual">
-        <geom type="mesh" contype="0" conaffinity="0" density="0" group="2" material="black"/>
+        <geom type="mesh" contype="0" conaffinity="0" mass="0" group="2" material="black"/>
       </default>
       <default class="collision">
         <geom group="3" type="mesh" condim="6" friction="1 5e-3 5e-4" solref=".01 1"/>

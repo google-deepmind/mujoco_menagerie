@@ -1,5 +1,5 @@
---- aloha.xml	2024-04-12 14:28:24.000000000 +0100
-+++ mjx_aloha.xml	2024-04-12 14:29:57.000000000 +0100
+--- aloha.xml	2024-04-19 17:27:25.000000000 +0100
++++ mjx_aloha.xml	2024-04-19 17:11:27.000000000 +0100
 @@ -1,7 +1,7 @@
  <mujoco model="aloha">
    <compiler angle="radian" meshdir="assets" autolimits="true"/>
@@ -45,8 +45,8 @@
          </default>
        </default>
        <default class="visual">
--        <geom type="mesh" contype="0" conaffinity="0" density="0" group="2" material="black"/>
-+        <geom type="mesh" density="0" group="2" material="black" contype="0" conaffinity="0"/>
+-        <geom type="mesh" contype="0" conaffinity="0" mass="0" group="2" material="black"/>
++        <geom type="mesh" mass="0" group="2" material="black" contype="0" conaffinity="0"/>
        </default>
        <default class="collision">
 -        <geom group="3" type="mesh" condim="6" friction="1 5e-3 5e-4" solref=".01 1"/>
