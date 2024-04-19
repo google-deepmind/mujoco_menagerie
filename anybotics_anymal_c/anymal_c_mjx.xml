@@ -107,7 +107,6 @@
   <worldbody>
     <body name="base" pos="0 0 0.62" quat="0 0 0 1" childclass="anymal_c">
       <camera name="track" pos="0 -2.5 0" xyaxes="1 0 0 0 1 5" mode="trackcom"/>
-      <camera name="fwd" pos="0 0.45 0" xyaxes="1 0 0 0 0 1"/>
 
       <freejoint/>
       <inertial mass="19.2035" pos="0.0025 0 0.0502071" quat="0.5 0.5 0.5 0.5" diaginertia="0.639559 0.624031 0.217374"/>
