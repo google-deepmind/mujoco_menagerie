@@ -1,4 +1,4 @@
-<mujoco model="aloha scene">
+<mujoco model="aloha_scene">
   <compiler meshdir="assets" texturedir="assets"/>
 
   <include file="aloha.xml"/>
