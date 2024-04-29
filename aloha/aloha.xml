@@ -81,12 +81,12 @@
         </default>
       </default>
       <default class="visual">
-        <geom type="mesh" contype="0" conaffinity="0" mass="0" group="2" material="black"/>
+        <geom type="mesh" mass="0" group="2" material="black" contype="0" conaffinity="0"/>
       </default>
       <default class="collision">
         <geom group="3" type="mesh" condim="6" friction="1 5e-3 5e-4" solref=".01 1"/>
         <default class="sphere_collision">
-          <geom type="sphere" size="0.0006" rgba="1 0 0 1" margin=".015" gap=".015"/>
+          <geom type="sphere" size="0.0006" rgba="1 0 0 1"/>
         </default>
       </default>
     </default>
@@ -158,9 +158,9 @@
                         mesh="vx300s_8_custom_finger_left"/>
                       <geom pos="0.0141637 0.0211727 0.06" class="collision" quat="1 1 1 -1" type="mesh"
                         mesh="vx300s_8_custom_finger_left"/>
-                      <geom pos="0.013  -0.0892 0.0268" class="sphere_collision"/>
-                      <geom pos="0.0222 -0.0892 0.0268" class="sphere_collision"/>
-                      <geom pos="0.0182 -0.0845 0.0266" class="sphere_collision"/>
+                      <geom name="left/left_g0" pos="0.013  -0.0892 0.0268" class="sphere_collision"/>
+                      <geom name="left/left_g1" pos="0.0222 -0.0892 0.0268" class="sphere_collision"/>
+                      <geom name="left/left_g2" pos="0.0182 -0.0845 0.0266" class="sphere_collision"/>
                       <site name="left/left_finger" pos="0.015 -0.06 0.02"/>
                     </body>
                     <body name="left/right_finger_link" pos="-0.0191 -0.0141637 0.0211727" quat="1 1 1 1">
@@ -171,9 +171,9 @@
                         mesh="vx300s_8_custom_finger_right"/>
                       <geom pos="0.0141637 -0.0211727 0.0597067" class="collision" quat="1 -1 -1 -1" type="mesh"
                         mesh="vx300s_8_custom_finger_right"/>
-                      <geom pos="0.013  0.0892 0.0268" class="sphere_collision"/>
-                      <geom pos="0.0222 0.0892 0.0268" class="sphere_collision"/>
-                      <geom pos="0.0182 0.0845 0.0266" class="sphere_collision"/>
+                      <geom name="left/right_g0" pos="0.013  0.0892 0.0268" class="sphere_collision"/>
+                      <geom name="left/right_g1" pos="0.0222 0.0892 0.0268" class="sphere_collision"/>
+                      <geom name="left/right_g2" pos="0.0182 0.0845 0.0266" class="sphere_collision"/>
                       <site name="left/right_finger" pos="0.015 0.06 0.02"/>
                     </body>
                   </body>
@@ -245,9 +245,9 @@
                         mesh="vx300s_8_custom_finger_left"/>
                       <geom pos="0.0141637 0.0211727 0.06" class="collision" quat="1 1 1 -1" type="mesh"
                         mesh="vx300s_8_custom_finger_left"/>
-                      <geom pos="0.013  -0.0892 0.0268" class="sphere_collision"/>
-                      <geom pos="0.0222 -0.0892 0.0268" class="sphere_collision"/>
-                      <geom pos="0.0182 -0.0845 0.0266" class="sphere_collision"/>
+                      <geom name="right/left_g0" pos="0.013  -0.0892 0.0268" class="sphere_collision"/>
+                      <geom name="right/left_g1" pos="0.0222 -0.0892 0.0268" class="sphere_collision"/>
+                      <geom name="right/left_g2" pos="0.0182 -0.0845 0.0266" class="sphere_collision"/>
                       <site name="right/left_finger" pos="0.015 -0.06 0.02"/>
                     </body>
                     <body name="right/right_finger_link" pos="-0.0191 -0.0141637 0.0211727" quat="1 1 1 1">
@@ -258,9 +258,9 @@
                         mesh="vx300s_8_custom_finger_right"/>
                       <geom pos="0.0141637 -0.0211727 0.0597067" class="collision" quat="1 -1 -1 -1" type="mesh"
                         mesh="vx300s_8_custom_finger_right"/>
-                      <geom pos="0.013  0.0892 0.0268" class="sphere_collision"/>
-                      <geom pos="0.0222 0.0892 0.0268" class="sphere_collision"/>
-                      <geom pos="0.0182 0.0845 0.0266" class="sphere_collision"/>
+                      <geom name="right/right_g0" pos="0.013  0.0892 0.0268" class="sphere_collision"/>
+                      <geom name="right/right_g1" pos="0.0222 0.0892 0.0268" class="sphere_collision"/>
+                      <geom name="right/right_g2" pos="0.0182 0.0845 0.0266" class="sphere_collision"/>
                       <site name="right/right_finger" pos="0.015 0.06 0.02"/>
                     </body>
                   </body>

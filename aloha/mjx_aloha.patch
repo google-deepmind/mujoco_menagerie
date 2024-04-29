@@ -1,5 +1,5 @@
---- aloha.xml	2024-04-19 17:27:25.000000000 +0100
-+++ mjx_aloha.xml	2024-04-19 17:11:27.000000000 +0100
+--- aloha.xml	2024-04-29 19:01:00.000000000 +0100
++++ mjx_aloha.xml	2024-04-29 18:58:32.000000000 +0100
 @@ -1,7 +1,7 @@
  <mujoco model="aloha">
    <compiler angle="radian" meshdir="assets" autolimits="true"/>
@@ -41,12 +41,8 @@
          <default class="left_finger">
            <joint range="0 0.041" axis="0 0 -1"/>
          </default>
-@@ -81,12 +81,18 @@
-         </default>
-       </default>
-       <default class="visual">
--        <geom type="mesh" contype="0" conaffinity="0" mass="0" group="2" material="black"/>
-+        <geom type="mesh" mass="0" group="2" material="black" contype="0" conaffinity="0"/>
+@@ -84,10 +84,16 @@
+         <geom type="mesh" mass="0" group="2" material="black" contype="0" conaffinity="0"/>
        </default>
        <default class="collision">
 -        <geom group="3" type="mesh" condim="6" friction="1 5e-3 5e-4" solref=".01 1"/>
@@ -55,14 +51,14 @@
 +          <geom condim="3" solimp="2 1 0.01" solref="0.01 1" friction="1 0.005 0.0001"/>
 +        </default>
          <default class="sphere_collision">
--          <geom type="sphere" size="0.0006" rgba="1 0 0 1" margin=".015" gap=".015"/>
-+          <geom type="sphere" size="0.0006" rgba="1 0 0 1"/>
-+        </default>
+           <geom type="sphere" size="0.0006" rgba="1 0 0 1"/>
+         </default>
 +        <default class="primitive_collision">
 +          <geom contype="0" conaffinity="1" rgba="1 0 0 0.5" group="3"/>
-         </default>
++        </default>
        </default>
      </default>
+   </default>
 @@ -137,7 +143,7 @@
                    <inertial pos="0.0395662 -2.56311e-07 0.00400649" quat="0.62033 0.619916 -0.339682 0.339869"
                      mass="0.251652" diaginertia="0.000689546 0.000650316 0.000468142"/>
@@ -89,9 +85,9 @@
                          mesh="vx300s_8_custom_finger_left"/>
 +                      <geom pos="0 0 0" type="capsule" size="0.005" fromto="-0.01  -0.0192 0.015 0.015  -0.0852 0.0228" class="primitive_collision"/>
 +                      <geom pos="0 0 0" type="capsule" size="0.005" fromto="0.035  -0.0192 0.015 0.02  -0.0852 0.0228" class="primitive_collision"/>
-                       <geom pos="0.013  -0.0892 0.0268" class="sphere_collision"/>
-                       <geom pos="0.0222 -0.0892 0.0268" class="sphere_collision"/>
-                       <geom pos="0.0182 -0.0845 0.0266" class="sphere_collision"/>
+                       <geom name="left/left_g0" pos="0.013  -0.0892 0.0268" class="sphere_collision"/>
+                       <geom name="left/left_g1" pos="0.0222 -0.0892 0.0268" class="sphere_collision"/>
+                       <geom name="left/left_g2" pos="0.0182 -0.0845 0.0266" class="sphere_collision"/>
 @@ -169,8 +178,10 @@
                        <joint name="left/right_finger" class="right_finger"/>
                        <geom pos="0.0141637 -0.0211727 0.0597067" class="visual" quat="1 -1 -1 -1" type="mesh"
@@ -101,9 +97,9 @@
                          mesh="vx300s_8_custom_finger_right"/>
 +                      <geom pos="0 0 0" type="capsule" size="0.005" fromto="-0.01  0.0192 0.015 0.015  0.0852 0.0228" class="primitive_collision"/>
 +                      <geom pos="0 0 0" type="capsule" size="0.005" fromto="0.035  -0.0192 0.015 0.02  0.0852 0.0228" class="primitive_collision"/>
-                       <geom pos="0.013  0.0892 0.0268" class="sphere_collision"/>
-                       <geom pos="0.0222 0.0892 0.0268" class="sphere_collision"/>
-                       <geom pos="0.0182 0.0845 0.0266" class="sphere_collision"/>
+                       <geom name="left/right_g0" pos="0.013  0.0892 0.0268" class="sphere_collision"/>
+                       <geom name="left/right_g1" pos="0.0222 0.0892 0.0268" class="sphere_collision"/>
+                       <geom name="left/right_g2" pos="0.0182 0.0845 0.0266" class="sphere_collision"/>
 @@ -224,7 +235,7 @@
                    <inertial pos="0.0395662 -2.56311e-07 0.00400649" quat="0.62033 0.619916 -0.339682 0.339869"
                      mass="0.251652" diaginertia="0.000689546 0.000650316 0.000468142"/>
@@ -130,9 +126,9 @@
                          mesh="vx300s_8_custom_finger_left"/>
 +                      <geom pos="0 0 0" type="capsule" size="0.005" fromto="-0.01  -0.0192 0.015 0.015  -0.0852 0.0228" class="primitive_collision"/>
 +                      <geom pos="0 0 0" type="capsule" size="0.005" fromto="0.035  -0.0192 0.015 0.02  -0.0852 0.0228" class="primitive_collision"/>
-                       <geom pos="0.013  -0.0892 0.0268" class="sphere_collision"/>
-                       <geom pos="0.0222 -0.0892 0.0268" class="sphere_collision"/>
-                       <geom pos="0.0182 -0.0845 0.0266" class="sphere_collision"/>
+                       <geom name="right/left_g0" pos="0.013  -0.0892 0.0268" class="sphere_collision"/>
+                       <geom name="right/left_g1" pos="0.0222 -0.0892 0.0268" class="sphere_collision"/>
+                       <geom name="right/left_g2" pos="0.0182 -0.0845 0.0266" class="sphere_collision"/>
 @@ -256,8 +270,10 @@
                        <joint name="right/right_finger" class="right_finger"/>
                        <geom pos="0.0141637 -0.0211727 0.0597067" class="visual" quat="1 -1 -1 -1" type="mesh"
@@ -142,9 +138,9 @@
                          mesh="vx300s_8_custom_finger_right"/>
 +                      <geom pos="0 0 0" type="capsule" size="0.005" fromto="-0.01  0.0192 0.015 0.015  0.0852 0.0228" class="primitive_collision"/>
 +                      <geom pos="0 0 0" type="capsule" size="0.005" fromto="0.035  -0.0192 0.015 0.02  0.0852 0.0228" class="primitive_collision"/>
-                       <geom pos="0.013  0.0892 0.0268" class="sphere_collision"/>
-                       <geom pos="0.0222 0.0892 0.0268" class="sphere_collision"/>
-                       <geom pos="0.0182 0.0845 0.0266" class="sphere_collision"/>
+                       <geom name="right/right_g0" pos="0.013  0.0892 0.0268" class="sphere_collision"/>
+                       <geom name="right/right_g1" pos="0.0222 0.0892 0.0268" class="sphere_collision"/>
+                       <geom name="right/right_g2" pos="0.0182 0.0845 0.0266" class="sphere_collision"/>
 @@ -283,5 +299,5 @@
      <joint joint1="right/left_finger" joint2="right/right_finger" polycoef="0 1 0 0 0"/>
    </equality>
