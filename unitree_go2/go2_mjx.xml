@@ -16,14 +16,8 @@
         <general ctrlrange="-0.9472 0.9472"/>
       </default>
       <default class="hip">
-        <default class="front_hip">
-          <joint range="-1.5708 3.4907"/>
-          <general ctrlrange="-1.4706 3.2902"/>
-        </default>
-        <default class="back_hip">
-          <joint range="-0.5236 4.5379"/>
-          <general ctrlrange="-0.4806 4.3902"/>
-        </default>
+        <joint range="-1.5708 3.4907"/>
+        <general ctrlrange="-1.4 2.5"/>
       </default>
       <default class="knee">
         <joint range="-2.7227 -0.83776"/>
@@ -94,7 +88,7 @@
         <body name="FL_thigh" pos="0 0.0955 0">
           <inertial pos="-0.00374 -0.0223 -0.0327" quat="0.829533 0.0847635 -0.0200632 0.551623" mass="1.152"
             diaginertia="0.00594973 0.00584149 0.000878787"/>
-          <joint name="FL_thigh_joint" class="front_hip"/>
+          <joint name="FL_thigh_joint" class="hip"/>
           <geom mesh="thigh_0" material="metal" class="visual"/>
           <geom mesh="thigh_1" material="gray" class="visual"/>
           <geom size="0.017 0.01225 0.017" pos="-0.015 0 -0.1955" quat="0.707107 0 0.707107 0"  class="collision"/>
@@ -122,7 +116,7 @@
         <body name="FR_thigh" pos="0 -0.0955 0">
           <inertial pos="-0.00374 0.0223 -0.0327" quat="0.551623 -0.0200632 0.0847635 0.829533" mass="1.152"
             diaginertia="0.00594973 0.00584149 0.000878787"/>
-          <joint name="FR_thigh_joint" class="front_hip"/>
+          <joint name="FR_thigh_joint" class="hip"/>
           <geom mesh="thigh_mirror_0" material="metal" class="visual"/>
           <geom mesh="thigh_mirror_1" material="gray" class="visual"/>
           <geom size="0.017 0.01225 0.017" pos="-0.015 0 -0.1955" quat="0.707107 0 0.707107 0"  class="collision"/>
@@ -150,7 +144,7 @@
         <body name="RL_thigh" pos="0 0.0955 0">
           <inertial pos="-0.00374 -0.0223 -0.0327" quat="0.829533 0.0847635 -0.0200632 0.551623" mass="1.152"
             diaginertia="0.00594973 0.00584149 0.000878787"/>
-          <joint name="RL_thigh_joint" class="back_hip"/>
+          <joint name="RL_thigh_joint" class="hip"/>
           <geom mesh="thigh_0" material="metal" class="visual"/>
           <geom mesh="thigh_1" material="gray" class="visual"/>
           <geom size="0.017 0.01225 0.017" pos="-0.015 0 -0.1955" quat="0.707107 0 0.707107 0"  class="collision"/>
@@ -178,7 +172,7 @@
         <body name="RR_thigh" pos="0 -0.0955 0">
           <inertial pos="-0.00374 0.0223 -0.0327" quat="0.551623 -0.0200632 0.0847635 0.829533" mass="1.152"
             diaginertia="0.00594973 0.00584149 0.000878787"/>
-          <joint name="RR_thigh_joint" class="back_hip"/>
+          <joint name="RR_thigh_joint" class="hip"/>
           <geom mesh="thigh_mirror_0" material="metal" class="visual"/>
           <geom mesh="thigh_mirror_1" material="gray" class="visual"/>
           <geom size="0.017 0.01225 0.017" pos="-0.015 0 -0.1955" quat="0.707107 0 0.707107 0"  class="collision"/>
@@ -201,16 +195,16 @@
 
   <actuator>
     <general class="abduction" name="FR_hip" joint="FR_hip_joint"/>
-    <general class="front_hip" name="FR_thigh" joint="FR_thigh_joint"/>
+    <general class="hip" name="FR_thigh" joint="FR_thigh_joint"/>
     <general class="knee" name="FR_calf" joint="FR_calf_joint"/>
     <general class="abduction" name="FL_hip" joint="FL_hip_joint"/>
-    <general class="back_hip" name="FL_thigh" joint="FL_thigh_joint"/>
+    <general class="hip" name="FL_thigh" joint="FL_thigh_joint"/>
     <general class="knee" name="FL_calf" joint="FL_calf_joint"/>
     <general class="abduction" name="RR_hip" joint="RR_hip_joint"/>
-    <general class="front_hip" name="RR_thigh" joint="RR_thigh_joint"/>
+    <general class="hip" name="RR_thigh" joint="RR_thigh_joint"/>
     <general class="knee" name="RR_calf" joint="RR_calf_joint"/>
     <general class="abduction" name="RL_hip" joint="RL_hip_joint"/>
-    <general class="back_hip" name="RL_thigh" joint="RL_thigh_joint"/>
+    <general class="hip" name="RL_thigh" joint="RL_thigh_joint"/>
     <general class="knee" name="RL_calf" joint="RL_calf_joint"/>
   </actuator>
 
