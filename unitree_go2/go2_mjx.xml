@@ -9,21 +9,25 @@
     <default class="go2">
       <geom friction="0.6" margin="0.001" condim="1"/>
       <joint axis="0 1 0" damping="2" armature="0.01"/>
-      <motor ctrlrange="-23.7 23.7"/>
+      <general forcerange="-24 24" biastype="affine" gainprm="50 0 0" biasprm="0 -50 -0.5"/>
+
       <default class="abduction">
         <joint axis="1 0 0" range="-1.0472 1.0472"/>
+        <general ctrlrange="-0.9472 0.9472"/>
       </default>
       <default class="hip">
         <default class="front_hip">
           <joint range="-1.5708 3.4907"/>
+          <general ctrlrange="-1.4706 3.2902"/>
         </default>
         <default class="back_hip">
           <joint range="-0.5236 4.5379"/>
+          <general ctrlrange="-0.4806 4.3902"/>
         </default>
       </default>
       <default class="knee">
         <joint range="-2.7227 -0.83776"/>
-        <motor ctrlrange="-45.43 45.43"/>
+        <general ctrlrange="-2.6227 -0.84776"/>
       </default>
       <default class="visual">
         <geom type="mesh" contype="0" conaffinity="0" group="2"/>
@@ -196,18 +200,18 @@
   </worldbody>
 
   <actuator>
-    <motor class="abduction" name="FR_hip" joint="FR_hip_joint"/>
-    <motor class="hip" name="FR_thigh" joint="FR_thigh_joint"/>
-    <motor class="knee" name="FR_calf" joint="FR_calf_joint"/>
-    <motor class="abduction" name="FL_hip" joint="FL_hip_joint"/>
-    <motor class="hip" name="FL_thigh" joint="FL_thigh_joint"/>
-    <motor class="knee" name="FL_calf" joint="FL_calf_joint"/>
-    <motor class="abduction" name="RR_hip" joint="RR_hip_joint"/>
-    <motor class="hip" name="RR_thigh" joint="RR_thigh_joint"/>
-    <motor class="knee" name="RR_calf" joint="RR_calf_joint"/>
-    <motor class="abduction" name="RL_hip" joint="RL_hip_joint"/>
-    <motor class="hip" name="RL_thigh" joint="RL_thigh_joint"/>
-    <motor class="knee" name="RL_calf" joint="RL_calf_joint"/>
+    <general class="abduction" name="FR_hip" joint="FR_hip_joint"/>
+    <general class="front_hip" name="FR_thigh" joint="FR_thigh_joint"/>
+    <general class="knee" name="FR_calf" joint="FR_calf_joint"/>
+    <general class="abduction" name="FL_hip" joint="FL_hip_joint"/>
+    <general class="back_hip" name="FL_thigh" joint="FL_thigh_joint"/>
+    <general class="knee" name="FL_calf" joint="FL_calf_joint"/>
+    <general class="abduction" name="RR_hip" joint="RR_hip_joint"/>
+    <general class="front_hip" name="RR_thigh" joint="RR_thigh_joint"/>
+    <general class="knee" name="RR_calf" joint="RR_calf_joint"/>
+    <general class="abduction" name="RL_hip" joint="RL_hip_joint"/>
+    <general class="back_hip" name="RL_thigh" joint="RL_thigh_joint"/>
+    <general class="knee" name="RL_calf" joint="RL_calf_joint"/>
   </actuator>
 
   <keyframe>
