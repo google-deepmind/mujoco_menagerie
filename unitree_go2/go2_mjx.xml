@@ -27,13 +27,13 @@
         <geom type="mesh" contype="0" conaffinity="0" group="2"/>
       </default>
       <default class="go2foot">
-        <site group="1" pos="-0.02 0 -0.223"/>
+        <site group="1" pos="-0.002 0 -0.213"/>
         <geom rgba="0.231373 0.380392 0.705882 1"/>
       </default>
       <default class="collision">
         <geom group="3"/>
         <default class="foot">
-          <geom size="0.022" pos="-0.002 0 -0.213" priority="1" solimp="0.015 1 0.031" condim="6"
+          <geom size="0.0175" pos="-0.002 0 -0.213" priority="1" solimp="0.015 1 0.031" condim="6"
             friction="0.8 0.02 0.01"/>
         </default>
       </default>
