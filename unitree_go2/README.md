@@ -30,6 +30,18 @@ to OBJ format using [Blender](https://www.blender.org/).
    increased `impratio` to reduce slippage.
 8. Added `scene.xml` which includes the robot, with a textured groundplane, skybox, and haze.
 
+## MJX
+
+A version of the Unitree Go2 model for use in MJX is available in scene_mjx.xml with the following changes:
+
+1. The solver iterations and ls_iterations were modified for performance.
+2. frictionloss was removed.
+3. The friction cone was changed from elliptic to pyramidal.
+4. All contacts other than the sphere geoms are changed to sphere geoms and placed to the joints position to simulate collisions at critical locations.
+
 ## License
 
 This model is released under a [BSD-3-Clause License](LICENSE).
+
+## Acknowledgments
+The MJX model of Go2 was contributed by lonelyfluency.
