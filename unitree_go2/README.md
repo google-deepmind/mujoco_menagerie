@@ -32,16 +32,21 @@ to OBJ format using [Blender](https://www.blender.org/).
 
 ## MJX
 
-A version of the Unitree Go2 model for use in MJX is available in scene_mjx.xml with the following changes:
+A version of the Unitree Go2 model for use in MJX is available in `scene_mjx.xml` with the following changes:
 
-1. The solver iterations and ls_iterations were modified for performance.
-2. frictionloss was removed.
-3. The friction cone was changed from elliptic to pyramidal.
+1. The solver `iterations` and `ls_iterations` were modified for performance.
+2. `frictionloss` was removed.
+3. The friction cone was changed from `elliptic` to `pyramidal`.
 4. All contacts other than the sphere geoms are changed to sphere geoms and placed to the joints position to simulate collisions at critical locations.
+
+   Note: Currently, MJX can not deal with collision geoms other than sphere. In this case, we have to put many collision spheres in critical locations of the robot, such as joints, torso, and feet. See the figure below to help you understand.
+   
+   ![go2_mjx](go2_mjx.png)
 
 ## License
 
 This model is released under a [BSD-3-Clause License](LICENSE).
 
 ## Acknowledgments
+
 The MJX model of Go2 was contributed by lonelyfluency.
