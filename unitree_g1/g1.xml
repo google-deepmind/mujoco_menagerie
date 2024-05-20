@@ -21,7 +21,7 @@
       <default class="collision">
         <geom group="3" type="mesh"/>
         <default class="foot">
-          <geom type="sphere"/>
+          <geom type="sphere" size="0.001"/>
         </default>
       </default>
     </default>
@@ -77,9 +77,11 @@
   </asset>
 
   <worldbody>
+    <light name="spotlight" mode="targetbodycom" target="pelvis" pos="0 -6 4" cutoff="30"/>
     <body name="pelvis" pos="0 0 0.755" childclass="g1">
       <inertial pos="0 0 -0.07605" quat="1 0 -0.000405289 0" mass="2.86" diaginertia="0.0079143 0.0069837 0.0059404"/>
       <freejoint name="floating_base_joint"/>
+      <light name="tracking" mode="trackcom" pos="0 0 2"/>
       <geom type="mesh" class="visual" mesh="pelvis"/>
       <geom type="mesh" mesh="pelvis" class="collision"/>
       <geom type="mesh" class="visual" material="black" mesh="pelvis_contour_link"/>
@@ -119,10 +121,10 @@
                     diaginertia="0.00110394 0.0010657 0.000149255"/>
                   <joint name="left_ankle_roll_joint" axis="1 0 0" range="-0.2618 0.2618"/>
                   <geom type="mesh" class="visual" material="black" mesh="left_ankle_roll_link"/>
-                  <geom size="0.001" pos="-0.06 0.02 -0.03" class="foot"/>
-                  <geom size="0.001" pos="-0.06 -0.02 -0.03" class="foot"/>
-                  <geom size="0.001" pos="0.13 0.02 -0.03" class="foot"/>
-                  <geom size="0.001" pos="0.13 -0.02 -0.03" class="foot"/>
+                  <geom pos="-0.06 0.02 -0.03" class="foot"/>
+                  <geom pos="-0.06 -0.02 -0.03" class="foot"/>
+                  <geom pos="0.13 0.02 -0.03" class="foot"/>
+                  <geom pos="0.13 -0.02 -0.03" class="foot"/>
                 </body>
               </body>
             </body>
@@ -165,10 +167,10 @@
                     mass="0.391" diaginertia="0.00110394 0.0010657 0.000149255"/>
                   <joint name="right_ankle_roll_joint" axis="1 0 0" range="-0.2618 0.2618"/>
                   <geom type="mesh" class="visual" material="black" mesh="right_ankle_roll_link"/>
-                  <geom size="0.001" pos="-0.06 0.02 -0.03" class="foot"/>
-                  <geom size="0.001" pos="-0.06 -0.02 -0.03" class="foot"/>
-                  <geom size="0.001" pos="0.13 0.02 -0.03" class="foot"/>
-                  <geom size="0.001" pos="0.13 -0.02 -0.03" class="foot"/>
+                  <geom pos="-0.06 0.02 -0.03" class="foot"/>
+                  <geom pos="-0.06 -0.02 -0.03" class="foot"/>
+                  <geom pos="0.13 0.02 -0.03" class="foot"/>
+                  <geom pos="0.13 -0.02 -0.03" class="foot"/>
                 </body>
               </body>
             </body>
@@ -413,4 +415,18 @@
     <accelerometer name="imu-linear-acceleration" site="imu" cutoff="157"/>
     <framequat name="imu-body-quat" objtype="site" objname="imu"/>
   </sensor>
+
+  <keyframe>
+    <key name="stand"
+      qpos="
+      0 0 0.75
+      1 0 0 0
+      0 0 0 0 0 0
+      0 0 0 0 0 0
+      0
+      0 0 0 0 0
+      0 0 0 0 0
+      0 0 0 0 0 0 0
+      0 0 0 0 0 0 0"/>
+  </keyframe>
 </mujoco>

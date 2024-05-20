@@ -18,6 +18,10 @@ description](https://github.com/unitreerobotics/unitree_ros/tree/master/robots/g
 
 1. Copied the MJCF description from [g1_description](https://github.com/unitreerobotics/unitree_ros/tree/master/robots/g1_description).
 2. Manually edited the MJCF to extract common properties into the `<default>` section.
+3. Added sites for the IMU, head and feet.
+4. Add IMU sensor (gyro, accelero, framequat).
+5. Added stand keyframe.
+6. Added spotlight and tracking light.
 
 ## License
 
