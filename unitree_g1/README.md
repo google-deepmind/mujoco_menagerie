@@ -14,10 +14,10 @@ description](https://github.com/unitreerobotics/unitree_ros/tree/master/robots/g
   <img src="g1.png" width="400">
 </p>
 
-## URDF → MJCF derivation steps
+## MJCF derivation steps
 
 1. Copied the MJCF description from [g1_description](https://github.com/unitreerobotics/unitree_ros/tree/master/robots/g1_description).
-2. Manually edited the MJCF to extract common properties into the <default> section.
+2. Manually edited the MJCF to extract common properties into the `<default>` section.
 
 ## License
 
