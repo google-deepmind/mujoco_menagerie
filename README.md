@@ -174,6 +174,7 @@ Menagerie, see [CONTRIBUTING](CONTRIBUTING.md).
 | [Stretch 2](hello_robot_stretch/README.md)|[<img src="hello_robot_stretch/stretch.png" width="400">](hello_robot_stretch/README.md)|C|
 | Humanoids          |              |         |
 | [Unitree H1](unitree_h1/README.md)|[<img src="unitree_h1/h1.png" width="400">](unitree_h1/README.md)|B|
+| [Unitree G1](unitree_g1/README.md)|[<img src="unitree_g1/g1.png" width="400">](unitree_g1/README.md)|B|
 | Drones             |              |         |
 | [Skydio X2](skydio_x2/README.md)|[<img src="skydio_x2/x2.png" width="400">](skydio_x2/README.md)|A|
 | [Crazyflie 2](bitcraze_crazyflie_2/README.md)|[<img src="bitcraze_crazyflie_2/cf2.png" width="400">](bitcraze_crazyflie_2/README.md)|B|
