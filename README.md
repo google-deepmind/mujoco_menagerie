@@ -27,9 +27,22 @@ well right out of the gate.
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Overview](#overview)
-  - [Installation and Usage](#installation-and-usage)
+  - [Usage](#usage)
+    - [Via `robot-descriptions`](#via-robot-descriptions)
+    - [Via `git clone`](#via-git-clone)
 - [Model Quality and Contributing](#model-quality-and-contributing)
 - [Menagerie Models](#menagerie-models)
+  - [Arms](#arms)
+  - [Bipeds](#bipeds)
+  - [Dual Arms](#dual-arms)
+  - [Drones](#drones)
+  - [End-effectors](#end-effectors)
+  - [Mobile Manipulators](#mobile-manipulators)
+  - [Humanoids](#humanoids)
+  - [Quadrupeds](#quadrupeds)
+  - [Biomechanical](#biomechanical)
+  - [Miscellaneous](#miscellaneous)
+- [Gallery](#gallery)
 - [Citing Menagerie](#citing-menagerie)
 - [Acknowledgments](#acknowledgments)
 - [License and Disclaimer](#license-and-disclaimer)
@@ -39,7 +52,7 @@ well right out of the gate.
 ### Prerequisites
 
 The minimum required MuJoCo version for each model is specified in its
-respective README. You can download prebuilt binaries from the GitHub
+respective README. You can download prebuilt binaries for MuJoCo from the GitHub
 [releases page](https://github.com/google-deepmind/mujoco/releases/), or if you
 are working with Python, you can install the native bindings from
 [PyPI](https://pypi.org/project/mujoco/) via `pip install mujoco`. For
@@ -52,15 +65,17 @@ The structure of Menagerie is illustrated below. For brevity, we have only
 included one model directory since all others follow the exact same pattern.
 
 ```bash
-├── agility_cassie
+├── unitree_go2
 │   ├── assets
-│   │   ├── achilles-rod.obj
+│   │   ├── base_0.obj
 │   │   ├── ...
-│   ├── cassie.png
-│   ├── cassie.xml
+│   ├── go2.png
+│   ├── go2.xml
 │   ├── LICENSE
 │   ├── README.md
 │   └── scene.xml
+│   └── go2_mjx.xml
+│   └── scene_mjx.xml
 ```
 
 - `assets`: stores the 3D meshes (.stl or .obj) of the model used for visual and
@@ -72,47 +87,54 @@ included one model directory since all others follow the exact same pattern.
 - `scene.xml`: includes `<model>.xml` with a plane, a light source and
   potentially other objects
 - `<model>.png`: a PNG image of `scene.xml`
+- `<model>_mjx.xml`: contains an MJX-compatible version of the model. Not all
+  models have an MJX variant (see [Menagerie Models](#menagerie-models) for more
+  information).
+- `scene_mjx.xml`: same as `scene.xml` but loads the MJX variant
 
 Note that `<model>.xml` solely describes the model, i.e., no other entity is
 defined in the kinematic tree. We leave additional body definitions for the
 `scene.xml` file, as can be seen in the Shadow Hand
 [`scene.xml`](shadow_hand/scene_right.xml).
 
-### Installation and Usage
+### Usage
 
-To install Menagerie, simply clone the repository in the directory of your
-choice:
+#### Via `robot-descriptions`
+
+You can use the opensource
+[`robot_descriptions`](https://github.com/robot-descriptions/robot_descriptions.py)
+package to load any model in Menagerie. It is available on PyPI and can be
+installed via `pip install robot_descriptions`.
+
+Once installed, you can load a model of your choice as follows:
+
+```python
+import mujoco
+
+# Loading a specific model description as an imported module.
+from robot_descriptions import panda_mj_description
+model = mujoco.MjModel.from_xml_path(panda_mj_description.MJCF_PATH)
+
+# Directly loading an instance of MjModel.
+from robot_descriptions.loaders.mujoco import load_robot_description
+model = load_robot_description("panda_mj_description")
+
+# Loading a variant of the model, e.g. panda without a gripper.
+model = load_robot_description("panda_mj_description", variant="panda_nohand")
+```
+
+#### Via `git clone`
+
+You can also directly clone this repository in the directory of your choice:
 
 ```bash
 git clone https://github.com/google-deepmind/mujoco_menagerie.git
 ```
 
-The easiest way to interactively explore a model is to load it in the
-[simulate](https://github.com/google-deepmind/mujoco/tree/main/simulate) binary
-which ships with every MuJoCo distribution. This amounts to simply dragging then
-dropping the `scene.xml` file into the simulate window. If you prefer, you can
-also use the command line to launch `simulate` and directly pass in the path to
-the XML.
+You can then interactively explore the model using the Python viewer:
 
-Outside of interactive simulation, you can load a model exactly as you would
-with any other XML file in MuJoCo, either via the C/C++ API:
-
-```c++
-#include <mujoco.h>
-
-mjModel* model = mj_loadXML("unitree_a1/a1.xml", nullptr, nullptr, 0);
-mjData* data = mj_makeData(model);
-mj_step(model, data);
-```
-
-or via Python:
-
-```python
-import mujoco
-
-model = mujoco.MjModel.from_xml_path("unitree_a1/a1.xml")
-data = mujoco.MjData(model)
-mujoco.mj_step(model, data)
+```bash
+python -m mujoco.viewer --mjcf mujoco_menagerie/unitree_go2/scene.xml
 ```
 
 If you have further questions, please check out our [FAQ](FAQ.md).
@@ -136,55 +158,104 @@ following grading system:
 | B     | Stable, but some values are unrealistic                     |
 | C     | Conditionally stable, can be significantly improved         |
 
+The grading system will be applied to each model once a proper system
+identification toolbox is created. We are currently planning to release
+this toolbox later this year.
+
 For more information regarding contributions, for example to add a new model to
 Menagerie, see [CONTRIBUTING](CONTRIBUTING.md).
 
 ## Menagerie Models
 
-| Robot             | Preview       | Grade   |
-| ----------------- | ------------- | :-----: |
-| Hands             |               |         |
-| [Shadow E3M5](shadow_hand/README.md)|[<img src="shadow_hand/shadow_hand.png" width="400">](shadow_hand/README.md)|A|
-| [Allegro V3](wonik_allegro/README.md)|[<img src="wonik_allegro/allegro_hand.png" width="400">](wonik_allegro/README.md)|C|
-| [Robotiq 2F-85](robotiq_2f85/README.md)|[<img src="robotiq_2f85/2f85.png" width="400">](robotiq_2f85/README.md)|B|
-| Bipeds             |               |         |
-| [Cassie](agility_cassie/README.md)|[<img src="agility_cassie/cassie.png" width="400">](agility_cassie/README.md)|C|
-| [Robotis OP3](robotis_op3/README.md)|[<img src="robotis_op3/op3.png" width="400">](robotis_op3/README.md)|A+|
-| Quadrupeds         |              |         |
-| [ANYmal B](anybotics_anymal_b/README.md)|[<img src="anybotics_anymal_b/anymal_b.png" width="400">](anybotics_anymal_b/README.md)|A|
-| [ANYmal C](anybotics_anymal_c/README.md)|[<img src="anybotics_anymal_c/anymal_c.png" width="400">](anybotics_anymal_c/README.md)|B|
-| [Unitree A1](unitree_a1/README.md)|[<img src="unitree_a1/a1.png" width="400">](unitree_a1/README.md)|B|
-| [Unitree Go1](unitree_go1/README.md)|[<img src="unitree_go1/go1.png" width="400">](unitree_go1/README.md)|B|
-| [Unitree Go2](unitree_go2/README.md)|[<img src="unitree_go2/go2.png" width="400">](unitree_go2/README.md)|B|
-| [Google Barkour v0](google_barkour_v0/README.md)|[<img src="google_barkour_v0/barkour_v0.png" width="400">](google_barkour_v0/README.md)|A|
-| [Google Barkour vb](google_barkour_vb/README.md)|[<img src="google_barkour_vb/barkour_vb.png" width="400">](google_barkour_vb/README.md)|A|
-| Arms               |              |         |
-| [Panda](franka_emika_panda/README.md)|[<img src="franka_emika_panda/panda.png" width="400">](franka_emika_panda/README.md)|B|
-| [UR5e](universal_robots_ur5e/README.md)|[<img src="universal_robots_ur5e/ur5e.png" width="400">](universal_robots_ur5e/README.md)|B|
-| [UR10e](universal_robots_ur10e/README.md)|[<img src="universal_robots_ur10e/ur10e.png" width="400">](universal_robots_ur10e/README.md)|C|
-| [KUKA iiwa 14](kuka_iiwa_14/README.md)|[<img src="kuka_iiwa_14/iiwa_14.png" width="400">](kuka_iiwa_14/README.md)|B|
-| [Sawyer](rethink_robotics_sawyer/README.md)|[<img src="rethink_robotics_sawyer/sawyer.png" width="400">](rethink_robotics_sawyer/README.md)|C|
-| [xArm7](ufactory_xarm7/README.md)|[<img src="ufactory_xarm7/xarm7.png" width="400">](ufactory_xarm7/README.md)|C|
-| [Lite 6](ufactory_lite6/README.md)|[<img src="ufactory_lite6/lite6.png" width="400">](ufactory_lite6/README.md)|C|
-| [ViperX 300 6DOF](trossen_vx300s/README.md)|[<img src="trossen_vx300s/vx300s.png" width="400">](trossen_vx300s/README.md)|A|
-| [ALOHA 2](aloha/README.md)|[<img src="aloha/aloha.png" width="400">](aloha/README.md)|A|
-| [Unitree Z1](unitree_z1/README.md)|[<img src="unitree_z1/z1.png" width="400">](unitree_z1/README.md)|B|
-| Mobile Manipulators|              |         |
-| [Google Robot](google_robot/README.md)|[<img src="google_robot/robot.png" width="400">](google_robot/README.md)|B|
-| [Stretch 2](hello_robot_stretch/README.md)|[<img src="hello_robot_stretch/stretch.png" width="400">](hello_robot_stretch/README.md)|C|
-| Humanoids          |              |         |
-| [Unitree H1](unitree_h1/README.md)|[<img src="unitree_h1/h1.png" width="400">](unitree_h1/README.md)|B|
-| [Unitree G1](unitree_g1/README.md)|[<img src="unitree_g1/g1.png" width="400">](unitree_g1/README.md)|B|
-| Drones             |              |         |
-| [Skydio X2](skydio_x2/README.md)|[<img src="skydio_x2/x2.png" width="400">](skydio_x2/README.md)|A|
-| [Crazyflie 2](bitcraze_crazyflie_2/README.md)|[<img src="bitcraze_crazyflie_2/cf2.png" width="400">](bitcraze_crazyflie_2/README.md)|B|
-| Biomechanical      |              |         |
-| [Fruitfly](flybody/README.md)|[<img src="flybody/flybody.png" width="400">](flybody/README.md)|A|
-| Other              |              |         |
-| [Realsense D435i](realsense_d435i/README.md)|[<img src="realsense_d435i/d435i.png" width="400">](realsense_d435i/README.md)|B|
+### Arms
 
-For corresponding embedded videos, see the MuJoCo
-[documentation](https://mujoco.readthedocs.io/en/latest/models.html).
+| Name | Maker | DoFs    | License | MJX |
+|------|-------|---------|---------|-----|
+| iiwa14 | KUKA | 7 | [BSD-3-Clause](kuka_iiwa_14/LICENSE) |✖️|
+| Lite6 | UFACTORY | 6 | [BSD-3-Clause](ufactory_lite6/LICENSE) |✖️|
+| Panda | Franka Emika | 7 | [BSD-3-Clause](franka_emika_panda/LICENSE) |✖️|
+| Sawyer | Rethink Robotics | 7 | [Apache-2.0](rethink_robotics_sawyer/LICENSE) |✖️|
+| Unitree Z1 | Trossen Robotics | 6 | [BSD-3-Clause](unitree_z1/LICENSE) |✖️|
+| UR5e | Universal Robots | 6 | [BSD-3-Clause](universal_robots_ur5e/LICENSE) |✖️|
+| UR10e | Universal Robots | 6 | [BSD-3-Clause](universal_robots_ur10e/LICENSE) |✖️|
+| ViperX 300 | Trossen Robotics | 8 | [BSD-3-Clause](trossen_vx300s/LICENSE) |✖️|
+| xarm7 | UFACTORY | 7 | [BSD-3-Clause](ufactory_xarm7/LICENSE) |✖️|
+
+### Bipeds
+
+| Name | Maker | DoFs    | License | MJX |
+|------|-------|---------|---------|-----|
+| Cassie | Agility Robotics | 28 | [BSD-3-Clause](agility_cassie/LICENSE) |✖️|
+
+### Dual Arms
+
+| Name | Maker | DoFs    | License | MJX |
+|------|-------|---------|---------|-----|
+| ALOHA 2 | Trossen Robotics, Google DeepMind | 16 | [BSD-3-Clause](aloha/LICENSE) |✔️|
+
+### Drones
+
+| Name | Maker | DoFs    | License | MJX |
+|------|-------|---------|---------|-----|
+| Crazyflie 2 | Bitcraze | 0 | [MIT](bitcraze_crazyflie_2/LICENSE) |✖️|
+| Skydio X2 | Skydio | 0 | [Apache-2.0](skydio_x2/LICENSE) |✖️|
+
+### End-effectors
+
+| Name | Maker | DoFs    | License | MJX |
+|------|-------|---------|---------|-----|
+| Allegro Hand V3 | Wonik Robotics | 16 | [BSD-2-Clause](wonik_allegro/LICENSE) |✖️|
+| Robotiq 2F-85 | Robotiq | 8 | [BSD-2-Clause](robotiq_2f85/LICENSE) |✖️|
+| Shadow Hand EM35 | Shadow Robot Company | 24 | [Apache-2.0](shadow_hand/LICENSE) |✖️|
+
+### Mobile Manipulators
+
+| Name | Maker | DoFs    | License | MJX |
+|------|-------|---------|---------|-----|
+| Google Robot | Google DeepMind | 9 | [Apache-2.0](google_robot/LICENSE) |✖️|
+| Stretch 2 | Hello Robot | 17 | [Clear BSD](hello_robot_stretch/LICENSE) |✖️|
+
+### Humanoids
+
+| Name | Maker | DoFs    | License | MJX |
+|------|-------|---------|---------|-----|
+| Robotis OP3 | Robotis | 20 | [Apache-2.0](robotis_op3/LICENSE) |✖️|
+| Unitree G1 | Unitree Robotics | 37 | [BSD-3-Clause](unitree_g1/LICENSE) |✖️|
+| Unitree H1 | Unitree Robotics | 19 | [BSD-3-Clause](unitree_h1/LICENSE) |✖️|
+
+### Quadrupeds
+
+| Name | Maker | DoFs    | License | MJX |
+|------|-------|---------|---------|-----|
+| ANYmal B | ANYbotics | 12 | [BSD-3-Clause](anybotics_anymal_b/LICENSE) |✖️|
+| ANYmal C | ANYbotics | 12 | [BSD-3-Clause](anybotics_anymal_c/LICENSE) |✔️|
+| Unitree A1 | Unitree Robotics | 12 | [BSD-3-Clause](unitree_a1/LICENSE) |✖️|
+| Unitree Go1 | Unitree Robotics | 12 | [BSD-3-Clause](unitree_go1/LICENSE) |✖️|
+| Unitree Go2 | Unitree Robotics | 12 | [BSD-3-Clause](unitree_go2/LICENSE) |✔️|
+| Google Barkour v0 | Google DeepMind | 12 | [Apache-2.0](google_barkour_v0/LICENSE) |✔️|
+| Google Barkour vB | Google DeepMind | 12 | [Apache-2.0](google_barkour_vb/LICENSE) |✔️|
+
+### Biomechanical
+
+| Name | Maker | DoFs    | License | MJX |
+|------|-------|---------|---------|-----|
+| flybody | Google DeepMind, HHMI Janelia Research Campus | 102 | [Apache-2.0](flybody/LICENSE) |✖️|
+
+### Miscellaneous
+
+| Name | Maker | DoFs    | License | MJX |
+|------|-------|---------|---------|-----|
+| D435i | Intel Realsense | 0 | [Apache-2.0](realsense_d435i/LICENSE) |✖️|
+
+## Gallery
+
+|<img src='assets/franka_emika_panda-panda.png' width='400'>|<img src='assets/kuka_iiwa_14-iiwa14.png' width='400'>|<img src='assets/rethink_robotics_sawyer-sawyer.png' width='400'>|<img src='assets/trossen_vx300s-vx300s.png' width='400'>|<img src='assets/ufactory_lite6-lite6.png' width='400'>|<img src='assets/ufactory_xarm7-xarm7.png' width='400'>|
+| :---: | :---: | :---: | :---: | :---: | :---: |
+|<img src='assets/unitree_z1-z1.png' width='400'>|<img src='assets/universal_robots_ur10e-ur10e.png' width='400'>|<img src='assets/universal_robots_ur5e-ur5e.png' width='400'>|<img src='assets/aloha-aloha.png' width='400'>|<img src='assets/franka_emika_panda-hand.png' width='400'>|<img src='assets/robotiq_2f85-2f85.png' width='400'>|
+|<img src='assets/shadow_hand-left_hand.png' width='400'>|<img src='assets/shadow_hand-right_hand.png' width='400'>|<img src='assets/ufactory_xarm7-hand.png' width='400'>|<img src='assets/wonik_allegro-left_hand.png' width='400'>|<img src='assets/wonik_allegro-right_hand.png' width='400'>|<img src='assets/google_robot-robot.png' width='400'>|
+|<img src='assets/hello_robot_stretch-stretch.png' width='400'>|<img src='assets/anybotics_anymal_b-anymal_b.png' width='400'>|<img src='assets/anybotics_anymal_c-anymal_c.png' width='400'>|<img src='assets/google_barkour_v0-barkour_v0.png' width='400'>|<img src='assets/google_barkour_vb-barkour_vb.png' width='400'>|<img src='assets/unitree_a1-a1.png' width='400'>|
+|<img src='assets/unitree_go1-go1.png' width='400'>|<img src='assets/unitree_go2-go2.png' width='400'>|<img src='assets/agility_cassie-cassie.png' width='400'>|<img src='assets/robotis_op3-op3.png' width='400'>|<img src='assets/unitree_g1-g1.png' width='400'>|<img src='assets/unitree_h1-h1.png' width='400'>|
+|<img src='assets/bitcraze_crazyflie_2-cf2.png' width='400'>|<img src='assets/skydio_x2-x2.png' width='400'>|<img src='assets/flybody-fruitfly.png' width='400'>|<img src='assets/realsense_d435i-d435i.png' width='400'>|||
 
 ## Citing Menagerie
 
