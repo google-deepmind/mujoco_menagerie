@@ -284,4 +284,5 @@
   </equality>
 
   <include file="joint_position_actuators.xml"/>
+  <include file="keyframe_ctrl.xml"/>
 </mujoco>

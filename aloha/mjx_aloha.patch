@@ -141,10 +141,11 @@
                        <geom name="right/right_g0" pos="0.013  0.0892 0.0268" class="sphere_collision"/>
                        <geom name="right/right_g1" pos="0.0222 0.0892 0.0268" class="sphere_collision"/>
                        <geom name="right/right_g2" pos="0.0182 0.0845 0.0266" class="sphere_collision"/>
-@@ -283,5 +299,5 @@
+@@ -283,6 +299,5 @@
      <joint joint1="right/left_finger" joint2="right/right_finger" polycoef="0 1 0 0 0"/>
    </equality>
  
 -  <include file="joint_position_actuators.xml"/>
 +  <include file="mjx_filtered_cartesian_actuators.xml"/>
+-  <include file="keyframe_ctrl.xml"/>
  </mujoco>
