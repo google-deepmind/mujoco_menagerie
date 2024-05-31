@@ -21,8 +21,8 @@
     <material name="black" rgba=".2 .2 .2 1"/>
     <material name="white" rgba="1 1 1 1"/>
     <material name="red" rgba="1 0.072272 0.039546 1"/>
-    <material name="green" rgba="0.102241 0.571125 0.102242 1"/>
     <material name="gray" rgba="0.863156 0.863156 0.863157 1"/>
+    <material name="button_green" rgba="0.102241 0.571125 0.102242 1"/>
     <material name="button_red" rgba="0.520996 0.008023 0.013702 1"/>
     <material name="button_blue" rgba="0.024157 0.445201 0.737911 1"/>
 
@@ -114,7 +114,7 @@
                     <inertial pos="0.0597131 -0.0410295 -0.0101693" quat="0.593933 0.525442 0.520644 0.316361"
                       mass="1.81704" diaginertia="0.00483538 0.00483538 0.00483538"/>
                     <joint name="fr3_joint6" axis="0 0 1" range="0.5445 4.5169" actuatorfrcrange="-12 12"/>
-                    <geom mesh="link6_0" material="green" class="visual"/>
+                    <geom mesh="link6_0" material="button_green" class="visual"/>
                     <geom mesh="link6_1" material="white" class="visual"/>
                     <geom mesh="link6_2" material="white" class="visual"/>
                     <geom mesh="link6_3" material="gray" class="visual"/>

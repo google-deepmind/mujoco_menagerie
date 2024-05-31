@@ -1,6 +1,7 @@
 # Franka Robotics FR3 Description (MJCF)
 
-Requires MuJoCo 3.1.3 or later.
+> [!IMPORTANT]
+> Requires MuJoCo 3.1.3 or later.
 
 ## Overview
 
@@ -13,10 +14,10 @@ This package contains a simplified robot description (MJCF) of the [Franka Resea
 ## URDF → MJCF derivation steps
 
 1. Ran the URDF generation [script](https://github.com/frankaemika/franka_description/blob/main/scripts/create_urdf.sh) in [franka_description](https://github.com/frankaemika/franka_description).
-  * Command used: `./scripts/create_urdf.sh fr3`
+    * Command used: `./scripts/create_urdf.sh fr3`
 2. Converted the DAE visual meshes to OBJ using [Blender](https://www.blender.org/).
-  * Removed license headers in the DAE files to properly load in Blender.
-  * When exporting, ensure "up axis" is +Z, and "forward axis" is +Y.
+    * Removed license headers in the DAE files to properly load in Blender.
+    * When exporting, ensure "up axis" is +Z, and "forward axis" is +Y.
 3. Processed OBJ files with [`obj2mjcf`](https://github.com/kevinzakka/obj2mjcf).
 4. Added `<mujoco> <compiler discardvisual="true" strippath="false" fusestatic="false" balanceinertia="true"/> </mujoco>` to the URDF's `<robot>` clause.
 5. Loaded the URDF into MuJoCo and saved a corresponding MJCF.
