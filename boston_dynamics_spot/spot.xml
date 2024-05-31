@@ -1,0 +1,189 @@
+<mujoco model="spot">
+  <compiler angle="radian" meshdir="assets"/>
+
+  <option integrator="implicitfast" cone="elliptic" impratio="10"/>
+
+  <visual>
+    <global ellipsoidinertia="true"/>
+  </visual>
+
+  <asset>
+    <material name="BlackAbs" rgba="0.1 0.1 0.1 1"/>
+    <material name="wrap" rgba="0.878431 0.666666 0.227450 1"/>
+
+    <mesh file="body_0.obj"/>
+    <mesh file="body_1.obj"/>
+    <mesh file="front_left_hip.obj"/>
+    <mesh file="front_left_upper_leg_0.obj"/>
+    <mesh file="front_left_upper_leg_1.obj"/>
+    <mesh file="front_left_lower_leg.obj"/>
+    <mesh file="front_right_hip.obj"/>
+    <mesh file="front_right_upper_leg_0.obj"/>
+    <mesh file="front_right_upper_leg_1.obj"/>
+    <mesh file="front_right_lower_leg.obj"/>
+    <mesh file="rear_left_hip.obj"/>
+    <mesh file="rear_left_upper_leg_0.obj"/>
+    <mesh file="rear_left_upper_leg_1.obj"/>
+    <mesh file="rear_left_lower_leg.obj"/>
+    <mesh file="rear_right_hip.obj"/>
+    <mesh file="rear_right_upper_leg_0.obj"/>
+    <mesh file="rear_right_upper_leg_1.obj"/>
+    <mesh file="rear_right_lower_leg.obj"/>
+    <mesh file="body_collision.obj"/>
+    <mesh file="left_upper_leg_collision.obj"/>
+    <mesh file="left_lower_leg_collision.obj"/>
+    <mesh file="right_upper_leg_collision.obj"/>
+    <mesh file="right_lower_leg_collision.obj"/>
+  </asset>
+
+  <default>
+    <default class="spot">
+      <geom solref="0.004 1"/>
+      <joint actuatorfrcrange="-1000 1000"/>
+      <position kp="500" kv="40" inheritrange="1"/>
+      <default class="visual">
+        <geom group="2" type="mesh" contype="0" conaffinity="0"/>
+      </default>
+      <default class="collision">
+        <geom group="3" type="mesh"/>
+        <default class="foot">
+          <geom type="sphere" size="0.036" pos="0 0 -0.3365" priority="1" condim="6" solimp="0.015 1 0.031"
+            friction="0.8 0.02 0.01"/>
+        </default>
+      </default>
+    </default>
+  </default>
+
+  <worldbody>
+    <light name="spotlight" mode="targetbodycom" target="body" pos="3 0 4" cutoff="30"/>
+    <body name="body" childclass="spot" pos="0 0 .75">
+      <light name="tracking" mode="trackcom" pos="0 0 2"/>
+      <freejoint name="freejoint"/>
+      <inertial pos="0.0063944 -9.81216e-05 0.000911379" mass="32.86" diaginertia="0.13144 0.13144 0.13144"/>
+      <geom mesh="body_0" material="BlackAbs" class="visual"/>
+      <geom mesh="body_1" material="wrap" class="visual"/>
+      <geom mesh="body_collision" class="collision"/>
+      <body name="fl_hip" pos="0.29785 0.055 0">
+        <inertial pos="-0.00537435 0.0128418 9.87523e-05" quat="1 1 -1 1" mass="1.68"
+          diaginertia="0.00226544 0.00211474 0.00181296"/>
+        <joint name="fl_hx" axis="1 0 0" range="-0.785398 0.785398"/>
+        <geom material="BlackAbs" mesh="front_left_hip" class="visual"/>
+        <body name="fl_uleg" pos="0 0.1108 0">
+          <inertial pos="0.00514237 -0.00243237 -0.121009" mass="2.34" diaginertia="0.0275596 0.0273549 0.00284815"/>
+          <joint name="fl_hy" axis="0 1 0" range="-0.898845 2.29511"/>
+          <geom mesh="front_left_upper_leg_0" material="wrap" class="visual"/>
+          <geom mesh="front_left_upper_leg_1" material="BlackAbs" class="visual"/>
+          <geom mesh="left_upper_leg_collision" class="collision"/>
+          <body name="fl_lleg" pos="0.025 0 -0.32">
+            <inertial pos="0.00225794 4.6076e-05 -0.180082" quat="1 0 0 1" mass="0.35"
+              diaginertia="0.00405032 0.00399902 0.00014934"/>
+            <joint name="fl_kn" axis="0 1 0" range="-2.7929 -0.254402"/>
+            <geom material="BlackAbs" mesh="front_left_lower_leg" class="visual"/>
+            <geom mesh="left_lower_leg_collision" class="collision"/>
+            <geom class="foot"/>
+          </body>
+        </body>
+      </body>
+      <body name="fr_hip" pos="0.29785 -0.055 0">
+        <inertial pos="-0.00537435 -0.0128418 -9.87523e-05" quat="1 1 -1 1" mass="1.68"
+          diaginertia="0.00226544 0.00211474 0.00181296"/>
+        <joint name="fr_hx" axis="1 0 0" range="-0.785398 0.785398"/>
+        <geom material="BlackAbs" mesh="front_right_hip" class="visual"/>
+        <body name="fr_uleg" pos="0 -0.1108 0">
+          <inertial pos="0.00514237 0.00243237 -0.121009" mass="2.34" diaginertia="0.0275596 0.0273549 0.00284815"/>
+          <joint name="fr_hy" axis="0 1 0" range="-0.898845 2.24363"/>
+          <geom mesh="front_right_upper_leg_0" material="wrap" class="visual"/>
+          <geom mesh="front_right_upper_leg_1" material="BlackAbs" class="visual"/>
+          <geom mesh="right_upper_leg_collision" class="collision"/>
+          <body name="fr_lleg" pos="0.025 0 -0.32">
+            <inertial pos="0.00225794 4.6076e-05 -0.180082" quat="1 0 0 1" mass="0.35"
+              diaginertia="0.00405032 0.00399902 0.00014934"/>
+            <joint name="fr_kn" axis="0 1 0" range="-2.7929 -0.255648"/>
+            <geom material="BlackAbs" mesh="front_right_lower_leg" class="visual"/>
+            <geom mesh="right_lower_leg_collision" class="collision"/>
+            <geom class="foot"/>
+          </body>
+        </body>
+      </body>
+      <body name="hl_hip" pos="-0.29785 0.055 0">
+        <inertial pos="0.00537435 0.0128418 -9.87523e-05" quat="1 1 -1 1" mass="1.68"
+          diaginertia="0.00226544 0.00211474 0.00181296"/>
+        <joint name="hl_hx" axis="1 0 0" range="-0.785398 0.785398"/>
+        <geom material="BlackAbs" mesh="rear_left_hip" class="visual"/>
+        <body name="hl_uleg" pos="0 0.1108 0">
+          <inertial pos="0.00514237 -0.00243237 -0.121009" mass="2.34" diaginertia="0.0275596 0.0273549 0.00284815"/>
+          <joint name="hl_hy" axis="0 1 0" range="-0.898845 2.29511"/>
+          <geom mesh="rear_left_upper_leg_0" material="wrap" class="visual"/>
+          <geom mesh="rear_left_upper_leg_1" material="BlackAbs" class="visual"/>
+          <geom mesh="left_upper_leg_collision" class="collision"/>
+          <body name="hl_lleg" pos="0.025 0 -0.32">
+            <inertial pos="0.00225794 4.6076e-05 -0.180082" quat="1 0 0 1" mass="0.35"
+              diaginertia="0.00405032 0.00399902 0.00014934"/>
+            <joint name="hl_kn" axis="0 1 0" range="-2.7929 -0.247067"/>
+            <geom material="BlackAbs" mesh="rear_left_lower_leg" class="visual"/>
+            <geom mesh="left_lower_leg_collision" class="collision"/>
+            <geom class="foot"/>
+          </body>
+        </body>
+      </body>
+      <body name="hr_hip" pos="-0.29785 -0.055 0">
+        <inertial pos="0.00537435 -0.0128418 9.87523e-05" quat="1 1 -1 1" mass="1.68"
+          diaginertia="0.00226544 0.00211474 0.00181296"/>
+        <joint name="hr_hx" axis="1 0 0" range="-0.785398 0.785398"/>
+        <geom material="BlackAbs" mesh="rear_right_hip" class="visual"/>
+        <body name="hr_uleg" pos="0 -0.1108 0">
+          <inertial pos="0.00514237 0.00243237 -0.121009" mass="2.34" diaginertia="0.0275596 0.0273549 0.00284815"/>
+          <joint name="hr_hy" axis="0 1 0" range="-0.898845 2.29511"/>
+          <geom mesh="rear_right_upper_leg_0" material="wrap" class="visual"/>
+          <geom mesh="rear_right_upper_leg_1" material="BlackAbs" class="visual"/>
+          <geom mesh="right_upper_leg_collision" class="collision"/>
+          <body name="hr_lleg" pos="0.025 0 -0.32">
+            <inertial pos="0.00225794 4.6076e-05 -0.180082" quat="1 0 0 1" mass="0.35"
+              diaginertia="0.00405032 0.00399902 0.00014934"/>
+            <joint name="hr_kn" axis="0 1 0" range="-2.7929 -0.248282"/>
+            <geom material="BlackAbs" mesh="rear_left_lower_leg" class="visual"/>
+            <geom mesh="right_lower_leg_collision" class="collision"/>
+            <geom class="foot"/>
+          </body>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+
+  <contact>
+    <exclude body1="body" body2="fl_uleg"/>
+    <exclude body1="body" body2="fr_uleg"/>
+    <exclude body1="body" body2="hl_uleg"/>
+    <exclude body1="body" body2="hr_uleg"/>
+  </contact>
+
+  <actuator>
+    <position class="spot" name="fl_hx" joint="fl_hx"/>
+    <position class="spot" name="fl_hy" joint="fl_hy"/>
+    <position class="spot" name="fl_kn" joint="fl_kn"/>
+    <position class="spot" name="fr_hx" joint="fr_hx"/>
+    <position class="spot" name="fr_hy" joint="fr_hy"/>
+    <position class="spot" name="fr_kn" joint="fr_kn"/>
+    <position class="spot" name="hl_hx" joint="hl_hx"/>
+    <position class="spot" name="hl_hy" joint="hl_hy"/>
+    <position class="spot" name="hl_kn" joint="hl_kn"/>
+    <position class="spot" name="hr_hx" joint="hr_hx"/>
+    <position class="spot" name="hr_hy" joint="hr_hy"/>
+    <position class="spot" name="hr_kn" joint="hr_kn"/>
+  </actuator>
+
+  <keyframe>
+    <key name="home" qpos="
+    0 0 0.46
+    1 0 0 0
+    0 1.04 -1.8
+    0 1.04 -1.8
+    0 1.04 -1.8
+    0 1.04 -1.8"
+      ctrl="
+    0 1.04 -1.8
+    0 1.04 -1.8
+    0 1.04 -1.8
+    0 1.04 -1.8"/>
+  </keyframe>
+</mujoco>
