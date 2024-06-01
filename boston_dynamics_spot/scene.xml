@@ -1,5 +1,5 @@
 <mujoco model="spot scene">
-  <include file="spot_arm.xml"/>
+  <include file="spot.xml"/>
 
   <statistic center="0.15 0.1 0.38" extent=".8" meansize="0.05"/>
 

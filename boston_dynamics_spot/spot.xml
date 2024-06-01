@@ -1,7 +1,7 @@
 <mujoco model="spot">
   <compiler angle="radian" meshdir="assets"/>
 
-  <option integrator="implicitfast" cone="elliptic" impratio="10"/>
+  <option integrator="implicitfast" cone="elliptic" impratio="100"/>
 
   <visual>
     <global ellipsoidinertia="true"/>
@@ -47,7 +47,7 @@
       <default class="collision">
         <geom group="3" type="mesh"/>
         <default class="foot">
-          <geom type="sphere" size="0.036" pos="0 0 -0.3365" priority="1" condim="6" solimp="0.015 1 0.031"
+          <geom type="sphere" size="0.036" pos="0 0 -0.3365" priority="1" condim="6" solimp="0.015 1 0.036"
             friction="0.8 0.02 0.01"/>
         </default>
       </default>
