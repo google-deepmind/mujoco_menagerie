@@ -8,7 +8,7 @@
     <default class="kinova">
       <material specular="0.5" shininess="0.25"/>
       <joint armature="0.1" damping="1" axis="0 0 1" range="-2.8973 2.8973"/>
-      <general dyntype="none" biastype="affine" ctrlrange="-6.28 6.28" forcerange="-87 87"/>
+      <general dyntype="none" biastype="affine" ctrlrange="-2.8973 2.8973" forcerange="-87 87"/>
       <default class="infiniteJoints">
         <joint limited="false"/>
       </default>
@@ -21,7 +21,7 @@
         <geom type="mesh" contype="0" conaffinity="0" group="2"/>
       </default>
       <default class="collision">
-        <geom type="mesh" group="3" condim="6"/>
+        <geom type="mesh" group="3"/>
       </default>
     </default>
   </default>
