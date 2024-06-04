@@ -178,6 +178,7 @@ Menagerie, see [CONTRIBUTING](CONTRIBUTING.md).
 | UR5e | Universal Robots | 6 | [BSD-3-Clause](universal_robots_ur5e/LICENSE) |✖️|
 | UR10e | Universal Robots | 6 | [BSD-3-Clause](universal_robots_ur10e/LICENSE) |✖️|
 | ViperX 300 | Trossen Robotics | 8 | [BSD-3-Clause](trossen_vx300s/LICENSE) |✖️|
+| WidowX 250 | Trossen Robotics | 8 | [BSD-3-Clause](trossen_wx250s/LICENSE) |✖️|
 | xarm7 | UFACTORY | 7 | [BSD-3-Clause](ufactory_xarm7/LICENSE) |✖️|
 
 **Bipeds.**
