@@ -7,7 +7,7 @@ This package contains a simplified robot description (MJCF) of the
 description](https://github.com/Kinovarobotics/ros2_kortex/tree/main/kortex_description/arms/gen3/7dof).
 
 <p float="left">
-  <img src="kinova_gen3_7dof.png" width="400">
+  <img src="gen3_7dof.png" width="400">
 </p>
 
 ### URDF → MJCF derivation steps
