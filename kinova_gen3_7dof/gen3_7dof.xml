@@ -113,12 +113,12 @@
   </worldbody>
 
   <actuator>
-    <general class="kinova" name="joint_1" joint="joint_1" gainprm="800" biasprm="0 -800 -260"/>
-    <general class="kinova" name="joint_2" joint="joint_2" gainprm="800" biasprm="0 -800 -260"/>
-    <general class="kinova" name="joint_3" joint="joint_3" gainprm="260" biasprm="0 -260 -86"/>
-    <general class="kinova" name="joint_4" joint="joint_4" gainprm="260" biasprm="0 -260 -86"/>
-    <general class="kinova" name="joint_5" joint="joint_5" gainprm="130" biasprm="0 -130 -45"/>
-    <general class="kinova" name="joint_6" joint="joint_6" gainprm="130" biasprm="0 -130 -45"/>
-    <general class="kinova" name="joint_7" joint="joint_7" gainprm="130" biasprm="0 -130 -45"/>
+    <general class="kinova" name="joint_1" joint="joint_1" gainprm="4500" biasprm="0 -4500 -450"/>
+    <general class="kinova" name="joint_2" joint="joint_2" gainprm="4500" biasprm="0 -4500 -450"/>
+    <general class="kinova" name="joint_3" joint="joint_3" gainprm="3500" biasprm="0 -3500 -350"/>
+    <general class="kinova" name="joint_4" joint="joint_4" gainprm="3500" biasprm="0 -3500 -350"/>
+    <general class="kinova" name="joint_5" joint="joint_5" gainprm="2000" biasprm="0 -2000 -200"/>
+    <general class="kinova" name="joint_6" joint="joint_6" gainprm="2000" biasprm="0 -2000 -200"/>
+    <general class="kinova" name="joint_7" joint="joint_7" gainprm="2000" biasprm="0 -2000 -200"/>
   </actuator>
 </mujoco>
