@@ -76,7 +76,7 @@
   <worldbody>
     <body name="torso" childclass="bkvb">
       <freejoint name="torso"/>
-      <camera name="track" pos="0.846 -1.465 0.916" xyaxes="0.866 0.500 0.000 -0.171 0.296 0.940" mode="trackcom"/>
+      <camera name="track" pos="1.958 -2.348 0.591" xyaxes="0.768 0.641 0.000 -0.101 0.122 0.987" mode="trackcom"/>
       <inertial pos="0.0055238 -0.000354563 0.00835899" quat="-0.00150849 0.694899 -0.000198355 0.719106" mass="6.04352"
         diaginertia="0.144664 0.12027 0.0511405"/>
       <geom class="bkvb/torso" pos="-7.85127e-05 -0.000500734 0" mesh="neck"/>
