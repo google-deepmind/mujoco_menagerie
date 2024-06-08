@@ -1,5 +1,5 @@
 <mujoco model="ufactory_lite6">
-  <compiler angle="radian" meshdir="assets"/>
+  <compiler angle="radian" meshdir="assets" autolimits="true"/>
 
   <option integrator="implicitfast"/>
 
