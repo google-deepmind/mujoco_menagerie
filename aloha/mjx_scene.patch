@@ -1,7 +1,7 @@
---- scene.xml	2024-04-19 17:28:59.000000000 +0100
-+++ mjx_scene.xml	2024-04-19 17:32:13.000000000 +0100
+--- scene.xml	2024-04-22 03:09:14.000000000 -0700
++++ mjx_scene.xml	2024-06-13 15:56:08.000000000 -0700
 @@ -1,7 +1,13 @@
- <mujoco model="aloha scene">
+ <mujoco model="aloha_scene">
    <compiler meshdir="assets" texturedir="assets"/>
  
 -  <include file="aloha.xml"/>
@@ -11,7 +11,7 @@
 +    <numeric data="8" name="max_contact_points"/>
 +  </custom>
 +
-+  <option iterations="6" ls_iterations="6" timestep="0.01"/>
++  <option iterations="8" ls_iterations="8" timestep="0.01"/>
  
    <statistic center="0 -0.1 0.2" extent="0.6" meansize="0.05"/>
  
