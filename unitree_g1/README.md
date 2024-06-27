@@ -1,6 +1,7 @@
 # Unitree G1 Description (MJCF)
 
-Requires MuJoCo 2.2.2 or later.
+> [!IMPORTANT]
+> Requires MuJoCo 2.3.4 or later.
 
 ## Overview
 
