@@ -180,6 +180,7 @@ Menagerie, see [CONTRIBUTING](CONTRIBUTING.md).
 | ViperX 300 | Trossen Robotics | 8 | [BSD-3-Clause](trossen_vx300s/LICENSE) |✖️|
 | WidowX 250 | Trossen Robotics | 8 | [BSD-3-Clause](trossen_wx250s/LICENSE) |✖️|
 | xarm7 | UFACTORY | 7 | [BSD-3-Clause](ufactory_xarm7/LICENSE) |✖️|
+| Gen3 | Kinova Robotics | 7 | [BSD-3-Clause](kinova_gen3/LICENSE) |✖️|
 
 **Bipeds.**
 

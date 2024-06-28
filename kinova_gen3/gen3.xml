@@ -1,0 +1,110 @@
+<mujoco model="gen3">
+  <compiler angle="radian" meshdir="assets"/>
+
+  <option integrator="implicitfast"/>
+
+  <default>
+    <default class="visual">
+      <geom type="mesh" contype="0" conaffinity="0" group="2" rgba="0.75294 0.75294 0.75294 1"/>
+    </default>
+    <default class="collision">
+      <geom type="mesh" group="3"/>
+    </default>
+    <default class="large_actuator">
+      <position kp="2000" kv="100" forcerange="-105 105"/>
+    </default>
+    <default class="small_actuator">
+      <position kp="500" kv="50" forcerange="-52 52"/>
+    </default>
+    <site size="0.001" rgba="0.5 0.5 0.5 0.3" group="4"/>
+  </default>
+
+  <asset>
+    <mesh name="base_link" file="base_link.stl"/>
+    <mesh name="shoulder_link" file="shoulder_link.stl"/>
+    <mesh name="half_arm_1_link" file="half_arm_1_link.stl"/>
+    <mesh name="half_arm_2_link" file="half_arm_2_link.stl"/>
+    <mesh name="forearm_link" file="forearm_link.stl"/>
+    <mesh name="spherical_wrist_1_link" file="spherical_wrist_1_link.stl"/>
+    <mesh name="spherical_wrist_2_link" file="spherical_wrist_2_link.stl"/>
+    <mesh name="bracelet_with_vision_link" file="bracelet_with_vision_link.stl"/>
+  </asset>
+
+  <worldbody>
+    <body name="base_link">
+      <inertial pos="-0.000648 -0.000166 0.084487" quat="0.999294 0.00139618 -0.0118387 0.035636" mass="1.697"
+        diaginertia="0.00462407 0.00449437 0.00207755"/>
+      <geom class="visual" mesh="base_link"/>
+      <geom class="collision" mesh="base_link"/>
+      <body name="shoulder_link" pos="0 0 0.15643" quat="-3.67321e-06 1 0 0">
+        <inertial pos="-2.3e-05 -0.010364 -0.07336" quat="0.707051 0.0451246 -0.0453544 0.704263" mass="1.3773"
+          diaginertia="0.00488868 0.00457 0.00135132"/>
+        <joint name="joint_1"/>
+        <geom class="visual" mesh="shoulder_link"/>
+        <geom class="collision" mesh="shoulder_link"/>
+        <body name="half_arm_1_link" pos="0 0.005375 -0.12838" quat="1 1 0 0">
+          <inertial pos="-4.4e-05 -0.09958 -0.013278" quat="0.482348 0.516286 -0.516862 0.483366" mass="1.1636"
+            diaginertia="0.0113017 0.011088 0.00102532"/>
+          <joint name="joint_2" range="-2.24 2.24"/>
+          <geom class="visual" mesh="half_arm_1_link"/>
+          <geom class="collision" mesh="half_arm_1_link"/>
+          <body name="half_arm_2_link" pos="0 -0.21038 -0.006375" quat="0.707105 -0.707108 0 0">
+            <inertial pos="-4.4e-05 -0.006641 -0.117892" quat="0.706144 0.0213722 -0.0209128 0.707437" mass="1.1636"
+              diaginertia="0.0111633 0.010932 0.00100671"/>
+            <joint name="joint_3"/>
+            <geom class="visual" mesh="half_arm_2_link"/>
+            <geom class="collision" mesh="half_arm_2_link"/>
+            <body name="forearm_link" pos="0 0.006375 -0.21038" quat="1 1 0 0">
+              <inertial pos="-1.8e-05 -0.075478 -0.015006" quat="0.483678 0.515961 -0.515859 0.483455" mass="0.9302"
+                diaginertia="0.00834839 0.008147 0.000598606"/>
+              <joint name="joint_4" range="-2.57 2.57"/>
+              <geom class="visual" mesh="forearm_link"/>
+              <geom class="collision" mesh="forearm_link"/>
+              <body name="spherical_wrist_1_link" pos="0 -0.20843 -0.006375" quat="0.707105 -0.707108 0 0">
+                <inertial pos="1e-06 -0.009432 -0.063883" quat="0.703558 0.0707492 -0.0707492 0.703558" mass="0.6781"
+                  diaginertia="0.00165901 0.001596 0.000346988"/>
+                <joint name="joint_5"/>
+                <geom class="visual" mesh="spherical_wrist_1_link"/>
+                <geom class="collision" mesh="spherical_wrist_1_link"/>
+                <body name="spherical_wrist_2_link" pos="0 0.00017505 -0.10593" quat="1 1 0 0">
+                  <inertial pos="1e-06 -0.045483 -0.00965" quat="0.44426 0.550121 -0.550121 0.44426" mass="0.6781"
+                    diaginertia="0.00170087 0.001641 0.00035013"/>
+                  <joint name="joint_6" range="-2.09 2.09"/>
+                  <geom class="visual" mesh="spherical_wrist_2_link"/>
+                  <geom class="collision" mesh="spherical_wrist_2_link"/>
+                  <body name="bracelet_link" pos="0 -0.10593 -0.00017505" quat="0.707105 -0.707108 0 0">
+                    <inertial pos="0.000281 0.011402 -0.029798" quat="0.394358 0.596779 -0.577293 0.393789" mass="0.5"
+                      diaginertia="0.000657336 0.000587019 0.000320645"/>
+                    <joint name="joint_7"/>
+                    <geom class="visual" mesh="bracelet_with_vision_link"/>
+                    <geom class="collision" mesh="bracelet_with_vision_link"/>
+                    <camera name="wrist" pos="0 -0.05639 -0.058475" quat="0 0 0 1" fovy="41.83792730009236"
+                      resolution="640 480"/>
+                    <site name="pinch_site" pos="0 0 -0.061525" quat="0 1 0 0"/>
+                  </body>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+
+  <actuator>
+    <position class="large_actuator" name="joint_1" joint="joint_1"/>
+    <position class="large_actuator" name="joint_2" joint="joint_2" ctrlrange="-2.2497294058206907 2.2497294058206907"/>
+    <position class="large_actuator" name="joint_3" joint="joint_3"/>
+    <position class="large_actuator" name="joint_4" joint="joint_4" ctrlrange="-2.5795966344476193 2.5795966344476193"/>
+    <position class="small_actuator" name="joint_5" joint="joint_5"/>
+    <position class="small_actuator" name="joint_6" joint="joint_6" ctrlrange="-2.0996310901491784 2.0996310901491784"/>
+    <position class="small_actuator" name="joint_7" joint="joint_7"/>
+  </actuator>
+
+  <keyframe>
+    <key name="home" qpos="0 0.26179939 3.14159265 -2.26892803 0 0.95993109 1.57079633"
+      ctrl="0 0.26179939 3.14159265 -2.26892803 0 0.95993109 1.57079633"/>
+    <key name="retract" qpos="0 -0.34906585 3.14159265 -2.54818071 0 -0.87266463 1.57079633"
+      ctrl="0 -0.34906585 3.14159265 -2.54818071 0 -0.87266463 1.57079633"/>
+  </keyframe>
+</mujoco>
