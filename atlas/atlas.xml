@@ -1,0 +1,299 @@
+<mujoco model="atlas">
+  <compiler angle="radian" meshdir="assets" autolimits="true"/>
+
+  <statistic meansize="0.216123" extent="2.3196" center="-0.000225445 0 0.0799605"/>
+
+  <default>
+    <default class="atlas">
+      <default class="visual">
+        <geom type="mesh" contype="0" conaffinity="0" group="2" density="0" material="white"/>
+      </default>
+    </default>
+  </default>
+
+  <asset>
+    <mesh name="r_clav" file="r_clav.obj"/>
+    <mesh name="l_foot" file="l_foot.obj"/>
+    <mesh name="r_larm" file="r_larm.obj"/>
+    <mesh name="r_hand" file="r_hand.obj"/>
+    <mesh name="l_lglut" file="l_lglut.obj"/>
+    <mesh name="l_lleg" file="l_lleg.obj"/>
+    <mesh name="r_scap" file="r_scap.obj"/>
+    <mesh name="l_talus" file="l_talus.obj"/>
+    <mesh name="r_uarm" file="r_uarm.obj"/>
+    <mesh name="r_farm" file="r_farm.obj"/>
+    <mesh name="l_uglut" file="l_uglut.obj"/>
+    <mesh name="l_uleg" file="l_uleg.obj"/>
+    <mesh name="ltorso" file="ltorso.obj"/>
+    <mesh name="mtorso" file="mtorso.obj"/>
+    <mesh name="pelvis" file="pelvis.obj"/>
+    <mesh name="r_foot" file="r_foot.obj"/>
+    <mesh name="r_lglut" file="r_lglut.obj"/>
+    <mesh name="r_lleg" file="r_lleg.obj"/>
+    <mesh name="r_talus" file="r_talus.obj"/>
+    <mesh name="r_uglut" file="r_uglut.obj"/>
+    <mesh name="r_uleg" file="r_uleg.obj"/>
+    <mesh name="utorso" file="utorso.obj"/>
+    <mesh name="head" file="head.obj"/>
+    <mesh name="head_camera" file="head_camera.obj"/>
+
+    <material name="white" rgba="1 1 1 1" specular="0.4" shininess="0.6"/>
+  </asset>
+  <worldbody>
+    <body name="pelvis" pos="0 0 0.95">
+      <!-- comment in order to fix the body -->
+      <freejoint/>
+      <geom class="visual" mesh="pelvis"/>
+      <inertial pos="0.0111 0 0.0271" quat="0.698584 0.713914 0.0424837 -0.0224092" mass="9.509"
+        diaginertia="0.124488 0.116646 0.0957666"/>
+      <body name="ltorso" pos="-0.0125 0 0">
+        <inertial pos="-0.0112984 -3.15366e-06 0.0746835" quat="0.997071 0.000128212 0.076485 -0.00012406" mass="2.27"
+          diaginertia="0.003962 0.00341694 0.00169212"/>
+        <joint name="back_bkz" pos="0 0 0" axis="0 0 1" range="-0.663225 0.663225" damping="0.1"/>
+        <geom class="visual" mesh="ltorso"/>
+        <body name="mtorso" pos="0 0 0.162">
+          <inertial pos="-0.00816266 -0.0131245 0.0305974" quat="0.108378 0.49314 0.746335 0.433648" mass="0.799"
+            diaginertia="0.000536243 0.000487378 0.000358057"/>
+          <joint name="back_bky" pos="0 0 0" axis="0 1 0" range="-0.219388 0.538783" damping="0.1"/>
+          <geom class="visual" mesh="mtorso"/>
+          <body name="utorso" pos="0 0 0.05">
+            <inertial pos="-0.0616866 0.00229456 0.316809" quat="0.483464 -0.0233226 -0.0389662 0.874186" mass="84.609"
+              diaginertia="1.67522 1.61265 0.568768"/>
+            <joint name="back_bkx" pos="0 0 0" axis="1 0 0" range="-0.523599 0.523599" damping="0.1"/>
+            <geom class="visual" mesh="utorso"/>
+            <body name="l_clav" pos="0.1406 0.2256 0.4776" quat="0 0 0 1">
+              <inertial pos="0 0 -0.084" quat="0.684588 0.177029 -0.177029 0.684588" mass="4.466"
+                diaginertia="0.011217 0.011 0.00178301"/>
+              <joint name="l_arm_shz" pos="0 0 0" axis="0 0 1" range="-1.5708 0.785398" damping="0.1"/>
+              <geom class="visual" mesh="r_clav"/>
+              <body name="l_scap" pos="0 -0.11 -0.245">
+                <inertial pos="0 0 0" quat="0.5 0.5 0.5 0.5" mass="3.899" diaginertia="0.00583 0.00583 0.00319"/>
+                <joint name="l_arm_shx" pos="0 0 0" axis="-1 0 0" range="-1.5708 1.5708" damping="0.1"/>
+                <geom class="visual" mesh="r_scap"/>
+                <body name="l_uarm" pos="0 -0.187 -0.016">
+                  <inertial pos="0 0.065 0" quat="0.707107 0.707107 0 0" mass="4.386"
+                    diaginertia="0.00656 0.00656 0.00358"/>
+                  <joint name="l_arm_ely" pos="0 0 0" axis="0 -1 0" range="0 3.14159" damping="0.1"/>
+                  <geom class="visual" mesh="r_uarm"/>
+                  <body name="l_larm" pos="0 -0.119 0.0092">
+                    <inertial pos="0 0 0" quat="0.5 0.5 0.5 0.5" mass="3.248" diaginertia="0.00446 0.00446 0.00265"/>
+                    <joint name="l_arm_elx" pos="0 0 0" axis="-1 0 0" range="0 2.35619" damping="0.1"/>
+                    <geom class="visual" mesh="r_larm"/>
+                    <body name="l_ufarm" pos="0 -0.29955 -0.00921" quat="0 0 1 0">
+                      <inertial pos="0.00015 0.08296 0.00037" quat="0.707107 0.707107 0 0" mass="2.4798"
+                        diaginertia="0.012731 0.011948 0.002857"/>
+                      <joint name="l_arm_uwy" pos="0 0 0" axis="0 -1 0" range="-3.011 3.011" damping="0.1"/>
+                      <geom class="visual" mesh="r_farm"/>
+                      <body name="l_lfarm">
+                        <inertial pos="0.00017 -0.02515 0.00163" quat="0.5 0.5 -0.5 0.5" mass="0.648"
+                          diaginertia="0.000825 0.000764 0.000429"/>
+                        <joint name="l_arm_mwx" pos="0 0 0" axis="1 0 0" range="-1.7628 1.7628" damping="0.1"/>
+                        <geom class="visual" mesh="r_hand"/>
+                        <body name="l_hand" quat="0 0 1 0">
+                          <inertial pos="0.000136605 -0.0878643 1.70756e-05"
+                            quat="0.706663 0.707538 -0.00305426 -0.0030225" mass="0.6839"
+                            diaginertia="0.000555209 0.000546206 0.000486997"/>
+                          <joint name="l_arm_lwy" pos="0 0 0" axis="0 -1 0" range="-2.9671 2.9671" damping="0.1"/>
+                          <geom size="0.005 0.005 0.005" pos="0 -0.1245 0" quat="3.26795e-07 0 0 1" type="box"
+                            contype="0" conaffinity="0" group="1" density="0"/>
+                        </body>
+                      </body>
+                    </body>
+                  </body>
+                </body>
+              </body>
+            </body>
+            <body name="head" pos="0.2546 0 0.6215">
+              <inertial pos="-0.0526114 3.39872e-05 0.0260689" quat="-0.00433632 0.59051 -0.00248869 0.807015"
+                mass="2.08756" diaginertia="0.0135173 0.0133409 0.0119567"/>
+              <joint name="neck_ay" pos="0 0 0" axis="0 1 0" range="-0.602139 1.14319" damping="0.1"/>
+              <geom class="visual" rgba="0.9098 0.44314 0.031373 1" mesh="head"/>
+              <geom pos="0.0004 -0.0261018 0.00457631" quat="0.987701 -0.156356 0 0" class="visual" mesh="head_camera"/>
+              <geom pos="0.0004 -0.0261018 0.00457631" quat="0.987701 -0.156356 0 0" type="mesh" contype="0"
+                conaffinity="0" group="1" density="0" rgba="0.72941 0.35686 0.023529 1" mesh="head_camera"/>
+            </body>
+            <body name="r_clav" pos="0.1406 -0.2256 0.4776">
+              <inertial pos="0 0 -0.084" quat="0.684588 0.177029 -0.177029 0.684588" mass="4.466"
+                diaginertia="0.011217 0.011 0.00178301"/>
+              <joint name="r_arm_shz" pos="0 0 0" axis="0 0 1" range="-0.785398 1.5708" damping="0.1"/>
+              <geom class="visual" mesh="r_clav"/>
+              <body name="r_scap" pos="0 -0.11 -0.245">
+                <inertial pos="0 0 0" quat="0.5 0.5 0.5 0.5" mass="3.899" diaginertia="0.00583 0.00583 0.00319"/>
+                <joint name="r_arm_shx" pos="0 0 0" axis="1 0 0" range="-1.5708 1.5708" damping="0.1"/>
+                <geom class="visual" mesh="r_scap"/>
+                <body name="r_uarm" pos="0 -0.187 -0.016">
+                  <inertial pos="0 0.065 0" quat="0.707107 0.707107 0 0" mass="4.386"
+                    diaginertia="0.00656 0.00656 0.00358"/>
+                  <joint name="r_arm_ely" pos="0 0 0" axis="0 1 0" range="0 3.14159" damping="0.1"/>
+                  <geom class="visual" mesh="r_uarm"/>
+                  <body name="r_larm" pos="0 -0.119 0.0092">
+                    <inertial pos="0 0 0" quat="0.5 0.5 0.5 0.5" mass="3.248" diaginertia="0.00446 0.00446 0.00265"/>
+                    <joint name="r_arm_elx" pos="0 0 0" axis="1 0 0" range="-2.35619 0" damping="0.1"/>
+                    <geom class="visual" mesh="r_larm"/>
+                    <body name="r_ufarm" pos="0 -0.29955 -0.00921">
+                      <inertial pos="0.00015 0.08296 0.00037" quat="0.707107 0.707107 0 0" mass="2.4798"
+                        diaginertia="0.012731 0.011948 0.002857"/>
+                      <joint name="r_arm_uwy" pos="0 0 0" axis="0 1 0" range="-3.011 3.011" damping="0.1"/>
+                      <geom class="visual" mesh="r_farm"/>
+                      <body name="r_lfarm">
+                        <inertial pos="0.00017 -0.02515 0.00163" quat="0.5 0.5 -0.5 0.5" mass="0.648"
+                          diaginertia="0.000825 0.000764 0.000429"/>
+                        <joint name="r_arm_mwx" pos="0 0 0" axis="1 0 0" range="-1.7628 1.7628" damping="0.1"/>
+                        <geom class="visual" mesh="r_hand"/>
+                        <body name="r_hand">
+                          <inertial pos="0.000136605 -0.0878643 1.70756e-05"
+                            quat="0.706663 0.707538 -0.00305426 -0.0030225" mass="0.6839"
+                            diaginertia="0.000555209 0.000546206 0.000486997"/>
+                          <joint name="r_arm_lwy" pos="0 0 0" axis="0 1 0" range="-2.9671 2.9671" damping="0.1"/>
+                          <geom size="0.005 0.005 0.005" pos="0 -0.1245 0" quat="3.26795e-07 0 0 1" type="box"
+                            contype="0" conaffinity="0" group="1" density="0"/>
+                        </body>
+                      </body>
+                    </body>
+                  </body>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+      <body name="l_uglut" pos="0 0.089 0">
+        <inertial pos="0.00529262 -0.00344732 0.00313046" quat="0.999122 -7.72169e-05 0.0419028 -0.000305187"
+          mass="1.959" diaginertia="0.000745109 0.000688179 0.000410071"/>
+        <joint name="l_leg_hpz" pos="0 0 0" axis="0 0 1" range="-0.174358 0.786794" damping="0.1"/>
+        <geom class="visual" mesh="l_uglut"/>
+        <body name="l_lglut">
+          <inertial pos="0.0133341 0.0170484 -0.0312052" quat="0.353465 0.600383 0.388609 0.602981" mass="0.898"
+            diaginertia="0.00133867 0.000995812 0.000690275"/>
+          <joint name="l_leg_hpx" pos="0 0 0" axis="1 0 0" range="-0.523599 0.523599" damping="0.1"/>
+          <geom class="visual" mesh="l_lglut"/>
+          <body name="l_uleg" pos="0.05 0.0225 -0.066">
+            <inertial pos="0 0 -0.21" mass="8.204" diaginertia="0.09 0.09 0.02"/>
+            <joint name="l_leg_hpy" pos="0 0 0" axis="0 1 0" range="-1.61234 0.65764" damping="0.1"/>
+            <geom class="visual" mesh="l_uleg"/>
+            <body name="l_lleg" pos="-0.05 0 -0.374">
+              <inertial pos="0.001 0 -0.187" quat="0.999751 0 0.0223266 0" mass="4.515"
+                diaginertia="0.0771341 0.076 0.00986594"/>
+              <joint name="l_leg_kny" pos="0 0 0" axis="0 1 0" range="0 2.35637" damping="0.1"/>
+              <geom class="visual" mesh="l_lleg"/>
+              <body name="l_talus" pos="0 0 -0.422">
+                <inertial pos="0 0 0" quat="0.5 0.5 -0.5 0.5" mass="0.125"
+                  diaginertia="1.30101e-05 1.01674e-05 8.42775e-06"/>
+                <joint name="l_leg_aky" pos="0 0 0" axis="0 1 0" range="-1 0.7" damping="0.1"/>
+                <geom class="visual" mesh="l_talus"/>
+                <body name="l_foot">
+                  <inertial pos="0.027 0 -0.067" quat="0 0.707107 0 0.707107" mass="2.41"
+                    diaginertia="0.008 0.007 0.002"/>
+                  <joint name="l_leg_akx" pos="0 0 0" axis="1 0 0" range="-0.8 0.8" damping="0.1"/>
+                  <geom class="visual" mesh="l_foot"/>
+                  <!-- definitions of foot collision are below -->
+                  <geom size="0.0001" pos="-0.0876 0.066 -0.07645"/>
+                  <geom size="0.01" pos="-0.0876 0.066 -0.07645" contype="0" conaffinity="0" group="1" density="0"/>
+                  <geom size="0.0001" pos="-0.0876 -0.0626 -0.07645"/>
+                  <geom size="0.01" pos="-0.0876 -0.0626 -0.07645" contype="0" conaffinity="0" group="1" density="0"/>
+                  <geom size="0.0001" pos="0.1728 0.066 -0.07645"/>
+                  <geom size="0.01" pos="0.1728 0.066 -0.07645" contype="0" conaffinity="0" group="1" density="0"/>
+                  <geom size="0.0001" pos="0.1728 -0.0626 -0.07645"/>
+                  <geom size="0.01" pos="0.1728 -0.0626 -0.07645" contype="0" conaffinity="0" group="1" density="0"/>
+                  <geom size="0.0001" pos="0.086 0.066 -0.07645"/>
+                  <geom size="0.01" pos="0.086 0.066 -0.07645" contype="0" conaffinity="0" group="1" density="0"/>
+                  <geom size="0.0001" pos="0.086 -0.0626 -0.07645"/>
+                  <geom size="0.01" pos="0.086 -0.0626 -0.07645" contype="0" conaffinity="0" group="1" density="0"/>
+                  <geom size="0.0001" pos="-0.0008 0.066 -0.07645"/>
+                  <geom size="0.01" pos="-0.0008 0.066 -0.07645" contype="0" conaffinity="0" group="1" density="0"/>
+                  <geom size="0.0001" pos="-0.0008 -0.0626 -0.07645"/>
+                  <geom size="0.01" pos="-0.0008 -0.0626 -0.07645" contype="0" conaffinity="0" group="1" density="0"/>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+      <body name="r_uglut" pos="0 -0.089 0">
+        <inertial pos="0.00529262 0.00344732 0.00313046" quat="0.999122 7.72169e-05 0.0419028 0.000305187" mass="1.959"
+          diaginertia="0.000745109 0.000688179 0.000410071"/>
+        <joint name="r_leg_hpz" pos="0 0 0" axis="0 0 1" range="-0.786794 0.174358" damping="0.1"/>
+        <geom class="visual" mesh="r_uglut"/>
+        <body name="r_lglut">
+          <inertial pos="0.0133341 -0.0170484 -0.0312052" quat="0.602981 0.388609 0.600383 0.353465" mass="0.898"
+            diaginertia="0.00133867 0.000995812 0.000690275"/>
+          <joint name="r_leg_hpx" pos="0 0 0" axis="1 0 0" range="-0.523599 0.523599" damping="0.1"/>
+          <geom class="visual" mesh="r_lglut"/>
+          <body name="r_uleg" pos="0.05 -0.0225 -0.066">
+            <inertial pos="0 0 -0.21" mass="8.204" diaginertia="0.09 0.09 0.02"/>
+            <joint name="r_leg_hpy" pos="0 0 0" axis="0 1 0" range="-1.61234 0.65764" damping="0.1"/>
+            <geom class="visual" mesh="r_uleg"/>
+            <body name="r_lleg" pos="-0.05 0 -0.374">
+              <inertial pos="0.001 0 -0.187" quat="0.999751 0 0.0223266 0" mass="4.515"
+                diaginertia="0.0771341 0.076 0.00986594"/>
+              <joint name="r_leg_kny" pos="0 0 0" axis="0 1 0" range="0 2.35637" damping="0.1"/>
+              <geom class="visual" mesh="r_lleg"/>
+              <body name="r_talus" pos="0 0 -0.422">
+                <inertial pos="0 0 0" quat="0.5 0.5 -0.5 0.5" mass="0.125"
+                  diaginertia="1.30101e-05 1.01674e-05 8.42775e-06"/>
+                <joint name="r_leg_aky" pos="0 0 0" axis="0 1 0" range="-1 0.7" damping="0.1"/>
+                <geom class="visual" mesh="r_talus"/>
+                <body name="r_foot">
+                  <inertial pos="0.027 0 -0.067" quat="0 0.707107 0 0.707107" mass="2.41"
+                    diaginertia="0.008 0.007 0.002"/>
+                  <joint name="r_leg_akx" pos="0 0 0" axis="1 0 0" range="-0.8 0.8" damping="0.1"/>
+                  <geom class="visual" mesh="r_foot"/>
+                  <!-- definitions of foot collision are below -->
+                  <geom size="0.0001" pos="-0.0876 0.0626 -0.07645"/>
+                  <geom size="0.01" pos="-0.0876 0.0626 -0.07645" contype="0" conaffinity="0" group="1" density="0"/>
+                  <geom size="0.0001" pos="-0.0876 -0.066 -0.07645"/>
+                  <geom size="0.01" pos="-0.0876 -0.066 -0.07645" contype="0" conaffinity="0" group="1" density="0"/>
+                  <geom size="0.0001" pos="0.1728 0.0626 -0.07645"/>
+                  <geom size="0.01" pos="0.1728 0.0626 -0.07645" contype="0" conaffinity="0" group="1" density="0"/>
+                  <geom size="0.0001" pos="0.1728 -0.066 -0.07645"/>
+                  <geom size="0.01" pos="0.1728 -0.066 -0.07645" contype="0" conaffinity="0" group="1" density="0"/>
+                  <geom size="0.0001" pos="0.086 0.0626 -0.07645"/>
+                  <geom size="0.01" pos="0.086 0.0626 -0.07645" contype="0" conaffinity="0" group="1" density="0"/>
+                  <geom size="0.0001" pos="0.086 -0.066 -0.07645"/>
+                  <geom size="0.01" pos="0.086 -0.066 -0.07645" contype="0" conaffinity="0" group="1" density="0"/>
+                  <geom size="0.0001" pos="-0.0008 0.0626 -0.07645"/>
+                  <geom size="0.01" pos="-0.0008 0.0626 -0.07645" contype="0" conaffinity="0" group="1" density="0"/>
+                  <geom size="0.0001" pos="-0.0008 -0.066 -0.07645"/>
+                  <geom size="0.01" pos="-0.0008 -0.066 -0.07645" contype="0" conaffinity="0" group="1" density="0"/>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+
+  <actuator>
+    <motor name="back_bkz_motor" joint="back_bkz"/>
+    <motor name="back_bky_motor" joint="back_bky"/>
+    <motor name="back_bkx_motor" joint="back_bkx"/>
+    <motor name="l_arm_shz_motor" joint="l_arm_shz"/>
+    <motor name="l_arm_shx_motor" joint="l_arm_shx"/>
+    <motor name="l_arm_ely_motor" joint="l_arm_ely"/>
+    <motor name="l_arm_elx_motor" joint="l_arm_elx"/>
+    <motor name="l_arm_uwy_motor" joint="l_arm_uwy"/>
+    <motor name="l_arm_mwx_motor" joint="l_arm_mwx"/>
+    <motor name="l_arm_lwy_motor" joint="l_arm_lwy"/>
+    <motor name="neck_ay_motor" joint="neck_ay"/>
+    <motor name="r_arm_shz_motor" joint="r_arm_shz"/>
+    <motor name="r_arm_shx_motor" joint="r_arm_shx"/>
+    <motor name="r_arm_ely_motor" joint="r_arm_ely"/>
+    <motor name="r_arm_elx_motor" joint="r_arm_elx"/>
+    <motor name="r_arm_uwy_motor" joint="r_arm_uwy"/>
+    <motor name="r_arm_mwx_motor" joint="r_arm_mwx"/>
+    <motor name="r_arm_lwy_motor" joint="r_arm_lwy"/>
+    <motor name="l_leg_hpz_motor" joint="l_leg_hpz"/>
+    <motor name="l_leg_hpx_motor" joint="l_leg_hpx"/>
+    <motor name="l_leg_hpy_motor" joint="l_leg_hpy"/>
+    <motor name="l_leg_kny_motor" joint="l_leg_kny"/>
+    <motor name="l_leg_aky_motor" joint="l_leg_aky"/>
+    <motor name="l_leg_akx_motor" joint="l_leg_akx"/>
+    <motor name="r_leg_hpz_motor" joint="r_leg_hpz"/>
+    <motor name="r_leg_hpx_motor" joint="r_leg_hpx"/>
+    <motor name="r_leg_hpy_motor" joint="r_leg_hpy"/>
+    <motor name="r_leg_kny_motor" joint="r_leg_kny"/>
+    <motor name="r_leg_aky_motor" joint="r_leg_aky"/>
+    <motor name="r_leg_akx_motor" joint="r_leg_akx"/>
+  </actuator>
+</mujoco>
