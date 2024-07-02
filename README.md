@@ -31,7 +31,7 @@ well right out of the gate.
 |<img src='assets/wonik_allegro-right_hand.png' width=100>|<img src='assets/shadow_hand-right_hand.png' width=100>|<img src='assets/google_robot-robot.png' width=100>|<img src='assets/hello_robot_stretch-stretch.png' width=100>|<img src='assets/unitree_a1-a1.png' width=100>|
 |<img src='assets/anybotics_anymal_b-anymal_b.png' width=100>|<img src='assets/anybotics_anymal_c-anymal_c.png' width=100>|<img src='assets/google_barkour_v0-barkour_v0.png' width=100>|<img src='assets/google_barkour_vb-barkour_vb.png' width=100>|<img src='assets/unitree_go1-go1.png' width=100>|
 |<img src='assets/unitree_go2-go2.png' width=100>|<img src='assets/agility_cassie-cassie.png' width=100>|<img src='assets/unitree_g1-g1.png' width=100>|<img src='assets/unitree_h1-h1.png' width=100>|<img src='assets/robotis_op3-op3.png' width=100>|
-|<img src='assets/bitcraze_crazyflie_2-cf2.png' width=100>|<img src='assets/skydio_x2-x2.png' width=100>|<img src='assets/flybody-fruitfly.png' width=100>|<img src='assets/realsense_d435i-d435i.png' width=100>||
+|<img src='assets/bitcraze_crazyflie_2-cf2.png' width=100>|<img src='assets/skydio_x2-x2.png' width=100>|<img src='assets/flybody-fruitfly.png' width=100>|<img src='assets/realsense_d435i-d435i.png' width=100>|<img src='assets/shadow-new_shadow_hand.png' width=100>||
 
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
@@ -208,6 +208,7 @@ Menagerie, see [CONTRIBUTING](CONTRIBUTING.md).
 | Allegro Hand V3 | Wonik Robotics | 16 | [BSD-2-Clause](wonik_allegro/LICENSE) |✖️|
 | Robotiq 2F-85 | Robotiq | 8 | [BSD-2-Clause](robotiq_2f85/LICENSE) |✖️|
 | Shadow Hand EM35 | Shadow Robot Company | 24 | [Apache-2.0](shadow_hand/LICENSE) |✖️|
+| New Shadow Hand | Shadow Robot Company | 12 | [Apache-2.0](shadow_hand/LICENSE) |✖️|
 
 **Mobile Manipulators.**
 

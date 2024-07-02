@@ -1,0 +1,392 @@
+<mujoco model="new_shadow_hand">
+  <compiler autolimits="true" angle="radian" meshdir="assets"/>
+
+  <option integrator="implicitfast" cone="elliptic" noslip_iterations="5" noslip_tolerance="0"/>
+
+  <default>
+    <site group="3" rgba="1 0 0 1" size="0.001"/>
+    <default class="finger/visual">
+      <geom type="mesh" contype="0" conaffinity="0"/>
+    </default>
+    <default class="finger/collision">
+      <geom type="mesh" group="3" material="collision" mass="0"/>
+      <default class="finger/collision_soft">
+        <geom condim="6" friction="1 0.005 0.0001" solref="-2500 -100"/>
+      </default>
+      <default class="finger/collision_hard">
+        <geom condim="4" friction="1 0.001 2e-05" solref="-7000 -167"/>
+      </default>
+    </default>
+  </default>
+
+  <asset>
+    <material name="white_aluminium" rgba="0.6313 0.6313 0.62745 1"/>
+    <material name="graphite_black" rgba="0.1529 0.16078 0.16862 1"/>
+    <material name="jet_black" rgba="0.0549 0.0549 0.06274 1"/>
+    <material name="collision" rgba="1 0.6 0.6 1"/>
+
+    <mesh name="r3_config1_base" file="Asm-MRH-HB1-Visual,00-Plastic.stl"/>
+    <mesh name="r3_config1_base_col" file="Asm-MRH-HB1-Visual,00-Plastic.stl"/>
+    <mesh name="r3_config1_base_puck" file="Asm-MRH-HB1-Visual,00-Puck.stl"/>
+    <mesh name="r3_config1_base_puck_col" file="Asm-MRH-HB1-Visual,00-Puck.stl"/>
+    <mesh name="r3_finger_base" file="MRH-FB-MainALU-Visual,00.stl"/>
+    <mesh name="r3_finger_base_tb" file="MRH-FB-TB-Main-Visual,00.stl"/>
+    <mesh name="r3_finger_cover" file="MRH-FB-Main-Cover-Visual,00.stl"/>
+    <mesh name="r3_finger_pulley_block" file="MRH-FB-PulleyBlock1-Visual,00.stl"/>
+    <mesh name="r3_finger_lid_white" file="MRH-FB-TB-Lid-White-Visual,00.stl"/>
+    <mesh name="r3_finger_lid_logo" file="MRH-FB-TB-Lid-Logo-Visual,00.stl"/>
+    <mesh name="r3_finger_cover_small_left" file="MRH-FB-S-Cover-L-Visual,00.stl"/>
+    <mesh name="r3_finger_cover_small_right" file="MRH-FB-S-Cover-R-Visual,00.stl"/>
+    <mesh name="r3_finger_base_col" file="r3_finger_base_col.stl"/>
+    <mesh name="r3_finger_knuckle" file="MRH-F-J0Link-Visual,00.stl" refquat="1 -1 0 0"/>
+    <mesh name="r3_finger_knuckle_col" file="MRH-F-J0Link-Visual,00.stl" refquat="1 -1 0 0"/>
+    <mesh name="r3_finger_proximal" file="MRH-F-Prox-Visual,00-Main.stl" refquat="1 -1 0 0"/>
+    <mesh name="r3_finger_proximal_lid" file="MRH-F-Prox-Visual,00-Lid.stl" refquat="1 -1 0 0"/>
+    <mesh name="r3_finger_proximal_magtac" file="MRH-F-Prox-MagTac-Sensor-Visual,00.stl" refquat="1 -1 0 0"/>
+    <mesh name="r3_finger_proximal_col" file="Asm-MRH-F-Prox-Visual,00+Magtac,00.stl" refquat="1 -1 0 0"/>
+    <mesh name="r3_finger_middle" file="MRH-F-Mid-Visual,00.stl" refquat="1 -1 0 0"/>
+    <mesh name="r3_finger_middle_magtac" file="MRH-F-Mid-MagTac-Sensor-Visual,00.stl" refquat="1 -1 0 0"/>
+    <mesh name="r3_finger_middle_col" file="Asm-MRH-F-Mid-Visual,00+MagTac,00.stl" refquat="1 -1 0 0"/>
+    <mesh name="r3_finger_distal" file="MRH-F-Distal-Visual,00.stl" refquat="0 0 0 1"/>
+    <mesh name="r3_finger_distal_sensor" file="MRH-F-Distal-Sensor-Visual,00.stl" refquat="0 -1 0 0"/>
+    <mesh name="r3_finger_distal_col" file="MRH-F-Distal-Visual,00.stl" refquat="0 0 0 1"/>
+    <mesh name="r3_finger_distal_tip_col" file="MRH-F-Distal-Sensor-Visual,00.stl" refquat="0 -1 0 0"/>
+  </asset>
+
+  <extension>
+    <plugin plugin="mujoco.pid">
+      <instance name="actuator_J0">
+        <config key="kp" value="2.8"/>
+        <config key="ki" value="4.0"/>
+        <config key="kd" value="0.03"/>
+        <config key="imax" value="0.1"/>
+        <config key="slewmax" value="3.14159"/>
+      </instance>
+    </plugin>
+    <plugin plugin="mujoco.pid">
+      <instance name="actuator_J1">
+        <config key="kp" value="2.5"/>
+        <config key="ki" value="3.0"/>
+        <config key="kd" value="0.02"/>
+        <config key="imax" value="0.2"/>
+        <config key="slewmax" value="3.14159"/>
+      </instance>
+    </plugin>
+    <plugin plugin="mujoco.pid">
+      <instance name="actuator_J2">
+        <config key="kp" value="1.1"/>
+        <config key="ki" value="3.0"/>
+        <config key="kd" value="0.01"/>
+        <config key="imax" value="0.2"/>
+        <config key="slewmax" value="3.14159"/>
+      </instance>
+    </plugin>
+    <plugin plugin="mujoco.pid">
+      <instance name="actuator_J3">
+        <config key="kp" value="0.6"/>
+        <config key="ki" value="3.0"/>
+        <config key="kd" value="0.008"/>
+        <config key="imax" value="0.1"/>
+        <config key="slewmax" value="3.14159"/>
+      </instance>
+    </plugin>
+  </extension>
+
+  <worldbody>
+    <light pos="0 0 2"/>
+    <site name="tcp" type="sphere" rgba="1 0.5 0 0.2" size="0.001" pos="0 0 0.3"/>
+    <site name="attachment_site" type="sphere" group="3" rgba="1 0 0 1" size="0.001"/>
+    <body name="hand_base" gravcomp="1">
+      <geom name="hand_base_geom" material="jet_black" type="mesh" contype="0" conaffinity="0" mass="0.51"
+        mesh="r3_config1_base"/>
+      <geom name="hand_base_geom_col" type="mesh" group="3" rgba="1 0.6 0.6 1" mass="0" mesh="r3_config1_base_col"/>
+      <geom name="hand_base_puck_geom" material="white_aluminium" type="mesh" contype="0" conaffinity="0" mass="0"
+        mesh="r3_config1_base_puck"/>
+      <geom name="hand_base_puck_geom_col" type="mesh" group="3" rgba="1 0.6 0.6 1" mass="0"
+        mesh="r3_config1_base_puck_col"/>
+      <geom name="hand_base_CollisionGeom_1" type="cylinder" contype="0" conaffinity="0" group="5" size="0.08"
+        rgba="1 1 1 0.3" mass="0" fromto="0 0 -0.01 0 0 0.195"/>
+    </body>
+    <body pos="0 0.05 0.017" quat="1 0 0 0" name="F0/">
+      <body name="F0/finger_base" gravcomp="1">
+        <site name="F0/attachment_site"/>
+        <geom name="F0/base_geom" class="finger/visual" mass="0.89937782" mesh="r3_finger_base"/>
+        <geom name="F0/base_tb_geom" class="finger/visual" mass="0" mesh="r3_finger_base_tb"/>
+        <geom name="F0/base_cover_geom" class="finger/visual" material="jet_black" mass="0" mesh="r3_finger_cover"/>
+        <geom name="F0/base_pulley_block_geom" class="finger/visual" mass="0" mesh="r3_finger_pulley_block"/>
+        <geom name="F0/base_lid_white_geom" class="finger/visual" material="white_aluminium" mass="0"
+          mesh="r3_finger_lid_white"/>
+        <geom name="F0/base_lid_logo_geom" class="finger/visual" material="jet_black" mass="0" mesh="r3_finger_lid_logo"/>
+        <geom name="F0/base_cover_small_left_geom" class="finger/visual" material="jet_black" mass="0"
+          mesh="r3_finger_cover_small_left"/>
+        <geom name="F0/base_cover_small_right_geom" class="finger/visual" material="jet_black" mass="0"
+          mesh="r3_finger_cover_small_right"/>
+        <geom name="F0/base_geom_col" class="finger/collision_hard" quat="1 -1 0 0" mesh="r3_finger_base_col"/>
+        <body name="F0/finger_knuckle" pos="0 0.015 0.17902" euler="-1.0472 0 0" gravcomp="1">
+          <site name="F0/j0_site"/>
+          <joint name="F0/J0" axis="0 0 -1" range="-0.8727 0.8727" armature="8e-05" damping="0.009" frictionloss="0.009"/>
+          <geom name="F0/knuckle_geom" class="finger/visual" material="jet_black" mass="0.13077995"
+            mesh="r3_finger_knuckle"/>
+          <geom name="F0/knuckle_geom_col" class="finger/collision_hard" mesh="r3_finger_knuckle_col"/>
+          <body name="F0/finger_proximal" pos="0 -0.03 0" gravcomp="1">
+            <site name="F0/j1_site"/>
+            <joint name="F0/J1" axis="1 0 0" range="-1.3963 0.7854" armature="8e-05" damping="0.009"
+              frictionloss="0.009"/>
+            <geom name="F0/proximal_geom" class="finger/visual" mass="0.09614332" mesh="r3_finger_proximal"/>
+            <geom name="F0/proximal_lid_geom" class="finger/visual" material="jet_black" mass="0"
+              mesh="r3_finger_proximal_lid"/>
+            <geom name="F0/proximal_magtac_geom" class="finger/visual" material="graphite_black" mass="0"
+              mesh="r3_finger_proximal_magtac"/>
+            <geom name="F0/proximal_geom_col" class="finger/collision_hard" mesh="r3_finger_proximal_col"/>
+            <body name="F0/finger_middle" pos="0 -0.05 0" gravcomp="1">
+              <site name="F0/j2_site"/>
+              <joint name="F0/J2" axis="1 0 0" range="0 1.3963" armature="8e-05" damping="0.009" frictionloss="0.009"/>
+              <geom name="F0/middle_geom" class="finger/visual" material="jet_black" mass="0.05585897"
+                mesh="r3_finger_middle"/>
+              <geom name="F0/middle_magtac_geom" class="finger/visual" material="graphite_black" mass="0"
+                mesh="r3_finger_middle_magtac"/>
+              <geom name="F0/middle_geom_col" class="finger/collision_hard" mesh="r3_finger_middle_col"/>
+              <body name="F0/finger_distal" pos="0 -0.035 0" quat="0 0 -1 1" gravcomp="1">
+                <site name="F0/j3_site"/>
+                <joint name="F0/J3" axis="-1 0 0" range="-0.5236 1.4835" armature="8e-05" damping="0.009"
+                  frictionloss="0.009"/>
+                <geom name="F0/distal_geom" class="finger/visual" mass="0.02766365" mesh="r3_finger_distal"/>
+                <geom name="F0/distal_sensor_geom" class="finger/visual" material="graphite_black" mass="0"
+                  mesh="r3_finger_distal_sensor"/>
+                <geom name="F0/distal_geom_col" class="finger/collision_hard" mesh="r3_finger_distal_col"/>
+                <geom name="F0/distal_geom_tip_col" class="finger/collision_soft" mesh="r3_finger_distal_tip_col"/>
+                <site name="F0/fingertip_site" pos="0 -0.00625 0.04"/>
+                <site name="F0/distal_site" pos="0 0.007 0.03"/>
+                <geom name="F0/finger_distal_CollisionGeom_1" type="capsule" contype="0" conaffinity="0" group="5"
+                  size="0.018" rgba="1 1 1 0.3" mass="0" fromto="0 0 0.025 0 0 0"/>
+              </body>
+              <geom name="F0/finger_middle_CollisionGeom_1" type="cylinder" contype="0" conaffinity="0" group="5"
+                size="0.014" rgba="1 1 1 0.3" mass="0" fromto="0.015 0 0 -0.015 0 0"/>
+              <geom name="F0/finger_middle_CollisionGeom_2" type="capsule" contype="0" conaffinity="0" group="5"
+                size="0.02" rgba="1 1 1 0.3" mass="0" fromto="0 -0.026 0 0 -0.01 0"/>
+              <geom name="F0/finger_middle_CollisionGeom_3" type="cylinder" contype="0" conaffinity="0" group="5"
+                size="0.014" rgba="1 1 1 0.3" mass="0" fromto="0.015 -0.035 0 -0.015 -0.035 0"/>
+            </body>
+            <geom name="F0/finger_proximal_CollisionGeom_1" type="cylinder" contype="0" conaffinity="0" group="5"
+              size="0.02" rgba="1 1 1 0.3" mass="0" fromto="0.02 0 0 -0.023 0 0"/>
+            <geom name="F0/finger_proximal_CollisionGeom_2" type="capsule" contype="0" conaffinity="0" group="5"
+              size="0.025" rgba="1 1 1 0.3" mass="0" fromto="0 -0.01 0.003 0 -0.04 0.003"/>
+          </body>
+          <geom name="F0/finger_knuckle_CollisionGeom_1" type="cylinder" contype="0" conaffinity="0" group="5"
+            size="0.027" rgba="1 1 1 0.3" mass="0" fromto="0 0 0.008 0 0 -0.047"/>
+          <geom name="F0/finger_knuckle_CollisionGeom_2" type="cylinder" contype="0" conaffinity="0" group="5"
+            size="0.018" rgba="1 1 1 0.3" mass="0" fromto="0.018 -0.03 0 -0.018 -0.03 0"/>
+          <geom name="F0/finger_knuckle_CollisionGeom_3" type="capsule" contype="0" conaffinity="0" group="5"
+            size="0.025" rgba="1 1 1 0.3" mass="0" fromto="-0.0015 -0.02 -0.01 -0.0015 -0.02 -0.02"/>
+        </body>
+        <geom name="F0/finger_base_CollisionGeom_1" type="cylinder" contype="0" conaffinity="0" group="5" size="0.05"
+          rgba="1 1 1 0.3" mass="0" fromto="0 0 -0.005 0 0 0.195"/>
+      </body>
+    </body>
+
+    <body pos="0.039 -0.029 0.017" quat="-0.16212752892551119 0 0 0.98676981326168844" name="F1/">
+      <body name="F1/finger_base" gravcomp="1">
+        <site name="F1/attachment_site"/>
+        <geom name="F1/base_geom" class="finger/visual" mass="0.89937782" mesh="r3_finger_base"/>
+        <geom name="F1/base_tb_geom" class="finger/visual" mass="0" mesh="r3_finger_base_tb"/>
+        <geom name="F1/base_cover_geom" class="finger/visual" material="jet_black" mass="0" mesh="r3_finger_cover"/>
+        <geom name="F1/base_pulley_block_geom" class="finger/visual" mass="0" mesh="r3_finger_pulley_block"/>
+        <geom name="F1/base_lid_white_geom" class="finger/visual" material="white_aluminium" mass="0"
+          mesh="r3_finger_lid_white"/>
+        <geom name="F1/base_lid_logo_geom" class="finger/visual" material="jet_black" mass="0" mesh="r3_finger_lid_logo"/>
+        <geom name="F1/base_cover_small_left_geom" class="finger/visual" material="jet_black" mass="0"
+          mesh="r3_finger_cover_small_left"/>
+        <geom name="F1/base_cover_small_right_geom" class="finger/visual" material="jet_black" mass="0"
+          mesh="r3_finger_cover_small_right"/>
+        <geom name="F1/base_geom_col" class="finger/collision_hard" quat="1 -1 0 0" mesh="r3_finger_base_col"/>
+        <body name="F1/finger_knuckle" pos="0 0.015 0.17902" euler="-1.0472 0 0" gravcomp="1">
+          <site name="F1/j0_site"/>
+          <joint name="F1/J0" axis="0 0 -1" range="-0.8727 0.8727" armature="8e-05" damping="0.009" frictionloss="0.009"/>
+          <geom name="F1/knuckle_geom" class="finger/visual" material="jet_black" mass="0.13077995"
+            mesh="r3_finger_knuckle"/>
+          <geom name="F1/knuckle_geom_col" class="finger/collision_hard" mesh="r3_finger_knuckle_col"/>
+          <body name="F1/finger_proximal" pos="0 -0.03 0" gravcomp="1">
+            <site name="F1/j1_site"/>
+            <joint name="F1/J1" axis="1 0 0" range="-1.3963 0.7854" armature="8e-05" damping="0.009"
+              frictionloss="0.009"/>
+            <geom name="F1/proximal_geom" class="finger/visual" mass="0.09614332" mesh="r3_finger_proximal"/>
+            <geom name="F1/proximal_lid_geom" class="finger/visual" material="jet_black" mass="0"
+              mesh="r3_finger_proximal_lid"/>
+            <geom name="F1/proximal_magtac_geom" class="finger/visual" material="graphite_black" mass="0"
+              mesh="r3_finger_proximal_magtac"/>
+            <geom name="F1/proximal_geom_col" class="finger/collision_hard" mesh="r3_finger_proximal_col"/>
+            <body name="F1/finger_middle" pos="0 -0.05 0" gravcomp="1">
+              <site name="F1/j2_site"/>
+              <joint name="F1/J2" axis="1 0 0" range="0 1.3963" armature="8e-05" damping="0.009" frictionloss="0.009"/>
+              <geom name="F1/middle_geom" class="finger/visual" material="jet_black" mass="0.05585897"
+                mesh="r3_finger_middle"/>
+              <geom name="F1/middle_magtac_geom" class="finger/visual" material="graphite_black" mass="0"
+                mesh="r3_finger_middle_magtac"/>
+              <geom name="F1/middle_geom_col" class="finger/collision_hard" mesh="r3_finger_middle_col"/>
+              <body name="F1/finger_distal" pos="0 -0.035 0" quat="0 0 -1 1" gravcomp="1">
+                <site name="F1/j3_site"/>
+                <joint name="F1/J3" axis="-1 0 0" range="-0.5236 1.4835" armature="8e-05" damping="0.009"
+                  frictionloss="0.009"/>
+                <geom name="F1/distal_geom" class="finger/visual" mass="0.02766365" mesh="r3_finger_distal"/>
+                <geom name="F1/distal_sensor_geom" class="finger/visual" material="graphite_black" mass="0"
+                  mesh="r3_finger_distal_sensor"/>
+                <geom name="F1/distal_geom_col" class="finger/collision_hard" mesh="r3_finger_distal_col"/>
+                <geom name="F1/distal_geom_tip_col" class="finger/collision_soft" mesh="r3_finger_distal_tip_col"/>
+                <site name="F1/fingertip_site" pos="0 -0.00625 0.04"/>
+                <site name="F1/distal_site" pos="0 0.007 0.03"/>
+                <geom name="F1/finger_distal_CollisionGeom_1" type="capsule" contype="0" conaffinity="0" group="5"
+                  size="0.018" rgba="1 1 1 0.3" mass="0" fromto="0 0 0.025 0 0 0"/>
+              </body>
+              <geom name="F1/finger_middle_CollisionGeom_1" type="cylinder" contype="0" conaffinity="0" group="5"
+                size="0.014" rgba="1 1 1 0.3" mass="0" fromto="0.015 0 0 -0.015 0 0"/>
+              <geom name="F1/finger_middle_CollisionGeom_2" type="capsule" contype="0" conaffinity="0" group="5"
+                size="0.02" rgba="1 1 1 0.3" mass="0" fromto="0 -0.026 0 0 -0.01 0"/>
+              <geom name="F1/finger_middle_CollisionGeom_3" type="cylinder" contype="0" conaffinity="0" group="5"
+                size="0.014" rgba="1 1 1 0.3" mass="0" fromto="0.015 -0.035 0 -0.015 -0.035 0"/>
+            </body>
+            <geom name="F1/finger_proximal_CollisionGeom_1" type="cylinder" contype="0" conaffinity="0" group="5"
+              size="0.02" rgba="1 1 1 0.3" mass="0" fromto="0.02 0 0 -0.023 0 0"/>
+            <geom name="F1/finger_proximal_CollisionGeom_2" type="capsule" contype="0" conaffinity="0" group="5"
+              size="0.025" rgba="1 1 1 0.3" mass="0" fromto="0 -0.01 0.003 0 -0.04 0.003"/>
+          </body>
+          <geom name="F1/finger_knuckle_CollisionGeom_1" type="cylinder" contype="0" conaffinity="0" group="5"
+            size="0.027" rgba="1 1 1 0.3" mass="0" fromto="0 0 0.008 0 0 -0.047"/>
+          <geom name="F1/finger_knuckle_CollisionGeom_2" type="cylinder" contype="0" conaffinity="0" group="5"
+            size="0.018" rgba="1 1 1 0.3" mass="0" fromto="0.018 -0.03 0 -0.018 -0.03 0"/>
+          <geom name="F1/finger_knuckle_CollisionGeom_3" type="capsule" contype="0" conaffinity="0" group="5"
+            size="0.025" rgba="1 1 1 0.3" mass="0" fromto="-0.0015 -0.02 -0.01 -0.0015 -0.02 -0.02"/>
+        </body>
+        <geom name="F1/finger_base_CollisionGeom_1" type="cylinder" contype="0" conaffinity="0" group="5" size="0.0500"
+          rgba="1 1 1 0.3" mass="0" fromto="0 0 -0.005 0 0 0.195"/>
+      </body>
+    </body>
+
+    <body pos="-0.039 -0.029 0.017" quat="0.16212752892551119 0 0 0.98676981326168844" name="F2/">
+      <body name="F2/finger_base" gravcomp="1">
+        <site name="F2/attachment_site"/>
+        <geom name="F2/base_geom" class="finger/visual" mass="0.89937782" mesh="r3_finger_base"/>
+        <geom name="F2/base_tb_geom" class="finger/visual" mass="0" mesh="r3_finger_base_tb"/>
+        <geom name="F2/base_cover_geom" class="finger/visual" material="jet_black" mass="0" mesh="r3_finger_cover"/>
+        <geom name="F2/base_pulley_block_geom" class="finger/visual" mass="0" mesh="r3_finger_pulley_block"/>
+        <geom name="F2/base_lid_white_geom" class="finger/visual" material="white_aluminium" mass="0"
+          mesh="r3_finger_lid_white"/>
+        <geom name="F2/base_lid_logo_geom" class="finger/visual" material="jet_black" mass="0" mesh="r3_finger_lid_logo"/>
+        <geom name="F2/base_cover_small_left_geom" class="finger/visual" material="jet_black" mass="0"
+          mesh="r3_finger_cover_small_left"/>
+        <geom name="F2/base_cover_small_right_geom" class="finger/visual" material="jet_black" mass="0"
+          mesh="r3_finger_cover_small_right"/>
+        <geom name="F2/base_geom_col" class="finger/collision_hard" quat="1 -1 0 0" mesh="r3_finger_base_col"/>
+        <body name="F2/finger_knuckle" pos="0 0.015 0.17902" euler="-1.0472 0 0" gravcomp="1">
+          <site name="F2/j0_site"/>
+          <joint name="F2/J0" axis="0 0 -1" range="-0.8727 0.8727" armature="8e-05" damping="0.009" frictionloss="0.009"/>
+          <geom name="F2/knuckle_geom" class="finger/visual" material="jet_black" mass="0.13077995"
+            mesh="r3_finger_knuckle"/>
+          <geom name="F2/knuckle_geom_col" class="finger/collision_hard" mesh="r3_finger_knuckle_col"/>
+          <body name="F2/finger_proximal" pos="0 -0.03 0" gravcomp="1">
+            <site name="F2/j1_site"/>
+            <joint name="F2/J1" axis="1 0 0" range="-1.3963 0.7854" armature="8e-05" damping="0.009"
+              frictionloss="0.009"/>
+            <geom name="F2/proximal_geom" class="finger/visual" mass="0.09614332" mesh="r3_finger_proximal"/>
+            <geom name="F2/proximal_lid_geom" class="finger/visual" material="jet_black" mass="0"
+              mesh="r3_finger_proximal_lid"/>
+            <geom name="F2/proximal_magtac_geom" class="finger/visual" material="graphite_black" mass="0"
+              mesh="r3_finger_proximal_magtac"/>
+            <geom name="F2/proximal_geom_col" class="finger/collision_hard" mesh="r3_finger_proximal_col"/>
+            <body name="F2/finger_middle" pos="0 -0.05 0" gravcomp="1">
+              <site name="F2/j2_site"/>
+              <joint name="F2/J2" axis="1 0 0" range="0 1.3963" armature="8e-05" damping="0.009" frictionloss="0.009"/>
+              <geom name="F2/middle_geom" class="finger/visual" material="jet_black" mass="0.05585897"
+                mesh="r3_finger_middle"/>
+              <geom name="F2/middle_magtac_geom" class="finger/visual" material="graphite_black" mass="0"
+                mesh="r3_finger_middle_magtac"/>
+              <geom name="F2/middle_geom_col" class="finger/collision_hard" mesh="r3_finger_middle_col"/>
+              <body name="F2/finger_distal" pos="0 -0.035 0" quat="0 0 -1 1" gravcomp="1">
+                <site name="F2/j3_site"/>
+                <joint name="F2/J3" axis="-1 0 0" range="-0.5236 1.4835" armature="8e-05" damping="0.009"
+                  frictionloss="0.009"/>
+                <geom name="F2/distal_geom" class="finger/visual" mass="0.02766365" mesh="r3_finger_distal"/>
+                <geom name="F2/distal_sensor_geom" class="finger/visual" material="graphite_black" mass="0"
+                  mesh="r3_finger_distal_sensor"/>
+                <geom name="F2/distal_geom_col" class="finger/collision_hard" mesh="r3_finger_distal_col"/>
+                <geom name="F2/distal_geom_tip_col" class="finger/collision_soft" mesh="r3_finger_distal_tip_col"/>
+                <site name="F2/fingertip_site" pos="0 -0.00625 0.04"/>
+                <site name="F2/distal_site" pos="0 0.007 0.03"/>
+                <geom name="F2/finger_distal_CollisionGeom_1" type="capsule" contype="0" conaffinity="0" group="5"
+                  size="0.018" rgba="1 1 1 0.3" mass="0" fromto="0 0 0.025 0 0 0"/>
+              </body>
+              <geom name="F2/finger_middle_CollisionGeom_1" type="cylinder" contype="0" conaffinity="0" group="5"
+                size="0.014" rgba="1 1 1 0.3" mass="0" fromto="0.015 0 0 -0.015 0 0"/>
+              <geom name="F2/finger_middle_CollisionGeom_2" type="capsule" contype="0" conaffinity="0" group="5"
+                size="0.02" rgba="1 1 1 0.3" mass="0" fromto="0 -0.026 0 0 -0.01 0"/>
+              <geom name="F2/finger_middle_CollisionGeom_3" type="cylinder" contype="0" conaffinity="0" group="5"
+                size="0.014" rgba="1 1 1 0.3" mass="0" fromto="0.015 -0.035 0 -0.015 -0.035 0"/>
+            </body>
+            <geom name="F2/finger_proximal_CollisionGeom_1" type="cylinder" contype="0" conaffinity="0" group="5"
+              size="0.02" rgba="1 1 1 0.3" mass="0" fromto="0.02 0 0 -0.023 0 0"/>
+            <geom name="F2/finger_proximal_CollisionGeom_2" type="capsule" contype="0" conaffinity="0" group="5"
+              size="0.025" rgba="1 1 1 0.3" mass="0" fromto="0 -0.01 0.003 0 -0.04 0.003"/>
+          </body>
+          <geom name="F2/finger_knuckle_CollisionGeom_1" type="cylinder" contype="0" conaffinity="0" group="5"
+            size="0.027" rgba="1 1 1 0.3" mass="0" fromto="0 0 0.008 0 0 -0.047"/>
+          <geom name="F2/finger_knuckle_CollisionGeom_2" type="cylinder" contype="0" conaffinity="0" group="5"
+            size="0.018" rgba="1 1 1 0.3" mass="0" fromto="0.018 -0.03 0 -0.018 -0.03 0"/>
+          <geom name="F2/finger_knuckle_CollisionGeom_3" type="capsule" contype="0" conaffinity="0" group="5"
+            size="0.025" rgba="1 1 1 0.3" mass="0" fromto="-0.0015 -0.02 -0.01 -0.0015 -0.02 -0.02"/>
+        </body>
+        <geom name="F2/finger_base_CollisionGeom_1" type="cylinder" contype="0" conaffinity="0" group="5" size="0.05"
+          rgba="1 1 1 0.3" mass="0" fromto="0 0 -0.005 0 0 0.195"/>
+      </body>
+    </body>
+  </worldbody>
+
+  <contact>
+    <exclude name="hand_base:F0_finger_knuckle" body1="hand_base" body2="F0/finger_knuckle"/>
+    <exclude name="hand_base:F1_finger_knuckle" body1="hand_base" body2="F1/finger_knuckle"/>
+    <exclude name="hand_base:F2_finger_knuckle" body1="hand_base" body2="F2/finger_knuckle"/>
+    <exclude name="F0/base:knuckle" body1="F0/finger_base" body2="F0/finger_knuckle"/>
+    <exclude name="F1/base:knuckle" body1="F1/finger_base" body2="F1/finger_knuckle"/>
+    <exclude name="F2/base:knuckle" body1="F2/finger_base" body2="F2/finger_knuckle"/>
+  </contact>
+
+  <actuator>
+    <plugin name="F0/J0_actuator" plugin="mujoco.pid" instance="actuator_J0" ctrlrange="-0.8727 0.8727"
+      forcerange="-0.9 0.53" dyntype="none" joint="F0/J0"/>
+    <plugin name="F0/J1_actuator" plugin="mujoco.pid" instance="actuator_J1" ctrlrange="-1.3963 0.7854"
+      forcerange="-0.35 1.2" dyntype="none" joint="F0/J1"/>
+    <plugin name="F0/J2_actuator" plugin="mujoco.pid" instance="actuator_J2" ctrlrange="0 1.3963" forcerange="-0.52 0.7"
+      dyntype="none" joint="F0/J2"/>
+    <plugin name="F0/J3_actuator" plugin="mujoco.pid" instance="actuator_J3" ctrlrange="-0.5236 1.4835"
+      forcerange="-0.3 0.3" dyntype="none" joint="F0/J3"/>
+    <plugin name="F1/J0_actuator" plugin="mujoco.pid" instance="actuator_J0" ctrlrange="-0.8727 0.8727"
+      forcerange="-0.9 0.53" dyntype="none" joint="F1/J0"/>
+    <plugin name="F1/J1_actuator" plugin="mujoco.pid" instance="actuator_J1" ctrlrange="-1.3963 0.7854"
+      forcerange="-0.35 1.2" dyntype="none" joint="F1/J1"/>
+    <plugin name="F1/J2_actuator" plugin="mujoco.pid" instance="actuator_J2" ctrlrange="0 1.3963" forcerange="-0.52 0.7"
+      dyntype="none" joint="F1/J2"/>
+    <plugin name="F1/J3_actuator" plugin="mujoco.pid" instance="actuator_J3" ctrlrange="-0.5236 1.4835"
+      forcerange="-0.3 0.3" dyntype="none" joint="F1/J3"/>
+    <plugin name="F2/J0_actuator" plugin="mujoco.pid" instance="actuator_J0" ctrlrange="-0.8727 0.8727"
+      forcerange="-0.9 0.53" dyntype="none" joint="F2/J0"/>
+    <plugin name="F2/J1_actuator" plugin="mujoco.pid" instance="actuator_J1" ctrlrange="-1.3963 0.7854"
+      forcerange="-0.35 1.2" dyntype="none" joint="F2/J1"/>
+    <plugin name="F2/J2_actuator" plugin="mujoco.pid" instance="actuator_J2" ctrlrange="0 1.3963" forcerange="-0.52 0.7"
+      dyntype="none" joint="F2/J2"/>
+    <plugin name="F2/J3_actuator" plugin="mujoco.pid" instance="actuator_J3" ctrlrange="-0.5236 1.4835"
+      forcerange="-0.3 0.3" dyntype="none" joint="F2/J3"/>
+  </actuator>
+
+  <sensor>
+    <jointactuatorfrc name="F0/j0_torque" joint="F0/J0"/>
+    <jointactuatorfrc name="F0/j1_torque" joint="F0/J1"/>
+    <jointactuatorfrc name="F0/j2_torque" joint="F0/J2"/>
+    <jointactuatorfrc name="F0/j3_torque" joint="F0/J3"/>
+    <jointactuatorfrc name="F1/j0_torque" joint="F1/J0"/>
+    <jointactuatorfrc name="F1/j1_torque" joint="F1/J1"/>
+    <jointactuatorfrc name="F1/j2_torque" joint="F1/J2"/>
+    <jointactuatorfrc name="F1/j3_torque" joint="F1/J3"/>
+    <jointactuatorfrc name="F2/j0_torque" joint="F2/J0"/>
+    <jointactuatorfrc name="F2/j1_torque" joint="F2/J1"/>
+    <jointactuatorfrc name="F2/j2_torque" joint="F2/J2"/>
+    <jointactuatorfrc name="F2/j3_torque" joint="F2/J3"/>
+  </sensor>
+</mujoco>
