@@ -1,4 +1,4 @@
-<mujoco model="new_shadow_hand">
+<mujoco model="shadow_dexee">
   <compiler autolimits="true" angle="radian" meshdir="assets"/>
 
   <option integrator="implicitfast" cone="elliptic" noslip_iterations="5" noslip_tolerance="0"/>

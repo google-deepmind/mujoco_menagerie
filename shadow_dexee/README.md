@@ -1,22 +1,23 @@
-# New Shadow Hand Description (MJCF)
+# Shadow DEX-EE Hand Description (MJCF)
 
 Requires MuJoCo 3.1.0 or later.
 
 ## Overview
 
 This package contains a simplified robot description (MJCF) of the
-[NEW-SHADOW-HAND](https://www.shadowrobot.com/new-shadow-hand/) developed by the
-[Shadow Robot Company](https://www.shadowrobot.com/). The original assets were
-provided directly by [Shadow Robot Company](https://www.shadowrobot.com/) under
-the [Apache 2.0 License](LICENSE).
+[SHADOW-DEX-EE-HAND](https://www.shadowrobot.com/new-shadow-hand/) developed by
+the [Shadow Robot Company](https://www.shadowrobot.com/). The original assets
+were provided directly by [Shadow Robot Company](https://www.shadowrobot.com/)
+under the [Apache 2.0 License](LICENSE).
 
 <p float="left">
-  <img src="new_shadow_hand.png" width="400">
+  <img src="shadow_dexee.png" width="400">
 </p>
 
 ## MJCF
 
-The source of truth for the New Shadow Hand in MuJoCo can be found in `new_shadow_hand.xml`.
+The source of truth for the Shadow DEX-EE Hand in MuJoCo can be found in
+`shadow_dexee.xml`.
 
 This model was evolved alongside hardware development. The initial release
 matches the hardware version at release (without tactile sensors).
