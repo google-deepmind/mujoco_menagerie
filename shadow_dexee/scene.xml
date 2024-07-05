@@ -1,5 +1,5 @@
-<mujoco model="new shadow hand scene">
-  <include file="new_shadow_hand.xml"/>
+<mujoco model="shadow dex-ee hand scene">
+  <include file="shadow_dexee.xml"/>
 
   <statistic extent=".5" center="0 0 0.1"/>
 
