@@ -1,6 +1,6 @@
 # Shadow DEX-EE Hand Description (MJCF)
 
-Requires MuJoCo 3.1.0 or later.
+Requires MuJoCo 3.1.7 or later.
 
 ## Overview
 

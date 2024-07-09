@@ -350,29 +350,29 @@
 
   <actuator>
     <plugin name="F0/J0_actuator" plugin="mujoco.pid" instance="actuator_J0" ctrlrange="-0.8727 0.8727"
-      forcerange="-0.9 0.53" dyntype="none" joint="F0/J0"/>
+      forcerange="-0.9 0.53" dyntype="none" joint="F0/J0" actdim="2"/>
     <plugin name="F0/J1_actuator" plugin="mujoco.pid" instance="actuator_J1" ctrlrange="-1.3963 0.7854"
-      forcerange="-0.35 1.2" dyntype="none" joint="F0/J1"/>
+      forcerange="-0.35 1.2" dyntype="none" joint="F0/J1" actdim="2"/>
     <plugin name="F0/J2_actuator" plugin="mujoco.pid" instance="actuator_J2" ctrlrange="0 1.3963" forcerange="-0.52 0.7"
-      dyntype="none" joint="F0/J2"/>
+      dyntype="none" joint="F0/J2" actdim="2"/>
     <plugin name="F0/J3_actuator" plugin="mujoco.pid" instance="actuator_J3" ctrlrange="-0.5236 1.4835"
-      forcerange="-0.3 0.3" dyntype="none" joint="F0/J3"/>
+      forcerange="-0.3 0.3" dyntype="none" joint="F0/J3" actdim="2"/>
     <plugin name="F1/J0_actuator" plugin="mujoco.pid" instance="actuator_J0" ctrlrange="-0.8727 0.8727"
-      forcerange="-0.9 0.53" dyntype="none" joint="F1/J0"/>
+      forcerange="-0.9 0.53" dyntype="none" joint="F1/J0" actdim="2"/>
     <plugin name="F1/J1_actuator" plugin="mujoco.pid" instance="actuator_J1" ctrlrange="-1.3963 0.7854"
-      forcerange="-0.35 1.2" dyntype="none" joint="F1/J1"/>
+      forcerange="-0.35 1.2" dyntype="none" joint="F1/J1" actdim="2"/>
     <plugin name="F1/J2_actuator" plugin="mujoco.pid" instance="actuator_J2" ctrlrange="0 1.3963" forcerange="-0.52 0.7"
-      dyntype="none" joint="F1/J2"/>
+      dyntype="none" joint="F1/J2" actdim="2"/>
     <plugin name="F1/J3_actuator" plugin="mujoco.pid" instance="actuator_J3" ctrlrange="-0.5236 1.4835"
-      forcerange="-0.3 0.3" dyntype="none" joint="F1/J3"/>
+      forcerange="-0.3 0.3" dyntype="none" joint="F1/J3" actdim="2"/>
     <plugin name="F2/J0_actuator" plugin="mujoco.pid" instance="actuator_J0" ctrlrange="-0.8727 0.8727"
-      forcerange="-0.9 0.53" dyntype="none" joint="F2/J0"/>
+      forcerange="-0.9 0.53" dyntype="none" joint="F2/J0" actdim="2"/>
     <plugin name="F2/J1_actuator" plugin="mujoco.pid" instance="actuator_J1" ctrlrange="-1.3963 0.7854"
-      forcerange="-0.35 1.2" dyntype="none" joint="F2/J1"/>
+      forcerange="-0.35 1.2" dyntype="none" joint="F2/J1" actdim="2"/>
     <plugin name="F2/J2_actuator" plugin="mujoco.pid" instance="actuator_J2" ctrlrange="0 1.3963" forcerange="-0.52 0.7"
-      dyntype="none" joint="F2/J2"/>
+      dyntype="none" joint="F2/J2" actdim="2"/>
     <plugin name="F2/J3_actuator" plugin="mujoco.pid" instance="actuator_J3" ctrlrange="-0.5236 1.4835"
-      forcerange="-0.3 0.3" dyntype="none" joint="F2/J3"/>
+      forcerange="-0.3 0.3" dyntype="none" joint="F2/J3" actdim="2"/>
   </actuator>
 
   <sensor>
