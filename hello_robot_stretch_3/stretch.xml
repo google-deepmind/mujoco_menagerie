@@ -1,0 +1,554 @@
+<mujoco model="stretch">
+  <compiler angle="radian" assetdir="assets" autolimits="true"/>
+
+  <option integrator="implicitfast" impratio="10" cone="elliptic" noslip_iterations="3">
+    <flag multiccd="enable"/>
+  </option>
+
+  <default>
+    <default class="stretch">
+      <geom mass="0" solref="0.005 1"/>
+      <general biastype="affine"/>
+      <default class="wheel">
+        <joint axis="0 0 1" damping="30" frictionloss="1" armature="0.1" stiffness="0.02"/>
+        <velocity gear="3" kv="100" ctrlrange="-6 6" forcerange="-100 100"/>
+      </default>
+      <default class="lift">
+        <joint type="slide" axis="0 0 1" damping="35" stiffness="0.03" armature="0.01" range="0.0 1.1"
+          frictionloss="1.5"/>
+        <general ctrlrange="0.0 1.1" gainprm="400" biasprm="0 -200 -100" forcerange="-70 70"/>
+      </default>
+      <default class="telescope">
+        <joint type="slide" axis="0 0 1" damping="50" stiffness="0.02" armature="0.01" range="0 0.13" frictionloss="1.5"/>
+        <general ctrlrange="0 0.52" gainprm="150" biasprm="0 -100 -10" forcerange="-56 56"/>
+      </default>
+      <default class="head">
+        <joint axis="0 0 1" damping="1"/>
+        <position kp="10"/>
+        <default class="head_pan">
+          <joint range="-4.04 1.73"/>
+          <position ctrlrange="-4.04 1.73"/>
+        </default>
+        <default class="head_tilt">
+          <joint range="-1.53 0.79"/>
+          <position ctrlrange="-1.53 0.79"/>
+        </default>
+      </default>
+
+      <default class="wrist">
+        <joint axis="0 0 1" damping="1"/>
+        <position kp="10"/>
+        <default class="wrist_yaw">
+          <joint axis="0 0 -1" range="-1.39 4.42" armature="0.01" damping="7" frictionloss=".1"/>
+          <position ctrlrange="-1.39 4.42" kp="20"/>
+        </default>
+        <default class="wrist_pitch">
+          <joint axis="0 0 1" range="-1.57 0.56" armature="0.01" frictionloss=".1"/>
+          <position ctrlrange="-1.57 0.56" kp="50"/>
+        </default>
+        <default class="wrist_roll">
+          <joint axis="0 0 1" range="-3.14 3.14" armature="0.01" frictionloss=".1"/>
+          <position ctrlrange="-3.14 3.14" kp="20"/>
+        </default>
+        <default class="finger_open">
+          <joint axis="0 -1 0" range="-0.6 0.6" damping="0.0001" armature="0.01" frictionloss=".1"/>
+          <position ctrlrange="-0.6 0.6" kp="4000" kv="124"/>
+        </default>
+        <default class="finger_slide">
+          <joint type="slide" axis="0 0 1" range="-0.02 .04" armature="0.1" damping="0.0001"/>
+          <position ctrlrange="-0.02 .04" kp="4000" kv="124"/>
+        </default>
+      </default>
+
+      <default class="visual">
+        <geom group="2" type="mesh" contype="0" conaffinity="0"/>
+      </default>
+      <default class="collision">
+        <geom group="3" type="mesh"/>
+        <default class="caster">
+          <geom type="sphere" size=".02" pos="-0.24 0 .02" condim="1" priority="1"/>
+        </default>
+        <default class="rubber">
+          <geom condim="6" friction="2 0.02 0.1" priority="1" solref="0.02 1" solimp="0.99 0.99 0.01" conaffinity="1"/>
+        </default>
+      </default>
+    </default>
+  </default>
+
+  <asset>
+    <texture type="2d" file="hand_crush.png"/>
+    <texture type="2d" file="serial.png"/>
+    <texture type="2d" file="mobile_base_right_corner_aruco_sticker.png"/>
+    <texture type="2d" file="mobile_base_left_corner_aruco_sticker.png"/>
+    <texture type="2d" file="hand_pinch.png"/>
+    <texture type="2d" file="arm_inner_wrist_aruco_sticker.png"/>
+    <texture type="2d" file="arm_top_wrist_aruco_sticker.png"/>
+    <texture type="2d" file="shoulder_aruco_sticker.png"/>
+    <texture type="2d" file="right_finger_aruco.png"/>
+    <texture type="2d" file="left_finger_aruco.png"/>
+    <texture type="2d" file="gripper_cam_aruco_sticker.png"/>
+
+    <material name="Caster_Rollers_Red" rgba="0.8 0.001381 0 1"/>
+    <material name="Generic_Black" rgba="0.036889 0.036889 0.036889 1"/>
+    <material name="3D_Print_Black" rgba="0.114435 0.114435 0.114435 1"/>
+    <material name="Pantone_Black_6_U" rgba="0.072272 0.076185 0.093059 1"/>
+    <material name="Plug_White" rgba="1 1 1 1"/>
+    <material name="Pure_Black" rgba="0 0 0 1"/>
+    <material name="Gray_Lens" rgba="0.3 0.3 0.3 1" reflectance="0.3"/>
+    <material name="Reflective_Metal" rgba="0.8 0.8 0.8 1" reflectance="0.3" specular="0.5" shininess="0.25"/>
+    <material name="Respeaker_Blue_Glow" rgba="0.006995 0.054480 0.799103 1"/>
+    <material name="Runstop_White_Glow" rgba="0.8 0.8 0.8 1"/>
+    <material name="Speaker_Housing_Black" rgba="0.003642 0.003642 0.003642 1"/>
+    <material name="Wheel_Rubber_Gray" rgba="0.418986 0.424087 0.429225 1"/>
+    <material name="Lightbar_Green" rgba="0.0 0.8 0.002964 1"/>
+    <material name="Pantone_705_U" rgba="1 0.723054 0.760525 1"/>
+    <material name="Pantone_Cool_Gray_4_U" rgba="0.473531 0.479320 0.485150 1"/>
+    <material name="Power_Button_Green" rgba="0.010852 0.023650 0.002724 1"/>
+    <material name="USB_Blue" rgba="0.000557 0.010166 0.8 1"/>
+    <material name="White_Plastic" rgba="1 1 1 1" specular="0.5" shininess="0.25"/>
+    <material name="Laser_Black" rgba="0.03741 0.03741 0.03741 1"/>
+    <material name="Hand_Crush_Sticker" texture="hand_crush"/>
+    <material name="Stretch_Serial_Sticker" texture="serial"/>
+    <material name="Aruco_Right_Base_Sticker" texture="mobile_base_right_corner_aruco_sticker"/>
+    <material name="Aruco_Left_Base_Sticker" texture="mobile_base_left_corner_aruco_sticker"/>
+    <material name="Hand_Pinch_Sticker" texture="hand_pinch"/>
+    <material name="Carbon_Fiber" rgba="0.061246 0.061246 0.061246 1"/>
+    <material name="Aruco_Inner_Wrist_Sticker" texture="arm_inner_wrist_aruco_sticker"/>
+    <material name="Aruco_Top_Wrist_Sticker" texture="arm_top_wrist_aruco_sticker"/>
+    <material name="suction_rubber" rgba="0.25098 0.25098 0.25098 1"/>
+    <material name="Aruco_Shoulder_Sticker" texture="shoulder_aruco_sticker"/>
+
+    <material name="Aruco_right_finger_Sticker" texture="right_finger_aruco"/>
+    <material name="Aruco_left_finger_Sticker" texture="left_finger_aruco"/>
+    <material name="Aruco_gripper_cam_Sticker" texture="gripper_cam_aruco_sticker"/>
+
+    <mesh file="base_link_0.obj"/>
+    <mesh file="base_link_2.obj"/>
+    <mesh file="base_link_3.obj"/>
+    <mesh file="base_link_4.obj"/>
+    <mesh file="base_link_5.obj"/>
+    <mesh file="base_link_6.obj"/>
+    <mesh file="base_link_7.obj"/>
+    <mesh file="base_link_8.obj"/>
+    <mesh name="base_link_collision" file="base_link_casterless.stl"/>
+    <mesh file="link_aruco_right_base.obj"/>
+    <mesh file="link_aruco_left_base.obj"/>
+    <mesh file="respeaker_base.obj"/>
+    <mesh file="link_mast.obj"/>
+    <mesh file="link_head_0.obj"/>
+    <mesh file="link_head_1.obj"/>
+    <mesh file="link_head_2.obj"/>
+    <mesh file="link_head_3.obj"/>
+    <mesh file="link_head_4.obj"/>
+    <mesh file="link_head_5.obj"/>
+    <mesh file="link_head_6.obj"/>
+    <mesh file="link_head_7.obj"/>
+    <mesh file="link_head_8.obj"/>
+    <mesh file="link_head_9.obj"/>
+    <mesh file="link_head_10.obj"/>
+    <mesh file="link_head_11.obj"/>
+    <mesh file="link_head_pan_0.obj"/>
+    <mesh file="link_head_pan_1.obj"/>
+    <mesh file="link_head_tilt_0.obj"/>
+    <mesh file="link_head_tilt_1.obj"/>
+    <mesh file="link_right_wheel_0.obj"/>
+    <mesh file="link_right_wheel_1.obj"/>
+    <mesh file="link_left_wheel_0.obj"/>
+    <mesh file="link_left_wheel_1.obj"/>
+    <mesh file="link_lift_0.obj"/>
+    <mesh file="link_lift_1.obj"/>
+    <mesh file="link_lift_2.obj"/>
+    <mesh file="link_lift_3.obj"/>
+    <mesh file="link_lift_4.obj"/>
+    <mesh file="link_lift_5.obj"/>
+    <mesh file="link_lift_6.obj"/>
+    <mesh file="link_lift_7.obj"/>
+    <mesh file="link_lift_8.obj"/>
+    <mesh file="link_lift_9.obj"/>
+    <mesh file="link_aruco_shoulder.obj"/>
+    <mesh file="link_arm_l4_0.obj"/>
+    <mesh file="link_arm_l4_1.obj"/>
+    <mesh file="link_arm_l3_0.obj"/>
+    <mesh file="link_arm_l3_1.obj"/>
+    <mesh file="link_arm_l2_0.obj"/>
+    <mesh file="link_arm_l2_1.obj"/>
+    <mesh file="link_arm_l1_0.obj"/>
+    <mesh file="link_arm_l1_1.obj"/>
+    <mesh file="link_arm_l0_0.obj"/>
+    <mesh file="link_arm_l0_1.obj"/>
+    <mesh file="link_arm_l0_2.obj"/>
+    <mesh file="link_aruco_inner_wrist.obj"/>
+    <mesh file="link_aruco_top_wrist.obj"/>
+    <mesh file="laser.obj"/>
+    <mesh file="link_gripper_finger_left_0.obj" scale="0.9 1 1"/>
+    <mesh file="link_gripper_finger_left_1.obj" scale="0.9 1 1"/>
+    <mesh file="link_gripper_finger_right_0.obj" scale="0.9 1 1"/>
+    <mesh file="link_gripper_finger_right_1.obj" scale="0.9 1 1"/>
+    <mesh file="link_gripper_0.obj"/>
+    <mesh file="link_gripper_1.obj"/>
+    <mesh file="link_wrist_yaw.obj"/>
+
+    <mesh file="link_DW3_wrist_pitch.stl"/>
+    <mesh file="link_DW3_wrist_quick_connect.stl"/>
+    <mesh file="link_DW3_wrist_yaw_bottom.stl"/>
+    <mesh file="link_SE3_head_nav_cam.stl"/>
+    <mesh file="link_SG3_aruco_d405.obj"/>
+    <mesh file="link_SG3_gripper_body.obj"/>
+
+    <mesh file="link_d405.stl"/>
+    <mesh file="link_d405_lens.stl"/>
+    <mesh file="link_d405_front_plate.stl"/>
+
+    <mesh file="link_SG3_gripper_left_finger_0.obj"/>
+    <mesh file="link_SG3_gripper_right_finger_0.obj"/>
+    <mesh file="link_SG3_gripper_left_finger_1.obj"/>
+    <mesh file="link_SG3_gripper_right_finger_1.obj"/>
+
+    <mesh file="link_SG3_gripper_left_inner_finger.stl"/>
+    <mesh file="link_SG3_gripper_right_inner_finger.stl"/>
+
+    <mesh file="link_SG3_gripper_inner_finger.stl"/>
+
+    <mesh file="link_SG3_gripper_left_finger_aruco.obj"/>
+    <mesh file="link_SG3_gripper_right_finger_aruco.obj"/>
+
+    <mesh file="link_SG3_gripper_right_fingertip.stl"/>
+    <mesh file="link_SG3_gripper_left_fingertip.stl"/>
+  </asset>
+
+  <worldbody>
+    <body name="base_link" childclass="stretch">
+      <freejoint/>
+      <geom mesh="base_link_0" material="Caster_Rollers_Red" class="visual"/>
+      <geom mesh="base_link_2" material="Lightbar_Green" class="visual" shellinertia="true"/>
+      <geom mesh="base_link_3" material="Power_Button_Green" class="visual"/>
+      <geom mesh="base_link_4" material="USB_Blue" class="visual"/>
+      <geom mesh="base_link_5" material="Generic_Black" class="visual"/>
+      <geom mesh="base_link_6" material="Hand_Crush_Sticker" class="visual" shellinertia="true"/>
+      <geom mesh="base_link_7" material="Pantone_705_U" class="visual"/>
+      <geom mesh="base_link_8" material="Pantone_Cool_Gray_4_U" class="visual"/>
+      <geom class="collision" mesh="base_link_collision" mass="15.0"/>
+      <geom class="caster"/>
+      <body name="base_imu" pos="-0.12838 0.0031592 0.1474" euler="-3.1416 0 1.5708">
+        <site name="base_imu" pos="0 0 0"/>
+      </body>
+
+      <body name="link_mast" pos="-0.067 0.135 0.0284" quat="1 1 0 0">
+        <geom material="Generic_Black" mesh="link_mast" class="visual"/>
+        <geom mesh="link_mast" class="collision" mass="1.8285"/>
+      </body>
+      <body name="link_head" pos="-0.067 0.134995 1.3584" quat="-1 0 0 1">
+        <geom mesh="link_head_0" material="Runstop_White_Glow" class="visual"/>
+        <geom mesh="link_head_1" material="Generic_Black" class="visual"/>
+        <geom mesh="link_head_2" material="Speaker_Housing_Black" class="visual"/>
+        <geom mesh="link_head_3" material="Reflective_Metal" class="visual"/>
+        <geom mesh="link_head_4" material="Reflective_Metal" class="visual"/>
+        <geom mesh="link_head_5" material="Pure_Black" class="visual"/>
+        <geom mesh="link_head_6" material="Reflective_Metal" class="visual"/>
+        <geom mesh="link_head_7" material="Plug_White" class="visual"/>
+        <geom mesh="link_head_8" material="3D_Print_Black" class="visual"/>
+        <geom mesh="link_head_9" material="Respeaker_Blue_Glow" class="visual"/>
+        <geom mesh="link_head_10" material="Pantone_Black_6_U" class="visual"/>
+        <geom mesh="link_head_11" material="Generic_Black" class="visual"/>
+        <geom mesh="link_head_10" class="collision" mass="0.833027236718691"/>
+      </body>
+      <body name="link_aruco_right_base" pos="-0.0015028 -0.130497 0.159748" quat="1 0 0 -1">
+        <geom material="Aruco_Right_Base_Sticker" mesh="link_aruco_right_base" class="visual" mass="3.6E-06"
+          shellinertia="true"/>
+        <geom mesh="link_aruco_right_base" class="collision"/>
+      </body>
+      <body name="link_aruco_left_base" pos="-0.0015028 0.130497 0.159748" quat="1 0 0 -1">
+        <geom material="Aruco_Left_Base_Sticker" mesh="link_aruco_left_base" class="visual" mass="3.6E-06"
+          shellinertia="true"/>
+        <geom mesh="link_aruco_left_base" class="collision"/>
+      </body>
+      <body name="laser" pos="0.004 0 0.1664" quat="0 0 0 1">
+        <geom material="Laser_Black" mesh="laser" class="visual" mass="0.24"/>
+        <geom mesh="laser" class="collision"/>
+      </body>
+      <body name="link_right_wheel" pos="0 -0.17035 0.0508" quat="1 -1 0 0">
+        <joint name="joint_right_wheel" class="wheel"/>
+        <geom mesh="link_right_wheel_0" material="Wheel_Rubber_Gray" class="visual" mass="0.15"/>
+        <geom mesh="link_right_wheel_1" material="Generic_Black" class="visual"/>
+        <geom class="collision" type="cylinder" size=".05 .0125" pos="0 0 0.0125"/>
+      </body>
+      <body name="link_left_wheel" pos="0 0.17035 0.0508" quat="1 -1 0 0">
+        <joint name="joint_left_wheel" class="wheel"/>
+        <geom mesh="link_left_wheel_0" material="Wheel_Rubber_Gray" class="visual" mass="0.15"/>
+        <geom mesh="link_left_wheel_1" material="Generic_Black" class="visual"/>
+        <geom class="collision" type="cylinder" size=".05 .0125" pos="0 0 -0.0125"/>
+      </body>
+      <body name="link_lift" gravcomp="1" pos="-0.104385 0.134999 0.2" quat="1 0 0 1">
+        <joint name="joint_lift" class="lift"/>
+        <geom mesh="link_lift_0" material="Pantone_705_U" class="visual"/>
+        <geom mesh="link_lift_2" material="Pure_Black" class="visual"/>
+        <geom mesh="link_lift_3" material="Reflective_Metal" class="visual"/>
+        <geom mesh="link_lift_4" material="Plug_White" class="visual"/>
+        <geom mesh="link_lift_5" material="Pantone_Black_6_U" class="visual"/>
+        <geom mesh="link_lift_6" material="Generic_Black" class="visual"/>
+        <geom mesh="link_lift_7" material="Generic_Black" class="visual"/>
+        <geom mesh="link_lift_8" material="3D_Print_Black" class="visual"/>
+        <geom mesh="link_lift_9" material="Pantone_Black_6_U" class="visual"/>
+        <geom mesh="link_lift_0" class="collision"/>
+        <geom mesh="link_lift_2" class="collision"/>
+        <geom mesh="link_lift_3" class="collision"/>
+        <geom mesh="link_lift_4" class="collision"/>
+        <geom mesh="link_lift_5" class="collision"/>
+        <geom mesh="link_lift_6" class="collision"/>
+        <geom mesh="link_lift_7" class="collision"/>
+        <geom mesh="link_lift_8" class="collision" mass="1.5"/>
+        <geom mesh="link_lift_9" class="collision" mass="1.5"/>
+        <body name="link_arm_l4" gravcomp="1">
+          <geom mesh="link_arm_l4_0" pos="-0.2547 0 0" quat="0.5 0.5 -0.5 -0.5" material="Carbon_Fiber" class="visual"/>
+          <geom mesh="link_arm_l4_1" pos="-0.2547 0 0" quat="0.5 0.5 -0.5 -0.5" material="3D_Print_Black" class="visual"/>
+          <geom mesh="link_arm_l4_0" pos="-0.2547 0 0" quat="0.5 0.5 -0.5 -0.5" class="collision" mass="0.168095"/>
+          <geom mesh="link_arm_l4_1" pos="-0.2547 0 0" quat="0.5 0.5 -0.5 -0.5" class="collision"/>
+          <body name="link_arm_l3" pos="-0.2677 0 0" quat="0.5 0.5 -0.5 -0.5" gravcomp="1">
+            <joint name="joint_arm_l3" class="telescope"/>
+            <geom mesh="link_arm_l3_0" material="Carbon_Fiber" class="visual" mass="0.162893"/>
+            <geom mesh="link_arm_l3_1" material="3D_Print_Black" class="visual"/>
+            <geom mesh="link_arm_l3_0" class="collision"/>
+            <geom mesh="link_arm_l3_1" class="collision"/>
+            <body name="link_arm_l2" pos="0 0 0.013" gravcomp="1">
+              <joint name="joint_arm_l2" class="telescope"/>
+              <geom mesh="link_arm_l2_0" material="Carbon_Fiber" class="visual" mass="0.157139"/>
+              <geom mesh="link_arm_l2_1" material="3D_Print_Black" class="visual"/>
+              <geom mesh="link_arm_l2_0" class="collision"/>
+              <geom mesh="link_arm_l2_1" class="collision"/>
+              <body name="link_arm_l1" pos="0 0 0.013" gravcomp="1">
+                <joint name="joint_arm_l1" class="telescope"/>
+                <geom mesh="link_arm_l1_0" material="Carbon_Fiber" class="visual" mass="0.151382"/>
+                <geom mesh="link_arm_l1_1" material="3D_Print_Black" class="visual"/>
+                <geom mesh="link_arm_l1_0" class="collision"/>
+                <geom mesh="link_arm_l1_1" class="collision"/>
+                <body name="link_arm_l0" pos="0 0 -0.01375" quat="1 0 0 0" gravcomp="1">
+                  <joint name="joint_arm_l0" class="telescope"/>
+                  <geom mesh="link_arm_l0_0" material="3D_Print_Black" class="visual"/>
+                  <geom mesh="link_arm_l0_1" material="Carbon_Fiber" class="visual" mass="0.28501"/>
+                  <geom mesh="link_arm_l0_2" material="Generic_Black" class="visual"/>
+                  <geom mesh="link_arm_l0_0" class="collision"/>
+                  <geom mesh="link_arm_l0_1" class="collision"/>
+                  <geom mesh="link_arm_l0_2" class="collision"/>
+                  <body name="link_aruco_top_wrist" pos="0.04725 0.029285 0" quat="0 0 1 1">
+                    <geom material="Aruco_Top_Wrist_Sticker" mesh="link_aruco_top_wrist" class="visual" mass="3.6E-06"
+                      shellinertia="true"/>
+                    <geom mesh="link_aruco_top_wrist" class="collision"/>
+                  </body>
+                  <body name="link_aruco_inner_wrist" pos="0.04725 -0.0119 -0.02725" quat="0 0 1 0">
+                    <geom material="Aruco_Inner_Wrist_Sticker" mesh="link_aruco_inner_wrist" class="visual"
+                      mass="3.6E-06" shellinertia="true"/>
+                    <geom mesh="link_aruco_inner_wrist" class="collision"/>
+                  </body>
+                  <!-- Dex Wrist 3 Tree -->
+                  <body name="link_wrist_yaw" pos="0.083 -0.03075 0" quat="-1 -1 0 0" gravcomp="1">
+                    <joint name="joint_wrist_yaw" class="wrist_yaw"/>
+                    <geom material="Generic_Black" mesh="link_wrist_yaw" mass="0.1445" class="visual"/>
+                    <geom mesh="link_wrist_yaw" class="collision"/>
+                    <geom quat="0 1 1 0" pos="0 0 0" mesh="link_DW3_wrist_yaw_bottom" material="Generic_Black"
+                      class="visual"/>
+                    <geom mesh="link_DW3_wrist_yaw_bottom" class="collision"/>
+                    <body name="link_DW3_wrist_pitch" pos="-0.01946 0 0.0305" euler="0 1.57 -1.57" gravcomp="1">
+                      <joint name="joint_wrist_pitch" axis="0 0 -1" class="wrist_pitch"/>
+                      <geom material="Generic_Black" mesh="link_DW3_wrist_pitch" mass="0.1165" class="visual"/>
+                      <geom mesh="link_DW3_wrist_pitch" class="collision"/>
+                      <geom pos="-0.0265 -0.024 0.0196" quat="1 0 0 1" mesh="link_DW3_wrist_quick_connect"
+                        material="Generic_Black" class="visual"/>
+                      <geom mesh="link_DW3_wrist_quick_connect" class="collision"/>
+                      <body name="link_SG3_gripper_body" pos="-0.0399 -0.024 0.0196" quat="1 0 -1 0" gravcomp="1">
+                        <joint name="joint_wrist_roll" class="wrist_roll"/>
+                        <geom material="Generic_Black" mesh="link_SG3_gripper_body" mass="0.29" class="visual"/>
+                        <geom mesh="link_SG3_gripper_body" class="collision"/>
+                        <body name="link_SG3_aruco_d405" pos="0 0.0671264013906604 0.0297716109784749"
+                          euler="-1.397059993 3.139694278 -0.001741181" gravcomp="1">
+                          <geom material="Aruco_gripper_cam_Sticker" mesh="link_SG3_aruco_d405" class="visual"
+                            mass="3.6E-06" shellinertia="true"/>
+                          <geom mesh="link_SG3_aruco_d405" class="collision"/>
+                          <body name="link_d405" pos="0 -0.03068 0" euler="1.57 0 0">
+                            <geom material="Reflective_Metal" mesh="link_d405" mass="0.29" class="visual"/>
+                            <geom material="Gray_Lens" mesh="link_d405_lens" pos="0 0 0" euler="0 0 0" mass="3.6E-06"
+                              class="visual"/>
+                            <geom material="Pantone_Black_6_U" mesh="link_d405_front_plate" pos="0 0 0" euler="0 0 0"
+                              mass="3.6E-06" class="visual"/>
+                            <geom mesh="link_d405" class="collision"/>
+                            <body name="d405_cam" pos="0 0 0" euler="0 0 3.14">
+                              <camera name="d405_rgb" pos="0 0 0" euler="-3.14 0 -3.14" fovy="58"/>
+                              <camera name="d405_depth" pos="0 0 0" euler="-3.14 0 -3.14"/>
+                            </body>
+                          </body>
+                        </body>
+                        <body name="link_grasp_center" pos="0 0 0.23" euler="-1.5707963267949 -1.5707963267948 0"> </body>
+                        <!-- Gripper Mechanism -->
+                        <body name="link_gripper_slider" euler="0 0 0" pos="0 0 0" gravcomp="1">
+                          <joint name="joint_gripper_slide" class="finger_slide"/>
+                          <geom type="box" size=".03 .005 .005" mass=".05" class="visual" rgba="0 0 0 0"/>
+
+                          <body name="link_gripper_finger_left" pos="0.02292 0.0020217 0.035297" euler="0 -1.57 3.1416"
+                            gravcomp="1">
+                            <joint name="joint_gripper_finger_left_open" class="finger_open" stiffness="1"/>
+                            <geom mesh="link_SG3_gripper_left_finger_0" euler="1.57 0 0" material="Generic_Black"
+                              mass="0.05" class="visual"/>
+                            <geom mesh="link_SG3_gripper_left_finger_0" euler="1.57 0 0" class="collision"/>
+                            <geom mesh="link_SG3_gripper_left_finger_1" euler="1.57 0 0" material="White_Plastic"
+                              class="visual"/>
+                            <geom mesh="link_SG3_gripper_left_finger_1" euler="1.57 0 0" class="collision"/>
+                            <geom mesh="link_SG3_gripper_inner_finger" pos="-0.17777 0.0018452 -0.011272"
+                              euler="3.1416 0.28 0" material="Reflective_Metal" mass="0.05" class="visual"/>
+                            <body name="rubber_tip_left" pos="-0.17777 0.0018452 -0.011272" euler="0 -0.2618 -0.010379">
+                              <joint name="rubber_left_x" type="hinge" axis="1 0 0" damping=".01" stiffness="1"
+                                springref="0"/>
+                              <joint name="rubber_left_y" type="hinge" axis="0 1 0" damping=".01" stiffness="1"
+                                springref="0"/>
+                              <geom class="visual" mesh="link_SG3_gripper_left_fingertip" mass="0.005"
+                                material="suction_rubber"/>
+                              <geom type="box" size="0.02 0.02 0.01" pos="0 0 0.01" class="rubber"/>
+                            </body>
+                            <body name="link_SG3_gripper_left_finger_aruco" pos="-0.14425 0.0014877 -0.005189"
+                              euler="0.19199 0.95993 3.1312">
+                              <geom material="Aruco_left_finger_Sticker" mesh="link_SG3_gripper_left_finger_aruco"
+                                class="visual" mass="3.6E-06" shellinertia="true"/>
+                              <geom mesh="link_SG3_gripper_left_finger_aruco" class="collision"/>
+                            </body>
+                          </body>
+
+                          <body name="link_gripper_finger_right" pos="-0.023281 0 0.035287" euler="-3.1416 -1.57 3.1416"
+                            gravcomp="1">
+                            <joint name="joint_gripper_finger_right_open" class="finger_open" stiffness="1"/>
+                            <geom mesh="link_SG3_gripper_right_finger_0" euler="1.57 0 0" material="Generic_Black"
+                              mass="0.05" class="visual"/>
+                            <geom mesh="link_SG3_gripper_right_finger_0" euler="1.57 0 0" class="collision"/>
+                            <geom mesh="link_SG3_gripper_right_finger_1" euler="1.57 0 0" material="White_Plastic"
+                              mass="0.05" class="visual"/>
+                            <geom mesh="link_SG3_gripper_right_finger_1" euler="1.57 0 0" class="collision"/>
+                            <geom mesh="link_SG3_gripper_inner_finger" pos="0.17778 0 0.011272" euler="3.1416 -2.8616 0"
+                              material="Reflective_Metal" mass="0.05" class="visual"/>
+                            <body name="rubber_tip_right" pos="0.17778 0 0.011272" euler="-3.1416 0.2618 -3.1416"
+                              gravcomp="1">
+                              <joint name="rubber_right_x" type="hinge" axis="1 0 0" damping=".01" stiffness="1"
+                                springref="0"/>
+                              <joint name="rubber_right_y" type="hinge" axis="0 1 0" damping=".01" stiffness="1"
+                                springref="0"/>
+                              <geom class="visual" material="suction_rubber" mesh="link_SG3_gripper_right_fingertip"
+                                mass="0.005"/>
+                              <geom type="box" size="0.02 0.02 0.01" pos="0 0 0.01" class="rubber"/>
+                            </body>
+                            <body name="link_SG3_gripper_right_finger_aruco" pos="0.14426 0 0.005189"
+                              euler="-2.9496 -0.95993 3.1416">
+                              <geom material="Aruco_right_finger_Sticker" mesh="link_SG3_gripper_right_finger_aruco"
+                                class="visual" mass="3.6E-06" shellinertia="true"/>
+                              <geom mesh="link_SG3_gripper_right_finger_aruco" class="collision"/>
+                            </body>
+                          </body>
+                        </body>
+                      </body>
+                    </body>
+                  </body>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+        <body name="link_aruco_shoulder" pos="-0.0133769 0.0558541 0.0865" quat="1 0 0 0">
+          <geom material="Aruco_Shoulder_Sticker" mesh="link_aruco_shoulder" class="visual" mass="3.6E-06"
+            shellinertia="true"/>
+          <geom mesh="link_aruco_shoulder" class="collision"/>
+        </body>
+      </body>
+      <body name="link_head_pan" pos="0.00610002 0 1.3552" quat="-1 0 0 0">
+        <joint name="joint_head_pan" class="head_pan"/>
+        <geom mesh="link_head_pan_0" material="3D_Print_Black" class="visual"/>
+        <geom mesh="link_head_pan_1" material="Generic_Black" class="visual" mass="0.127376"/>
+        <geom mesh="link_head_pan_0" class="collision"/>
+        <geom mesh="link_head_pan_1" class="collision"/>
+        <body name="link_head_tilt" pos="-0.0013 0.0277625 -0.0533108" quat="1 1 0 0">
+          <joint name="joint_head_tilt" class="head_tilt"/>
+          <geom mesh="link_head_tilt_0" material="Pantone_Cool_Gray_4_U" class="visual" mass="0.1311085"/>
+          <geom mesh="link_head_tilt_1" material="3D_Print_Black" class="visual" mass="0.1311085"/>
+          <geom mesh="link_head_tilt_0" class="collision"/>
+          <geom mesh="link_head_tilt_1" class="collision"/>
+          <body name="realsense" pos="0.0406 0.0053 0.0307">
+            <camera name="d435i_camera_rgb" pos="0 0.015 0" quat=".5 -.5 -.5 .5" fovy="58"/>
+            <camera name="d435i_camera_depth" quat=".5 -.5 -.5 .5"/>
+          </body>
+          <body name="link_SE3_head_nav_cam" pos="0.04 -0.0412 -0.0246" euler="0 1.5707963 0">
+            <joint name="joint_head_nav_cam" class="head_tilt" stiffness="10"/>
+            <geom mesh="link_SE3_head_nav_cam" material="Generic_Black" class="visual" mass="0.028346169831483"/>
+            <body name="head_nav_cam" pos="0 0 0">
+              <camera name="nav_camera_rgb" pos="0 0 0" euler="-3.1415926 0 3.1415926" fovy="74"/>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+
+  <contact>
+    <exclude body1="link_head_pan" body2="link_head"/>
+    <exclude body1="link_left_wheel" body2="base_link"/>
+    <exclude body1="link_right_wheel" body2="base_link"/>
+    <exclude body1="link_lift" body2="link_mast"/>
+    <exclude body1="link_lift" body2="link_head"/>
+    <exclude body1="link_arm_l0" body2="link_arm_l4"/>
+    <exclude body1="link_arm_l0" body2="link_arm_l1"/>
+    <exclude body1="link_arm_l1" body2="link_arm_l4"/>
+    <exclude body1="link_arm_l2" body2="link_arm_l4"/>
+    <exclude body1="link_arm_l3" body2="link_arm_l4"/>
+    <exclude body1="link_arm_l0" body2="link_arm_l2"/>
+    <exclude body1="link_arm_l0" body2="link_arm_l3"/>
+    <exclude body1="link_arm_l0" body2="link_lift"/>
+    <exclude body1="link_arm_l1" body2="link_arm_l3"/>
+    <exclude body1="link_arm_l1" body2="link_lift"/>
+    <exclude body1="link_arm_l2" body2="link_lift"/>
+    <exclude body1="link_wrist_yaw" body2="link_arm_l0"/>
+    <exclude body1="link_wrist_yaw" body2="link_arm_l1"/>
+    <exclude body1="link_wrist_yaw" body2="link_arm_l2"/>
+    <exclude body1="link_wrist_yaw" body2="link_arm_l3"/>
+    <exclude body1="link_wrist_yaw" body2="link_arm_l4"/>
+    <exclude body1="link_gripper_finger_left" body2="link_DW3_wrist_pitch"/>
+    <exclude body1="link_gripper_finger_right" body2="link_DW3_wrist_pitch"/>
+    <exclude body1="link_gripper_finger_left" body2="link_wrist_yaw"/>
+    <exclude body1="link_gripper_finger_right" body2="link_wrist_yaw"/>
+    <exclude body1="link_gripper_finger_left" body2="link_SG3_gripper_body"/>
+    <exclude body1="link_gripper_finger_right" body2="link_SG3_gripper_body"/>
+    <exclude body1="rubber_tip_right" body2="rubber_tip_left"/>
+  </contact>
+
+  <tendon>
+    <fixed name="extend">
+      <joint joint="joint_arm_l0" coef="1"/>
+      <joint joint="joint_arm_l1" coef="1"/>
+      <joint joint="joint_arm_l2" coef="1"/>
+      <joint joint="joint_arm_l3" coef="1"/>
+    </fixed>
+  </tendon>
+
+  <equality>
+    <joint joint1="joint_arm_l0" joint2="joint_arm_l1"/>
+    <joint joint1="joint_arm_l1" joint2="joint_arm_l2"/>
+    <joint joint1="joint_arm_l2" joint2="joint_arm_l3"/>
+    <joint joint1="joint_gripper_finger_left_open" joint2="joint_gripper_slide" polycoef="0 10 0 0 0" solref="0.005 1"/>
+    <joint joint1="joint_gripper_finger_right_open" joint2="joint_gripper_slide" polycoef="0 10 0 0 0" solref="0.005 1"/>
+  </equality>
+
+  <actuator>
+    <velocity name="left_wheel_vel" joint="joint_left_wheel" class="wheel"/>
+    <velocity name="right_wheel_vel" joint="joint_right_wheel" class="wheel"/>
+    <position name="lift" joint="joint_lift" class="lift"/>
+    <position name="arm" tendon="extend" class="telescope"/>
+    <position name="wrist_yaw" joint="joint_wrist_yaw" class="wrist_yaw"/>
+    <position name="wrist_pitch" joint="joint_wrist_pitch" class="wrist_pitch"/>
+    <position name="wrist_roll" joint="joint_wrist_roll" class="wrist_roll"/>
+    <position name="gripper" joint="joint_gripper_slide" class="finger_slide"/>
+    <position name="head_pan" joint="joint_head_pan" class="head_pan"/>
+    <position name="head_tilt" joint="joint_head_tilt" class="head_tilt"/>
+  </actuator>
+
+  <sensor>
+    <gyro name="base_gyro" site="base_imu"/>
+    <accelerometer name="base_accel" site="base_imu"/>
+  </sensor>
+
+  <keyframe>
+    <key name="home" ctrl="0 0 0.6 0.1 0 0 0 0 0 0"/>
+    <key name="stow" ctrl="0 0 0.23 0 3.14 -0.4 0 0 0 0"/>
+  </keyframe>
+</mujoco>

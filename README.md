@@ -217,6 +217,7 @@ Menagerie, see [CONTRIBUTING](CONTRIBUTING.md).
 |------|-------|---------|---------|-----|
 | Google Robot | Google DeepMind | 9 | [Apache-2.0](google_robot/LICENSE) |✖️|
 | Stretch 2 | Hello Robot | 17 | [Clear BSD](hello_robot_stretch/LICENSE) |✖️|
+| Stretch 3 | Hello Robot | 17 | [Clear BSD](hello_robot_stretch_3/LICENSE) |✖️|
 
 **Humanoids.**
 
