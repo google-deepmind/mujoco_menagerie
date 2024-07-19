@@ -1,13 +1,13 @@
 <mujoco model="go2">
   <compiler angle="radian" meshdir="assets" autolimits="true"/>
 
-  <option cone="pyramidal" impratio="100" iterations="1" ls_iterations="5">
+  <option cone="pyramidal" iterations="1" ls_iterations="5">
     <flag eulerdamp="disable"/>
   </option>
 
   <default>
     <default class="go2">
-      <geom friction="0.6" margin="0.001" condim="1"/>
+      <geom friction="0.6" condim="1"/>
       <joint axis="0 1 0" damping="2" armature="0.01"/>
       <general forcerange="-24 24" biastype="affine" gainprm="50 0 0" biasprm="0 -50 -0.5"/>
 
