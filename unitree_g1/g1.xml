@@ -226,6 +226,7 @@
                       mass="0.0509893" diaginertia="8.68047e-06 7.23365e-06 4.58058e-06"/>
                     <joint name="left_zero_joint" axis="0 1 0" range="-0.523598 0.523598"/>
                     <geom type="mesh" class="visual" mesh="left_zero_link"/>
+                    <site name="left_palm" pos="0 0 0"/>
                     <body name="left_one_link" pos="-0.026525 -0.0188 -5e-05">
                       <inertial pos="-0.00181538 -0.0327057 -0.000185871" quat="0.701646 0.698199 0.0817825 -0.116289"
                         mass="0.047762" diaginertia="8.03051e-06 7.8455e-06 3.65282e-06"/>
@@ -312,6 +313,7 @@
                       mass="0.0509893" diaginertia="8.68047e-06 7.23365e-06 4.58058e-06"/>
                     <joint name="right_zero_joint" axis="0 1 0" range="-0.523598 0.523598"/>
                     <geom type="mesh" class="visual" mesh="right_zero_link"/>
+                    <site name="right_palm" pos="0 0 0"/>
                     <body name="right_one_link" pos="-0.026525 0.0188 -5e-05">
                       <inertial pos="-0.00181538 0.0327057 -0.000185871" quat="0.698199 0.701646 0.116289 -0.0817825"
                         mass="0.047762" diaginertia="8.03051e-06 7.8455e-06 3.65282e-06"/>
