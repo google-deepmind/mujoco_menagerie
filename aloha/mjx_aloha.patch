@@ -1,5 +1,5 @@
---- aloha.xml	2024-07-18 11:14:18.000000000 +0100
-+++ mjx_aloha.xml	2024-07-18 13:16:54.000000000 +0100
+--- aloha.xml	2024-07-24 11:00:33.000000000 -0700
++++ mjx_aloha.xml	2024-07-24 11:01:02.000000000 -0700
 @@ -1,7 +1,7 @@
  <mujoco model="aloha">
    <compiler angle="radian" meshdir="assets" autolimits="true"/>
@@ -74,7 +74,7 @@
                      <geom class="collision" pos="0 -0.0824748 -0.0095955" quat="0 0 -0.21644 -0.976296" type="mesh" mesh="d405_solid"/>
 +                    <geom class="primitive_collision" type="capsule" fromto="0.055 0 0.015 -0.055 0 0.015" size="0.03" />
                      <camera name="wrist_cam_left" pos="0 -0.0824748 -0.0095955" mode="fixed" euler="2.70525955359 0 0"
-                             focal="1.93e-3 1.93e-3" resolution="1296 816" sensorsize="3896e-6 2453e-6"/>
+                             focal="1.93e-3 1.93e-3" resolution="1280 720" sensorsize="3896e-6 2140e-6"/>
                     <body name="left/left_finger_link" pos="0.0191 -0.0141637 0.0211727" quat="1 -1 -1 1">
 @@ -157,8 +164,10 @@
                        <joint name="left/left_finger" class="left_finger"/>
@@ -115,7 +115,7 @@
                      <geom class="collision" pos="0 -0.0824748 -0.0095955" quat="0 0 -0.21644 -0.976296" type="mesh" mesh="d405_solid"/>
 +                    <geom class="primitive_collision" type="capsule" fromto="0.055 0 0.015 -0.055 0 0.015" size="0.03" />
                      <camera name="wrist_cam_right" pos="0 -0.0824748 -0.0095955" mode="fixed" euler="2.70525955359 0 0"
-                             focal="1.93e-3 1.93e-3" resolution="1296 816" sensorsize="3896e-6 2453e-6"/>
+                             focal="1.93e-3 1.93e-3" resolution="1280 720" sensorsize="3896e-6 2140e-6"/>
                      <body name="right/left_finger_link" pos="0.0191 -0.0141637 0.0211727" quat="1 -1 -1 1">
 @@ -245,8 +257,10 @@
                        <joint name="right/left_finger" class="left_finger"/>
