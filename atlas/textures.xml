@@ -1,0 +1,33 @@
+<mujoco model="atlas">
+    <compiler angle="radian" meshdir="assets" autolimits="true"/>
+
+    <statistic meansize="0" extent="1" center="0 0 0.5"/>
+
+    <default>
+        <default class="atlas">
+            <default class="visual">
+                <geom type="mesh" contype="0" conaffinity="0" group="2" density="0" material="white"/>
+            </default>
+        </default>
+    </default>
+
+    <asset>
+        <mesh name="utorso" file="utorso.obj"/>
+
+        <texture name="labels" type="2d" file="drc_labels_1.png"/>
+        <texture name="torso_head_diffuse" type="2d" file="drc_torso_head_diffuse.png"/>
+
+        <material name="mlabels" texture="labels" specular="0" shininess="0.25"/>
+        <material name="mtorso_head_diffuse" texture="torso_head_diffuse" specular="0" shininess="0.25"/>
+
+        <material name="white" rgba="1 1 1 1" specular="0.4" shininess="0.6"/>
+    </asset>
+    <worldbody>
+        <body name="utorso" pos="0 0 0">
+            <inertial pos="-0.0616866 0.00229456 0.316809" quat="0.483464 -0.0233226 -0.0389662 0.874186" mass="84.609"
+                diaginertia="1.67522 1.61265 0.568768"/>
+            <geom class="visual" mesh="utorso" material="mlabels"/>
+        </body>
+    </worldbody>
+
+</mujoco>
