@@ -1,0 +1,35 @@
+<mujoco model="tiago_position">
+
+  <include file="tiago.xml"/>
+  <actuator>
+    <!-- Arm actuators -->
+    <position name="arm_position_1_servo" joint="arm_1_joint" ctrlrange="0 2.74889" kp="250"/>
+    <position name="arm_position_2_servo" joint="arm_2_joint" ctrlrange="-1.5708 1.09083" kp="1500"/>
+    <position name="arm_position_3_servo" joint="arm_3_joint" ctrlrange="-3.53429 1.5708" kp="600"/>
+    <position name="arm_position_4_servo" joint="arm_4_joint" ctrlrange="-0.392699 2.35619" kp="1000"/>
+    <!-- Wrist actuators -->
+    <position name="arm_position_5_servo" joint="arm_5_joint" forcerange="-3 3" ctrlrange="-2.0944 2.0944" kp="60"/>
+    <position name="arm_position_6_servo" joint="arm_6_joint" forcerange="-6.6 6.6" ctrlrange="-1.41372 1.41372" kp="60"/>
+    <position name="arm_position_7_servo" joint="arm_7_joint" ctrlrange="-2.0944 2.0944" kp="60"/>
+    <!-- End effector actuators -->
+    <position name="gripper_left_finger_position" joint="gripper_left_finger_joint" ctrlrange="0 0.045"
+      forcerange="-64 64" kp="1000"/>
+    <position name="gripper_right_finger_position" joint="gripper_right_finger_joint" ctrlrange="0 0.045"
+      forcerange="-64 64" kp="1000"/>
+    <!-- Head actuators -->
+    <position name="head_1_joint_position" joint="head_1_joint" ctrlrange="-1.309 1.309" kp="20"/>
+    <position name="head_2_joint_position" joint="head_2_joint" ctrlrange="-1.0472 0.785398" forcerange="-2.77 2.77"
+      kp="20"/>
+    <!-- Torso actuators -->
+    <position name="torso_lift_joint_position" joint="torso_lift_joint" ctrlrange="0 0.35" kp="40000"/>
+    <!-- Wheel actuators -->
+    <velocity name="wheel_left_joint_vel" joint="wheel_left_joint" ctrlrange="-5 5" forcerange="-100 100" kv="100"/>
+    <velocity name="wheel_right_joint_vel" joint="wheel_right_joint" ctrlrange="-5 5" forcerange="-100 100" kv="100"/>
+  </actuator>
+
+  <keyframe>
+    <key name="home" ctrl="0.2 -1.34 -0.2 1.94 -1.57 1.37 0 0 0 0 0 0.15 0 0"
+      qpos="0 0 -0.985 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.15 0 0 0.20 -1.34 -0.20 1.94 -1.57 1.37 0.0 0 0"/>
+  </keyframe>
+
+</mujoco>
