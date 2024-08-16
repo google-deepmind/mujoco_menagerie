@@ -23,6 +23,27 @@ description](https://github.com/xArm-Developer/xarm_ros2/tree/master/xarm_descri
 4. Added actuators.
 5. Added `scene.xml` which includes the robot, with a textured groundplane, skybox, and haze.
 
+### Gripper
+
+The URDF only contains a gripper model for the Lite 6 with the fingers fused to the gripper body. To separate the fingers, the .step file of the fused body from the [Ufactory website](https://usa.ufactory.cc/download-lite6-robot) was loaded into Onshape ([file here](https://cad.onshape.com/documents/f60aac1c8ff6af8f490dc855/w/5c0df4bc7414802fc89a514e/e/7dc41825dd66894c14b085ca?renderMode=0&uiState=66bdfb41f48d6a182064f4a4)) and split along the tracks that the fingers run on. The fingers can be attached in two orientations, facing internally (so that they close fully) or externally (so that wider objects can be gripped). Because MuJoCo forms a convex hull for collision meshes, it was necessary to separate the external facing fingers into the base and tip for realistic gripping.
+
+Because they are actuated via an air compressor, a single `motor` actuator was used in the model, with an equality constraint to mimic the gearing mechanism that keeps them equidistant from the centre. There is no position control of the gripper.
+
+The moments of inertia were estimated in Onshape due to not having any data from the manufacturer. This was done by choosing a density that matched the mass of the actual part, and assuming a uniform mass distribution (which is not the actual case but should be close enough).
+
+<p float="left">
+  <img src="lite6_gripper_external_closed.png" width="300">
+  <img src="lite6_gripper_external_open.png" width="300">
+  <figcaption>External facing gripper, fully closed (default) and open</figcaption>
+</p>
+
+<p float="left">
+  <img src="lite6_gripper_internal_closed.png" width="300">
+  <img src="lite6_gripper_internal_open.png" width="300">
+  <figcaption>Internal facing gripper, fully closed (default) and open</figcaption>
+</p>
+
+
 ## License
 
 This model is released under a [BSD-3-Clause License](LICENSE).
