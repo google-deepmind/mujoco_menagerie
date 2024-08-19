@@ -60,32 +60,16 @@
       <geom pos="-0.062 0 0.2915" material="mercury" mesh="torso_fix"/>
       <geom size="0.09 0.1 0.275" pos="-0.062 0 0.5685" type="box" material="gray10"/>
       <geom pos="0 0 0.13" material="orange" mesh="base_ring"/>
-      <!-- base link inertial manually added from urdf -->
-      <!-- <mass value="28.26649"/>
-      <inertia ixx="0.465408937" ixy="0.002160024" ixz="-0.001760255" iyy="0.483193291"
-      iyz="-0.000655952"
-      izz="0.550939703"/> -->
-      <inertial pos="0 0 0" mass="28.26649"
-        fullinertia="0.465408937 0.483193291 0.550939703 0.002160024 -0.001760255 -0.000655952"/>
-      <body name="suspension_right_link" pos="0 0 0.0985" childclass="wheel">
-        <inertial pos="0 0 -0.02" mass="10" diaginertia="1 1 1"/>
-        <joint name="suspension_right_joint" type="slide" range="-0.005 0.005" damping="100"/>
-        <body name="wheel_right_link" pos="0 -0.2022 0" quat="1 -1 0 0">
-          <inertial pos="0 0 -0.00207" quat="0.296456 0.641958 -0.296458 0.641963" mass="1.82362"
-            diaginertia="0.0083924 0.00499747 0.00499738"/>
-          <joint name="wheel_right_joint"/>
-          <geom material="gray10" mesh="wheel"/>
-        </body>
+      <inertial pos="-0.01 -0.002 0.131" mass="47.112" diaginertia="2.074 2.245 0.897"/>
+      <body name="wheel_right_link" pos="0 -0.2022 0.0985" quat="1 -1 0 0">
+        <inertial pos="0.0 0.0 0.0" mass="4.4" diaginertia="0.014 0.014 0.027"/>
+        <joint name="wheel_right_joint"/>
+        <geom material="gray10" mesh="wheel"/>
       </body>
-      <body name="suspension_left_link" pos="0 0 0.0985" childclass="wheel">
-        <inertial pos="0 0 -0.02" mass="10" diaginertia="1 1 1"/>
-        <joint name="suspension_left_joint" type="slide" range="-0.005 0.005" damping="100"/>
-        <body name="wheel_left_link" pos="0 0.2022 0" quat="1 -1 0 0">
-          <inertial pos="0 0 0.00207" quat="0.641958 0.296456 -0.641963 0.296458" mass="1.82362"
-            diaginertia="0.0083924 0.00499747 0.00499738"/>
-          <joint name="wheel_left_joint"/>
-          <geom quat="0 -1 0 0" material="gray10" mesh="wheel"/>
-        </body>
+      <body name="wheel_left_link" pos="0 0.2022 0.0985" quat="1 -1 0 0">
+        <inertial pos="0.0 0.0 0.0" mass="4.4" diaginertia="0.014 0.014 0.027"/>
+        <joint name="wheel_left_joint"/>
+        <geom quat="0 -1 0 0" material="gray10" mesh="wheel"/>
       </body>
       <body name="caster_front_right_1_link" pos="0.1695 -0.102 0.065" childclass="wheel">
         <inertial pos="-0.00634599 5.347e-05 -0.0203752" quat="0.966491 -0.00340536 -0.256544 -0.00828025"
