@@ -127,6 +127,8 @@
             <inertial pos="0.0558274 0.0609987 1.58542e-05" mass="0.88693" diaginertia="0.00554181 0.00436261 0.00347586"/>
             <joint name="head_2_joint" range="-1.0472 0.785398" damping="0.5"/>
             <geom material="white" mesh="head_2"/>
+            <camera name="head_camera" pos="0.0908 0.08 0.0" mode="fixed" euler="0 -1.57 0"
+                            fovy="45.5" resolution="640 480"/>
           </body>
         </body>
         <body name="arm_1_link" pos="0.15505 0.014 -0.151" quat="1 0 0 -1" childclass="arm">
