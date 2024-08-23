@@ -116,7 +116,7 @@
         </body>
       </body>
       <body name="torso_lift_link" pos="-0.062 0 0.8885">
-        <inertial pos="0.039536 -0.002841 -0.190987" mass="7.338946" diaginertia="0.229088 0.245188 0.092397"/>
+        <inertial pos="0.031711 -0.001004 -0.187315" mass="6.281737" diaginertia="0.230972 0.235034 0.080705"/>
         <joint name="torso_lift_joint" type="slide" range="0 0.35" damping="2000"/>
         <geom material="white" mesh="torso_lift_with_arm"/>
         <body name="head_1_link" pos="0.182 0 0">
@@ -163,13 +163,13 @@
                       <geom size="0.025 0.004875" pos="0 0 0.066575" quat="-1 0 0 1" type="cylinder" material="gray10"/>
                       <geom pos="0 0 0.076575" quat="0 -1 1 0" material="white" mesh="gripper_link"/>
                       <body name="gripper_right_finger_link" pos="0 0 0.076575" quat="0 -1 1 0">
-                        <inertial pos="-0.00447 0.010766 -0.121013" mass="0.10998" diaginertia="0.000161667 0.000161667 0.000161667"/>
-                        <joint name="gripper_right_finger_joint" axis="1 0 0" type="slide" range="0 0.045" damping="1"/>
+                        <inertial pos="0.008658 0.019724 -0.149125" mass="0.107001" diaginertia="0.000242 0.000236 0.000018"/>
+                        <joint name="gripper_right_finger_joint" axis="1 0 0" type="slide" range="0 0.045" damping="80" frictionloss="1.0"/>
                         <geom quat="4.63268e-05 0 0 1" material="black" mesh="gripper_finger_link"/>
                       </body>
                       <body name="gripper_left_finger_link" pos="0 0 0.076575" quat="0 -1 1 0">
-                        <inertial pos="-0.00447 0.010766 -0.121013" mass="0.10998" diaginertia="0.000161667 0.000161667 0.000161667"/>
-                        <joint name="gripper_left_finger_joint" axis="-1 0 0" type="slide" range="0 0.045" damping="1"/>
+                        <inertial pos="-0.008658 -0.019724 -0.149125" mass="0.107001" diaginertia="0.000242 0.000236 0.000018"/>
+                        <joint name="gripper_left_finger_joint" axis="-1 0 0" type="slide" range="0 0.045" damping="80" frictionloss="1.0"/>
                         <geom quat="4.63268e-05 0 0 1" material="black" mesh="gripper_finger_link1"/>
                       </body>
                     </body>
@@ -186,6 +186,7 @@
   <!-- Added collision exclude to avoid unwanted contact forces between robot bodies -->
   <contact>
     <exclude body1="arm_2_link" body2="torso_lift_link"/>
+    <exclude body1="arm_3_link" body2="torso_lift_link"/>
     <exclude body1="gripper_right_finger_link" body2="gripper_left_finger_link"/>
   </contact>
 
