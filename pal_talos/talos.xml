@@ -533,12 +533,12 @@
     <velocity name="arm_right_4_joint_velocity" joint="arm_right_4_joint" kv="0.1" forcerange="-70.0 70.0"/>
     <position name="arm_right_4_joint_position" joint="arm_right_4_joint" kp="100"
       ctrlrange="-2.234021442552742 -0.003490658503988659" forcerange="-70.0 70.0"/>
-    <velocity name="gripper_left_joint_velocity" joint="gripper_left_joint" kv="0.1" forcerange="-1.0 1.0"/>
-    <position name="gripper_left_joint_position" joint="gripper_left_joint" kp="500" ctrlrange="-0.9599310885968813 0.0"
-      forcerange="-1.0 1.0"/>
-    <velocity name="gripper_right_joint_velocity" joint="gripper_right_joint" kv="0.1" forcerange="-1.0 1.0"/>
-    <position name="gripper_right_joint_position" joint="gripper_right_joint" kp="500"
-      ctrlrange="-0.9599310885968813 0.0" forcerange="-1.0 1.0"/>
+    <velocity name="gripper_left_joint_velocity" joint="gripper_left_joint" kv="0.1" forcerange="-10.0 10.0"/>
+    <position name="gripper_left_joint_position" joint="gripper_left_joint" kp="1000"
+      ctrlrange="-0.9599310885968813 0.0" forcerange="-10.0 10.0"/>
+    <velocity name="gripper_right_joint_velocity" joint="gripper_right_joint" kv="0.1" forcerange="-10.0 10.0"/>
+    <position name="gripper_right_joint_position" joint="gripper_right_joint" kp="1000"
+      ctrlrange="-0.9599310885968813 0.0" forcerange="-10.0 10.0"/>
     <velocity name="leg_left_1_joint_velocity" joint="leg_left_1_joint" kv="0.1" forcerange="-100 100"/>
     <position name="leg_left_1_joint_position" joint="leg_left_1_joint" kp="1000"
       ctrlrange="-0.3490658503988659 1.5707963267948966" forcerange="-100 100"/>
@@ -619,14 +619,6 @@
     <exclude body1="arm_right_7_link" body2="arm_right_6_link"/>
     <exclude body1="arm_left_7_link" body2="arm_left_5_link"/>
     <exclude body1="arm_right_7_link" body2="arm_right_5_link"/>
-    <exclude body1="arm_left_7_link" body2="gripper_left_motor_single_link"/>
-    <exclude body1="arm_right_7_link" body2="gripper_right_motor_single_link"/>
-    <exclude body1="arm_left_7_link" body2="gripper_left_motor_double_link"/>
-    <exclude body1="arm_right_7_link" body2="gripper_right_motor_double_link"/>
-    <exclude body1="arm_left_7_link" body2="gripper_left_inner_single_link"/>
-    <exclude body1="arm_right_7_link" body2="gripper_right_inner_single_link"/>
-    <exclude body1="arm_left_7_link" body2="gripper_left_inner_double_link"/>
-    <exclude body1="arm_right_7_link" body2="gripper_right_inner_double_link"/>
     <exclude body1="leg_left_3_link" body2="leg_left_4_link"/>
     <exclude body1="leg_right_3_link" body2="leg_right_4_link"/>
     <exclude body1="leg_left_3_link" body2="leg_left_2_link"/>
@@ -637,16 +629,62 @@
     <exclude body1="leg_right_3_link" body2="base_link"/>
     <exclude body1="leg_left_6_link" body2="leg_left_4_link"/>
     <exclude body1="leg_right_6_link" body2="leg_right_4_link"/>
+    <!-- Gripper excludes -->
+    <!-- left gripper -->
+    <exclude body1="arm_left_7_link" body2="gripper_left_inner_double_link"/>
     <exclude body1="leg_left_4_link" body2="gripper_left_motor_single_link"/>
-    <exclude body1="leg_right_4_link" body2="gripper_right_motor_single_link"/>
-    <exclude body1="gripper_right_motor_single_link" body2="gripper_right_motor_double_link"/>
+    <exclude body1="arm_left_7_link" body2="gripper_left_motor_single_link"/>
+    <exclude body1="arm_left_7_link" body2="gripper_left_motor_double_link"/>
+    <exclude body1="arm_left_7_link" body2="gripper_left_inner_single_link"/>
     <exclude body1="gripper_left_motor_single_link" body2="gripper_left_motor_double_link"/>
+    <exclude body1="gripper_left_motor_single_link" body2="gripper_left_inner_double_link"/>
+    <exclude body1="gripper_left_motor_single_link" body2="gripper_left_inner_single_link"/>
+    <exclude body1="gripper_left_motor_double_link" body2="gripper_left_inner_single_link"/>
+    <exclude body1="gripper_left_motor_double_link" body2="gripper_left_inner_double_link"/>
+    <exclude body1="gripper_left_motor_double_link" body2="gripper_left_fingertip_2_link"/>
+    <exclude body1="gripper_left_motor_single_link" body2="gripper_left_fingertip_3_link"/>
+    <exclude body1="gripper_left_fingertip_3_link" body2="gripper_left_fingertip_2_link"/>
+    <exclude body1="gripper_left_fingertip_2_link" body2="gripper_left_fingertip_1_link"/>
+    <exclude body1="gripper_left_fingertip_3_link" body2="gripper_left_fingertip_1_link"/>
+    <!-- right gripper -->
+    <exclude body1="arm_right_7_link" body2="gripper_right_inner_double_link"/>
+    <exclude body1="leg_right_4_link" body2="gripper_right_motor_single_link"/>
+    <exclude body1="arm_right_7_link" body2="gripper_right_motor_single_link"/>
+    <exclude body1="arm_right_7_link" body2="gripper_right_motor_double_link"/>
+    <exclude body1="arm_right_7_link" body2="gripper_right_inner_single_link"/>
+    <exclude body1="gripper_right_motor_single_link" body2="gripper_right_motor_double_link"/>
+    <exclude body1="gripper_right_motor_single_link" body2="gripper_right_inner_double_link"/>
+    <exclude body1="gripper_right_motor_single_link" body2="gripper_right_inner_single_link"/>
+    <exclude body1="gripper_right_motor_double_link" body2="gripper_right_inner_single_link"/>
+    <exclude body1="gripper_right_motor_double_link" body2="gripper_right_inner_double_link"/>
+    <exclude body1="gripper_right_motor_double_link" body2="gripper_right_fingertip_2_link"/>
+    <exclude body1="gripper_right_motor_single_link" body2="gripper_right_fingertip_3_link"/>
+    <exclude body1="gripper_right_fingertip_3_link" body2="gripper_right_fingertip_2_link"/>
+    <exclude body1="gripper_right_fingertip_2_link" body2="gripper_right_fingertip_1_link"/>
+    <exclude body1="gripper_right_fingertip_3_link" body2="gripper_right_fingertip_1_link"/>
   </contact>
+
+
+  <equality>
+    <!-- Joint constraints for left gripper -->
+    <joint joint1="gripper_left_motor_single_joint" joint2="gripper_left_joint" solref="0.01 1" polycoef="0 -1 0 0 0"/>
+    <joint joint1="gripper_left_joint" joint2="gripper_left_inner_double_joint" solref="0.01 1" polycoef="0 1 0 0 0"/>
+    <joint joint1="gripper_left_inner_single_joint" joint2="gripper_left_inner_double_joint" solref="0.01 1"
+      polycoef="0 -1 0 0 0"/>
+    <!-- Joint constraints for right gripper -->
+    <joint joint1="gripper_right_motor_single_joint" joint2="gripper_right_joint" solref="0.01 1" polycoef="0 -1 0 0 0"/>
+    <joint joint1="gripper_right_joint" joint2="gripper_right_inner_double_joint" solref="0.01 1" polycoef="0 1 0 0 0"/>
+    <joint joint1="gripper_right_inner_single_joint" joint2="gripper_right_inner_double_joint" solref="0.01 1"
+      polycoef="0 -1 0 0 0"/>
+  </equality>
 
   <keyframe>
     <key name="home"
       qpos="0 0 0.09 0 0 0 0 0 0 0 0 0 0.15 0 -0.02 0 0 0 0 0 0 0 0 0 0 0 -0.15 0 -0.02 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"
       ctrl="0 0 0 -0.04 0 0 0 0 0 0 0 0 0 0 0 0 0 0.15 0 0 0 -0.02 0 0 0 0 0 0 0 0 0 -0.15 0 0 0 -0.02 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"/>
+      <key name="home2"
+      qpos="0 0 0.03 0 0 0 0 0 0.15 0 0 0.3 0.4 -0.5 -1.5 0 0 0 0 -0.4 0 0 0 0 0 -0.3 -0.4 0.5 -1.5 0 0 0 0 -0.4 0 0 0 0 0 0 0 -0.4 0.8 -0.4 0 0 0 -0.4 0.8 -0.4 0"
+      ctrl="0 0 0 0.15 0 0 0 0 0 0 0 0 0 0 0 0.3 0 0.4 0 -0.5 0 -1.5 0 0 0 0 0 0 0 -0.3 0 -0.4 0 0.5 0 -1.5 0 -0.4 0 -0.4 0 0 0 0 0 -0.4 0 0.8 0 -0.4 0 0 0 0 0 0 0 -0.4 0 0.8 0 -0.4 0 0 0 0 0 0 0 0 0.0 0.3 0.4 -0.5 -1.5 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"/>
   </keyframe>
 
 </mujoco>
