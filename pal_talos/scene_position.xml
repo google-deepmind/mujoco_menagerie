@@ -1,6 +1,6 @@
-<mujoco model="talos scene">
+<mujoco model="talos position scene">
 
-    <include file="talos.xml"/>
+    <include file="talos_position.xml"/>
 
     <visual>
         <rgba haze="0.15 0.25 0.35 1"/>
