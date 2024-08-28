@@ -1,10 +1,10 @@
-<mujoco model="leap hand">
+<mujoco model="right leap hand">
   <compiler angle="radian" autolimits="true" meshdir="assets"/>
 
   <option integrator="implicitfast" cone="elliptic" impratio="10"/>
 
   <default>
-    <default class="leap">
+    <default class="right_leap">
       <site rgba="1 0 0 1" size="0.01" group="5"/>
       <joint axis="0 0 -1" armature="0.01"/>
       <position inheritrange="1" kp="20" dampratio="1"/>
@@ -20,18 +20,18 @@
   <asset>
     <material name="black" rgba=".2 .2 .2 1"/>
 
-    <mesh name="palm_lower" file="palm_lower.stl"/>
-    <mesh name="mcp_joint" file="mcp_joint.stl"/>
-    <mesh name="pip" file="pip.stl"/>
-    <mesh name="dip" file="dip.stl"/>
-    <mesh name="fingertip" file="fingertip.stl"/>
-    <mesh name="thumb_pip" file="thumb_pip.stl"/>
-    <mesh name="thumb_dip" file="thumb_dip.stl"/>
-    <mesh name="thumb_fingertip" file="thumb_fingertip.stl"/>
+    <mesh file="palm_lower.stl"/>
+    <mesh file="mcp_joint.stl"/>
+    <mesh file="pip.stl"/>
+    <mesh file="dip.stl"/>
+    <mesh file="fingertip.stl"/>
+    <mesh file="thumb_pip.stl"/>
+    <mesh file="thumb_dip.stl"/>
+    <mesh file="thumb_fingertip.stl"/>
   </asset>
 
   <worldbody>
-    <body name="palm_lower" childclass="leap" pos="0 0 .1" euler="3.14 0 0">
+    <body name="palm_lower" childclass="right_leap" pos="0 0 .1" quat="0 1 0 0">
       <inertial pos="0 0 0" quat="0.497095 0.495942 -0.509424 0.497419" mass="0.237"
         diaginertia="0.000529322 0.000354076 0.000260868"/>
       <geom pos="-0.0200952 0.0257578 -0.0347224" quat="1 0 0 0" mesh="palm_lower" class="visual"/>
@@ -163,21 +163,21 @@
   </contact>
 
   <actuator>
-    <position class="leap" name="1" joint="1"/>
-    <position class="leap" name="0" joint="0"/>
-    <position class="leap" name="2" joint="2"/>
-    <position class="leap" name="3" joint="3"/>
-    <position class="leap" name="5" joint="5"/>
-    <position class="leap" name="4" joint="4"/>
-    <position class="leap" name="6" joint="6"/>
-    <position class="leap" name="7" joint="7"/>
-    <position class="leap" name="9" joint="9"/>
-    <position class="leap" name="8" joint="8"/>
-    <position class="leap" name="10" joint="10"/>
-    <position class="leap" name="11" joint="11"/>
-    <position class="leap" name="12" joint="12"/>
-    <position class="leap" name="13" joint="13"/>
-    <position class="leap" name="14" joint="14"/>
-    <position class="leap" name="15" joint="15"/>
+    <position class="right_leap" name="1" joint="1"/>
+    <position class="right_leap" name="0" joint="0"/>
+    <position class="right_leap" name="2" joint="2"/>
+    <position class="right_leap" name="3" joint="3"/>
+    <position class="right_leap" name="5" joint="5"/>
+    <position class="right_leap" name="4" joint="4"/>
+    <position class="right_leap" name="6" joint="6"/>
+    <position class="right_leap" name="7" joint="7"/>
+    <position class="right_leap" name="9" joint="9"/>
+    <position class="right_leap" name="8" joint="8"/>
+    <position class="right_leap" name="10" joint="10"/>
+    <position class="right_leap" name="11" joint="11"/>
+    <position class="right_leap" name="12" joint="12"/>
+    <position class="right_leap" name="13" joint="13"/>
+    <position class="right_leap" name="14" joint="14"/>
+    <position class="right_leap" name="15" joint="15"/>
   </actuator>
 </mujoco>

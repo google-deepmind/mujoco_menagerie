@@ -1,12 +1,12 @@
-<mujoco model="leap hand scene">
-  <include file="leap_hand.xml"/>
+<mujoco model="right leap hand scene">
+  <include file="right_hand.xml"/>
 
   <statistic center="0 0 0.1" extent=".3"/>
 
   <visual>
     <headlight diffuse="0.6 0.6 0.6" ambient="0.3 0.3 0.3" specular="0 0 0"/>
     <rgba haze="0.15 0.25 0.35 1"/>
-    <global azimuth="60" elevation="-40"/>
+    <global azimuth="35" elevation="-50"/>
   </visual>
 
   <asset>
