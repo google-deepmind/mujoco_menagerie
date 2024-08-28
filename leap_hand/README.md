@@ -18,9 +18,9 @@ This package contains a simplified robot description (MJCF) of the [LEAP Hand](h
 2. Loaded the URDF into MuJoCo and saved a corresponding MJCF.
 3. Manually edited the MJCF to extract common properties into the `<default>` section.
 4. Added `exclude` clause to prevent collisions between the palm and the base of each finger as well as the mcp and dip joint of each finger.
-10. Added position controlled actuators.
-11. Added `impratio=10` and `cone=elliptic` for better noslip.
-12. Added `scene.xml` which includes the robot, with a textured groundplane, skybox, and haze.
+5. Added position controlled actuators.
+6. Added `impratio=10` and `cone=elliptic` for better noslip.
+7. Added `scene.xml` which includes the robot, with a textured groundplane, skybox, and haze.
 
 ## License
 
