@@ -5,7 +5,7 @@
 
   <default>
     <default class="right_leap">
-      <site rgba="1 0 0 1" size="0.01" group="5"/>
+      <site size="0.002" rgba="0.5 0.5 0.5 0.3" group="4"/>
       <joint axis="0 0 -1" armature="0.01"/>
       <position inheritrange="1" kp="20" dampratio="1"/>
       <default class="visual">
@@ -31,6 +31,7 @@
   </asset>
 
   <worldbody>
+    <light pos="0 0 2"/>
     <body name="palm_lower" childclass="right_leap" pos="0 0 .1" quat="0 1 0 0">
       <inertial pos="0 0 0" quat="0.497095 0.495942 -0.509424 0.497419" mass="0.237"
         diaginertia="0.000529322 0.000354076 0.000260868"/>
