@@ -8,8 +8,8 @@
 This package contains a simplified robot description (MJCF) of the (left and right) [LEAP Hand](https://leaphand.com/) developed by Carnegie Mellon University. It is derived from the [publicly available URDF description](https://github.com/leap-hand/LEAP_Hand_Sim/blob/master/assets/leap_hand/robot.urdf).
 
 <p float="left">
-  <img src="leap_hand_left.png" width="200">
-  <img src="leap_hand_right.png" width="200">
+  <img src="leap_hand_left.png" width="400">
+  <img src="leap_hand_right.png" width="400">
 </p>
 
 ## URDF → MJCF derivation steps
