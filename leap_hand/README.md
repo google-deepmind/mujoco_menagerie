@@ -25,3 +25,16 @@ This package contains a simplified robot description (MJCF) of the [LEAP Hand](h
 ## License
 
 This model is released under an [MIT License](LICENSE).
+
+## Publications
+
+The LEAP Hand is described in the following publication:
+
+```bibtex
+@article{shaw2023leaphand,
+    title = {LEAP Hand: Low-Cost, Efficient, and Anthropomorphic Hand for Robot Learning},
+    author = {Shaw, Kenneth and Agarwal, Ananye and Pathak, Deepak},
+    journal = {Robotics: Science and Systems (RSS)},
+    year = {2023}
+}
+```
