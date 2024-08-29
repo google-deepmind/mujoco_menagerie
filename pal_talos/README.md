@@ -1,6 +1,7 @@
 ## TALOS Description (MJCF)
 
-Requires MuJoCo 2.2.2 or later.
+> [!IMPORTANT]
+> Requires MuJoCo 2.2.2 or later.
 
 ### Overiew
 
