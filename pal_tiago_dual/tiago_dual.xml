@@ -124,19 +124,19 @@
         </body>
         <body name="arm_left_1_link" pos="0.02556 0.19 -0.171" quat="0 1 1 0" childclass="arm">
           <inertial pos="0.061191 -0.022397 0.012835" mass="1.56343" diaginertia="0.00510233 0.00510233 0.00510233"/>
-          <joint name="arm_left_1_joint" range="-1.1781 1.5708" damping="10"/>
+          <joint name="arm_left_1_joint" range="-1.1781 1.5708" damping="40"/>
           <geom material="white" mesh="arm_11"/>
           <body name="arm_left_2_link" pos="0.125 -0.0195 0.031" quat="1 1 0 0">
             <inertial pos="0.030432 0.000229 0.005942" mass="1.8004" diaginertia="0.00437039 0.00432895 0.00178367"/>
-            <joint name="arm_left_2_joint" range="-1.1781 1.5708" damping="10"/>
+            <joint name="arm_left_2_joint" range="-1.1781 1.5708" damping="40"/>
             <geom material="gray10" mesh="arm_21"/>
             <body name="arm_left_3_link" pos="0.0895 0 -0.0015" quat="0.5 0.5 0.5 0.5">
               <inertial pos="0.007418 -0.004361 0.134194" mass="1.8" diaginertia="0.0199798 0.0197147 0.00264646"/>
-              <joint name="arm_left_3_joint" range="-0.785398 3.92699" damping="10"/>
+              <joint name="arm_left_3_joint" range="-0.785398 3.92699" damping="40"/>
               <geom material="gray10" mesh="arm_31"/>
               <body name="arm_left_4_link" pos="-0.02 -0.027 0.222" quat="0.5 0.5 -0.5 0.5">
                 <inertial pos="0.095658 -0.014666 -0.018133" mass="1.4327" diaginertia="0.002040 0.008424 0.008686"/>
-                <joint name="arm_left_4_joint" range="-0.392699 2.35619" damping="10"/>
+                <joint name="arm_left_4_joint" range="-0.392699 2.35619" damping="40"/>
                 <geom material="gray10" mesh="arm_41"/>
                 <body name="arm_left_5_link" pos="0.162 -0.02 -0.027" quat="1 0 -1 0">
                   <inertial pos="0.001078 -0.000151 0.077173" mass="1.65582" diaginertia="0.00614362 0.00564 0.001797"/>
