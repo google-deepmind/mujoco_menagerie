@@ -27,6 +27,33 @@ description](https://github.com/xArm-Developer/xarm_ros2/tree/master/xarm_descri
   <figcaption>Narrow gripper confgiguration, fully closed (initial position) and open</figcaption>
 </p>
 
+## Attach gripper
+Example code:
+```
+#include <iostream>
+#include <mujoco/mujoco.h>
+char error[1000];
+mjSpec* world_spec = mj_parseXML("scene.xml", NULL, error, 1000);
+if (!world_spec) {
+    std::cout << "Failed to load scene: " << error << std::endl;
+    return 1;
+}
+mjSpec* gripper_spec = mj_parseXML("gripper_narrow.xml", NULL, error, 1000);
+if (!gripper_spec) {
+    std::cout << "Failed to load gripper: " << error << std::endl;
+    return 1;
+}
+mjsFrame* attachment_site = mjs_findFrame(world_spec, "attachment_site");
+mjsBody* gripper = mjs_findBody(gripper_spec, "gripper_body");
+mjs_attachBody(attachment_site, gripper, "", "-1");
+model = mj_compile(world_spec, 0);
+if (!model)
+{
+  std::cout << "Compilation error:" << std::endl;
+  std::cout << mjs_getError(world_spec) << std::endl;
+  return 2;
+}
+```
 ## URDF → MJCF derivation steps
 
 1. Added `<mujoco> <compiler discardvisual="false" strippath="false" fusestatic="false"/> </mujoco>` to the URDF's
@@ -43,7 +70,6 @@ The URDF only contains a gripper model for the Lite 6 with the fingers fused to 
 Because they are actuated via an air compressor, a single `motor` actuator was used in the model, with an equality constraint to mimic the gearing mechanism that keeps them equidistant from the centre. There is no position control of the gripper.
 
 The moments of inertia were estimated in Onshape due to not having any data from the manufacturer. This was done by choosing a density that matched the mass of the actual part, and assuming a uniform mass distribution (which is not the actual case but should be close enough).
-
 
 
 

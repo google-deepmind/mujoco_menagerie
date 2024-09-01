@@ -89,6 +89,7 @@
                   <geom class="visual" mesh="link6" material="silver"/>
                   <geom name="link6_c" class="collision" mesh="link6_c"/>
                   <site name="attachment_site"/>
+                  <frame name="attachment_site"/>
                 </body>
               </body>
             </body>
