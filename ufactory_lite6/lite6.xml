@@ -7,15 +7,15 @@
     <default class="lite6">
       <geom type="mesh"/>
       <joint axis="0 0 1" damping="1" armature="0.1"/>
-      <general gaintype="fixed" biastype="affine" gainprm="2000" biasprm="0 -2000 -200"/>
+      <position kp="2000" kv="200"/>
       <default class="size1">
-        <general forcerange="-50 50"/>
+        <position forcerange="-50 50"/>
       </default>
       <default class="size2">
-        <general forcerange="-32 32"/>
+        <position forcerange="-32 32"/>
       </default>
       <default class="size3">
-        <general forcerange="-20 20"/>
+        <position forcerange="-20 20"/>
       </default>
       <default class="visual">
         <geom contype="0" conaffinity="0" group="2" material="white"/>
@@ -99,12 +99,12 @@
   </worldbody>
 
   <actuator>
-    <general joint="joint1" class="size1" ctrlrange="-6.28319 6.28319"/>
-    <general joint="joint2" class="size1" ctrlrange="-2.61799 2.61799"/>
-    <general joint="joint3" class="size2" ctrlrange="-0.061087 5.23599"/>
-    <general joint="joint4" class="size2" ctrlrange="-6.28319 6.28319"/>
-    <general joint="joint5" class="size2" ctrlrange="-2.1642 2.1642"/>
-    <general joint="joint6" class="size3" ctrlrange="-6.28319 6.28319"/>
+    <position joint="joint1" class="size1" ctrlrange="-6.28319 6.28319"/>
+    <position joint="joint2" class="size1" ctrlrange="-2.61799 2.61799"/>
+    <position joint="joint3" class="size2" ctrlrange="-0.061087 5.23599"/>
+    <position joint="joint4" class="size2" ctrlrange="-6.28319 6.28319"/>
+    <position joint="joint5" class="size2" ctrlrange="-2.1642 2.1642"/>
+    <position joint="joint6" class="size3" ctrlrange="-6.28319 6.28319"/>
   </actuator>
 
   <keyframe>

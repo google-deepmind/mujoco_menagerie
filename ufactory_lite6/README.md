@@ -1,6 +1,6 @@
 # Lite 6 Description (MJCF)
 
-Requires MuJoCo 2.3.3 or later.
+Requires MuJoCo 3.1.0 or later.
 
 ## Overview
 
