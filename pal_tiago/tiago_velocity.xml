@@ -3,14 +3,14 @@
   <include file="tiago.xml"/>
   <actuator>
     <!-- Arm actuators -->
-    <velocity name="arm_velocity_1_servo" joint="arm_1_joint" inheritrange="1.0" kv="5000" forcerange="-43 43"/>
-    <velocity name="arm_velocity_2_servo" joint="arm_2_joint" inheritrange="1.0" kv="100000" forcerange="-43 43"/>
-    <velocity name="arm_velocity_3_servo" joint="arm_3_joint" inheritrange="1.0" kv="5000" forcerange="-26 26"/>
-    <velocity name="arm_velocity_4_servo" joint="arm_4_joint" inheritrange="1.0" kv="50000" forcerange="-26 26"/>
+    <velocity name="arm_velocity_1_servo" joint="arm_1_joint" kv="5000" forcerange="-43 43"/>
+    <velocity name="arm_velocity_2_servo" joint="arm_2_joint" kv="100000" forcerange="-43 43"/>
+    <velocity name="arm_velocity_3_servo" joint="arm_3_joint" kv="5000" forcerange="-26 26"/>
+    <velocity name="arm_velocity_4_servo" joint="arm_4_joint" kv="50000" forcerange="-26 26"/>
     <!-- Wrist actuators -->
-    <velocity name="arm_velocity_5_servo" joint="arm_5_joint" inheritrange="1.0" kv="2000" forcerange="-3 3"/>
-    <velocity name="arm_velocity_6_servo" joint="arm_6_joint" inheritrange="1.0" kv="2000" forcerange="-6.6 6.6"/>
-    <velocity name="arm_velocity_7_servo" joint="arm_7_joint" inheritrange="1.0" kv="2000" forcerange="-6.6 6.6"/>
+    <velocity name="arm_velocity_5_servo" joint="arm_5_joint" kv="2000" forcerange="-3 3"/>
+    <velocity name="arm_velocity_6_servo" joint="arm_6_joint" kv="2000" forcerange="-6.6 6.6"/>
+    <velocity name="arm_velocity_7_servo" joint="arm_7_joint" kv="2000" forcerange="-6.6 6.6"/>
     <!-- End effector actuators -->
     <position name="gripper_left_finger_position" joint="gripper_left_finger_joint" inheritrange="0.999"
       forcerange="-5.197 5.197" kp="1000"/>
