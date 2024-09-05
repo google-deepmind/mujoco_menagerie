@@ -16,7 +16,7 @@
   </asset>
 
   <worldbody>
-    <geom name="floor" contype="1" conaffinity="1" pos="0 0 -1.01" size="0 0 1" type="plane" material="MatPlane"/>
+    <geom name="floor" pos="0 0 -1.01" size="0 0 1" type="plane" material="MatPlane"/>
     <light name="spotlight" mode="targetbody" target="base_link" pos="1 0 20"/>
   </worldbody>
 </mujoco>
