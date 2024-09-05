@@ -1,5 +1,4 @@
 <mujoco model="talos">
-
   <include file="talos.xml"/>
 
   <actuator>
@@ -37,10 +36,8 @@
     <motor name="leg_right_6_joint_torque" joint="leg_right_6_joint" forcerange="-100 100" ctrlrange="-100.0 100.0"/>
   </actuator>
 
-
   <keyframe>
     <key
       qpos="0 0 0.08 1 0 0 0 0 0 0 0 0 0.16 0 0 0 0 0 0 0 0 0 0 0 0 0 -0.16 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"/>
   </keyframe>
-
 </mujoco>

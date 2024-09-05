@@ -1,7 +1,5 @@
 <mujoco model="talos">
-
   <include file="talos.xml"/>
-
 
   <actuator>
     <velocity name="torso_1_joint_velocity" joint="torso_1_joint" kv="2000" forcerange="-200.0 200.0"/>
@@ -38,12 +36,9 @@
     <velocity name="leg_right_6_joint_velocity" joint="leg_right_6_joint" kv="10000" forcerange="-100 100"/>
   </actuator>
 
-
   <keyframe>
     <key name="walk_pose"
       qpos="0 0 0.03 0 0 0 0 0 0.15 0 0 0.3 0.4 -0.5 -1.5 0 0 0 0 -0.4 0 0 0 0 0 -0.3 -0.4 0.5 -1.5 0 0 0 0 -0.4 0 0 0 0 0 0 0 -0.4 0.8 -0.4 0 0 0 -0.4 0.8 -0.4 0"
       ctrl="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"/>
   </keyframe>
-
-
 </mujoco>
