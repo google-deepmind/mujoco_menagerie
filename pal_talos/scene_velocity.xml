@@ -1,9 +1,11 @@
 <mujoco model="talos velocity scene">
   <include file="talos_velocity.xml"/>
 
+  <statistic center="0 0 -0.1" extent="1.5"/>
+
   <visual>
     <rgba haze="0.15 0.25 0.35 1"/>
-    <global azimuth="60" elevation="-20"/>
+    <global azimuth="160" elevation="-20"/>
     <headlight diffuse="0.6 0.6 0.6" ambient="0.3 0.3 0.3" specular="0 0 0"/>
   </visual>
 
