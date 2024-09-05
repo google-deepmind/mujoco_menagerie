@@ -34,7 +34,10 @@ _MJX_MODEL_XMLS: List[pathlib.Path] = []
 
 def _get_xmls(pattern: str) -> List[pathlib.Path]:
   for d in _MODEL_DIRS:
-    yield from d.glob(pattern)
+    # Produce tuples of test name and XML path.
+    for f in d.glob(pattern):
+      test_name = str(f).removeprefix(str(f.parent.parent))
+      yield (test_name, f)
 
 _MODEL_XMLS = list(_get_xmls('scene*.xml'))
 _MJX_MODEL_XMLS = list(_get_xmls('scene*mjx.xml'))
@@ -65,7 +68,7 @@ def _pseudorandom_ctrlnoise(
 class ModelsTest(parameterized.TestCase):
   """Tests that MuJoCo models load and do not emit warnings."""
 
-  @parameterized.parameters(_MODEL_XMLS)
+  @parameterized.named_parameters(_MODEL_XMLS)
   def test_compiles_and_steps(self, xml_path: pathlib.Path) -> None:
     model = mujoco.MjModel.from_xml_path(str(xml_path))
     data = mujoco.MjData(model)
@@ -86,7 +89,7 @@ class ModelsTest(parameterized.TestCase):
 class MjxModelsTest(parameterized.TestCase):
   """Tests that MJX models load and do not return NaNs."""
 
-  @parameterized.parameters(_MJX_MODEL_XMLS)
+  @parameterized.named_parameters(_MJX_MODEL_XMLS)
   def test_compiles_and_steps(self, xml_path: pathlib.Path) -> None:
     model = mujoco.MjModel.from_xml_path(str(xml_path))
     model = mjx.put_model(model)
