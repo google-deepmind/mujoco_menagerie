@@ -1,0 +1,184 @@
+<mujoco model="left leap hand">
+  <compiler angle="radian" autolimits="true" meshdir="assets"/>
+
+  <option integrator="implicitfast" cone="elliptic" impratio="10"/>
+
+  <default>
+    <default class="left_leap">
+      <site size="0.001" rgba="0.5 0.5 0.5 0.3" group="4"/>
+      <joint axis="0 0 -1" armature="0.01"/>
+      <position inheritrange="1" kp="20" dampratio="1"/>
+      <default class="visual">
+        <geom group="2" type="mesh" contype="0" conaffinity="0" density="0" material="black"/>
+      </default>
+      <default class="collision">
+        <geom group="3" type="mesh"/>
+      </default>
+    </default>
+  </default>
+
+  <asset>
+    <material name="black" rgba=".2 .2 .2 1"/>
+
+    <mesh name="palm_lower" file="palm_lower_left.stl"/>
+    <mesh file="mcp_joint.stl"/>
+    <mesh file="pip.stl"/>
+    <mesh file="dip.stl"/>
+    <mesh file="fingertip.stl"/>
+    <mesh file="thumb_pip.stl"/>
+    <mesh file="thumb_dip.stl"/>
+    <mesh file="thumb_fingertip.stl"/>
+  </asset>
+
+  <worldbody>
+    <light pos="0 0 2"/>
+    <body name="palm_lower" childclass="left_leap" pos="0 0 .1" quat="0 1 0 0">
+      <inertial pos="0 0 0" quat="0.704257 -0.0014136 0.00678547 0.709911" mass="0.235"
+        diaginertia="0.000523252 0.000351001 0.000256955"/>
+      <geom pos="-0.0955742 -0.11704 0.0207796" quat="0 0 1 1" mesh="palm_lower" class="visual"/>
+      <geom pos="-0.0955742 -0.11704 0.0207796" quat="0 0 1 1" mesh="palm_lower" class="collision"/>
+      <body name="mcp_joint" pos="-0.0825742 -0.08574 0.00780089" quat="1 1 1 -1">
+        <inertial pos="0 0 0" quat="0.388585 0.626468 -0.324549 0.592628" mass="0.044"
+          diaginertia="1.47756e-05 1.31982e-05 6.0802e-06"/>
+        <joint name="1" range="-0.314 2.23" actuatorfrcrange="-0.95 0.95"/>
+        <geom pos="0.0084069 0.00776624 0.0146574" quat="1 0 0 0" mesh="mcp_joint" class="visual"/>
+        <geom pos="0.0084069 0.00776624 0.0146574" quat="1 0 0 0" mesh="mcp_joint" class="collision"/>
+        <body name="pip" pos="-0.0122 0.0381 0.0145" quat="1 -1 -1 1">
+          <inertial pos="0 0 0" quat="0.709913 0.704273 -0.000363156 0.00475427" mass="0.032"
+            diaginertia="4.7981e-06 4.23406e-06 2.86184e-06"/>
+          <joint name="0" range="-1.047 1.047" actuatorfrcrange="-0.95 0.95"/>
+          <geom pos="0.00964336 0.0003 0.000784034" quat="1 -1 -1 -1" mesh="pip" class="visual"/>
+          <geom pos="0.00964336 0.0003 0.000784034" quat="1 -1 -1 -1" mesh="pip" class="collision"/>
+          <body name="dip" pos="0.015 0.0143 -0.013" quat="1 1 -1 1">
+            <inertial pos="0 0 0" quat="-0.252689 0.659216 0.238844 0.666735" mass="0.037"
+              diaginertia="6.68256e-06 6.24841e-06 5.02002e-06"/>
+            <joint name="2" range="-0.506 1.885" actuatorfrcrange="-0.95 0.95"/>
+            <geom pos="0.0211334 -0.00843212 0.00978509" quat="0 -1 0 0" mesh="dip" class="visual"/>
+            <geom pos="0.0211334 -0.00843212 0.00978509" quat="0 -1 0 0" mesh="dip" class="collision"/>
+            <body name="fingertip" pos="-4.08806e-09 -0.0361 0.0002">
+              <inertial pos="0 0 0" quat="0.706755 0.706755 0.0223155 0.0223155" mass="0.016"
+                diaginertia="3.37527e-06 2.863e-06 1.54873e-06"/>
+              <joint name="3" range="-0.366 2.042" actuatorfrcrange="-0.95 0.95"/>
+              <geom pos="0.0132864 -0.00611424 0.0145" quat="0 1 0 0" mesh="fingertip" class="visual"/>
+              <geom pos="0.0132864 -0.00611424 0.0145" quat="0 1 0 0" mesh="fingertip" class="collision"/>
+            </body>
+          </body>
+        </body>
+      </body>
+      <body name="mcp_joint_2" pos="-0.0825742 -0.04029 0.00780089" quat="1 1 1 -1">
+        <inertial pos="0 0 0" quat="0.388585 0.626468 -0.324549 0.592628" mass="0.044"
+          diaginertia="1.47756e-05 1.31982e-05 6.0802e-06"/>
+        <joint name="5" range="-0.314 2.23" actuatorfrcrange="-0.95 0.95"/>
+        <geom pos="0.0084069 0.00776624 0.0146574" quat="1 0 0 0" mesh="mcp_joint" class="visual"/>
+        <geom pos="0.0084069 0.00776624 0.0146574" quat="1 0 0 0" mesh="mcp_joint" class="collision"/>
+        <body name="pip_2" pos="-0.0122 0.0381 0.0145" quat="1 -1 -1 1">
+          <inertial pos="0 0 0" quat="0.709913 0.704273 -0.000363156 0.00475427" mass="0.032"
+            diaginertia="4.7981e-06 4.23406e-06 2.86184e-06"/>
+          <joint name="4" range="-1.047 1.047" actuatorfrcrange="-0.95 0.95"/>
+          <geom pos="0.00964336 0.0003 0.000784034" quat="1 -1 -1 -1" mesh="pip" class="visual"/>
+          <geom pos="0.00964336 0.0003 0.000784034" quat="1 -1 -1 -1" mesh="pip" class="collision"/>
+          <body name="dip_2" pos="0.015 0.0143 -0.013" quat="1 1 -1 1">
+            <inertial pos="0 0 0" quat="-0.252689 0.659216 0.238844 0.666735" mass="0.037"
+              diaginertia="6.68256e-06 6.24841e-06 5.02002e-06"/>
+            <joint name="6" range="-0.506 1.885" actuatorfrcrange="-0.95 0.95"/>
+            <geom pos="0.0211334 -0.00843212 0.00978509" quat="0 -1 0 0" mesh="dip" class="visual"/>
+            <geom pos="0.0211334 -0.00843212 0.00978509" quat="0 -1 0 0" mesh="dip" class="collision"/>
+            <body name="fingertip_2" pos="0 -0.0361 0.0002">
+              <inertial pos="0 0 0" quat="0.706755 0.706755 0.0223155 0.0223155" mass="0.016"
+                diaginertia="3.37527e-06 2.863e-06 1.54873e-06"/>
+              <joint name="7" range="-0.366 2.042" actuatorfrcrange="-0.95 0.95"/>
+              <geom pos="0.0132864 -0.00611424 0.0145" quat="0 1 0 0" mesh="fingertip" class="visual"/>
+              <geom pos="0.0132864 -0.00611424 0.0145" quat="0 1 0 0" mesh="fingertip" class="collision"/>
+            </body>
+          </body>
+        </body>
+      </body>
+      <body name="mcp_joint_3" pos="-0.0825742 0.00515999 0.00780089" quat="1 1 1 -1">
+        <inertial pos="0 0 0" quat="0.388585 0.626468 -0.324549 0.592628" mass="0.044"
+          diaginertia="1.47756e-05 1.31982e-05 6.0802e-06"/>
+        <joint name="9" range="-0.314 2.23" actuatorfrcrange="-0.95 0.95"/>
+        <geom pos="0.0084069 0.00776624 0.0146574" quat="1 0 0 0" mesh="mcp_joint" class="visual"/>
+        <geom pos="0.0084069 0.00776624 0.0146574" quat="1 0 0 0" mesh="mcp_joint" class="collision"/>
+        <body name="pip_3" pos="-0.0122 0.0381 0.0145" quat="1 -1 -1 1">
+          <inertial pos="0 0 0" quat="0.709913 0.704273 -0.000363156 0.00475427" mass="0.032"
+            diaginertia="4.7981e-06 4.23406e-06 2.86184e-06"/>
+          <joint name="8" range="-1.047 1.047" actuatorfrcrange="-0.95 0.95"/>
+          <geom pos="0.00964336 0.0003 0.000784034" quat="1 -1 -1 -1" mesh="pip" class="visual"/>
+          <geom pos="0.00964336 0.0003 0.000784034" quat="1 -1 -1 -1" mesh="pip" class="collision"/>
+          <body name="dip_3" pos="0.015 0.0143 -0.013" quat="1 1 -1 1">
+            <inertial pos="0 0 0" quat="-0.252689 0.659216 0.238844 0.666735" mass="0.037"
+              diaginertia="6.68256e-06 6.24841e-06 5.02002e-06"/>
+            <joint name="10" range="-0.506 1.885" actuatorfrcrange="-0.95 0.95"/>
+            <geom pos="0.0211334 -0.00843212 0.00978509" quat="0 -1 0 0" mesh="dip" class="visual"/>
+            <geom pos="0.0211334 -0.00843212 0.00978509" quat="0 -1 0 0" mesh="dip" class="collision"/>
+            <body name="fingertip_3" pos="0 -0.0361 0.0002">
+              <inertial pos="0 0 0" quat="0.706755 0.706755 0.0223155 0.0223155" mass="0.016"
+                diaginertia="3.37527e-06 2.863e-06 1.54873e-06"/>
+              <joint name="11" range="-0.366 2.042" actuatorfrcrange="-0.95 0.95"/>
+              <geom pos="0.0132864 -0.00611424 0.0145" quat="0 1 0 0" mesh="fingertip" class="visual"/>
+              <geom pos="0.0132864 -0.00611424 0.0145" quat="0 1 0 0" mesh="fingertip" class="collision"/>
+            </body>
+          </body>
+        </body>
+      </body>
+      <body name="pip_4" pos="-0.144874 -0.09004 0.00490089" quat="1 0 1 0">
+        <inertial pos="0 0 0" quat="0.709913 0.704273 -0.000363156 0.00475427" mass="0.032"
+          diaginertia="4.7981e-06 4.23406e-06 2.86184e-06"/>
+        <joint name="12" range="-2.094 0.349" actuatorfrcrange="-0.95 0.95"/>
+        <geom pos="-0.00535664 0.0003 0.000784034" quat="1 -1 -1 -1" mesh="pip" class="visual"/>
+        <geom pos="-0.00535664 0.0003 0.000784034" quat="1 -1 -1 -1" mesh="pip" class="collision"/>
+        <body name="thumb_pip" pos="0 -0.0141 -0.013" quat="1 -1 -1 -1">
+          <inertial pos="0 0 0" mass="0.003" diaginertia="5.93e-07 5.49e-07 2.24e-07"/>
+          <joint name="13" range="-2.443 0.47" actuatorfrcrange="-0.95 0.95"/>
+          <geom pos="0.0119619 0 -0.0158526" quat="1 1 0 0" mesh="thumb_pip" class="visual"/>
+          <geom pos="0.0119619 0 -0.0158526" quat="1 1 0 0" mesh="thumb_pip" class="collision"/>
+          <body name="thumb_dip" pos="0 0.0145 -0.017" quat="1 -1 0 0">
+            <inertial pos="0 0 0" quat="0.708624 0.704906 0.00637342 0.0303153" mass="0.038"
+              diaginertia="8.48742e-06 7.67823e-06 3.82835e-06"/>
+            <joint name="14" range="-1.2 1.9" actuatorfrcrange="-0.95 0.95"/>
+            <geom pos="0.0439687 0.057953 -0.00862868" quat="1 0 0 0" mesh="thumb_dip" class="visual"/>
+            <geom pos="0.0439687 0.057953 -0.00862868" quat="1 0 0 0" mesh="thumb_dip" class="collision"/>
+            <body name="thumb_fingertip" pos="0 0.0466 0.0002" quat="0 0 0 -1">
+              <inertial pos="0 0 0" quat="0.704307 0.709299 0.006848 -0.0282727" mass="0.049"
+                diaginertia="2.03882e-05 1.98443e-05 4.32049e-06"/>
+              <joint name="15" range="-1.34 1.88" actuatorfrcrange="-0.95 0.95"/>
+              <geom pos="0.0625595 0.0784597 0.0489929" quat="1 0 0 0" mesh="thumb_fingertip" class="visual"/>
+              <geom pos="0.0625595 0.0784597 0.0489929" quat="1 0 0 0" mesh="thumb_fingertip" class="collision"/>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+
+  <contact>
+    <exclude body1="palm_lower" body2="mcp_joint"/>
+    <exclude body1="palm_lower" body2="mcp_joint_2"/>
+    <exclude body1="palm_lower" body2="mcp_joint_3"/>
+    <exclude body1="palm_lower" body2="thumb_dip"/>
+    <exclude body1="palm_lower" body2="thumb_pip"/>
+    <exclude body1="palm_lower" body2="pip_4"/>
+    <exclude body1="mcp_joint" body2="dip"/>
+    <exclude body1="mcp_joint_3" body2="dip_3"/>
+    <exclude body1="mcp_joint_2" body2="dip_2"/>
+  </contact>
+
+  <actuator>
+    <position class="left_leap" name="1" joint="1"/>
+    <position class="left_leap" name="0" joint="0"/>
+    <position class="left_leap" name="2" joint="2"/>
+    <position class="left_leap" name="3" joint="3"/>
+    <position class="left_leap" name="5" joint="5"/>
+    <position class="left_leap" name="4" joint="4"/>
+    <position class="left_leap" name="6" joint="6"/>
+    <position class="left_leap" name="7" joint="7"/>
+    <position class="left_leap" name="9" joint="9"/>
+    <position class="left_leap" name="8" joint="8"/>
+    <position class="left_leap" name="10" joint="10"/>
+    <position class="left_leap" name="11" joint="11"/>
+    <position class="left_leap" name="12" joint="12"/>
+    <position class="left_leap" name="13" joint="13"/>
+    <position class="left_leap" name="14" joint="14"/>
+    <position class="left_leap" name="15" joint="15"/>
+  </actuator>
+</mujoco>
