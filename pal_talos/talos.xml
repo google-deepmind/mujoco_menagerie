@@ -86,6 +86,7 @@
 
   <default>
     <default class="talos">
+      <site rgba="1 0 0 1" size="0.01" group="5"/>
       <joint frictionloss="1" damping="1"/>
       <geom type="mesh" solref="0.001 1"/>
       <default class="visual">
@@ -126,6 +127,7 @@
             <geom class="visual" mesh="head_1" material="black"/>
             <geom mesh="head_1_collision" class="collision" material="black"/>
             <body name="head_2_link">
+              <site name="head" pos="0 0 0.2"/>
               <inertial pos="0.0108233 0.000630364 0.142045" quat="0.584927 -0.0294601 -0.0201927 0.810299"
                 mass="1.46795" diaginertia="0.0110721 0.0109715 0.00581517"/>
               <joint name="head_2_joint" axis="0 0 1" range="-1.309 1.309" damping="0.5" actuatorfrcrange="-4 4"/>
@@ -232,6 +234,7 @@
                             <joint name="gripper_left_fingertip_3_joint" axis="1 0 0" range="0 1.0472"/>
                             <geom class="visual" mesh="fingertip" material="black"/>
                             <geom mesh="fingertip_collision" class="collision" material="black"/>
+                            <site name="left_palm" pos="0 -0.05 0"/>
                           </body>
                         </body>
                       </body>
@@ -321,6 +324,7 @@
                             <joint name="gripper_right_fingertip_2_joint" axis="1 0 0" range="0 1.0472"/>
                             <geom class="visual" mesh="fingertip" material="black"/>
                             <geom mesh="fingertip_collision" class="collision" material="black"/>
+                            <site name="right_palm" pos="0 -0.05 0"/>
                           </body>
                         </body>
                         <body name="gripper_right_motor_single_link" pos="0 0.02025 -0.122475" quat="0 0 0 -1">
@@ -389,6 +393,7 @@
                   <joint name="leg_left_6_joint" axis="1 0 0" range="-0.5236 0.5236" actuatorfrcrange="-100 100"/>
                   <geom class="visual" rgba="0.7 0.7 0.7 1" mesh="l_ankle_X_lo_res"/>
                   <geom class="collision" contype="6" type="box" size=".1 .06 .006" pos="-0.005 0 -.1"/>
+                  <site name="left_foot" pos="0 0 -0.1"/>
                 </body>
               </body>
             </body>
@@ -431,6 +436,7 @@
                   <joint name="leg_right_6_joint" axis="1 0 0" range="-0.5236 0.5236" actuatorfrcrange="-100 100"/>
                   <geom class="visual" rgba="0.7 0.7 0.7 1" mesh="r_ankle_X_lo_res"/>
                   <geom class="collision" contype="6" type="box" size=".1 .06 .006" pos="-0.005 0 -.1"/>
+                  <site name="right_foot" pos="0 0 -0.1"/>
                 </body>
               </body>
             </body>
