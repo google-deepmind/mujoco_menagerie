@@ -1,0 +1,69 @@
+<mujoco model="ufactory_lite6_gripper_wide">
+  <compiler angle="radian" meshdir="assets" autolimits="true"/>
+
+  <option integrator="implicitfast"/>
+
+  <default>
+    <default class="lite6">
+      <geom type="mesh"/>
+      <joint axis="0 0 1" damping="1" armature="0.1"/>
+      <default class="visual">
+        <geom contype="0" conaffinity="0" group="2" material="white"/>
+      </default>
+      <default class="collision">
+        <geom group="3" mass="0" density="0"/>
+      </default>
+      <site size="0.001" rgba="0.5 0.5 0.5 0.3" group="4"/>
+    </default>
+  </default>
+
+  <asset>
+    <material name="white" rgba="1 1 1 1"/>
+    <material name="black" rgba=".1 .1 .1 1"/>
+
+    <mesh name="gripper_lite_body" file="visual/gripper_lite_body.stl"/>
+    <mesh name="gripper_lite_left_finger_wide" file="visual/gripper_lite_left_finger_wide.stl"/>
+    <mesh name="gripper_lite_right_finger_wide" file="visual/gripper_lite_right_finger_wide.stl"/> 
+    <mesh name="gripper_lite_body_c" file="collision/gripper_lite_body.stl"/>
+    <mesh name="gripper_lite_left_finger_wide_base" file="collision/gripper_lite_left_finger_wide_base.stl"/>
+    <mesh name="gripper_lite_right_finger_wide_base" file="collision/gripper_lite_right_finger_wide_base.stl"/>
+    <mesh name="gripper_lite_left_finger_wide_tip" file="collision/gripper_lite_left_finger_wide_tip.stl"/>
+    <mesh file="collision/gripper_lite_right_finger_wide_tip.stl"/>
+  </asset>
+
+  <worldbody>
+    <body name="gripper_body" childclass="lite6">
+      <inertial pos="0.0 0.0 0.026" quat="1 0 0 0" mass="0.26"
+        diaginertia="0.00016117 0.000118 0.00014455" />
+      <geom class="visual" mesh="gripper_lite_body" material="white"/>
+      <geom name="gripper_lite_body_c" class="collision" mesh="gripper_lite_body_c"/>
+      <!-- Finger and base separated to avoid convex hull preventing gripping -->
+      <body name="gripper_left_finger" pos="0 0 0.054" quat="1 0 0 0">
+        <inertial pos="0.0 -0.01 0.01" quat="1 0 0 0" mass="0.024"
+          diaginertia="1.961e-6 2.274e-6 1.238e-6" />
+        <joint name="gripper_left_finger" pos="0 0 0" axis="0 1 0" type="slide" limited="true" range="-0.0081 -1e-5" frictionloss="0.4" />     
+        <geom mesh="gripper_lite_left_finger_wide" class="visual" material="black"/>
+        <geom name="gripper_left_finger_base" class="collision" mesh="gripper_lite_left_finger_wide_base" material="black" condim="1" solimp="2 1 0.01" solref="0.01 1" friction="6 0.5 0.1"/>
+        <geom name="gripper_left_finger" class="collision" mesh="gripper_lite_left_finger_wide_tip" material="black" condim="4" solimp="2 1 0.01" solref="0.01 1" friction="6 0.5 0.1"/>
+      </body>
+      <body name="gripper_right_finger" pos="0 0 0.054" quat="1 0 0 0">
+        <inertial pos="0.0 0.01 0.01" quat="1 0 0 0" mass="0.024"
+          diaginertia="1.961e-6 2.274e-6 1.238e-6" />
+        <joint name="gripper_right_finger" pos="0 0 0" axis="0 1 0" type="slide" limited="true" range="1e-5 0.0081" frictionloss="0.4" />
+        <geom mesh="gripper_lite_right_finger_wide" class="visual" material="black"/>
+        <geom name="gripper_right_finger_base" class="collision" mesh="gripper_lite_right_finger_wide_base" material="black" condim="1" solimp="2 1 0.01" solref="0.01 1" friction="5 0.5 0.1"/>
+        <geom name="gripper_right_finger" class="collision" mesh="gripper_lite_right_finger_wide_tip" material="black" condim="4" solimp="2 1 0.01" solref="0.01 1" friction="5 0.5 0.1"/>
+      </body>
+      <!-- End effector reference point is in the centre at the tip of the grippers -->
+      <site name="end_effector" pos="0 0 0.0811"/>
+    </body>
+  </worldbody>
+
+  <equality>
+    <joint joint1="gripper_left_finger" joint2="gripper_right_finger" polycoef="0 -1 0 0 0"/>
+  </equality>
+
+  <actuator>
+    <motor name="gripper" joint="gripper_left_finger" forcerange="-10 10" ctrlrange="-10 10"/>
+  </actuator>
+</mujoco>
