@@ -30,6 +30,7 @@
   <asset>
     <material name="white" rgba="1 1 1 1"/>
     <material name="silver" rgba=".753 .753 .753 1"/>
+    <material name="black" rgba=".1 .1 .1 1"/>
 
     <mesh file="visual/link_base.stl"/>
     <mesh file="visual/link1.stl"/>
@@ -38,6 +39,9 @@
     <mesh file="visual/link4.stl"/>
     <mesh file="visual/link5.stl"/>
     <mesh file="visual/link6.stl"/>
+    <mesh file="visual/gripper_lite_body.stl"/>
+    <mesh file="visual/gripper_lite_left_finger_narrow.stl"/>
+    <mesh file="visual/gripper_lite_right_finger_narrow.stl"/>
     <mesh name="link_base_c" file="collision/link_base.stl"/>
     <mesh name="link1_c" file="collision/link1.stl"/>
     <mesh name="link2_c" file="collision/link2.stl"/>
@@ -45,6 +49,7 @@
     <mesh name="link4_c" file="collision/link4.stl"/>
     <mesh name="link5_c" file="collision/link5.stl"/>
     <mesh name="link6_c" file="collision/link6.stl"/>
+    <mesh name="gripper_lite_body_c" file="collision/gripper_lite_body.stl"/>
   </asset>
 
   <worldbody>
@@ -89,6 +94,26 @@
                   <geom class="visual" mesh="link6" material="silver"/>
                   <geom name="link6_c" class="collision" mesh="link6_c"/>
                   <site name="attachment_site"/>
+                  <body name="gripper_body" pos="0 0 0" quat="1 0 0 0">
+                    <inertial pos="0.0 0.0 0.026" quat="1 0 0 0" mass="0.26"
+                      diaginertia="0.00016117 0.000118 0.00014455" />
+                    <geom name="gripper_lite_body" class="visual" mesh="gripper_lite_body" material="white"/>
+                    <geom name="gripper_lite_body_c" class="collision" mesh="gripper_lite_body_c"/>
+                    <body name="gripper_left_finger" pos="0 0 0.054" quat="1 0 0 0">
+                      <inertial pos="0.0 -0.005 0.01" quat="1 0 0 0" mass="0.024"
+                        diaginertia="1.961e-6 2.274e-6 1.238e-6" />
+                      <geom name="gripper_left_finger" mesh="gripper_lite_left_finger_narrow" material="black" condim="4" solimp="2 1 0.01" solref="0.01 1" friction="1 0.005 0.0001"/>
+                      <joint name="gripper_left_finger" pos="0 0 0" axis="0 1 0" type="slide" limited="true" range="-0.0081 -1e-5" frictionloss="1" />
+                    </body>
+                    <body name="gripper_right_finger" pos="0 0 0.054" quat="1 0 0 0">
+                      <inertial pos="0.0 0.005 0.01" quat="1 0 0 0" mass="0.024"
+                        diaginertia="1.961e-6 2.274e-6 1.238e-6" />
+                      <geom name="gripper_right_finger" mesh="gripper_lite_right_finger_narrow" material="black" condim="4" solimp="2 1 0.01" solref="0.01 1" friction="1 0.005 0.0001"/>
+                      <joint name="gripper_right_finger" pos="0 0 0" axis="0 1 0" type="slide" limited="true" range="1e-5 0.0081" frictionloss="1" />
+                    </body>
+                    <!-- End effector reference point is in the middle of the tips of the grippers -->
+                    <site name="end_effector" pos="0 0 0.0811"/>
+                  </body>
                 </body>
               </body>
             </body>
@@ -98,16 +123,21 @@
     </body>
   </worldbody>
 
-  <actuator>
+   <actuator>
     <position joint="joint1" class="size1" ctrlrange="-6.28319 6.28319"/>
     <position joint="joint2" class="size1" ctrlrange="-2.61799 2.61799"/>
     <position joint="joint3" class="size2" ctrlrange="-0.061087 5.23599"/>
     <position joint="joint4" class="size2" ctrlrange="-6.28319 6.28319"/>
     <position joint="joint5" class="size2" ctrlrange="-2.1642 2.1642"/>
     <position joint="joint6" class="size3" ctrlrange="-6.28319 6.28319"/>
+    <motor name="gripper" joint="gripper_left_finger" forcerange="-10 10" ctrlrange="-10 10"/>
   </actuator>
 
+  <equality>
+    <joint joint1="gripper_left_finger" joint2="gripper_right_finger" polycoef="0 -1 0 0 0"/>
+  </equality>
+
   <keyframe>
-    <key name="home" qpos="0 0 1.57 0 1.57 0" ctrl="0 0 1.57 0 1.57 0"/>
+    <key name="home" qpos="0 0 1.57 0 1.57 0 0 0" ctrl="0 0 1.57 0 1.57 0 0"/>
   </keyframe>
 </mujoco>
