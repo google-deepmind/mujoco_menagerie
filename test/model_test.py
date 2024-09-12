@@ -43,7 +43,7 @@ _MODEL_XMLS = list(_get_xmls('scene*.xml'))
 _MJX_MODEL_XMLS = list(_get_xmls('scene*mjx.xml'))
 
 # Total simulation duration, in seconds.
-_MAX_SIM_TIME = 1.0
+_MAX_SIM_TIME = 0.1
 # Scale for the pseudorandom control noise.
 _NOISE_SCALE = 1.0
 
