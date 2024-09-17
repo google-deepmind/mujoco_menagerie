@@ -1,46 +1,5 @@
---- aloha.xml	2024-07-24 11:00:33.000000000 -0700
-+++ mjx_aloha.xml	2024-07-24 11:01:02.000000000 -0700
-@@ -1,7 +1,7 @@
- <mujoco model="aloha">
-   <compiler angle="radian" meshdir="assets" autolimits="true"/>
- 
--  <option cone="elliptic" impratio="10"/>
-+  <option impratio="10"/>
- 
-   <asset>
-     <material name="black" rgba="0.15 0.15 0.15 1"/>
-@@ -29,11 +29,11 @@
-         <position ctrlrange="-3.14158 3.14158" kp="43"/>
-       </default>
-       <default class="shoulder">
--        <joint range="-1.85005 1.25664" armature="0.395" frictionloss="2.0" damping="20.0" actuatorfrcrange="-144 144"/>
-+        <joint range="-1.85005 1.25664" armature="0.395" damping="20.0" actuatorfrcrange="-144 144"/>
-         <position ctrlrange="-1.85005 1.25664" kp="265"/>
-       </default>
-       <default class="elbow">
--        <joint range="-1.76278 1.6057" armature="0.383" frictionloss="1.15" damping="18.49" actuatorfrcrange="-59 59"/>
-+        <joint range="-1.76278 1.6057" armature="0.383" damping="18.49" actuatorfrcrange="-59 59"/>
-         <position ctrlrange="-1.76278 1.6057" kp="227"/>
-       </default>
-       <default class="forearm_roll">
-@@ -49,7 +49,7 @@
-         <position ctrlrange="-3.14158 3.14158" kp="10.4"/>
-       </default>
-       <default class="finger">
--        <joint type="slide" armature="0.243" damping="40"/>
-+        <joint type="slide" armature="0.243" damping="10.1"/>
-         <!--
-           The joint and control ranges are in meters, representing the linear displacement of the
-           finger on the rail. Note that the real robot takes in a float value representing the
-@@ -72,7 +72,7 @@
-           where the gripper is actuated to its fully closed and fully open positions. Therefore the
-           control range represents limits enforced by _software_ on the real robot.
-         -->
--        <position ctrlrange="0.002 0.037" kp="2000" kv="124"/>
-+        <position ctrlrange="0.002 0.037" kp="365"/>
-         <default class="left_finger">
-           <joint range="0 0.041" axis="0 0 -1"/>
-         </default>
+--- aloha.xml	2024-07-24 19:38:17.000000000 +0100
++++ mjx_aloha.xml	2024-09-17 10:18:25.000000000 +0100
 @@ -84,10 +84,16 @@
          <geom type="mesh" mass="0" group="2" material="black" contype="0" conaffinity="0"/>
        </default>
@@ -48,7 +7,7 @@
 -        <geom group="3" type="mesh" condim="6" friction="1 5e-3 5e-4" solref=".01 1"/>
 +        <geom group="4" type="mesh" contype="0" conaffinity="0"/>
 +        <default class="finger_collision">
-+          <geom condim="3" solimp="2 1 0.01" solref="0.01 1" friction="1 0.005 0.0001"/>
++          <geom condim="3" solimp="0.99 0.995 0.01" solref="0.01 1" friction="1 0.005 0.0001"/>
 +        </default>
          <default class="sphere_collision">
            <geom type="sphere" size="0.0006" rgba="1 0 0 1"/>
@@ -59,15 +18,6 @@
        </default>
      </default>
    </default>
-@@ -137,7 +143,7 @@
-                   <inertial pos="0.0395662 -2.56311e-07 0.00400649" quat="0.62033 0.619916 -0.339682 0.339869"
-                     mass="0.251652" diaginertia="0.000689546 0.000650316 0.000468142"/>
-                   <joint name="left/wrist_rotate" class="wrist_rotate"/>
--                  <site name="left/gripper" pos="0.13 0 -.003" group="5"/>
-+                  <site name="left/gripper" pos="0.15 0 0" group="5"/>
-                   <body name="left/gripper_base" euler="0 1.57 -1.57" pos="0.035 0 0">
-                     <inertial pos="0.000182154 -0.0341589 -0.0106026" quat="0.435286 0.557074 -0.551539 0.442718"
-                       mass="0.42158" diaginertia="0.00110438 0.000790537 0.000469727"/>
 @@ -149,6 +155,7 @@
                      <geom class="collision" pos="0 -0.03525 -0.0227" quat="0 -1 0 -1" type="mesh" mesh="vx300s_7_gripper_wrist_mount"/>
                      <geom class="visual" pos="0 -0.0824748 -0.0095955" quat="0 0 -0.21644 -0.976296" type="mesh" mesh="d405_solid"/>
@@ -100,15 +50,6 @@
                        <geom name="left/right_g0" pos="0.013  0.0892 0.0268" class="sphere_collision"/>
                        <geom name="left/right_g1" pos="0.0222 0.0892 0.0268" class="sphere_collision"/>
                        <geom name="left/right_g2" pos="0.0182 0.0845 0.0266" class="sphere_collision"/>
-@@ -225,7 +236,7 @@
-                   <inertial pos="0.0395662 -2.56311e-07 0.00400649" quat="0.62033 0.619916 -0.339682 0.339869"
-                     mass="0.251652" diaginertia="0.000689546 0.000650316 0.000468142"/>
-                   <joint name="right/wrist_rotate" class="wrist_rotate"/>
--                  <site name="right/gripper" pos="0.13 0 -.003" group="5"/>
-+                  <site name="right/gripper" pos="0.15 0 0" group="5"/>
-                   <body name="right/gripper_base" euler="0 1.57 -1.57" pos="0.035 0 0">
-                     <inertial pos="0.000182154 -0.0341589 -0.0106026" quat="0.435286 0.557074 -0.551539 0.442718"
-                       mass="0.42158" diaginertia="0.00110438 0.000790537 0.000469727"/>
 @@ -237,6 +248,7 @@
                      <geom class="collision" pos="0 -0.03525 -0.0227" quat="0 -0.707107 0 -0.707107" type="mesh" mesh="vx300s_7_gripper_wrist_mount"/>
                      <geom class="visual" pos="0 -0.0824748 -0.0095955" quat="0 0 -0.21644 -0.976296" type="mesh" mesh="d405_solid"/>
