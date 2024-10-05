@@ -1,0 +1,41 @@
+<mujoco model="tiago_position">
+
+  <include file="tiago.xml"/>
+
+  <default>
+    <default class="position">
+      <position dampratio="1"/>
+    </default>
+  </default>
+
+  <actuator>
+    <!-- Arm actuators -->
+    <position class="position" name="arm_position_1_position" joint="arm_1_joint" inheritrange="1.0" kp="3000"/>
+    <position class="position" name="arm_position_2_position" joint="arm_2_joint" inheritrange="1.0" kp="3000"/>
+    <position class="position" name="arm_position_3_position" joint="arm_3_joint" inheritrange="1.0" kp="3000"/>
+    <position class="position" name="arm_position_4_position" joint="arm_4_joint" inheritrange="1.0" kp="3000"/>
+    <!-- Wrist actuators -->
+    <position class="position" name="arm_position_5_position" joint="arm_5_joint" inheritrange="1.0" kp="500"/>
+    <position class="position" name="arm_position_6_position" joint="arm_6_joint" inheritrange="1.0" kp="500"/>
+    <position class="position" name="arm_position_7_position" joint="arm_7_joint" inheritrange="1.0" kp="500"/>
+    <!-- End effector actuators -->
+    <position class="position" name="gripper_left_finger_position" joint="gripper_left_finger_joint" inheritrange="0.999"
+      forcerange="-5.197 5.197" kp="1000" kv="80"/>
+    <position class="position" name="gripper_right_finger_position" joint="gripper_right_finger_joint" inheritrange="0.999"
+      forcerange="-5.197 5.197" kp="1000" kv="80"/>
+    <!-- Head actuators -->
+    <position class="position" name="head_1_joint_position" joint="head_1_joint" inheritrange="1.0" kp="20"/>
+    <position class="position" name="head_2_joint_position" joint="head_2_joint" inheritrange="1.0" kp="20"/>
+    <!-- Torso actuators -->
+    <position class="position" name="torso_lift_joint_position" joint="torso_lift_joint" inheritrange="1.0" kp="30000"/>
+    <!-- Wheel actuators -->
+    <velocity name="wheel_left_joint_vel" joint="wheel_left_joint" ctrlrange="-5 5" kv="100"/>
+    <velocity name="wheel_right_joint_vel" joint="wheel_right_joint" ctrlrange="-5 5" kv="100"/>
+  </actuator>
+
+  <keyframe>
+    <key name="home" ctrl="0.2 -1.34 -0.2 1.94 -1.57 1.37 0 0 0 0 0 0.15 0 0"
+      qpos="0 0 -0.985 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.15 0 0 0.20 -1.34 -0.20 1.94 -1.57 1.37 0.0 0 0"/>
+  </keyframe>
+
+</mujoco>
