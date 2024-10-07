@@ -1,0 +1,80 @@
+<mujoco model="talos">
+  <include file="talos.xml"/>
+
+  <default>
+    <default class="position">
+      <position dampratio="1"/>
+    </default>
+  </default>
+
+  <actuator>
+    <position class="position" name="torso_1_joint_position" joint="torso_1_joint" kp="2000"
+      ctrlrange="-1.2566370614359172 1.2566370614359172"/>
+    <position class="position" name="torso_2_joint_position" joint="torso_2_joint" kp="500"
+      ctrlrange="-0.22689280275926285 0.7330382858376184"/>
+    <position class="position" name="head_1_joint_position" joint="head_1_joint" kp="200"
+      ctrlrange="-0.20943951023931956 0.7853981633974483"/>
+    <position class="position" name="head_2_joint_position" joint="head_2_joint" kp="1000"
+      ctrlrange="-1.3089969389957472 1.3089969389957472"/>
+    <position class="position" name="arm_left_1_joint_position" joint="arm_left_1_joint" kp="100"
+      ctrlrange="-1.5707963267948966 0.7853981633974483"/>
+    <position class="position" name="arm_left_2_joint_position" joint="arm_left_2_joint" kp="100"
+      ctrlrange="0.008726646259971648 2.871066619530672"/>
+    <position class="position" name="arm_left_3_joint_position" joint="arm_left_3_joint" kp="100"
+      ctrlrange="-2.426007660272118 2.426007660272118"/>
+    <position class="position" name="arm_left_4_joint_position" joint="arm_left_4_joint" kp="100"
+      ctrlrange="-2.234021442552742 -0.003490658503988659"/>
+    <position class="position" name="arm_left_5_joint_position" joint="arm_left_5_joint" kp="100"
+      ctrlrange="-2.5132741228718345 2.5132741228718345"/>
+    <position class="position" name="arm_left_6_joint_position" joint="arm_left_6_joint" kp="100"
+      ctrlrange="-1.3700834628155487 1.3700834628155487"/>
+    <position class="position" name="arm_left_7_joint_position" joint="arm_left_7_joint" kp="100"
+      ctrlrange="-0.6806784082777885 0.6806784082777885"/>
+    <position class="position" name="gripper_left_joint_position" joint="gripper_left_joint" kp="1000"
+      ctrlrange="-0.9599310885968813 0.0" forcerange="-10 10"/>
+    <position class="position" name="arm_right_1_joint_position" joint="arm_right_1_joint" kp="100"
+      ctrlrange="-0.7853981633974483 1.5707963267948966"/>
+    <position class="position" name="arm_right_2_joint_position" joint="arm_right_2_joint" kp="100"
+      ctrlrange="-2.871066619530672 -0.008726646259971648"/>
+    <position class="position" name="arm_right_3_joint_position" joint="arm_right_3_joint" kp="100"
+      ctrlrange="-2.426007660272118 2.426007660272118"/>
+    <position class="position" name="arm_right_4_joint_position" joint="arm_right_4_joint" kp="100"
+      ctrlrange="-2.234021442552742 -0.003490658503988659"/>
+    <position class="position" name="arm_right_5_joint_position" joint="arm_right_5_joint" kp="100"
+      ctrlrange="-2.5132741228718345 2.5132741228718345"/>
+    <position class="position" name="arm_right_6_joint_position" joint="arm_right_6_joint" kp="100"
+      ctrlrange="-1.3700834628155487 1.3700834628155487"/>
+    <position class="position" name="arm_right_7_joint_position" joint="arm_right_7_joint" kp="100"
+      ctrlrange="-0.6806784082777885 0.6806784082777885"/>
+    <position class="position" name="gripper_right_joint_position" joint="gripper_right_joint" kp="1000"
+      ctrlrange="-0.9599310885968813 0.0" forcerange="-10 10"/>
+    <position class="position" name="leg_left_1_joint_position" joint="leg_left_1_joint" kp="1000"
+      ctrlrange="-0.3490658503988659 1.5707963267948966"/>
+    <position class="position" name="leg_left_2_joint_position" joint="leg_left_2_joint" kp="1000"
+      ctrlrange="-0.5236 0.5236"/>
+    <position class="position" name="leg_left_3_joint_position" joint="leg_left_3_joint" kp="1000"
+      ctrlrange="-2.095 0.7"/>
+    <position class="position" name="leg_left_4_joint_position" joint="leg_left_4_joint" kp="1000" ctrlrange="0 2.618"/>
+    <position class="position" name="leg_left_5_joint_position" joint="leg_left_5_joint" kp="10000"
+      ctrlrange="-1.27 0.68"/>
+    <position class="position" name="leg_left_6_joint_position" joint="leg_left_6_joint" kp="10000"
+      ctrlrange="-0.5236 0.5236"/>
+    <position class="position" name="leg_right_1_joint_position" joint="leg_right_1_joint" kp="1000"
+      ctrlrange="-1.5707963267948966 0.3490658503988659"/>
+    <position class="position" name="leg_right_2_joint_position" joint="leg_right_2_joint" kp="1000"
+      ctrlrange="-0.5236 0.5236"/>
+    <position class="position" name="leg_right_3_joint_position" joint="leg_right_3_joint" kp="1000"
+      ctrlrange="-2.095 0.7"/>
+    <position class="position" name="leg_right_4_joint_position" joint="leg_right_4_joint" kp="1000" ctrlrange="0 2.618"/>
+    <position class="position" name="leg_right_5_joint_position" joint="leg_right_5_joint" kp="10000"
+      ctrlrange="-1.27 0.68"/>
+    <position class="position" name="leg_right_6_joint_position" joint="leg_right_6_joint" kp="10000"
+      ctrlrange="-0.5236 0.5236"/>
+  </actuator>
+
+  <keyframe>
+    <key name="walk_pose"
+      qpos="0 0 1.025 0 0 0 0 0 0.15 0 0 0.3 0.4 -0.5 -1.5 0 0 0 0 -0.4 0 0 0 0 0 -0.3 -0.4 0.5 -1.5 0 0 0 0 -0.4 0 0 0 0 0 0 0 -0.4 0.8 -0.4 0 0 0 -0.4 0.8 -0.4 0"
+      ctrl="0 0.15 0 0 0.3 0.4 -0.5 -1.5 0 0 0 -0.4 -0.3 -0.4 0.5 -1.5 0 0 0 -0.4 0 0 -0.4 0.8 -0.4 0 0 0 -0.4 0.8 -0.4 0"/>
+  </keyframe>
+</mujoco>
