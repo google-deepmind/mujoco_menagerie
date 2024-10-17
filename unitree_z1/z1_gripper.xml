@@ -15,8 +15,20 @@
         <default class="z1_gripper_stator_collision">
           <geom pos="0.051 0 0" type="mesh"/>
         </default>
+        <default class="z1_gripper_stator_pad_collision_1">
+          <geom type="box" size="0.014 0.015 0.004" pos="0.186 -0.015 -0.0125"/>
+        </default>
+        <default class="z1_gripper_stator_pad_collision_2">
+          <geom type="box" size="0.014 0.015 0.004" pos="0.186 0.015 -0.0125"/>
+        </default>
         <default class="z1_gripper_mover_collision">
           <geom type="mesh"/>
+        </default>
+        <default class="z1_gripper_mover_pad_collision_1">
+          <geom type="box" size="0.014 0.015 0.004" pos="0.086 -0.015 -0.0055"/>
+        </default>
+        <default class="z1_gripper_mover_pad_collision_2">
+          <geom type="box" size="0.014 0.015 0.004" pos="0.086 0.015 -0.0055"/>
         </default>
       </default>
     </default>
@@ -95,6 +107,8 @@
                   <geom class="z1_gripper_stator_collision" mesh="z1_GripperStator_col_4"/>
                   <geom class="z1_gripper_stator_collision" mesh="z1_GripperStator_col_5"/>
                   <geom class="z1_gripper_stator_collision" mesh="z1_GripperStator_col_6"/>
+                  <geom class="z1_gripper_stator_pad_collision_1"/>
+                  <geom class="z1_gripper_stator_pad_collision_2"/>
                   <body name="gripperMover" pos="0.1 0 0">
                     <inertial pos="0.0132063 0.00476708 0.00380534" quat="0.0631093 0.669067 -0.0615783 0.737953"
                       mass="0.276213" diaginertia="0.000359044 0.000270888 0.000172378"/>
@@ -105,6 +119,8 @@
                     <geom class="z1_gripper_mover_collision" mesh="z1_GripperMover_col_3"/>
                     <geom class="z1_gripper_mover_collision" mesh="z1_GripperMover_col_4"/>
                     <geom class="z1_gripper_mover_collision" mesh="z1_GripperMover_col_5"/>
+                    <geom class="z1_gripper_mover_pad_collision_1"/>
+                    <geom class="z1_gripper_mover_pad_collision_2"/>
                   </body>
                 </body>
               </body>
