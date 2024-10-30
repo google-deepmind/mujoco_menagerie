@@ -26,4 +26,4 @@ This package contains a simplified robot description (MJCF) of the [Standard Ope
 
 ## License
 
-This model is released under an [MIT License](LICENSE).
+This model is released under an [Apache-2.0 License](LICENSE).
