@@ -25,3 +25,7 @@ This package contains a simplified robot description (MJCF) of the [Universal Ma
 9. Added slide joints for controlling the gripper's movement along the X, Y, and Z axes.
 10. Added hinge joints for controlling the rotation around the X, Y, and Z axes.
 11. Added `scene.xml` which includes the robot, with a textured groundplane, skybox, and haze.
+
+## License
+
+This model is released under an [MIT License](LICENSE).
