@@ -6,12 +6,12 @@
   </option>
 
   <asset>
-    <mesh name="base_link" file="base_link.stl" />
-    <mesh name="left_finger_holder" file="left_finger_holder.stl" />
-    <mesh name="left_finger" file="left_finger.stl" />
-    <mesh name="right_finger_holder" file="right_finger_holder.stl" />
-    <mesh name="right_finger" file="right_finger.stl" />
-    <mesh name="gopro" file="gopro.stl" />
+    <mesh file="base_link.stl" />
+    <mesh file="left_finger_holder.stl" />
+    <mesh file="left_finger.stl" />
+    <mesh file="right_finger_holder.stl" />
+    <mesh file="right_finger.stl" />
+    <mesh file="gopro.stl" />
 
     <texture name="right_aruco_sticker" type="2d" file="right_aruco_sticker.png" />
     <texture name="left_aruco_sticker" type="2d" file="left_aruco_sticker.png" />
