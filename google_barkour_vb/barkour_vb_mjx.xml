@@ -132,7 +132,7 @@
             <joint name="knee_front_left" class="bkvb/knee"/>
             <geom class="bkvb/foot" pos="-0.0649838 0.178542 0" quat="0.819152 0 0 -0.573576"/>
             <geom class="bkvb/lower_leg" pos="-0.0649838 0.178542 0" quat="0.819152 0 0 -0.573576"/>
-            <geom class="bkvb/collision/foot"/>
+            <geom name="foot_front_left" class="bkvb/collision/foot"/>
             <site name="foot_front_left" class="bkvb/foot"/>
           </body>
         </body>
@@ -154,7 +154,7 @@
             <joint name="knee_hind_left" class="bkvb/knee"/>
             <geom class="bkvb/lower_leg" pos="-0.0649838 0.178542 0" quat="0.819152 0 0 -0.573576"/>
             <geom class="bkvb/foot" pos="-0.0649838 0.178542 0" quat="0.819152 0 0 -0.573576"/>
-            <geom class="bkvb/collision/foot"/>
+            <geom name="foot_hind_left" class="bkvb/collision/foot"/>
             <site name="foot_hind_left" class="bkvb/foot"/>
           </body>
         </body>
@@ -176,7 +176,7 @@
             <joint name="knee_front_right" class="bkvb/knee"/>
             <geom class="bkvb/foot" pos="-0.0649838 0.178542 0" quat="0.819152 0 0 -0.573576"/>
             <geom class="bkvb/lower_leg" pos="-0.0649838 0.178542 0" quat="0.819152 0 0 -0.573576"/>
-            <geom class="bkvb/collision/foot"/>
+            <geom name="foot_front_right" class="bkvb/collision/foot"/>
             <site name="foot_front_right" class="bkvb/foot"/>
           </body>
         </body>
@@ -198,7 +198,7 @@
             <joint name="knee_hind_right" class="bkvb/knee"/>
             <geom class="bkvb/lower_leg" pos="-0.0649838 0.178542 0" quat="0.819152 0 0 -0.573576"/>
             <geom class="bkvb/foot" pos="-0.0649838 0.178542 0" quat="0.819152 0 0 -0.573576"/>
-            <geom class="bkvb/collision/foot"/>
+            <geom name="foot_hind_right" class="bkvb/collision/foot"/>
             <site name="foot_hind_right" class="bkvb/foot"/>
           </body>
         </body>
@@ -247,10 +247,12 @@
     <jointvel joint="hip_hind_right" name="hip_hind_right_vel"/>
     <jointvel joint="knee_hind_right" name="knee_hind_right_vel"/>
     <gyro site="imu_frame" name="gyro"/>
+    <velocimeter site="imu_frame" name="local_linvel"/>
     <accelerometer site="imu_frame" name="accelerometer"/>
-    <framequat objtype="site" objname="imu_frame" name="orientation"/>
     <framepos objtype="site" objname="imu_frame" name="global_position"/>
+    <framezaxis objtype="site" objname="imu_frame" name="upvector"/>
     <framelinvel objtype="site" objname="imu_frame" name="global_linvel"/>
     <frameangvel objtype="site" objname="imu_frame" name="global_angvel"/>
+    <framequat objtype="site" objname="imu_frame" name="orientation"/>
   </sensor>
 </mujoco>
