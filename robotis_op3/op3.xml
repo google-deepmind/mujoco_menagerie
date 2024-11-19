@@ -72,7 +72,7 @@
   </default>
 
   <worldbody>
-    <light name="spotlight" mode="targetbodycom" target="body_link" pos="0 -1 2"/>
+    <light mode="targetbodycom" target="body_link" pos="4 0 1"/>
     <body name="body_link" pos="0 0 0.3">
       <inertial pos="-0.01501 0.00013 0.06582" quat="0.704708 0.704003 0.0667707 -0.0575246" mass="1.34928"
         diaginertia="0.00341264 0.00316574 0.00296931"/>

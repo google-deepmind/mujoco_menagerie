@@ -67,7 +67,7 @@
   </default>
 
   <asset>
-    <material name="dark" rgba="0.1 0.1 0.1 1"/>
+    <material name="dark" rgba="0.2 0.2 0.2 1"/>
     <mesh class="go1" file="trunk.stl"/>
     <mesh class="go1" file="hip.stl"/>
     <mesh class="go1" file="thigh_mirror.stl"/>
