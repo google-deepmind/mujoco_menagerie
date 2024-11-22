@@ -1,0 +1,40 @@
+<mujoco model="tiago_dual">
+
+  <include file="tiago_dual.xml"/>
+  <actuator>
+    <!-- Omni base actuators -->
+    <velocity name="wheel_front_right_joint_velocity" joint="wheel_front_right_joint" kv="2000" />
+    <velocity name="wheel_front_left_joint_velocity" joint="wheel_front_left_joint" kv="2000" />
+    <velocity name="wheel_rear_right_joint_velocity" joint="wheel_rear_right_joint" kv="2000" />
+    <velocity name="wheel_rear_left_joint_velocity" joint="wheel_rear_left_joint" kv="2000" />
+
+    <!-- Torso actuator -->
+    <position name="torso_lift_joint_position" joint="torso_lift_joint" kp="50000" inheritrange="1.0" />
+    <!-- Head actuators -->
+    <position name="head_1_joint_position" joint="head_1_joint" kp="20" inheritrange="1.0" />
+    <position name="head_2_joint_position" joint="head_2_joint" kp="20" inheritrange="1.0" />
+
+    <!-- Left arm actuators -->
+    <velocity name="arm_left_1_joint_velocity" joint="arm_left_1_joint" kv="5000" />
+    <velocity name="arm_left_2_joint_velocity" joint="arm_left_2_joint" kv="100000" />
+    <velocity name="arm_left_3_joint_velocity" joint="arm_left_3_joint" kv="5000" />
+    <velocity name="arm_left_4_joint_velocity" joint="arm_left_4_joint" kv="50000" />
+    <velocity name="arm_left_5_joint_velocity" joint="arm_left_5_joint" kv="2000" />
+    <velocity name="arm_left_6_joint_velocity" joint="arm_left_6_joint" kv="2000" />
+    <velocity name="arm_left_7_joint_velocity" joint="arm_left_7_joint" kv="2000" />
+    <position name="gripper_left_left_finger_joint_position" joint="gripper_left_left_finger_joint" kp="500" inheritrange="0.999" forcerange="-5.197 5.197"/>
+    <position name="gripper_left_right_finger_joint_position" joint="gripper_left_right_finger_joint" kp="500" inheritrange="0.999" forcerange="-5.197 5.197"/>
+
+    <!-- Right arm actuators -->
+    <velocity name="arm_right_1_joint_velocity" joint="arm_right_1_joint" kv="5000" />
+    <velocity name="arm_right_2_joint_velocity" joint="arm_right_2_joint" kv="100000" />
+    <velocity name="arm_right_3_joint_velocity" joint="arm_right_3_joint" kv="5000" />
+    <velocity name="arm_right_4_joint_velocity" joint="arm_right_4_joint" kv="50000" />
+    <velocity name="arm_right_5_joint_velocity" joint="arm_right_5_joint" kv="2000" />
+    <velocity name="arm_right_6_joint_velocity" joint="arm_right_6_joint" kv="2000" />
+    <velocity name="arm_right_7_joint_velocity" joint="arm_right_7_joint" kv="2000" />
+    <position name="gripper_right_left_finger_joint_position" joint="gripper_right_left_finger_joint" kp="500" inheritrange="0.999" forcerange="-5.197 5.197"/>
+    <position name="gripper_right_right_finger_joint_position" joint="gripper_right_right_finger_joint" kp="500" inheritrange="0.999" forcerange="-5.197 5.197"/>
+  </actuator>
+
+</mujoco>

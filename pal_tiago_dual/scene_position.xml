@@ -1,0 +1,25 @@
+<mujoco model="tiago dual position scene">
+
+  <include file="tiago_dual_position.xml"/>
+
+  <visual>
+    <headlight diffuse="0.6 0.6 0.6" ambient="0.3 0.3 0.3" specular="0 0 0"/>
+    <rgba haze="0.15 0.25 0.35 1"/>
+    <global azimuth="150" elevation="-20" realtime="1"/>
+
+  </visual>
+
+  <asset>
+    <texture type="skybox" builtin="gradient" rgb1="0.3 0.5 0.7" rgb2="0 0 0" width="512" height="3072"/>
+    <texture builtin="checker" height="100" name="texplane" rgb1="0.2 0.3 0.4" rgb2="0.1 0.2 0.3" markrgb="0.8 0.8 0.8"
+      type="2d" width="200"/>
+    <material name="MatPlane" reflectance="0.1" shininess="0.4" specular="1" texrepeat="5 5" texuniform="true"
+      texture="texplane"/>
+  </asset>
+
+  <worldbody>
+    <light name="spotlight" mode="targetbody" target="base_link" pos="1 0 10"/>
+    <geom name="floor" pos="0 0 -0.99" size="0 0 1" type="plane" material="MatPlane" contype="1" conaffinity="1"/>
+  </worldbody>
+
+</mujoco>
