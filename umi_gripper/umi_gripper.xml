@@ -75,7 +75,7 @@
   </default>
 
   <worldbody>
-    <body quat="-1 1 0 0">
+    <body quat="-1 1 0 0" pos="0 0 0.11">
 
       <!-- Gripper Camera -->
       <camera name="gripper_gopro" pos="0 -0.092 0.04" quat="0 1 0 0" mode="fixed" fovy="155" />
