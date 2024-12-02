@@ -29,7 +29,4 @@ description](https://github.com/ros-industrial/robotiq/tree/kinetic-devel/roboti
 10. Added hanging box to `scene.xml`.
 
 ## License
-Here is the term and condition link:
-https://robotiq.com/fr/termes
-Have no idea don't speak the language
-
+This model is released under a [BSD-2-Clause License](LICENSE).
