@@ -14,9 +14,10 @@ This package contains a simplified robot description (MJCF) of the (left and rig
 
 ## URDF → MJCF derivation steps
 
+### Right Hand
 1. Start with the right-handed LEAP hand URDF from [dexsuite (hash: 2ee2f70cfd549857f56ffe13c61fa939f4cb50ba)](https://github.com/dexsuite/dex-urdf/tree/main/robots/hands/leap_hand)
 2. Run it through drake's fix_inertia tool (v. 1.30.0)
-3. Add the following mujoco block to the urdf under <robot>:
+3. Add the following mujoco block to the urdf under `<robot>`:
     ```
     <mujoco>
       <compiler balanceinertia="true" discardvisual="false" fusestatic="false"/>
@@ -28,13 +29,13 @@ This package contains a simplified robot description (MJCF) of the (left and rig
     ```
 5. Save the xml out of the viewer by clicking the "Save xml" button. From now on, modifications are referring to the saved xml.
 6. Delete the auxiliary body "base" created by not fusing static bodies.
-7. Rename bodies and joints according to the table in this XML:
-    palm_lower -> palm
-    mcp_joint -> base
-    pip -> proximal
-    dip -> medial
-    fingertip -> distal
-    white_tip -> tip
+7. Rename bodies and joints according to the following:
+    - palm_lower -> palm
+    - mcp_joint -> base
+    - pip -> proximal
+    - dip -> medial
+    - fingertip -> distal
+    - white_tip -> tip
 8. Give names to all geoms according to visual or collision status.
 9. Create default classes for joints and assign all joints to their appropriate class.
 10. Delete the actuatorfrcrange field for all joints.
@@ -61,6 +62,11 @@ This package contains a simplified robot description (MJCF) of the (left and rig
 19. Add sensors for each of the fingers.
 20. Change the "pos" field of "thumb_mp_collision" to "-0.0075 -0.0002 -0.011" in
     order to fix incorrect orientation of thumb collision geometry.
+
+### Left Hand
+The steps for creating the left hand are mostly the same, except for the following:
+- we use the `dexsuite` hash `6eeda17435d46dde5915a16fd37b248bd8bb468e`, because there are edits for making the left handed LEAP URDF more consistent with the right
+- there was no correction of the "thumb_mp_collision" field, but the associated visual mesh is different (thumb_mp_left.obj)
 
 ## License
 
