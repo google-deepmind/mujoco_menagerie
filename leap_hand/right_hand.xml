@@ -70,7 +70,7 @@ Naming Conventions
   <asset>
     <material name="black" rgba="0.2 0.2 0.2 1" />
 
-    <mesh name="palm" file="palm.obj"/>
+    <mesh name="palm" file="palm_right.obj"/>
     <mesh name="base" file="base.obj"/>
     <mesh name="proximal" file="proximal.obj"/>
     <mesh name="medial" file="medial.obj"/>
