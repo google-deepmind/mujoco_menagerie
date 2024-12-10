@@ -337,7 +337,7 @@
   </sensor>
 
   <keyframe>
-    <key name="home"
+    <key name="stand"
       qpos="
       0 0 0.79
       1 0 0 0
