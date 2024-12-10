@@ -123,6 +123,7 @@
                   <geom class="foot" pos="-0.05 -0.025 -0.03"/>
                   <geom class="foot" pos="0.12 0.03 -0.03"/>
                   <geom class="foot" pos="0.12 -0.03 -0.03"/>
+                  <site name="left_foot"/>
                 </body>
               </body>
             </body>
@@ -168,6 +169,7 @@
                   <geom class="foot" pos="-0.05 -0.025 -0.03"/>
                   <geom class="foot" pos="0.12 0.03 -0.03"/>
                   <geom class="foot" pos="0.12 -0.03 -0.03"/>
+                  <site name="right_foot"/>
                 </body>
               </body>
             </body>
