@@ -5,8 +5,10 @@
 
 ## Changelog
 
-- 12/10/2024: Use updated [g1_29dof_rev_1_0 model](https://github.com/unitreerobotics/unitree_ros/blob/master/robots/g1_description) (sha: c20ca8f1fe5e519474c6c8d10b1ce5c719dd7a65).
-- 05/20/2024: Initial release.
+- 10/12/2024: Use updated models from Unitree's official [repo](https://github.com/unitreerobotics/unitree_ros/blob/master/robots/g1_description) (sha: c20ca8f1fe5e519474c6c8d10b1ce5c719dd7a65).
+  - Model without hands: [g1_29dof_rev_1_0](https://github.com/unitreerobotics/unitree_ros/blob/master/robots/g1_description/g1_29dof_rev_1_0.xml)
+  - Model with hands: [g1_29dof_with_hand_rev_1_0](https://github.com/unitreerobotics/unitree_ros/blob/master/robots/g1_description/g1_29dof_with_hand_rev_1_0.xml)
+- 20/05/2024: Initial release.
 
 ## Overview
 
@@ -18,6 +20,7 @@ description](https://github.com/unitreerobotics/unitree_ros/blob/master/robots/g
 
 <p float="left">
   <img src="g1.png" width="400">
+  <img src="g1_with_hands.png" width="400">
 </p>
 
 ## MJCF derivation steps
@@ -26,6 +29,7 @@ description](https://github.com/unitreerobotics/unitree_ros/blob/master/robots/g
 2. Manually edited the MJCF to extract common properties into the `<default>` section.
 3. Added stand keyframe.
 4. Added joint position actuators (needs tuning).
+5. Applied similar edits to `g1_with_hands.xml`.
 
 ## License
 
