@@ -5,7 +5,7 @@
 
 ## Changelog
 
-- 12/10/2024: Use newly updated model from Unitree Robotics, namely model `g1_29dof_rev_1_0`.
+- 12/10/2024: Use updated [g1_29dof_rev_1_0 model](https://github.com/unitreerobotics/unitree_ros/blob/master/robots/g1_description) (sha: c20ca8f1fe5e519474c6c8d10b1ce5c719dd7a65).
 - 05/20/2024: Initial release.
 
 ## Overview
