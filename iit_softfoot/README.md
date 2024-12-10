@@ -62,5 +62,5 @@ If you use this work in an academic context, please cite the following publicati
         pages={3290-3305},
         keywords={Foot;Robots;Legged locomotion;Stability analysis;Robot kinematics;Shape;Humanoid robots;Adaptive foot;humanoid robots;soft robots},
         doi={10.1109/TRO.2024.3415237}
-  }
+    }
 

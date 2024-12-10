@@ -1,27 +1,7 @@
 <mujoco model="softfoot">
   
   <compiler meshdir="./meshes/" autolimits="true" angle="radian"/>
-
-  <default>
-    <default class="standard_chain">
-      <joint limited="true" stiffness="0.8" range="-0.15707963267948966 0.78539816339744828" armature="0.001" damping="0.04"/>
-      <geom contype="0" conaffinity="0" group="1" material="gray" density="0"/>
-    </default>
-    
-    <default class="collision">
-      <geom contype="1" conaffinity="2" group="3"/>
-    </default>
-
-    <default class="virtual_pulley">
-      <geom type="cylinder" contype="0" conaffinity="0" group="4" size="0.0035 0.006" material="green pulleys" density="0" pos="0 0 0"/>
-    </default>
-    
-    <default class="tendon">
-      <tendon limited="true" range="0 0.286" width="0.0004" rgba="0.9 0.7 0.1 1"/>
-      <site size="0.001 0.001 0.001" pos="0 0.0038 0" rgba="0.9 0.7 0.1 0.3"/>
-    </default>
-  </default>
-
+  
   <asset>
     <!--    FOOT MESHES    -->
     <mesh name="qb_move_advanced_for_mate" file="qb_move_advanced_for_mate.stl" scale="0.001 0.001 0.001"/>
@@ -44,6 +24,26 @@
     <material name="white" rgba="0.9 0.9 0.9 1"/>
     <material name="black" rgba="0.1 0.1 0.1 1"/>
   </asset>
+
+  <default>
+    <default class="standard_chain">
+      <joint limited="true" stiffness="0.8" range="-0.15707963267948966 0.78539816339744828" armature="0.001" damping="0.04"/>
+      <geom contype="0" conaffinity="0" group="1" material="gray" density="0"/>
+    </default>
+    
+    <default class="collision">
+      <geom contype="1" conaffinity="2" group="3"/>
+    </default>
+
+    <default class="virtual_pulley">
+      <geom type="cylinder" contype="0" conaffinity="0" group="4" size="0.0035 0.006" material="green pulleys" density="0" pos="0 0 0"/>
+    </default>
+    
+    <default class="tendon">
+      <tendon limited="true" range="0 0.286" width="0.0004" rgba="0.9 0.7 0.1 1"/>
+      <site size="0.001 0.001 0.001" pos="0 0.0038 0" rgba="0.9 0.7 0.1 0.3"/>
+    </default>
+  </default>
 
   <worldbody>
     <!--    CUBE    -->
