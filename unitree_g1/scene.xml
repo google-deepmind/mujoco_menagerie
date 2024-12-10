@@ -1,7 +1,7 @@
-<mujoco model="g1 scene">
+<mujoco model="g1_29dof_rev_1_0 scene">
   <include file="g1.xml"/>
 
-  <statistic center="1 -0.8 1.1" extent=".3"/>
+  <statistic center="1 -0.8 1.1" extent=".35"/>
 
   <visual>
     <headlight diffuse="0.6 0.6 0.6" ambient="0.1 0.1 0.1" specular="0.9 0.9 0.9"/>

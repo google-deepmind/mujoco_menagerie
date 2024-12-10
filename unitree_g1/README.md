@@ -3,13 +3,18 @@
 > [!IMPORTANT]
 > Requires MuJoCo 2.3.4 or later.
 
+## Changelog
+
+- 12/10/2024: Use newly updated model from Unitree Robotics, namely model `g1_29dof_rev_1_0`.
+- 05/20/2024: Initial release.
+
 ## Overview
 
 This package contains a simplified robot description (MJCF) of the [G1 Humanoid
 Robot](https://www.unitree.com/g1/) developed by [Unitree
 Robotics](https://www.unitree.com/). It is derived from the [publicly available
 MJCF
-description](https://github.com/unitreerobotics/unitree_ros/tree/master/robots/g1_description).
+description](https://github.com/unitreerobotics/unitree_ros/blob/master/robots/g1_description/g1_29dof_rev_1_0.xml). Specifically, this model has the fully actuated waist but not the full hands.
 
 <p float="left">
   <img src="g1.png" width="400">
@@ -17,12 +22,10 @@ description](https://github.com/unitreerobotics/unitree_ros/tree/master/robots/g
 
 ## MJCF derivation steps
 
-1. Copied the MJCF description from [g1_description](https://github.com/unitreerobotics/unitree_ros/tree/master/robots/g1_description).
+1. Copied the MJCF description from [g1_description](https://github.com/unitreerobotics/unitree_ros/blob/master/robots/g1_description/g1_29dof_rev_1_0.xml).
 2. Manually edited the MJCF to extract common properties into the `<default>` section.
-3. Added sites for the IMU, head and feet.
-4. Add IMU sensor (gyro, accelero, framequat).
-5. Added stand keyframe.
-6. Added spotlight and tracking light.
+3. Added stand keyframe.
+4. Added joint position actuators (needs tuning).
 
 ## License
 
