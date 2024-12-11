@@ -1,5 +1,5 @@
-<mujoco model="g1_29dof_rev_1_0 scene">
-  <include file="g1.xml"/>
+<mujoco model="g1_29dof_with_hand_rev_1_0 scene">
+  <include file="g1_with_hands.xml"/>
 
   <statistic center="1 -0.8 1.1" extent=".35"/>
 
