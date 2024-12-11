@@ -4,9 +4,7 @@ Requires MuJoCo 3.2.0 or later.
 
 ## Overview
 
-This package contains a simplified robot description (MJCF) of the IIT SoftFoot. The original MJCF and assets were provided directly by
-[IIT Soft Robotics for Human Cooperation and Rehabilitation group](https://softbots.iit.it/) under an
-[BSD-3-Clause License](LICENSE). For more information on the SoftFoot, see the following references:
+This package is a reproduction of the simplified robot description (MJCF) developed by the by [IIT Soft Robotics for Human Cooperation and Rehabilitation group](https://softbots.iit.it/) for the [Natural Machine Motion Initiative (NMMI)](https://www.naturalmachinemotioninitiative.com/), originally available from the [NMMI repository](https://github.com/NMMI/SoftFoot_MuJoCo). The MJCF and assets are provided under a [BSD-3-Clause License](LICENSE). For more information on the SoftFoot, see the following references:
 
 - [Piazza, C., Della Santina, C., Grioli, G., Bicchi, A. and Catalano, M.G., 2024. Analytical Model and Experimental Testing of the SoftFoot: An Adaptive Robot Foot for Walking Over Obstacles and Irregular Terrains. IEEE Transactions on Robotics.](https://www.doi.org/10.1109/TRO.2024.3415237)
 - [Crotti, M., Rossini, L., Pace, A., Grioli, G., Bicchi, A. and Catalano, M.G., 2024. Soft Adaptive Feet for Legged Robots: An Open-Source Model for Locomotion Simulation. arXiv preprint arXiv:2412.03191.](https://arxiv.org/abs/2412.03191)
@@ -14,8 +12,6 @@ This package contains a simplified robot description (MJCF) of the IIT SoftFoot.
 <p float="left">
   <img src="softfoot.png" width="400">
 </p>
-
-The MJCF files are also available from the [Natural Machine Motion Initiative repository](https://github.com/NMMI/SoftFoot_MuJoCo).
 
 ## Usage
 
