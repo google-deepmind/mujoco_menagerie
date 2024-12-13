@@ -37,6 +37,7 @@
 
   <worldbody>
     <body name="hand/base_link" childclass="hand" pos="0 0 0.2" quat="1 0 0 0">
+      <inertial pos="0.061841 -0.006460 -0.032998" mass="1.002455" diaginertia="1.725911e-3 2.065984e-3 2.042959e-3"/>
       <geom type="mesh" mesh="hand_base_link_0" material="72,71,61"/>
       <geom type="mesh" mesh="hand_base_link_1" material="64,64,64"/>
       <geom type="mesh" mesh="hand_base_link_2" material="219,219,219"/>
