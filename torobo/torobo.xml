@@ -164,20 +164,20 @@
                 <geom class="visual" type="mesh" mesh="torso_link2" material="219,219,219"/>
                 <geom class="collision" type="mesh" mesh="torso_link2_collision"/>
                 <body name="torso/link_3" quat="0.707107 0.707107 0 0">
-                  <inertial pos="-0.0127522 0.00183622 0.298189" quat="0.9999 0.000763807 0.0140375 0.00165715"
-                    mass="10.0047" diaginertia="0.162274 0.147068 0.0601658"/>
+                  <inertial pos="-0.0127522 0.00183622 0.30238" quat="0.999869 0.00116029 0.0160629 0.00154784"
+                    mass="10.0047" diaginertia="0.166033 0.150799 0.0601367"/>
                   <joint name="torso/joint_3" pos="0 0 0" axis="0 0 1" range="-2.0944 2.0944"/>
                   <geom class="visual" type="mesh" mesh="torso_link3" material="219,219,219"/>
                   <geom class="collision" type="mesh" mesh="torso_link3_collision"/>
-                  <geom class="visual" pos="0 0.03465 0.3272" quat="0.5 0.5 0.5 -0.5" type="mesh" mesh="left_arm_link0"
+                  <geom class="visual" pos="0 0.03465 0.3416" quat="0.5 0.5 0.5 -0.5" type="mesh" mesh="left_arm_link0"
                     material="219,219,219"/>
-                  <geom class="collision" pos="0 0.03465 0.3272" quat="0.5 0.5 0.5 -0.5" type="mesh"
+                  <geom class="collision" pos="0 0.03465 0.3416" quat="0.5 0.5 0.5 -0.5" type="mesh"
                     mesh="left_arm_link0_collision"/>
-                  <geom class="visual" pos="0 -0.03465 0.3272" quat="0.5 0.5 0.5 -0.5" type="mesh"
+                  <geom class="visual" pos="0 -0.03465 0.3416" quat="0.5 0.5 0.5 -0.5" type="mesh"
                     mesh="right_arm_link0" material="219,219,219"/>
-                  <geom class="collision" pos="0 -0.03465 0.3272" quat="0.5 0.5 0.5 -0.5" type="mesh"
+                  <geom class="collision" pos="0 -0.03465 0.3416" quat="0.5 0.5 0.5 -0.5" type="mesh"
                     mesh="right_arm_link0_collision"/>
-                  <body name="left_arm/link_1" pos="0 0.22035 0.404119" quat="0.392847 0.587938 0.587938 -0.392847">
+                  <body name="left_arm/link_1" pos="0 0.22035 0.418519" quat="0.392847 0.587938 0.587938 -0.392847">
                     <inertial pos="0.007282 -0.002236 0.061573" quat="0.706031 -0.0605284 -0.0482315 0.703939"
                       mass="2.34532" diaginertia="0.00996609 0.00950611 0.0029046"/>
                     <joint name="left_arm/joint_1" pos="0 0 0" axis="0 0 1" range="-1.22173 4.18879"/>
@@ -376,7 +376,7 @@
                       </body>
                     </body>
                   </body>
-                  <body name="right_arm/link_1" pos="0 -0.22035 0.404119" quat="0.587938 0.392847 0.392847 -0.587938">
+                  <body name="right_arm/link_1" pos="0 -0.22035 0.418519" quat="0.587938 0.392847 0.392847 -0.587938">
                     <inertial pos="0.007282 0.002236 -0.061573" quat="0.703939 0.0482315 0.0605284 0.706031"
                       mass="2.34532" diaginertia="0.00996609 0.00950611 0.0029046"/>
                     <joint name="right_arm/joint_1" pos="0 0 0" axis="0 0 1" range="-1.22173 4.18879"/>
