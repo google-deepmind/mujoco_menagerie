@@ -144,6 +144,8 @@
           <inertial pos="0 0 0" mass="0.00001" diaginertia="0.00001 0.00001 0.00001"/>
           <joint name="base_joint_rot_yaw" type="hinge" axis="0 0 1" range="-10000 10000"/>
           <body name="base_link" pos="0 0 0" childclass="torobo">
+            <inertial pos="-0.0231104 0.00158473 0.188355" quat="-0.0157449 0.686078 -0.018153 0.727131" mass="56.049"
+              diaginertia="1.87057 1.70163 1.51139"/>
             <geom class="visual" type="mesh" mesh="base_link" material="219,219,219"/>
             <geom class="collision" type="mesh" mesh="base_link_collision"/>
             <geom class="visual" pos="0 0 0.34" type="mesh" mesh="torso_link0" material="219,219,219"/>
@@ -215,8 +217,9 @@
                               <geom class="visual" type="mesh" mesh="left_arm_link6" material="219,219,219"/>
                               <geom class="collision" type="mesh" mesh="left_arm_link6_collision"/>
                               <body name="left_arm/link_7" pos="0 0.048 0.01" quat="0.707107 0.707107 0 0">
-                                <inertial pos="0.00017 2.7e-05 0.01376" quat="0.52141 0.478267 -0.520329 0.478174"
-                                  mass="0.14265" diaginertia="7.31843e-05 5.09235e-05 4.92308e-05"/>
+                                <inertial pos="0.0859563 -0.00499509 0.0282954"
+                                  quat="0.175962 0.574633 0.0859168 0.79464" mass="1.29577"
+                                  diaginertia="0.0049482 0.00472867 0.00170521"/>
                                 <joint name="left_arm/joint_7" pos="0 0 0" axis="0 0 1" range="-0.349066 1.5708"/>
                                 <geom class="visual" type="mesh" mesh="left_arm_link7" material="72,71,61"/>
                                 <geom class="collision" type="mesh" mesh="left_arm_link7_collision"/>
@@ -413,8 +416,9 @@
                               <geom class="visual" type="mesh" mesh="right_arm_link6" material="219,219,219"/>
                               <geom class="collision" type="mesh" mesh="right_arm_link6_collision"/>
                               <body name="right_arm/link_7" pos="0 0.048 -0.01" quat="0.707107 -0.707107 0 0">
-                                <inertial pos="0.00017 -2.7e-05 -0.01376" quat="0.478174 0.520329 -0.478267 0.52141"
-                                  mass="0.14265" diaginertia="7.31843e-05 5.09235e-05 4.92308e-05"/>
+                                <inertial pos="0.0859562 -0.00500099 -0.0282955"
+                                  quat="-0.0859549 0.794654 -0.175903 0.574627" mass="1.29577"
+                                  diaginertia="0.0049481 0.00472861 0.00170517"/>
                                 <joint name="right_arm/joint_7" pos="0 0 0" axis="0 0 1" range="-0.349066 1.5708"/>
                                 <geom class="visual" type="mesh" mesh="right_arm_link7" material="72,71,61"/>
                                 <geom class="collision" type="mesh" mesh="right_arm_link7_collision"/>
