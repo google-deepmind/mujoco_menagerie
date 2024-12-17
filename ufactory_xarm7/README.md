@@ -2,6 +2,14 @@
 
 Requires MuJoCo 2.3.3 or later.
 
+## Changelog
+
+- **17/12/2024**: Improved object grasping by:
+  - Adding two collision box meshes as pads for each finger.
+  - Setting `armature=0.1` for the joints.
+
+  These changes resolve [issue #83](https://github.com/google-deepmind/mujoco_menagerie/issues/83) and are implemented in [PR #131](https://github.com/google-deepmind/mujoco_menagerie/pull/131).
+
 ## Overview
 
 This package contains a simplified robot description (MJCF) of the [xArm7
