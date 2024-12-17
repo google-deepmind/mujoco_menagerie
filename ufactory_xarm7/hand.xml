@@ -19,7 +19,7 @@
   <default>
     <default class="xarm7_hand">
       <geom type="mesh" material="black"/>
-      <joint range="0 0.85" axis="1 0 0" frictionloss="1"/>
+      <joint range="0 0.85" axis="1 0 0" armature="0.1" frictionloss="1"/>
       <site size="0.001" rgba="1 0 0 1" group="4"/>
       <general biastype="affine" forcerange="-50 50" ctrlrange="0 255" gainprm="0.333" biasprm="0 -100 -10"/>
       <default class="spring_link">
