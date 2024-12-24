@@ -1,0 +1,8 @@
+<mujoco>
+  <geom mesh="LINK_10_0" material="254,254,255" class="visual" />
+  <geom mesh="LINK_10_1" material="10,10,10" class="visual" />
+  <geom mesh="LINK_10_collision_0" rgba="0.16078803971418276 0.7854034949055694 0.6202643992811117 1" class="collision" />
+  <geom mesh="LINK_10_collision_1" rgba="0.6880902856110903 0.5047204901106406 0.32305448695002326 1" class="collision" />
+  <geom mesh="LINK_10_collision_2" rgba="0.12923665628677417 0.6244253411426821 0.7981416759151146 1" class="collision" />
+  <geom mesh="LINK_10_collision_3" rgba="0.5683658993681793 0.9470718144713438 0.7317439760378871 1" class="collision" />
+</mujoco>

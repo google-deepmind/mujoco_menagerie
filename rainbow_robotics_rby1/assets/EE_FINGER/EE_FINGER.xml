@@ -1,0 +1,32 @@
+<mujoco model="EE_FINGER">
+  <default>
+    <default class="visual">
+      <geom group="2" type="mesh" contype="0" conaffinity="0"/>
+    </default>
+    <default class="collision">
+      <geom group="3" type="mesh"/>
+    </default>
+  </default>
+  <asset>
+    <material name="70,70,70" specular="0.27451" shininess="1.0" rgba="0.274510 0.274510 0.274510 1.000000"/>
+    <material name="191,191,191" specular="0.0" shininess="0.3" rgba="0.749020 0.749020 0.749020 1.000000"/>
+    <mesh file="EE_FINGER_0.obj"/>
+    <mesh file="EE_FINGER_1.obj"/>
+    <mesh file="EE_FINGER_collision_0.obj"/>
+    <mesh file="EE_FINGER_collision_1.obj"/>
+    <mesh file="EE_FINGER_collision_2.obj"/>
+    <mesh file="EE_FINGER_collision_3.obj"/>
+    <mesh file="EE_FINGER_collision_4.obj"/>
+  </asset>
+  <worldbody>
+    <body name="EE_FINGER">
+      <geom mesh="EE_FINGER_0" material="191,191,191" class="visual"/>
+      <geom mesh="EE_FINGER_1" material="70,70,70" class="visual"/>
+      <geom mesh="EE_FINGER_collision_0" rgba="0.7479199743583023 0.9335184660993933 0.14289749523838424 1" class="collision"/>
+      <geom mesh="EE_FINGER_collision_1" rgba="0.32038481315119505 0.5862610035687942 0.9794195370643665 1" class="collision"/>
+      <geom mesh="EE_FINGER_collision_2" rgba="0.6326805494895114 0.001833319644712006 0.14607794572368815 1" class="collision"/>
+      <geom mesh="EE_FINGER_collision_3" rgba="0.3492875372698879 0.2392409086887345 0.48419667126899146 1" class="collision"/>
+      <geom mesh="EE_FINGER_collision_4" rgba="0.4031057325466749 0.028299701492414897 0.2506916386600051 1" class="collision"/>
+    </body>
+  </worldbody>
+</mujoco>

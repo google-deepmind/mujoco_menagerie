@@ -1,0 +1,51 @@
+<mujoco model="rby1">
+  <option timestep="0.002" solver="CG" iterations="30" tolerance="1e-6" />
+  <size nuserdata="144" />
+
+  <default>
+    <motor ctrlrange="-3000000 3000000" ctrllimited="true" />
+
+    <default class="visual">
+      <geom group="2" type="mesh" contype="0" conaffinity="0" />
+    </default>
+    <default class="collision">
+      <geom group="3" type="mesh" contype="1" conaffinity="0" />
+    </default>
+    <default class="in-model-collision">
+      <geom group="2" contype="0" conaffinity="0" rgba="0.3 0 0 0.0" />
+    </default>
+  </default>
+  
+  <include file="./rby1.xml" />
+
+  <actuator>
+    <motor name="left_wheel_act" joint="left_wheel" />
+    <motor name="right_wheel_act" joint="right_wheel" />
+
+    <motor name="link1_act" joint="torso_0" />
+    <motor name="link2_act" joint="torso_1" />
+    <motor name="link3_act" joint="torso_2" />
+    <motor name="link4_act" joint="torso_3" />
+    <motor name="link5_act" joint="torso_4" />
+    <motor name="link6_act" joint="torso_5" />
+
+    <motor name="left_arm_1_act" joint="left_arm_0" />
+    <motor name="left_arm_2_act" joint="left_arm_1" />
+    <motor name="left_arm_3_act" joint="left_arm_2" />
+    <motor name="left_arm_4_act" joint="left_arm_3" />
+    <motor name="left_arm_5_act" joint="left_arm_4" />
+    <motor name="left_arm_6_act" joint="left_arm_5" />
+    <motor name="left_arm_7_act" joint="left_arm_6" />
+
+    <motor name="right_arm_1_act" joint="right_arm_0" />
+    <motor name="right_arm_2_act" joint="right_arm_1" />
+    <motor name="right_arm_3_act" joint="right_arm_2" />
+    <motor name="right_arm_4_act" joint="right_arm_3" />
+    <motor name="right_arm_5_act" joint="right_arm_4" />
+    <motor name="right_arm_6_act" joint="right_arm_5" />
+    <motor name="right_arm_7_act" joint="right_arm_6" />
+
+    <motor name="head_0_act" joint="head_0" />
+    <motor name="head_1_act" joint="head_1" />
+  </actuator>
+</mujoco>

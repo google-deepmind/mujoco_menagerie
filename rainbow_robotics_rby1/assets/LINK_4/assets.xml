@@ -1,0 +1,21 @@
+<mujoco>
+  <mesh file="LINK_4.obj" />
+  <mesh file="LINK_4_collision_0.obj" />
+  <mesh file="LINK_4_collision_1.obj" />
+  <mesh file="LINK_4_collision_2.obj" />
+  <mesh file="LINK_4_collision_3.obj" />
+  <mesh file="LINK_4_collision_4.obj" />
+  <mesh file="LINK_4_collision_5.obj" />
+  <mesh file="LINK_4_collision_6.obj" />
+  <mesh file="LINK_4_collision_7.obj" />
+  <mesh file="LINK_4_collision_8.obj" />
+  <mesh file="LINK_4_collision_9.obj" />
+  <mesh file="LINK_4_collision_10.obj" />
+  <mesh file="LINK_4_collision_11.obj" />
+  <mesh file="LINK_4_collision_12.obj" />
+  <mesh file="LINK_4_collision_13.obj" />
+  <mesh file="LINK_4_collision_14.obj" />
+  <mesh file="LINK_4_collision_15.obj" />
+  <mesh file="LINK_4_collision_16.obj" />
+  <mesh file="LINK_4_collision_17.obj" />
+</mujoco>

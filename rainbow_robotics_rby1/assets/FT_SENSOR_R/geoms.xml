@@ -1,0 +1,126 @@
+<mujoco>
+  <geom mesh="FT_SENSOR_R_0" material="254,254,255" class="visual" />
+  <geom mesh="FT_SENSOR_R_1" material="65,55,50" class="visual" />
+  <geom mesh="FT_SENSOR_R_2" material="80,80,80" class="visual" />
+  <geom mesh="FT_SENSOR_R_3" material="244,244,244" class="visual" />
+  <geom mesh="FT_SENSOR_R_4" material="191,191,191" class="visual" />
+  <geom mesh="FT_SENSOR_R_5" material="216,214,214" class="visual" />
+  <geom mesh="FT_SENSOR_R_6" material="79,79,79" class="visual" />
+  <geom mesh="FT_SENSOR_R_7" material="192,192,192" class="visual" />
+  <geom mesh="FT_SENSOR_R_8" material="163,163,175" class="visual" />
+  <geom mesh="FT_SENSOR_R_9" material="242,236,238" class="visual" />
+  <geom mesh="FT_SENSOR_R_10" material="69,69,69" class="visual" />
+  <geom mesh="FT_SENSOR_R_collision_0" rgba="0.017508582215660318 0.814473184273594 0.9518999303651889 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_1" rgba="0.21335123561175506 0.00887713200489304 0.2195498768583285 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_2" rgba="0.4036806817920293 0.1862564808391033 0.41061336336091103 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_3" rgba="0.9180973985044953 0.0889329104321287 0.6463981435224708 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_4" rgba="0.5257596103906108 0.06040672020459381 0.5447573103739519 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_5" rgba="0.5054888842443364 0.8609289340379481 0.44466408951470415 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_6" rgba="0.24295360958824785 0.8377739103922738 0.1065930126088106 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_7" rgba="0.5552366954599598 0.9271344502622424 0.7544031167800846 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_8" rgba="0.5303298003444306 0.7804305949394241 0.9133901549084544 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_9" rgba="0.7792101083595475 0.1518249027774401 0.36238062682097205 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_10" rgba="0.3816957217907665 0.27382797165201733 0.41413416513049206 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_11" rgba="0.33567013571371274 0.5658713896106602 0.5867766754269969 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_12" rgba="0.5985081223382921 0.6757608407109321 0.294386570035144 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_13" rgba="0.07609059481998792 0.9568342625658589 0.40800276516987666 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_14" rgba="0.4617098995719079 0.05977021251762216 0.33026491802845204 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_15" rgba="0.03510867041299037 0.019981660314114524 0.6602739395383831 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_16" rgba="0.10914437498550367 0.01488112849208345 0.32191808300883584 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_17" rgba="0.1112625103698821 0.6036502317378719 0.40317308539751606 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_18" rgba="0.9951731448113345 0.382969175930127 0.9938946173627802 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_19" rgba="0.21064644091418405 0.010329194685537946 0.6155807994999075 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_20" rgba="0.9495635924188289 0.11984101472181463 0.3907591629957523 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_21" rgba="0.22913531315529645 0.607274648778805 0.9373954456343924 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_22" rgba="0.17921597695305347 0.22501575923568196 0.7200829147523493 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_23" rgba="0.7203099339319852 0.977877216261583 0.7869903965673142 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_24" rgba="0.6645192512415542 0.9287310474331415 0.7053089853192305 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_25" rgba="0.7088417750131507 0.3824315328007426 0.9379665001873787 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_26" rgba="0.4385090688857397 0.3208511098935767 0.13156781660056271 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_27" rgba="0.3619919107086308 0.7691805610959821 0.08883704074947518 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_28" rgba="0.6547749949045271 0.30546111667150977 0.2308965556107293 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_29" rgba="0.7745218567292796 0.09110148132089513 0.15969836606714982 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_30" rgba="0.1791388461821971 0.4065318396387483 0.23887733643553366 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_31" rgba="0.4074391089914914 0.5558020186085225 0.028100918827060117 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_32" rgba="0.48244899356542437 0.7872883871297658 0.053882032123417134 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_33" rgba="0.7823780372539882 0.9521759222235195 0.1338434370128262 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_34" rgba="0.7739782549150371 0.8547797633830491 0.13055341259298325 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_35" rgba="0.3555300230332604 0.44570032358366873 0.750414557022807 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_36" rgba="0.4318001898449446 0.019933533300783512 0.8071641088148627 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_37" rgba="0.7107579391850906 0.9098346898775085 0.7608727396034741 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_38" rgba="0.6118691302190344 0.74288762060734 0.714592162782586 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_39" rgba="0.6043479402921301 0.998287075951369 0.9561778039900489 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_40" rgba="0.7582244981542892 0.5302492929464897 0.3318753976081069 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_41" rgba="0.47572030469505333 0.2496896467114993 0.11654333972589526 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_42" rgba="0.136541658765008 0.8521616261166508 0.09569818400529595 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_43" rgba="0.14570268148266052 0.08352104251979453 0.8237187213409547 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_44" rgba="0.40356817390352673 0.20868473531684673 0.8982810162034701 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_45" rgba="0.17970274518477525 0.08904946212673726 0.20706418069188237 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_46" rgba="0.33154159506432446 0.24471013381837037 0.27821097537389783 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_47" rgba="0.39915847703004537 0.9522711513377305 0.3101400315026358 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_48" rgba="0.6328667337088513 0.7217576241532537 0.6635178271401614 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_49" rgba="0.5653976361519704 0.04815047449224874 0.9389519890581748 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_50" rgba="0.6026027176590699 0.8446395196754833 0.7474170002693344 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_51" rgba="0.607557686845622 0.597100857154782 0.8038020749455768 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_52" rgba="0.6008612281173155 0.11640578119350475 0.7717270625800762 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_53" rgba="0.0882721021383327 0.05748373582713273 0.2208780168708061 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_54" rgba="0.660940355259083 0.9842680435861917 0.20304153086804666 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_55" rgba="0.18479258781899 0.3506812348895334 0.14529734081980117 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_56" rgba="0.7313827695939422 0.5001394733366173 0.3718682010401023 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_57" rgba="0.5915808932892223 0.3136119519015058 0.5985051264158961 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_58" rgba="0.39354595610237564 0.9410195395774734 0.38630638013698204 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_59" rgba="0.06997375455269372 0.8431369605000554 0.6105542595422737 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_60" rgba="0.8369225722111182 0.6170908384886822 0.07570566143960022 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_61" rgba="0.48990079305287415 0.996421878446835 0.5716920863373209 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_62" rgba="0.8806783947279262 0.6396027248177985 0.005143628601127825 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_63" rgba="0.8568369545337259 0.9516502520482082 0.06805315892893438 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_64" rgba="0.8332248277995062 0.6848384668776585 0.3170922552969757 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_65" rgba="0.5514129424964134 0.10949031761887706 0.2324443615965901 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_66" rgba="0.9050125877313003 0.1820751057959311 0.5128377465870458 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_67" rgba="0.9259109704126255 0.2972463078704357 0.018996024645244303 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_68" rgba="0.3848346410565764 0.80966967763664 0.5725891682396601 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_69" rgba="0.41222408148694134 0.8593144934352027 0.7554951372790768 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_70" rgba="0.051832408899816884 0.43516750501221135 0.9475258619649708 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_71" rgba="0.2918741952154268 0.9786102808795081 0.15892768529800516 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_72" rgba="0.6421056245534451 0.20893656596365417 0.37987604535033226 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_73" rgba="0.8496113981987421 0.9291998540656389 0.4015137456269403 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_74" rgba="0.9219773113787564 0.3754023044366639 0.18162652174271332 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_75" rgba="0.9626032382767518 0.10850318601819331 0.15873234638078015 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_76" rgba="0.6595503835191922 0.8255314303392989 0.14406282840202855 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_77" rgba="0.0766177618941204 0.999832040616436 0.9050677310080861 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_78" rgba="0.7895243362498148 0.20727431336559587 0.4477100425223842 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_79" rgba="0.1879541127158696 0.5675101206104399 0.8184415194303861 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_80" rgba="0.16889386116502325 0.5855232679853548 0.2722758452589059 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_81" rgba="0.8185173820740625 0.3913437651543651 0.9965720057782183 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_82" rgba="0.621579637014727 0.9323291238320356 0.7395456302982507 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_83" rgba="0.8094612310603775 0.17089081693076902 0.8915510189531317 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_84" rgba="0.5186675130181393 0.9009790415439264 0.14036427251395356 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_85" rgba="0.9678304693024733 0.401723559488819 0.3971141561598909 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_86" rgba="0.20296619139198802 0.89883991670084 0.7671321971428716 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_87" rgba="0.47489774425687925 0.27352102781148124 0.9314385347978876 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_88" rgba="0.47847060353891857 0.9195188147365143 0.26620470906361615 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_89" rgba="0.2690634787400322 0.29968536173248783 0.9359355116279919 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_90" rgba="0.1526558715048888 0.1808619985281078 0.46270483106042914 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_91" rgba="0.6231429486476012 0.20607456102232813 0.233514619828869 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_92" rgba="0.4063651562847824 0.728879141297849 0.3048944714634 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_93" rgba="0.5926761775333094 0.5790194861482459 0.7311144296028336 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_94" rgba="0.45848086205456784 0.2856395742671959 0.727769797128301 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_95" rgba="0.11240634607574052 0.3605202575119083 0.8252903479973873 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_96" rgba="0.627974716474874 0.47426064081689057 0.10217333032009868 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_97" rgba="0.6920734432826329 0.7006664964752265 0.8324740565378612 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_98" rgba="0.9230920340264775 0.5982569570131376 0.7586385120435102 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_99" rgba="0.2963979159001524 0.6406039924314877 0.16891119976107882 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_100" rgba="0.3642401377077683 0.08696667044778117 0.06789504370927968 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_101" rgba="0.11072220156491497 0.9718914395707902 0.5428994449478669 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_102" rgba="0.4079990212299649 0.06801567191428304 0.13325833192984304 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_103" rgba="0.9375435298122794 0.045404034244393765 0.9759774180513999 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_104" rgba="0.22419328956744056 0.5873216095105191 0.6028263107670505 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_105" rgba="0.5951426991182414 0.40131647840311013 0.24100231184475807 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_106" rgba="0.9928330667244348 0.12990834324526768 0.22752937785040828 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_107" rgba="0.4514365945736557 0.7223890711134396 0.04411332239757115 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_108" rgba="0.5501252597885936 0.8137608013308881 0.5549374322268443 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_109" rgba="0.26129568114182977 0.46544076594410144 0.8204101073941072 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_110" rgba="0.014972953885236562 0.29874625853518155 0.2280177548591119 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_111" rgba="0.18060837321124534 0.22205802252458817 0.6884753048755633 1" class="collision" />
+  <geom mesh="FT_SENSOR_R_collision_112" rgba="0.4296042277242347 0.7142623452562701 0.5340401058852431 1" class="collision" />
+</mujoco>

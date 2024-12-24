@@ -1,0 +1,8 @@
+<mujoco>
+  <mesh file="LINK_10_0.obj" />
+  <mesh file="LINK_10_1.obj" />
+  <mesh file="LINK_10_collision_0.obj" />
+  <mesh file="LINK_10_collision_1.obj" />
+  <mesh file="LINK_10_collision_2.obj" />
+  <mesh file="LINK_10_collision_3.obj" />
+</mujoco>

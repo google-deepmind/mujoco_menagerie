@@ -1,0 +1,55 @@
+<mujoco model="rby1">
+  <option timestep="0.002" solver="CG" iterations="30" tolerance="1e-6" />
+
+  <default>
+    <motor ctrllimited="true" ctrlrange="-100 100" />
+    <velocity ctrllimited="true" />
+    <position ctrllimited="true" kp="4000" kv="400" />
+
+    <default class="visual">
+      <geom group="2" type="mesh" contype="0" conaffinity="0" />
+    </default>
+    <default class="collision">
+      <geom group="3" type="mesh" />
+    </default>
+    <default class="in-model-collision">
+      <geom group="2" contype="0" conaffinity="0" rgba="0.3 0 0 0.0" />
+    </default>
+  </default>
+
+  <include file="./rby1.xml" />
+
+  <actuator>
+    <velocity name="left_wheel_act" joint="left_wheel" ctrlrange="-3.14 3.14" />
+    <velocity name="right_wheel_act" joint="right_wheel" ctrlrange="-3.14 3.14" />
+
+    <position name="link1_act" joint="torso_0" ctrlrange="-0.349066 0.349066" />
+    <position name="link2_act" joint="torso_1" ctrlrange="-1.0472 1.52173" />
+    <position name="link3_act" joint="torso_2" ctrlrange="-2.47837 1.5708" />
+    <position name="link4_act" joint="torso_3" ctrlrange="-0.785398 1.5708" />
+    <position name="link5_act" joint="torso_4" ctrlrange="-0.523599 0.523599" />
+    <position name="link6_act" joint="torso_5" ctrlrange="-1.5708 1.5708" />
+
+    <position name="right_arm_1_act" joint="right_arm_0" ctrlrange="-2.35619 2.35619" />
+    <position name="right_arm_2_act" joint="right_arm_1" ctrlrange="-3.14159 0.05" />
+    <position name="right_arm_3_act" joint="right_arm_2" ctrlrange="-2.0944 2.0944" />
+    <position name="right_arm_4_act" joint="right_arm_3" ctrlrange="-2.61799 0.01" />
+    <position name="right_arm_5_act" joint="right_arm_4" ctrlrange="-6.28319 6.28319" />
+    <position name="right_arm_6_act" joint="right_arm_5" ctrlrange="-1.74533 2.00713" />
+    <position name="right_arm_7_act" joint="right_arm_6" ctrlrange="-2.96706 2.96706" />
+
+    <position name="left_arm_1_act" joint="left_arm_0" ctrlrange="-2.35619 2.35619" />
+    <position name="left_arm_2_act" joint="left_arm_1" ctrlrange="-0.05 3.14159" />
+    <position name="left_arm_3_act" joint="left_arm_2" ctrlrange="-2.0944 2.0944" />
+    <position name="left_arm_4_act" joint="left_arm_3" ctrlrange="-2.61799 0.01" />
+    <position name="left_arm_5_act" joint="left_arm_4" ctrlrange="-6.28319 6.28319" />
+    <position name="left_arm_6_act" joint="left_arm_5" ctrlrange="-1.74533 2.00713" />
+    <position name="left_arm_7_act" joint="left_arm_6" ctrlrange="-2.96706 2.96706" />
+
+    <position name="head_0_act" joint="head_0" ctrlrange="-0.523 0.523" />
+    <position name="head_1_act" joint="head_1" ctrlrange="-0.35 1.57" />
+
+    <motor name="right_finger_act" joint="gripper_finger_r2" />
+    <motor name="left_finger_act" joint="gripper_finger_l1" />
+  </actuator>
+</mujoco>

@@ -1,0 +1,28 @@
+<mujoco>
+  <mesh file="EE_BODY.obj"/>
+  <mesh file="EE_BODY_collision_0.obj"/>
+  <mesh file="EE_BODY_collision_1.obj"/>
+  <mesh file="EE_BODY_collision_2.obj"/>
+  <mesh file="EE_BODY_collision_3.obj"/>
+  <mesh file="EE_BODY_collision_4.obj"/>
+  <mesh file="EE_BODY_collision_5.obj"/>
+  <mesh file="EE_BODY_collision_6.obj"/>
+  <mesh file="EE_BODY_collision_7.obj"/>
+  <mesh file="EE_BODY_collision_8.obj"/>
+  <mesh file="EE_BODY_collision_9.obj"/>
+  <mesh file="EE_BODY_collision_10.obj"/>
+  <mesh file="EE_BODY_collision_11.obj"/>
+  <mesh file="EE_BODY_collision_12.obj"/>
+  <mesh file="EE_BODY_collision_13.obj"/>
+  <mesh file="EE_BODY_collision_14.obj"/>
+  <mesh file="EE_BODY_collision_15.obj"/>
+  <mesh file="EE_BODY_collision_16.obj"/>
+  <mesh file="EE_BODY_collision_17.obj"/>
+  <mesh file="EE_BODY_collision_18.obj"/>
+  <mesh file="EE_BODY_collision_19.obj"/>
+  <mesh file="EE_BODY_collision_20.obj"/>
+  <mesh file="EE_BODY_collision_21.obj"/>
+  <mesh file="EE_BODY_collision_22.obj"/>
+  <mesh file="EE_BODY_collision_23.obj"/>
+  <mesh file="EE_BODY_collision_24.obj"/>
+</mujoco>
