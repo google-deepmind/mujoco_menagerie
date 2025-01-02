@@ -18,20 +18,14 @@ available MJCF description](https://github.com/RainbowRobotics).
 **2. Basic MJCF Modifications**
 - Review the MJCF file (either exported from MuJoCo or manually created) and adjust <default>, <actuator>, <joint>, etc., to match the robot’s structure.
 - In RBY1's case:
-  - `rby1.xml` defines the robot’s base structure (body, joints, mesh assets).
-  - `model.xml` simplifies actuator definitions (motors for velocity/torque control).
-  - `model_act.xml` refines control ranges with position/velocity actuators.
+  - `rby1.xml` 
+    - defines the robot’s base structure (body, joints, mesh assets).
+    - refines control ranges with position/velocity actuators.
 
 **3. Free Joint and Collision Exclusion**
 - To allow the robot to move freely in 3D, ensure a free joint (e.g., `world_j type="free"`) is added to the base. (In `rby1.xml`, `joint name="world_j" type="free"`)
 - Prevent unwanted self-collisions by adding `<exclude>` statements or using `group` attributes and `class="in-model-collision"` to organize collision groups.
 - This example uses `<default class="collision">` and `<default class="in-model-collision">` to reduce overhead and avoid undesired collisions.
-
-**4. Actuator Configuration**
-- In `model_act.xml`, velocity- and position-based actuators (`<velocity>`, `<position>`) are set for precise joint control.
-- In `model.xml`, basic motors (`<motor>`) with simpler `ctrlrange` settings are defined.
-- Two additional motors (`right_finger_act` and `left_finger_act`) are provided for the gripper’s fingers, paired via an `<equality>` block to move symmetrically.
-
 
 ## File Descriptions
 - `rby1.xml`   
@@ -39,21 +33,14 @@ available MJCF description](https://github.com/RainbowRobotics).
   - Includes the base, wheels (`wheel_r`, `wheel_l`), torso links (`link_torso_*`), arms (`link_left_arm_*`, `link_right_arm_*`), head (`link_head_*`), and fingers (`ee_finger_*`).
   - Also contains a skybox texture, floor geometry, and lights under `<worldbody>`.
 
-- `model.xml`   
-  Includes `rby1.xml` and then defines `<actuator>` blocks for motor-based actuators with basic control ranges.
-  - Suitable for simpler control or torque-based simulation.
-
-- `model_act.xml`   
-  Similar to `model.xml`, but uses `<position>` and `<velocity>` actuators with explicit `ctrlrange` limits for each joint.
-  - Recommended for more precise or detailed control in simulation and tuning.
-
 
 ## Notes
 - **Self-Collision**
   - RBY1 is configured to exclude certain internal collisions. If you need more or fewer collision checks, add or remove `<exclude>` elements or adjust `<geom group="">`.
+
 - **Actuator Ranges**
-  - In `model_act.xml`, you can modify `<position>` or `<velocity>` actuators’ `ctrlrange` to set joint angle/speed limits.
-  - `model.xml` provides a simpler motor-based control approach without fine-tuning.
+  - In `rby1.xml`, you can modify `<position>` or `<velocity>` actuators’ `ctrlrange` to set joint angle/speed limits.
+
 - **Home Keyframe**
   - A `<keyframe>` block can be added if you need a standard initial pose.
 
