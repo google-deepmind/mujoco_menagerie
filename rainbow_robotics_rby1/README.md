@@ -14,14 +14,18 @@ available MJCF description](https://github.com/RainbowRobotics).
 **1. 3D Model / Mesh Preprocessing**
 - For each part of the robot (body, joints, wheels, gripper, etc.), you can use tools like [`obj2mjcf`](https://github.com/kevinzakka/obj2mjcf) to convert *.obj or other 3D formats into MJCF if necessary.
 - In this example, the meshes and assets.xml files have already been properly preprocessed.
-- We also provide the `URDF` file for `RBY1`. Please refer to the [`URDF`](https://github.com/RainbowRobotics/rby1-sdk/blob/main/models/rby1a/urdf/model.urdf) for more details.
+- We also provide the `URDF` file for `RBY1`. Please refer to the [URDF](https://github.com/RainbowRobotics/rby1-sdk/blob/main/models/rby1a/urdf/model.urdf) for more details.
 
 **2. Basic MJCF Modifications**
 - Review the MJCF file (either exported from MuJoCo or manually created) and adjust <default>, <actuator>, <joint>, etc., to match the robot’s structure.
 - In RBY1's case:
-  - `rby1.xml` 
-    - defines the robot’s base structure (body, joints, mesh assets).
-    - refines control ranges with position/velocity actuators.
+  - ``rby1.xml``
+    - Defines the robot’s base structure (body, joints, mesh assets).
+    - Refines control ranges with position/velocity actuators.
+- Exported From MuJoCo
+   - Added ``<mujoco> <compiler discardvisual="false"/> </mujoco>`` to the URDF's ``<robot>`` clause.
+   - Loaded the [URDF](https://github.com/RainbowRobotics/rby1-sdk/blob/main/models/rby1a/urdf/model.urdf) into MuJoCo and saved a corresponding MJCF.
+   - Use the previously preprocessed meshes to replace the visual and collision geometry.
 
 **3. Free Joint and Collision Exclusion**
 - To allow the robot to move freely in 3D, ensure a free joint (e.g., `world_j type="free"`) is added to the base. (In `rby1.xml`, `joint name="world_j" type="free"`)
@@ -38,7 +42,6 @@ This model is released under a [Apache License 2.0](LICENSE.txt).
 
 
 ## Publications
-
 If you use this model in your work, please use the following citation:
 
 ```bibtex
