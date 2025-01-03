@@ -2,7 +2,7 @@
 
 ## Overview
 
-This package contains a simplified robot description (MJCF) of the [RBY1](https://www.rainbow-robotics.com/en_main?_l=en) developed by [Rainbow Robotics](https://www.rainbow-robotics.com/en_main?_l=en). It is derived from the [publicly
+This package contains a simplified robot description (MJCF) of the [RBY1](https://rainbowrobotics.github.io/rby1-dev/) developed by [Rainbow Robotics](https://www.rainbow-robotics.com/en_main?_l=en). It is derived from the [publicly
 available MJCF description](https://github.com/RainbowRobotics).
 
 <p float="left">
@@ -43,7 +43,7 @@ If you use this model in your work, please use the following citation:
 
 ```bibtex
 @software{RBY1_2024,
-    title = {RBY1: Dual-Arm Mobile Manipulator
+    title = {RBY1: Dual-Arm Mobile Manipulator},
     url = {https://rainbowrobotics.github.io/rby1-dev/},
     author = {RBY1 Team},
     year = {2024},
