@@ -1,5 +1,4 @@
 <mujoco model="base">
-  <compiler meshdir="/home/ian/mujoco_managerie/mujoco_menagerie/rainbow_robotics_rby1" balanceinertia="true" discardvisual="false"/>
   <default>
     <default class="visual">
       <geom group="2" type="mesh" contype="0" conaffinity="0"/>

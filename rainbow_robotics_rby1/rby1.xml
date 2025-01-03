@@ -8,14 +8,14 @@
     <velocity ctrllimited="true" />
     <position ctrllimited="true" kp="4000" kv="400" />
     <material specular="0" shininess="0" />
-      <default class="visual">
+    <default class="visual">
       <geom group="2" type="mesh" contype="0" conaffinity="0" />
     </default>
     <default class="collision">
       <geom group="3" type="mesh" contype="1" conaffinity="0" />
     </default>
     <default class="in-model-collision">
-      <geom group="2" contype="0" conaffinity="0" rgba="0.3 0 0 0.0" />
+      <geom group="4" contype="0" conaffinity="0" rgba="0.3 0 0 1.0 " />
     </default>
   </default>
 

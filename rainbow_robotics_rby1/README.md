@@ -2,7 +2,7 @@
 
 ## Overview
 
-This package contains a simplified robot description (MJCF) of the [RBY1](https://www.rainbowrobotics.com/rby1kor) developed by [Rainbow Robotics](https://www.rainbow-robotics.com/?_l=ko). It is derived from the [publicly
+This package contains a simplified robot description (MJCF) of the [RBY1](https://www.rainbow-robotics.com/en_main?_l=en) developed by [Rainbow Robotics](https://www.rainbow-robotics.com/en_main?_l=en). It is derived from the [publicly
 available MJCF description](https://github.com/RainbowRobotics).
 
 <p float="left">
@@ -14,6 +14,7 @@ available MJCF description](https://github.com/RainbowRobotics).
 **1. 3D Model / Mesh Preprocessing**
 - For each part of the robot (body, joints, wheels, gripper, etc.), you can use tools like [`obj2mjcf`](https://github.com/kevinzakka/obj2mjcf) to convert *.obj or other 3D formats into MJCF if necessary.
 - In this example, the meshes and assets.xml files have already been properly preprocessed.
+- We also provide the `URDF` file for `RBY1`. Please refer to the [`URDF`](https://github.com/RainbowRobotics/rby1-sdk/blob/main/models/rby1a/urdf/model.urdf) for more details.
 
 **2. Basic MJCF Modifications**
 - Review the MJCF file (either exported from MuJoCo or manually created) and adjust <default>, <actuator>, <joint>, etc., to match the robot’s structure.
@@ -24,26 +25,13 @@ available MJCF description](https://github.com/RainbowRobotics).
 
 **3. Free Joint and Collision Exclusion**
 - To allow the robot to move freely in 3D, ensure a free joint (e.g., `world_j type="free"`) is added to the base. (In `rby1.xml`, `joint name="world_j" type="free"`)
-- Prevent unwanted self-collisions by adding `<exclude>` statements or using `group` attributes and `class="in-model-collision"` to organize collision groups.
+- Prevent unwanted self-collisions using `group` attributes and `class="in-model-collision"` to organize collision groups.
 - This example uses `<default class="collision">` and `<default class="in-model-collision">` to reduce overhead and avoid undesired collisions.
+- If self-collision is desired, users should modify `contype` and `conaffinity` attributes appropriately. For more details, refer to the [MuJoCo XML Reference](https://mujoco.readthedocs.io/en/stable/XMLreference.html).
 
-## File Descriptions
-- `rby1.xml`   
-  Defines the robot’s main structure, mesh assets, joint tree, basic materials, and visualization settings.
-  - Includes the base, wheels (`wheel_r`, `wheel_l`), torso links (`link_torso_*`), arms (`link_left_arm_*`, `link_right_arm_*`), head (`link_head_*`), and fingers (`ee_finger_*`).
-  - Also contains a skybox texture, floor geometry, and lights under `<worldbody>`.
-
-
-## Notes
-- **Self-Collision**
-  - RBY1 is configured to exclude certain internal collisions. If you need more or fewer collision checks, add or remove `<exclude>` elements or adjust `<geom group="">`.
-
-- **Actuator Ranges**
-  - In `rby1.xml`, you can modify `<position>` or `<velocity>` actuators’ `ctrlrange` to set joint angle/speed limits.
-
-- **Home Keyframe**
-  - A `<keyframe>` block can be added if you need a standard initial pose.
-
+**4. Note**
+- `default` in `rby1.xml`
+  - The actuator parameters(`joint`, `motor`, `velocity`, `position`) in simulation may differ from those in an actual robot.
 
 ## License
 This model is released under a [Apache License 2.0](LICENSE.txt).
