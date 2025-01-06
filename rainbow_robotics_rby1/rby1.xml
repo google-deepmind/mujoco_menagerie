@@ -58,7 +58,6 @@
       <inertial pos="-0.0615794 -0.00142271 0.135139" quat="0.00383057 0.733861 -0.00742942 0.679248" mass="60.0804" diaginertia="3.77525 2.99424 1.36264" />
       <joint name="world_j" type="free" limited="false" actuatorfrclimited="false" />
       <include file="assets/base/geoms.xml" />
-
       <body name="wheel_r" pos="0.228 -0.265 0.1">
         <inertial pos="0 -0.00073938 0" quat="0.707107 0 0 0.707107" mass="1.37784" diaginertia="0.00811815 0.00426657 0.00426657" />
         <joint name="right_wheel" pos="0 0 0" axis="0 -1 0" limited="false" />
@@ -240,31 +239,31 @@
     <velocity name="left_wheel_act" joint="left_wheel" ctrlrange="-3.14 3.14" />
     <velocity name="right_wheel_act" joint="right_wheel" ctrlrange="-3.14 3.14" />
 
-    <position name="link1_act" joint="torso_0" ctrlrange="-0.261799388 0.261799388" />
-    <position name="link2_act" joint="torso_1" ctrlrange="-0.523598776 1.570796327" />
-    <position name="link3_act" joint="torso_2" ctrlrange="-2.617993878 1.570796327" />
-    <position name="link4_act" joint="torso_3" ctrlrange="-0.785398163 1.570796327" />
-    <position name="link5_act" joint="torso_4" ctrlrange="-0.523598776 0.523598776" />
-    <position name="link6_act" joint="torso_5" ctrlrange="-2.35619449 2.35619449" />
+    <position name="link1_act" joint="torso_0" ctrlrange="-0.261799388 0.261799388" forcelimited="true" forcerange="-270 270"/>
+    <position name="link2_act" joint="torso_1" ctrlrange="-0.523598776 1.570796327" forcelimited="true" forcerange="-270 270"/>
+    <position name="link3_act" joint="torso_2" ctrlrange="-2.617993878 1.570796327" forcelimited="true" forcerange="-270 270"/>
+    <position name="link4_act" joint="torso_3" ctrlrange="-0.785398163 1.570796327" forcelimited="true" forcerange="-120 120"/>
+    <position name="link5_act" joint="torso_4" ctrlrange="-0.523598776 0.523598776" forcelimited="true" forcerange="-120 120"/>
+    <position name="link6_act" joint="torso_5" ctrlrange="-2.35619449 2.35619449" forcelimited="true" forcerange="-120 120"/>
 
-    <position name="right_arm_1_act" joint="right_arm_0" ctrlrange="-3.141592654 3.141592654" />
-    <position name="right_arm_2_act" joint="right_arm_1" ctrlrange="-3.141592654 0.017453293" />
-    <position name="right_arm_3_act" joint="right_arm_2" ctrlrange="-3.141592654 3.141592654" />
-    <position name="right_arm_4_act" joint="right_arm_3" ctrlrange="-2.617993878 0.017453293" />
-    <position name="right_arm_5_act" joint="right_arm_4" ctrlrange="-3.141592654 3.141592654" />
-    <position name="right_arm_6_act" joint="right_arm_5" ctrlrange="-1.570796327 1.919862177" />
-    <position name="right_arm_7_act" joint="right_arm_6" ctrlrange="-2.792526803 2.792526803" />
+    <position name="right_arm_1_act" joint="right_arm_0" ctrlrange="-3.141592654 3.141592654" forcelimited="true" forcerange="-70 70"/>
+    <position name="right_arm_2_act" joint="right_arm_1" ctrlrange="-3.141592654 0.017453293" forcelimited="true" forcerange="-70 70"/>
+    <position name="right_arm_3_act" joint="right_arm_2" ctrlrange="-3.141592654 3.141592654" forcelimited="true" forcerange="-70 70"/>
+    <position name="right_arm_4_act" joint="right_arm_3" ctrlrange="-2.617993878 0.017453293" forcelimited="true" forcerange="-40 40"/>
+    <position name="right_arm_5_act" joint="right_arm_4" ctrlrange="-3.141592654 3.141592654" forcelimited="true" forcerange="-10 10"/>
+    <position name="right_arm_6_act" joint="right_arm_5" ctrlrange="-1.570796327 1.919862177" forcelimited="true" forcerange="-10 10"/>
+    <position name="right_arm_7_act" joint="right_arm_6" ctrlrange="-2.792526803 2.792526803" forcelimited="true" forcerange="-8 8"/>
 
-    <position name="left_arm_1_act" joint="left_arm_0" ctrlrange="-3.141592654 3.141592654" />
-    <position name="left_arm_2_act" joint="left_arm_1" ctrlrange="-0.017453293 3.141592654" />
-    <position name="left_arm_3_act" joint="left_arm_2" ctrlrange="-3.141592654 3.141592654" />
-    <position name="left_arm_4_act" joint="left_arm_3" ctrlrange="-2.617993878 0.017453293" />
-    <position name="left_arm_5_act" joint="left_arm_4" ctrlrange="-3.141592654 3.141592654" />
-    <position name="left_arm_6_act" joint="left_arm_5" ctrlrange="-1.570796327 1.919862177" />
-    <position name="left_arm_7_act" joint="left_arm_6" ctrlrange="-2.792526803 2.792526803" />
+    <position name="left_arm_1_act" joint="left_arm_0" ctrlrange="-3.141592654 3.141592654" forcelimited="true" forcerange="-70 70"/>
+    <position name="left_arm_2_act" joint="left_arm_1" ctrlrange="-0.017453293 3.141592654" forcelimited="true" forcerange="-70 70"/>
+    <position name="left_arm_3_act" joint="left_arm_2" ctrlrange="-3.141592654 3.141592654" forcelimited="true" forcerange="-70 70"/>
+    <position name="left_arm_4_act" joint="left_arm_3" ctrlrange="-2.617993878 0.017453293" forcelimited="true" forcerange="-40 40"/>
+    <position name="left_arm_5_act" joint="left_arm_4" ctrlrange="-3.141592654 3.141592654" forcelimited="true" forcerange="-10 10"/>
+    <position name="left_arm_6_act" joint="left_arm_5" ctrlrange="-1.570796327 1.919862177" forcelimited="true" forcerange="-10 10"/>
+    <position name="left_arm_7_act" joint="left_arm_6" ctrlrange="-2.792526803 2.792526803" forcelimited="true" forcerange="-8 8"/>
 
-    <position name="head_0_act" joint="head_0" ctrlrange="-0.523 0.523" />
-    <position name="head_1_act" joint="head_1" ctrlrange="-0.35 1.57" />
+    <position name="head_0_act" joint="head_0" ctrlrange="-0.523 0.523" forcelimited="true" forcerange="-1000 1000"/>
+    <position name="head_1_act" joint="head_1" ctrlrange="-0.35 1.57" forcelimited="true" forcerange="-1000 1000"/>
 
     <motor name="right_finger_act" joint="gripper_finger_r2" />
     <motor name="left_finger_act" joint="gripper_finger_l1" />
