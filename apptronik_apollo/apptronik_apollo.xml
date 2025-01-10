@@ -336,7 +336,7 @@
 
         <position name="r_hip_ie" kp="595" kv="171" joint="r_hip_ie" ctrlrange="-1.09083 0.567232" forcerange="-120 120"/>
         <position name="r_hip_aa" kp="1880" kv="153" joint="r_hip_aa" ctrlrange="-0.741765 0.218166" forcerange="-494 494"/>
-        <position name="r_hip_fe" kp="1047" kv="92" joint="l_hip_fe" ctrlrange="-1.85005 0.476475" forcerange="-342 342"/>
+        <position name="r_hip_fe" kp="1047" kv="92" joint="r_hip_fe" ctrlrange="-1.85005 0.476475" forcerange="-342 342"/>
 
         <position name="r_knee_fe" kp="606" kv="46" joint="r_knee_fe" ctrlrange="0 2.61799" forcerange="-336 336"/>
 
