@@ -1,0 +1,25 @@
+<mujoco>
+  <material name="0,0,0" specular="1.0" shininess="1.0" rgba="0.000000 0.000000 0.000000 1.000000" />
+  <material name="10,10,10_LINK_6" specular="1.0" shininess="0.2" rgba="0.039216 0.039216 0.039216 1.000000" />
+  <material name="10,10,10" specular="0.039216" shininess="1.0" rgba="0.039216 0.039216 0.039216 1.000000" />
+  <material name="163,163,175" specular="1.0" shininess="0.2" rgba="0.639216 0.639216 0.686275 1.000000" />
+  <material name="178,0,0" specular="1.0" shininess="0.2" rgba="0.698039 0.000000 0.000000 1.000000" />
+  <material name="190,188,186" specular="1.0" shininess="0.2" rgba="0.745098 0.737255 0.729412 1.000000" />
+  <material name="191,191,191" specular="0.0" shininess="0.3" rgba="0.749020 0.749020 0.749020 1.000000" />
+  <material name="192,192,192" specular="1.0" shininess="0.2" rgba="0.752941 0.752941 0.752941 1.000000" />
+  <material name="216,214,214" specular="1.0" shininess="0.2" rgba="0.847059 0.839216 0.839216 1.000000" />
+  <material name="237,255,168" specular="1.0" shininess="0.2" rgba="0.929412 1.000000 0.658824 1.000000" />
+  <material name="242,236,238" specular="1.0" shininess="0.2" rgba="0.949020 0.925490 0.933333 1.000000" />
+  <material name="244,244,244" specular="0.9568629999999999" shininess="1.0" rgba="0.956863 0.956863 0.956863 1.000000" />
+  <material name="25,25,25" specular="1.0" shininess="0.8" rgba="0.100000 0.100000 0.100000 1.000000" />
+  <material name="254,254,255_LINK_6" specular="1.0" shininess="0.2" rgba="0.996078 0.996078 1.000000 1.000000" />
+  <material name="254,254,255" specular="0.9973853333333333" shininess="1.0" rgba="0.996078 0.996078 1.000000 1.000000" />
+  <material name="65,55,50" specular="1.0" shininess="0.2" rgba="0.254902 0.215686 0.196078 1.000000" />
+  <material name="65,65,65" specular="0.254902" shininess="1.0" rgba="0.254902 0.254902 0.254902 1.000000"/>
+  <material name="69,69,69_1" specular="0.0" shininess="1.0" rgba="0.270588 0.270588 0.270588 1.000000" />
+  <material name="69,69,69" specular="1.0" shininess="1.0" rgba="0.270588 0.270588 0.270588 1.000000" />
+  <material name="70,70,70_FINGER" specular="0.27451" shininess="1.0" rgba="0.274510 0.274510 0.274510 1.000000" />
+  <material name="70,70,70" specular="1.0" shininess="0.2" rgba="0.274510 0.274510 0.274510 1.000000" />
+  <material name="79,79,79" specular="1.0" shininess="0.2" rgba="0.309804 0.309804 0.309804 1.000000" />
+  <material name="80,80,80" specular="0.0" shininess="0.5" rgba="0.313725 0.313725 0.313725 1.000000" />
+</mujoco>
