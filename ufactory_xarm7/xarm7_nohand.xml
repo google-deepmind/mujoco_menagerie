@@ -21,7 +21,7 @@
   <default>
     <default class="xarm7">
       <geom type="mesh" material="white"/>
-      <joint axis="0 0 1" range="-6.28319 6.28319" frictionloss="1"/>
+      <joint axis="0 0 1" armature="0.1" range="-6.28319 6.28319" frictionloss="1"/>
       <general biastype="affine" ctrlrange="-6.28319 6.28319"/>
       <default class="size1">
         <joint damping="10"/>
