@@ -83,7 +83,6 @@
                 <camera name="torso_oak_d_pro_w_front" mode="fixed" euler="-1.57 0 1.57" fovy="70.0"/>
                 <inertial pos="0 0 0" mass="0.115" diaginertia="0.00014442322916666668 3.8901145833333344e-05 0.00012639458333333335"/>
             </body>
-            <site name="imu" pos="0.067 5.54705e-16 0.124874" euler="0.000000 1.570800 3.141590"/>
             <inertial pos="-0.0466459 -2.50736e-05 -0.0721416" quat="0.661991 0.662086 0.248682 -0.248127" mass="7.43582" diaginertia="0.0633318 0.0512326 0.0281854"/>
             <joint name="floating_base" type="free" limited="false" actuatorfrclimited="false"/>
             <geom class="visual_light" mesh="pelvis_link"/>
@@ -99,6 +98,7 @@
                     <body name="torso_link" pos="0 0 0">
                         <inertial pos="-0.0484952 0.00143204 0.185535" quat="0.702792 0.0157426 -6.68569e-05 0.711221" mass="19.3408" diaginertia="0.303595 0.272287 0.22035"/>
                         <joint name="torso_pitch" axis="0 1 0" range="-0.305433 1.35263" actuatorfrcrange="-315 315" damping="0" frictionloss="13.15" armature="0.970692"/>
+                        <site name="imu" pos="0.037 5.54705e-16 0.093624" euler="0.000000 1.570800 3.141590"/>
                         <geom class="visual_light" mesh="torso_link"/>
                         <geom name="collision_cylinder_torso" size="0.16 0.05" pos="-0.045 0 0.2" type="capsule" class="collision"/>
                         <geom class="visual_dark" mesh="neck_mount_fix_link"/>
