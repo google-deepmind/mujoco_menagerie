@@ -208,6 +208,7 @@ Menagerie, see [CONTRIBUTING](CONTRIBUTING.md).
 | Name | Maker | DoFs    | License | MJX |
 |------|-------|---------|---------|-----|
 | Allegro Hand V3 | Wonik Robotics | 16 | [BSD-2-Clause](wonik_allegro/LICENSE) |✖️|
+| UMI Gripper | Stanford University | 1 | [MIT](umi_gripper/LICENSE) |✖️|
 | LEAP Hand | Carnegie Mellon University | 16 | [MIT](leap_hand/LICENSE) |✖️|
 | Robotiq 2F-85 | Robotiq | 8 | [BSD-2-Clause](robotiq_2f85/LICENSE) |✖️|
 | Shadow Hand EM35 | Shadow Robot Company | 24 | [Apache-2.0](shadow_hand/LICENSE) |✖️|
