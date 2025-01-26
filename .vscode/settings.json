@@ -1,0 +1,6 @@
+{
+    "xml.format.enforceQuoteStyle": "preferred",
+    "xml.format.maxLineWidth": 120,
+    "xml.format.preserveAttributeLineBreaks": false,
+    "xml.format.spaceBeforeEmptyCloseTag": false
+}

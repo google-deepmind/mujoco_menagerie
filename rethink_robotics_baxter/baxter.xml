@@ -1,4 +1,4 @@
-<?xml version="1.0" ?>
+<?xml version="1.0"?>
 <mujoco model="baxter">
   <compiler angle="radian" meshdir="assets" autolimits="true"/>
   <asset>
@@ -27,7 +27,7 @@
     <material name="Material_001.011" specular="0.5" shininess="0.225" rgba="0.016303 0.016303 0.016303 1.000000"/>
     <material name="Material_002.006" specular="0.5" shininess="0.225" rgba="0.512000 0.512000 0.512000 1.000000"/>
     <material name="Material_003.004" specular="0.5" shininess="0.225" rgba="0.170722 0.170722 0.170722 1.000000"/>
-    
+
     <mesh name="H0" file="H0.obj"/>
     <mesh name="H1_0" file="H1_0.obj"/>
     <mesh name="H1_1" file="H1_1.obj"/>
@@ -88,17 +88,22 @@
       <body name="fixed_base_link" pos="0 0 0">
         <body name="collision_head_link_1" pos="0.11 0 0.75">
           <inertial pos="0 0 0" mass="0.0001" diaginertia="1e-008 1e-008 1e-008"/>
-          <geom name="collision_head_link_1_vis" margin="0.001" type="sphere" class="viz" size="0.001" rgba="0.8 0.3 0.3 1" pos="0 0 0"/>
-          <geom name="collision_head_link_1_col" margin="0.001" type="sphere" size="0.22" rgba="0.8 0.3 0.3 0.3" pos="-0.07 -0.04 0"/>
+          <geom name="collision_head_link_1_vis" margin="0.001" type="sphere" class="viz" size="0.001"
+            rgba="0.8 0.3 0.3 1" pos="0 0 0"/>
+          <geom name="collision_head_link_1_col" margin="0.001" type="sphere" size="0.22" rgba="0.8 0.3 0.3 0.3"
+            pos="-0.07 -0.04 0"/>
         </body>
         <body name="collision_head_link_2" pos="0.11 0 0.75">
           <inertial pos="0 0 0" mass="0.0001" diaginertia="1e-008 1e-008 1e-008"/>
-          <geom name="collision_head_link_2_col0" margin="0.001" type="sphere" size="0.001" rgba="0.8 0.3 0.3 0.3" pos="0 0 0"/>
-          <geom name="collision_head_link_2_col1" margin="0.001" type="sphere" size="0.22" rgba="0.8 0.3 0.3 0.3" pos="-0.07 0.04 0"/>
+          <geom name="collision_head_link_2_col0" margin="0.001" type="sphere" size="0.001" rgba="0.8 0.3 0.3 0.3"
+            pos="0 0 0"/>
+          <geom name="collision_head_link_2_col1" margin="0.001" type="sphere" size="0.22" rgba="0.8 0.3 0.3 0.3"
+            pos="-0.07 0.04 0"/>
         </body>
         <body name="torso" pos="0 0 0">
           <site name="center" pos="0 0 0" size="0.01" rgba="1 0.3 0.3 1" group="2"/>
-          <inertial pos="0 0 0" quat="0.997433 0.00167178 0.0715546 -0.00209003" mass="35.3365" diaginertia="1.87139 1.66268 0.779991"/>
+          <inertial pos="0 0 0" quat="0.997433 0.00167178 0.0715546 -0.00209003" mass="35.3365"
+            diaginertia="1.87139 1.66268 0.779991"/>
           <geom mesh="base_link_0" material="Material_005" class="visual"/>
           <geom mesh="base_link_1" material="Material_007" class="visual"/>
           <geom mesh="base_link_2" material="Material_003" class="visual"/>
@@ -107,69 +112,97 @@
           <geom mesh="base_link_5" material="Material_006" class="visual"/>
           <geom name="base_link_col" margin="0.001" type="mesh" mesh="base_link_collision"/>
           <body name="head" pos="0.06 0 0.686">
-            <inertial pos="0 0 0" quat="0.339345 0.850736 -0.347392 0.201027" mass="0.547767" diaginertia="0.00474065 0.00461087 0.00199949"/>
+            <inertial pos="0 0 0" quat="0.339345 0.850736 -0.347392 0.201027" mass="0.547767"
+              diaginertia="0.00474065 0.00461087 0.00199949"/>
             <!-- Don't use head joint -->
-            <!-- <joint limited="true" damping="0" armature=".01" name="head_pan" type="hinge" pos="0 0 0" axis="0 0 1" range="-1.5708 1.5708" /> -->
+            <!-- <joint limited="true" damping="0" armature=".01" name="head_pan" type="hinge" pos="0 0 0" axis="0 0 1"
+            range="-1.5708 1.5708" /> -->
             <geom material="Material_001.001" mesh="H0" class="visual"/>
             <body name="screen" pos="0.1227 0 0" quat="0.453099 0.542864 0.542864 0.453099">
-              <inertial pos="0 0 0" quat="0.995785 0.0113501 -0.000390852 0.0910132" mass="0.440171" diaginertia="0.0040484 0.00275826 0.00150834"/>
+              <inertial pos="0 0 0" quat="0.995785 0.0113501 -0.000390852 0.0910132" mass="0.440171"
+                diaginertia="0.0040484 0.00275826 0.00150834"/>
               <geom mesh="H1_0" material="Material.003" pos="0 0 -.03" euler="0 -1.57 0" class="visual"/>
               <geom mesh="H1_1" material="Material_001.003" pos="0 0 -.03" euler="0 -1.57 0" class="visual"/>
-              <geom name="screen2_vis" margin="0.001" class="viz" type="box" size="0.109 0.08 0.002" rgba="0.9 0.9 0.9 1" pos="0 -0.016 0" quat="0.991445 0.130526 0 0"/>
+              <geom name="screen2_vis" margin="0.001" class="viz" type="box" size="0.109 0.08 0.002"
+                rgba="0.9 0.9 0.9 1" pos="0 -0.016 0" quat="0.991445 0.130526 0 0"/>
             </body>
           </body>
           <body name="right_arm_mount" pos="0.024645 -0.219645 0.118588" quat="0.923879 0 0 -0.382684">
             <site name="right_center" pos="0 0 0" size="0.01" rgba="1 0.3 0.3 1" group="2"/>
             <inertial pos="0 0 0" mass="0.0001" diaginertia="1e-008 1e-008 1e-008"/>
             <body name="right_upper_shoulder" pos="0.055695 0 0.011038">
-              <inertial pos="0.01783 0.00086 0.19127" quat="0.975667 0.0673303 -0.206117 0.0325173" mass="5.70044" diaginertia="0.0498344 0.0377511 0.0331351"/>
-              <joint limited="true" damping="0" armature=".01" name="right_s0" type="hinge" pos="0 0 0" axis="0 0 1" range="-1.70168 1.70168"/>
+              <inertial pos="0.01783 0.00086 0.19127" quat="0.975667 0.0673303 -0.206117 0.0325173" mass="5.70044"
+                diaginertia="0.0498344 0.0377511 0.0331351"/>
+              <joint limited="true" damping="0" armature=".01" name="right_s0" type="hinge" pos="0 0 0" axis="0 0 1"
+                range="-1.70168 1.70168"/>
               <geom mesh="S0_0" material="Material_002.004" class="visual"/>
               <geom mesh="S0_1" material="Material_003.002" class="visual"/>
-              <geom margin="0.001" class="right_col" type="cylinder" size="0.06 0.1361" rgba="0.5 0.1 0.1 1" pos="0 0 0.1361" name="right_s0_collision"/>
+              <geom margin="0.001" class="right_col" type="cylinder" size="0.06 0.1361" rgba="0.5 0.1 0.1 1"
+                pos="0 0 0.1361" name="right_s0_collision"/>
               <body name="right_lower_shoulder" pos="0.069 0 0.27035" quat="0.707107 -0.707107 0 0">
-                <inertial pos="0.06845 0.00269 -0.00529" quat="0.447487 0.536948 0.56425 0.439391" mass="3.22698" diaginertia="0.0278991 0.0212327 0.0112937"/>
-                <joint limited="true" damping="0" armature=".01" name="right_s1" type="hinge" pos="0 0 0" axis="0 0 1" range="-2.147 1.047"/>
+                <inertial pos="0.06845 0.00269 -0.00529" quat="0.447487 0.536948 0.56425 0.439391" mass="3.22698"
+                  diaginertia="0.0278991 0.0212327 0.0112937"/>
+                <joint limited="true" damping="0" armature=".01" name="right_s1" type="hinge" pos="0 0 0" axis="0 0 1"
+                  range="-2.147 1.047"/>
                 <geom material="Material_001.006" mesh="S1" class="visual"/>
-                <geom margin="0.001" class="right_col" type="cylinder" size="0.06 0.06" rgba="0.5 0.1 0.1 1" pos="0 0 0" name="right_s1_collision"/>
+                <geom margin="0.001" class="right_col" type="cylinder" size="0.06 0.06" rgba="0.5 0.1 0.1 1" pos="0 0 0"
+                  name="right_s1_collision"/>
                 <body name="right_upper_elbow" pos="0.102 0 0" quat="0.5 0.5 0.5 0.5">
-                  <inertial pos="-0.00276 0.00132 0.18086" quat="0.838995 -0.0423128 -0.121287 0.52876" mass="4.31272" diaginertia="0.0287695 0.0273625 0.011409"/>
-                  <joint limited="true" damping="0" armature=".01" name="right_e0" type="hinge" pos="0 0 0" axis="0 0 1" range="-3.05418 3.05418"/>
+                  <inertial pos="-0.00276 0.00132 0.18086" quat="0.838995 -0.0423128 -0.121287 0.52876" mass="4.31272"
+                    diaginertia="0.0287695 0.0273625 0.011409"/>
+                  <joint limited="true" damping="0" armature=".01" name="right_e0" type="hinge" pos="0 0 0" axis="0 0 1"
+                    range="-3.05418 3.05418"/>
                   <geom mesh="E0_0" material="Material_001.008" class="visual"/>
                   <geom mesh="E0_1" material="Material_002.002" class="visual"/>
-                  <geom margin="0.001" class="right_col" type="cylinder" size="0.06 0.0535" rgba="0.5 0.1 0.1 1" pos="0 0 -0.0535" name="right_e0_collision"/>
-                  <geom margin="0.001" class="right_col" name="right_upper_elbow_col" type="cylinder" size="0.06 0.1365" pos="0 0 0.1365" rgba="0.499 0.499 0.499 1"/>
+                  <geom margin="0.001" class="right_col" type="cylinder" size="0.06 0.0535" rgba="0.5 0.1 0.1 1"
+                    pos="0 0 -0.0535" name="right_e0_collision"/>
+                  <geom margin="0.001" class="right_col" name="right_upper_elbow_col" type="cylinder" size="0.06 0.1365"
+                    pos="0 0 0.1365" rgba="0.499 0.499 0.499 1"/>
                   <body name="right_lower_elbow" pos="0.069 0 0.26242" quat="0.5 -0.5 -0.5 -0.5">
-                    <inertial pos="0.02611 0.00159 -0.01117" quat="0.440433 0.577149 0.562777 0.395221" mass="2.07206" diaginertia="0.0132096 0.00950002 0.00685697"/>
-                    <joint limited="true" damping="0" armature=".01" name="right_e1" type="hinge" pos="0 0 0" axis="0 0 1" range="-0.05 2.618"/>
+                    <inertial pos="0.02611 0.00159 -0.01117" quat="0.440433 0.577149 0.562777 0.395221" mass="2.07206"
+                      diaginertia="0.0132096 0.00950002 0.00685697"/>
+                    <joint limited="true" damping="0" armature=".01" name="right_e1" type="hinge" pos="0 0 0"
+                      axis="0 0 1" range="-0.05 2.618"/>
                     <geom mesh="E1_0" material="Material_001.004" class="visual"/>
                     <geom mesh="E1_1" material="Material_002" class="visual"/>
-                    <geom margin="0.001" class="right_col" type="cylinder" size="0.06 0.05" rgba="0.5 0.1 0.1 1" pos="0 0 0" name="right_e1_collision"/>
+                    <geom margin="0.001" class="right_col" type="cylinder" size="0.06 0.05" rgba="0.5 0.1 0.1 1"
+                      pos="0 0 0" name="right_e1_collision"/>
                     <body name="right_upper_forearm" pos="0.10359 0 0" quat="0.5 0.5 0.5 0.5">
-                      <inertial pos="-0.00168 0.0046 0.13952" quat="0.892709 -0.0256256 0.00446984 0.449882" mass="2.24665" diaginertia="0.016916 0.0165511 0.00371123"/>
-                      <joint limited="true" damping="0" armature=".01" name="right_w0" type="hinge" pos="0 0 0" axis="0 0 1" range="-3.059 3.059"/>
+                      <inertial pos="-0.00168 0.0046 0.13952" quat="0.892709 -0.0256256 0.00446984 0.449882"
+                        mass="2.24665" diaginertia="0.016916 0.0165511 0.00371123"/>
+                      <joint limited="true" damping="0" armature=".01" name="right_w0" type="hinge" pos="0 0 0"
+                        axis="0 0 1" range="-3.059 3.059"/>
                       <geom mesh="W0_0" material="Material_003.001" class="visual"/>
                       <geom mesh="W0_1" material="Material_001.009" class="visual"/>
                       <geom mesh="W0_2" material="Material_002.003" class="visual"/>
                       <geom mesh="W0_3" material="Material_005.001" class="visual"/>
-                      <geom margin="0.001" class="right_col" type="cylinder" size="0.06 0.044" rgba="0.5 0.1 0.1 1" pos="0 0 -0.044" name="right_w0_collision"/>
-                      <geom margin="0.001" class="right_col" name="right_upper_forearm_col" type="cylinder" size="0.06 0.1036" pos="0 0 0.1" rgba="0.499 0.499 0.499 1"/>
+                      <geom margin="0.001" class="right_col" type="cylinder" size="0.06 0.044" rgba="0.5 0.1 0.1 1"
+                        pos="0 0 -0.044" name="right_w0_collision"/>
+                      <geom margin="0.001" class="right_col" name="right_upper_forearm_col" type="cylinder"
+                        size="0.06 0.1036" pos="0 0 0.1" rgba="0.499 0.499 0.499 1"/>
                       <body name="right_lower_forearm" pos="0.01 0 0.2707" quat="0.5 -0.5 -0.5 -0.5">
-                        <inertial pos="0.06041 0.00697 0.006" quat="0.456911 0.468526 0.475683 0.587743" mass="1.60979" diaginertia="0.00708828 0.00552689 0.00379383"/>
-                        <joint limited="true" damping="0" armature=".01" name="right_w1" type="hinge" pos="0 0 0" axis="0 0 1" range="-1.5708 2.094"/>
+                        <inertial pos="0.06041 0.00697 0.006" quat="0.456911 0.468526 0.475683 0.587743" mass="1.60979"
+                          diaginertia="0.00708828 0.00552689 0.00379383"/>
+                        <joint limited="true" damping="0" armature=".01" name="right_w1" type="hinge" pos="0 0 0"
+                          axis="0 0 1" range="-1.5708 2.094"/>
                         <geom mesh="W1_0" material="Material_001.005" class="visual"/>
                         <geom mesh="W1_1" material="Material_002.005" class="visual"/>
-                        <geom margin="0.001" class="right_col" type="cylinder" size="0.06 0.05" rgba="0.5 0.1 0.1 1" pos="0 0 0" name="right_w1_collision"/>
+                        <geom margin="0.001" class="right_col" type="cylinder" size="0.06 0.05" rgba="0.5 0.1 0.1 1"
+                          pos="0 0 0" name="right_w1_collision"/>
                         <body name="right_wrist" pos="0.115975 0 0" quat="0.5 0.5 0.5 0.5">
-                          <inertial pos="0.00198 0.00125 0.01855" quat="0.0594843 0.68926 -0.16016 0.704082" mass="0.35093" diaginertia="0.0003082 0.000269928 0.000251035"/>
-                          <joint limited="true" damping="0" armature=".01" name="right_w2" type="hinge" pos="0 0 0" axis="0 0 1" range="-3.059 3.059"/>
+                          <inertial pos="0.00198 0.00125 0.01855" quat="0.0594843 0.68926 -0.16016 0.704082"
+                            mass="0.35093" diaginertia="0.0003082 0.000269928 0.000251035"/>
+                          <joint limited="true" damping="0" armature=".01" name="right_w2" type="hinge" pos="0 0 0"
+                            axis="0 0 1" range="-3.059 3.059"/>
                           <geom mesh="W2_0" material="Material_002.006" class="visual"/>
                           <geom mesh="W2_1" material="Material_001.011" class="visual"/>
                           <geom mesh="W2_2" material="Material_003.004" class="visual"/>
-                          <geom margin="0.001" class="right_col" type="cylinder" size="0.06 0.0825" rgba="0.1 0.1 0.1 1" pos="0 0 0" name="right_w2_collision"/>
+                          <geom margin="0.001" class="right_col" type="cylinder" size="0.06 0.0825" rgba="0.1 0.1 0.1 1"
+                            pos="0 0 0" name="right_w2_collision"/>
                           <body name="right_hand" pos="0 0 0.11355">
                             <!-- This camera points out from the eef. -->
-                            <camera mode="fixed" name="right_eye_in_hand" pos="0.05 0 0" quat="0 0.707108 0.707108 0" fovy="75"/>
+                            <camera mode="fixed" name="right_eye_in_hand" pos="0.05 0 0" quat="0 0.707108 0.707108 0"
+                              fovy="75"/>
                             <!-- right gripper gets added here -->
                           </body>
                         </body>
@@ -184,54 +217,78 @@
             <site name="left_center" pos="0 0 0" size="0.01" rgba="1 0.3 0.3 1" group="2"/>
             <inertial pos="0 0 0" mass="0.0001" diaginertia="1e-008 1e-008 1e-008"/>
             <body name="left_upper_shoulder" pos="0.055695 0 0.011038">
-              <inertial pos="0.01783 0.00086 0.19127" quat="0.975667 0.0673303 -0.206117 0.0325173" mass="5.70044" diaginertia="0.0498344 0.0377511 0.0331351"/>
-              <joint limited="true" damping="0" armature=".01" name="left_s0" type="hinge" pos="0 0 0" axis="0 0 1" range="-1.70168 1.70168"/>
+              <inertial pos="0.01783 0.00086 0.19127" quat="0.975667 0.0673303 -0.206117 0.0325173" mass="5.70044"
+                diaginertia="0.0498344 0.0377511 0.0331351"/>
+              <joint limited="true" damping="0" armature=".01" name="left_s0" type="hinge" pos="0 0 0" axis="0 0 1"
+                range="-1.70168 1.70168"/>
               <geom mesh="S0_0" material="Material_002.004" class="visual"/>
               <geom mesh="S0_1" material="Material_003.002" class="visual"/>
-              <geom margin="0.001" class="left_col" type="cylinder" size="0.06 0.1361" rgba="0.5 0.1 0.1 1" pos="0 0 0.1361" name="left_s0_collision"/>
+              <geom margin="0.001" class="left_col" type="cylinder" size="0.06 0.1361" rgba="0.5 0.1 0.1 1"
+                pos="0 0 0.1361" name="left_s0_collision"/>
               <body name="left_lower_shoulder" pos="0.069 0 0.27035" quat="0.707107 -0.707107 0 0">
-                <inertial pos="0.06845 0.00269 -0.00529" quat="0.447487 0.536948 0.56425 0.439391" mass="3.22698" diaginertia="0.0278991 0.0212327 0.0112937"/>
-                <joint limited="true" damping="0" armature=".01" name="left_s1" type="hinge" pos="0 0 0" axis="0 0 1" range="-2.147 1.047"/>
+                <inertial pos="0.06845 0.00269 -0.00529" quat="0.447487 0.536948 0.56425 0.439391" mass="3.22698"
+                  diaginertia="0.0278991 0.0212327 0.0112937"/>
+                <joint limited="true" damping="0" armature=".01" name="left_s1" type="hinge" pos="0 0 0" axis="0 0 1"
+                  range="-2.147 1.047"/>
                 <geom material="Material_001.006" mesh="S1" class="visual"/>
-                <geom margin="0.001" class="left_col" type="cylinder" size="0.06 0.06" rgba="0.5 0.1 0.1 1" pos="0 0 0" name="left_s1_collision"/>
+                <geom margin="0.001" class="left_col" type="cylinder" size="0.06 0.06" rgba="0.5 0.1 0.1 1" pos="0 0 0"
+                  name="left_s1_collision"/>
                 <body name="left_upper_elbow" pos="0.102 0 0" quat="0.5 0.5 0.5 0.5">
-                  <inertial pos="-0.00276 0.00132 0.18086" quat="0.838995 -0.0423128 -0.121287 0.52876" mass="4.31272" diaginertia="0.0287695 0.0273625 0.011409"/>
-                  <joint limited="true" damping="0" armature=".01" name="left_e0" type="hinge" pos="0 0 0" axis="0 0 1" range="-3.05418 3.05418"/>
+                  <inertial pos="-0.00276 0.00132 0.18086" quat="0.838995 -0.0423128 -0.121287 0.52876" mass="4.31272"
+                    diaginertia="0.0287695 0.0273625 0.011409"/>
+                  <joint limited="true" damping="0" armature=".01" name="left_e0" type="hinge" pos="0 0 0" axis="0 0 1"
+                    range="-3.05418 3.05418"/>
                   <geom mesh="E0_0" material="Material_001.008" class="visual"/>
                   <geom mesh="E0_1" material="Material_002.002" class="visual"/>
-                  <geom margin="0.001" class="left_col" type="cylinder" size="0.06 0.0535" rgba="0.5 0.1 0.1 1" pos="0 0 -0.0535" name="left_e0_collision"/>
-                  <geom margin="0.001" class="left_col" name="left_upper_elbow_col" type="cylinder" size="0.06 0.1365" pos="0 0 0.1365" rgba="0.499 0.499 0.499 1"/>
+                  <geom margin="0.001" class="left_col" type="cylinder" size="0.06 0.0535" rgba="0.5 0.1 0.1 1"
+                    pos="0 0 -0.0535" name="left_e0_collision"/>
+                  <geom margin="0.001" class="left_col" name="left_upper_elbow_col" type="cylinder" size="0.06 0.1365"
+                    pos="0 0 0.1365" rgba="0.499 0.499 0.499 1"/>
                   <body name="left_lower_elbow" pos="0.069 0 0.26242" quat="0.5 -0.5 -0.5 -0.5">
-                    <inertial pos="0.02611 0.00159 -0.01117" quat="0.440433 0.577149 0.562777 0.395221" mass="2.07206" diaginertia="0.0132096 0.00950002 0.00685697"/>
-                    <joint limited="true" damping="0" armature=".01" name="left_e1" type="hinge" pos="0 0 0" axis="0 0 1" range="-0.05 2.618"/>
+                    <inertial pos="0.02611 0.00159 -0.01117" quat="0.440433 0.577149 0.562777 0.395221" mass="2.07206"
+                      diaginertia="0.0132096 0.00950002 0.00685697"/>
+                    <joint limited="true" damping="0" armature=".01" name="left_e1" type="hinge" pos="0 0 0"
+                      axis="0 0 1" range="-0.05 2.618"/>
                     <geom mesh="E1_0" material="Material_001.004" class="visual"/>
                     <geom mesh="E1_1" material="Material_002" class="visual"/>
-                    <geom margin="0.001" class="left_col" type="cylinder" size="0.06 0.05" rgba="0.5 0.1 0.1 1" pos="0 0 0" name="left_e1_collision"/>
+                    <geom margin="0.001" class="left_col" type="cylinder" size="0.06 0.05" rgba="0.5 0.1 0.1 1"
+                      pos="0 0 0" name="left_e1_collision"/>
                     <body name="left_upper_forearm" pos="0.10359 0 0" quat="0.5 0.5 0.5 0.5">
-                      <inertial pos="-0.00168 0.0046 0.13952" quat="0.892709 -0.0256256 0.00446984 0.449882" mass="2.24665" diaginertia="0.016916 0.0165511 0.00371123"/>
-                      <joint limited="true" damping="0" armature=".01" name="left_w0" type="hinge" pos="0 0 0" axis="0 0 1" range="-3.059 3.059"/>
+                      <inertial pos="-0.00168 0.0046 0.13952" quat="0.892709 -0.0256256 0.00446984 0.449882"
+                        mass="2.24665" diaginertia="0.016916 0.0165511 0.00371123"/>
+                      <joint limited="true" damping="0" armature=".01" name="left_w0" type="hinge" pos="0 0 0"
+                        axis="0 0 1" range="-3.059 3.059"/>
                       <geom mesh="W0_0" material="Material_003.001" class="visual"/>
                       <geom mesh="W0_1" material="Material_001.009" class="visual"/>
                       <geom mesh="W0_2" material="Material_002.003" class="visual"/>
                       <geom mesh="W0_3" material="Material_005.001" class="visual"/>
-                      <geom margin="0.001" class="left_col" type="cylinder" size="0.06 0.044" rgba="0.5 0.1 0.1 1" pos="0 0 -0.044" name="left_w0_collision"/>
-                      <geom margin="0.001" class="left_col" name="left_upper_forearm_col" type="cylinder" size="0.06 0.136" pos="0 0 0.1" rgba="0.499 0.499 0.499 1"/>
+                      <geom margin="0.001" class="left_col" type="cylinder" size="0.06 0.044" rgba="0.5 0.1 0.1 1"
+                        pos="0 0 -0.044" name="left_w0_collision"/>
+                      <geom margin="0.001" class="left_col" name="left_upper_forearm_col" type="cylinder"
+                        size="0.06 0.136" pos="0 0 0.1" rgba="0.499 0.499 0.499 1"/>
                       <body name="left_lower_forearm" pos="0.01 0 0.2707" quat="0.5 -0.5 -0.5 -0.5">
-                        <inertial pos="0.06041 0.00697 0.006" quat="0.456911 0.468526 0.475683 0.587743" mass="1.60979" diaginertia="0.00708828 0.00552689 0.00379383"/>
-                        <joint limited="true" damping="0" armature=".01" name="left_w1" type="hinge" pos="0 0 0" axis="0 0 1" range="-1.5708 2.094"/>
+                        <inertial pos="0.06041 0.00697 0.006" quat="0.456911 0.468526 0.475683 0.587743" mass="1.60979"
+                          diaginertia="0.00708828 0.00552689 0.00379383"/>
+                        <joint limited="true" damping="0" armature=".01" name="left_w1" type="hinge" pos="0 0 0"
+                          axis="0 0 1" range="-1.5708 2.094"/>
                         <geom mesh="W1_0" material="Material_001.005" class="visual"/>
                         <geom mesh="W1_1" material="Material_002.005" class="visual"/>
-                        <geom margin="0.001" class="left_col" type="cylinder" size="0.06 0.05" rgba="0.5 0.1 0.1 1" pos="0 0 0" name="left_w1_collision"/>
+                        <geom margin="0.001" class="left_col" type="cylinder" size="0.06 0.05" rgba="0.5 0.1 0.1 1"
+                          pos="0 0 0" name="left_w1_collision"/>
                         <body name="left_wrist" pos="0.115975 0 0" quat="0.5 0.5 0.5 0.5">
-                          <inertial pos="0.00198 0.00125 0.01855" quat="0.0594843 0.68926 -0.16016 0.704082" mass="0.35093" diaginertia="0.0003082 0.000269928 0.000251035"/>
-                          <joint limited="true" damping="0" armature=".01" name="left_w2" type="hinge" pos="0 0 0" axis="0 0 1" range="-3.059 3.059"/>
+                          <inertial pos="0.00198 0.00125 0.01855" quat="0.0594843 0.68926 -0.16016 0.704082"
+                            mass="0.35093" diaginertia="0.0003082 0.000269928 0.000251035"/>
+                          <joint limited="true" damping="0" armature=".01" name="left_w2" type="hinge" pos="0 0 0"
+                            axis="0 0 1" range="-3.059 3.059"/>
                           <geom mesh="W2_0" material="Material_002.006" class="visual"/>
                           <geom mesh="W2_1" material="Material_001.011" class="visual"/>
                           <geom mesh="W2_2" material="Material_003.004" class="visual"/>
-                          <geom margin="0.001" class="left_col" type="cylinder" size="0.06 0.0825" rgba="0.1 0.1 0.1 1" pos="0 0 0" name="left_w2_collision"/>
+                          <geom margin="0.001" class="left_col" type="cylinder" size="0.06 0.0825" rgba="0.1 0.1 0.1 1"
+                            pos="0 0 0" name="left_w2_collision"/>
                           <body name="left_hand" pos="0 0 0.11355">
                             <!-- This camera points out from the eef. -->
-                            <camera mode="fixed" name="left_eye_in_hand" pos="0.05 0 0" quat="0 0.707108 0.707108 0" fovy="75"/>
+                            <camera mode="fixed" name="left_eye_in_hand" pos="0.05 0 0" quat="0 0.707108 0.707108 0"
+                              fovy="75"/>
                             <!-- left gripper gets added here -->
                           </body>
                         </body>
