@@ -19,7 +19,7 @@
   <default>
     <default class="xarm7_hand">
       <geom type="mesh" material="black"/>
-      <joint range="0 0.85" axis="1 0 0" frictionloss="1"/>
+      <joint range="0 0.85" axis="1 0 0" armature="0.1" frictionloss="1"/>
       <site size="0.001" rgba="1 0 0 1" group="4"/>
       <general biastype="affine" forcerange="-50 50" ctrlrange="0 255" gainprm="0.333" biasprm="0 -100 -10"/>
       <default class="spring_link">
@@ -30,6 +30,18 @@
       </default>
       <default class="follower">
         <joint solreflimit="0.005 1"/>
+      </default>
+      <default class="visual">
+        <geom type="mesh" contype="0" conaffinity="0" group="2"/>
+      </default>
+      <default class="collision">
+        <geom type="mesh" group="3"/>
+        <default class="pad_box1">
+          <geom type="box" friction="0.7" solimp="0.95 0.99 0.001" solref="0.004 1" mass="0" priority="1" size="0.015 0.002 0.0095" rgba="0.0 0.1 0.7 1"/>
+        </default>
+        <default class="pad_box2">
+          <geom type="box" friction="0.6" solimp="0.95 0.99 0.001" solref="0.004 1" mass="0" priority="1" size="0.015 0.002 0.0095" rgba="0.0 0.5 0.5 1"/>
+        </default>
       </default>
     </default>
   </default>
@@ -48,7 +60,9 @@
           <inertial pos="0 -0.016413 0.029258" quat="0.697634 0.115353 -0.115353 0.697634" mass="0.048304"
             diaginertia="1.88037e-05 1.7493e-05 3.56792e-06"/>
           <joint name="left_finger_joint" axis="-1 0 0" class="follower"/>
-          <geom material="black" mesh="left_finger"/>
+          <geom class="visual" material="black" mesh="left_finger"/>
+          <geom class="pad_box1" name="left_finger_pad_1" pos="0 -0.024003 0.032"/>
+          <geom class="pad_box2" name="left_finger_pad_2" pos="0 -0.024003 0.050"/>
         </body>
       </body>
       <body name="left_inner_knuckle" pos="0 0.02 0.074098">
@@ -66,7 +80,9 @@
           <inertial pos="0 0.016413 0.029258" quat="0.697634 -0.115356 0.115356 0.697634" mass="0.048304"
             diaginertia="1.88038e-05 1.7493e-05 3.56779e-06"/>
           <joint name="right_finger_joint" class="follower"/>
-          <geom material="black" mesh="right_finger"/>
+          <geom class="visual" material="black" mesh="right_finger"/>
+          <geom class="pad_box1" name="right_finger_pad_1" pos="0 0.024003 0.032"/>
+          <geom class="pad_box2" name="right_finger_pad_2" pos="0 0.024003 0.050"/>
         </body>
       </body>
       <body name="right_inner_knuckle" pos="0 -0.02 0.074098">
