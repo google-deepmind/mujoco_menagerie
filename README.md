@@ -219,7 +219,7 @@ Menagerie, see [CONTRIBUTING](CONTRIBUTING.md).
 | Name | Maker | DoFs    | License | MJX |
 |------|-------|---------|---------|-----|
 | Google Robot | Google DeepMind | 9 | [Apache-2.0](google_robot/LICENSE) |✖️|
-| Stanford TidyBot | Hello Robot | 11 | [MIT](stanford_tidybot/LICENSE) |✖️|
+| Stanford TidyBot | Stanford University | 11 | [MIT](stanford_tidybot/LICENSE) |✖️|
 | Stretch 2 | Hello Robot | 17 | [Clear BSD](hello_robot_stretch/LICENSE) |✖️|
 | Stretch 3 | Hello Robot | 17 | [Apache-2.0](hello_robot_stretch_3/LICENSE) |✖️|
 | PAL Tiago | PAL Robotics | 12 | [Apache-2.0](pal_tiago/LICENSE) |✖️|
