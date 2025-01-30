@@ -1,0 +1,23 @@
+<mujoco>
+  <mesh file="LINK_7.obj" />
+  <mesh file="LINK_7_collision_0.obj" />
+  <mesh file="LINK_7_collision_1.obj" />
+  <mesh file="LINK_7_collision_2.obj" />
+  <mesh file="LINK_7_collision_3.obj" />
+  <mesh file="LINK_7_collision_4.obj" />
+  <mesh file="LINK_7_collision_5.obj" />
+  <mesh file="LINK_7_collision_6.obj" />
+  <mesh file="LINK_7_collision_7.obj" />
+  <mesh file="LINK_7_collision_8.obj" />
+  <mesh file="LINK_7_collision_9.obj" />
+  <mesh file="LINK_7_collision_10.obj" />
+  <mesh file="LINK_7_collision_11.obj" />
+  <mesh file="LINK_7_collision_12.obj" />
+  <mesh file="LINK_7_collision_13.obj" />
+  <mesh file="LINK_7_collision_14.obj" />
+  <mesh file="LINK_7_collision_15.obj" />
+  <mesh file="LINK_7_collision_16.obj" />
+  <mesh file="LINK_7_collision_17.obj" />
+  <mesh file="LINK_7_collision_18.obj" />
+  <mesh file="LINK_7_collision_19.obj" />
+</mujoco>

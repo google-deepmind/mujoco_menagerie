@@ -1,0 +1,4 @@
+<mujoco>
+  <geom mesh="PAN_TILT_3_0" material="65,65,65" class="visual" />
+  <geom mesh="PAN_TILT_3_1" material="69,69,69" class="visual" />
+</mujoco>

@@ -1,0 +1,237 @@
+<mujoco model="PAN_TILT_2">
+  <default>
+    <default class="visual">
+      <geom group="2" type="mesh" contype="0" conaffinity="0"/>
+    </default>
+    <default class="collision">
+      <geom group="3" type="mesh"/>
+    </default>
+  </default>
+  <asset>
+    <material name="69,69,69" specular="1.0" shininess="1.0" rgba="0.270588 0.270588 0.270588 1.000000"/>
+    <material name="191,191,191" specular="0.0" shininess="0.3" rgba="0.749020 0.749020 0.749020 1.000000"/>
+    <material name="69,69,69_1" specular="0.0" shininess="1.0" rgba="0.270588 0.270588 0.270588 1.000000"/>
+    <mesh file="PAN_TILT_2_0.obj"/>
+    <mesh file="PAN_TILT_2_1.obj"/>
+    <mesh file="PAN_TILT_2_2.obj"/>
+    <mesh file="PAN_TILT_2_collision_0.obj"/>
+    <mesh file="PAN_TILT_2_collision_1.obj"/>
+    <mesh file="PAN_TILT_2_collision_2.obj"/>
+    <mesh file="PAN_TILT_2_collision_3.obj"/>
+    <mesh file="PAN_TILT_2_collision_4.obj"/>
+    <mesh file="PAN_TILT_2_collision_5.obj"/>
+    <mesh file="PAN_TILT_2_collision_6.obj"/>
+    <mesh file="PAN_TILT_2_collision_7.obj"/>
+    <mesh file="PAN_TILT_2_collision_8.obj"/>
+    <mesh file="PAN_TILT_2_collision_9.obj"/>
+    <mesh file="PAN_TILT_2_collision_10.obj"/>
+    <mesh file="PAN_TILT_2_collision_11.obj"/>
+    <mesh file="PAN_TILT_2_collision_12.obj"/>
+    <mesh file="PAN_TILT_2_collision_13.obj"/>
+    <mesh file="PAN_TILT_2_collision_14.obj"/>
+    <mesh file="PAN_TILT_2_collision_15.obj"/>
+    <mesh file="PAN_TILT_2_collision_16.obj"/>
+    <mesh file="PAN_TILT_2_collision_17.obj"/>
+    <mesh file="PAN_TILT_2_collision_18.obj"/>
+    <mesh file="PAN_TILT_2_collision_19.obj"/>
+    <mesh file="PAN_TILT_2_collision_20.obj"/>
+    <mesh file="PAN_TILT_2_collision_21.obj"/>
+    <mesh file="PAN_TILT_2_collision_22.obj"/>
+    <mesh file="PAN_TILT_2_collision_23.obj"/>
+    <mesh file="PAN_TILT_2_collision_24.obj"/>
+    <mesh file="PAN_TILT_2_collision_25.obj"/>
+    <mesh file="PAN_TILT_2_collision_26.obj"/>
+    <mesh file="PAN_TILT_2_collision_27.obj"/>
+    <mesh file="PAN_TILT_2_collision_28.obj"/>
+    <mesh file="PAN_TILT_2_collision_29.obj"/>
+    <mesh file="PAN_TILT_2_collision_30.obj"/>
+    <mesh file="PAN_TILT_2_collision_31.obj"/>
+    <mesh file="PAN_TILT_2_collision_32.obj"/>
+    <mesh file="PAN_TILT_2_collision_33.obj"/>
+    <mesh file="PAN_TILT_2_collision_34.obj"/>
+    <mesh file="PAN_TILT_2_collision_35.obj"/>
+    <mesh file="PAN_TILT_2_collision_36.obj"/>
+    <mesh file="PAN_TILT_2_collision_37.obj"/>
+    <mesh file="PAN_TILT_2_collision_38.obj"/>
+    <mesh file="PAN_TILT_2_collision_39.obj"/>
+    <mesh file="PAN_TILT_2_collision_40.obj"/>
+    <mesh file="PAN_TILT_2_collision_41.obj"/>
+    <mesh file="PAN_TILT_2_collision_42.obj"/>
+    <mesh file="PAN_TILT_2_collision_43.obj"/>
+    <mesh file="PAN_TILT_2_collision_44.obj"/>
+    <mesh file="PAN_TILT_2_collision_45.obj"/>
+    <mesh file="PAN_TILT_2_collision_46.obj"/>
+    <mesh file="PAN_TILT_2_collision_47.obj"/>
+    <mesh file="PAN_TILT_2_collision_48.obj"/>
+    <mesh file="PAN_TILT_2_collision_49.obj"/>
+    <mesh file="PAN_TILT_2_collision_50.obj"/>
+    <mesh file="PAN_TILT_2_collision_51.obj"/>
+    <mesh file="PAN_TILT_2_collision_52.obj"/>
+    <mesh file="PAN_TILT_2_collision_53.obj"/>
+    <mesh file="PAN_TILT_2_collision_54.obj"/>
+    <mesh file="PAN_TILT_2_collision_55.obj"/>
+    <mesh file="PAN_TILT_2_collision_56.obj"/>
+    <mesh file="PAN_TILT_2_collision_57.obj"/>
+    <mesh file="PAN_TILT_2_collision_58.obj"/>
+    <mesh file="PAN_TILT_2_collision_59.obj"/>
+    <mesh file="PAN_TILT_2_collision_60.obj"/>
+    <mesh file="PAN_TILT_2_collision_61.obj"/>
+    <mesh file="PAN_TILT_2_collision_62.obj"/>
+    <mesh file="PAN_TILT_2_collision_63.obj"/>
+    <mesh file="PAN_TILT_2_collision_64.obj"/>
+    <mesh file="PAN_TILT_2_collision_65.obj"/>
+    <mesh file="PAN_TILT_2_collision_66.obj"/>
+    <mesh file="PAN_TILT_2_collision_67.obj"/>
+    <mesh file="PAN_TILT_2_collision_68.obj"/>
+    <mesh file="PAN_TILT_2_collision_69.obj"/>
+    <mesh file="PAN_TILT_2_collision_70.obj"/>
+    <mesh file="PAN_TILT_2_collision_71.obj"/>
+    <mesh file="PAN_TILT_2_collision_72.obj"/>
+    <mesh file="PAN_TILT_2_collision_73.obj"/>
+    <mesh file="PAN_TILT_2_collision_74.obj"/>
+    <mesh file="PAN_TILT_2_collision_75.obj"/>
+    <mesh file="PAN_TILT_2_collision_76.obj"/>
+    <mesh file="PAN_TILT_2_collision_77.obj"/>
+    <mesh file="PAN_TILT_2_collision_78.obj"/>
+    <mesh file="PAN_TILT_2_collision_79.obj"/>
+    <mesh file="PAN_TILT_2_collision_80.obj"/>
+    <mesh file="PAN_TILT_2_collision_81.obj"/>
+    <mesh file="PAN_TILT_2_collision_82.obj"/>
+    <mesh file="PAN_TILT_2_collision_83.obj"/>
+    <mesh file="PAN_TILT_2_collision_84.obj"/>
+    <mesh file="PAN_TILT_2_collision_85.obj"/>
+    <mesh file="PAN_TILT_2_collision_86.obj"/>
+    <mesh file="PAN_TILT_2_collision_87.obj"/>
+    <mesh file="PAN_TILT_2_collision_88.obj"/>
+    <mesh file="PAN_TILT_2_collision_89.obj"/>
+    <mesh file="PAN_TILT_2_collision_90.obj"/>
+    <mesh file="PAN_TILT_2_collision_91.obj"/>
+    <mesh file="PAN_TILT_2_collision_92.obj"/>
+    <mesh file="PAN_TILT_2_collision_93.obj"/>
+    <mesh file="PAN_TILT_2_collision_94.obj"/>
+    <mesh file="PAN_TILT_2_collision_95.obj"/>
+    <mesh file="PAN_TILT_2_collision_96.obj"/>
+    <mesh file="PAN_TILT_2_collision_97.obj"/>
+    <mesh file="PAN_TILT_2_collision_98.obj"/>
+    <mesh file="PAN_TILT_2_collision_99.obj"/>
+    <mesh file="PAN_TILT_2_collision_100.obj"/>
+    <mesh file="PAN_TILT_2_collision_101.obj"/>
+    <mesh file="PAN_TILT_2_collision_102.obj"/>
+    <mesh file="PAN_TILT_2_collision_103.obj"/>
+    <mesh file="PAN_TILT_2_collision_104.obj"/>
+    <mesh file="PAN_TILT_2_collision_105.obj"/>
+  </asset>
+  <worldbody>
+    <body name="PAN_TILT_2">
+      <geom mesh="PAN_TILT_2_0" material="69,69,69_1" class="visual"/>
+      <geom mesh="PAN_TILT_2_1" material="191,191,191" class="visual"/>
+      <geom mesh="PAN_TILT_2_2" material="69,69,69" class="visual"/>
+      <geom mesh="PAN_TILT_2_collision_0" rgba="0.192340482108997 0.85398466606585 0.3963477138900018 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_1" rgba="0.7646164184216279 0.15499584229307406 0.4963710179359 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_2" rgba="0.5636678326949179 0.3615285406796864 0.03743122286756251 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_3" rgba="0.591084990021212 0.9700888938677554 0.2894866168098478 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_4" rgba="0.24687673612003302 0.37861554853780965 0.3289620137807804 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_5" rgba="0.2888441767950355 0.5668125132386765 0.21806176239381836 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_6" rgba="0.8600631421572127 0.31388660003321667 0.5117499987397004 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_7" rgba="0.840611247726603 0.5909516392150839 0.32711020504478083 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_8" rgba="0.7023674696649425 0.9194849798953686 0.08281674244993964 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_9" rgba="0.8933964338932385 0.18096650301595651 0.07533741679528638 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_10" rgba="0.5654735478357426 0.4363692515038171 0.9424347982518867 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_11" rgba="0.7924090439361012 0.1695341735822803 0.17719778525100727 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_12" rgba="0.7249400288966634 0.37321373405410796 0.35688331058807954 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_13" rgba="0.4443263321125499 0.6482231180586192 0.4035729760219886 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_14" rgba="0.8877016804450314 0.00031933944608064646 0.4385571247622585 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_15" rgba="0.8628589763839117 0.11962406863066022 0.49355628578150645 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_16" rgba="0.7024746168057445 0.372765663040736 0.8053841050333216 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_17" rgba="0.3741024079239692 0.4382172126289541 0.17384681748748143 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_18" rgba="0.5146986686042059 0.863276421464659 0.16451437139972425 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_19" rgba="0.9316148308759699 0.596863861386991 0.9288327991496736 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_20" rgba="0.37145690269560694 0.24387726545249488 0.34474147357498286 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_21" rgba="0.9818779700399674 0.3622433653490065 0.32454016536807195 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_22" rgba="0.974224399980813 0.7724847844092917 0.35354211695767634 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_23" rgba="0.6374060287500979 0.33418408122879917 0.9962192456658286 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_24" rgba="0.6304979665763253 0.9009665534757599 0.4146407366821522 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_25" rgba="0.6770339000190944 0.12555541440940554 0.08466286026562742 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_26" rgba="0.9544719458963935 0.6691628506651042 0.10752317823808188 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_27" rgba="0.706988744166994 0.12428867620698514 0.15614368823916758 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_28" rgba="0.6426888650195373 0.8849739302310565 0.20691466883211107 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_29" rgba="0.43985374992376336 0.5571141838811698 0.7570848778925727 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_30" rgba="0.3246498750684955 0.5873122558094928 0.32730396170575893 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_31" rgba="0.3043658570501736 0.11302360526412547 0.9969275557568247 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_32" rgba="0.9411997968253744 0.00041898327723211004 0.03089174699934194 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_33" rgba="0.7150387146822332 0.8705845550675357 0.3230863941731231 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_34" rgba="0.6981912355635129 0.6063767415663622 0.24436001439013055 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_35" rgba="0.11238977085572344 0.35949214820387376 0.41304092813300153 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_36" rgba="0.6815882871831189 0.6908850712194065 0.563736351039715 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_37" rgba="0.6920314754050532 0.8839762179197985 0.5439080639099381 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_38" rgba="0.44070833409688515 0.8418413668232306 0.0513104632950796 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_39" rgba="0.6410246376375732 0.8829603787643131 0.8380040983147501 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_40" rgba="0.12215049337394623 0.712308992389249 0.6313665870503179 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_41" rgba="0.566584675006089 0.47912833529573917 0.46861922234987874 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_42" rgba="0.40912125864530824 0.8141116360662988 0.6960845193642821 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_43" rgba="0.2942395892688331 0.2712147690065191 0.8470925138334673 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_44" rgba="0.7376101599819181 0.7424654158121852 0.26562012380116495 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_45" rgba="0.07161489263290799 0.09831689064722737 0.8581279072612961 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_46" rgba="0.7446871203118222 0.09578449082309093 0.10588651638337554 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_47" rgba="0.2766284671339684 0.2463339466865847 0.9995806379679611 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_48" rgba="0.16562194293228016 0.7769509620723375 0.22728597915832705 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_49" rgba="0.4896336502257803 0.7067166019882626 0.34617710821092984 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_50" rgba="0.024762276573650044 0.1876829215286071 0.7578449055499242 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_51" rgba="0.04439511431080245 0.4287270732780323 0.503870262947557 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_52" rgba="0.6701447466576065 0.4957135380058262 0.6358210147727366 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_53" rgba="0.054433000217083416 0.24276850874335176 0.7480849189302188 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_54" rgba="0.868859957562239 0.4306409723710649 0.7817887786247723 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_55" rgba="0.41225030410267427 0.028163730629908512 0.3037473951255749 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_56" rgba="0.249263818621984 0.6836535401821998 0.45749443807447865 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_57" rgba="0.7816273361750932 0.8578606579303308 0.7471595129748071 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_58" rgba="0.12129334077366771 0.18054569873063087 0.639927683291923 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_59" rgba="0.22084722881394347 0.9260897815220077 0.48375638930096265 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_60" rgba="0.6271242158319642 0.23369379085022723 0.021133725645847923 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_61" rgba="0.6149235612722119 0.8638334490507463 0.025075335737163362 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_62" rgba="0.8524907111047746 0.756162201880524 0.29601701103423084 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_63" rgba="0.29864859395723986 0.8575751983026455 0.9016633886508972 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_64" rgba="0.5355875847581221 0.6396275800405765 0.3633959882907709 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_65" rgba="0.038163748347214144 0.8626093054730525 0.5411510647801812 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_66" rgba="0.05233665772943741 0.959783453404033 0.2502399509742723 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_67" rgba="0.4352295528406108 0.14050185384100222 0.21223940912249462 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_68" rgba="0.15695005505337467 0.03844311996250793 0.6567093259179269 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_69" rgba="0.024448213234039007 0.34328119236352583 0.5599077108065771 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_70" rgba="0.6700845367295926 0.1804866508523819 0.7362750789582608 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_71" rgba="0.39664480958854553 0.6592300905051055 0.6173607137185957 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_72" rgba="0.4874224929907057 0.7243468558282831 0.4112679470055415 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_73" rgba="0.9977703926918089 0.3563570463736956 0.28657993374767476 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_74" rgba="0.3285517155579445 0.37351922107699476 0.5415963874666994 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_75" rgba="0.009880953498260792 0.2918463980137187 0.9066357042526803 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_76" rgba="0.8934923600166956 0.2610899474492526 0.8161447098257173 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_77" rgba="0.6630916747456616 0.46572744512209263 0.05262855568079294 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_78" rgba="0.7246893849614682 0.2546972011380402 0.5775427492568977 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_79" rgba="0.5624567980919952 0.6379935802706598 0.6102420307661931 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_80" rgba="0.7012275763720757 0.19469438339705392 0.9715050257800855 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_81" rgba="0.3884816352906073 0.9166563967395586 0.19915724596799622 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_82" rgba="0.04807446964200213 0.2247046122662396 0.5680177094427208 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_83" rgba="0.4118590750510759 0.24649112833886566 0.09173742577825184 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_84" rgba="0.6577700991977136 0.6117402427749796 0.2380673918181342 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_85" rgba="0.4653529729583029 0.37947032009735804 0.5541488230943227 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_86" rgba="0.4125100462806427 0.13685471730262255 0.8205774924185311 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_87" rgba="0.5002412112744713 0.7984704657747183 0.6349607633659848 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_88" rgba="0.6816543515473491 0.9096299607045307 0.713376318420788 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_89" rgba="0.7777919733878531 0.09631889968691176 0.042546459721857 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_90" rgba="0.015828714296024504 0.5655003457316843 0.9120077085965503 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_91" rgba="0.15513596846976574 0.050268902908883195 0.22822421891867262 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_92" rgba="0.2554485829778056 0.14548735885577468 0.0077733079473757405 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_93" rgba="0.3339752422541121 0.8987045259734481 0.0565559895413732 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_94" rgba="0.9079641682154553 0.5721204098270212 0.29760542529627865 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_95" rgba="0.9113927378586314 0.9603942680860004 0.12779978890847132 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_96" rgba="0.2630106566032544 0.7746718468903828 0.5504598536996205 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_97" rgba="0.3737997314435091 0.2887999428267922 0.3630617081372617 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_98" rgba="0.922264947293804 0.19820225300158056 0.16649415029020587 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_99" rgba="0.06028819992682288 0.4739049368162275 0.0753782265716827 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_100" rgba="0.49906240846010286 0.6703342359187112 0.7915808495237511 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_101" rgba="0.9819853704402841 0.37823257324353443 0.5465931236451601 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_102" rgba="0.5590297335351715 0.8675982823504652 0.7794462406084532 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_103" rgba="0.46991655718277836 0.6810176429669934 0.9672778551776858 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_104" rgba="0.5409092728856884 0.913060059280292 0.4339223830119342 1" class="collision"/>
+      <geom mesh="PAN_TILT_2_collision_105" rgba="0.4630045037807168 0.3300917743143309 0.0047837727040974665 1" class="collision"/>
+    </body>
+  </worldbody>
+</mujoco>
