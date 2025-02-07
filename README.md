@@ -231,6 +231,7 @@ Menagerie, see [CONTRIBUTING](CONTRIBUTING.md).
 |------|-------|---------|---------|-----|
 | Apptronik Apollo | Apptronik | 32 | [Apache-2.0](apptronik_apollo/LICENSE) |✔️|
 | Berkeley Humanoid | Hybrid Robotics | 12 | [BSD-3-Clause](berkeley_humanoid/LICENSE) |✖️|
+| Booster T1 | Booster Robotics | 23 | [Apache-2.0](booster_t1/LICENSE) |✖️|
 | Robotis OP3 | Robotis | 20 | [Apache-2.0](robotis_op3/LICENSE) |✖️|
 | Unitree G1 | Unitree Robotics | 37 | [BSD-3-Clause](unitree_g1/LICENSE) |✖️|
 | Unitree H1 | Unitree Robotics | 19 | [BSD-3-Clause](unitree_h1/LICENSE) |✖️|
