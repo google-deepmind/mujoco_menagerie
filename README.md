@@ -30,9 +30,9 @@ well right out of the gate.
 |<img src="assets/unitree_z1-z1.png" width=100>|<img src="assets/aloha-aloha.png" width=100>|<img src="assets/robotiq_2f85-2f85.png" width=100>|<img src="assets/franka_emika_panda-hand.png" width=100>|<img src="assets/ufactory_xarm7-hand.png" width=100>|
 |<img src="assets/wonik_allegro-left_hand.png" width=100>|<img src="assets/shadow_hand-left_hand.png" width=100>|<img src="assets/leap_hand-left_hand.png" width=100>|<img src="assets/shadow_dexee-shadow_dexee.png" width=100>|<img src="assets/google_robot-robot.png" width=100>|
 |<img src="assets/hello_robot_stretch-stretch.png" width=100>|<img src="assets/unitree_a1-a1.png" width=100>|<img src="assets/anybotics_anymal_b-anymal_b.png" width=100>|<img src="assets/anybotics_anymal_c-anymal_c.png" width=100>|<img src="assets/google_barkour_v0-barkour_v0.png" width=100>|
-|<img src="assets/google_barkour_vb-barkour_vb.png" width=100>|<img src="assets/unitree_go1-go1.png" width=100>|<img src="assets/unitree_go2-go2.png" width=100>|<img src="assets/boston_dynamics_spot-spot_arm.png" width=100>|<img src="assets/apptronik_apollo-apollo.png" width=100>|<img src="assets/agility_cassie-cassie.png" width=100>|
-|<img src="assets/unitree_g1-g1.png" width=100>|<img src="assets/unitree_h1-h1.png" width=100>|<img src="assets/robotis_op3-op3.png" width=100>|<img src="assets/pal_talos-talos.png" width=100>|<img src="assets/bitcraze_crazyflie_2-cf2.png" width=100>|
-|<img src="assets/skydio_x2-x2.png" width=100>|<img src="assets/flybody-fruitfly.png" width=100>|<img src="assets/realsense_d435i-d435i.png" width=100>|||
+|<img src="assets/google_barkour_vb-barkour_vb.png" width=100>|<img src="assets/unitree_go1-go1.png" width=100>|<img src="assets/unitree_go2-go2.png" width=100>|<img src="assets/boston_dynamics_spot-spot_arm.png" width=100>|<img src="assets/agility_cassie-cassie.png" width=100>|
+|<img src="assets/unitree_g1-g1.png" width=100>|<img src="assets/unitree_h1-h1.png" width=100>|<img src="assets/robotis_op3-op3.png" width=100>|<img src="assets/booster_t1-t1.png" width=100>|<img src="assets/pal_talos-talos.png" width=100>|
+|<img src="assets/bitcraze_crazyflie_2-cf2.png" width=100>|<img src="assets/skydio_x2-x2.png" width=100>|<img src="assets/flybody-fruitfly.png" width=100>|<img src="assets/realsense_d435i-d435i.png" width=100>||
 
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)

@@ -89,6 +89,7 @@ NAME_MAP = {
     "wonik_allegro/left_hand": "left allegro",
     "shadow_hand/left_hand": "left shadow",
     "kinova_gen3/gen3": "gen3",
+    "booster_t1/t1": "t1",
 }
 
 MODEL_MAP = {
@@ -130,6 +131,7 @@ MODEL_MAP = {
     "pal_talos/talos": ModelType.HUMANOID,
     "leap_hand/left_hand": ModelType.END_EFFECTOR,
     "kinova_gen3/gen3": ModelType.ARM,
+    "booster_t1/t1": ModelType.HUMANOID,
 }
 
 DEFAULT_FOV = 40
@@ -317,6 +319,11 @@ CAMERA_MAP = {
     "kinova_gen3/gen3": dict(
         pos="0.252 -1.047 0.521",
         xyaxes="0.988 0.156 -0.000 -0.024 0.153 0.988",
+    ),
+    "booster_t1/t1": dict(
+        pos="1.499 -0.777 1.2",
+        xyaxes="0.453 0.892 0.000 -0.295 0.150 0.944",
+        fovy=DEFAULT_FOV,
     ),
 }
 
