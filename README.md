@@ -24,6 +24,8 @@ powerful simulator like MuJoCo with many modeling options, it is easy to create
 provide the community with a curated library of well-designed models that work
 well right out of the gate.
 
+### Gallery
+
 |<img src="assets/franka_fr3-fr3.png" width=100>|<img src="assets/kinova_gen3-gen3.png" width=100>|<img src="assets/kuka_iiwa_14-iiwa14.png" width=100>|<img src="assets/ufactory_lite6-lite6.png" width=100>|<img src="assets/franka_emika_panda-panda.png" width=100>|
 | :---: | :---: | :---: | :---: | :---: |
 |<img src="assets/rethink_robotics_sawyer-sawyer.png" width=100>|<img src="assets/universal_robots_ur10e-ur10e.png" width=100>|<img src="assets/universal_robots_ur5e-ur5e.png" width=100>|<img src="assets/trossen_vx300s-vx300s.png" width=100>|<img src="assets/ufactory_xarm7-xarm7.png" width=100>|
