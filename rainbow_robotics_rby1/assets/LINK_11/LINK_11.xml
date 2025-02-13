@@ -1,0 +1,57 @@
+<mujoco model="LINK_11">
+  <default>
+    <default class="visual">
+      <geom group="2" type="mesh" contype="0" conaffinity="0"/>
+    </default>
+    <default class="collision">
+      <geom group="3" type="mesh"/>
+    </default>
+  </default>
+  <asset>
+    <material name="254,254,255" specular="0.9973853333333333" shininess="1.0" rgba="0.996078 0.996078 1.000000 1.000000"/>
+    <mesh file="LINK_11.obj"/>
+    <mesh file="LINK_11_collision_0.obj"/>
+    <mesh file="LINK_11_collision_1.obj"/>
+    <mesh file="LINK_11_collision_2.obj"/>
+    <mesh file="LINK_11_collision_3.obj"/>
+    <mesh file="LINK_11_collision_4.obj"/>
+    <mesh file="LINK_11_collision_5.obj"/>
+    <mesh file="LINK_11_collision_6.obj"/>
+    <mesh file="LINK_11_collision_7.obj"/>
+    <mesh file="LINK_11_collision_8.obj"/>
+    <mesh file="LINK_11_collision_9.obj"/>
+    <mesh file="LINK_11_collision_10.obj"/>
+    <mesh file="LINK_11_collision_11.obj"/>
+    <mesh file="LINK_11_collision_12.obj"/>
+    <mesh file="LINK_11_collision_13.obj"/>
+    <mesh file="LINK_11_collision_14.obj"/>
+    <mesh file="LINK_11_collision_15.obj"/>
+    <mesh file="LINK_11_collision_16.obj"/>
+    <mesh file="LINK_11_collision_17.obj"/>
+    <mesh file="LINK_11_collision_18.obj"/>
+  </asset>
+  <worldbody>
+    <body name="LINK_11">
+      <geom material="254,254,255" mesh="LINK_11" class="visual"/>
+      <geom mesh="LINK_11_collision_0" rgba="0.3650433594455934 0.14260814555919976 0.025563781666707697 1" class="collision"/>
+      <geom mesh="LINK_11_collision_1" rgba="0.14817141408679746 0.06929830813236981 0.27920269834043254 1" class="collision"/>
+      <geom mesh="LINK_11_collision_2" rgba="0.3083194518976746 0.07525146136484373 0.033372092712836254 1" class="collision"/>
+      <geom mesh="LINK_11_collision_3" rgba="0.8094592841704364 0.29343898578411887 0.8956217606991858 1" class="collision"/>
+      <geom mesh="LINK_11_collision_4" rgba="0.04751401479708384 0.6910114911491307 0.8568737606222868 1" class="collision"/>
+      <geom mesh="LINK_11_collision_5" rgba="0.48143237393754756 0.06660852542754081 0.11148973765767667 1" class="collision"/>
+      <geom mesh="LINK_11_collision_6" rgba="0.9150148334870353 0.48176096924411027 0.7752454481830191 1" class="collision"/>
+      <geom mesh="LINK_11_collision_7" rgba="0.006872108318253911 0.24283141221010562 0.9363073369186977 1" class="collision"/>
+      <geom mesh="LINK_11_collision_8" rgba="0.9600940601374168 0.8456754216266622 0.9246339957391166 1" class="collision"/>
+      <geom mesh="LINK_11_collision_9" rgba="0.5353543736111613 0.340400187499484 0.8559684740150273 1" class="collision"/>
+      <geom mesh="LINK_11_collision_10" rgba="0.45575281034520043 0.2926010891181713 0.35940259433054267 1" class="collision"/>
+      <geom mesh="LINK_11_collision_11" rgba="0.7580107225186881 0.03943158458336726 0.8322280637647608 1" class="collision"/>
+      <geom mesh="LINK_11_collision_12" rgba="0.3919467542560151 0.7625319421036044 0.5443170286107146 1" class="collision"/>
+      <geom mesh="LINK_11_collision_13" rgba="0.040012335972541724 0.36904281223707824 0.23803220354690435 1" class="collision"/>
+      <geom mesh="LINK_11_collision_14" rgba="0.32096727694589067 0.20692542037642858 0.455443750025595 1" class="collision"/>
+      <geom mesh="LINK_11_collision_15" rgba="0.49378792576537145 0.4639959868564586 0.8151817212388759 1" class="collision"/>
+      <geom mesh="LINK_11_collision_16" rgba="0.3546863696632184 0.851164111976249 0.541197754756914 1" class="collision"/>
+      <geom mesh="LINK_11_collision_17" rgba="0.5739167587485502 0.8305507109573846 0.7238356997904114 1" class="collision"/>
+      <geom mesh="LINK_11_collision_18" rgba="0.03344319167342302 0.45319035854857337 0.38572529424689084 1" class="collision"/>
+    </body>
+  </worldbody>
+</mujoco>

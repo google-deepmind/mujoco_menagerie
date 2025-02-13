@@ -1,0 +1,9 @@
+<mujoco>
+  <geom mesh="base_0" material="191,191,191" class="visual"/>
+  <geom mesh="base_1" material="237,255,168" class="visual"/>
+  <geom mesh="base_2" material="190,188,186" class="visual"/>
+  <geom mesh="base_3" material="25,25,25" class="visual"/>
+  <geom type="box" size="0.35 0.23 0.045" pos="0 0 0.086" quat="0 0 0 1" rgba="0.2 0.8 0.2 1" class="collision"/>
+  <geom mesh="base_collision_5" rgba="0.43627779201375916 0.7057203439034861 0.5192552047223237 1" class="collision"/>
+  <geom mesh="base_collision_15" rgba="0.940236176999698 0.697378357626453 0.5016414552325157 1" class="collision"/>
+</mujoco>
