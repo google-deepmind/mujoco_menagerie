@@ -1,0 +1,21 @@
+<mujoco model="piper_scene">
+  <include file="piper.xml" />
+  <option integrator="implicitfast" impratio="1" />
+
+  <visual>
+    <headlight diffuse="0.6 0.6 0.6" ambient="0.1 0.1 0.1" specular="0 0 0" />
+    <global azimuth="120" elevation="-20" />
+  </visual>
+
+  <asset>
+    <texture name="grid" type="2d" builtin="checker" rgb1=".2 .3 .4" rgb2=".1 0.15 0.2" width="512" height="512"
+      mark="cross" markrgb=".8 .8 .8" />
+    <material name="grid" texture="grid" texrepeat="1 1" texuniform="true" />
+  </asset>
+
+  <worldbody>
+    <light pos="0 0 1.5" directional="true" />
+    <light pos="0 -1 0" directional="true" />
+    <geom name="floor" size="1 1 0.01" type="plane" material="grid" />
+  </worldbody>
+</mujoco>
