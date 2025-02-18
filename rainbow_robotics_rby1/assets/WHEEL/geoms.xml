@@ -1,0 +1,41 @@
+<mujoco>
+  <geom material="235,235,235" mesh="WHEEL" class="visual"/>
+  <geom mesh="WHEEL_collision_0" rgba="0.5752187170342844 0.4501427622070635 0.12177512513826183 1" class="collision"/>
+  <geom mesh="WHEEL_collision_1" rgba="0.2802369936745065 0.3619661323878687 0.038931433172797125 1" class="collision"/>
+  <geom mesh="WHEEL_collision_2" rgba="0.5570103949654748 0.3617765508907155 0.4031056238023848 1" class="collision"/>
+  <geom mesh="WHEEL_collision_3" rgba="0.5768924522206648 0.5536378767309811 0.4131503705667481 1" class="collision"/>
+  <geom mesh="WHEEL_collision_4" rgba="0.5563886064152684 0.6140843445986883 0.7869472292305242 1" class="collision"/>
+  <geom mesh="WHEEL_collision_5" rgba="0.13640243871753288 0.9817670218312823 0.5247771492711631 1" class="collision"/>
+  <geom mesh="WHEEL_collision_6" rgba="0.01650705682319975 0.5317726395279694 0.08798672350961168 1" class="collision"/>
+  <geom mesh="WHEEL_collision_7" rgba="0.2880127026012437 0.895121353898235 0.5529223246892576 1" class="collision"/>
+  <geom mesh="WHEEL_collision_8" rgba="0.020305744232274825 0.44212135162650057 0.9949817704723959 1" class="collision"/>
+  <geom mesh="WHEEL_collision_9" rgba="0.8920978350864924 0.4473472567960024 0.5359875489715002 1" class="collision"/>
+  <geom mesh="WHEEL_collision_10" rgba="0.1614412590867098 0.7429032643820003 0.6468205564464226 1" class="collision"/>
+  <geom mesh="WHEEL_collision_11" rgba="0.5844367204630354 0.9018025895327842 0.5261903576823745 1" class="collision"/>
+  <geom mesh="WHEEL_collision_12" rgba="0.08015165918396105 0.8171710767486843 0.9946358955710813 1" class="collision"/>
+  <geom mesh="WHEEL_collision_13" rgba="0.6993010739738718 0.8332833332239001 0.42025221459219464 1" class="collision"/>
+  <geom mesh="WHEEL_collision_14" rgba="0.6194678243741225 0.5288363513333973 0.7001117695434285 1" class="collision"/>
+  <geom mesh="WHEEL_collision_15" rgba="0.8062619374280119 0.9775277942901578 0.8731561703048297 1" class="collision"/>
+  <geom mesh="WHEEL_collision_16" rgba="0.2364819359182867 0.8410130920535115 0.35883055318263013 1" class="collision"/>
+  <geom mesh="WHEEL_collision_17" rgba="0.7857844696863963 0.019432158788340814 0.5726079175282008 1" class="collision"/>
+  <geom mesh="WHEEL_collision_18" rgba="0.7759216437691195 0.5195690001752841 0.43686450548215916 1" class="collision"/>
+  <geom mesh="WHEEL_collision_19" rgba="0.16906697550008032 0.1241698294340624 0.5003842810096816 1" class="collision"/>
+  <geom mesh="WHEEL_collision_20" rgba="0.043757310799325655 0.9451295947747476 0.922655571660068 1" class="collision"/>
+  <geom mesh="WHEEL_collision_21" rgba="0.18299778218472762 0.7240784270571299 0.6436132539078334 1" class="collision"/>
+  <geom mesh="WHEEL_collision_22" rgba="0.44966968212992664 0.7124041629541117 0.24465496037949142 1" class="collision"/>
+  <geom mesh="WHEEL_collision_23" rgba="0.11395437716987245 0.37523741605175154 0.1745621504638485 1" class="collision"/>
+  <geom mesh="WHEEL_collision_24" rgba="0.044915222237898456 0.8690149055367147 0.07307341765061659 1" class="collision"/>
+  <geom mesh="WHEEL_collision_25" rgba="0.389513409551009 0.18320704951501643 0.5325037831620598 1" class="collision"/>
+  <geom mesh="WHEEL_collision_26" rgba="0.9855387080548003 0.9273777311224124 0.24653936683931166 1" class="collision"/>
+  <geom mesh="WHEEL_collision_27" rgba="0.1892531599875511 0.11988141527183327 0.48551105194540733 1" class="collision"/>
+  <geom mesh="WHEEL_collision_28" rgba="0.4288801310790048 0.8072466860461786 0.8698393260390297 1" class="collision"/>
+  <geom mesh="WHEEL_collision_29" rgba="0.9102263252554305 0.7857569757969216 0.6077150482744098 1" class="collision"/>
+  <geom mesh="WHEEL_collision_30" rgba="0.6472111119887154 0.8512320119940485 0.2796834431245072 1" class="collision"/>
+  <geom mesh="WHEEL_collision_31" rgba="0.4059547280625133 0.20066963125819826 0.13882344209693254 1" class="collision"/>
+  <geom mesh="WHEEL_collision_32" rgba="0.9480939198219537 0.05578415663641856 0.4641937232145128 1" class="collision"/>
+  <geom mesh="WHEEL_collision_33" rgba="0.42265309716460375 0.2798256358827089 0.32806459485326933 1" class="collision"/>
+  <geom mesh="WHEEL_collision_34" rgba="0.7520281542050066 0.779967829636912 0.5960581064343313 1" class="collision"/>
+  <geom mesh="WHEEL_collision_35" rgba="0.10395062137006339 0.3180495559575015 0.3938632144411477 1" class="collision"/>
+  <geom mesh="WHEEL_collision_36" rgba="0.6665173143845771 0.27839291587095105 0.44234806730119736 1" class="collision"/>
+  <geom mesh="WHEEL_collision_37" rgba="0.6815228336973594 0.7287167517691782 0.9800948827855603 1" class="collision"/>
+</mujoco>

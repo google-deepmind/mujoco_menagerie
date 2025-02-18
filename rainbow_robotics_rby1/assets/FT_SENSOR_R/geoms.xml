@@ -1,0 +1,13 @@
+<mujoco>
+  <geom mesh="FT_SENSOR_R_0" material="254,254,255" class="visual" />
+  <geom mesh="FT_SENSOR_R_1" material="65,55,50" class="visual" />
+  <geom mesh="FT_SENSOR_R_2" material="80,80,80" class="visual" />
+  <geom mesh="FT_SENSOR_R_3" material="244,244,244" class="visual" />
+  <geom mesh="FT_SENSOR_R_4" material="191,191,191" class="visual" />
+  <geom mesh="FT_SENSOR_R_5" material="216,214,214" class="visual" />
+  <geom mesh="FT_SENSOR_R_6" material="79,79,79" class="visual" />
+  <geom mesh="FT_SENSOR_R_7" material="192,192,192" class="visual" />
+  <geom mesh="FT_SENSOR_R_8" material="163,163,175" class="visual" />
+  <geom mesh="FT_SENSOR_R_9" material="242,236,238" class="visual" />
+  <geom mesh="FT_SENSOR_R_10" material="69,69,69" class="visual" />
+</mujoco>

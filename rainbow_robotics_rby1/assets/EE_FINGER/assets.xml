@@ -1,0 +1,9 @@
+<mujoco>
+  <mesh file="EE_FINGER_0.obj"/>
+  <mesh file="EE_FINGER_1.obj"/>
+  <mesh file="EE_FINGER_collision_0.obj"/>
+  <mesh file="EE_FINGER_collision_1.obj"/>
+  <mesh file="EE_FINGER_collision_2.obj"/>
+  <mesh file="EE_FINGER_collision_3.obj"/>
+  <mesh file="EE_FINGER_collision_4.obj"/>
+</mujoco>
