@@ -1,3 +1,0 @@
-<mujoco>
-  <geom material="10,10,10" mesh="LINK_4" class="visual" />
-</mujoco>
