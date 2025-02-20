@@ -11,7 +11,7 @@
         <geom group="3" type="mesh" />
       </default>
       <joint damping="0.1" frictionloss="0.1" armature="0.1" />
-      <position kp="100" dampratio="1" />
+      <position kp="100" dampratio="1" inheritrange="1" />
     </default>
   </default>
 
@@ -249,20 +249,20 @@
   </worldbody>
 
   <tendon>
-    <fixed name="split">
+    <fixed name="split" range="-0.08 0.0">
       <joint joint="joint7" coef="0.5" />
       <joint joint="joint8" coef="-0.5" />
     </fixed>
   </tendon>
 
   <actuator>
-    <position name="joint1" joint="joint1" ctrlrange="-2.618 2.618" class="piper" />
-    <position name="joint2" joint="joint2" ctrlrange="0 3.14" class="piper" />
-    <position name="joint3" joint="joint3" ctrlrange="-2.697 0" class="piper" />
-    <position name="joint4" joint="joint4" ctrlrange="-1.832 1.832" class="piper" />
-    <position name="joint5" joint="joint5" ctrlrange="-1.22 1.22" class="piper" />
-    <position name="joint6" joint="joint6" ctrlrange="-3.14 3.14" class="piper" />
-    <position name="gripper" tendon="split" ctrlrange="-0.08 0.0" class="piper" />
+    <position name="joint1" joint="joint1" class="piper" />
+    <position name="joint2" joint="joint2" class="piper" />
+    <position name="joint3" joint="joint3" class="piper" />
+    <position name="joint4" joint="joint4" class="piper" />
+    <position name="joint5" joint="joint5" class="piper" />
+    <position name="joint6" joint="joint6" class="piper" />
+    <position name="gripper" tendon="split" class="piper" />
   </actuator>
 
   <keyframe>
