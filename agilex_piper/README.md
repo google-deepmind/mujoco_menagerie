@@ -1,6 +1,6 @@
-## UMI-Gripper Description (MJCF)
+## AgileX PiPER Description (MJCF)
 
-> Requires MuJoCo 2.2.2 or later.
+> Requires MuJoCo 2.3.4 or later.
 
 ### Overview
 

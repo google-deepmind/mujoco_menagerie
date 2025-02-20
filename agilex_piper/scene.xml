@@ -1,6 +1,5 @@
 <mujoco model="piper_scene">
   <include file="piper.xml" />
-  <option integrator="implicitfast" impratio="1" />
 
   <visual>
     <headlight diffuse="0.6 0.6 0.6" ambient="0.1 0.1 0.1" specular="0 0 0" />
@@ -15,7 +14,6 @@
 
   <worldbody>
     <light pos="0 0 1.5" directional="true" />
-    <light pos="0 -1 0" directional="true" />
     <geom name="floor" size="1 1 0.01" type="plane" material="grid" />
   </worldbody>
 </mujoco>
