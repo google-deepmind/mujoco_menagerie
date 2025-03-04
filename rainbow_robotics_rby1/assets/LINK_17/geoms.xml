@@ -1,5 +1,8 @@
 <mujoco>
   <geom mesh="LINK_17_0" material="254,254,255" class="visual" />
   <geom mesh="LINK_17_1" material="10,10,10" class="visual" />
-  <geom type="capsule" size="0.04 0.0575" pos="-0.031 0 -0.1075" quat="0 0 0 1" rgba="0.988 0.079 0.503 1" class="collision"/>
+  <geom mesh="LINK_17_collision_0" rgba="0.04521321822936897 0.8068524424955614 0.7883846811855026 1" class="collision" />
+  <geom mesh="LINK_17_collision_1" rgba="0.7787177272422275 0.49701794605048144 0.8737500564664831 1" class="collision" />
+  <geom mesh="LINK_17_collision_2" rgba="0.12232395933366935 0.32690323210772665 0.6036384379251845 1" class="collision" />
+  <geom mesh="LINK_17_collision_3" rgba="0.03851057131141322 0.08928874787365793 0.4716156929768385 1" class="collision" />
 </mujoco>

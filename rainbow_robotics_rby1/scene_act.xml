@@ -1,0 +1,42 @@
+<mujoco model="rby1">
+  <include file="./rby1.xml" />
+
+  <option timestep="0.002" solver="Newton" iterations="30" tolerance="1e-6" />
+  <option integrator="implicitfast" cone="elliptic" impratio="100"/>
+
+  <visual>
+      <map force="0.1" zfar="30"/>
+      <rgba haze="0.15 0.25 0.35 1"/>
+      <quality shadowsize="4096"/>
+      <global offwidth="800" offheight="800"/>
+  </visual>
+
+  <asset>
+    <texture type="skybox" builtin="gradient" rgb1="0.3 0.5 0.7" rgb2="0 0 0" width="512" height="512" />
+    <texture name="plane" type="2d" builtin="checker" rgb1=".2 .3 .4" rgb2=".1 0.15 0.2" width="512" height="512"
+      mark="cross" markrgb=".8 .8 .8" />
+    <material name="plane" reflectance="0.3" texture="plane" texrepeat="1 1" texuniform="true" />
+  </asset>
+
+  <worldbody>
+    <geom name="floor" pos="0 0 0" size="0 0 .25" type="plane" material="plane" condim="1"
+      solimp="0.95 0.99 0.001 0.5 2" friction="0.05 0.001 0.05" />
+    <light directional="true" diffuse=".8 .8 .8" specular="0 0 0" pos="0 0 5" dir="0 0 -1" castshadow="false" />
+  </worldbody>
+
+  <default>
+    <motor ctrllimited="true" ctrlrange="-100 100" />
+    <velocity ctrllimited="true" />
+    <position ctrllimited="true" kp="4000" kv="400" />
+
+    <default class="visual">
+      <geom group="2" type="mesh" contype="0" conaffinity="0" />
+    </default>
+    <default class="collision">
+      <geom group="3" type="mesh" />
+    </default>
+    <default class="in-model-collision">
+      <geom group="2" contype="0" conaffinity="0" rgba="0.3 0 0 0.0" />
+    </default>
+  </default>
+</mujoco>
