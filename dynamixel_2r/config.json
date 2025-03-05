@@ -1,0 +1,25 @@
+{
+    // Onshape-to-robot export configuration
+    "url": "https://cad.onshape.com/documents/e764ec92c6d6cd5bcf6d68d9/w/a8e95bf587cc977e65ed8aa5/e/8397fde05620ee94d449e6ed",
+    "output_format": "mujoco",
+    "no_collision_meshes": true,
+
+    "joint_properties": {
+	// MX-106
+	"r1": {
+		"armature": 0.0266,
+		"forcerange": 11.086,
+		"kp": 56.052,
+		"frictionloss": 0.10352,
+		"damping": 1.6548
+	},
+	// MX-64
+	"r2": {
+		"armature": 0.01195,
+		"forcerange": 6.1621,
+		"kp": 31.1558,
+		"frictionloss": 0.09039,
+		"damping": 0.6782
+	}
+    }
+}   
