@@ -2,7 +2,7 @@
 
 ## Overview
 
-This package contains a 2R testbench arm featuring MX-64 and MX-106 dynamixel actuators.
+This package contains a 2R testbench arm featuring MX-106 and MX-64 dynamixel actuators.
 
 The motor parameters are the best fit using system identification. However, as described in the
 [related paper](https://arxiv.org/pdf/2410.08650v1), enhanced friction modeling can be used to
