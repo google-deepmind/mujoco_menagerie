@@ -2,7 +2,7 @@
 
 ## Overview 
 
-This package contains a robot description (MJCF) of a [Robot Soccer Kit omnidirectional robot][https://robot-soccer-kit.github.io/). All passive wheels (20 per wheel) are simulated as passive joints.
+This package contains a robot description (MJCF) of a [Robot Soccer Kit omnidirectional robot](https://robot-soccer-kit.github.io/). All passive wheels (20 per wheel) are simulated as passive joints.
 
 No accurate system identification was performed, so the model is not expected to be highly accurate for control purposes.
 
