@@ -50,7 +50,7 @@
       <geom type="mesh" class="visual" pos="0.0173 -0.03097 0.5852" quat="0.5 -0.5 -0.5 0.5" mesh="m2_5x20__configuration__20" material="m2_5x20__configuration__20_material"/>
       <!-- Part base_mx106 -->
       <geom type="mesh" class="visual" pos="0 7.33921e-18 0.5452" quat="0.707107 -0.707107 -0 5.49814e-32" mesh="base_mx106" material="base_mx106_material"/>
-      <!-- Frame base (dummy link + fixed joint) -->
+      <!-- Frame base -->
       <site group="0" name="base" pos="1.73264e-35 9.3735e-36 0.6" quat="3.06162e-17 1 -5.39977e-17 -5.65924e-17"/>
       <!-- Link first_segment_mix -->
       <body name="first_segment_mix" pos="1.64102e-17 0.02603 0.5452" quat="0.707107 0.707107 0 -4.79367e-32">
@@ -168,7 +168,7 @@
           <geom type="mesh" class="visual" pos="0.011 -9.65894e-15 0.05174" quat="0.707107 2.9234e-17 0.707107 -1.11022e-16" mesh="m2_5x6__configuration__6" material="m2_5x6__configuration__6_material"/>
           <!-- Part m2_5x6__configuration__6_32 -->
           <geom type="mesh" class="visual" pos="0.00777817 0.00777817 -0.005" quat="0.707107 -5.82021e-17 -0.707107 -1.11022e-16" mesh="m2_5x6__configuration__6" material="m2_5x6__configuration__6_material"/>
-          <!-- Frame end (dummy link + fixed joint) -->
+          <!-- Frame end -->
           <site group="0" name="end" pos="-5.11455e-17 -0.18 0.02337" quat="0.707107 0.707107 -0 -2.11324e-19"/>
         </body>
       </body>
