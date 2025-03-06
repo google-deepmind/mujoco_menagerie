@@ -1,6 +1,6 @@
 {
     // Onshape-to-robot export configuration
-    "url": "https://cad.onshape.com/documents/e764ec92c6d6cd5bcf6d68d9/w/a8e95bf587cc977e65ed8aa5/e/8397fde05620ee94d449e6ed",
+    "url": "https://cad.onshape.com/documents/c261e707fbd05d9a111bbdd3/w/2b2b7908e9fc282f8fc113ce/e/67a067163b98ae778d880134",
     "output_format": "mujoco",
     "no_collision_meshes": true,
 

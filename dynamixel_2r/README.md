@@ -14,7 +14,7 @@ modeling can be used to greatly improve the fidelity of the simulation of such s
 
 ## CAD → MJCF conversion
 
-The model was converted using [onshape-to-robot](https://onshape-to-robot.readthedocs.io/) from the [Onshape CAD assembly](https://cad.onshape.com/documents/e764ec92c6d6cd5bcf6d68d9/w/a8e95bf587cc977e65ed8aa5/e/8397fde05620ee94d449e6ed).
+The model was converted using [onshape-to-robot](https://onshape-to-robot.readthedocs.io/) from the [Onshape CAD assembly](https://cad.onshape.com/documents/c261e707fbd05d9a111bbdd3/w/2b2b7908e9fc282f8fc113ce/e/67a067163b98ae778d880134).
 
 The [config.json](config.json) with export configuration file is also present in this package.
 
