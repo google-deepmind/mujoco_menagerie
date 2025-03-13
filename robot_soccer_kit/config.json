@@ -6,10 +6,10 @@
     "simplify_stls": true,
     "max_stl_size": 1,
     "no_collision_meshes": true,
-    
     "joint_properties": {
         "*passive*": {
-            "actuated": false
+            "actuated": false,
+            "range": false
         },
         "*wheel*": {
             "type": "velocity",
@@ -17,7 +17,8 @@
                 -16,
                 16
             ],
-            "kv": 5.0
+            "kv": 5.0,
+            "range": false
         },
         "kicker": {
             "range": true,
