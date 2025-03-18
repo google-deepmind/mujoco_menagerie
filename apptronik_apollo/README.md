@@ -4,6 +4,7 @@ Requires MuJoCo 3.0.0 or later.
 
 ## Changelog
 
+- 03/15/2025: Fixed finger distal orientation.
 - 01/21/2025: Fixed bug in the IMU position.
 - 01/09/2025: Fixed issue https://github.com/google-deepmind/mujoco_menagerie/issues/136.
 - 12/20/2024: Initial release.
