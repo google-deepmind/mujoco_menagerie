@@ -153,13 +153,21 @@
                                                     <geom name="wrist_mesh" pos="0 -0.0343657 -0.0392954" quat="0.130526 0.991445 0 0" class="visual_dark" mesh="wristmesh"/>
                                                     <geom name="palm_mesh" pos="0.0240477 -0.0463856 -0.0695448" quat="0.00516808 0.0439309 0.130372 0.990478" class="visual_dark" mesh="FB_palm_ref"/>
                                                     <geom name="index_mesh_1" pos="0.0279216 -0.0502244 -0.134299" quat="0.0355504 -0.725304 0.0429902 0.686165" class="visual_dark" mesh="idx-F1"/>
-                                                    <geom name="index_mesh_2" pos="0.0296624 -0.053984 -0.172686" quat="0.00654576 -0.722842 0.0735774 0.687054" class="visual_dark" mesh="idx-F2"/>
+                                                    <frame pos="0.0296624 -0.053984 -0.172686" euler="0 0 -45">
+                                                        <geom name="index_mesh_2" quat="0.00654576 -0.722842 0.0735774 0.687054" class="visual_dark" mesh="idx-F2"/>
+                                                    </frame>
                                                     <geom name="middle_mesh_1" pos="0.00841718 -0.0488804 -0.137964" quat="0.0114639 -0.705931 0.0210022 0.707876" class="visual_dark" mesh="idx-F1"/>
-                                                    <geom name="middle_mesh_2" pos="0.00814998 -0.0526507 -0.176389" quat="-0.018436 -0.704415 0.0507911 0.707729" class="visual_dark" mesh="idx-F2"/>
+                                                    <frame pos="0.00814998 -0.0526507 -0.176389" euler="0 0 -45">
+                                                        <geom name="middle_mesh_2" quat="-0.018436 -0.704415 0.0507911 0.707729" class="visual_dark" mesh="idx-F2"/>
+                                                    </frame>
                                                     <geom name="ring_mesh_1" pos="-0.0117529 -0.049354 -0.135394" quat="-0.0126044 -0.685391 -0.0036555 0.728057" class="visual_dark" mesh="idx-F1"/>
-                                                    <geom name="ring_mesh_2" pos="-0.0139914 -0.0531239 -0.173755" quat="-0.0433349 -0.684934 0.025288 0.726875" class="visual_dark" mesh="idx-F2"/>
+                                                    <frame pos="-0.0139914 -0.0531239 -0.173755" euler="0 0 -45">
+                                                        <geom name="ring_mesh_2" quat="-0.0433349 -0.684934 0.025288 0.726875" class="visual_dark" mesh="idx-F2"/>
+                                                    </frame>
                                                     <geom name="pinky_mesh_1" pos="-0.0308633 -0.0509308 -0.128792" quat="-0.0350419 -0.683018 -0.0274385 0.729045" class="visual_dark" mesh="idx-F1"/>
-                                                    <geom name="pinky_mesh_2" pos="-0.0330569 -0.0546993 -0.167156" quat="-0.0657942 -0.683567 0.00142601 0.726915" class="visual_dark" mesh="idx-F2"/>
+                                                    <frame pos="-0.0330569 -0.0546993 -0.167156" euler="0 0 -45">
+                                                        <geom name="pinky_mesh_2" quat="-0.0657942 -0.683567 0.00142601 0.726915" class="visual_dark" mesh="idx-F2"/>
+                                                    </frame>
                                                     <geom name="thumb_mesh_1" pos="0.0240477 -0.0463856 -0.0695448" quat="-0.986553 0.125649 -0.0560269 -0.0882391" class="visual_dark" mesh="thumb-F1"/>
                                                     <geom name="thumb_mesh_2" pos="0.0499644 -0.0457352 -0.0874305" quat="0.500891 -0.859176 -0.0358978 0.0981657" class="visual_dark" mesh="thumb-F2-left"/>
                                                     <geom name="collision_l_hand_plate" size="0.041 0.02 0.083" pos="0.00749988 -0.025 -0.112" type="box" class="collision"/>
@@ -206,13 +214,21 @@
                                                     <geom pos="1.22016e-08 0.0343657 -0.0392954" quat="1.73181e-07 1.31544e-06 0.991445 0.130526" class="visual_dark" mesh="wristmesh"/>
                                                     <geom pos="0.0240477 0.0463855 -0.0695448" quat="0.990478 0.130372 0.0439307 0.00516677" class="visual_dark" mesh="FB_palm_ref_MIR"/>
                                                     <geom pos="0.0279216 0.0502243 -0.134299" quat="0.725304 -0.0355495 0.686165 0.0429892" class="visual_dark" mesh="idx-F1"/>
-                                                    <geom pos="0.0296625 0.053984 -0.172686" quat="0.722842 -0.00654484 0.687054 0.0735764" class="visual_dark" mesh="idx-F2"/>
+                                                    <frame pos="0.0296625 0.053984 -0.172686" euler="0 0 45">
+                                                        <geom quat="0.722842 -0.00654484 0.687054 0.0735764" class="visual_dark" mesh="idx-F2"/>
+                                                    </frame>
                                                     <geom pos="0.00841723 0.0488804 -0.137964" quat="0.705931 -0.0114629 0.707876 0.0210013" class="visual_dark" mesh="idx-F1"/>
-                                                    <geom pos="0.00815005 0.0526507 -0.176389" quat="0.704415 0.018437 0.707729 0.0507901" class="visual_dark" mesh="idx-F2"/>
+                                                    <frame pos="0.00815005 0.0526507 -0.176389" euler="0 0 45">
+                                                        <geom quat="0.704415 0.018437 0.707729 0.0507901" class="visual_dark" mesh="idx-F2"/>
+                                                    </frame>
                                                     <geom pos="-0.0117529 0.0493541 -0.135394" quat="0.685391 0.0126053 0.728057 -0.00365641" class="visual_dark" mesh="idx-F1"/>
-                                                    <geom pos="-0.0139913 0.053124 -0.173755" quat="0.684934 0.0433359 0.726875 0.0252871" class="visual_dark" mesh="idx-F2"/>
+                                                    <frame pos="-0.0139913 0.053124 -0.173755" euler="0 0 45">
+                                                        <geom quat="0.684934 0.0433359 0.726875 0.0252871" class="visual_dark" mesh="idx-F2"/>
+                                                    </frame>
                                                     <geom pos="-0.0308632 0.0509308 -0.128792" quat="0.683018 0.0350429 0.729045 -0.0274394" class="visual_dark" mesh="idx-F1"/>
-                                                    <geom pos="-0.0330568 0.0546993 -0.167156" quat="0.683567 0.0657951 0.726915 0.00142511" class="visual_dark" mesh="idx-F2"/>
+                                                    <frame pos="-0.0330568 0.0546993 -0.167156" euler="0 0 45">
+                                                        <geom quat="0.683567 0.0657951 0.726915 0.00142511" class="visual_dark" mesh="idx-F2"/>
+                                                    </frame>
                                                     <geom pos="0.0240477 0.0463855 -0.0695448" quat="-0.125649 0.986553 -0.0882404 -0.0560268" class="visual_dark" mesh="thumb-F1-MIR"/>
                                                     <geom pos="0.0499644 0.0457351 -0.0874305" quat="-0.859175 0.500891 -0.0981664 0.0358989" class="visual_dark" mesh="thumb-F2-right"/>
                                                     <geom name="collision_r_hand_plate" size="0.041 0.02 0.083" pos="0.00749988 0.025 -0.112" type="box" class="collision"/>
