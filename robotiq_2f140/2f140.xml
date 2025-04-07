@@ -58,14 +58,11 @@
         <geom class="collision" mesh="base"/>
         <!-- Right-hand side 4-bar linkage -->
         <body name="right_driver" pos="0 0.030601 0.054905" quat="0 0 0.911903 0.410405">
-          <inertial mass="0.0311462" pos="0.000163875 0.0458404 0.0117804" quat="0.881368 0.472423 -0.0024451 -0.000996122"
-            diaginertia="2.96023e-05 2.79814e-05 4.39017e-06"/>
           <joint name="right_driver_joint" class="driver"/>
           <geom class="visual" mesh="driver" material="gray"/>
           <geom class="collision" mesh="driver"/>
           <body name="right_coupler" pos="0 0.01822 0.026001" quat="1 0 0 0">
-            <inertial mass="0.0140974" pos="0 0.00301209 0.0232175" quat="0.705636 -0.0455904 0.0455904 0.705636"
-              diaginertia="4.16206e-06 3.52216e-06 8.88131e-07"/>
+            <inertial pos="0.000163875 0.0458404 -0.0117804" quat="0.881368 0.472423 -0.0024451 -0.000996122" mass="0.0311462" diaginertia="2.96023e-05 2.79814e-05 4.39017e-06"/>
             <joint name="right_coupler_joint" class="coupler"/>
             <geom class="visual" mesh="coupler" material="black"/>
             <geom class="collision" mesh="coupler"/>
@@ -93,14 +90,11 @@
         </body>
         <!-- Left-hand side 4-bar linkage -->
         <body name="left_driver" pos="0 -0.0306011 0.054904" quat="0.410405 0.911903 0 0">
-          <inertial mass="0.0311462" pos="0.000163875 0.0458404 0.0117804" quat="0.881368 0.472423 -0.0024451 -0.000996122"
-            diaginertia="2.96023e-05 2.79814e-05 4.39017e-06"/>
           <joint name="left_driver_joint" class="driver"/>
           <geom class="visual" mesh="driver" material="gray"/>
           <geom class="collision" mesh="driver"/>
           <body name="left_coupler" pos="0 0.01822 0.026001" quat="1 0 0 0">
-            <inertial mass="0.0140974" pos="0 0.00301209 0.0232175" quat="0.705636 -0.0455904 0.0455904 0.705636"
-              diaginertia="4.16206e-06 3.52216e-06 8.88131e-07"/>
+            <inertial pos="0.000163875 0.0458404 -0.0117804" quat="0.881368 0.472423 -0.0024451 -0.000996122" mass="0.0311462" diaginertia="2.96023e-05 2.79814e-05 4.39017e-06"/>
             <joint name="left_coupler_joint" class="coupler"/>
             <geom class="visual" mesh="coupler" material="black"/>
             <geom class="collision" mesh="coupler"/>
