@@ -358,7 +358,7 @@
         </body>
       </body>
       <body name="leg_left_1_link" pos="-0.02 0.085 -0.27105">
-        <inertial pos="0.0847284 -0.109974 0.017059" quat="0.522748 0.852371 -0.00673577 0.012351" mass="2.23501"
+         <inertial pos="0.0847284 0.109974 0.017059" quat="0.522748 -0.852371 -0.00673577 0.012351" mass="2.23501"
           diaginertia="0.0105013 0.0076913 0.00473271"/>
         <joint name="leg_left_1_joint" axis="0 0 1" range="-0.349066 1.5708" actuatorfrcrange="-100 100"/>
         <geom class="visual" mesh="l_hip_z_lo_res" material="black"/>
