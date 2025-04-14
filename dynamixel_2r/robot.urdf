@@ -1,0 +1,755 @@
+<?xml version="1.0" ?>
+<!-- Generated using onshape-to-robot -->
+<!-- Onshape https://cad.onshape.com/documents/e764ec92c6d6cd5bcf6d68d9/w/a8e95bf587cc977e65ed8aa5/e/8397fde05620ee94d449e6ed -->
+<robot name="2r_mx">
+    <!-- Link base_106 -->
+    <link name="base_106">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <mass value="0"/>
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+        </inertial>
+        <!-- Part ecrou_2_5 -->
+        <visual>
+            <origin xyz="0.011 -0.01347 0.593" rpy="1.5708 1.16573e-15 -1.5708"/>
+            <geometry>
+                <mesh filename="package://assets/ecrou_2_5.stl"/>
+            </geometry>
+            <material name="ecrou_2_5_material">
+                <color rgba="0.690196 0.690196 0.690196 1.0"/>
+            </material>
+        </visual>
+        <!-- Part m2_5x20__configuration__20 -->
+        <visual>
+            <origin xyz="0.0173 0.03097 0.5852" rpy="1.5708 1.16573e-15 -1.5708"/>
+            <geometry>
+                <mesh filename="package://assets/m2_5x20__configuration__20.stl"/>
+            </geometry>
+            <material name="m2_5x20__configuration__20_material">
+                <color rgba="0.690196 0.690196 0.690196 1.0"/>
+            </material>
+        </visual>
+        <!-- Part dc08_m01_dummy -->
+        <visual>
+            <origin xyz="-3.33067e-21 3e-05 0.5452" rpy="-1.5708 -0 -1.55511e-31"/>
+            <geometry>
+                <mesh filename="package://assets/dc08_m01_dummy.stl"/>
+            </geometry>
+            <material name="dc08_m01_dummy_material">
+                <color rgba="0.498039 0.498039 0.498039 1.0"/>
+            </material>
+        </visual>
+        <!-- Part ecrou_2_5_2 -->
+        <visual>
+            <origin xyz="-0.0173 -0.01347 0.5852" rpy="1.91128e-16 5.55112e-16 -1.5708"/>
+            <geometry>
+                <mesh filename="package://assets/ecrou_2_5.stl"/>
+            </geometry>
+            <material name="ecrou_2_5_2_material">
+                <color rgba="0.690196 0.690196 0.690196 1.0"/>
+            </material>
+        </visual>
+        <!-- Part ecrou_2_5_3 -->
+        <visual>
+            <origin xyz="0.0173 -0.01347 0.5852" rpy="1.91128e-16 5.55112e-16 -1.5708"/>
+            <geometry>
+                <mesh filename="package://assets/ecrou_2_5.stl"/>
+            </geometry>
+            <material name="ecrou_2_5_3_material">
+                <color rgba="0.690196 0.690196 0.690196 1.0"/>
+            </material>
+        </visual>
+        <!-- Part m2_5x20__configuration__20_2 -->
+        <visual>
+            <origin xyz="0.011 -0.03097 0.593" rpy="-1.5708 -1.16573e-15 1.5708"/>
+            <geometry>
+                <mesh filename="package://assets/m2_5x20__configuration__20.stl"/>
+            </geometry>
+            <material name="m2_5x20__configuration__20_2_material">
+                <color rgba="0.690196 0.690196 0.690196 1.0"/>
+            </material>
+        </visual>
+        <!-- Part m2_5x20__configuration__20_3 -->
+        <visual>
+            <origin xyz="0.011 0.03097 0.593" rpy="1.5708 1.16573e-15 -1.5708"/>
+            <geometry>
+                <mesh filename="package://assets/m2_5x20__configuration__20.stl"/>
+            </geometry>
+            <material name="m2_5x20__configuration__20_3_material">
+                <color rgba="0.690196 0.690196 0.690196 1.0"/>
+            </material>
+        </visual>
+        <!-- Part m2_5x20__configuration__20_4 -->
+        <visual>
+            <origin xyz="-0.0173 0.03097 0.5852" rpy="1.5708 1.16573e-15 -1.5708"/>
+            <geometry>
+                <mesh filename="package://assets/m2_5x20__configuration__20.stl"/>
+            </geometry>
+            <material name="m2_5x20__configuration__20_4_material">
+                <color rgba="0.690196 0.690196 0.690196 1.0"/>
+            </material>
+        </visual>
+        <!-- Part hn05_i101 -->
+        <visual>
+            <origin xyz="-6.66134e-21 6e-05 0.5452" rpy="-1.5708 -0 -1.30859e-31"/>
+            <geometry>
+                <mesh filename="package://assets/hn05_i101.stl"/>
+            </geometry>
+            <material name="hn05_i101_material">
+                <color rgba="0.8 0.776471 0.713725 1.0"/>
+            </material>
+        </visual>
+        <!-- Part ecrou_2_5_4 -->
+        <visual>
+            <origin xyz="-0.011 -0.01347 0.593" rpy="1.5708 1.16573e-15 -1.5708"/>
+            <geometry>
+                <mesh filename="package://assets/ecrou_2_5.stl"/>
+            </geometry>
+            <material name="ecrou_2_5_4_material">
+                <color rgba="0.690196 0.690196 0.690196 1.0"/>
+            </material>
+        </visual>
+        <!-- Part m2_5x20__configuration__20_5 -->
+        <visual>
+            <origin xyz="-0.0173 -0.03097 0.5852" rpy="-1.5708 -1.16573e-15 1.5708"/>
+            <geometry>
+                <mesh filename="package://assets/m2_5x20__configuration__20.stl"/>
+            </geometry>
+            <material name="m2_5x20__configuration__20_5_material">
+                <color rgba="0.690196 0.690196 0.690196 1.0"/>
+            </material>
+        </visual>
+        <!-- Part m2_5x20__configuration__20_6 -->
+        <visual>
+            <origin xyz="-0.011 -0.03097 0.593" rpy="-1.5708 -1.16573e-15 1.5708"/>
+            <geometry>
+                <mesh filename="package://assets/m2_5x20__configuration__20.stl"/>
+            </geometry>
+            <material name="m2_5x20__configuration__20_6_material">
+                <color rgba="0.690196 0.690196 0.690196 1.0"/>
+            </material>
+        </visual>
+        <!-- Part m2_5x20__configuration__20_7 -->
+        <visual>
+            <origin xyz="-0.011 0.03097 0.593" rpy="1.5708 1.16573e-15 -1.5708"/>
+            <geometry>
+                <mesh filename="package://assets/m2_5x20__configuration__20.stl"/>
+            </geometry>
+            <material name="m2_5x20__configuration__20_7_material">
+                <color rgba="0.690196 0.690196 0.690196 1.0"/>
+            </material>
+        </visual>
+        <!-- Part m2_5x20__configuration__20_8 -->
+        <visual>
+            <origin xyz="0.0173 -0.03097 0.5852" rpy="-1.5708 -1.16573e-15 1.5708"/>
+            <geometry>
+                <mesh filename="package://assets/m2_5x20__configuration__20.stl"/>
+            </geometry>
+            <material name="m2_5x20__configuration__20_8_material">
+                <color rgba="0.690196 0.690196 0.690196 1.0"/>
+            </material>
+        </visual>
+        <!-- Part base_mx106 -->
+        <visual>
+            <origin xyz="0 7.33921e-18 0.5452" rpy="-1.5708 -0 -1.55511e-31"/>
+            <geometry>
+                <mesh filename="package://assets/base_mx106.stl"/>
+            </geometry>
+            <material name="base_mx106_material">
+                <color rgba="0.917647 0.917647 0.917647 1.0"/>
+            </material>
+        </visual>
+    </link>
+    <!-- Frame base (dummy link + fixed joint) -->
+    <link name="base">
+        <origin xyz="0 0 0" rpy="0 -0 0"/>
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <mass value="1e-9"/>
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+        </inertial>
+    </link>
+    <joint name="base_frame" type="fixed">
+        <origin xyz="1.73264e-35 9.3735e-36 0.6" rpy="3.14159 1.13185e-16 -1.07995e-16"/>
+        <parent link="base_106"/>
+        <child link="base"/>
+        <axis xyz="0 0 0"/>
+    </joint>
+    <!-- Link first_segment_mix -->
+    <link name="first_segment_mix">
+        <inertial>
+            <origin xyz="5.57459e-09 -0.138051 0.026169" rpy="0 0 0"/>
+            <mass value="0.211448"/>
+            <inertia ixx="0.000602098" ixy="2.865e-12" ixz="1.94432e-11" iyy="8.00363e-05" iyz="7.36043e-07" izz="0.000561942"/>
+        </inertial>
+        <!-- Part m2_5x6__configuration__6 -->
+        <visual>
+            <origin xyz="-0.011 -1.44329e-15 -0.005" rpy="2.32925e-13 -1.5708 0"/>
+            <geometry>
+                <mesh filename="package://assets/m2_5x6__configuration__6.stl"/>
+            </geometry>
+            <material name="m2_5x6__configuration__6_material">
+                <color rgba="0.690196 0.690196 0.690196 1.0"/>
+            </material>
+        </visual>
+        <!-- Part m2_5x6__configuration__6_2 -->
+        <visual>
+            <origin xyz="-0.00777817 -0.00777817 -0.005" rpy="2.32925e-13 -1.5708 0"/>
+            <geometry>
+                <mesh filename="package://assets/m2_5x6__configuration__6.stl"/>
+            </geometry>
+            <material name="m2_5x6__configuration__6_2_material">
+                <color rgba="0.690196 0.690196 0.690196 1.0"/>
+            </material>
+        </visual>
+        <!-- Part mid_part -->
+        <visual>
+            <origin xyz="5.08801e-15 -0.047 0.02597" rpy="-4.56302e-14 5.13584e-16 -3.14159"/>
+            <geometry>
+                <mesh filename="package://assets/mid_part.stl"/>
+            </geometry>
+            <material name="mid_part_material">
+                <color rgba="0.917647 0.917647 0.917647 1.0"/>
+            </material>
+        </visual>
+        <!-- Part m2_5x6__configuration__6_3 -->
+        <visual>
+            <origin xyz="-1.34807e-15 0.011 -0.005" rpy="2.32925e-13 -1.5708 0"/>
+            <geometry>
+                <mesh filename="package://assets/m2_5x6__configuration__6.stl"/>
+            </geometry>
+            <material name="m2_5x6__configuration__6_3_material">
+                <color rgba="0.690196 0.690196 0.690196 1.0"/>
+            </material>
+        </visual>
+        <!-- Part dc05_m01_dummy -->
+        <visual>
+            <origin xyz="1.99576e-14 -0.18 0.026" rpy="-3.14159 -2.73691e-47 -2.37389e-65"/>
+            <geometry>
+                <mesh filename="package://assets/dc05_m01_dummy.stl"/>
+            </geometry>
+            <material name="dc05_m01_dummy_material">
+                <color rgba="0.231373 0.380392 0.705882 1.0"/>
+            </material>
+        </visual>
+        <!-- Part m2_5x6__configuration__6_4 -->
+        <visual>
+            <origin xyz="0.00777817 0.00777817 0.05694" rpy="-2.33313e-13 1.5708 0"/>
+            <geometry>
+                <mesh filename="package://assets/m2_5x6__configuration__6.stl"/>
+            </geometry>
+            <material name="m2_5x6__configuration__6_4_material">
+                <color rgba="0.690196 0.690196 0.690196 1.0"/>
+            </material>
+        </visual>
+        <!-- Part first_segment_mix -->
+        <visual>
+            <origin xyz="3.20689e-14 -0.002 0.026" rpy="-3.14159 -2.73691e-47 -2.37389e-65"/>
+            <geometry>
+                <mesh filename="package://assets/first_segment_mix.stl"/>
+            </geometry>
+            <material name="first_segment_mix_material">
+                <color rgba="0.615686 0.811765 0.929412 1.0"/>
+            </material>
+        </visual>
+        <!-- Part m2_5x12__configuration__12 -->
+        <visual>
+            <origin xyz="-0.009 -0.0823234 0.05694" rpy="-2.33313e-13 1.5708 0"/>
+            <geometry>
+                <mesh filename="package://assets/m2_5x12__configuration__12.stl"/>
+            </geometry>
+            <material name="m2_5x12__configuration__12_material">
+                <color rgba="0.690196 0.690196 0.690196 1.0"/>
+            </material>
+        </visual>
+        <!-- Part m2_5x6__configuration__6_5 -->
+        <visual>
+            <origin xyz="-0.00777817 -0.00777817 0.05694" rpy="-2.33313e-13 1.5708 0"/>
+            <geometry>
+                <mesh filename="package://assets/m2_5x6__configuration__6.stl"/>
+            </geometry>
+            <material name="m2_5x6__configuration__6_5_material">
+                <color rgba="0.690196 0.690196 0.690196 1.0"/>
+            </material>
+        </visual>
+        <!-- Part m2_5x6__configuration__6_6 -->
+        <visual>
+            <origin xyz="-0.00777817 0.00777817 -0.005" rpy="2.32925e-13 -1.5708 0"/>
+            <geometry>
+                <mesh filename="package://assets/m2_5x6__configuration__6.stl"/>
+            </geometry>
+            <material name="m2_5x6__configuration__6_6_material">
+                <color rgba="0.690196 0.690196 0.690196 1.0"/>
+            </material>
+        </visual>
+        <!-- Part m2_5x6__configuration__6_7 -->
+        <visual>
+            <origin xyz="0.00777817 0.00777817 -0.005" rpy="2.32925e-13 -1.5708 0"/>
+            <geometry>
+                <mesh filename="package://assets/m2_5x6__configuration__6.stl"/>
+            </geometry>
+            <material name="m2_5x6__configuration__6_7_material">
+                <color rgba="0.690196 0.690196 0.690196 1.0"/>
+            </material>
+        </visual>
+        <!-- Part m2_5x6__configuration__6_8 -->
+        <visual>
+            <origin xyz="0.011 8.88178e-16 -0.005" rpy="2.32925e-13 -1.5708 0"/>
+            <geometry>
+                <mesh filename="package://assets/m2_5x6__configuration__6.stl"/>
+            </geometry>
+            <material name="m2_5x6__configuration__6_8_material">
+                <color rgba="0.690196 0.690196 0.690196 1.0"/>
+            </material>
+        </visual>
+        <!-- Part m2_5x6__configuration__6_9 -->
+        <visual>
+            <origin xyz="9.8218e-16 -0.011 0.05694" rpy="-2.33313e-13 1.5708 0"/>
+            <geometry>
+                <mesh filename="package://assets/m2_5x6__configuration__6.stl"/>
+            </geometry>
+            <material name="m2_5x6__configuration__6_9_material">
+                <color rgba="0.690196 0.690196 0.690196 1.0"/>
+            </material>
+        </visual>
+        <!-- Part m2_5x12__configuration__12_2 -->
+        <visual>
+            <origin xyz="0.009 -0.0353234 0.05694" rpy="-2.33313e-13 1.5708 0"/>
+            <geometry>
+                <mesh filename="package://assets/m2_5x12__configuration__12.stl"/>
+            </geometry>
+            <material name="m2_5x12__configuration__12_2_material">
+                <color rgba="0.690196 0.690196 0.690196 1.0"/>
+            </material>
+        </visual>
+        <!-- Part m2_5x12__configuration__12_3 -->
+        <visual>
+            <origin xyz="-0.009 -0.0353234 0.05694" rpy="-2.33313e-13 1.5708 0"/>
+            <geometry>
+                <mesh filename="package://assets/m2_5x12__configuration__12.stl"/>
+            </geometry>
+            <material name="m2_5x12__configuration__12_3_material">
+                <color rgba="0.690196 0.690196 0.690196 1.0"/>
+            </material>
+        </visual>
+        <!-- Part m2_5x6__configuration__6_10 -->
+        <visual>
+            <origin xyz="0.011 -5.55112e-16 0.05694" rpy="-2.33313e-13 1.5708 0"/>
+            <geometry>
+                <mesh filename="package://assets/m2_5x6__configuration__6.stl"/>
+            </geometry>
+            <material name="m2_5x6__configuration__6_10_material">
+                <color rgba="0.690196 0.690196 0.690196 1.0"/>
+            </material>
+        </visual>
+        <!-- Part m2_5x6__configuration__6_11 -->
+        <visual>
+            <origin xyz="0.00777817 -0.00777817 -0.005" rpy="2.32925e-13 -1.5708 0"/>
+            <geometry>
+                <mesh filename="package://assets/m2_5x6__configuration__6.stl"/>
+            </geometry>
+            <material name="m2_5x6__configuration__6_11_material">
+                <color rgba="0.690196 0.690196 0.690196 1.0"/>
+            </material>
+        </visual>
+        <!-- Part mid_part_2 -->
+        <visual>
+            <origin xyz="7.41816e-15 -0.0706468 0.02597" rpy="4.4964e-14 -6.5604e-16 2.01617e-13"/>
+            <geometry>
+                <mesh filename="package://assets/mid_part.stl"/>
+            </geometry>
+            <material name="mid_part_2_material">
+                <color rgba="0.917647 0.917647 0.917647 1.0"/>
+            </material>
+        </visual>
+        <!-- Part first_segment_mix_2 -->
+        <visual>
+            <origin xyz="-3.19909e-14 -0.002 0.02594" rpy="-4.56302e-14 5.13584e-16 -3.14159"/>
+            <geometry>
+                <mesh filename="package://assets/first_segment_mix.stl"/>
+            </geometry>
+            <material name="first_segment_mix_2_material">
+                <color rgba="0.615686 0.811765 0.929412 1.0"/>
+            </material>
+        </visual>
+        <!-- Part m2_5x6__configuration__6_12 -->
+        <visual>
+            <origin xyz="-1.45909e-15 0.011 0.05694" rpy="-2.33313e-13 1.5708 0"/>
+            <geometry>
+                <mesh filename="package://assets/m2_5x6__configuration__6.stl"/>
+            </geometry>
+            <material name="m2_5x6__configuration__6_12_material">
+                <color rgba="0.690196 0.690196 0.690196 1.0"/>
+            </material>
+        </visual>
+        <!-- Part m2_5x6__configuration__6_13 -->
+        <visual>
+            <origin xyz="-0.00777817 0.00777817 0.05694" rpy="-2.33313e-13 1.5708 0"/>
+            <geometry>
+                <mesh filename="package://assets/m2_5x6__configuration__6.stl"/>
+            </geometry>
+            <material name="m2_5x6__configuration__6_13_material">
+                <color rgba="0.690196 0.690196 0.690196 1.0"/>
+            </material>
+        </visual>
+        <!-- Part m2_5x6__configuration__6_14 -->
+        <visual>
+            <origin xyz="-0.011 -2.88658e-15 0.05694" rpy="-2.33313e-13 1.5708 0"/>
+            <geometry>
+                <mesh filename="package://assets/m2_5x6__configuration__6.stl"/>
+            </geometry>
+            <material name="m2_5x6__configuration__6_14_material">
+                <color rgba="0.690196 0.690196 0.690196 1.0"/>
+            </material>
+        </visual>
+        <!-- Part m2_5x12__configuration__12_4 -->
+        <visual>
+            <origin xyz="0.009 -0.0823234 0.05694" rpy="-2.33313e-13 1.5708 0"/>
+            <geometry>
+                <mesh filename="package://assets/m2_5x12__configuration__12.stl"/>
+            </geometry>
+            <material name="m2_5x12__configuration__12_4_material">
+                <color rgba="0.690196 0.690196 0.690196 1.0"/>
+            </material>
+        </visual>
+        <!-- Part m2_5x12__configuration__12_5 -->
+        <visual>
+            <origin xyz="0.009 -0.0353234 -0.005" rpy="2.32925e-13 -1.5708 0"/>
+            <geometry>
+                <mesh filename="package://assets/m2_5x12__configuration__12.stl"/>
+            </geometry>
+            <material name="m2_5x12__configuration__12_5_material">
+                <color rgba="0.690196 0.690196 0.690196 1.0"/>
+            </material>
+        </visual>
+        <!-- Part m2_5x6__configuration__6_15 -->
+        <visual>
+            <origin xyz="9.8218e-16 -0.011 -0.005" rpy="2.32925e-13 -1.5708 0"/>
+            <geometry>
+                <mesh filename="package://assets/m2_5x6__configuration__6.stl"/>
+            </geometry>
+            <material name="m2_5x6__configuration__6_15_material">
+                <color rgba="0.690196 0.690196 0.690196 1.0"/>
+            </material>
+        </visual>
+        <!-- Part m2_5x12__configuration__12_6 -->
+        <visual>
+            <origin xyz="-0.009 -0.0823234 -0.005" rpy="2.32925e-13 -1.5708 0"/>
+            <geometry>
+                <mesh filename="package://assets/m2_5x12__configuration__12.stl"/>
+            </geometry>
+            <material name="m2_5x12__configuration__12_6_material">
+                <color rgba="0.690196 0.690196 0.690196 1.0"/>
+            </material>
+        </visual>
+        <!-- Part m2_5x6__configuration__6_16 -->
+        <visual>
+            <origin xyz="0.00777817 -0.00777817 0.05694" rpy="-2.33313e-13 1.5708 0"/>
+            <geometry>
+                <mesh filename="package://assets/m2_5x6__configuration__6.stl"/>
+            </geometry>
+            <material name="m2_5x6__configuration__6_16_material">
+                <color rgba="0.690196 0.690196 0.690196 1.0"/>
+            </material>
+        </visual>
+        <!-- Part m2_5x12__configuration__12_7 -->
+        <visual>
+            <origin xyz="0.009 -0.0823234 -0.005" rpy="2.32925e-13 -1.5708 0"/>
+            <geometry>
+                <mesh filename="package://assets/m2_5x12__configuration__12.stl"/>
+            </geometry>
+            <material name="m2_5x12__configuration__12_7_material">
+                <color rgba="0.690196 0.690196 0.690196 1.0"/>
+            </material>
+        </visual>
+        <!-- Part m2_5x12__configuration__12_8 -->
+        <visual>
+            <origin xyz="-0.009 -0.0353234 -0.005" rpy="2.32925e-13 -1.5708 0"/>
+            <geometry>
+                <mesh filename="package://assets/m2_5x12__configuration__12.stl"/>
+            </geometry>
+            <material name="m2_5x12__configuration__12_8_material">
+                <color rgba="0.690196 0.690196 0.690196 1.0"/>
+            </material>
+        </visual>
+        <!-- Part hn05_i101_2 -->
+        <visual>
+            <origin xyz="1.99576e-14 -0.18 0.04564" rpy="4.4964e-14 -6.5604e-16 2.01617e-13"/>
+            <geometry>
+                <mesh filename="package://assets/hn05_i101__2.stl"/>
+            </geometry>
+            <material name="hn05_i101_2_material">
+                <color rgba="0.8 0.776471 0.713725 1.0"/>
+            </material>
+        </visual>
+    </link>
+    <!-- Link sw_segment_64 -->
+    <link name="sw_segment_64">
+        <inertial>
+            <origin xyz="-2.12921e-17 -0.177175 0.0233766" rpy="0 0 0"/>
+            <mass value="1.04661"/>
+            <inertia ixx="0.00198375" ixy="3.49657e-16" ixz="7.76176e-10" iyy="0.00143404" iyz="-1.18439e-07" izz="0.00334693"/>
+        </inertial>
+        <!-- Part sw_mx64_segment -->
+        <visual>
+            <origin xyz="-2.10121e-18 0.18 0.02077" rpy="1.03644e-32 5.70628e-32 3.14159"/>
+            <geometry>
+                <mesh filename="package://assets/sw_mx64_segment.stl"/>
+            </geometry>
+            <material name="sw_mx64_segment_material">
+                <color rgba="0.615686 0.811765 0.929412 1.0"/>
+            </material>
+        </visual>
+        <!-- Part m2_5x6__configuration__6_17 -->
+        <visual>
+            <origin xyz="0.011 -9.65894e-15 -0.005" rpy="2.24702e-29 -1.5708 0"/>
+            <geometry>
+                <mesh filename="package://assets/m2_5x6__configuration__6.stl"/>
+            </geometry>
+            <material name="m2_5x6__configuration__6_17_material">
+                <color rgba="0.690196 0.690196 0.690196 1.0"/>
+            </material>
+        </visual>
+        <!-- Part m2_5x6__configuration__6_18 -->
+        <visual>
+            <origin xyz="-0.011 -9.76996e-15 0.05174" rpy="-2.21744e-29 1.5708 0"/>
+            <geometry>
+                <mesh filename="package://assets/m2_5x6__configuration__6.stl"/>
+            </geometry>
+            <material name="m2_5x6__configuration__6_18_material">
+                <color rgba="0.690196 0.690196 0.690196 1.0"/>
+            </material>
+        </visual>
+        <!-- Part ecrou_4 -->
+        <visual>
+            <origin xyz="-2.52695e-17 -0.14 0.03487" rpy="-2.21744e-29 1.5708 0"/>
+            <geometry>
+                <mesh filename="package://assets/ecrou_4.stl"/>
+            </geometry>
+            <material name="ecrou_4_material">
+                <color rgba="0.690196 0.690196 0.690196 1.0"/>
+            </material>
+        </visual>
+        <!-- Part weight_985 -->
+        <visual>
+            <origin xyz="-5.56546e-17 -0.18 0.02012" rpy="-1.5708 5.97715e-19 -1.2326e-32"/>
+            <geometry>
+                <mesh filename="package://assets/weight_985.stl"/>
+            </geometry>
+            <material name="weight_985_material">
+                <color rgba="0.301961 0.301961 0.301961 1.0"/>
+            </material>
+        </visual>
+        <!-- Part m2_5x6__configuration__6_19 -->
+        <visual>
+            <origin xyz="-0.00777817 -0.00777817 0.05174" rpy="-2.21744e-29 1.5708 0"/>
+            <geometry>
+                <mesh filename="package://assets/m2_5x6__configuration__6.stl"/>
+            </geometry>
+            <material name="m2_5x6__configuration__6_19_material">
+                <color rgba="0.690196 0.690196 0.690196 1.0"/>
+            </material>
+        </visual>
+        <!-- Part m2_5x6__configuration__6_20 -->
+        <visual>
+            <origin xyz="-6.50266e-17 0.011 0.05174" rpy="-2.21744e-29 1.5708 0"/>
+            <geometry>
+                <mesh filename="package://assets/m2_5x6__configuration__6.stl"/>
+            </geometry>
+            <material name="m2_5x6__configuration__6_20_material">
+                <color rgba="0.690196 0.690196 0.690196 1.0"/>
+            </material>
+        </visual>
+        <!-- Part m2_5x6__configuration__6_21 -->
+        <visual>
+            <origin xyz="-0.011 -9.76996e-15 -0.005" rpy="2.24702e-29 -1.5708 0"/>
+            <geometry>
+                <mesh filename="package://assets/m2_5x6__configuration__6.stl"/>
+            </geometry>
+            <material name="m2_5x6__configuration__6_21_material">
+                <color rgba="0.690196 0.690196 0.690196 1.0"/>
+            </material>
+        </visual>
+        <!-- Part ecrou_4_2 -->
+        <visual>
+            <origin xyz="-4.96944e-17 -0.18 0.03487" rpy="-2.21744e-29 1.5708 0"/>
+            <geometry>
+                <mesh filename="package://assets/ecrou_4.stl"/>
+            </geometry>
+            <material name="ecrou_4_2_material">
+                <color rgba="0.690196 0.690196 0.690196 1.0"/>
+            </material>
+        </visual>
+        <!-- Part m2_5x6__configuration__6_22 -->
+        <visual>
+            <origin xyz="-0.00777817 0.00777817 -0.005" rpy="2.24702e-29 -1.5708 0"/>
+            <geometry>
+                <mesh filename="package://assets/m2_5x6__configuration__6.stl"/>
+            </geometry>
+            <material name="m2_5x6__configuration__6_22_material">
+                <color rgba="0.690196 0.690196 0.690196 1.0"/>
+            </material>
+        </visual>
+        <!-- Part m2_5x6__configuration__6_23 -->
+        <visual>
+            <origin xyz="6.03176e-17 -0.011 0.05174" rpy="-2.21744e-29 1.5708 0"/>
+            <geometry>
+                <mesh filename="package://assets/m2_5x6__configuration__6.stl"/>
+            </geometry>
+            <material name="m2_5x6__configuration__6_23_material">
+                <color rgba="0.690196 0.690196 0.690196 1.0"/>
+            </material>
+        </visual>
+        <!-- Part m4x25__length__30 -->
+        <visual>
+            <origin xyz="-3.39168e-17 -0.14 0.01347" rpy="2.24702e-29 -1.5708 0"/>
+            <geometry>
+                <mesh filename="package://assets/m4x25__length__30.stl"/>
+            </geometry>
+            <material name="m4x25__length__30_material">
+                <color rgba="0.690196 0.690196 0.690196 1.0"/>
+            </material>
+        </visual>
+        <!-- Part m2_5x6__configuration__6_24 -->
+        <visual>
+            <origin xyz="-4.68724e-18 0.011 -0.005" rpy="2.24702e-29 -1.5708 0"/>
+            <geometry>
+                <mesh filename="package://assets/m2_5x6__configuration__6.stl"/>
+            </geometry>
+            <material name="m2_5x6__configuration__6_24_material">
+                <color rgba="0.690196 0.690196 0.690196 1.0"/>
+            </material>
+        </visual>
+        <!-- Part sw_mx64_segment_2 -->
+        <visual>
+            <origin xyz="-3.15544e-30 0.18 0.02597" rpy="3.14159 6.52163e-32 -1.2326e-32"/>
+            <geometry>
+                <mesh filename="package://assets/sw_mx64_segment.stl"/>
+            </geometry>
+            <material name="sw_mx64_segment_2_material">
+                <color rgba="0.615686 0.811765 0.929412 1.0"/>
+            </material>
+        </visual>
+        <!-- Part m2_5x6__configuration__6_25 -->
+        <visual>
+            <origin xyz="0.00777817 -0.00777817 0.05174" rpy="-2.21744e-29 1.5708 0"/>
+            <geometry>
+                <mesh filename="package://assets/m2_5x6__configuration__6.stl"/>
+            </geometry>
+            <material name="m2_5x6__configuration__6_25_material">
+                <color rgba="0.690196 0.690196 0.690196 1.0"/>
+            </material>
+        </visual>
+        <!-- Part m2_5x6__configuration__6_26 -->
+        <visual>
+            <origin xyz="-0.00777817 -0.00777817 -0.005" rpy="2.24702e-29 -1.5708 0"/>
+            <geometry>
+                <mesh filename="package://assets/m2_5x6__configuration__6.stl"/>
+            </geometry>
+            <material name="m2_5x6__configuration__6_26_material">
+                <color rgba="0.690196 0.690196 0.690196 1.0"/>
+            </material>
+        </visual>
+        <!-- Part m2_5x6__configuration__6_27 -->
+        <visual>
+            <origin xyz="0.00777817 0.00777817 0.05174" rpy="-2.21744e-29 1.5708 0"/>
+            <geometry>
+                <mesh filename="package://assets/m2_5x6__configuration__6.stl"/>
+            </geometry>
+            <material name="m2_5x6__configuration__6_27_material">
+                <color rgba="0.690196 0.690196 0.690196 1.0"/>
+            </material>
+        </visual>
+        <!-- Part m2_5x6__configuration__6_28 -->
+        <visual>
+            <origin xyz="6.51458e-17 -0.011 -0.005" rpy="2.24702e-29 -1.5708 0"/>
+            <geometry>
+                <mesh filename="package://assets/m2_5x6__configuration__6.stl"/>
+            </geometry>
+            <material name="m2_5x6__configuration__6_28_material">
+                <color rgba="0.690196 0.690196 0.690196 1.0"/>
+            </material>
+        </visual>
+        <!-- Part m2_5x6__configuration__6_29 -->
+        <visual>
+            <origin xyz="0.00777817 -0.00777817 -0.005" rpy="2.24702e-29 -1.5708 0"/>
+            <geometry>
+                <mesh filename="package://assets/m2_5x6__configuration__6.stl"/>
+            </geometry>
+            <material name="m2_5x6__configuration__6_29_material">
+                <color rgba="0.690196 0.690196 0.690196 1.0"/>
+            </material>
+        </visual>
+        <!-- Part m2_5x6__configuration__6_30 -->
+        <visual>
+            <origin xyz="-0.00777817 0.00777817 0.05174" rpy="-2.21744e-29 1.5708 0"/>
+            <geometry>
+                <mesh filename="package://assets/m2_5x6__configuration__6.stl"/>
+            </geometry>
+            <material name="m2_5x6__configuration__6_30_material">
+                <color rgba="0.690196 0.690196 0.690196 1.0"/>
+            </material>
+        </visual>
+        <!-- Part m4x25__length__30_2 -->
+        <visual>
+            <origin xyz="-5.83417e-17 -0.18 0.01347" rpy="2.24702e-29 -1.5708 0"/>
+            <geometry>
+                <mesh filename="package://assets/m4x25__length__30.stl"/>
+            </geometry>
+            <material name="m4x25__length__30_2_material">
+                <color rgba="0.690196 0.690196 0.690196 1.0"/>
+            </material>
+        </visual>
+        <!-- Part m2_5x6__configuration__6_31 -->
+        <visual>
+            <origin xyz="0.011 -9.65894e-15 0.05174" rpy="-2.21744e-29 1.5708 0"/>
+            <geometry>
+                <mesh filename="package://assets/m2_5x6__configuration__6.stl"/>
+            </geometry>
+            <material name="m2_5x6__configuration__6_31_material">
+                <color rgba="0.690196 0.690196 0.690196 1.0"/>
+            </material>
+        </visual>
+        <!-- Part m2_5x6__configuration__6_32 -->
+        <visual>
+            <origin xyz="0.00777817 0.00777817 -0.005" rpy="2.24702e-29 -1.5708 0"/>
+            <geometry>
+                <mesh filename="package://assets/m2_5x6__configuration__6.stl"/>
+            </geometry>
+            <material name="m2_5x6__configuration__6_32_material">
+                <color rgba="0.690196 0.690196 0.690196 1.0"/>
+            </material>
+        </visual>
+    </link>
+    <!-- Frame end (dummy link + fixed joint) -->
+    <link name="end">
+        <origin xyz="0 0 0" rpy="0 -0 0"/>
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <mass value="1e-9"/>
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+        </inertial>
+    </link>
+    <joint name="end_frame" type="fixed">
+        <origin xyz="-5.11455e-17 -0.18 0.02337" rpy="1.5708 5.97715e-19 -1.2326e-32"/>
+        <parent link="sw_segment_64"/>
+        <child link="end"/>
+        <axis xyz="0 0 0"/>
+    </joint>
+    <!-- Joint from first_segment_mix to sw_segment_64 -->
+    <joint name="R2" type="revolute">
+        <origin xyz="1.99576e-14 -0.18 0.0025" rpy="1.43557e-16 -6.28308e-16 1.66533e-16"/>
+        <parent link="first_segment_mix"/>
+        <child link="sw_segment_64"/>
+        <axis xyz="0 0 1"/>
+        <limit effort="10" velocity="10" lower="-2.61799" upper="2.61799"/>
+    </joint>
+    <!-- Joint from base_106 to first_segment_mix -->
+    <joint name="R1" type="revolute">
+        <origin xyz="1.64102e-17 0.02603 0.5452" rpy="1.5708 -0 -1.72563e-31"/>
+        <parent link="base_106"/>
+        <child link="first_segment_mix"/>
+        <axis xyz="0 0 1"/>
+        <limit effort="10" velocity="10" lower="-1.91986" upper="1.91986"/>
+    </joint>
+</robot>
