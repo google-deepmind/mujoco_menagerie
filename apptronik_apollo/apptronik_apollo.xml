@@ -98,7 +98,7 @@
                     <body name="torso_link" pos="0 0 0">
                         <inertial pos="-0.0484952 0.00143204 0.185535" quat="0.702792 0.0157426 -6.68569e-05 0.711221" mass="19.3408" diaginertia="0.303595 0.272287 0.22035"/>
                         <joint name="torso_pitch" axis="0 1 0" range="-0.305433 1.35263" actuatorfrcrange="-315 315" damping="0" frictionloss="13.15" armature="0.970692"/>
-                        <site name="imu" pos="0.037 5.54705e-16 0.093624" euler="0.000000 1.570800 3.141590"/>
+                        <site name="imu" pos="0.067 5.54705e-16 0.124874" euler="0.000000 1.570800 3.141590"/>
                         <geom class="visual_light" mesh="torso_link"/>
                         <geom name="collision_cylinder_torso" size="0.16 0.05" pos="-0.045 0 0.2" type="capsule" class="collision"/>
                         <geom class="visual_dark" mesh="neck_mount_fix_link"/>
