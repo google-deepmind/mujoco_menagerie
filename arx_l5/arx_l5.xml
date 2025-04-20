@@ -36,6 +36,7 @@
   </asset>
 
   <worldbody>
+    <light mode="targetbodycom" target="link8" pos="1 0 1"/>
     <body name="base_link">
       <geom mesh="base_link" material="black_mat" class="visual"/>
       <geom mesh="base_link" class="collision"/>
