@@ -27,7 +27,7 @@ This package contains a simplified robot description (MJCF) of the [ARX L5](http
 
 ## License
 
-This model is released under a [BSD 3-Clause License](LICENSE).
+This model is released under a [BSD-3-Clause License](LICENSE).
 
 ## Acknowledgement
 

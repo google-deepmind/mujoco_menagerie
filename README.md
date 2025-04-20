@@ -172,7 +172,7 @@ Menagerie, see [CONTRIBUTING](CONTRIBUTING.md).
 
 | Name | Maker | DoFs    | License | MJX |
 |------|-------|---------|---------|-----|
-| ARX L5 | ARX Robotics | 7 | [MIT](agilex_piper/LICENSE) |✖️|
+| ARX L5 | ARX Robotics | 7 | [BSD-3-Clause](arx_l5/LICENSE) |✖️|
 | PiPER | AgileX | 7 | [MIT](agilex_piper/LICENSE) |✖️|
 | FR3 | Franka Robotics | 7 | [Apache-2.0](franka_fr3/LICENSE) |✖️|
 | iiwa14 | KUKA | 7 | [BSD-3-Clause](kuka_iiwa_14/LICENSE) |✖️|
