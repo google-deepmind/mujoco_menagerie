@@ -3,6 +3,10 @@
 > [!IMPORTANT]
 > Requires MuJoCo 3.1.6 or later.
 
+## Changelog
+
+See [CHANGELOG.md](./CHANGELOG.md) for a full history of changes.
+
 ## Overview
 
 This package contains a simplified robot description (MJCF) of the [Standard Open Arm-100](https://github.com/TheRobotStudio/SO-ARM100/tree/main) developed by [The Robot Studio](https://www.therobotstudio.com/). It is derived from the [publicly available URDF description](https://github.com/TheRobotStudio/SO-ARM100/blob/4e9c5588d8a8415b6a6c2142a0ce8c32207cf3e9/URDF/SO_5DOF_ARM100_8j_URDF.SLDASM/urdf/SO_5DOF_ARM100_8j_URDF.SLDASM.urdf).

@@ -3,6 +3,10 @@
 > [!IMPORTANT]
 > Requires MuJoCo 3.1.3 or later.
 
+## Changelog
+
+See [CHANGELOG.md](./CHANGELOG.md) for a full history of changes.
+
 ## Overview
 
 This package contains a simplified robot description (MJCF) of the [Franka Research 3](https://franka.de/research) (aka FR3) developed by [Franka Robotics](https://franka.de/company) (formerly Franka Emika). It is derived from the [publicly available URDF description](https://github.com/frankaemika/franka_description).
