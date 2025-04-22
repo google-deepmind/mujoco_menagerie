@@ -279,16 +279,19 @@ If you use Menagerie in your work, please use the following citation:
 
 ## Acknowledgments
 
-The models in this repository are based on third-party models designed by many
-talented people, and would not have been possible without their generous
-open-source contributions. We would like to acknowledge all the designers
-and engineers who made MuJoCo Menagerie possible.
+The models in this repository are based on third-party models designed by many talented people, and would not have been possible without their generous open-source contributions. We would like to acknowledge all the designers and engineers who made MuJoCo Menagerie possible.
 
 We'd like to thank Pedro Vergani for his help with visuals and design.
 
-The main effort required to make this repository publicly available was
-undertaken by [Kevin Zakka](https://kzakka.com/), with help from the Robotics
-Simulation team at Google DeepMind.
+The main effort required to make this repository publicly available was undertaken by [Kevin Zakka](https://kzakka.com/), with help from the Robotics Simulation team at Google DeepMind.
+
+This project has also benefited from contributions by members of the broader community — see the [CONTRIBUTORS.md](./CONTRIBUTORS.md) for a full list.
+
+## Changelog
+
+For a summary of key updates across the repository, see the [global CHANGELOG.md](./CHANGELOG.md).
+
+Each individual model also includes its own `CHANGELOG.md` file with model-specific updates, linked directly from the corresponding README.
 
 ## License and Disclaimer
 
