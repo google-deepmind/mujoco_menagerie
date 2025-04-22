@@ -64,6 +64,15 @@ checks that no simulation instabilities occur. In the future, we will likely add
 more tests that check for model realism (e.g., that a trajectory in real matches
 one in simulation).
 
+## Changelog & Contributors
+
+Please document your changes in the appropriate changelog:
+
+- For updates that affect the general repository (e.g., CI, tooling, documentation, shared infrastructure), add an entry to the [global `CHANGELOG.md`](./CHANGELOG.md).
+- For changes specific to a model, update the `CHANGELOG.md` in that model’s directory (e.g., `unitree_go1/CHANGELOG.md`).
+
+Make sure to also add your name to the [`CONTRIBUTORS.md`](./CONTRIBUTORS.md), keeping the list sorted alphabetically by first name.
+
 ## Contributor License Agreement
 
 Contributions to this project must be accompanied by a Contributor License
