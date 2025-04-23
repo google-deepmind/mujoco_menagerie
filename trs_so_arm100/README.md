@@ -1,4 +1,4 @@
-# Standard Open Arm-100 5DOF - Version 1.3 (MJCF)
+# Standard Open Arm-100 5DOF - Version 1.3 Description (MJCF)
 
 > [!IMPORTANT]
 > Requires MuJoCo 3.1.6 or later.

@@ -1,7 +1,7 @@
 # Hello Robot Stretch 2 Description (MJCF)
 
 > [!IMPORTANT]
-> Requires MuJoCo 2.3.3 or later.
+> Requires MuJoCo 3.3.0 or later.
 
 ## Changelog
 

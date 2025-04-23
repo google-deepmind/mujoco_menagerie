@@ -90,6 +90,7 @@ NAME_MAP = {
     "shadow_hand/left_hand": "left shadow",
     "kinova_gen3/gen3": "gen3",
     "booster_t1/t1": "t1",
+    "agilex_piper/piper": "piper",
 }
 
 MODEL_MAP = {
@@ -132,6 +133,7 @@ MODEL_MAP = {
     "leap_hand/left_hand": ModelType.END_EFFECTOR,
     "kinova_gen3/gen3": ModelType.ARM,
     "booster_t1/t1": ModelType.HUMANOID,
+    "agilex_piper/piper": ModelType.ARM,
 }
 
 DEFAULT_FOV = 40
@@ -325,6 +327,11 @@ CAMERA_MAP = {
         xyaxes="0.453 0.892 0.000 -0.295 0.150 0.944",
         fovy=DEFAULT_FOV,
     ),
+    "agilex_piper/piper": dict(
+        pos="0.288 -0.480 0.294",
+        xyaxes="0.866 0.500 0.000 -0.171 0.296 0.940",
+        fovy=50,
+    ),
 }
 
 # pylint: disable=line-too-long
@@ -339,7 +346,7 @@ KEYFRAME_MAP = {
 }
 # pylint: enable=line-too-long
 
-KEEP_LIGHT = ["go1", "a1", "op3", "aloha", "left_hand", "stretch"]
+KEEP_LIGHT = ["go1", "a1", "op3", "aloha", "left_hand", "stretch", "piper"]
 
 
 def create_arena():

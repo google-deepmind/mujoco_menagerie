@@ -2,6 +2,12 @@
 
 All notable changes to this model will be documented in this file.
 
+## [04/17/2025]
+- IMU position correction based on Apptroink request.
+
+## [03/15/2025]
+- Fixed finger distal orientation.
+
 ## [01/21/2025]
 - Fixed bug in the IMU position.
 
