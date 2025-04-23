@@ -5,16 +5,16 @@
 
   <default>
     <default class="torobo">
-      <joint armature="0.1" stiffness="0" damping="0"/>
+      <joint armature="0.1"/>
       <default class="visual">
         <geom type="mesh" contype="0" conaffinity="0" group="2" density="0"/>
       </default>
       <default class="collision">
-        <geom type="mesh" contype="1" conaffinity="1" group="3" rgba="1 1 1 1"/>
+        <geom type="mesh" group="3" rgba="1 1 1 1"/>
       </default>
     </default>
     <default class="hand">
-      <joint armature="0.01" stiffness="0" damping="0"/>
+      <joint armature="0.01"/>
     </default>
   </default>
 
@@ -134,16 +134,16 @@
   </asset>
 
   <worldbody>
-    <body name="base_link_trans_x" pos="0 0 0">
+    <body name="base_link_trans_x">
       <inertial pos="0 0 0" mass="0.00001" diaginertia="0.00001 0.00001 0.00001"/>
       <joint name="base_joint_trans_x" type="slide" axis="1 0 0" range="-10000 10000"/>
-      <body name="base_link_trans_y" pos="0 0 0">
+      <body name="base_link_trans_y">
         <inertial pos="0 0 0" mass="0.00001" diaginertia="0.00001 0.00001 0.00001"/>
         <joint name="base_joint_trans_y" type="slide" axis="0 1 0" range="-10000 10000"/>
-        <body name="base_link_rot_yaw" pos="0 0 0">
+        <body name="base_link_rot_yaw">
           <inertial pos="0 0 0" mass="0.00001" diaginertia="0.00001 0.00001 0.00001"/>
           <joint name="base_joint_rot_yaw" type="hinge" axis="0 0 1" range="-10000 10000"/>
-          <body name="base_link" pos="0 0 0" childclass="torobo">
+          <body name="base_link" childclass="torobo">
             <inertial pos="-0.0231104 0.00158473 0.188355" quat="-0.0157449 0.686078 -0.018153 0.727131" mass="56.049"
               diaginertia="1.87057 1.70163 1.51139"/>
             <geom class="visual" type="mesh" mesh="base_link" material="219,219,219"/>

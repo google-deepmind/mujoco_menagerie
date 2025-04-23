@@ -5,7 +5,7 @@
 
   <default>
     <default class="hand">
-      <joint armature="0.01" stiffness="0.0" damping="0.0"/>
+      <joint armature="0.01"/>
     </default>
   </default>
 
