@@ -1,6 +1,11 @@
 ## AgileX PiPER Description (MJCF)
 
+> [!IMPORTANT]
 > Requires MuJoCo 2.3.4 or later.
+
+## Changelog
+
+See [CHANGELOG.md](./CHANGELOG.md) for a full history of changes.
 
 ### Overview
 

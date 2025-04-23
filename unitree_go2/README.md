@@ -5,9 +5,7 @@
 
 ## Changelog
 
-- 16/02/2025: Make actuator order match joint order.
-- 01/06/2024: Fix foot solimp.
-- 23/10/2023: Initial release.
+See [CHANGELOG.md](./CHANGELOG.md) for a full history of changes.
 
 ## Overview
 

@@ -3,6 +3,10 @@
 > [!IMPORTANT]
 > Requires MuJoCo 3.1.3 or later.
 
+## Changelog
+
+See [CHANGELOG.md](./CHANGELOG.md) for a full history of changes.
+
 ## Overview
 
 This package contains a simplified robot description (MJCF) of the (left and right) [LEAP Hand](https://leaphand.com/) developed by Carnegie Mellon University. It is derived from the [publicly available URDF description](https://github.com/dexsuite/dex-urdf/tree/main/robots/hands/leap_hand).

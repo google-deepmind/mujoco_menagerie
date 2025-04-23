@@ -1,6 +1,11 @@
 # Unitree H1 Description (MJCF)
 
-Requires MuJoCo 2.2.2 or later.
+> [!IMPORTANT]
+> Requires MuJoCo 2.2.2 or later.
+
+## Changelog
+
+See [CHANGELOG.md](./CHANGELOG.md) for a full history of changes.
 
 ## Overview
 

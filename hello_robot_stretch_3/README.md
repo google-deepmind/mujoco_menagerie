@@ -3,6 +3,10 @@
 > [!IMPORTANT]
 > Requires MuJoCo 3.3.0 or later.
 
+## Changelog
+
+See [CHANGELOG.md](./CHANGELOG.md) for a full history of changes.
+
 ## Overview
 
 This package contains the robot description (MJCF) of the [Hello Robot Stretch 3](https://hello-robot.com/product) developed by [Hello Robot](https://hello-robot.com/). This model was directly provided by Hello Robot under the [Apache 2.0](LICENSE).

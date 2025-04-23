@@ -1,6 +1,11 @@
 ## ARX L5 Description (MJCF)
 
+> [!IMPORTANT]
 > Requires MuJoCo 3.1.3 or later.
+
+## Changelog
+
+See [CHANGELOG.md](./CHANGELOG.md) for a full history of changes.
 
 ### Overview
 

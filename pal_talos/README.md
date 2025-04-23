@@ -3,6 +3,10 @@
 > [!IMPORTANT]
 > Requires MuJoCo 2.2.2 or later.
 
+## Changelog
+
+See [CHANGELOG.md](./CHANGELOG.md) for a full history of changes.
+
 ### Overview
 
 This package contains a simplified robot description (MJCF) of the [TALOS Robot](https://pal-robotics.com/robots/talos/) by [PAL Robotics](https://pal-robotics.com/). It is derived from the publicly available [URDF description](https://github.com/pal-robotics/talos_robot/tree/kinetic-devel/talos_description).
