@@ -1,5 +1,5 @@
 <mujoco model="scene">
-    <include file="robot.xml" />
+    <include file="dynamixel_2r.xml" />
 
     <visual>
         <headlight diffuse="0.6 0.6 0.6" ambient="0.3 0.3 0.3" specular="0 0 0" />

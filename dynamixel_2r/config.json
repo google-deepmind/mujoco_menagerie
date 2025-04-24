@@ -3,6 +3,7 @@
     "url": "https://cad.onshape.com/documents/c261e707fbd05d9a111bbdd3/w/2b2b7908e9fc282f8fc113ce/e/67a067163b98ae778d880134",
     "output_format": "mujoco",
     "no_collision_meshes": true,
+    "output_filename": "dynamixel_2r",
 
     "joint_properties": {
 	// MX-106
