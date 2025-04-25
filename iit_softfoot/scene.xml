@@ -1,8 +1,7 @@
+<!-- This example scene attaches to a foot to a simple loading test rig, demonstrating
+the foot's compliance against an obstacle.-->
 <mujoco model="softfoot scene">
-  <!-- This example scene attaches to a foot to a simple loading test rig, demonstrating the foot's 
-  compliance against an obstacle.-->
-
-  <statistic center="0 0 0.55" extent="1.1"/>
+  <statistic center="0 0 0.1" extent=".3"/>
 
   <visual>
     <headlight diffuse="0.6 0.6 0.6" ambient="0.3 0.3 0.3" specular="0 0 0"/>
@@ -27,6 +26,7 @@
     </body>
     <geom type="cylinder" euler="90 0 0" rgba="0.8 0.7 0.2 1" size="0.025 0.1"/>
   </worldbody>
+
   <actuator>
     <position joint="load" kp="1000" ctrllimited="true" ctrlrange="0 0.3"/>
   </actuator>
