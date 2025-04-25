@@ -1,13 +1,13 @@
 # Robot soccer kit omnidirectional
 
-## Overview 
+## Overview
 
 This package contains a robot description (MJCF) of a [Robot Soccer Kit omnidirectional robot](https://robot-soccer-kit.github.io/). All passive wheels (20 per wheel) are simulated as passive joints.
 
 No accurate system identification was performed, so the model is not expected to be highly accurate for control purposes.
 
 <p float="left">
-    <img src="robot_soccer_kit.png" width="400">
+  <img src="robot_soccer_kit.png" width="400">
 </p>
 
 ## CAD → MJCF conversion
@@ -18,4 +18,4 @@ The conversion configuration ([config.json](config.json)) was kept in the packag
 
 ## License
 
-This model is released under a [MIT License](LICENSE)
+This model is released under an [MIT License](LICENSE).

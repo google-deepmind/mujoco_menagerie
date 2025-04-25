@@ -20,8 +20,8 @@ The [config.json](config.json) with export configuration file is also present in
 
 ## See also
 
-* [BAM repository](https://github.com/rhoban/bam): exploring extended modeling of the friction
+* [BAM repository](https://github.com/rhoban/bam): exploring extended modeling of the friction.
 
 ## License
 
-This model is released under a [MIT License](LICENSE)
+This model is released under an [MIT License](LICENSE).
