@@ -5,7 +5,7 @@
 
 ## Changelog
 
-- 7/02/2025: Initial release.
+See [CHANGELOG.md](./CHANGELOG.md) for a full history of changes.
 
 ## Overview
 

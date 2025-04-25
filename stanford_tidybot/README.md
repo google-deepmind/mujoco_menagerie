@@ -3,6 +3,10 @@
 > [!IMPORTANT]
 > Requires MuJoCo 3.1.0 or later.
 
+## Changelog
+
+See [CHANGELOG.md](./CHANGELOG.md) for a full history of changes.
+
 ## Overview
 
 This package contains a simplified robot description (MJCF) of the [Stanford TidyBot](https://tidybot.cs.princeton.edu) developed by Jimmy Wu and collaborators from the [Interactive Perception and Robot Learning Lab](https://iprl.stanford.edu) at Stanford University.

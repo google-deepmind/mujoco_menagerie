@@ -3,6 +3,10 @@
 > [!IMPORTANT]
 > Requires MuJoCo 2.3.3 or later.
 
+## Changelog
+
+See [CHANGELOG.md](./CHANGELOG.md) for a full history of changes.
+
 ## Overview
 
 This package contains a simplified robot description (MJCF) of the [Kinova

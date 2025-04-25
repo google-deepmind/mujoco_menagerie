@@ -46,6 +46,7 @@ well right out of the gate.
 - [Menagerie Models](#menagerie-models)
 - [Citing Menagerie](#citing-menagerie)
 - [Acknowledgments](#acknowledgments)
+- [Changelog](#changelog)
 - [License and Disclaimer](#license-and-disclaimer)
 
 ## Getting Started
@@ -172,6 +173,7 @@ Menagerie, see [CONTRIBUTING](CONTRIBUTING.md).
 
 | Name | Maker | DoFs    | License | MJX |
 |------|-------|---------|---------|-----|
+| ARX L5 | ARX Robotics | 7 | [BSD-3-Clause](arx_l5/LICENSE) |✖️|
 | PiPER | AgileX | 7 | [MIT](agilex_piper/LICENSE) |✖️|
 | FR3 | Franka Robotics | 7 | [Apache-2.0](franka_fr3/LICENSE) |✖️|
 | iiwa14 | KUKA | 7 | [BSD-3-Clause](kuka_iiwa_14/LICENSE) |✖️|
@@ -228,17 +230,24 @@ Menagerie, see [CONTRIBUTING](CONTRIBUTING.md).
 | PAL Tiago | PAL Robotics | 12 | [Apache-2.0](pal_tiago/LICENSE) |✖️|
 | PAL Tiago Dual | PAL Robotics | 21 | [Apache-2.0](pal_tiago_dual/LICENSE) |✖️|
 
+**Mobile Bases.**
+
+| Name | Maker | DoFs    | License | MJX |
+|------|-------|---------|---------|-----|
+| Omniwheel Soccer Robot | Robot Soccer Kit | 4 | [MIT](robot_soccer_kit/LICENSE) |✖️|
+
 **Humanoids.**
 
 | Name | Maker | DoFs    | License | MJX |
 |------|-------|---------|---------|-----|
+| Adam Lite | PNDbotics | 25 | [MIT](pndbotics_adam_lite/LICENSE) |✖️|
 | Apptronik Apollo | Apptronik | 32 | [Apache-2.0](apptronik_apollo/LICENSE) |✔️|
 | Berkeley Humanoid | Hybrid Robotics | 12 | [BSD-3-Clause](berkeley_humanoid/LICENSE) |✖️|
 | Booster T1 | Booster Robotics | 23 | [Apache-2.0](booster_t1/LICENSE) |✖️|
 | Robotis OP3 | Robotis | 20 | [Apache-2.0](robotis_op3/LICENSE) |✖️|
+| TALOS | PAL Robotics | 32 | [Apache-2.0](pal_talos/LICENSE) |✖️|
 | Unitree G1 | Unitree Robotics | 37 | [BSD-3-Clause](unitree_g1/LICENSE) |✖️|
 | Unitree H1 | Unitree Robotics | 19 | [BSD-3-Clause](unitree_h1/LICENSE) |✖️|
-| TALOS | PAL Robotics | 32 | [Apache-2.0](pal_talos/LICENSE) |✖️|
 
 **Quadrupeds.**
 
@@ -257,6 +266,7 @@ Menagerie, see [CONTRIBUTING](CONTRIBUTING.md).
 
 | Name | Maker | DoFs    | License | MJX |
 |------|-------|---------|---------|-----|
+| IIT Softfoot | IIT Softbots | 92 | [BSD-3-Clause](iit_softfoot/LICENSE) |✖️|
 | flybody | Google DeepMind, HHMI Janelia Research Campus | 102 | [Apache-2.0](flybody/LICENSE) |✖️|
 
 **Miscellaneous.**
@@ -280,16 +290,19 @@ If you use Menagerie in your work, please use the following citation:
 
 ## Acknowledgments
 
-The models in this repository are based on third-party models designed by many
-talented people, and would not have been possible without their generous
-open-source contributions. We would like to acknowledge all the designers
-and engineers who made MuJoCo Menagerie possible.
+The models in this repository are based on third-party models designed by many talented people, and would not have been possible without their generous open-source contributions. We would like to acknowledge all the designers and engineers who made MuJoCo Menagerie possible.
 
 We'd like to thank Pedro Vergani for his help with visuals and design.
 
-The main effort required to make this repository publicly available was
-undertaken by [Kevin Zakka](https://kzakka.com/), with help from the Robotics
-Simulation team at Google DeepMind.
+The main effort required to make this repository publicly available was undertaken by [Kevin Zakka](https://kzakka.com/), with help from the Robotics Simulation team at Google DeepMind.
+
+This project has also benefited from contributions by members of the broader community — see the [CONTRIBUTORS.md](./CONTRIBUTORS.md) for a full list.
+
+## Changelog
+
+For a summary of key updates across the repository, see the [global CHANGELOG.md](./CHANGELOG.md).
+
+Each individual model also includes its own `CHANGELOG.md` file with model-specific updates, linked directly from the corresponding README.
 
 ## License and Disclaimer
 

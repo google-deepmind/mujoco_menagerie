@@ -1,0 +1,29 @@
+{
+    // Onshape-to-robot export configuration file
+    "url": "https://cad.onshape.com/documents/81e7adfaf4d8d74f2936fbd5/w/97141f458dee8c3b80cbf3d2/e/5e1ff591ff562de3da8ed2af",
+    "output_format": "mujoco",
+    "output_filename": "robot_soccer_kit",
+    "use_scads": true,
+    "simplify_stls": true,
+    "max_stl_size": 1,
+    "no_collision_meshes": true,
+    "joint_properties": {
+        "*passive*": {
+            "actuated": false,
+            "range": false
+        },
+        "*wheel*": {
+            "type": "velocity",
+            "limits": [
+                -16,
+                16
+            ],
+            "kv": 5.0,
+            "range": false
+        },
+        "kicker": {
+            "range": true,
+            "kp": 500
+        }
+    }
+}
