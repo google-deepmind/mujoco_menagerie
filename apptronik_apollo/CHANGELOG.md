@@ -2,6 +2,10 @@
 
 All notable changes to this model will be documented in this file.
 
+## [05/02/2025]
+- Changed acuator order to match joint order and moved kv to damping for better
+sim2real transfer.
+
 ## [04/17/2025]
 - IMU position correction based on Apptroink request.
 
