@@ -1,0 +1,132 @@
+<mujoco model="low_cost_robot_arm">
+  <compiler angle="radian" meshdir="assets"/>
+
+  <option integrator="implicitfast" cone="elliptic" impratio="10"/>
+
+  <default>
+    <default class="low_cost_robot_arm">
+      <joint armature="0.5" frictionloss="0.2"/>
+      <position kp="100" kv="10" forcerange="-87 87" inheritrange="1"/>
+      <default class="visual">
+        <geom type="mesh" group="2" contype="0" conaffinity="0"/>
+      </default>
+      <default class="collision">
+        <geom type="mesh" group="3" mass="0" density="0"/>
+        <default class="pad_box1">
+          <geom type="box" friction="0.7" solimp="0.95 0.99 0.001" solref="0.004 1" mass="0" priority="1"
+            size="0.002 0.002 0.0025" rgba="0.2 0.2 0.2 1"/>
+        </default>
+        <default class="pad_box2">
+          <geom type="box" friction="0.6" solimp="0.95 0.99 0.001" solref="0.004 1" mass="0" priority="1"
+            size="0.002 0.002 0.0052" rgba="0.1 0.1 0.1 1"/>
+        </default>
+      </default>
+    </default>
+  </default>
+
+  <asset>
+    <material name="black" rgba="0.1 0.1 0.1 1"/>
+    <material name="white" rgba="0.8 0.8 0.8 1"/>
+
+    <mesh name="base_link" file="base_link.stl"/>
+    <mesh name="shoulder_rotation" file="shoulder_rotation.stl"/>
+    <mesh name="shoulder_to_elbow" file="shoulder_to_elbow.stl"/>
+    <mesh name="elbow_to_wrist_extension" file="elbow_to_wrist_extension.stl"/>
+    <mesh name="elbow_to_wrist" file="elbow_to_wrist.stl"/>
+    <mesh name="gripper_static_finger" file="gripper_static_finger.stl"/>
+    <mesh name="gripper_moving_finger" file="gripper_moving_finger.stl"/>
+    <mesh name="base_link_motor" file="base_link_motor.stl"/>
+    <mesh name="shoulder_rotation_motor" file="shoulder_rotation_motor.stl"/>
+    <mesh name="shoulder_to_elbow_motor" file="shoulder_to_elbow_motor.stl"/>
+    <mesh name="elbow_to_wrist_extension_motor" file="elbow_to_wrist_extension_motor.stl"/>
+    <mesh name="elbow_to_wrist_motor" file="elbow_to_wrist_motor.stl"/>
+    <mesh name="gripper_static_finger_motor" file="gripper_static_finger_motor.stl"/>
+    <mesh name="base_link_collision" file="base_link_collision.stl"/>
+    <mesh name="shoulder_rotation_collision" file="shoulder_rotation_collision.stl"/>
+    <mesh name="shoulder_to_elbow_collision" file="shoulder_to_elbow_collision.stl"/>
+    <mesh name="elbow_to_wrist_extension_collision" file="elbow_to_wrist_extension_collision.stl"/>
+    <mesh name="elbow_to_wrist_collision" file="elbow_to_wrist_collision.stl"/>
+    <mesh name="gripper_static_finger_collision_1" file="gripper_static_finger_collision_1.stl"/>
+    <mesh name="gripper_static_finger_collision_2" file="gripper_static_finger_collision_2.stl"/>
+    <mesh name="gripper_moving_finger_collision_1" file="gripper_moving_finger_collision_1.stl"/>
+    <mesh name="gripper_moving_finger_collision_2" file="gripper_moving_finger_collision_2.stl"/>
+  </asset>
+
+  <worldbody>
+    <body name="base_link" childclass="low_cost_robot_arm">
+      <geom mesh="base_link" class="visual" material="white"/>
+      <geom mesh="base_link_motor" class="visual" material="black"/>
+      <geom mesh="base_link_collision" class="collision"/>
+      <body name="shoulder_rotation" pos="0.012 0 0.0409">
+        <inertial pos="0.011924 -0.00048792 0.013381" quat="-0.0190903 0.705417 0.0178052 0.708312" mass="0.05014"
+          diaginertia="1.44921e-05 1.2371e-05 7.59138e-06"/>
+        <joint name="base_rotation" pos="0 0 0" axis="0 0 -1" range="-2.2 2.2"/>
+        <geom mesh="shoulder_rotation" class="visual" material="white"/>
+        <geom mesh="shoulder_rotation_motor" class="visual" material="black"/>
+        <geom mesh="shoulder_rotation_collision" class="collision"/>
+        <body name="shoulder_to_elbow" pos="0 -0.0209 0.0154">
+          <inertial pos="0.0011747 0.02097 0.071547" quat="0.998768 2.01447e-05 0.0496266 0.000367169" mass="0.050177"
+            diaginertia="3.73065e-05 3.3772e-05 7.94901e-06"/>
+          <joint name="pitch" pos="0 0 0" axis="0 1 0" range="-1.57 0.6"/>
+          <geom mesh="shoulder_to_elbow" class="visual" material="white"/>
+          <geom mesh="shoulder_to_elbow_motor" class="visual" material="black"/>
+          <geom mesh="shoulder_to_elbow_collision" class="collision"/>
+          <body name="elbow_to_wrist_extension" pos="-0.0148 0.0065 0.1083">
+            <inertial pos="-0.05537 0.014505 0.0028659" quat="8.17663e-05 0.710999 -4.16983e-05 0.703193" mass="0.06379"
+              diaginertia="2.45081e-05 2.2231e-05 7.34061e-06"/>
+            <joint name="elbow" pos="0 0 0" axis="0 -1 0" range="-1.57 1.45"/>
+            <geom mesh="elbow_to_wrist_extension" class="visual" material="white"/>
+            <geom mesh="elbow_to_wrist_extension_motor" class="visual" material="black"/>
+            <geom mesh="elbow_to_wrist_extension_collision" class="collision"/>
+            <body name="elbow_to_wrist" pos="-0.10048 5e-05 0.0026999">
+              <inertial pos="-0.02652 0.019195 -9.0614e-06" quat="0.707361 0.706812 0.00580344 0.00484124"
+                mass="0.019805" diaginertia="2.95813e-06 2.8759e-06 1.07787e-06"/>
+              <joint name="wrist_pitch" pos="0 0 0" axis="0 1 0" range="-2.0 2.0"/>
+              <geom mesh="elbow_to_wrist" class="visual" material="white"/>
+              <geom mesh="elbow_to_wrist_motor" class="visual" material="black"/>
+              <geom mesh="elbow_to_wrist_collision" class="collision"/>
+              <body name="gripper_static_finger" pos="-0.045 0.013097 0">
+                <inertial pos="-0.019091 0.0053379 0.00018011" quat="0.105295 0.703509 -0.0986543 0.695885"
+                  mass="0.029277" diaginertia="8.11303e-06 7.14908e-06 3.27429e-06"/>
+                <joint name="wrist_roll" pos="0 0 0" axis="1 0 0" range="-3.14 3.14"/>
+                <geom mesh="gripper_static_finger" class="visual" material="white"/>
+                <geom mesh="gripper_static_finger_motor" class="visual" material="black"/>
+                <geom mesh="gripper_static_finger_collision_1" class="collision"/>
+                <geom mesh="gripper_static_finger_collision_2" class="collision"/>
+                <geom class="pad_box1" name="gripper_static_finger_pad_1" pos="-0.0668 0.0105 0.00045"/>
+                <geom class="pad_box2" name="gripper_static_finger_pad_3" pos="-0.0628 0.0105 0.0005"/>
+                <body name="gripper_moving_finger" pos="-0.01315 -0.0075 0.0145">
+                  <inertial pos="-0.02507 0.0010817 -0.01414" quat="0.528148 0.5474 0.466496 0.451436" mass="0.012831"
+                    diaginertia="3.49922e-06 2.45768e-06 1.4645e-06"/>
+                  <joint name="gripper" pos="0 0 0" axis="0 0 -1" range="-1.60 0.032" frictionloss="0.1"/>
+                  <geom mesh="gripper_moving_finger" class="visual" material="white"/>
+                  <geom mesh="gripper_moving_finger_collision_1" class="collision"/>
+                  <geom mesh="gripper_moving_finger_collision_2" class="collision"/>
+                  <geom class="pad_box1" name="gripper_moving_finger_pad_1" pos="-0.0535 0.0113 -0.01395"/>
+                  <geom class="pad_box2" name="gripper_moving_finger_pad_3" pos="-0.0495 0.0113 -0.01395"/>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+
+  <contact>
+    <exclude name="exclude_base_link_shoulder_rotation" body1="base_link" body2="shoulder_rotation"/>
+  </contact>
+
+  <actuator>
+    <position class="low_cost_robot_arm" name="base_rotation" joint="base_rotation" forcerange="-87 87"/>
+    <position class="low_cost_robot_arm" name="pitch" joint="pitch" forcerange="-87 87"/>
+    <position class="low_cost_robot_arm" name="elbow" joint="elbow" forcerange="-87 87"/>
+    <position class="low_cost_robot_arm" name="wrist_pitch" joint="wrist_pitch" forcerange="-12 12"/>
+    <position class="low_cost_robot_arm" name="wrist_roll" joint="wrist_roll" forcerange="-10 10"/>
+    <position class="low_cost_robot_arm" name="gripper" joint="gripper" forcerange="-5 5"/>
+  </actuator>
+
+  <keyframe>
+    <key name="home" qpos="0 0 0 0 0 0" ctrl="0 0 0 0 0 0"/>
+  </keyframe>
+</mujoco>
