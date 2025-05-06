@@ -36,4 +36,4 @@ More information can be found [here](https://github.com/FFTAI/wiki-grx-mjcf).
 
 ## License
 
-This model is released under an [GPL-3.0 License](LICENSE).
+This model is released under an [Apache-2.0 License](LICENSE).
