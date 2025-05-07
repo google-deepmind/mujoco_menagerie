@@ -158,110 +158,14 @@
   </equality>
 
   <contact>
-    <exclude body1="hand/base_link" body2="hand/first_finger_base_link"/>
-    <exclude body1="hand/base_link" body2="hand_first_finger/link_1"/>
-    <exclude body1="hand/base_link" body2="hand/second_finger_base_link"/>
-    <exclude body1="hand/base_link" body2="hand_second_finger/link_1"/>
-    <exclude body1="hand/base_link" body2="hand/third_finger_base_link"/>
-    <exclude body1="hand/base_link" body2="hand_third_finger/link_1"/>
-    <exclude body1="hand/base_link" body2="hand_thumb/link_1"/>
+    <exclude body1="hand/base_link" body2="hand/first_finger_base_link" />
+    <exclude body1="hand/base_link" body2="hand_first_finger/link_1" />
+    <exclude body1="hand/base_link" body2="hand/second_finger_base_link" />
+    <exclude body1="hand/base_link" body2="hand_second_finger/link_1" />
+    <exclude body1="hand/base_link" body2="hand/third_finger_base_link" />
+    <exclude body1="hand/base_link" body2="hand_third_finger/link_1" />
+    <exclude body1="hand/base_link" body2="hand_thumb/link_1" />
     <exclude body1="hand/base_link" body2="hand_thumb/link_2"/>
-    <exclude body1="hand/first_finger_base_link" body2="hand_first_finger/link_1"/>
-    <exclude body1="hand/first_finger_base_link" body2="hand_first_finger/link_2"/>
-    <exclude body1="hand/first_finger_base_link" body2="hand/second_finger_base_link"/>
-    <exclude body1="hand/first_finger_base_link" body2="hand_second_finger/link_1"/>
-    <exclude body1="hand/first_finger_base_link" body2="hand_second_finger/link_2"/>
-    <exclude body1="hand/first_finger_base_link" body2="hand_second_finger/link_3"/>
-    <exclude body1="hand/first_finger_base_link" body2="hand/third_finger_base_link"/>
-    <exclude body1="hand/first_finger_base_link" body2="hand_third_finger/link_1"/>
-    <exclude body1="hand/first_finger_base_link" body2="hand_third_finger/link_2"/>
-    <exclude body1="hand/first_finger_base_link" body2="hand_third_finger/link_3"/>
-    <exclude body1="hand/first_finger_base_link" body2="hand_thumb/link_1"/>
-    <exclude body1="hand/first_finger_base_link" body2="hand_thumb/link_2"/>
-    <exclude body1="hand/first_finger_base_link" body2="hand_thumb/link_3"/>
-    <exclude body1="hand_first_finger/link_1" body2="hand_first_finger/link_2"/>
-    <exclude body1="hand_first_finger/link_1" body2="hand_first_finger/link_3"/>
-    <exclude body1="hand_first_finger/link_1" body2="hand/second_finger_base_link"/>
-    <exclude body1="hand_first_finger/link_1" body2="hand/third_finger_base_link"/>
-    <exclude body1="hand_first_finger/link_1" body2="hand_third_finger/link_1"/>
-    <exclude body1="hand_first_finger/link_1" body2="hand_third_finger/link_2"/>
-    <exclude body1="hand_first_finger/link_1" body2="hand_third_finger/link_3"/>
-    <exclude body1="hand_first_finger/link_1" body2="hand_thumb/link_1"/>
-    <exclude body1="hand_first_finger/link_1" body2="hand_thumb/link_2"/>
-    <exclude body1="hand_first_finger/link_1" body2="hand_thumb/link_3"/>
-    <exclude body1="hand_first_finger/link_2" body2="hand_first_finger/link_3"/>
-    <exclude body1="hand_first_finger/link_2" body2="hand/second_finger_base_link"/>
-    <exclude body1="hand_first_finger/link_2" body2="hand/third_finger_base_link"/>
-    <exclude body1="hand_first_finger/link_2" body2="hand_third_finger/link_1"/>
-    <exclude body1="hand_first_finger/link_2" body2="hand_third_finger/link_2"/>
-    <exclude body1="hand_first_finger/link_2" body2="hand_third_finger/link_3"/>
-    <exclude body1="hand_first_finger/link_2" body2="hand_thumb/link_1"/>
-    <exclude body1="hand_first_finger/link_2" body2="hand_thumb/link_2"/>
-    <exclude body1="hand_first_finger/link_3" body2="hand/second_finger_base_link"/>
-    <exclude body1="hand_first_finger/link_3" body2="hand_second_finger/link_1"/>
-    <exclude body1="hand_first_finger/link_3" body2="hand/third_finger_base_link"/>
-    <exclude body1="hand_first_finger/link_3" body2="hand_third_finger/link_1"/>
-    <exclude body1="hand_first_finger/link_3" body2="hand_third_finger/link_2"/>
-    <exclude body1="hand_first_finger/link_3" body2="hand_third_finger/link_3"/>
-    <exclude body1="hand_first_finger/link_3" body2="hand_thumb/link_1"/>
-    <exclude body1="hand/second_finger_base_link" body2="hand_second_finger/link_1"/>
-    <exclude body1="hand/second_finger_base_link" body2="hand_second_finger/link_2"/>
-    <exclude body1="hand/second_finger_base_link" body2="hand/third_finger_base_link"/>
-    <exclude body1="hand/second_finger_base_link" body2="hand_third_finger/link_1"/>
-    <exclude body1="hand/second_finger_base_link" body2="hand_third_finger/link_2"/>
-    <exclude body1="hand/second_finger_base_link" body2="hand_third_finger/link_3"/>
-    <exclude body1="hand/second_finger_base_link" body2="hand_thumb/link_1"/>
-    <exclude body1="hand/second_finger_base_link" body2="hand_thumb/link_2"/>
-    <exclude body1="hand/second_finger_base_link" body2="hand_thumb/link_3"/>
-    <exclude body1="hand_second_finger/link_1" body2="hand_second_finger/link_2"/>
-    <exclude body1="hand_second_finger/link_1" body2="hand_second_finger/link_3"/>
-    <exclude body1="hand_second_finger/link_1" body2="hand/third_finger_base_link"/>
-    <exclude body1="hand_second_finger/link_1" body2="hand_third_finger/link_1"/>
-    <exclude body1="hand_second_finger/link_1" body2="hand_third_finger/link_2"/>
-    <exclude body1="hand_second_finger/link_1" body2="hand_third_finger/link_3"/>
-    <exclude body1="hand_second_finger/link_1" body2="hand_thumb/link_1"/>
-    <exclude body1="hand_second_finger/link_1" body2="hand_thumb/link_2"/>
-    <exclude body1="hand_second_finger/link_1" body2="hand_thumb/link_3"/>
-    <exclude body1="hand_second_finger/link_2" body2="hand_second_finger/link_3"/>
-    <exclude body1="hand_second_finger/link_2" body2="hand/third_finger_base_link"/>
-    <exclude body1="hand_second_finger/link_2" body2="hand_third_finger/link_1"/>
-    <exclude body1="hand_second_finger/link_2" body2="hand_third_finger/link_2"/>
-    <exclude body1="hand_second_finger/link_2" body2="hand_third_finger/link_3"/>
-    <exclude body1="hand_second_finger/link_2" body2="hand_thumb/link_1"/>
-    <exclude body1="hand_second_finger/link_2" body2="hand_thumb/link_2"/>
-    <exclude body1="hand_second_finger/link_3" body2="hand/third_finger_base_link"/>
-    <exclude body1="hand_second_finger/link_3" body2="hand_third_finger/link_1"/>
-    <exclude body1="hand_second_finger/link_3" body2="hand_third_finger/link_2"/>
-    <exclude body1="hand_second_finger/link_3" body2="hand_third_finger/link_3"/>
-    <exclude body1="hand_second_finger/link_3" body2="hand_thumb/link_1"/>
-    <exclude body1="hand_second_finger/link_3" body2="hand_thumb/link_2"/>
-    <exclude body1="hand/third_finger_base_link" body2="hand_third_finger/link_1"/>
-    <exclude body1="hand/third_finger_base_link" body2="hand_third_finger/link_2"/>
-    <exclude body1="hand/third_finger_base_link" body2="hand_thumb/link_1"/>
-    <exclude body1="hand/third_finger_base_link" body2="hand_thumb/link_2"/>
-    <exclude body1="hand/third_finger_base_link" body2="hand_thumb/link_3"/>
-    <exclude body1="hand/third_finger_base_link" body2="hand_thumb/link_4"/>
-    <exclude body1="hand_third_finger/link_1" body2="hand_third_finger/link_2"/>
-    <exclude body1="hand_third_finger/link_1" body2="hand_third_finger/link_3"/>
-    <exclude body1="hand_third_finger/link_1" body2="hand_thumb/link_1"/>
-    <exclude body1="hand_third_finger/link_1" body2="hand_thumb/link_2"/>
-    <exclude body1="hand_third_finger/link_1" body2="hand_thumb/link_3"/>
-    <exclude body1="hand_third_finger/link_1" body2="hand_thumb/link_4"/>
-    <exclude body1="hand_third_finger/link_2" body2="hand_third_finger/link_3"/>
-    <exclude body1="hand_third_finger/link_2" body2="hand_thumb/link_1"/>
-    <exclude body1="hand_third_finger/link_2" body2="hand_thumb/link_2"/>
-    <exclude body1="hand_third_finger/link_2" body2="hand_thumb/link_3"/>
-    <exclude body1="hand_third_finger/link_2" body2="hand_thumb/link_4"/>
-    <exclude body1="hand_third_finger/link_3" body2="hand_thumb/link_1"/>
-    <exclude body1="hand_third_finger/link_3" body2="hand_thumb/link_2"/>
-    <exclude body1="hand_third_finger/link_3" body2="hand_thumb/link_3"/>
-    <exclude body1="hand_third_finger/link_3" body2="hand_thumb/link_4"/>
-    <exclude body1="hand_thumb/link_1" body2="hand_thumb/link_2"/>
-    <exclude body1="hand_thumb/link_1" body2="hand_thumb/link_3"/>
-    <exclude body1="hand_thumb/link_1" body2="hand_thumb/link_4"/>
-    <exclude body1="hand_thumb/link_2" body2="hand_thumb/link_3"/>
-    <exclude body1="hand_thumb/link_2" body2="hand_thumb/link_4"/>
-    <exclude body1="hand_thumb/link_3" body2="hand_thumb/link_4"/>
   </contact>
 
   <actuator>
