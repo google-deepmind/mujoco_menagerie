@@ -22,8 +22,6 @@ It is derived from the
 
 ## MJCF derivation steps
 
-Here are the main steps taken to derive the MJCF model from the original URDF:
-
 1. Started from `N1_raw.urdf` in [Fourier N1 URDF Description](https://github.com/FFTAI/Wiki-GRx-Models).
     - File SHA: `8456575a522676db6b7d0924eccfc61e4c4123cc`
 2. Loaded the URDF into MuJoCo and saved a corresponding MJCF.
