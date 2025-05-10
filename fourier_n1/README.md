@@ -24,7 +24,8 @@ It is derived from the
 
 Here are the main steps taken to derive the MJCF model from the original URDF:
 
-1. Started from `N1_raw.urdf`.
+1. Started from `N1_raw.urdf` in [Fourier N1 URDF Description](https://github.com/FFTAI/Wiki-GRx-Models).
+    - File SHA: `8456575a522676db6b7d0924eccfc61e4c4123cc`
 2. Loaded the URDF into MuJoCo and saved a corresponding MJCF.
 3. Manually edited the MJCF to extract common properties into the `<default>` section.
 4. Manually edited the `<asset>` section to include the textures and meshes.
@@ -36,4 +37,4 @@ More information can be found [here](https://github.com/FFTAI/wiki-grx-mjcf).
 
 ## License
 
-This model is released under an [GPL-3.0 License](LICENSE).
+This model is released under an [Apache-2.0 License](LICENSE).
