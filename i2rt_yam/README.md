@@ -1,7 +1,7 @@
 # Yet Another Manipulator (YAM) Description (MJCF)
 
 > [!IMPORTANT]
-> Requires MuJoCo 3.1.0 or later.
+> Requires MuJoCo 3.1.3 or later.
 
 ## Changelog
 
