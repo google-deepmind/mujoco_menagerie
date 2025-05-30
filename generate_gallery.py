@@ -91,6 +91,7 @@ NAME_MAP = {
     "kinova_gen3/gen3": "gen3",
     "booster_t1/t1": "t1",
     "agilex_piper/piper": "piper",
+    "doosan_robotics_m1013/m1013": "m1013",
 }
 
 MODEL_MAP = {
@@ -134,6 +135,7 @@ MODEL_MAP = {
     "kinova_gen3/gen3": ModelType.ARM,
     "booster_t1/t1": ModelType.HUMANOID,
     "agilex_piper/piper": ModelType.ARM,
+    "doosan_robotics_m1013/m1013": ModelType.ARM,
 }
 
 DEFAULT_FOV = 40
@@ -332,6 +334,11 @@ CAMERA_MAP = {
         xyaxes="0.866 0.500 0.000 -0.171 0.296 0.940",
         fovy=50,
     ),
+    "doosan_robotics_m1013/m1013": dict(
+        pos="1.013 -1.340 0.552", 
+        xyaxes="0.870 0.492 0.000 -0.056 0.099 0.994",
+        fovy=DEFAULT_FOV,
+    ),
 }
 
 # pylint: disable=line-too-long
@@ -343,6 +350,7 @@ KEYFRAME_MAP = {
     "google_robot": "-1.51699e-13 -1.16232e-12 -0.1444 2.9724 -0.146 -0.3759 1.15806e-12 0.5518 0.62275",
     "aloha": "0.43988 -0.206468 1.08253 -0.443382 -1.084 -0.00397598 0.0084 0.00846495 -1.28822 -0.360594 0.717978 -0.000325086 -0.273415 6.76003e-05 0.0084 0.00839987",
     "kuka_iiwa_14": "0 0 0 -1.5708 0 1.5708 0",
+    "m1013": "0 0 1.57 0 1.57 0",
 }
 # pylint: enable=line-too-long
 
@@ -370,7 +378,6 @@ def create_arena():
 
 
 MODEL_XMLS = [pathlib.Path(f"../{k}.xml") for k in MODEL_MAP.keys()]
-
 
 # Sort XML files.
 def sort_func(xml):
