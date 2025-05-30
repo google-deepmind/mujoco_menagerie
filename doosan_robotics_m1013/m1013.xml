@@ -2,16 +2,16 @@
   <compiler angle="radian" meshdir="assets"/>
 
   <asset>
-    <mesh name="MF1013_0_0" file="assets/MF1013_0_0.stl" scale="0.001 0.001 0.001"/>
-    <mesh name="MF1013_1_0" file="assets/MF1013_1_0.stl" scale="0.001 0.001 0.001"/>
-    <mesh name="MF1013_2_0" file="assets/MF1013_2_0.stl" scale="0.001 0.001 0.001"/>
-    <mesh name="MF1013_2_1" file="assets/MF1013_2_1.stl" scale="0.001 0.001 0.001"/>
-    <mesh name="MF1013_2_2" file="assets/MF1013_2_2.stl" scale="0.001 0.001 0.001"/>
-    <mesh name="MF1013_3_0" file="assets/MF1013_3_0.stl" scale="0.001 0.001 0.001"/>
-    <mesh name="MF1013_4_0" file="assets/MF1013_4_0.stl" scale="0.001 0.001 0.001"/>
-    <mesh name="MF1013_4_1" file="assets/MF1013_4_1.stl" scale="0.001 0.001 0.001"/>
-    <mesh name="MF1013_5_0" file="assets/MF1013_5_0.stl" scale="0.001 0.001 0.001"/>
-    <mesh name="MF1013_6_0" file="assets/MF1013_6_0.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="MF1013_0_0" file="MF1013_0_0.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="MF1013_1_0" file="MF1013_1_0.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="MF1013_2_0" file="MF1013_2_0.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="MF1013_2_1" file="MF1013_2_1.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="MF1013_2_2" file="MF1013_2_2.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="MF1013_3_0" file="MF1013_3_0.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="MF1013_4_0" file="MF1013_4_0.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="MF1013_4_1" file="MF1013_4_1.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="MF1013_5_0" file="MF1013_5_0.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="MF1013_6_0" file="MF1013_6_0.stl" scale="0.001 0.001 0.001"/>
 
     <material name="white" rgba="0.9 0.9 0.9 1"/>
     <material name="metal" rgba="0.65 0.65 0.65 1"/>
@@ -77,4 +77,8 @@
     <position joint="joint_5" kp="10000" kv="10" ctrlrange="-6.28319 6.28319"/>
     <position joint="joint_6" kp="10000" kv="10" ctrlrange="-6.28319 6.28319"/>
   </actuator>
+
+  <keyframe>
+    <key name="home" qpos="0 0 1.57 0 1.57 0" ctrl="0 0 1.57 0 1.57 0"/>
+  </keyframe>
 </mujoco>

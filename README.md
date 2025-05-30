@@ -191,6 +191,7 @@ Menagerie, see [CONTRIBUTING](CONTRIBUTING.md).
 | SO-ARM100 | The Robot Studio | 5 | [Apache-2.0](trs_so_arm100/LICENSE) |✖️|
 | Koch v1.1 Low-Cost Robot | Hugging Face | 5 | [Apache-2.0](low_cost_robot_arm/LICENSE) |✖️|
 | YAM | I2RT Robotics | 7 | [MIT](i2rt_yam/LICENSE) |✖️|
+| M1013 | Doosan Robotics | 6 | [BSD-3-Clause](doosan_robotics_m1013/LICENSE) |✖️|
 
 **Bipeds.**
 
