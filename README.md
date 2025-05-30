@@ -249,7 +249,7 @@ Menagerie, see [CONTRIBUTING](CONTRIBUTING.md).
 | Fourier N1 | Fourier Robotics | 30 | [Apache-2.0](fourier_n1/LICENSE) |✖️|
 | Robotis OP3 | Robotis | 20 | [Apache-2.0](robotis_op3/LICENSE) |✖️|
 | TALOS | PAL Robotics | 32 | [Apache-2.0](pal_talos/LICENSE) |✖️|
-| Unitree G1 | Unitree Robotics | 37 | [BSD-3-Clause](unitree_g1/LICENSE) |✖️|
+| Unitree G1 | Unitree Robotics | 37 | [BSD-3-Clause](unitree_g1/LICENSE) |✔️|
 | Unitree H1 | Unitree Robotics | 19 | [BSD-3-Clause](unitree_h1/LICENSE) |✖️|
 
 **Quadrupeds.**

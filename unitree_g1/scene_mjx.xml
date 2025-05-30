@@ -1,0 +1,146 @@
+<mujoco model="g1 mjx flat terrain scene">
+  <include file="g1_mjx.xml"/>
+
+  <statistic center="0 0 0.7" extent="1.2" meansize="0.02"/>
+
+  <visual>
+    <headlight diffuse="0.6 0.6 0.6" ambient="0.1 0.1 0.1" specular="0.9 0.9 0.9"/>
+    <rgba force="1 0 0 1" haze="0.15 0.25 0.35 1"/>
+    <global azimuth="140" elevation="-20"/>
+    <map force="0.01"/>
+    <scale forcewidth="0.3" contactwidth="0.5" contactheight="0.2"/>
+    <quality shadowsize="8192"/>
+  </visual>
+
+  <asset>
+    <texture type="skybox" builtin="gradient" rgb1="0.3 0.5 0.7" rgb2="0 0 0" width="512" height="3072"/>
+    <texture type="2d" name="groundplane" builtin="checker" mark="edge" rgb1="0.2 0.3 0.4" rgb2="0.1 0.2 0.3"
+      markrgb="0.8 0.8 0.8" width="300" height="300"/>
+    <material name="groundplane" texture="groundplane" texuniform="true" texrepeat="5 5" reflectance="0.2"/>
+  </asset>
+
+  <worldbody>
+    <geom name="floor" size="0 0 0.01" type="plane" material="groundplane"/>
+  </worldbody>
+
+  <contact>
+    <!-- left foot - floor -->
+    <pair name="left_foot1_floor" geom1="left_foot1_collision" geom2="floor" solref="0.008 1" friction="1 1" condim="3"/>
+    <pair name="left_foot2_floor" geom1="left_foot2_collision" geom2="floor" solref="0.008 1" friction="1 1" condim="3"/>
+    <pair name="left_foot3_floor" geom1="left_foot3_collision" geom2="floor" solref="0.008 1" friction="1 1" condim="3"/>
+    <!-- right foot - floor -->
+    <pair name="right_foot1_floor" geom1="right_foot1_collision" geom2="floor" solref="0.008 1" friction="1 1"
+      condim="3"/>
+    <pair name="right_foot2_floor" geom1="right_foot2_collision" geom2="floor" solref="0.008 1" friction="1 1"
+      condim="3"/>
+    <pair name="right_foot3_floor" geom1="right_foot3_collision" geom2="floor" solref="0.008 1" friction="1 1"
+      condim="3"/>
+    <!-- foot - foot -->
+    <pair name="left_foot_right_foot" geom1="left_foot_box_collision" geom2="right_foot_box_collision" condim="1"/>
+    <!-- foot - shin -->
+    <pair name="left_foot_right_shin" geom1="left_foot_box_collision" geom2="right_shin_collision" condim="1"/>
+    <pair name="right_foot_left_shin" geom1="right_foot_box_collision" geom2="left_shin_collision" condim="1"/>
+    <!-- foot - linkage brace -->
+    <pair name="left_foot_right_linkage_brace" geom1="left_foot_box_collision" geom2="right_linkage_brace_collision"
+      condim="1"/>
+    <pair name="right_foot_left_linkage_brace" geom1="right_foot_box_collision" geom2="left_linkage_brace_collision"
+      condim="1"/>
+    <!-- hands - hips -->
+    <pair name="left_hand_left_hip" geom1="left_hand_collision" geom2="left_hip_collision" condim="1"/>
+    <pair name="right_hand_right_hip" geom1="right_hand_collision" geom2="right_hip_collision" condim="1"/>
+    <!-- hands - thigh -->
+    <pair name="left_hand_left_thigh" geom1="left_hand_collision" geom2="left_thigh_collision" condim="1"/>
+    <pair name="right_hand_right_thigh" geom1="right_hand_collision" geom2="right_thigh_collision" condim="1"/>
+    <!-- shins - shins -->
+    <pair name="left_shin_right_shin" geom1="left_shin_collision" geom2="right_shin_collision" condim="1"/>
+    <!-- torso - shoulders -->
+    <pair name="torso_left_shoulder" geom1="torso_collision" geom2="left_shoulder_yaw_collision" condim="1"/>
+    <pair name="torso_right_shoulder" geom1="torso_collision" geom2="right_shoulder_yaw_collision" condim="1"/>
+    <!-- torso - elbows -->
+    <pair name="torso_left_elbow" geom1="torso_collision" geom2="left_elbow_yaw_collision" condim="1"/>
+    <pair name="torso_right_elbow" geom1="torso_collision" geom2="right_elbow_yaw_collision" condim="1"/>
+    <!-- torso - wrist -->
+    <pair name="torso_left_wrist" geom1="torso_collision" geom2="left_wrist_collision" condim="1"/>
+    <pair name="torso_right_wrist" geom1="torso_collision" geom2="right_wrist_collision" condim="1"/>
+    <!-- torso - hands -->
+    <pair name="torso_left_hand" geom1="torso_collision" geom2="left_hand_collision" condim="1"/>
+    <pair name="torso_right_hand" geom1="torso_collision" geom2="right_hand_collision" condim="1"/>
+    <!-- hands - floor -->
+    <pair name="left_hand_floor" geom1="left_hand_collision" geom2="floor" condim="3"/>
+    <pair name="right_hand_floor" geom1="right_hand_collision" geom2="floor" condim="3"/>
+    <!-- shoulder - floor -->
+    <pair name="left_shoulder_floor" geom1="left_shoulder_yaw_collision" geom2="floor" condim="3"/>
+    <pair name="right_shoulder_floor" geom1="right_shoulder_yaw_collision" geom2="floor" condim="3"/>
+    <!-- elbow - floor -->
+    <pair name="left_elbow_floor" geom1="left_elbow_yaw_collision" geom2="floor" condim="3"/>
+    <pair name="right_elbow_floor" geom1="right_elbow_yaw_collision" geom2="floor" condim="3"/>
+    <!-- wrist - floor -->
+    <pair name="left_wrist_floor" geom1="left_wrist_collision" geom2="floor" condim="3"/>
+    <pair name="right_wrist_floor" geom1="right_wrist_collision" geom2="floor" condim="3"/>
+    <!-- hips - floor -->
+    <pair name="left_hip_floor" geom1="left_hip_collision" geom2="floor" condim="3"/>
+    <pair name="right_hip_floor" geom1="right_hip_collision" geom2="floor" condim="3"/>
+    <!-- thigh - floor -->
+    <pair name="left_thigh_floor" geom1="left_thigh_collision" geom2="floor" condim="3"/>
+    <pair name="right_thigh_floor" geom1="right_thigh_collision" geom2="floor" condim="3"/>
+    <!-- shins - floor -->
+    <pair name="left_shin_floor" geom1="left_shin_collision" geom2="floor" condim="3"/>
+    <pair name="right_shin_floor" geom1="right_shin_collision" geom2="floor" condim="3"/>
+    <!-- pelvis - floor -->
+    <pair name="pelvis_floor" geom1="pelvis_collision" geom2="floor" condim="3"/>
+    <!-- torso - floor -->
+    <pair name="torso_floor" geom1="torso_collision" geom2="floor" condim="3"/>
+    <!-- head - floor -->
+    <pair name="head_floor" geom1="head_collision" geom2="floor" condim="3"/>
+    <!-- thigh - thigh -->
+    <pair name="left_thigh_right_thigh" geom1="left_thigh_collision" geom2="right_thigh_collision" condim="1"/>
+    <!-- shin - thigh -->
+    <pair name="left_shin_right_thigh" geom1="left_shin_collision" geom2="right_thigh_collision" condim="1"/>
+    <pair name="right_shin_left_thigh" geom1="right_shin_collision" geom2="left_thigh_collision" condim="1"/>
+    <!-- hip - shin -->
+    <pair name="left_shin_right_hip" geom1="left_shin_collision" geom2="right_hip_collision" condim="1"/>
+    <pair name="right_shin_left_hip" geom1="right_shin_collision" geom2="left_hip_collision" condim="1"/>
+    <!-- hip - thigh -->
+    <pair name="left_hip_right_thigh" geom1="left_hip_collision" geom2="right_thigh_collision" condim="1"/>
+    <pair name="right_hip_left_thigh" geom1="right_hip_collision" geom2="left_thigh_collision" condim="1"/>
+    <!-- hand - hand -->
+    <pair name="left_hand_right_hand" geom1="left_hand_collision" geom2="right_hand_collision" condim="1"/>
+  </contact>
+
+  <keyframe>
+    <key name="home"
+      qpos="
+      0 0 0.783675
+      1 0 0 0
+      -0.1 0 0 0.3 -0.2 0
+      -0.1 0 0 0.3 -0.2 0
+      0 0 0
+      0.2 0.2 0 1.28 0 0 0
+      0.2 -0.2 0 1.28 0 0 0
+      "
+      ctrl="
+      -0.1 0 0 0.3 -0.2 0
+      -0.1 0 0 0.3 -0.2 0
+      0 0 0
+      0.2 0.2 0 1.28 0 0 0
+      0.2 -0.2 0 1.28 0 0 0
+      "/>
+    <key name="knees_bent"
+      qpos="
+      0 0 0.755
+      1 0 0 0
+      -0.312 0 0 0.669 -0.363 0
+      -0.312 0 0 0.669 -0.363 0
+      0 0 0.073
+      0.2 0.22 0 1 0 0 0
+      0.2 -0.22 0 1 0 0 0
+      "
+      ctrl="
+      -0.312 0 0 0.669 -0.363 0
+      -0.312 0 0 0.669 -0.363 0
+      0 0 0.073
+      0.2 0.22 0 1 0 0 0
+      0.2 -0.22 0 1 0 0 0
+    "/>
+  </keyframe>
+</mujoco>
