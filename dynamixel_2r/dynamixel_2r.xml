@@ -1,0 +1,322 @@
+<?xml version="1.0"?>
+<!-- Generated using onshape-to-robot -->
+<!-- Onshape
+https://cad.onshape.com/documents/c261e707fbd05d9a111bbdd3/w/2b2b7908e9fc282f8fc113ce/e/67a067163b98ae778d880134 -->
+<mujoco model="dynamixel_2r">
+  <compiler angle="radian" meshdir="assets" autolimits="true"/>
+  <option noslip_iterations="1"/>
+  <default>
+    <default class="dynamixel_2r">
+      <joint frictionloss="0.1" armature="0.005"/>
+      <position kp="50" dampratio="1"/>
+      <default class="visual">
+        <geom type="mesh" contype="0" conaffinity="0" group="2"/>
+      </default>
+      <default class="collision">
+        <geom group="3"/>
+      </default>
+    </default>
+  </default>
+  <worldbody>
+    <!-- Link base_2 -->
+    <body name="base_2" pos="0 0 0" quat="1 0 0 0" childclass="dynamixel_2r">
+      <inertial pos="2.30111e-06 -0.000112826 0.572136" mass="0.24962"
+        fullinertia="0.000178516 0.000198872 0.000154932 3.91579e-09 9.44129e-09 8.09383e-07"/>
+      <!-- Part nut_2_5 -->
+      <geom type="mesh" class="visual" pos="0.011 -0.01353 0.593" quat="0.5 0.5 -0.5 -0.5" mesh="nut_2_5"
+        material="nut_2_5_material"/>
+      <!-- Part m2_5x20 -->
+      <geom type="mesh" class="visual" pos="0.0173 0.03097 0.5852" quat="0.5 0.5 -0.5 -0.5" mesh="m2_5x20"
+        material="m2_5x20_material"/>
+      <!-- Part dc08_m01_dummy -->
+      <geom type="mesh" class="visual" pos="-4.66532e-36 -3e-05 0.5452" quat="0.707107 -0.707107 -0 -6.36971e-32"
+        mesh="dc08_m01_dummy" material="dc08_m01_dummy_material"/>
+      <!-- Part nut_2_5_2 -->
+      <geom type="mesh" class="visual" pos="-0.0173 -0.01353 0.5852" quat="0.707107 0 2.22045e-16 -0.707107"
+        mesh="nut_2_5" material="nut_2_5_material"/>
+      <!-- Part nut_2_5_3 -->
+      <geom type="mesh" class="visual" pos="0.0173 -0.01353 0.5852" quat="0.707107 0 2.22045e-16 -0.707107"
+        mesh="nut_2_5" material="nut_2_5_material"/>
+      <!-- Part m2_5x20_2 -->
+      <geom type="mesh" class="visual" pos="0.011 -0.03097 0.593" quat="0.5 -0.5 -0.5 0.5" mesh="m2_5x20"
+        material="m2_5x20_material"/>
+      <!-- Part m2_5x20_3 -->
+      <geom type="mesh" class="visual" pos="0.011 0.03097 0.593" quat="0.5 0.5 -0.5 -0.5" mesh="m2_5x20"
+        material="m2_5x20_material"/>
+      <!-- Part m2_5x20_4 -->
+      <geom type="mesh" class="visual" pos="-0.0173 0.03097 0.5852" quat="0.5 0.5 -0.5 -0.5" mesh="m2_5x20"
+        material="m2_5x20_material"/>
+      <!-- Part hn05_i101 -->
+      <geom type="mesh" class="visual" pos="3.46945e-18 4.00315e-19 0.5452" quat="0.707107 -0.707107 -0 -5.93393e-32"
+        mesh="hn05_i101" material="hn05_i101_material"/>
+      <!-- Part nut_2_5_4 -->
+      <geom type="mesh" class="visual" pos="-0.011 -0.01353 0.593" quat="0.5 0.5 -0.5 -0.5" mesh="nut_2_5"
+        material="nut_2_5_material"/>
+      <!-- Part m2_5x20_5 -->
+      <geom type="mesh" class="visual" pos="-0.0173 -0.03097 0.5852" quat="0.5 -0.5 -0.5 0.5" mesh="m2_5x20"
+        material="m2_5x20_material"/>
+      <!-- Part m2_5x20_6 -->
+      <geom type="mesh" class="visual" pos="-0.011 -0.03097 0.593" quat="0.5 -0.5 -0.5 0.5" mesh="m2_5x20"
+        material="m2_5x20_material"/>
+      <!-- Part m2_5x20_7 -->
+      <geom type="mesh" class="visual" pos="-0.011 0.03097 0.593" quat="0.5 0.5 -0.5 -0.5" mesh="m2_5x20"
+        material="m2_5x20_material"/>
+      <!-- Part m2_5x20_8 -->
+      <geom type="mesh" class="visual" pos="0.0173 -0.03097 0.5852" quat="0.5 -0.5 -0.5 0.5" mesh="m2_5x20"
+        material="m2_5x20_material"/>
+      <!-- Part base_mx106 -->
+      <geom type="mesh" class="visual" pos="0 7.33921e-18 0.5452" quat="0.707107 -0.707107 -0 5.49814e-32"
+        mesh="base_mx106" material="base_mx106_material"/>
+      <!-- Frame base -->
+      <site group="0" name="base" pos="1.73264e-35 9.3735e-36 0.6" quat="3.06162e-17 1 -5.39977e-17 -5.65924e-17"/>
+      <!-- Link first_segment -->
+      <body name="first_segment" pos="7.12552e-17 0.02597 0.5452" quat="0.707107 0.707107 0 6.86915e-17">
+        <!-- Joint from base_2 to first_segment -->
+        <joint name="R1" type="hinge" range="-1.9198621771937625 1.9198621771937625"/>
+        <inertial pos="5.5506e-09 -0.128359 0.0261154" mass="0.287381"
+          fullinertia="0.000864932 0.000126807 0.000800724 2.26291e-11 1.2818e-11 6.69056e-07"/>
+        <!-- Part m2_5x6 -->
+        <geom type="mesh" class="visual" pos="-0.011 1.11022e-16 -0.005" quat="0.707107 -0 -0.707107 -0" mesh="m2_5x6"
+          material="m2_5x6_material"/>
+        <!-- Part m2_5x6_2 -->
+        <geom type="mesh" class="visual" pos="-0.00777817 -0.00777817 -0.005" quat="0.707107 -0 -0.707107 -0"
+          mesh="m2_5x6" material="m2_5x6_material"/>
+        <!-- Part mid_part -->
+        <geom type="mesh" class="visual" pos="-3.40072e-17 -0.047 0.02597" quat="1.11531e-18 0 3.25261e-19 -1"
+          mesh="mid_part" material="mid_part_material"/>
+        <!-- Part m2_5x6_3 -->
+        <geom type="mesh" class="visual" pos="0.00777817 0.00777817 -0.005" quat="0.707107 -0 -0.707107 -0"
+          mesh="m2_5x6" material="m2_5x6_material"/>
+        <!-- Part dc05_m01_dummy -->
+        <geom type="mesh" class="visual" pos="-3.01769e-17 -0.18 0.026" quat="0 1 0 0" mesh="dc05_m01_dummy"
+          material="dc05_m01_dummy_material"/>
+        <!-- Part m2_5x6_4 -->
+        <geom type="mesh" class="visual" pos="0.00777817 0.00777817 0.05694" quat="0.707107 -0 0.707107 0" mesh="m2_5x6"
+          material="m2_5x6_material"/>
+        <!-- Part m2_5x8 -->
+        <geom type="mesh" class="visual" pos="0.0173 -0.14 0.04644" quat="0.707107 0 0.707107 2.22045e-16" mesh="m2_5x8"
+          material="m2_5x8_material"/>
+        <!-- Part first_segment_mix -->
+        <geom type="mesh" class="visual" pos="3.20689e-14 -0.002 0.026" quat="0 1 0 0" mesh="first_segment_mix"
+          material="first_segment_mix_material"/>
+        <!-- Part m2_5x12 -->
+        <geom type="mesh" class="visual" pos="-0.009 -0.0823234 0.05694" quat="0.707107 -0 0.707107 0" mesh="m2_5x12"
+          material="m2_5x12_material"/>
+        <!-- Part m2_5x6_5 -->
+        <geom type="mesh" class="visual" pos="-0.00777817 -0.00777817 0.05694" quat="0.707107 -0 0.707107 0"
+          mesh="m2_5x6" material="m2_5x6_material"/>
+        <!-- Part m2_5x6_6 -->
+        <geom type="mesh" class="visual" pos="-0.00777817 0.00777817 -0.005" quat="0.707107 -0 -0.707107 -0"
+          mesh="m2_5x6" material="m2_5x6_material"/>
+        <!-- Part m2_5x6_7 -->
+        <geom type="mesh" class="visual" pos="-6.69808e-17 0.011 -0.005" quat="0.707107 -0 -0.707107 -0" mesh="m2_5x6"
+          material="m2_5x6_material"/>
+        <!-- Part m2_5x6_8 -->
+        <geom type="mesh" class="visual" pos="0.011 1.11022e-16 -0.005" quat="0.707107 -0 -0.707107 -0" mesh="m2_5x6"
+          material="m2_5x6_material"/>
+        <!-- Part m2_5x6_9 -->
+        <geom type="mesh" class="visual" pos="-2.00184e-17 -0.011 0.05694" quat="0.707107 -0 0.707107 0" mesh="m2_5x6"
+          material="m2_5x6_material"/>
+        <!-- Part m2_5x12_2 -->
+        <geom type="mesh" class="visual" pos="0.009 -0.0353234 0.05694" quat="0.707107 -0 0.707107 0" mesh="m2_5x12"
+          material="m2_5x12_material"/>
+        <!-- Part m2_5x12_3 -->
+        <geom type="mesh" class="visual" pos="-0.009 -0.0353234 0.05694" quat="0.707107 -0 0.707107 0" mesh="m2_5x12"
+          material="m2_5x12_material"/>
+        <!-- Part m2_5x8_2 -->
+        <geom type="mesh" class="visual" pos="-0.0173 -0.162 0.0055" quat="0.707107 9.81308e-18 -0.707107 1.11022e-16"
+          mesh="m2_5x8" material="m2_5x8_material"/>
+        <!-- Part m2_5x6_10 -->
+        <geom type="mesh" class="visual" pos="0.011 1.11022e-16 0.05694" quat="0.707107 -0 0.707107 0" mesh="m2_5x6"
+          material="m2_5x6_material"/>
+        <!-- Part nut_2_5_5 -->
+        <geom type="mesh" class="visual" pos="0.0173 -0.162 0.0395" quat="0.5 -0.5 -0.5 -0.5" mesh="nut_2_5"
+          material="nut_2_5_material"/>
+        <!-- Part m2_5x6_11 -->
+        <geom type="mesh" class="visual" pos="0.00777817 -0.00777817 -0.005" quat="0.707107 -0 -0.707107 -0"
+          mesh="m2_5x6" material="m2_5x6_material"/>
+        <!-- Part m2_5x8_3 -->
+        <geom type="mesh" class="visual" pos="-0.0173 -0.14 0.04644" quat="0.707107 -1.66246e-17 0.707107 0"
+          mesh="m2_5x8" material="m2_5x8_material"/>
+        <!-- Part mid_part_2 -->
+        <geom type="mesh" class="visual" pos="-9.8707e-17 -0.0706468 0.02597" quat="1 0 0 -2.00664e-16" mesh="mid_part"
+          material="mid_part_material"/>
+        <!-- Part first_segment_mix_2 -->
+        <geom type="mesh" class="visual" pos="-3.2102e-14 -0.002 0.02594" quat="1.11531e-18 0 3.25261e-19 -1"
+          mesh="first_segment_mix" material="first_segment_mix_material"/>
+        <!-- Part nut_2_5_6 -->
+        <geom type="mesh" class="visual" pos="0.0173 -0.14 0.0395" quat="0.5 -0.5 -0.5 -0.5" mesh="nut_2_5"
+          material="nut_2_5_material"/>
+        <!-- Part m2_5x6_12 -->
+        <geom type="mesh" class="visual" pos="-6.69808e-17 0.011 0.05694" quat="0.707107 -0 0.707107 0" mesh="m2_5x6"
+          material="m2_5x6_material"/>
+        <!-- Part m2_5x6_13 -->
+        <geom type="mesh" class="visual" pos="-0.00777817 0.00777817 0.05694" quat="0.707107 -0 0.707107 0"
+          mesh="m2_5x6" material="m2_5x6_material"/>
+        <!-- Part m2_5x6_14 -->
+        <geom type="mesh" class="visual" pos="-0.011 1.11022e-16 0.05694" quat="0.707107 -0 0.707107 0" mesh="m2_5x6"
+          material="m2_5x6_material"/>
+        <!-- Part m2_5x8_4 -->
+        <geom type="mesh" class="visual" pos="0.0173 -0.14 0.0055" quat="0.707107 9.81308e-18 -0.707107 1.11022e-16"
+          mesh="m2_5x8" material="m2_5x8_material"/>
+        <!-- Part m2_5x12_4 -->
+        <geom type="mesh" class="visual" pos="0.009 -0.0823234 0.05694" quat="0.707107 -0 0.707107 0" mesh="m2_5x12"
+          material="m2_5x12_material"/>
+        <!-- Part nut_2_5_7 -->
+        <geom type="mesh" class="visual" pos="-0.0173 -0.14 0.0395" quat="0.5 -0.5 -0.5 -0.5" mesh="nut_2_5"
+          material="nut_2_5_material"/>
+        <!-- Part m2_5x12_5 -->
+        <geom type="mesh" class="visual" pos="0.009 -0.0353234 -0.005" quat="0.707107 -0 -0.707107 -0" mesh="m2_5x12"
+          material="m2_5x12_material"/>
+        <!-- Part m2_5x8_5 -->
+        <geom type="mesh" class="visual" pos="-0.0173 -0.14 0.0055" quat="0.707107 9.81308e-18 -0.707107 1.11022e-16"
+          mesh="m2_5x8" material="m2_5x8_material"/>
+        <!-- Part m2_5x8_6 -->
+        <geom type="mesh" class="visual" pos="0.0173 -0.162 0.0055" quat="0.707107 9.81308e-18 -0.707107 1.11022e-16"
+          mesh="m2_5x8" material="m2_5x8_material"/>
+        <!-- Part m2_5x6_15 -->
+        <geom type="mesh" class="visual" pos="-2.00184e-17 -0.011 -0.005" quat="0.707107 -0 -0.707107 -0" mesh="m2_5x6"
+          material="m2_5x6_material"/>
+        <!-- Part nut_2_5_8 -->
+        <geom type="mesh" class="visual" pos="-0.0173 -0.162 0.0395" quat="0.5 0.5 -0.5 0.5" mesh="nut_2_5"
+          material="nut_2_5_material"/>
+        <!-- Part m2_5x8_7 -->
+        <geom type="mesh" class="visual" pos="-0.0173 -0.162 0.04644" quat="0.707107 0 0.707107 2.22045e-16"
+          mesh="m2_5x8" material="m2_5x8_material"/>
+        <!-- Part m2_5x12_6 -->
+        <geom type="mesh" class="visual" pos="-0.009 -0.0823234 -0.005" quat="0.707107 -0 -0.707107 -0" mesh="m2_5x12"
+          material="m2_5x12_material"/>
+        <!-- Part m2_5x6_16 -->
+        <geom type="mesh" class="visual" pos="0.00777817 -0.00777817 0.05694" quat="0.707107 -0 0.707107 0"
+          mesh="m2_5x6" material="m2_5x6_material"/>
+        <!-- Part m2_5x12_7 -->
+        <geom type="mesh" class="visual" pos="0.009 -0.0823234 -0.005" quat="0.707107 -0 -0.707107 -0" mesh="m2_5x12"
+          material="m2_5x12_material"/>
+        <!-- Part m2_5x12_8 -->
+        <geom type="mesh" class="visual" pos="-0.009 -0.0353234 -0.005" quat="0.707107 -0 -0.707107 -0" mesh="m2_5x12"
+          material="m2_5x12_material"/>
+        <!-- Part m2_5x8_8 -->
+        <geom type="mesh" class="visual" pos="0.0173 -0.162 0.04644" quat="0.707107 8.32667e-17 0.707107 -2.22045e-16"
+          mesh="m2_5x8" material="m2_5x8_material"/>
+        <!-- Part hn05_i101_2 -->
+        <geom type="mesh" class="visual" pos="-3.01769e-17 -0.18 0.02347" quat="0 1 0 0" mesh="hn05_i101"
+          material="hn05_i101_material"/>
+        <!-- Link second_segment -->
+        <body name="second_segment" pos="-1.11223e-16 -0.18 0.0025" quat="1 0 1.49672e-32 -1.73472e-17">
+          <!-- Joint from first_segment to second_segment -->
+          <joint name="R2" type="hinge" range="-2.6179938779914944 2.6179938779914944"/>
+          <inertial pos="1.17101e-16 -0.173709 0.0234758" mass="1.11614"
+            fullinertia="0.00242421 0.00147223 0.00378813 4.27328e-19 1.64127e-09 -8.91912e-08"/>
+          <!-- Part sw_mx64_segment -->
+          <geom type="mesh" class="visual" pos="0 0.18 0.02097" quat="6.07998e-31 0 0 -1" mesh="sw_mx64_segment"
+            material="sw_mx64_segment_material"/>
+          <!-- Part m2_5x6_17 -->
+          <geom type="mesh" class="visual" pos="0.011 1.11022e-16 -0.005" quat="0.707107 0 -0.707107 0" mesh="m2_5x6"
+            material="m2_5x6_material"/>
+          <!-- Part m2_5x6_18 -->
+          <geom type="mesh" class="visual" pos="-0.011 5.55112e-17 0.05194" quat="0.707107 -0 0.707107 -0" mesh="m2_5x6"
+            material="m2_5x6_material"/>
+          <!-- Part nut_4 -->
+          <geom type="mesh" class="visual" pos="5.77316e-17 -0.14 0.03507" quat="0.707107 -0 0.707107 -0" mesh="nut_4"
+            material="nut_4_material"/>
+          <!-- Part weight_985 -->
+          <geom type="mesh" class="visual" pos="1.06581e-16 -0.18 0.02022" quat="0.707107 -0.707107 -0 1.1128e-16"
+            mesh="weight_985" material="weight_985_material"/>
+          <!-- Part m2_5x6_19 -->
+          <geom type="mesh" class="visual" pos="-0.00777817 -0.00777817 0.05194" quat="0.707107 -0 0.707107 -0"
+            mesh="m2_5x6" material="m2_5x6_material"/>
+          <!-- Part m2_5x6_20 -->
+          <geom type="mesh" class="visual" pos="1.38389e-16 0.011 0.05194" quat="0.707107 -0 0.707107 -0" mesh="m2_5x6"
+            material="m2_5x6_material"/>
+          <!-- Part m2_5x6_21 -->
+          <geom type="mesh" class="visual" pos="-0.011 5.55112e-17 -0.005" quat="0.707107 0 -0.707107 0" mesh="m2_5x6"
+            material="m2_5x6_material"/>
+          <!-- Part nut_4_2 -->
+          <geom type="mesh" class="visual" pos="1.06581e-16 -0.18 0.03507" quat="0.707107 -0 0.707107 -0" mesh="nut_4"
+            material="nut_4_material"/>
+          <!-- Part m2_5x6_22 -->
+          <geom type="mesh" class="visual" pos="-0.00777817 0.00777817 -0.005" quat="0.707107 0 -0.707107 0"
+            mesh="m2_5x6" material="m2_5x6_material"/>
+          <!-- Part m2_5x6_23 -->
+          <geom type="mesh" class="visual" pos="1.34726e-16 -0.011 0.05194" quat="0.707107 -0 0.707107 -0" mesh="m2_5x6"
+            material="m2_5x6_material"/>
+          <!-- Part m4x25 -->
+          <geom type="mesh" class="visual" pos="5.77316e-17 -0.14 0.01347" quat="0.707107 0 -0.707107 0" mesh="m4x25"
+            material="m4x25_material"/>
+          <!-- Part m2_5x6_24 -->
+          <geom type="mesh" class="visual" pos="8.28781e-17 0.011 -0.005" quat="0.707107 0 -0.707107 0" mesh="m2_5x6"
+            material="m2_5x6_material"/>
+          <!-- Part sw_mx64_segment_2 -->
+          <geom type="mesh" class="visual" pos="0 0.18 0.02597" quat="0 1 0 0" mesh="sw_mx64_segment"
+            material="sw_mx64_segment_material"/>
+          <!-- Part m2_5x6_25 -->
+          <geom type="mesh" class="visual" pos="0.00777817 -0.00777817 0.05194" quat="0.707107 -0 0.707107 -0"
+            mesh="m2_5x6" material="m2_5x6_material"/>
+          <!-- Part m2_5x6_26 -->
+          <geom type="mesh" class="visual" pos="-0.00777817 -0.00777817 -0.005" quat="0.707107 0 -0.707107 0"
+            mesh="m2_5x6" material="m2_5x6_material"/>
+          <!-- Part m2_5x6_27 -->
+          <geom type="mesh" class="visual" pos="0.00777817 0.00777817 0.05194" quat="0.707107 -0 0.707107 -0"
+            mesh="m2_5x6" material="m2_5x6_material"/>
+          <!-- Part m2_5x6_28 -->
+          <geom type="mesh" class="visual" pos="1.34726e-16 -0.011 -0.005" quat="0.707107 0 -0.707107 0" mesh="m2_5x6"
+            material="m2_5x6_material"/>
+          <!-- Part m2_5x6_29 -->
+          <geom type="mesh" class="visual" pos="0.00777817 -0.00777817 -0.005" quat="0.707107 0 -0.707107 0"
+            mesh="m2_5x6" material="m2_5x6_material"/>
+          <!-- Part m2_5x6_30 -->
+          <geom type="mesh" class="visual" pos="-0.00777817 0.00777817 0.05194" quat="0.707107 -0 0.707107 -0"
+            mesh="m2_5x6" material="m2_5x6_material"/>
+          <!-- Part m4x25_2 -->
+          <geom type="mesh" class="visual" pos="1.06581e-16 -0.18 0.01347" quat="0.707107 0 -0.707107 0" mesh="m4x25"
+            material="m4x25_material"/>
+          <!-- Part m2_5x6_31 -->
+          <geom type="mesh" class="visual" pos="0.011 1.11022e-16 0.05194" quat="0.707107 -0 0.707107 -0" mesh="m2_5x6"
+            material="m2_5x6_material"/>
+          <!-- Part m2_5x6_32 -->
+          <geom type="mesh" class="visual" pos="0.00777817 0.00777817 -0.005" quat="0.707107 0 -0.707107 0"
+            mesh="m2_5x6" material="m2_5x6_material"/>
+          <!-- Frame end -->
+          <site group="0" name="end" pos="1.11817e-16 -0.18 0.02347" quat="0.707107 0.707107 1.11022e-16 2.90511e-17"/>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+  <asset>
+    <mesh file="hn05_i101.stl"/>
+    <mesh file="m2_5x6.stl"/>
+    <mesh file="weight_985.stl"/>
+    <mesh file="first_segment_mix.stl"/>
+    <mesh file="mid_part.stl"/>
+    <mesh file="base_mx106.stl"/>
+    <mesh file="dc05_m01_dummy.stl"/>
+    <mesh file="m2_5x8.stl"/>
+    <mesh file="m2_5x12.stl"/>
+    <mesh file="m4x25.stl"/>
+    <mesh file="m2_5x20.stl"/>
+    <mesh file="dc08_m01_dummy.stl"/>
+    <mesh file="nut_2_5.stl"/>
+    <mesh file="sw_mx64_segment.stl"/>
+    <mesh file="nut_4.stl"/>
+    <material name="nut_2_5_material" rgba="0.690196 0.690196 0.690196 1"/>
+    <material name="m2_5x20_material" rgba="0.690196 0.690196 0.690196 1"/>
+    <material name="dc08_m01_dummy_material" rgba="0.498039 0.498039 0.498039 1"/>
+    <material name="hn05_i101_material" rgba="0.8 0.776471 0.713725 1"/>
+    <material name="base_mx106_material" rgba="0.917647 0.917647 0.917647 1"/>
+    <material name="m2_5x6_material" rgba="0.690196 0.690196 0.690196 1"/>
+    <material name="mid_part_material" rgba="0.917647 0.917647 0.917647 1"/>
+    <material name="dc05_m01_dummy_material" rgba="0.231373 0.380392 0.705882 1"/>
+    <material name="m2_5x8_material" rgba="0.690196 0.690196 0.690196 1"/>
+    <material name="first_segment_mix_material" rgba="0.615686 0.811765 0.929412 1"/>
+    <material name="m2_5x12_material" rgba="0.690196 0.690196 0.690196 1"/>
+    <material name="sw_mx64_segment_material" rgba="0.615686 0.811765 0.929412 1"/>
+    <material name="nut_4_material" rgba="0.690196 0.690196 0.690196 1"/>
+    <material name="weight_985_material" rgba="0.301961 0.301961 0.301961 1"/>
+    <material name="m4x25_material" rgba="0.690196 0.690196 0.690196 1"/>
+  </asset>
+  <actuator>
+    <position class="dynamixel_2r" name="R2" joint="R2" ctrlrange="-2.6179938779914944 2.6179938779914944"/>
+    <position class="dynamixel_2r" name="R1" joint="R1" ctrlrange="-1.9198621771937625 1.9198621771937625"/>
+  </actuator>
+  <equality/>
+</mujoco>

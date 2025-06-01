@@ -3,18 +3,22 @@
 > [!IMPORTANT]
 > Requires MuJoCo 3.1.3 or later.
 
+## Changelog
+
+See [CHANGELOG.md](./CHANGELOG.md) for a full history of changes.
+
 ## Overview
 
 This package contains a simplified robot description (MJCF) of the [Spot
 Quadruped](https://bostondynamics.com/products/spot/) developed by [Boston
 Dynamics](https://bostondynamics.com/). It is derived from the [publicly
-available MJCF description](https://github.com/bdaiinstitute/spot_ros2).
+available URDF description](https://github.com/bdaiinstitute/spot_ros2).
 
 <p float="left">
   <img src="spot.png" width="400">
 </p>
 
-## MJCF derivation steps
+## URDF → MJCF Conversion
 
 1. Processed `.obj` files with [`obj2mjcf`](https://github.com/kevinzakka/obj2mjcf).
 2. Added `<mujoco> <compiler discardvisual="false" strippath="false" fusestatic="false"/> </mujoco>` to the URDF's

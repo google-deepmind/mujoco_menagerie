@@ -99,16 +99,16 @@
     <material name="Aruco_Shoulder_Sticker" texture="shoulder_aruco_sticker"/>
 
     <mesh file="base_link_0.obj"/>
-    <mesh file="base_link_2.obj"/>
+    <mesh file="base_link_2.obj" inertia="shell"/>
     <mesh file="base_link_3.obj"/>
     <mesh file="base_link_4.obj"/>
     <mesh file="base_link_5.obj"/>
-    <mesh file="base_link_6.obj"/>
+    <mesh file="base_link_6.obj" inertia="shell"/>
     <mesh file="base_link_7.obj"/>
     <mesh file="base_link_8.obj"/>
     <mesh name="base_link_collision" file="base_link_casterless.stl"/>
-    <mesh file="link_aruco_right_base.obj"/>
-    <mesh file="link_aruco_left_base.obj"/>
+    <mesh file="link_aruco_right_base.obj" inertia="shell"/>
+    <mesh file="link_aruco_left_base.obj" inertia="shell"/>
     <mesh file="respeaker_base.obj"/>
     <mesh file="link_mast.obj"/>
     <mesh file="link_head_0.obj"/>
@@ -132,7 +132,7 @@
     <mesh file="link_left_wheel_0.obj"/>
     <mesh file="link_left_wheel_1.obj"/>
     <mesh file="link_lift_0.obj"/>
-    <mesh file="link_lift_1.obj"/>
+    <mesh file="link_lift_1.obj" inertia="shell"/>
     <mesh file="link_lift_2.obj"/>
     <mesh file="link_lift_3.obj"/>
     <mesh file="link_lift_4.obj"/>
@@ -141,7 +141,7 @@
     <mesh file="link_lift_7.obj"/>
     <mesh file="link_lift_8.obj"/>
     <mesh file="link_lift_9.obj"/>
-    <mesh file="link_aruco_shoulder.obj"/>
+    <mesh file="link_aruco_shoulder.obj" inertia="shell"/>
     <mesh file="link_arm_l4_0.obj"/>
     <mesh file="link_arm_l4_1.obj"/>
     <mesh file="link_arm_l3_0.obj"/>
@@ -153,8 +153,8 @@
     <mesh file="link_arm_l0_0.obj"/>
     <mesh file="link_arm_l0_1.obj"/>
     <mesh file="link_arm_l0_2.obj"/>
-    <mesh file="link_aruco_inner_wrist.obj"/>
-    <mesh file="link_aruco_top_wrist.obj"/>
+    <mesh file="link_aruco_inner_wrist.obj" inertia="shell"/>
+    <mesh file="link_aruco_top_wrist.obj" inertia="shell"/>
     <mesh file="laser.obj"/>
     <mesh file="link_gripper_fingertip_left.stl"/>
     <mesh file="link_gripper_fingertip_right.stl"/>
@@ -171,11 +171,11 @@
     <body name="base_link" childclass="stretch">
       <freejoint/>
       <geom mesh="base_link_0" material="Caster_Rollers_Red" class="visual"/>
-      <geom mesh="base_link_2" material="Lightbar_Green" class="visual" shellinertia="true"/>
+      <geom mesh="base_link_2" material="Lightbar_Green" class="visual"/>
       <geom mesh="base_link_3" material="Power_Button_Green" class="visual"/>
       <geom mesh="base_link_4" material="USB_Blue" class="visual"/>
       <geom mesh="base_link_5" material="Generic_Black" class="visual"/>
-      <geom mesh="base_link_6" material="Hand_Crush_Sticker" class="visual" shellinertia="true"/>
+      <geom mesh="base_link_6" material="Hand_Crush_Sticker" class="visual"/>
       <geom mesh="base_link_7" material="Pantone_705_U" class="visual"/>
       <geom mesh="base_link_8" material="Pantone_Cool_Gray_4_U" class="visual"/>
       <geom class="collision" mesh="base_link_collision" mass="15.0"/>
@@ -200,13 +200,11 @@
         <geom mesh="link_head_10" class="collision" mass="0.833027236718691"/>
       </body>
       <body name="link_aruco_right_base" pos="-0.0015028 -0.130497 0.159748" quat="1 0 0 -1">
-        <geom material="Aruco_Right_Base_Sticker" mesh="link_aruco_right_base" class="visual" mass="3.6E-06"
-          shellinertia="true"/>
+        <geom material="Aruco_Right_Base_Sticker" mesh="link_aruco_right_base" class="visual" mass="3.6E-06"/>
         <geom mesh="link_aruco_right_base" class="collision"/>
       </body>
       <body name="link_aruco_left_base" pos="-0.0015028 0.130497 0.159748" quat="1 0 0 -1">
-        <geom material="Aruco_Left_Base_Sticker" mesh="link_aruco_left_base" class="visual" mass="3.6E-06"
-          shellinertia="true"/>
+        <geom material="Aruco_Left_Base_Sticker" mesh="link_aruco_left_base" class="visual" mass="3.6E-06"/>
         <geom mesh="link_aruco_left_base" class="collision"/>
       </body>
       <body name="laser" pos="0.004 0 0.1664" quat="0 0 0 1">
@@ -277,13 +275,12 @@
                   <geom mesh="link_arm_l0_1" class="collision"/>
                   <geom mesh="link_arm_l0_2" class="collision"/>
                   <body name="link_aruco_top_wrist" pos="0.04725 0.029285 0" quat="0 0 1 1">
-                    <geom material="Aruco_Top_Wrist_Sticker" mesh="link_aruco_top_wrist" class="visual" mass="3.6E-06"
-                      shellinertia="true"/>
+                    <geom material="Aruco_Top_Wrist_Sticker" mesh="link_aruco_top_wrist" class="visual" mass="3.6E-06"/>
                     <geom mesh="link_aruco_top_wrist" class="collision"/>
                   </body>
                   <body name="link_aruco_inner_wrist" pos="0.04725 -0.0119 -0.02725" quat="0 0 1 0">
                     <geom material="Aruco_Inner_Wrist_Sticker" mesh="link_aruco_inner_wrist" class="visual"
-                      mass="3.6E-06" shellinertia="true"/>
+                      mass="3.6E-06"/>
                     <geom mesh="link_aruco_inner_wrist" class="collision"/>
                   </body>
                   <body name="link_wrist_yaw" pos="0.083 -0.03075 0" quat="1 1 0 0" gravcomp="1">
@@ -337,8 +334,7 @@
           </body>
         </body>
         <body name="link_aruco_shoulder" pos="-0.0133769 0.0558541 0.0865" quat="1 0 0 0">
-          <geom material="Aruco_Shoulder_Sticker" mesh="link_aruco_shoulder" class="visual" mass="3.6E-06"
-          shellinertia="true"/>
+          <geom material="Aruco_Shoulder_Sticker" mesh="link_aruco_shoulder" class="visual" mass="3.6E-06"/>
           <geom mesh="link_aruco_shoulder" class="collision"/>
         </body>
       </body>

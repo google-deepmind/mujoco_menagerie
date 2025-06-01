@@ -1,6 +1,11 @@
 # Google Barkour vB Description (MJCF)
 
-Requires MuJoCo 3.0.0 or later.
+> [!IMPORTANT]
+> Requires MuJoCo 3.0.0 or later.
+
+## Changelog
+
+See [CHANGELOG.md](./CHANGELOG.md) for a full history of changes.
 
 ## Overview
 

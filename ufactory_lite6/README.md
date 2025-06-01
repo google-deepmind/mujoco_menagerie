@@ -1,6 +1,11 @@
 # Lite 6 Description (MJCF)
 
-Requires MuJoCo 3.1.0 or later.
+> [!IMPORTANT]
+> Requires MuJoCo 3.1.0 or later.
+
+## Changelog
+
+See [CHANGELOG.md](./CHANGELOG.md) for a full history of changes.
 
 ## Overview
 
@@ -38,7 +43,7 @@ description](https://github.com/xArm-Developer/xarm_ros2/tree/master/xarm_descri
 
 ### Gripper
 
-The URDF only contains a gripper model for the Lite 6 with the fingers fused to the gripper body. To separate the fingers, the .step file of the fused body from the [Ufactory website](https://usa.ufactory.cc/download-lite6-robot) was loaded into Onshape ([file here](https://cad.onshape.com/documents/f60aac1c8ff6af8f490dc855/w/5c0df4bc7414802fc89a514e/e/7dc41825dd66894c14b085ca?renderMode=0&uiState=66bdfb41f48d6a182064f4a4)) and split along the tracks that the fingers run on.  Because MuJoCo forms a convex hull for collision meshes, it was necessary to separate the wide fingers into the base and tip for realistic gripping.
+The URDF only contains a gripper model for the Lite 6 with the fingers fused to the gripper body. To separate the fingers, the .step file of the fused body from the [Ufactory website](https://www.ufactory.cc/download/) was loaded into Onshape ([file here](https://cad.onshape.com/documents/f60aac1c8ff6af8f490dc855/w/5c0df4bc7414802fc89a514e/e/7dc41825dd66894c14b085ca?renderMode=0&uiState=66bdfb41f48d6a182064f4a4)) and split along the tracks that the fingers run on.  Because MuJoCo forms a convex hull for collision meshes, it was necessary to separate the wide fingers into the base and tip for realistic gripping.
 
 Because they are actuated via an air compressor, a single `motor` actuator was used in the model, with an equality constraint to mimic the gearing mechanism that keeps them equidistant from the centre. There is no position control of the gripper.
 

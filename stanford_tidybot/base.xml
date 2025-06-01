@@ -1,0 +1,50 @@
+<mujoco model="base">
+  <compiler angle="radian" meshdir="assets"/>
+
+  <option integrator="implicitfast"/>
+
+  <default>
+    <default class="visual">
+      <geom type="mesh" contype="0" conaffinity="0" group="2"/>
+    </default>
+    <default class="collision">
+      <geom type="mesh" group="3"/>
+    </default>
+  </default>
+
+  <asset>
+    <material name="black" rgba="0.11372549 0.11372549 0.10196078 1"/>
+    <material name="gray" rgba="0.62745098 0.65098039 0.64705882 1"/>
+    <material name="dark_gray" rgba="0.35294118 0.37647059 0.37254902 1"/>
+    <mesh file="base/bumper.stl"/>
+    <mesh file="base/bottom_plate.stl"/>
+    <mesh file="base/body.stl"/>
+    <mesh file="base/top_plate.stl"/>
+    <mesh file="base/arm_plate.stl"/>
+  </asset>
+
+  <worldbody>
+    <body name="base_link">
+      <inertial pos="0 0 0.035" mass="60" diaginertia="0.001 0.001 0.001"/>
+      <joint name="joint_x" type="slide" axis="1 0 0"/>
+      <joint name="joint_y" type="slide" axis="0 1 0"/>
+      <joint name="joint_th"/>
+      <geom class="visual" mesh="bumper" material="black"/>
+      <geom class="visual" mesh="bottom_plate" material="dark_gray"/>
+      <geom class="visual" mesh="body" material="gray"/>
+      <geom class="visual" mesh="top_plate" material="dark_gray"/>
+      <geom class="visual" mesh="arm_plate" material="gray"/>
+      <geom class="collision" mesh="bumper"/>
+      <geom class="collision" mesh="bottom_plate"/>
+      <geom class="collision" mesh="body"/>
+      <geom class="collision" mesh="top_plate"/>
+      <geom class="collision" mesh="arm_plate"/>
+    </body>
+  </worldbody>
+
+  <actuator>
+    <position name="joint_x" joint="joint_x" kp="1000000" kv="50000"/>
+    <position name="joint_y" joint="joint_y" kp="1000000" kv="50000"/>
+    <position name="joint_th" joint="joint_th" kp="50000" kv="1000"/>
+  </actuator>
+</mujoco>

@@ -5,7 +5,8 @@
 
   <default>
     <default class="fr3">
-      <joint armature="0.1" damping="1"/>
+      <!-- Overwritten in joints 5, 6, and 7. -->
+      <joint damping="0.21" armature="0.195" frictionloss="1.137"/>
       <position inheritrange="1"/>
       <default class="visual">
         <geom type="mesh" group="2" contype="0" conaffinity="0"/>
@@ -77,43 +78,45 @@
         <geom mesh="link0_6" material="black" class="visual"/>
         <geom name="fr3_link0_collision" mesh="link0_coll" class="collision"/>
         <body name="fr3_link1" pos="0 0 0.333">
-          <inertial pos="4.128e-07 -0.0181251 -0.0386036" quat="0.999901 0.0021545 0.00429041 0.0132325" mass="2.92747"
-            diaginertia="0.0186043 0.0181194 0.00538716"/>
+          <inertial pos="4.128e-07 -0.0181251 -0.0386036" quat="0.998098 -0.0605364 0.00380499 0.0110109" mass="2.92747"
+            diaginertia="0.0239286 0.0227246 0.00610634"/>
           <joint name="fr3_joint1" axis="0 0 1" range="-2.7437 2.7437" actuatorfrcrange="-87 87"/>
           <geom name="fr3_link1_collision" class="collision" mesh="link1_coll"/>
           <geom material="white" mesh="link1" class="visual"/>
           <body name="fr3_link2" quat="1 -1 0 0">
-            <inertial pos="0.00318289 -0.0743222 0.00881461" quat="0.356855 0.680818 -0.434812 0.469126" mass="2.93554"
-              diaginertia="0.0299291 0.0299291 0.0299291"/>
+            <inertial pos="0.00318289 -0.0743222 0.00881461" quat="0.502599 0.584437 -0.465998 0.434366" mass="2.93554"
+              diaginertia="0.0629567 0.0411924 0.0246371"/>
             <joint name="fr3_joint2" axis="0 0 1" range="-1.7837 1.7837" actuatorfrcrange="-87 87"/>
             <geom material="white" mesh="link2" class="visual"/>
             <geom name="fr3_link2_collision" class="collision" mesh="link2_coll"/>
             <body name="fr3_link3" pos="0 -0.316 0" quat="1 1 0 0">
-              <inertial pos="0.0407016 -0.00482006 -0.0289731" quat="0.950032 -0.148357 0.229935 0.150201" mass="2.2449"
-                diaginertia="0.0140109 0.0140109 0.0140109"/>
+              <inertial pos="0.0407016 -0.00482006 -0.0289731" quat="0.921025 -0.244161 0.155272 0.260745" mass="2.2449"
+                diaginertia="0.0267409 0.0189869 0.0171587"/>
               <joint name="fr3_joint3" axis="0 0 1" range="-2.9007 2.9007" actuatorfrcrange="-87 87"/>
               <geom mesh="link3_0" material="white" class="visual"/>
               <geom mesh="link3_1" material="black" class="visual"/>
               <geom name="fr3_link3_collision" class="collision" mesh="link3_coll"/>
               <body name="fr3_link4" pos="0.0825 0 0" quat="1 1 0 0">
-                <inertial pos="-0.0459101 0.0630493 -0.00851879" quat="0.23761 0.892458 -0.00078702 0.383484"
-                  mass="2.6156" diaginertia="0.0206104 0.0206104 0.0206104"/>
+                <inertial pos="-0.0459101 0.0630493 -0.00851879" quat="0.438018 0.803311 0.00937812 0.403414"
+                  mass="2.6156" diaginertia="0.05139 0.0372717 0.0160047"/>
                 <joint name="fr3_joint4" axis="0 0 1" range="-3.0421 -0.1518" actuatorfrcrange="-87 87"/>
                 <geom mesh="link4_0" material="white" class="visual"/>
                 <geom mesh="link4_1" material="black" class="visual"/>
                 <geom name="fr3_link4_collision" class="collision" mesh="link4_coll"/>
                 <body name="fr3_link5" pos="-0.0825 0.384 0" quat="1 -1 0 0">
-                  <inertial pos="-0.00160396 0.0292536 -0.0972966" quat="0.922285 0.098826 0.0982562 -0.360514"
-                    mass="2.32712" diaginertia="0.0182879 0.0182879 0.0182879"/>
-                  <joint name="fr3_joint5" axis="0 0 1" range="-2.8065 2.8065" actuatorfrcrange="-12 12"/>
+                  <inertial pos="-0.00160396 0.0292536 -0.0972966" quat="0.919031 0.125604 0.0751531 -0.366003"
+                    mass="2.32712" diaginertia="0.0579335 0.0449144 0.0130634"/>
+                  <joint name="fr3_joint5" axis="0 0 1" range="-2.8065 2.8065" actuatorfrcrange="-12 12"
+                    armature="0.074" frictionloss="0.763"/>
                   <geom mesh="link5_0" material="white" class="visual"/>
                   <geom mesh="link5_1" material="white" class="visual"/>
                   <geom mesh="link5_2" material="black" class="visual"/>
                   <geom name="fr3_link5_collision" class="collision" mesh="link5_coll"/>
                   <body name="fr3_link6" quat="1 1 0 0">
-                    <inertial pos="0.0597131 -0.0410295 -0.0101693" quat="0.593933 0.525442 0.520644 0.316361"
-                      mass="1.81704" diaginertia="0.00483538 0.00483538 0.00483538"/>
-                    <joint name="fr3_joint6" axis="0 0 1" range="0.5445 4.5169" actuatorfrcrange="-12 12"/>
+                    <inertial pos="0.0597131 -0.0410295 -0.0101693" quat="0.621301 0.552665 0.510011 0.220081"
+                      mass="1.81704" diaginertia="0.0175039 0.0161123 0.00193529"/>
+                    <joint name="fr3_joint6" axis="0 0 1" range="0.5445 4.5169" actuatorfrcrange="-12 12"
+                      armature="0.074" frictionloss="0.44"/>
                     <geom mesh="link6_0" material="button_green" class="visual"/>
                     <geom mesh="link6_1" material="white" class="visual"/>
                     <geom mesh="link6_2" material="white" class="visual"/>
@@ -124,9 +127,10 @@
                     <geom mesh="link6_7" material="button_blue" class="visual"/>
                     <geom name="fr3_link6_collision" class="collision" mesh="link6_coll"/>
                     <body name="fr3_link7" pos="0.088 0 0" quat="1 1 0 0">
-                      <inertial pos="0.00452258 0.00862619 -0.0161633" quat="0.120255 0.394761 -0.799132 0.437139"
-                        mass="0.627143" diaginertia="3.076e-07 3.076e-07 3.076e-07"/>
-                      <joint name="fr3_joint7" axis="0 0 1" range="-3.0159 3.0159" actuatorfrcrange="-12 12"/>
+                      <inertial pos="0.00452258 0.00862619 -0.0161633" quat="0.727579 0.0978688 -0.24906 0.63168"
+                        mass="0.627143" diaginertia="0.000223836 0.000223642 5.64132e-07"/>
+                      <joint name="fr3_joint7" axis="0 0 1" range="-3.0159 3.0159" actuatorfrcrange="-12 12"
+                        armature="0.074" frictionloss="0.248"/>
                       <geom mesh="link7_0" material="black" class="visual"/>
                       <geom mesh="link7_1" material="white" class="visual"/>
                       <geom mesh="link7_2" material="white" class="visual"/>

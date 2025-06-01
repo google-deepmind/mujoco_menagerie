@@ -1,6 +1,11 @@
 # Google Robot Description (MJCF)
 
-Requires MuJoCo 2.3.3 or later.
+> [!IMPORTANT]
+> Requires MuJoCo 2.3.3 or later.
+
+## Changelog
+
+See [CHANGELOG.md](./CHANGELOG.md) for a full history of changes.
 
 ## Overview
 
