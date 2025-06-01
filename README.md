@@ -212,6 +212,7 @@ Menagerie, see [CONTRIBUTING](CONTRIBUTING.md).
 | Robotiq 2F-85 | Robotiq | 8 | [BSD-2-Clause](robotiq_2f85/LICENSE) |✖️|
 | Shadow Hand EM35 | Shadow Robot Company | 24 | [Apache-2.0](shadow_hand/LICENSE) |✖️|
 | Shadow DEX-EE Hand | Shadow Robot Company | 12 | [Apache-2.0](shadow_dexee/LICENSE) |✖️|
+| Torobo Hand | Tokyo Robotics | 12 | [BSD-3-Clause](torobo_hand/LICENSE) |✖️|
 
 **Mobile Manipulators.**
 
@@ -231,6 +232,7 @@ Menagerie, see [CONTRIBUTING](CONTRIBUTING.md).
 | Unitree G1 | Unitree Robotics | 37 | [BSD-3-Clause](unitree_g1/LICENSE) |✖️|
 | Unitree H1 | Unitree Robotics | 19 | [BSD-3-Clause](unitree_h1/LICENSE) |✖️|
 | TALOS | PAL Robotics | 32 | [Apache-2.0](pal_talos/LICENSE) |✖️|
+| Torobo | Tokyo Robotics | 44 | [BSD-3-Clause](torobo/LICENSE) |✖️|
 
 **Quadrupeds.**
 
