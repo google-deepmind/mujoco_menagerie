@@ -34,7 +34,10 @@ well right out of the gate.
 |<img src="assets/google_robot-robot.png" width=100>|<img src="assets/unitree_a1-a1.png" width=100>|<img src="assets/anybotics_anymal_b-anymal_b.png" width=100>|<img src="assets/anybotics_anymal_c-anymal_c.png" width=100>|<img src="assets/google_barkour_v0-barkour_v0.png" width=100>|
 |<img src="assets/google_barkour_vb-barkour_vb.png" width=100>|<img src="assets/unitree_go1-go1.png" width=100>|<img src="assets/unitree_go2-go2.png" width=100>|<img src="assets/boston_dynamics_spot-spot_arm.png" width=100>|<img src="assets/agility_cassie-cassie.png" width=100>|
 |<img src="assets/unitree_g1-g1.png" width=100>|<img src="assets/unitree_h1-h1.png" width=100>|<img src="assets/robotis_op3-op3.png" width=100>|<img src="assets/booster_t1-t1.png" width=100>|<img src="assets/pal_talos-talos.png" width=100>|
-|<img src="assets/bitcraze_crazyflie_2-cf2.png" width=100>|<img src="assets/skydio_x2-x2.png" width=100>|<img src="assets/flybody-fruitfly.png" width=100>|<img src="assets/realsense_d435i-d435i.png" width=100>||
+|<img src="assets/bitcraze_crazyflie_2-cf2.png" width=100>|<img src="assets/skydio_x2-x2.png" width=100>|<img src="assets/flybody-fruitfly.png" width=100>|<img src="assets/realsense_d435i-d435i.png" width=100>|<img src='assets/inspire_hand-left_hand.png' width=100>||
+
+
+
 
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
@@ -220,6 +223,7 @@ Menagerie, see [CONTRIBUTING](CONTRIBUTING.md).
 | Robotiq 2F-85 | Robotiq | 8 | [BSD-2-Clause](robotiq_2f85/LICENSE) |✖️|
 | Shadow Hand EM35 | Shadow Robot Company | 24 | [Apache-2.0](shadow_hand/LICENSE) |✖️|
 | Shadow DEX-EE Hand | Shadow Robot Company | 12 | [Apache-2.0](shadow_dexee/LICENSE) |✖️|
+| Inspire RH56DFX Hand | Inspire Robots Company | 12 | [Apache-2.0](inspire_hand/LICENSE) |✖️|
 
 **Mobile Manipulators.**
 
