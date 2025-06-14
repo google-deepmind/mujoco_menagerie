@@ -91,6 +91,7 @@ NAME_MAP = {
     "kinova_gen3/gen3": "gen3",
     "booster_t1/t1": "t1",
     "agilex_piper/piper": "piper",
+    "inspire_hand/left_hand": "left inspire",
 }
 
 MODEL_MAP = {
@@ -134,6 +135,7 @@ MODEL_MAP = {
     "kinova_gen3/gen3": ModelType.ARM,
     "booster_t1/t1": ModelType.HUMANOID,
     "agilex_piper/piper": ModelType.ARM,
+    "inspire_hand/left_hand": ModelType.END_EFFECTOR,
 }
 
 DEFAULT_FOV = 40
@@ -332,6 +334,11 @@ CAMERA_MAP = {
         xyaxes="0.866 0.500 0.000 -0.171 0.296 0.940",
         fovy=50,
     ),
+    "inspire_hand/left_hand": dict(
+        pos="-0.026 0.075 0.3",
+        xyaxes="1 0 0 0 1 0",
+        fovy=45,
+    ),
 }
 
 # pylint: disable=line-too-long
@@ -479,3 +486,4 @@ def main(argv):
 
 if __name__ == "__main__":
   app.run(main)
+    app.run(main)
