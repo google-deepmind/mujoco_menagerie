@@ -17,14 +17,15 @@ The original URDF and assets can be found directly on
   <img src="inspire_hand.png" width="400">
 </p>
 
-## URDF → MJCF derivation steps
+## Modifications Made
 
-1. Used the hands .xmls through by [ARISE](https://github.com/ARISE-Initiative/robosuite) (to the best of my knowledge). 
-2. Broke most of the .stls into multiple smaller versions using blender to match the inspire hand colors.
-3. Manually edited the MJCF to extract common properties into the `<default>` section.
-4. Added position-controlled actuators.
-5. Added `impratio=10` for better noslip.
-6. Added `scene_left.xml` and `scene_right.xml` which include the robot, with
+1. Used the MJCF files from [ARISE](https://github.com/ARISE-Initiative/robosuite) as a starting base.
+2. Broke the .stls into smaller parts using blender.
+3. Replaced original .stls with the smaller fragments and colored the meshes to match the real hand. 
+4. Manually edited the MJCF to extract common properties into the `<default>` section.
+5. Added position-controlled actuators.
+6. Added `impratio=10` for better noslip.
+7. Added `scene_left.xml` and `scene_right.xml` which include the robot, with
     an object, textured groundplane, skybox, and haze.
 
 ## License
