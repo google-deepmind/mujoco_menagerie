@@ -6,21 +6,21 @@
     "output_filename": "dynamixel_2r",
 
     "joint_properties": {
-	// MX-106
-	"r1": {
-		"armature": 0.0266,
-		"forcerange": 11.086,
-		"kp": 56.052,
-		"frictionloss": 0.10352,
-		"damping": 1.6548
-	},
-	// MX-64
-	"r2": {
-		"armature": 0.01195,
-		"forcerange": 6.1621,
-		"kp": 31.1558,
-		"frictionloss": 0.09039,
-		"damping": 0.6782
-	}
-    }
-}   
+    // MX-106
+    "r1": {
+      "armature": 0.0266,
+      "forcerange": 11.086,
+      "kp": 56.052,
+      "frictionloss": 0.10352,
+      "damping": 1.6548
+    },
+    // MX-64
+    "r2": {
+      "armature": 0.01195,
+      "forcerange": 6.1621,
+      "kp": 31.1558,
+      "frictionloss": 0.09039,
+      "damping": 0.6782
+   }
+  }
+}
