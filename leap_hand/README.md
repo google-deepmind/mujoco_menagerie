@@ -71,6 +71,10 @@ The steps for creating the left hand are mostly the same, except for the followi
 - we use the `dexsuite` hash `6eeda17435d46dde5915a16fd37b248bd8bb468e`, because there are edits for making the left handed LEAP URDF more consistent with the right
 - there was no correction of the "thumb_mp_collision" field, but the associated visual mesh is different (thumb_mp_left.obj)
 
+### Both Hands
+- Added `white` material for fingertips
+- Applied `black` material to collision meshes for improved hand appearance
+
 ## License
 
 This model is released under an [MIT License](LICENSE).

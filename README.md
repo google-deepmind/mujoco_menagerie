@@ -188,6 +188,8 @@ Menagerie, see [CONTRIBUTING](CONTRIBUTING.md).
 | xarm7 | UFACTORY | 7 | [BSD-3-Clause](ufactory_xarm7/LICENSE) |✖️|
 | Gen3 | Kinova Robotics | 7 | [BSD-3-Clause](kinova_gen3/LICENSE) |✖️|
 | SO-ARM100 | The Robot Studio | 5 | [Apache-2.0](trs_so_arm100/LICENSE) |✖️|
+| Koch v1.1 Low-Cost Robot | Hugging Face | 5 | [Apache-2.0](low_cost_robot_arm/LICENSE) |✖️|
+| YAM | I2RT Robotics | 7 | [MIT](i2rt_yam/LICENSE) |✖️|
 
 **Bipeds.**
 
@@ -244,9 +246,10 @@ Menagerie, see [CONTRIBUTING](CONTRIBUTING.md).
 | Apptronik Apollo | Apptronik | 32 | [Apache-2.0](apptronik_apollo/LICENSE) |✔️|
 | Berkeley Humanoid | Hybrid Robotics | 12 | [BSD-3-Clause](berkeley_humanoid/LICENSE) |✖️|
 | Booster T1 | Booster Robotics | 23 | [Apache-2.0](booster_t1/LICENSE) |✖️|
+| Fourier N1 | Fourier Robotics | 30 | [Apache-2.0](fourier_n1/LICENSE) |✖️|
 | Robotis OP3 | Robotis | 20 | [Apache-2.0](robotis_op3/LICENSE) |✖️|
 | TALOS | PAL Robotics | 32 | [Apache-2.0](pal_talos/LICENSE) |✖️|
-| Unitree G1 | Unitree Robotics | 37 | [BSD-3-Clause](unitree_g1/LICENSE) |✖️|
+| Unitree G1 | Unitree Robotics | 37 | [BSD-3-Clause](unitree_g1/LICENSE) |✔️|
 | Unitree H1 | Unitree Robotics | 19 | [BSD-3-Clause](unitree_h1/LICENSE) |✖️|
 
 **Quadrupeds.**
