@@ -2,8 +2,8 @@
 
 All notable changes to this model will be documented in this file.
 
-## [06/02/2025]
+## [2025-02-06]
 - Updated appearance of both hand models.
 
-## [06/09/2024]
+## [2024-09-06]
 - Initial release.
