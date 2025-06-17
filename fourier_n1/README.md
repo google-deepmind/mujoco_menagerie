@@ -23,13 +23,14 @@ It is derived from the
 ## MJCF derivation steps
 
 1. Started from `N1_raw.urdf` in [Fourier N1 URDF Description](https://github.com/FFTAI/Wiki-GRx-Models).
-    - File SHA: `8456575a522676db6b7d0924eccfc61e4c4123cc`
+    - Commit: `f29a87905bdcfc32fdac9c5342644630fd27156a`
 2. Loaded the URDF into MuJoCo and saved a corresponding MJCF.
 3. Manually edited the MJCF to extract common properties into the `<default>` section.
 4. Manually edited the `<asset>` section to include the textures and meshes.
 5. Manually added actuators.
 6. Manually added sensors.
 7. Added `scene.xml` which includes the robot, with a textured groundplane, skybox, and haze.
+8. Renamed all STL files from `*.STL` to `*.stl`.
 
 More information can be found [here](https://github.com/FFTAI/wiki-grx-mjcf).
 
