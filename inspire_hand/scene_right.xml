@@ -1,7 +1,7 @@
-<mujoco model="right_shadow_hand scene">
+<mujoco model="right_inspire_hand scene">
   <include file="right_hand.xml"/>
 
-  <statistic extent="0.3" center="0.3 0 0"/>
+  <statistic extent="0.3" center="0 0.075 0"/>
 
   <visual>
     <rgba haze="0.15 0.25 0.35 1"/>
@@ -22,7 +22,7 @@
     <geom name="floor" pos="0 0 -0.1" size="0 0 0.05" type="plane" material="groundplane"/>
     <body name="object" pos="0.0 0.06 0.05" euler="0 0 1.57">
       <freejoint/>
-      <geom type="ellipsoid" size="0.03 0.04 0.02" rgba="0.5 0.7 0.5 1" condim="6" priority="1"
+      <geom type="ellipsoid" size="0.02 0.03 0.01" rgba="0.5 0.7 0.5 1" condim="6" priority="1"
         friction="0.5 0.01 0.003"/>
     </body>
   </worldbody>

@@ -1,8 +1,7 @@
-<mujoco model="left_shadow_hand scene">
+<mujoco model="left_inspire_hand scene">
   <include file="left_hand.xml"/>
 
-  <statistic extent="0.3" center="0.3 0 0"/>
-
+  <statistic extent="0.3" center="0 0.075 0"/>
   <visual>
     <rgba haze="0.15 0.25 0.35 1"/>
     <quality shadowsize="8192"/>
