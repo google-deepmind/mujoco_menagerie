@@ -1,0 +1,217 @@
+<mujoco model="right_inspire_hand">
+    <compiler angle="radian" meshdir="assets" autolimits="true"/>
+    <option cone="elliptic" impratio="10"/>
+    <default>
+        <default class="right_hand">
+            <joint damping="3" limited="true" type="hinge"/>
+            <position kp="100" ctrllimited="true" dampratio="1" inheritrange="1"/>
+            <site rgba="0 0 0 0" size="0.01"/>
+            <default class="collision">
+                <geom contype="1" conaffinity="1" group="3" mass="0.1"/>
+            </default>
+            <default class="visual">
+                <geom group="2" conaffinity="0" contype="0"/>
+            </default>
+        </default>
+    </default>
+    <asset>
+        <mesh file="rh_palm.stl"/>
+        <mesh file="rh_base_link.stl"/>
+        <mesh file="rh_link11.stl"/>
+        <mesh file="rh_link12.stl"/>
+        <mesh file="rh_link13.stl"/>
+        <mesh file="rh_link14.stl"/>
+        <mesh file="rh_link15.stl"/>
+        <mesh file="rh_link15_outer.stl"/>
+        <mesh file="rh_link15_lower.stl" scale="1.001 1.001 1.001"/>
+        <mesh file="rh_link16.stl"/>
+        <mesh file="rh_link16_outer.stl" scale="1.001 1.001 1.001"/>
+        <mesh file="rh_link17.stl"/>
+        <mesh file="rh_link17_outer.stl"/>
+        <mesh file="rh_link17_lower.stl" scale="1.001 1.001 1.001"/>
+        <mesh file="rh_link18.stl"/>
+        <mesh file="rh_link18_outer.stl" scale="1.02 1.01 1.01"/>
+        <mesh file="rh_link19.stl"/>
+        <mesh file="rh_link19_outer.stl"/>
+        <mesh file="rh_link19_lower.stl" scale="1.01 1.01 1.01"/>
+        <mesh file="rh_link20_outer.stl" scale="1.01 1.01 1.01"/>
+        <mesh file="rh_link20.stl"/>
+        <mesh file="rh_link21.stl"/>
+        <mesh file="rh_link21_outer.stl"/>
+        <mesh file="rh_link21_lower.stl" scale="1.001 1.001 1.001"/>
+        <mesh file="rh_link22_outer.stl" scale="1.01 1.01 1.01"/>
+        <mesh file="rh_link22.stl"/>
+        <material name="r_white" rgba="1 1 1 1"/>
+        <material name="r_black" rgba="0 0 0 1"/>
+    </asset>
+    <worldbody>
+        <body name="right_hand" euler="0 -1.57 3.14" childclass="right_hand" gravcomp="1">
+            <body name="r_base">
+                <geom name="r_base_vis" type="mesh" mesh="rh_base_link" material="r_white" class="visual"/>
+                <geom name="r_base_col" type="mesh" mesh="rh_base_link" class="collision"/>
+                <geom name="r_palm_vis" pos="-0.0001 0.0 0.0" type="mesh" mesh="rh_palm" material="r_black"
+                    class="visual"/>
+                <body name="r_thumb">
+                    <body name="r_thumb_proximal_1" pos="-0.0150 -0.0375 -0.0205" quat="0.5 0.5 -0.5 0.5">
+                        <joint name="joint_r_thumb_proximal_1" axis="0 0 -1" range="0 1.30"/>
+                        <geom name="r_thumb_proximal_vis" type="mesh" mesh="rh_link11" material="r_black" class="visual"/>
+                        <geom name="r_thumb_proximal_col" type="mesh" mesh="rh_link11" material="r_black"
+                            class="collision"/>
+                        <body name="r_thumb_proximal_2" pos="-0.009 0.011 -0.009" quat="0.1 0.1 0.7 0.7">
+                            <joint name="joint_r_thumb_proximal_2" axis="0 0 1" range="0 0.68"/>
+                            <geom name="r_thumb_proximal_2_vis" type="mesh" mesh="rh_link12" material="r_black"
+                                class="visual"/>
+                            <geom name="r_thumb_proximal_2_col" type="mesh" mesh="rh_link12" material="r_black"
+                                class="collision"/>
+                            <site name="site_r_thumb_proximal_2"/>
+                            <body name="r_thumb_middle" pos="0.04407 0.034553 -0.0008">
+                                <joint name="joint_r_thumb_middle" axis="0 0 1" range="0 0.68"/>
+                                <geom name="r_thumb_middle_vis" type="mesh" mesh="rh_link13" material="r_white"
+                                    class="visual"/>
+                                <geom name="r_thumb_middle_col" type="mesh" mesh="rh_link13" material="r_white"
+                                    class="collision"/>
+                                <site name="site_r_thumb_middle"/>
+                                <body name="r_thumb_distal" pos="0.020248 0.010156 -0.0012">
+                                    <joint name="joint_r_thumb_distal" axis="0 0 1" range="0 0.77"/>
+                                    <geom name="r_thumb_distal_vis" type="mesh" mesh="rh_link14" material="r_black"
+                                        class="visual"/>
+                                    <geom name="r_thumb_distal_col" type="mesh" mesh="rh_link14" material="r_black"
+                                        class="collision"/>
+                                    <site name="site_r_thumb_distal"/>
+                                </body>
+                            </body>
+                        </body>
+                    </body>
+                </body>
+                <body name="r_index">
+                    <body name="r_index_proximal" pos="0.0023 -0.10493 -0.032268" quat="0.01745 -0.99985 0.0 0.0">
+                        <joint name="joint_r_index_proximal" axis="0 0 1" range="0 1.62"/>
+                        <site name="site_r_index_proximal"/>
+                        <geom name="r_index_proximal_vis" type="mesh" mesh="rh_link15" material="r_black" class="visual"/>
+                        <geom name="r_index_proximal_col" type="mesh" mesh="rh_link15" material="r_black"
+                            class="collision"/>
+                        <geom name="r_index_outer_proximal_vis" pos="0.0001 0 0" type="mesh" mesh="rh_link15_outer"
+                            material="r_white" class="visual"/>
+                        <geom name="r_index_lower_proximal_vis" type="mesh" mesh="rh_link15_lower" material="r_white"
+                            class="visual"/>
+                        <body name="r_index_distal" pos="-0.0026138 0.032026 -0.001">
+                            <joint name="joint_r_index_distal" axis="0 0 1" range="0 1.82"/>
+                            <site name="site_r_index_distal"/>
+                            <geom name="r_index_distal_vis" type="mesh" mesh="rh_link16" material="r_black"
+                                class="visual"/>
+                            <geom name="r_index_outer_distal_vis" type="mesh" mesh="rh_link16_outer" material="r_white"
+                                class="visual"/>
+                            <geom name="r_index_distal_col" type="mesh" mesh="rh_link16" material="r_black"
+                                class="collision"/>
+                        </body>
+                    </body>
+                </body>
+                <body name="r_middle">
+                    <body name="r_middle_proximal" pos="0.0022853 -0.1055 -0.01295" quat="0 -1 0.0 0.0">
+                        <joint name="joint_r_middle_proximal" axis="0 0 1" range="0 1.62"/>
+                        <site name="site_r_middle_proximal"/>
+                        <geom name="r_middle_proximal_vis" type="mesh" mesh="rh_link17" material="r_black"
+                            class="visual"/>
+                        <geom name="r_middle_outer_proximal_vis" pos="0.0001 0 0" type="mesh" mesh="rh_link17_outer"
+                            material="r_white" class="visual"/>
+                        <geom name="r_middle_lower_proximal_vis" type="mesh" mesh="rh_link17_lower" material="r_white"
+                            class="visual"/>
+                        <geom name="r_middle_proximal_col" type="mesh" mesh="rh_link17" material="r_black"
+                            class="collision"/>
+                        <body name="r_middle_distal" pos="-0.0024229 0.032041 -0.001">
+                            <joint name="joint_r_middle_distal" axis="0 0 1" range="0 1.82"/>
+                            <site name="site_r_middle_distal"/>
+                            <geom name="r_middle_distal_vis" type="mesh" mesh="rh_link18" material="r_black"
+                                class="visual"/>
+                            <geom name="r_middle_outer_distal_vis" type="mesh" mesh="rh_link18_outer" material="r_white"
+                                class="visual"/>
+                            <geom name="r_middle_distal_col" type="mesh" mesh="rh_link18" material="r_black"
+                                class="collision"/>
+                        </body>
+                    </body>
+                </body>
+                <body name="r_ring">
+                    <body name="r_ring_proximal" pos="0.0022853 -0.10531 0.0062872" quat="0.02619 0.99966 0.0 0.0">
+                        <joint name="joint_r_ring_proximal" axis="0 0 1" range="0 1.62"/>
+                        <site name="site_r_ring_proximal"/>
+                        <geom name="r_ring_proximal_vis" type="mesh" mesh="rh_link19" material="r_black" class="visual"/>
+                        <geom name="r_ring_outer_proximal_vis" type="mesh" pos="0.0001 0 0" mesh="rh_link19_outer"
+                            material="r_white" class="visual"/>
+                        <geom name="r_ring_lower_proximal_vis" type="mesh" mesh="rh_link19_lower" material="r_white"
+                            class="visual"/>
+                        <geom name="r_ring_proximal_col" type="mesh" mesh="rh_link19" material="r_black"
+                            class="collision"/>
+                        <body name="r_ring_distal" pos="-0.0024229 0.032041 -0.001">
+                            <joint name="joint_r_ring_distal" axis="0 0 1" range="0 1.75"/>
+                            <site name="site_r_ring_distal"/>
+                            <geom name="r_ring_distal_vis" type="mesh" mesh="rh_link20" material="r_black"
+                                class="visual"/>
+                            <geom name="r_ring_outer_distal_vis" type="mesh" mesh="rh_link20_outer" material="r_white"
+                                class="visual"/>
+                            <geom name="r_ring_distal_col" type="mesh" mesh="rh_link20" material="r_black"
+                                class="collision"/>
+                        </body>
+                    </body>
+                </body>
+                <body name="r_pinky">
+                    <body name="r_pinky_proximal" pos="0.0022853 -0.10411 0.025488" quat="0.05232 0.99863 0.0 0.0">
+                        <joint name="joint_r_pinky_proximal" axis="0 0 1" range="0 1.62"/>
+                        <site name="site_r_pinky_proximal"/>
+                        <geom name="r_pinky_proximal_vis" type="mesh" mesh="rh_link21" material="r_black" class="visual"/>
+                        <geom name="r_pinky_outer_proximal_vis" pos="0.0001 0 0" type="mesh" mesh="rh_link21_outer"
+                            material="r_white" class="visual"/>
+                        <geom name="r_pinky_lower_proximal_vis" type="mesh" mesh="rh_link21_lower" material="r_white"
+                            class="visual"/>
+                        <geom name="r_pinky_proximal_col" type="mesh" mesh="rh_link21" material="r_black"
+                            class="collision"/>
+                        <body name="r_pinky_distal" pos="-0.0024229 0.032041 -0.001">
+                            <joint name="joint_r_pinky_distal" axis="0 0 1" range="0 1.87"/>
+                            <site name="site_r_pinky_distal"/>
+                            <geom name="r_pinky_distal_vis" type="mesh" mesh="rh_link22" material="r_black"
+                                class="visual"/>
+                            <geom name="r_pinky_outer_distal_vis" type="mesh" mesh="rh_link22_outer" material="r_white"
+                                class="visual"/>
+                            <geom name="r_pinky_distal_col" type="mesh" mesh="rh_link22" material="r_black"
+                                class="collision"/>
+                        </body>
+                    </body>
+                </body>
+            </body>
+        </body>
+    </worldbody>
+    <contact>
+        <exclude name="exclude_rh_palm_thumb_proximal_1" body1="r_thumb_proximal_1" body2="r_base"/>
+        <exclude name="exclude_rh_palm_thumb_proximal_1_proximal_2" body1="r_thumb_proximal_1"
+            body2="r_thumb_proximal_2"/>
+        <exclude name="exclude_rh_palm_thumb_proximal_2" body1="r_thumb_proximal_2" body2="r_base"/>
+        <exclude name="exclude_rh_palm_thumb_middle_2" body1="r_thumb_middle" body2="r_base"/>
+        <exclude name="exclude_rh_thumb_proximal_2_middle" body1="r_thumb_proximal_2" body2="r_thumb_middle"/>
+        <exclude name="exclude_rh_thumb_middle_distal" body1="r_thumb_middle" body2="r_thumb_distal"/>
+        <exclude name="exclude_rh_palm_index_proximal" body1="r_index_proximal" body2="r_base"/>
+        <exclude name="exclude_rh_palm_middle_proximal" body1="r_middle_proximal" body2="r_base"/>
+        <exclude name="exclude_rh_palm_ring_proximal" body1="r_ring_proximal" body2="r_base"/>
+        <exclude name="exclude_rh_palm_pinky_proximal" body1="r_pinky_proximal" body2="r_base"/>
+    </contact>
+    <equality>
+        <joint joint1="joint_r_thumb_proximal_2" joint2="joint_r_thumb_middle" polycoef="0 1.0 0 0 0"
+            solimp="0.95 0.99 0.001" solref="0.005 1"/>
+        <joint joint1="joint_r_thumb_proximal_2" joint2="joint_r_thumb_distal" polycoef="0 1.13 0 0 0"
+            solimp="0.95 0.99 0.001" solref="0.005 1"/>
+        <joint joint1="joint_r_index_proximal" joint2="joint_r_index_distal" polycoef="0 1.13 0 0 0"
+            solimp="0.95 0.99 0.001" solref="0.005 1"/>
+        <joint joint1="joint_r_middle_proximal" joint2="joint_r_middle_distal" polycoef="0 1.13 0 0 0"
+            solimp="0.95 0.99 0.001" solref="0.005 1"/>
+        <joint joint1="joint_r_ring_proximal" joint2="joint_r_ring_distal" polycoef="0 1.08 0 0 0"
+            solimp="0.95 0.99 0.001" solref="0.005 1"/>
+        <joint joint1="joint_r_pinky_proximal" joint2="joint_r_pinky_distal" polycoef="0 1.15 0 0 0"
+            solimp="0.95 0.99 0.001" solref="0.005 1"/>
+    </equality>
+    <actuator>
+        <position joint="joint_r_thumb_proximal_1" name="thumb_r_proximal_1_drive" class="right_hand"/>
+        <position joint="joint_r_thumb_proximal_2" name="thumb_r_proximal_2_drive" class="right_hand"/>
+        <position joint="joint_r_index_proximal" name="index_r_proximal_drive" class="right_hand"/>
+        <position joint="joint_r_middle_proximal" name="middle_r_proximal_drive" class="right_hand"/>
+        <position joint="joint_r_ring_proximal" name="ring_r_proximal_drive" class="right_hand"/>
+        <position joint="joint_r_pinky_proximal" name="pinky_r_proximal_drive" class="right_hand"/>
+    </actuator>
+</mujoco>
