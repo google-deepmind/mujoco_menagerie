@@ -158,6 +158,10 @@
     <position class="fr3" name="fr3_joint7" joint="fr3_joint7" kp="2000" kv="200"/>
   </actuator>
 
+  <contact>
+    <exclude body1="fr3_link0" body2="fr3_link1"/>
+  </contact>
+
   <keyframe>
     <key name="home" qpos="0 0 0 -1.57079 0 1.57079 -0.7853" ctrl="0 0 0 -1.57079 0 1.57079 -0.7853"/>
   </keyframe>
