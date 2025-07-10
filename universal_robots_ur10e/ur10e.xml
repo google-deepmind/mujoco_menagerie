@@ -78,7 +78,7 @@
         <geom mesh="shoulder_0" material="urblue" class="visual"/>
         <geom mesh="shoulder_1" material="black" class="visual"/>
         <geom mesh="shoulder_2" material="jointgray" class="visual"/>
-        <geom class="collision" size="0.078 0.08" pos="0 0 -0.05"/>
+        <geom class="collision" size="0.06 0.07" pos="0 0 -0.05"/>
         <body name="upper_arm_link" pos="0 0.176 0" quat="1 0 1 0">
           <inertial pos="0 0 0.3065" mass="12.93" diaginertia="0.423074 0.423074 0.0363656"/>
           <joint name="shoulder_lift_joint" class="size4"/>
