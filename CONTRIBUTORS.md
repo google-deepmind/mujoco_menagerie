@@ -16,6 +16,7 @@ Built by the Google DeepMind team with contributions from the open-source commun
 
 - [Albert Li](https://github.com/alberthli)
 - [Alper Ahmetoglu](https://github.com/alper111)
+- [Andreas Kuhner](https://github.com/AndreasKuhner)
 - [Andrew Luo](https://github.com/Andrew-Luo1)
 - [Ayzaan Wahid](https://github.com/ayzaan)
 - [Chintan Desai](https://github.com/hello-chintan)
