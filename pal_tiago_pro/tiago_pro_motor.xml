@@ -1,0 +1,43 @@
+<mujoco model="tiago_pro_motor">
+  <include file="tiago_pro.xml"/>
+  <actuator>
+
+    <!-- Torso actuator -->
+    <position ctrlrange="0 0.35" joint="torso_lift_joint" kp="7000" kv="500" name="torso_lift_joint" />
+
+    <!-- Head actuators -->
+    <position ctrlrange="-1.309 1.309"  joint="head_1_joint" kp="2000" kv="10" name="head_1_joint" />
+    <position ctrlrange="-1.0472 0.34907"  joint="head_2_joint" kp="2000" kv="10" name="head_2_joint" />
+
+    <!-- Base actuators -->
+    <velocity ctrllimited="false" ctrlrange="-100 100" gear="1 0 0 0 0 0"  kv="500" name="base_x" site="base_footprint_site" />
+    <velocity ctrllimited="false" ctrlrange="-100 100" gear="0 1 0 0 0 0"  kv="500" name="base_y" site="base_footprint_site" />
+    <velocity ctrllimited="false" ctrlrange="-500 500" gear="0 0 0 0 0 1"  kv="500" name="base_tau" site="base_footprint_site" />
+
+    <!-- Left arm actuators -->
+    <motor name="arm_left_1_joint_torque" joint="arm_left_1_joint" ctrlrange="-46 46" />
+    <motor name="arm_left_2_joint_torque" joint="arm_left_2_joint" ctrlrange="-46 46" />
+    <motor name="arm_left_3_joint_torque" joint="arm_left_3_joint" ctrlrange="-46 46" />
+    <motor name="arm_left_4_joint_torque" joint="arm_left_4_joint" ctrlrange="-46 46" />
+    <motor name="arm_left_5_joint_torque" joint="arm_left_5_joint" ctrlrange="-46 46" />
+    <motor name="arm_left_6_joint_torque" joint="arm_left_6_joint" ctrlrange="-46 46" />
+    <motor name="arm_left_7_joint_torque" joint="arm_left_7_joint" ctrlrange="-46 46" />
+    
+    <!-- Right arm actuators -->
+    <motor name="arm_right_1_joint_torque" joint="arm_right_1_joint" ctrlrange="-46 46" />
+    <motor name="arm_right_2_joint_torque" joint="arm_right_2_joint" ctrlrange="-46 46" />
+    <motor name="arm_right_3_joint_torque" joint="arm_right_3_joint" ctrlrange="-46 46" />
+    <motor name="arm_right_4_joint_torque" joint="arm_right_4_joint" ctrlrange="-46 46" />
+    <motor name="arm_right_5_joint_torque" joint="arm_right_5_joint" ctrlrange="-46 46" />
+    <motor name="arm_right_6_joint_torque" joint="arm_right_6_joint" ctrlrange="-46 46" />
+    <motor name="arm_right_7_joint_torque" joint="arm_right_7_joint" ctrlrange="-46 46" />
+
+   <!-- Gripper actuators -->
+    <position name="gripper_left_position" joint="gripper_left_inner_finger_left_joint" kp="100" ctrlrange=" 0 0.802851 " />
+    <position name="gripper_right_position" joint="gripper_right_inner_finger_left_joint" kp="100" ctrlrange="0 0.802851" />
+  </actuator>
+
+  <keyframe>
+    <key name="home" qpos="0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0825 0.0 -0.0003 0.3578 -1.8266 0.4698 -2.3409 0.0001 -1.2006 0.0 0.0 0.0 0.0 0.0 0.0 0.0 -0.3576 -1.8266 -0.4698 -2.3409 0.0002 -1.2006 0.0 0.0 0.0 0.0 0.0 0.0 0.0"/>
+  </keyframe>
+</mujoco>
