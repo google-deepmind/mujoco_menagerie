@@ -30,7 +30,7 @@
           <joint axis="0 1 0" range="-2.5307 2.8798" actuatorfrcrange="-88 88" armature="0.01017752004"/>
         </default>
         <default class="hip_roll">
-          <joint axis="1 0 0" range="-0.5236 2.9671" actuatorfrcrange="-139 139" armature="0.025101925"/>
+          <joint axis="1 0 0" actuatorfrcrange="-139 139" armature="0.025101925"/>
         </default>
         <default class="hip_yaw">
           <joint axis="0 0 1" range="-2.7576 2.7576" actuatorfrcrange="-88 88" armature="0.01017752004"/>
@@ -149,7 +149,7 @@
         <body name="left_hip_roll_link" pos="0 0.052 -0.030465" quat="0.996179 0 -0.0873386 0">
           <inertial pos="0.029812 -0.001045 -0.087934" quat="0.977808 -1.97119e-05 0.205576 -0.0403793" mass="1.52"
             diaginertia="0.00254986 0.00241169 0.00148755"/>
-          <joint name="left_hip_roll_joint" class="hip_roll"/>
+          <joint name="left_hip_roll_joint" range="-0.5236 2.9671" class="hip_roll"/>
           <geom class="visual" mesh="left_hip_roll_link"/>
           <geom name="left_hip_collision" class="collision" size="0.06" fromto="0.02 0 0 0.02 0 -0.08"/>
           <body name="left_hip_yaw_link" pos="0.025001 0 -0.12412">
@@ -195,7 +195,7 @@
         <body name="right_hip_roll_link" pos="0 -0.052 -0.030465" quat="0.996179 0 -0.0873386 0">
           <inertial pos="0.029812 0.001045 -0.087934" quat="0.977808 1.97119e-05 0.205576 0.0403793" mass="1.52"
             diaginertia="0.00254986 0.00241169 0.00148755"/>
-          <joint name="right_hip_roll_joint" class="hip_roll"/>
+          <joint name="right_hip_roll_joint" range="-2.9671 0.5236" class="hip_roll"/>
           <geom class="visual" mesh="right_hip_roll_link"/>
           <geom name="right_hip_collision" class="collision" size="0.06" fromto="0.02 0 0 0.02 0 -0.08"/>
           <body name="right_hip_yaw_link" pos="0.025001 0 -0.12412">
