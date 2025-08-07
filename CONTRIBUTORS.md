@@ -11,6 +11,7 @@ Built by the Google DeepMind team with contributions from the open-source commun
 - [Saran Tunyasuvunakool](https://github.com/saran-t) — Google DeepMind
 - [Tom Erez](https://github.com/erez-tom) — Google DeepMind
 - [Yuval Tassa](https://github.com/yuvaltassa) — Google DeepMind
+- [Silvia Cruciani](https://github.com/silviacruciani) - Google DeepMind
 
 ## Community Contributors
 
