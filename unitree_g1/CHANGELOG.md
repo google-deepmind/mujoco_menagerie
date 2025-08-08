@@ -2,6 +2,9 @@
 
 All notable changes to this model will be documented in this file.
 
+## [2025-08-7]
+- Update the right hip joint limit of [g1_mjx.xml](g1_mjx.xml) to match the real robot limits
+
 ## [2025-05-30]
 
 - Add MJX variant of [g1.xml](g1.xml), with manually designed collision geoms and contact pairs.
