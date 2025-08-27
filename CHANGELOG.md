@@ -2,6 +2,10 @@
 
 All notable changes to this repository will be documented here.
 
+## [2025-08-27]
+
+- Added Kinova Gen3 Lite.
+
 ## [2025-05-30]
 
 - Added an MJX-tuned version of the G1 model.
