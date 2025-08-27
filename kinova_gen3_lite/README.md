@@ -10,7 +10,7 @@ See [CHANGELOG.md](./CHANGELOG.md) for a full history of changes.
 ## Overview
 
 This package contains a simplified robot description (MJCF) of the [Kinova
-Gen3](https://www.kinovarobotics.com/product/gen3-lite-robots) developed by [Kinova Robotics](https://www.kinovarobotics.com/). It is derived from the [publicly
+Gen3 Lite](https://www.kinovarobotics.com/product/gen3-lite-robots) developed by [Kinova Robotics](https://www.kinovarobotics.com/). It is derived from the [publicly
 available URDF description](https://github.com/Kinovarobotics/ros2_kortex/blob/main/kortex_description/robots/gen3_lite.urdf).
 
 
