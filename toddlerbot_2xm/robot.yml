@@ -1,0 +1,45 @@
+robot:
+    hand_name: hand
+    foot_name: ankle_roll_link
+    com_x: -0.02223
+    com_z: 0.2874
+    hip_pitch_to_roll_z: 0.024
+    torso_to_hip_z: 0.06459
+    hip_to_knee_z: 0.1015
+    knee_to_ankle_z: 0.11
+    hip_to_ankle_pitch_z: 0.2115
+    hip_to_ankle_roll_z: 0.1875
+    foot_to_com_y: 0.037
+motors:
+    left_hip_pitch:
+        motor: XM430-W350
+    right_hip_pitch:
+        motor: XM430-W350
+    left_hip_roll:
+        motor: XM430-W350
+    right_hip_roll:
+        motor: XM430-W350
+    left_shoulder_roll:
+        motor: 2XC430
+    right_shoulder_roll:
+        motor: 2XC430
+    left_shoulder_yaw_drive:
+        motor: 2XC430
+    right_shoulder_yaw_drive:
+        motor: 2XC430
+    left_elbow_roll:
+        motor: 2XC430
+    right_elbow_roll:
+        motor: 2XC430
+    left_elbow_yaw_drive:
+        motor: 2XC430
+    right_elbow_yaw_drive:
+        motor: 2XC430
+    left_wrist_pitch_drive:
+        motor: 2XC430
+    right_wrist_pitch_drive:
+        motor: 2XC430
+    left_wrist_roll:
+        motor: 2XC430
+    right_wrist_roll:
+        motor: 2XC430
