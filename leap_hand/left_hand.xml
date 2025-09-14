@@ -128,7 +128,7 @@ Naming Conventions
       <position ctrlrange="-0.366 2.042" />
     </default>
     <default class="thumb_cmc">
-      <joint pos="0 0 0" axis="0 0 -1"
+      <joint pos="0 0 0" axis="0 0 1"
         limited="true" range="-0.349 2.094" />
       <position ctrlrange="-0.349 2.094" />
     </default>
