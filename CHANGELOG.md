@@ -4,6 +4,10 @@ All notable changes to this repository will be documented here.
 
 ## [2025-05-30]
 
+- Added a `.gitignore` file.
+
+## [2025-05-30]
+
 - Added an MJX-tuned version of the G1 model.
 
 ## [2025-05-19]
