@@ -1,0 +1,5 @@
+# MuJoCo log files
+MUJOCO_LOG.txt
+
+# Python cache
+__pycache__/
