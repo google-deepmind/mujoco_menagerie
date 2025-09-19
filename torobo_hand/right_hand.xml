@@ -1,0 +1,190 @@
+<mujoco model="right torobo hand">
+  <compiler angle="radian" meshdir="assets" autolimits="true"/>
+
+  <option timestep="0.001" integrator="implicitfast"/>
+
+  <default>
+    <default class="hand">
+      <joint armature="0.01"/>
+    </default>
+  </default>
+
+  <asset>
+    <material name="light_gray" rgba="0.859 0.859 0.859 1.00"/>
+    <material name="dark_gray" rgba="0.251 0.251 0.251 1.00"/>
+    <material name="olive_gray" rgba="0.282 0.278 0.239 1.00"/>
+    <material name="off_white" rgba="0.957 0.957 0.957 1.00"/>
+
+    <mesh name="hand_base_link_0" file="right_hand_base_0.obj"/>
+    <mesh name="hand_base_link_1" file="right_hand_base_1.obj"/>
+    <mesh name="hand_base_link_2" file="right_hand_base_2.obj"/>
+    <mesh name="thumb_link1" file="right_hand_thumb_link1.obj"/>
+    <mesh name="thumb_link2" file="right_hand_thumb_link2.obj"/>
+    <mesh name="thumb_link3_0" file="right_hand_thumb_link3_0.obj"/>
+    <mesh name="thumb_link3_1" file="right_hand_thumb_link3_1.obj"/>
+    <mesh name="thumb_link4_0" file="right_hand_thumb_link4_0.obj"/>
+    <mesh name="thumb_link4_1" file="right_hand_thumb_link4_1.obj"/>
+    <mesh name="thumb_link4_2" file="right_hand_thumb_link4_2.obj"/>
+    <mesh name="finger_link0" file="right_hand_finger_link0.obj"/>
+    <mesh name="finger_link1_0" file="right_hand_finger_link1_0.obj"/>
+    <mesh name="finger_link1_1" file="right_hand_finger_link1_1.obj"/>
+    <mesh name="finger_link2_0" file="right_hand_finger_link2_0.obj"/>
+    <mesh name="finger_link2_1" file="right_hand_finger_link2_1.obj"/>
+    <mesh name="finger_link3_0" file="right_hand_finger_link3_0.obj"/>
+    <mesh name="finger_link3_1" file="right_hand_finger_link3_1.obj"/>
+    <mesh name="finger_link3_2" file="right_hand_finger_link3_2.obj"/>
+  </asset>
+
+  <worldbody>
+    <body name="hand/base_link" childclass="hand" pos="0 0 0.2" quat="1 0 0 0">
+      <inertial pos="0.061841 -0.006460 -0.032998" mass="1.002455" diaginertia="1.725911e-3 2.065984e-3 2.042959e-3"/>
+      <geom type="mesh" mesh="hand_base_link_0" material="olive_gray"/>
+      <geom type="mesh" mesh="hand_base_link_1" material="dark_gray"/>
+      <geom type="mesh" mesh="hand_base_link_2" material="light_gray"/>
+      <body name="hand/first_finger_base_link" pos="0.106 -0.04 -0.01">
+        <joint name="hand/first_finger_base_joint" pos="0 0 0" axis="0 0 1" range="-0.10472 0.10472"/>
+        <geom type="mesh" mesh="finger_link0" material="light_gray"/>
+        <body name="hand_first_finger/link_1" pos="0.0318 0 0" quat="0.706999 0.706999 -0.0123407 0.0123407">
+          <inertial pos="0.017049 -0.000342 -1e-05" quat="0.504833 0.48339 0.514803 0.496444" mass="0.049131"
+            diaginertia="1.46184e-05 1.36633e-05 3.76446e-06"/>
+          <joint name="hand_first_finger/joint_1" pos="0 0 0" axis="0 0 1" range="0 1.50098"/>
+          <geom type="mesh" mesh="finger_link1_0" material="dark_gray"/>
+          <geom type="mesh" mesh="finger_link1_1" material="light_gray"/>
+          <body name="hand_first_finger/link_2" pos="0.04 0 0">
+            <inertial pos="0.010344 -0.000511 -6.7e-05" quat="0.473077 0.490768 0.508241 0.526342" mass="0.027284"
+              diaginertia="4.49108e-06 4.04103e-06 2.02839e-06"/>
+            <joint name="hand_first_finger/joint_2" pos="0 0 0" axis="0 0 1" range="-0.139626 1.88496"/>
+            <geom type="mesh" mesh="finger_link2_0" material="dark_gray"/>
+            <geom type="mesh" mesh="finger_link2_1" material="light_gray"/>
+            <body name="hand_first_finger/link_3" pos="0.03 0 0">
+              <inertial pos="0.007809 2.3e-05 -1e-06" quat="0.490084 0.489588 0.510257 0.509665" mass="0.018464"
+                diaginertia="1.87007e-06 1.6823e-06 9.02633e-07"/>
+              <joint name="hand_first_finger/joint_3" pos="0 0 0" axis="0 0 1" range="-0.139626 1.88496"/>
+              <geom type="mesh" mesh="finger_link3_0" material="off_white"/>
+              <geom type="mesh" mesh="finger_link3_1" material="light_gray"/>
+              <geom type="mesh" mesh="finger_link3_2" material="dark_gray"/>
+            </body>
+          </body>
+        </body>
+      </body>
+      <body name="hand/second_finger_base_link" pos="0.11 -0.01 -0.01">
+        <joint name="hand/second_finger_base_joint" pos="0 0 0" axis="0 0 1" range="-0.10472 0.10472"/>
+        <geom type="mesh" mesh="finger_link0" material="light_gray"/>
+        <body name="hand_second_finger/link_1" pos="0.0318 0 0" quat="0.706999 0.706999 -0.0123407 0.0123407">
+          <inertial pos="0.017049 -0.000342 -1e-05" quat="0.504833 0.48339 0.514803 0.496444" mass="0.049131"
+            diaginertia="1.46184e-05 1.36633e-05 3.76446e-06"/>
+          <joint name="hand_second_finger/joint_1" pos="0 0 0" axis="0 0 1" range="0 1.50098"/>
+          <geom type="mesh" mesh="finger_link1_0" material="dark_gray"/>
+          <geom type="mesh" mesh="finger_link1_1" material="light_gray"/>
+          <body name="hand_second_finger/link_2" pos="0.04 0 0">
+            <inertial pos="0.010344 -0.000511 -6.7e-05" quat="0.473077 0.490768 0.508241 0.526342" mass="0.027284"
+              diaginertia="4.49108e-06 4.04103e-06 2.02839e-06"/>
+            <joint name="hand_second_finger/joint_2" pos="0 0 0" axis="0 0 1" range="-0.139626 1.88496"/>
+            <geom type="mesh" mesh="finger_link2_0" material="dark_gray"/>
+            <geom type="mesh" mesh="finger_link2_1" material="light_gray"/>
+            <body name="hand_second_finger/link_3" pos="0.03 0 0">
+              <inertial pos="0.007809 2.3e-05 -1e-06" quat="0.490084 0.489588 0.510257 0.509665" mass="0.018464"
+                diaginertia="1.87007e-06 1.6823e-06 9.02633e-07"/>
+              <joint name="hand_second_finger/joint_3" pos="0 0 0" axis="0 0 1" range="-0.139626 1.88496"/>
+              <geom type="mesh" mesh="finger_link3_0" material="off_white"/>
+              <geom type="mesh" mesh="finger_link3_1" material="light_gray"/>
+              <geom type="mesh" mesh="finger_link3_2" material="dark_gray"/>
+            </body>
+          </body>
+        </body>
+      </body>
+      <body name="hand/third_finger_base_link" pos="0.106 0.02 -0.01">
+        <joint name="hand/third_finger_base_joint" pos="0 0 0" axis="0 0 1" range="-0.10472 0.10472"/>
+        <geom type="mesh" mesh="finger_link0" material="light_gray"/>
+        <body name="hand_third_finger/link_1" pos="0.0318 0 0" quat="0.706999 0.706999 -0.0123407 0.0123407">
+          <inertial pos="0.017049 -0.000342 -1e-05" quat="0.504833 0.48339 0.514803 0.496444" mass="0.049131"
+            diaginertia="1.46184e-05 1.36633e-05 3.76446e-06"/>
+          <joint name="hand_third_finger/joint_1" pos="0 0 0" axis="0 0 1" range="0 1.50098"/>
+          <geom type="mesh" mesh="finger_link1_0" material="dark_gray"/>
+          <geom type="mesh" mesh="finger_link1_1" material="light_gray"/>
+          <body name="hand_third_finger/link_2" pos="0.04 0 0">
+            <inertial pos="0.010344 -0.000511 -6.7e-05" quat="0.473077 0.490768 0.508241 0.526342" mass="0.027284"
+              diaginertia="4.49108e-06 4.04103e-06 2.02839e-06"/>
+            <joint name="hand_third_finger/joint_2" pos="0 0 0" axis="0 0 1" range="-0.139626 1.88496"/>
+            <geom type="mesh" mesh="finger_link2_0" material="dark_gray"/>
+            <geom type="mesh" mesh="finger_link2_1" material="light_gray"/>
+            <body name="hand_third_finger/link_3" pos="0.03 0 0">
+              <inertial pos="0.007809 2.3e-05 -1e-06" quat="0.490084 0.489588 0.510257 0.509665" mass="0.018464"
+                diaginertia="1.87007e-06 1.6823e-06 9.02633e-07"/>
+              <joint name="hand_third_finger/joint_3" pos="0 0 0" axis="0 0 1" range="-0.139626 1.88496"/>
+              <geom type="mesh" mesh="finger_link3_0" material="off_white"/>
+              <geom type="mesh" mesh="finger_link3_1" material="light_gray"/>
+              <geom type="mesh" mesh="finger_link3_2" material="dark_gray"/>
+            </body>
+          </body>
+        </body>
+      </body>
+      <body name="hand_thumb/link_1" pos="0.058 -0.04 -0.01" quat="0.50865 0.491198 -0.50865 -0.491198">
+        <inertial pos="0.002328 -1e-06 0.002846" quat="0.707103 -0.0156124 -0.0180479 0.706708" mass="0.068432"
+          diaginertia="1.70627e-05 1.50642e-05 5.55142e-06"/>
+        <joint name="hand_thumb/joint_1" pos="0 0 0" axis="0 0 1" range="0 1.50098"/>
+        <geom type="mesh" mesh="thumb_link1" material="light_gray"/>
+        <body name="hand_thumb/link_2" pos="0.017 0 0" quat="0.707107 -0.707107 0 0">
+          <inertial pos="0.015723 -0.001016 8.6e-05" quat="0.503541 0.512395 0.477077 0.506257" mass="0.109636"
+            diaginertia="4.27542e-05 3.2483e-05 2.18966e-05"/>
+          <joint name="hand_thumb/joint_2" pos="0 0 0" axis="0 0 1" range="-0.139626 0.925025"/>
+          <geom type="mesh" mesh="thumb_link2" material="light_gray"/>
+          <body name="hand_thumb/link_3" pos="0.047 0 0" quat="0.92388 0.382683 0 0">
+            <inertial pos="0.011674 -0.000332 -8.5e-05" quat="0.497121 0.478125 0.523656 0.500051" mass="0.039034"
+              diaginertia="6.60996e-06 5.71237e-06 3.00467e-06"/>
+            <joint name="hand_thumb/joint_3" pos="0 0 0" axis="0 0 1" range="-0.314159 1.53589"/>
+            <geom type="mesh" mesh="thumb_link3_0" material="dark_gray"/>
+            <geom type="mesh" mesh="thumb_link3_1" material="light_gray"/>
+            <body name="hand_thumb/link_4" pos="0.032 0 0">
+              <inertial pos="0.008084 -0.000588 -7e-05" quat="0.500713 0.505137 0.492525 0.50154" mass="0.025417"
+                diaginertia="3.27414e-06 2.51938e-06 1.80568e-06"/>
+              <joint name="hand_thumb/joint_4" pos="0 0 0" axis="0 0 1" range="-0.314159 1.53589"/>
+              <geom type="mesh" mesh="thumb_link4_0" material="off_white"/>
+              <geom type="mesh" mesh="thumb_link4_1" material="dark_gray"/>
+              <geom type="mesh" mesh="thumb_link4_2" material="light_gray"/>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+
+  <equality>
+    <!-- mimic joints -->
+    <joint joint1="hand_first_finger/joint_3" joint2="hand_first_finger/joint_2" polycoef="0 0.575 0 0 0"/>
+    <joint joint1="hand_second_finger/joint_3" joint2="hand_second_finger/joint_2" polycoef="0 0.575 0 0 0"/>
+    <joint joint1="hand_third_finger/joint_3" joint2="hand_third_finger/joint_2" polycoef="0 0.575 0 0 0"/>
+    <joint joint1="hand/third_finger_base_joint" joint2="hand/second_finger_base_joint" polycoef="0 1.0 0 0 0"/>
+  </equality>
+
+  <contact>
+    <exclude body1="hand/base_link" body2="hand/first_finger_base_link" />
+    <exclude body1="hand/base_link" body2="hand_first_finger/link_1" />
+    <exclude body1="hand/base_link" body2="hand/second_finger_base_link" />
+    <exclude body1="hand/base_link" body2="hand_second_finger/link_1" />
+    <exclude body1="hand/base_link" body2="hand/third_finger_base_link" />
+    <exclude body1="hand/base_link" body2="hand_third_finger/link_1" />
+    <exclude body1="hand/base_link" body2="hand_thumb/link_1" />
+    <exclude body1="hand/base_link" body2="hand_thumb/link_2"/>
+  </contact>
+
+  <actuator>
+    <position name="hand/first_finger_base_joint" ctrlrange="-0.10472 0.10472" joint="hand/first_finger_base_joint"
+      kp="3" kv="0.3"/>
+    <position name="hand/second_finger_base_joint" ctrlrange="-0.10472 0.10472" joint="hand/second_finger_base_joint"
+      kp="3" kv="0.3"/>
+    <position name="hand_thumb/joint_1" ctrlrange="0 1.5708" joint="hand_thumb/joint_1" kp="3" kv="0.3"/>
+    <position name="hand_first_finger/joint_1" ctrlrange="0 1.5708" joint="hand_first_finger/joint_1" kp="3" kv="0.3"/>
+    <position name="hand_second_finger/joint_1" ctrlrange="0 1.5708" joint="hand_second_finger/joint_1" kp="3" kv="0.3"/>
+    <position name="hand_thumb/joint_2" ctrlrange="0 1.0472" joint="hand_thumb/joint_2" kp="3" kv="0.3"/>
+    <position name="hand_first_finger/joint_2" ctrlrange="-0.174533 1.91986" joint="hand_first_finger/joint_2" kp="3"
+      kv="0.3"/>
+    <position name="hand_third_finger/joint_1" ctrlrange="0 1.5708" joint="hand_third_finger/joint_1" kp="3" kv="0.3"/>
+    <position name="hand_second_finger/joint_2" ctrlrange="-0.174533 1.91986" joint="hand_second_finger/joint_2" kp="3"
+      kv="0.3"/>
+    <position name="hand_thumb/joint_3" ctrlrange="-0.349066 1.5708" joint="hand_thumb/joint_3" kp="3" kv="0.3"/>
+    <position name="hand_third_finger/joint_2" ctrlrange="-0.174533 1.91986" joint="hand_third_finger/joint_2" kp="3"
+      kv="0.3"/>
+    <position name="hand_thumb/joint_4" ctrlrange="-0.349066 1.5708" joint="hand_thumb/joint_4" kp="3" kv="0.3"/>
+  </actuator>
+</mujoco>
