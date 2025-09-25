@@ -1,0 +1,84 @@
+<mujoco model="m1013">
+  <compiler angle="radian" meshdir="assets"/>
+
+  <asset>
+    <mesh name="MF1013_0_0" file="MF1013_0_0.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="MF1013_1_0" file="MF1013_1_0.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="MF1013_2_0" file="MF1013_2_0.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="MF1013_2_1" file="MF1013_2_1.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="MF1013_2_2" file="MF1013_2_2.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="MF1013_3_0" file="MF1013_3_0.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="MF1013_4_0" file="MF1013_4_0.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="MF1013_4_1" file="MF1013_4_1.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="MF1013_5_0" file="MF1013_5_0.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="MF1013_6_0" file="MF1013_6_0.stl" scale="0.001 0.001 0.001"/>
+
+    <material name="white" rgba="0.9 0.9 0.9 1"/>
+    <material name="metal" rgba="0.65 0.65 0.65 1"/>
+  </asset>
+
+  <default>
+    <default class="m1013">
+      <geom type="mesh" contype="1" conaffinity="1" group="1"/>
+      <joint pos="0 0 0" axis="0 0 1"/>
+    </default>
+  </default>
+
+  <worldbody>
+    <body name="base_link" childclass="m1013">
+      <geom mesh="MF1013_0_0" material="metal"/>
+      <body name="link_1" pos="0 0 0.1525">
+        <inertial pos="0.000119 0.0428 -0.006383" quat="0.464342 0.521165 -0.533586 0.477557" mass="7.8"
+          diaginertia="0.0472838 0.0450586 0.0294526"/>
+        <joint name="joint_1" range="-6.2832 6.2832" actuatorfrcrange="-346 346" damping="180"/>
+        <geom mesh="MF1013_1_0" material="white"/>
+        <body name="link_2" pos="0 0.0345 0" quat="0.499898 -0.500102 -0.5 -0.5">
+          <inertial pos="0.25973 -5.3e-05 0.15782" quat="0.0181111 0.703821 0.0182764 0.709911" mass="10.83"
+            diaginertia="0.850272 0.849428 0.0375257"/>
+          <joint name="joint_2" range="-6.2832 6.2832" actuatorfrcrange="-346 346" damping="180"/>
+          <geom mesh="MF1013_2_0" material="white"/>
+          <geom mesh="MF1013_2_1" material="metal"/>
+          <geom mesh="MF1013_2_2" material="white"/>
+          <body name="link_3" pos="0.62 0 0" quat="0.707035 0 0 0.707179">
+            <inertial pos="-1.5e-05 -0.006702 0.044608" quat="0.713939 -0.0462748 0.0455669 0.69719" mass="3.68"
+              diaginertia="0.0191021 0.0187478 0.0113721"/>
+            <joint name="joint_3" range="-2.7925 2.7925" actuatorfrcrange="-163 163" damping="100"/>
+            <geom mesh="MF1013_3_0" material="white"/>
+            <body name="link_4" pos="0 -0.559 0" quat="0.707035 0.707179 0 0">
+              <inertial pos="7.1e-05 0.091879 -0.18252" quat="0.987197 -0.159369 -0.000923443 -0.0064664" mass="3.82"
+                diaginertia="0.19063 0.190249 0.0128173"/>
+              <joint name="joint_4" range="-6.2832 6.2832" actuatorfrcrange="-50 50" damping="20"/>
+              <geom mesh="MF1013_4_0" material="white"/>
+              <geom mesh="MF1013_4_1" material="white"/>
+              <body name="link_5" quat="0.707035 -0.707179 0 0">
+                <inertial pos="-0.000273 0.003651 0.032088" quat="0.996984 0.0775632 0.000422658 0.00257843" mass="2.82"
+                  diaginertia="0.0155831 0.0115855 0.00880048"/>
+                <joint name="joint_5" range="-6.2832 6.2832" actuatorfrcrange="-50 50" damping="20"/>
+                <geom mesh="MF1013_5_0" material="white"/>
+                <body name="link_6" pos="0 -0.121 0" quat="0.707035 0.707179 0 0">
+                  <inertial pos="-0.000292 7e-06 -0.0539" quat="0.0099287 0.708965 0.0073912 0.705135" mass="1.16"
+                    diaginertia="0.00612644 0.00595181 0.00482815"/>
+                  <joint name="joint_6" range="-6.2832 6.2832" actuatorfrcrange="-50 50" damping="20"/>
+                  <geom mesh="MF1013_6_0" material="metal"/>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+
+  <actuator>
+    <position joint="joint_1" kp="10000" kv="200" ctrlrange="-6.28319 6.28319"/>
+    <position joint="joint_2" kp="10000" kv="200" ctrlrange="-6.28319 6.28319"/>
+    <position joint="joint_3" kp="10000" kv="200" ctrlrange="-2.7925 2.7925"/>
+    <position joint="joint_4" kp="10000" kv="10" ctrlrange="-6.28319 6.28319"/>
+    <position joint="joint_5" kp="10000" kv="10" ctrlrange="-6.28319 6.28319"/>
+    <position joint="joint_6" kp="10000" kv="10" ctrlrange="-6.28319 6.28319"/>
+  </actuator>
+
+  <keyframe>
+    <key name="home" qpos="0 0 1.57 0 1.57 0" ctrl="0 0 1.57 0 1.57 0"/>
+  </keyframe>
+</mujoco>
