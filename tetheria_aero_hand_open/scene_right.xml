@@ -1,20 +1,17 @@
-<mujoco model="tetheria_scene">
+<mujoco model="tetheria_aero_hand_open_right_scene">
     <include file="right_hand.xml"/>
 
     <statistic center="0.15 0 0" extent="0.4" meansize="0.01"/>
 
     <visual>
         <headlight diffuse=".8 .8 .8" ambient=".2 .2 .2" specular="1 1 1"/>
-        <rgba force="1 0 0 1"/>
         <global azimuth="120" elevation="-20"/>
-        <map force="0.01" stiffness="500"/>
-        <scale forcewidth="0.1" contactwidth="0.5" contactheight="0.2"/>
         <quality shadowsize="8192"/>
     </visual>
 
     <asset>
-        <texture type="skybox" builtin="gradient" rgb1="1 1 1" rgb2="1 1 1" width="800" height="800"/>
-        <texture type="2d" name="groundplane" builtin="checker" mark="edge" rgb1="1 1 1" rgb2="1 1 1" markrgb="0 0 0" width="300" height="300"/>
+        <texture type="skybox" builtin="gradient" rgb1="0.60 0.90 0.97" rgb2="0 0 0" width="800" height="800"/>
+        <texture type="2d" name="groundplane" builtin="checker" mark="edge" rgb1="0.1 0.3 0.2" rgb2="0.2 0.4 0.3" markrgb="0.8 0.8 0.8" width="300" height="300"/>
         <material name="groundplane" texture="groundplane" texuniform="true" texrepeat="5 5" reflectance="0"/>
     </asset>
 
