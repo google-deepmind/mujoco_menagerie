@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <mujoco model="toddlerbot_2xc">
   <compiler angle="radian" meshdir="assets" autolimits="true"/>
+
   <default class="main">
     <geom condim="1" contype="0" conaffinity="0"/>
     <joint damping="0.01" armature="0.0" frictionloss="0.01"/>
@@ -30,6 +31,7 @@
     </default>
     <motor ctrlrange="-10 10"/>
   </default>
+
   <worldbody>
     <body name="torso" pos="0.0 0.0 0.315053" quat="1 0 0 0" childclass="main">
       <freejoint name="torso_freejoint"/>
@@ -466,6 +468,7 @@
       </body>
     </body>
   </worldbody>
+
   <asset>
     <mesh file="head_visual.stl"/>
     <mesh file="left_ankle_pitch_link_visual.stl"/>
@@ -543,6 +546,7 @@
     <material name="wrist_gear_drive_visual_material" rgba="0.615686 0.811765 0.929412 1"/>
     <material name="wrist_pitch_link_visual_material" rgba="0.748702 0.84202 0.892409 1"/>
   </asset>
+
   <actuator>
     <motor name="neck_yaw_drive" joint="neck_yaw_drive"/>
     <motor name="neck_pitch_act" joint="neck_pitch_act"/>
@@ -575,6 +579,7 @@
     <motor name="right_wrist_pitch_drive" joint="right_wrist_pitch_drive"/>
     <motor name="right_wrist_roll" joint="right_wrist_roll"/>
   </actuator>
+
   <equality>
     <connect site1="closing_neck_pitch_front_1" site2="closing_neck_pitch_front_2" solref="0.004 1"
       solimp="0.9999 0.9999 0.001 0.5 2"/>
@@ -594,6 +599,7 @@
     <joint joint1="right_wrist_pitch_driven" joint2="right_wrist_pitch_drive" polycoef="0 -1.0 0 0 0"/>
     <joint joint1="right_hip_yaw_driven" joint2="right_hip_yaw_drive" polycoef="0 -0.8571428571 0 0 0"/>
   </equality>
+
   <tendon>
     <fixed name="waist_roll_coupling" limited="true" range="-0.03 0.03">
       <joint joint="waist_act_1" coef="0.29166667"/>
@@ -606,17 +612,20 @@
       <joint joint="waist_yaw" coef="1"/>
     </fixed>
   </tendon>
+
   <contact>
     <pair geom1="left_ankle_roll_link_collision" geom2="right_ankle_roll_link_collision"/>
     <pair geom1="left_ankle_roll_link_collision" geom2="left_hand_collision"/>
     <pair geom1="right_ankle_roll_link_collision" geom2="right_hand_collision"/>
     <pair geom1="left_hand_collision" geom2="right_hand_collision"/>
   </contact>
+
   <keyframe>
     <key name="home"
       qpos="0.02020514 0.0 0.310053 1.0 0.0 0.0 0.0 0.0 -0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 -0.091312 0.0 -0.0 0.0 -0.380812 -0.2895 0.0 0.091312 0.0 -0.0 0.0 0.380812 0.2895 0.0 0.174533 0.087266 1.570796 -1.570796 -0.523599 -1.570796 1.570796 1.22173 -1.22173 0.0 -0.174533 0.087266 -1.570796 1.570796 -0.523599 1.570796 -1.570796 -1.22173 1.22173 0.0"
       ctrl="0 0 0 0 -0.091312 0 0 -0.380812 0 -0.2895 0.091312 0 0 0.380812 0 0.2895 0.174533 0.087266 1.570796 -0.523599 -1.570796 -1.22173 0 -0.174533 0.087266 -1.570796 -0.523599 1.570796 1.22173 0"/>
   </keyframe>
+
   <option iterations="1" ls_iterations="4">
     <flag eulerdamp="disable"/>
   </option>
