@@ -251,6 +251,7 @@ Menagerie, see [CONTRIBUTING](CONTRIBUTING.md).
 | TALOS | PAL Robotics | 32 | [Apache-2.0](pal_talos/LICENSE) |✖️|
 | Unitree G1 | Unitree Robotics | 37 | [BSD-3-Clause](unitree_g1/LICENSE) |✔️|
 | Unitree H1 | Unitree Robotics | 19 | [BSD-3-Clause](unitree_h1/LICENSE) |✖️|
+| ToddlerBot | Stanford University | 30 | [MIT](toddlerbot_2xc/LICENSE) |✔️|
 
 **Quadrupeds.**
 
