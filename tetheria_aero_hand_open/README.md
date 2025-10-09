@@ -25,4 +25,4 @@ This package contains a **tendon-driven** robotic hand model for MuJoCo manipula
 
 ## License
 
-This model is released under an [MIT License](LICENSE).
+These models are released under an [Apache-2.0 License](LICENSE).
