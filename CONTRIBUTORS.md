@@ -32,6 +32,7 @@ Built by the Google DeepMind team with contributions from the open-source commun
 - [Martin Günther](https://github.com/muhrix)
 - [Mohamed Fazil](https://github.com/hello-fazil)
 - [Nikita Cherniadev](https://github.com/chernyadev)
+- [Nan Wang](https://github.com/warnerion)
 - [Omar Rayyan](https://github.com/omarrayyann)
 - [Sai Kishor Kothakota](https://github.com/saikishor)
 - [Taylor Howell](https://github.com/thowell)
