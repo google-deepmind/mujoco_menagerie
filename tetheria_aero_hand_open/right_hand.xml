@@ -719,13 +719,13 @@
   </tendon>
 
   <actuator>
-    <position name="right_index_A_pip" tendon="if_tendon0" ctrlrange="0.058520 0.110387" kp="10000" />
-    <position name="right_middle_A_pip" tendon="mf_tendon0" ctrlrange="0.058520 0.110387" kp="10000" />
-    <position name="right_ring_A_pip" tendon="rf_tendon0" ctrlrange="0.058520 0.110387" kp="10000" />
-    <position name="right_pinky_A_pip" tendon="pf_tendon0" ctrlrange="0.058520 0.110387" kp="10000"/>
-    <position name="right_thumb_A_mcp_abd" joint="right_thumb_cmc_abd" class="thumb_cmc" kp = "1" />
-    <position name="right_th1_A_pip" tendon="th_tendon1" ctrlrange="0.026152 0.038389" kp="10000" />
-    <position name="right_th2_A_pip" tendon="th_tendon2" ctrlrange="0.081568 0.112138" kp="10000" />
+    <position name="right_index_A_tendon" tendon="if_tendon0" ctrlrange="0.058520 0.110387" kp="10000" />
+    <position name="right_middle_A_tendon" tendon="mf_tendon0" ctrlrange="0.058520 0.110387" kp="10000" />
+    <position name="right_ring_A_tendon" tendon="rf_tendon0" ctrlrange="0.058520 0.110387" kp="10000" />
+    <position name="right_pinky_A_tendon" tendon="pf_tendon0" ctrlrange="0.058520 0.110387" kp="10000"/>
+    <position name="right_thumb_A_cmc_abd" joint="right_thumb_cmc_abd" class="thumb_cmc" kp = "1" />
+    <position name="right_th1_A_tendon" tendon="th_tendon1" ctrlrange="0.026152 0.038389" kp="10000" />
+    <position name="right_th2_A_tendon" tendon="th_tendon2" ctrlrange="0.081568 0.112138" kp="10000" />
   </actuator>
 
 
