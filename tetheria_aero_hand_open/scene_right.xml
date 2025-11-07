@@ -1,0 +1,36 @@
+<mujoco model="tetheria_aero_hand_open_right_scene">
+    <include file="right_hand.xml"/>
+
+    <statistic center="0.15 0 0" extent="0.4" meansize="0.01"/>
+
+    <visual>
+        <headlight diffuse=".8 .8 .8" ambient=".2 .2 .2" specular="1 1 1"/>
+        <global azimuth="120" elevation="-20"/>
+        <quality shadowsize="8192"/>
+    </visual>
+
+    <asset>
+        <texture type="skybox" builtin="gradient" rgb1="0.60 0.90 0.97" rgb2="0 0 0" width="800" height="800"/>
+        <texture type="2d" name="groundplane" builtin="checker" mark="edge" rgb1="0.1 0.3 0.2" rgb2="0.2 0.4 0.3" markrgb="0.8 0.8 0.8" width="300" height="300"/>
+        <material name="groundplane" texture="groundplane" texuniform="true" texrepeat="5 5" reflectance="0"/>
+    </asset>
+
+    <worldbody>
+        <camera name="side" pos="-0.183 0.396 0.296" xyaxes="-0.783 -0.622 -0.000 0.332 -0.419 0.845"/>
+        <geom name="floor" pos="0 0 -0.25" size="0 0 0.01" type="plane" material="groundplane" contype="2" conaffinity="2"/>
+    </worldbody>
+
+    <keyframe>
+        <key name="home" qpos="1.57335 0.347305 0.352258 
+    1.57303 0.400789 0.406 
+    1.57335 0.365219 0.370336 
+    1.57336 0.515229 0.520112 
+    0.746438 0.260182 -0.00155382 1.0748 " ctrl="
+    0.09 
+    0.09 
+    0.09 
+    0.09 
+    0.75 0.035 0.1"/>
+    </keyframe>
+
+</mujoco>
