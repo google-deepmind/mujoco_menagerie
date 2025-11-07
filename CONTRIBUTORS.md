@@ -14,7 +14,7 @@ Built by the Google DeepMind team with contributions from the open-source commun
 - [Silvia Cruciani](https://github.com/silviacruciani) - Google DeepMind
 
 ## Community Contributors
-
+- [Achraf Anas Houssaini](https://github.com/anashoussaini)
 - [Albert Li](https://github.com/alberthli)
 - [Alper Ahmetoglu](https://github.com/alper111)
 - [Andrew Luo](https://github.com/Andrew-Luo1)
@@ -24,6 +24,7 @@ Built by the Google DeepMind team with contributions from the open-source commun
 - [Eugene Frizza](https://github.com/eufrizz)
 - [Ian Noh](https://github.com/dongridong)
 - [Jason Chen](https://github.com/chenxin199305)
+- [Jonathan Lussier](https://github.com/kinovajon)
 - [Jonathan Zamora](https://github.com/jonzamora)
 - [Kallinteris Andreas](https://github.com/Kallinteris-Andreas)
 - [Lev Kozlov](https://github.com/lvjonok)
