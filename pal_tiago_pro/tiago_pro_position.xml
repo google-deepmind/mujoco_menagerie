@@ -33,8 +33,8 @@
     <position ctrlrange="-2.61799 2.61799"  joint="arm_right_7_joint" kp="500" kv="20" name="arm_right_7_joint_position" />
 
     <!-- Gripper actuators -->
-    <position name="gripper_left_position" joint="gripper_left_inner_finger_left_joint" kp="100" ctrlrange=" 0 0.802851 " />
-    <position name="gripper_right_position" joint="gripper_right_inner_finger_left_joint" kp="100" ctrlrange="0 0.802851" />
+    <position name="gripper_left_position" joint="gripper_left_outer_finger_left_joint" kp="50000" kv="100" ctrlrange=" 0 0.95 " />
+    <position name="gripper_right_position" joint="gripper_right_outer_finger_left_joint" kp="50000" kv="100" ctrlrange="0 0.95" />
 
 </actuator>
 
