@@ -231,8 +231,9 @@ Menagerie, see [CONTRIBUTING](CONTRIBUTING.md).
 | Stanford TidyBot | Stanford University | 11 | [MIT](stanford_tidybot/LICENSE) |✖️|
 | Stretch 2 | Hello Robot | 17 | [Clear BSD](hello_robot_stretch/LICENSE) |✖️|
 | Stretch 3 | Hello Robot | 17 | [Apache-2.0](hello_robot_stretch_3/LICENSE) |✖️|
-| PAL Tiago | PAL Robotics | 12 | [Apache-2.0](pal_tiago/LICENSE) |✖️|
-| PAL Tiago Dual | PAL Robotics | 21 | [Apache-2.0](pal_tiago_dual/LICENSE) |✖️|
+| PAL TIAGo | PAL Robotics | 12 | [Apache-2.0](pal_tiago/LICENSE) |✖️|
+| PAL TIAGo Dual | PAL Robotics | 21 | [Apache-2.0](pal_tiago_dual/LICENSE) |✖️|
+| PAL TIAGo Pro | PAL Robotics | 21 | [Apache-2.0](pal_tiago_pro/LICENSE) |✖️|
 
 **Mobile Bases.**
 
