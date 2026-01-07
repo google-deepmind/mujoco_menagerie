@@ -1,4 +1,5 @@
 <mujoco model="fr3 scene">
+  <compiler meshdir="meshes" />
   <include file="fr3.xml"/>
 
   <statistic center="0.2 0 0.4" extent=".8"/>
