@@ -39,6 +39,7 @@
     <mesh name="arm_6_link" content_type="model/stl" file="./assets/arm_tiago_pro/spherical-wrist/arm_6_link.stl" />
     <mesh name="arm_6_link_collision" content_type="model/stl" file="./assets/arm_tiago_pro/spherical-wrist/arm_6_link_collision.stl" />
     <mesh name="arm_7_link" content_type="model/stl" file="./assets/arm_tiago_pro/spherical-wrist/arm_7_link.stl" />
+    <mesh name="end_effector_camera_realsense_d435" content_type="model/stl" file="./assets/arm_tiago_pro/end_effector_camera_realsense_d435.stl" />
     <mesh name="base_link_tc" content_type="model/stl" file="./assets/pal_pro_gripper/base_link_tc.stl" />
     <mesh name="inner_finger" content_type="model/stl" file="./assets/pal_pro_gripper/inner_finger.stl" />
     <mesh name="outer_finger" content_type="model/stl" file="./assets/pal_pro_gripper/outer_finger.stl" />
@@ -98,7 +99,7 @@
       </body>
       <body name="torso_lift_link" pos="-0.0245 0 0.8457">
         <inertial pos="0.0129455 0 -0.0117188" quat="0.658139 0.658391 -0.258276 0.258201" mass="4.0175" diaginertia="0.0534327 0.0451869 0.0265871" />
-        <joint name="torso_lift_joint" pos="0 0 0" axis="0 0 1" type="slide" range="0 0.35" actuatorfrcrange="-2000 2000" damping="0.5" />
+        <joint name="torso_lift_joint" pos="0 0 0" axis="0 0 1" type="slide" range="0 0.35" actuatorfrcrange="-2000 2000" damping="50.0" />
         <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.894118 0.913725 0.929412 1" mesh="torso_lift_link" />
         <geom type="mesh" rgba="0.894118 0.913725 0.929412 1" mesh="torso_lift_link_collision" group="3" />
         <geom pos="-0.226436 3.12797e-05 0.00524038" quat="0.707107 0 0 -0.707107" type="mesh" rgba="0.894118 0.913725 0.929412 1" mesh="laptop_tray_collision" group="3" />
@@ -167,6 +168,11 @@
                       <geom size="0.0375 0.0183" type="cylinder" rgba="0.29804 0.29804 0.29804 1" group="3" />
                       <geom pos="0 0 0.017" type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.29804 0.29804 0.29804 1" mesh="base_link_tc" />
                       <geom pos="0 0 0.017" type="mesh" rgba="0.29804 0.29804 0.29804 1" mesh="base_link_tc" group="3" />
+                      <body name="realsense_end_effector_left" pos="0.0406 0 0.014" quat="0 0.707107 0 0.707107">
+                        <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" 
+                              rgba="0.75294 0.75294 0.75294 1" mesh="end_effector_camera_realsense_d435"/>
+                        <camera name="end_effector_left_rgb" pos="0.015 0 0.0195" quat="0.7071 0 -0.7071 0" fovy="69"/>
+                      </body>
                       <body name="gripper_left_inner_finger_left_link" pos="0 -0.013977 0.095832" quat="0.253401 0.660141 -0.253406 -0.660141">
                         <inertial pos="0 0.024759 0" quat="0.5 0.5 -0.5 0.5" mass="0.018619" diaginertia="4.9573e-06 4.8806e-06 2.5471e-07" />
                         <joint name="gripper_left_inner_finger_left_joint" pos="0 0 0" axis="0 0 1" range="0 0.9" actuatorfrcrange="-8 8" damping="1.5" />
@@ -252,6 +258,11 @@
                           <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.752941 0.752941 0.752941 1" mesh="fingertip" />
                           <geom type="mesh" rgba="0.752941 0.752941 0.752941 1" mesh="fingertip" group="3" />
                         </body>
+                      </body>
+                      <body name="realsense_end_effector_right" pos="0.0406 0 0.014" quat="0 0.707107 0 0.707107">
+                        <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" 
+                              rgba="0.75294 0.75294 0.75294 1" mesh="end_effector_camera_realsense_d435"/>
+                        <camera name="end_effector_right_rgb" pos="0.015 0 0.0195" quat="0.7071 0 -0.7071 0" fovy="69"/>
                       </body>
                       <body name="gripper_right_outer_finger_left_link" pos="0 -0.0288 0.0913" quat="0.253401 0.660141 -0.253406 -0.660141">
                         <inertial pos="-0.00128298 0.0143975 0" quat="0.522876 0.476026 -0.522876 0.476026" mass="0.0159888" diaginertia="6.14973e-06 6.03691e-06 4.38203e-07" />
