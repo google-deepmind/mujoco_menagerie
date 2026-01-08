@@ -17,11 +17,13 @@ Built by the Google DeepMind team with contributions from the open-source commun
 
 - [Albert Li](https://github.com/alberthli)
 - [Alper Ahmetoglu](https://github.com/alper111)
+- [Andreas Kuhner](https://github.com/AndreasKuhner)
 - [Andrew Luo](https://github.com/Andrew-Luo1)
 - [Ayzaan Wahid](https://github.com/ayzaan)
 - [Chintan Desai](https://github.com/hello-chintan)
 - [Dada Tian](https://github.com/lonelyfluency)
 - [Eugene Frizza](https://github.com/eufrizz)
+- [Haochen Shi](https://github.com/hshi74)
 - [Ian Noh](https://github.com/dongridong)
 - [Jason Chen](https://github.com/chenxin199305)
 - [Jonathan Zamora](https://github.com/jonzamora)
