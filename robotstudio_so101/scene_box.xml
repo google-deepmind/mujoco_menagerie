@@ -1,0 +1,38 @@
+<mujoco model="scene">
+    <include file="so101.xml" />
+
+    <visual>
+        <headlight diffuse="0.6 0.6 0.6" ambient="0.3 0.3 0.3" specular="0 0 0" />
+        <rgba haze="0.15 0.25 0.35 1" />
+        <global azimuth="160" elevation="-20" />
+    </visual>
+
+    <asset>
+        <texture type="skybox" builtin="gradient" rgb1="0.3 0.5 0.7" rgb2="0 0 0" width="512"
+            height="3072" />
+        <texture type="2d" name="groundplane" builtin="checker" mark="edge" rgb1="0.2 0.3 0.4"
+            rgb2="0.1 0.2 0.3"
+            markrgb="0.8 0.8 0.8" width="300" height="300" />
+        <material name="groundplane" texture="groundplane" texuniform="true" texrepeat="5 5"
+            reflectance="0.2" />
+    </asset>
+
+    <worldbody>
+        <light pos="0 0 3.5" dir="0 0 -1" directional="true" />
+        <geom name="floor" size="0 0 0.05" pos="0 0 0" type="plane" material="groundplane" />
+        <body name="box" pos="0.5 0 0.03">
+          <freejoint/>
+          <geom type="box" name="box" size="0.02 0.02 0.03" condim="3"
+           friction="1 .03 .003" rgba="0 1 0 1" contype="2" conaffinity="1" solref="0.01 1"/>
+        </body>
+    </worldbody>
+
+<keyframe>
+    <key name="pickup"
+      time="59.522"
+      qpos="9.27168e-09 0.000381818 0.473496 1.17717 1.58437 0.727663 0.219168 0.0242023 0.0199388 0.0643606 -0.704172 0.0643607 0.704172"
+      qvel="-5.74489e-08 1.81938e-08 6.93455e-09 -7.64472e-09 1.57787e-09 8.00072e-14 2.50825e-08 1.39116e-07 9.22415e-09 1.91651e-08 -3.94011e-09 -1.49479e-06"
+      ctrl="0 0 0.4732 1.17718 1.58438 0.727665"
+    />
+</keyframe>
+</mujoco>
