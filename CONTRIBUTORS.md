@@ -21,6 +21,7 @@ Built by the Google DeepMind team with contributions from the open-source commun
 - [Andrew Luo](https://github.com/Andrew-Luo1)
 - [Ayzaan Wahid](https://github.com/ayzaan)
 - [Chintan Desai](https://github.com/hello-chintan)
+- [Christian Rauch](https://github.com/christianrauch)
 - [Dada Tian](https://github.com/lonelyfluency)
 - [Eugene Frizza](https://github.com/eufrizz)
 - [Haochen Shi](https://github.com/hshi74)

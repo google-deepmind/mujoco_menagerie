@@ -2,6 +2,10 @@
 
 All notable changes to this repository will be documented here.
 
+## [2025-12-12]
+
+- fix Skydio X2 gear settings for yaw control
+
 ## [2025-05-30]
 
 - Added an MJX-tuned version of the G1 model.
