@@ -1,4 +1,4 @@
-# ROBOTIS OMY 3M Description (MJCF)
+# ROBOTIS OMY-3M Description (MJCF)
 
 > [!IMPORTANT]
 > Requires MuJoCo 2.3.3 or later.
@@ -11,7 +11,7 @@ See [CHANGELOG.md](./CHANGELOG.md) for a full history of changes.
 
 This package contains a simplified robot description (MJCF) of the [ROBOTIS OMY](https://ai.robotis.com/omy/introduction_omy.html) developed by [ROBOTIS](https://robotis.com/). It is derived from the [publicly available](https://github.com/ROBOTIS-GIT/open_manipulator/tree/main/open_manipulator_description/urdf/omy_3m) URDF description.
 
-The OMY 3M is a 6-DOF fixed-base robotic manipulator designed for research and industrial manipulation tasks.
+The OMY-3M is a 6-DOF fixed-base robotic manipulator designed for research and industrial manipulation tasks.
 
 <p float="left">
   <img src="omy_3m.png" width="400">
@@ -30,7 +30,7 @@ The OMY 3M is a 6-DOF fixed-base robotic manipulator designed for research and i
 
 ## Actuator specifications
 
-The OMY 3M uses DYNAMIXEL motors with the following specifications:
+The OMY-3M uses DYNAMIXEL motors with the following specifications:
 
 | Joint | Motor | Max Torque (Nm) |
 |-------|-------|-----------------|
