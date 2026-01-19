@@ -3,9 +3,48 @@
 
   <option integrator="implicitfast"/>
 
+  <default>
+    <default class="omy">
+      <joint frictionloss="0.1" armature="0.1"/>
+      <position kp="800" dampratio="1"/>
+      <!-- DY-80 motor: Joint 1, 2 -->
+      <default class="DY-80">
+        <position forcerange="-61.4 61.4"/>
+        <default class="joint1">
+          <joint axis="0 0 1" range="-6.283185 6.283185"/>
+        </default>
+        <default class="joint2">
+          <joint axis="0 1 0" range="-6.283185 6.283185"/>
+        </default>
+      </default>
+      <!-- DY-70 motor: Joint 3, 4, 5, 6 -->
+      <default class="DY-70">
+        <position forcerange="-31.7 31.7"/>
+        <default class="joint3">
+          <joint axis="0 1 0" range="-2.617994 2.617994"/>
+        </default>
+        <default class="joint4">
+          <joint axis="0 1 0" range="-6.283185 6.283185"/>
+        </default>
+        <default class="joint5">
+          <joint axis="0 0 1" range="-6.283185 6.283185"/>
+        </default>
+        <default class="joint6">
+          <joint axis="0 1 0" range="-6.283185 6.283185"/>
+        </default>
+      </default>
+      <!-- Visual / Collision -->
+      <default class="visual">
+        <geom type="mesh" contype="0" conaffinity="0" density="0" group="2"/>
+      </default>
+      <default class="collision">
+        <geom type="mesh" group="3"/>
+      </default>
+    </default>
+  </default>
+
   <asset>
     <material name="black" rgba="0.1 0.1 0.1 1"/>
-
     <mesh name="base_unit" file="base_unit.stl" scale="0.001 0.001 0.001"/>
     <mesh name="link1" file="link1.stl" scale="0.001 0.001 0.001"/>
     <mesh name="link2" file="link2.stl" scale="0.001 0.001 0.001"/>
@@ -15,85 +54,47 @@
     <mesh name="link6" file="link6.stl" scale="0.001 0.001 0.001"/>
   </asset>
 
-  <default>
-    <!-- DY-80 motor: Joint 1, 2 -->
-    <default class="DY_80">
-      <joint frictionloss="0.1" armature="0.1"/>
-      <position kp="1500.0" dampratio="5.0" forcerange="-61.4 61.4"/>
-      <default class="Joint1">
-        <joint axis="0 0 1" range="-6.283185 6.283185"/>
-      </default>
-      <default class="Joint2">
-        <joint axis="0 1 0" range="-6.283185 6.283185"/>
-      </default>
-    </default>
-    <!-- DY-70 motor: Joint 3, 4, 5, 6 -->
-    <default class="DY_70">
-      <joint frictionloss="0.1" armature="0.1"/>
-      <position kp="1500.0" dampratio="5.0" forcerange="-31.7 31.7"/>
-      <default class="Joint3">
-        <joint axis="0 1 0" range="-2.617994 2.617994"/>
-      </default>
-      <default class="Joint4">
-        <joint axis="0 1 0" range="-6.283185 6.283185"/>
-      </default>
-      <default class="Joint5">
-        <joint axis="0 0 1" range="-6.283185 6.283185"/>
-      </default>
-      <default class="Joint6">
-        <joint axis="0 1 0" range="-6.283185 6.283185"/>
-      </default>
-    </default>
-    <!-- Visual / Collision -->
-    <default class="visual">
-      <geom type="mesh" contype="0" conaffinity="0" density="0" group="2" material="black"/>
-    </default>
-    <default class="collision">
-      <geom group="3" type="mesh" material="black"/>
-    </default>
-  </default>
-
   <worldbody>
-    <body name="base_unit">
+    <body name="base_unit" childclass="omy">
       <inertial mass="1.5287486" pos="-0.0040215824 0.0013083991 0.055073470"
         fullinertia="0.0046428203 0.0049736955 0.0064078321 0.000044405532 -0.00015049296 0.000020756047"/>
-      <geom mesh="base_unit" class="visual"/>
+      <geom mesh="base_unit" material="black" class="visual"/>
       <geom mesh="base_unit" class="collision"/>
       <body name="link1" pos="0 0 0.1715">
         <inertial mass="2.0648832" pos="-0.00011063615 -0.0054711270 -0.015897733"
           fullinertia="0.0030332190 0.0027276724 0.0022826576 0.0000051792838 0.0000033357961 0.00017934953"/>
-        <joint name="Joint1" class="Joint1"/>
-        <geom mesh="link1" class="visual"/>
+        <joint name="joint1" class="joint1"/>
+        <geom mesh="link1" material="black" class="visual"/>
         <geom mesh="link1" class="collision"/>
         <body name="link2" pos="0 -0.1215 0">
           <inertial mass="3.6795395" pos="0.000011405379 0.016184244 0.10360634"
             fullinertia="0.051731918 0.050353401 0.0045014360 0.0000023958819 0.000057893960 -0.00043825716"/>
-          <joint name="Joint2" class="Joint2"/>
-          <geom mesh="link2" class="visual"/>
+          <joint name="joint2" class="joint2"/>
+          <geom mesh="link2" material="black" class="visual"/>
           <geom mesh="link2" class="collision"/>
           <body name="link3" pos="0 0 0.247">
             <inertial mass="2.3865916" pos="0.000078148689 0.10718481 0.14117267"
               fullinertia="0.022694399 0.021920087 0.0027761559 -0.00000094142428 -0.000018551757 0.00019179387"/>
-            <joint name="Joint3" class="Joint3"/>
-            <geom mesh="link3" class="visual"/>
+            <joint name="joint3" class="joint3"/>
+            <geom mesh="link3" material="black" class="visual"/>
             <geom mesh="link3" class="collision"/>
             <body name="link4" pos="0 0.1215 0.2195">
               <inertial mass="1.4002347" pos="-0.00013318256 -0.10746667 0.019090688"
                 fullinertia="0.0017545679 0.0015652147 0.0012159839 -0.0000045863379 -0.0000017759142 0.00015339913"/>
-              <joint name="Joint4" class="Joint4"/>
-              <geom mesh="link4" class="visual"/>
+              <joint name="joint4" class="joint4"/>
+              <geom mesh="link4" material="black" class="visual"/>
               <geom mesh="link4" class="collision"/>
               <body name="link5" pos="0 -0.113 0">
                 <inertial mass="1.4002347" pos="0.00013318256 -0.019090688 0.10996667"
                   fullinertia="0.0017545679 0.0012159839 0.0015652147 -0.0000017759143 -0.0000045863376 0.00015339913"/>
-                <joint name="Joint5" class="Joint5"/>
-                <geom mesh="link5" class="visual"/>
+                <joint name="joint5" class="joint5"/>
+                <geom mesh="link5" material="black" class="visual"/>
                 <geom mesh="link5" class="collision"/>
                 <body name="link6" pos="0 0 0.1155">
                   <inertial mass="0.32442692" pos="0.000011080146 -0.080594056 0.0093029337"
                     fullinertia="0.00019398849 0.00024913070 0.00016536751 0.00000021420132 -0.0000012342019 -0.0000038937348"/>
-                  <joint name="Joint6" class="Joint6"/>
-                  <geom mesh="link6" class="visual"/>
+                  <joint name="joint6" class="joint6"/>
+                  <geom mesh="link6" material="black" class="visual"/>
                   <geom mesh="link6" class="collision"/>
                 </body>
               </body>
@@ -105,17 +106,13 @@
   </worldbody>
 
   <actuator>
-    <position class="Joint1" name="Joint1" joint="Joint1" inheritrange="1"/>
-    <position class="Joint2" name="Joint2" joint="Joint2" inheritrange="1"/>
-    <position class="Joint3" name="Joint3" joint="Joint3" inheritrange="1"/>
-    <position class="Joint4" name="Joint4" joint="Joint4" inheritrange="1"/>
-    <position class="Joint5" name="Joint5" joint="Joint5" inheritrange="1"/>
-    <position class="Joint6" name="Joint6" joint="Joint6" inheritrange="1"/>
+    <position class="joint1" name="joint1" joint="joint1" inheritrange="1"/>
+    <position class="joint2" name="joint2" joint="joint2" inheritrange="1"/>
+    <position class="joint3" name="joint3" joint="joint3" inheritrange="1"/>
+    <position class="joint4" name="joint4" joint="joint4" inheritrange="1"/>
+    <position class="joint5" name="joint5" joint="joint5" inheritrange="1"/>
+    <position class="joint6" name="joint6" joint="joint6" inheritrange="1"/>
   </actuator>
-
-  <contact>
-    <exclude body1="base_unit" body2="link1"/>
-  </contact>
 
   <keyframe>
     <key name="home" qpos="0 0 0 0 0 0" ctrl="0 0 0 0 0 0"/>
