@@ -211,6 +211,10 @@
     <general class="panda" name="actuator7" joint="joint7" gainprm="2000" biasprm="0 -2000 -200" forcerange="-12 12"/>
   </actuator>
 
+  <contact>
+    <exclude body1="link0" body2="link1"/>
+  </contact>
+
   <keyframe>
     <key name="home" qpos="0 0 0 -1.57079 0 1.57079 -0.7853" ctrl="0 0 0 -1.57079 0 1.57079 -0.7853"/>
   </keyframe>

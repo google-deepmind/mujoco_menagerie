@@ -2,5 +2,5 @@
 
 All notable changes to this model will be documented in this file.
 
-## [03/03/2024]
+## [2024-03-03]
 - Initial release.

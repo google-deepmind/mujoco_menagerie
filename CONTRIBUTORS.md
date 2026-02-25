@@ -11,16 +11,20 @@ Built by the Google DeepMind team with contributions from the open-source commun
 - [Saran Tunyasuvunakool](https://github.com/saran-t) — Google DeepMind
 - [Tom Erez](https://github.com/erez-tom) — Google DeepMind
 - [Yuval Tassa](https://github.com/yuvaltassa) — Google DeepMind
+- [Silvia Cruciani](https://github.com/silviacruciani) - Google DeepMind
 
 ## Community Contributors
 
 - [Albert Li](https://github.com/alberthli)
 - [Alper Ahmetoglu](https://github.com/alper111)
+- [Andreas Kuhner](https://github.com/AndreasKuhner)
 - [Andrew Luo](https://github.com/Andrew-Luo1)
 - [Ayzaan Wahid](https://github.com/ayzaan)
 - [Chintan Desai](https://github.com/hello-chintan)
+- [Christian Rauch](https://github.com/christianrauch)
 - [Dada Tian](https://github.com/lonelyfluency)
 - [Eugene Frizza](https://github.com/eufrizz)
+- [Haochen Shi](https://github.com/hshi74)
 - [Ian Noh](https://github.com/dongridong)
 - [Jason Chen](https://github.com/chenxin199305)
 - [Jonathan Zamora](https://github.com/jonzamora)
@@ -30,6 +34,7 @@ Built by the Google DeepMind team with contributions from the open-source commun
 - [Louis Le Lay](https://github.com/louislelay)
 - [Martin Günther](https://github.com/muhrix)
 - [Mohamed Fazil](https://github.com/hello-fazil)
+- [Nan Wang](https://github.com/Nan-Tetheria)
 - [Nikita Cherniadev](https://github.com/chernyadev)
 - [Omar Rayyan](https://github.com/omarrayyann)
 - [Sai Kishor Kothakota](https://github.com/saikishor)

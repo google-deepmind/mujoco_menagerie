@@ -208,4 +208,8 @@
       ctrlrange="-0.0175 3.7525"/>
     <position class="panda" name="actuator7" joint="joint7" kp="300" kv="2" forcerange="-12 12"/>
   </actuator>
+
+  <contact>
+    <exclude body1="link0" body2="link1"/>
+  </contact>
 </mujoco>

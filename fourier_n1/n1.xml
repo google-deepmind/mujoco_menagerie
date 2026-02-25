@@ -34,45 +34,45 @@
   </default>
 
   <asset>
-    <mesh name="base_link" content_type="model/stl" file="base_link.STL"/>
-    <mesh name="torso_link" content_type="model/stl" file="torso_link.STL"/>
-    <mesh name="camera_link" content_type="model/stl" file="camera_link.STL"/>
-    <mesh name="imu_link" content_type="model/stl" file="imu_link.STL"/>
+    <mesh name="base_link" content_type="model/stl" file="base_link.stl"/>
+    <mesh name="torso_link" content_type="model/stl" file="torso_link.stl"/>
+    <mesh name="camera_link" content_type="model/stl" file="camera_link.stl"/>
+    <mesh name="imu_link" content_type="model/stl" file="imu_link.stl"/>
 
     <!-- left leg -->
-    <mesh name="left_thigh_pitch_link" content_type="model/stl" file="left_thigh_pitch_link.STL"/>
-    <mesh name="left_thigh_roll_link" content_type="model/stl" file="left_thigh_roll_link.STL"/>
-    <mesh name="left_thigh_yaw_link" content_type="model/stl" file="left_thigh_yaw_link.STL"/>
-    <mesh name="left_shank_pitch_link" content_type="model/stl" file="left_shank_pitch_link.STL"/>
-    <mesh name="left_foot_roll_link" content_type="model/stl" file="left_foot_roll_link.STL"/>
-    <mesh name="left_foot_pitch_link" content_type="model/stl" file="left_foot_pitch_link.STL"/>
+    <mesh name="left_thigh_pitch_link" content_type="model/stl" file="left_thigh_pitch_link.stl"/>
+    <mesh name="left_thigh_roll_link" content_type="model/stl" file="left_thigh_roll_link.stl"/>
+    <mesh name="left_thigh_yaw_link" content_type="model/stl" file="left_thigh_yaw_link.stl"/>
+    <mesh name="left_shank_pitch_link" content_type="model/stl" file="left_shank_pitch_link.stl"/>
+    <mesh name="left_foot_roll_link" content_type="model/stl" file="left_foot_roll_link.stl"/>
+    <mesh name="left_foot_pitch_link" content_type="model/stl" file="left_foot_pitch_link.stl"/>
 
     <!-- right leg -->
-    <mesh name="right_thigh_pitch_link" content_type="model/stl" file="right_thigh_pitch_link.STL"/>
-    <mesh name="right_thigh_roll_link" content_type="model/stl" file="right_thigh_roll_link.STL"/>
-    <mesh name="right_thigh_yaw_link" content_type="model/stl" file="right_thigh_yaw_link.STL"/>
-    <mesh name="right_shank_pitch_link" content_type="model/stl" file="right_shank_pitch_link.STL"/>
-    <mesh name="right_foot_roll_link" content_type="model/stl" file="right_foot_roll_link.STL"/>
-    <mesh name="right_foot_pitch_link" content_type="model/stl" file="right_foot_pitch_link.STL"/>
+    <mesh name="right_thigh_pitch_link" content_type="model/stl" file="right_thigh_pitch_link.stl"/>
+    <mesh name="right_thigh_roll_link" content_type="model/stl" file="right_thigh_roll_link.stl"/>
+    <mesh name="right_thigh_yaw_link" content_type="model/stl" file="right_thigh_yaw_link.stl"/>
+    <mesh name="right_shank_pitch_link" content_type="model/stl" file="right_shank_pitch_link.stl"/>
+    <mesh name="right_foot_roll_link" content_type="model/stl" file="right_foot_roll_link.stl"/>
+    <mesh name="right_foot_pitch_link" content_type="model/stl" file="right_foot_pitch_link.stl"/>
 
     <!-- waist -->
-    <mesh name="waist_yaw_link" content_type="model/stl" file="waist_yaw_link.STL"/>
+    <mesh name="waist_yaw_link" content_type="model/stl" file="waist_yaw_link.stl"/>
 
     <!-- left arm -->
-    <mesh name="left_upper_arm_pitch_link" content_type="model/stl" file="left_upper_arm_pitch_link.STL"/>
-    <mesh name="left_upper_arm_roll_link" content_type="model/stl" file="left_upper_arm_roll_link.STL"/>
-    <mesh name="left_upper_arm_yaw_link" content_type="model/stl" file="left_upper_arm_yaw_link.STL"/>
-    <mesh name="left_lower_arm_pitch_link" content_type="model/stl" file="left_lower_arm_pitch_link.STL"/>
-    <mesh name="left_hand_yaw_link" content_type="model/stl" file="left_hand_yaw_link.STL"/>
-    <mesh name="left_end_effector_link" content_type="model/stl" file="left_end_effector_link.STL"/>
+    <mesh name="left_upper_arm_pitch_link" content_type="model/stl" file="left_upper_arm_pitch_link.stl"/>
+    <mesh name="left_upper_arm_roll_link" content_type="model/stl" file="left_upper_arm_roll_link.stl"/>
+    <mesh name="left_upper_arm_yaw_link" content_type="model/stl" file="left_upper_arm_yaw_link.stl"/>
+    <mesh name="left_lower_arm_pitch_link" content_type="model/stl" file="left_lower_arm_pitch_link.stl"/>
+    <mesh name="left_hand_yaw_link" content_type="model/stl" file="left_hand_yaw_link.stl"/>
+    <mesh name="left_end_effector_link" content_type="model/stl" file="left_end_effector_link.stl"/>
 
     <!-- right arm -->
-    <mesh name="right_upper_arm_pitch_link" content_type="model/stl" file="right_upper_arm_pitch_link.STL"/>
-    <mesh name="right_upper_arm_roll_link" content_type="model/stl" file="right_upper_arm_roll_link.STL"/>
-    <mesh name="right_upper_arm_yaw_link" content_type="model/stl" file="right_upper_arm_yaw_link.STL"/>
-    <mesh name="right_lower_arm_pitch_link" content_type="model/stl" file="right_lower_arm_pitch_link.STL"/>
-    <mesh name="right_hand_yaw_link" content_type="model/stl" file="right_hand_yaw_link.STL"/>
-    <mesh name="right_end_effector_link" content_type="model/stl" file="right_end_effector_link.STL"/>
+    <mesh name="right_upper_arm_pitch_link" content_type="model/stl" file="right_upper_arm_pitch_link.stl"/>
+    <mesh name="right_upper_arm_roll_link" content_type="model/stl" file="right_upper_arm_roll_link.stl"/>
+    <mesh name="right_upper_arm_yaw_link" content_type="model/stl" file="right_upper_arm_yaw_link.stl"/>
+    <mesh name="right_lower_arm_pitch_link" content_type="model/stl" file="right_lower_arm_pitch_link.stl"/>
+    <mesh name="right_hand_yaw_link" content_type="model/stl" file="right_hand_yaw_link.stl"/>
+    <mesh name="right_end_effector_link" content_type="model/stl" file="right_end_effector_link.stl"/>
   </asset>
 
   <worldbody>

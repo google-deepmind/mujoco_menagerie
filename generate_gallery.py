@@ -91,6 +91,7 @@ NAME_MAP = {
     "kinova_gen3/gen3": "gen3",
     "booster_t1/t1": "t1",
     "agilex_piper/piper": "piper",
+    "toddlerbot_2xc/toddlerbot_2xc": "toddlerbot",
 }
 
 MODEL_MAP = {
@@ -134,6 +135,7 @@ MODEL_MAP = {
     "kinova_gen3/gen3": ModelType.ARM,
     "booster_t1/t1": ModelType.HUMANOID,
     "agilex_piper/piper": ModelType.ARM,
+    "toddlerbot_2xc/toddlerbot_2xc": ModelType.HUMANOID,
 }
 
 DEFAULT_FOV = 40
@@ -332,6 +334,11 @@ CAMERA_MAP = {
         xyaxes="0.866 0.500 0.000 -0.171 0.296 0.940",
         fovy=50,
     ),
+    "toddlerbot_2xc/toddlerbot_2xc": dict(
+        pos="0.75 -0.38 0.55",
+        xyaxes="0.453 0.892 0.000 -0.295 0.150 0.944",
+        fovy=DEFAULT_FOV,
+    ),
 }
 
 # pylint: disable=line-too-long
@@ -369,7 +376,7 @@ def create_arena():
   return arena
 
 
-MODEL_XMLS = [pathlib.Path(f"../{k}.xml") for k in MODEL_MAP.keys()]
+MODEL_XMLS = [pathlib.Path(f"./{k}.xml") for k in MODEL_MAP.keys()]
 
 
 # Sort XML files.

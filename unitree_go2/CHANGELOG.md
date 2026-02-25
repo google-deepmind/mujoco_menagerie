@@ -2,11 +2,11 @@
 
 All notable changes to this model will be documented in this file.
 
-## [16/02/2025]
+## [2025-02-16]
 - Make actuator order match joint order.
 
-## [01/06/2024]
+## [2024-06-01]
 - Fix foot solimp.
 
-## [23/10/2023]
+## [2023-10-23]
 - Initial release.

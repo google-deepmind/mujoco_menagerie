@@ -4,8 +4,8 @@
   <option cone="elliptic" impratio="10"/>
 
   <asset>
-    <material name="orange" rgba="1.0 0.331 0.0 1.0" specular="0.1" shininess="0.1"/>
-    <material name="black" rgba="0.1 0.1 0.1 1.0" specular="0.1" shininess="0.1"/>
+    <material name="white" rgba="1 1 1 1"/>
+    <material name="black" rgba="0.1 0.1 0.1 1"/>
 
     <mesh name="Base" file="Base.stl"/>
     <mesh name="Base_Motor" file="Base_Motor.stl"/>
@@ -30,33 +30,33 @@
   <default>
     <default class="so_arm100">
       <joint frictionloss="0.1" armature="0.1"/>
-      <position kp="50" dampratio="1" forcerange="-35 35" ctrlrange="-3.14158 3.14158"/>
+      <position kp="50" dampratio="1" forcerange="-3.5 3.5"/>
       <default class="Rotation">
-        <joint axis="0 1 0" range="-2.2 2.2"/>
+        <joint axis="0 1 0" range="-1.92 1.92"/>
       </default>
       <default class="Pitch">
-        <joint axis="1 0 0" range="-3.14158 0.2"/>
+        <joint axis="1 0 0" range="-3.32 0.174"/>
       </default>
       <default class="Elbow">
-        <joint axis="1 0 0" range="0 3.14158"/>
+        <joint axis="1 0 0" range="-0.174 3.14"/>
       </default>
       <default class="Wrist_Pitch">
-        <joint axis="1 0 0" range="-2.0 1.8"/>
+        <joint axis="1 0 0" range="-1.66 1.66"/>
       </default>
       <default class="Wrist_Roll">
-        <joint axis="0 1 0" range="-3.14158 3.14158"/>
+        <joint axis="0 1 0" range="-2.79 2.79"/>
       </default>
       <default class="Jaw">
-        <joint axis="0 0 1" range="-0.2 2.0"/>
+        <joint axis="0 0 1" range="-0.174 1.75"/>
       </default>
       <default class="visual">
-        <geom type="mesh" contype="0" conaffinity="0" density="0" group="2" material="orange"/>
+        <geom type="mesh" contype="0" conaffinity="0" density="0" group="2" material="white"/>
         <default class="motor_visual">
           <geom material="black"/>
         </default>
       </default>
       <default class="collision">
-        <geom group="3" type="mesh"/>
+        <geom group="3" type="mesh" material="white"/>
         <default class="finger_collision">
           <geom type="box" solimp="2 1 0.01" solref="0.01 1" friction="1 0.005 0.0001"/>
         </default>
@@ -131,12 +131,12 @@
   </worldbody>
 
   <actuator>
-    <position class="Rotation" name="Rotation" joint="Rotation"/>
-    <position class="Pitch" name="Pitch" joint="Pitch"/>
-    <position class="Elbow" name="Elbow" joint="Elbow"/>
-    <position class="Wrist_Pitch" name="Wrist_Pitch" joint="Wrist_Pitch"/>
-    <position class="Wrist_Roll" name="Wrist_Roll" joint="Wrist_Roll"/>
-    <position class="Jaw" name="Jaw" joint="Jaw"/>
+    <position class="Rotation" name="Rotation" joint="Rotation" inheritrange="1"/>
+    <position class="Pitch" name="Pitch" joint="Pitch" inheritrange="1"/>
+    <position class="Elbow" name="Elbow" joint="Elbow" inheritrange="1"/>
+    <position class="Wrist_Pitch" name="Wrist_Pitch" joint="Wrist_Pitch" inheritrange="1"/>
+    <position class="Wrist_Roll" name="Wrist_Roll" joint="Wrist_Roll" inheritrange="1"/>
+    <position class="Jaw" name="Jaw" joint="Jaw" inheritrange="1"/>
   </actuator>
 
   <contact>
@@ -144,6 +144,7 @@
   </contact>
 
   <keyframe>
-    <key name="home" qpos="0 -1.57079 1.57079 1.57079 -1.57079 0" ctrl="0 -1.57079 1.57079 1.57079 -1.57079 0"/>
+    <key name="home" qpos="0 -1.57 1.57 1.57 -1.57 0" ctrl="0 -1.57 1.57 1.57 -1.57 0"/>
+    <key name="rest" qpos="0 -3.32 3.11 1.18 0 -0.174" ctrl="0 -3.32 3.11 1.18 0 -0.174"/>
   </keyframe>
 </mujoco>

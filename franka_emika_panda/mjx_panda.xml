@@ -273,4 +273,8 @@
     <general class="panda" name="actuator8" joint="finger_joint1"
      ctrlrange="0 0.04" gainprm="350 0 0" biasprm="0 -350 -10" forcerange="-200 200"/>
   </actuator>
+
+  <contact>
+    <exclude body1="link0" body2="link1"/>
+  </contact>
 </mujoco>
