@@ -2,47 +2,72 @@
 
 ## Overview
 
-This package contains a simplified robot description (MJCF) of the [RBY1](https://rainbowrobotics.github.io/rby1-dev/) developed by [Rainbow Robotics](https://www.rainbow-robotics.com/en_main?_l=en). It is derived from the [publicly
-available MJCF description](https://github.com/RainbowRobotics).
+This package contains MuJoCo MJCF models for [RBY1](https://rainbowrobotics.github.io/rby1-dev/) by
+[Rainbow Robotics](https://www.rainbow-robotics.com/en_main?_l=en), including:
+- `RBY1-A` base (`1.2`)
+- `RBY1-M` base (`1.2`, `1.3`)
+- full gripper and `no_gripper` variants
 
 <p float="left">
   <img src="mujoco_RBY1.png" width="400">
 </p>
 
-## MJCF derivation steps
+## Files in this folder
 
-**1. 3D Model / Mesh Preprocessing**
-- For each part of the robot (body, joints, wheels, gripper, etc.), you can use tools like [`obj2mjcf`](https://github.com/kevinzakka/obj2mjcf) to convert *.obj or other 3D formats into MJCF if necessary.
-- In this example, the meshes and assets.xml files have already been properly preprocessed.
-- We also provide the `URDF` file for `RBY1`. Please refer to the [URDF](https://github.com/RainbowRobotics/rby1-sdk/blob/main/models/rby1a/urdf/model.urdf) for more details.
+### Robot model files (`rby1*.xml`)
 
-**2. Basic MJCF Modifications**
-- Review the MJCF file (either exported from MuJoCo or manually created) and adjust <default>, <actuator>, <joint>, etc., to match the robot’s structure.
-- In RBY1's case:
-  - ``rby1.xml``
-    - Defines the robot’s base structure (body, joints, mesh assets).
-    - Refines control ranges with position/velocity actuators.
-- Exported From MuJoCo
-   - Added ``<mujoco> <compiler discardvisual="false"/> </mujoco>`` to the URDF's ``<robot>`` clause.
-   - Loaded the [URDF](https://github.com/RainbowRobotics/rby1-sdk/blob/main/models/rby1a/urdf/model.urdf) into MuJoCo and saved a corresponding MJCF.
-   - Use the previously preprocessed meshes to replace the visual and collision geometry.
+| File | Description | `<joint name=...>` count | Actuator count |
+| --- | --- | ---: | ---: |
+| `rby1a_1.2.xml` | RBY1-A (`a_base_*`) with 2 wheel joints (`left_wheel`, `right_wheel`) and grippers | 31 | 26 |
+| `rby1a_1.2_no_gripper.xml` | RBY1-A without gripper links/joints/actuators | 25 | 24 |
+| `rby1m_1.2.xml` | RBY1-M (`m_base_*`) with 4 mecanum wheel joints (`wheel_fr/fl/rr/rl`) and grippers | 33 | 28 |
+| `rby1m_1.2_no_gripper.xml` | RBY1-M without gripper links/joints/actuators | 27 | 26 |
+| `rby1m_1.3.xml` | RBY1-M v1.3 (updated wrist/EE meshes: `LINK_11/12/13/18/19/20_V1.3`, `EE_GR_TF`) | 33 | 28 |
 
-**3. Free Joint and Collision Exclusion**
-- To allow the robot to move freely in 3D, ensure a free joint (e.g., `world_j type="free"`) is added to the base. (In `rby1.xml`, `joint name="world_j" type="free"`)
-- Prevent unwanted self-collisions using `group` attributes and `class="in-model-collision"` to organize collision groups.
-- This example uses `<default class="collision">` and `<default class="in-model-collision">` to reduce overhead and avoid undesired collisions.
-- If self-collision is desired, users should modify `contype` and `conaffinity` attributes appropriately. For more details, refer to the [MuJoCo XML Reference](https://mujoco.readthedocs.io/en/stable/XMLreference.html).
+Notes:
+- All robot files use a free base joint: `joint name="world_j" type="free"`.
+- Gripper variants include finger coupling in `<equality>` for mirrored finger motion.
+- `no_gripper` variants remove gripper joints/actuators and do not include gripper equality constraints.
 
-**4. Note**
-- `default` in `rby1.xml`
-  - The actuator parameters(`joint`, `motor`, `velocity`, `position`) in simulation may differ from those in an actual robot.
+### Scene files (`scene_*.xml`)
+
+| File | Includes | Purpose |
+| --- | --- | --- |
+| `scene_rby1a_1.2.xml` | `rby1a_1.2.xml` | Recommended entry for RBY1-A with grippers |
+| `scene_rby1a_1.2_no_gripper.xml` | `rby1a_1.2_no_gripper.xml` | Recommended entry for RBY1-A without grippers |
+| `scene_rby1m_1.2.xml` | `rby1m_1.2.xml` | Recommended entry for RBY1-M v1.2 with grippers |
+| `scene_rby1m_1.2_no_gripper.xml` | `rby1m_1.2_no_gripper.xml` | Recommended entry for RBY1-M v1.2 without grippers |
+| `scene_rby1m_1.3.xml` | `rby1m_1.3.xml` | Recommended entry for RBY1-M v1.3 with grippers |
+
+Each scene file provides:
+- simulation options (`timestep=0.002`, Newton solver, `implicitfast`)
+- skybox and ground plane
+- light source
+- default classes used by robot geoms (`visual`, `collision`, `in-model-collision`)
+
+## Recommended usage
+
+Open one of the `scene_*.xml` files in MuJoCo (instead of opening `rby1*.xml` directly), because class defaults and environment setup are defined in the scene file.
+
+## MJCF derivation summary
+
+These models were derived from Rainbow Robotics public resources (including the
+[RBY1 URDF](https://github.com/RainbowRobotics/rby1-sdk/blob/main/models/rby1a/urdf/model.urdf))
+and then edited for MuJoCo usage:
+- converted/preprocessed meshes for MJCF use
+- configured wheel/torso/arm/head/gripper actuators and control ranges
+- added collision exclusions and in-model collision grouping
+- added scene wrappers with environment and simulation defaults
+
+Actuator values in this package are simulation-oriented and may differ from real hardware settings.
 
 ## License
-This model is released under a [Apache License 2.0](LICENSE.txt).
 
+This model is released under an [Apache License 2.0](LICENSE.txt).
 
 ## Publications
-If you use this model in your work, please use the following citation:
+
+If you use this model in your work, please cite:
 
 ```bibtex
 @software{RBY1_2024,
