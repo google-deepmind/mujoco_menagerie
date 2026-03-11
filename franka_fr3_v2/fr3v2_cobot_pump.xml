@@ -180,10 +180,12 @@
     <position class="fr3v2" name="fr3v2_joint5" joint="fr3v2_joint5" kp="2000" kv="200"/>
     <position class="fr3v2" name="fr3v2_joint6" joint="fr3v2_joint6" kp="2000" kv="200"/>
     <position class="fr3v2" name="fr3v2_joint7" joint="fr3v2_joint7" kp="2000" kv="200"/>
+    <!-- Suction vacuum: ctrl=0 → off, ctrl=1 → full suction (~40 N adhesion force). -->
+    <adhesion name="suction" body="cobot_pump" gain="40" ctrlrange="0 1"/>
   </actuator>
 
   <keyframe>
-    <key name="home" qpos="0 0 0 -1.57079 0 1.57079 -0.7853" ctrl="0 0 0 -1.57079 0 1.57079 -0.7853"/>
+    <key name="home" qpos="0 0 0 -1.57079 0 1.57079 -0.7853" ctrl="0 0 0 -1.57079 0 1.57079 -0.7853 0"/>
   </keyframe>
 
 </mujoco>
