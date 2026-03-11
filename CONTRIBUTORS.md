@@ -37,6 +37,7 @@ Built by the Google DeepMind team with contributions from the open-source commun
 - [Nan Wang](https://github.com/Nan-Tetheria)
 - [Nikita Cherniadev](https://github.com/chernyadev)
 - [Omar Rayyan](https://github.com/omarrayyann)
+- [Rafael Papallas](https://github.com/rpapallas)
 - [Sai Kishor Kothakota](https://github.com/saikishor)
 - [Taylor Howell](https://github.com/thowell)
 - [Thomas Lips](https://github.com/tlpss)
