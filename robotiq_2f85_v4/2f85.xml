@@ -59,7 +59,8 @@
 
   <worldbody>
     <body name="base" childclass="2f85">
-      <inertial mass="0.777441" pos="0 -2.70394e-05 0.0354675" quat="1 -0.00152849 0 0"
+      <inertial mass="0.777441" pos="7.77116e-05 8.42713e-05 0.0311656"
+        quat="0.704758 -0.00373684 -0.00570287 0.709415"
         diaginertia="0.000260285 0.000225381 0.000152708"/>
       <geom class="visual" pos="0 0 0.0108" quat="0 0 0 1"   mesh="base"/>
       <geom class="visual" pos="0 0 0.004" quat="1 -1 0 0"   mesh="base_coupling"/>
@@ -67,27 +68,31 @@
       <geom class="collision" mesh="base"/>
       <!-- Left-hand side 4-bar linkage -->
       <body name="left_driver" pos="-0.0306011 0.00475 0.0657045" quat="1 -1 0 0">
-        <inertial mass="0.00899563" pos="0 0.0177547 0.00107314" quat="0.681301 0.732003 0 0"
+        <inertial mass="0.00899563" pos="-0.0175297 0.00165308 -0.00469625"
+            quat="-0.469642 0.469642 -0.528617 0.528617"
             diaginertia="1.72352e-06 1.60906e-06 3.22006e-07"/>
         <joint name="left_driver_joint" class="driver"/>
         <geom class="visual" pos="0.0306011 0.0549045 -0.0047" quat="1 1 0 0"  material="metal" mesh="driver"/>
         <geom class="collision" pos="0.0306011 0.0549045 -0.0047" quat="1 1 0 0"   mesh="driver"/>
         <body name="left_coupler" pos="-0.0314249 0.00453223 -0.0102" quat="0 0 0 1">
-          <inertial mass="0.0140974" pos="0 0.00301209 0.0232175" quat="0.705636 -0.0455904 0.0455904 0.705636"
-          diaginertia="4.16206e-06 3.52216e-06 8.88131e-07"/>
+          <inertial mass="0.0140974" pos="0.00367747 0.01986 0.0055"
+            quat="0.701447 -0.701447 0.0892884 -0.0892884"
+            diaginertia="4.16206e-06 3.52216e-06 8.88131e-07"/>
           <geom class="visual" pos="-0.062026 -0.0503723 0.0055" quat="1 -1 0 0"   mesh="coupler"/>
           <geom class="collision" pos="-0.062026 -0.0503723 0.0055" quat="1 -1 0 0"  mesh="coupler"/>
         </body>
       </body>
       <body name="left_spring_link" pos="-0.0127 -0.012 0.07222" quat="1 -1 0 0">
-        <inertial mass="0.0221642" pos="-8.65005e-09 0.0181624 0.0212658" quat="0.663403 -0.244737 0.244737 0.663403"
+        <inertial mass="0.0221642" pos="-0.0183 -0.0205732 0.01205"
+            quat="0.660941 0.660941 -0.251309 -0.251309"
             diaginertia="8.96853e-06 6.71733e-06 2.63931e-06"/>
         <joint name="left_spring_link_joint" class="spring_link"/>
         <geom class="visual" pos="0.0127 0.06142 0.01205" quat="1 1 0 0" type="mesh"  mesh="spring_link"/>
         <geom class="collision" pos="0.0127 0.06142 0.01205" quat="1 1 0 0" type="mesh"  mesh="spring_link"/>
         <body name="left_follower" pos="-0.0382079 -0.0425003 0.00295" quat="0 -1 -1.90231e-05 0">
-          <inertial mass="0.0125222" pos="0 -0.011046 0.0124786" quat="1 0.1664 0 0"
-          diaginertia="2.67415e-06 2.4559e-06 6.02031e-07"/>
+          <inertial mass="0.0125222" pos="-0.00852976 -0.0014822 -0.00910001"
+            quat="0.359439 0.359439 0.608937 0.608937"
+            diaginertia="2.67415e-06 2.4559e-06 6.02031e-07"/>
           <joint name="left_follower" class="follower"/>
           <geom class="visual" pos="0.0509079 -0.10392 -0.0091" quat="1 -1 0 0" type="mesh"  mesh="follower"/>
           <geom class="visual" pos="0.0509079 -0.10392 -0.0091" quat="1 -1 0 0" type="mesh" material="metal" mesh="tongue"/>
@@ -101,27 +106,31 @@
       </body>
       <!-- Right-hand side 4-bar linkage -->
       <body name="right_driver" pos="0.0306011 -0.00475 0.0657045" quat="0 0 -1 1">
-        <inertial mass="0.00899563" pos="2.96931e-12 0.0177547 0.00107314" quat="0.681301 0.732003 0 0"
-        diaginertia="1.72352e-06 1.60906e-06 3.22006e-07"/>
+        <inertial mass="0.00899563" pos="-0.0175297 0.00165308 -0.00469625"
+            quat="-0.469642 0.469642 -0.528617 0.528617"
+            diaginertia="1.72352e-06 1.60906e-06 3.22006e-07"/>
         <joint name="right_driver_joint" class="driver"/>
         <geom class="visual" pos="0.0306011 0.0549045 -0.0047" quat="1 1 0 0" material="metal" mesh="driver"/>
         <geom class="collision" pos="0.0306011 0.0549045 -0.0047" quat="1 1 0 0"  mesh="driver"/>
         <body name="right_coupler" pos="-0.0314249 0.00453223 -0.0102" quat="0 0 0 1">
-          <inertial mass="0.0140974" pos="0 0.00301209 0.0232175" quat="0.705636 -0.0455904 0.0455904 0.705636"
-          diaginertia="4.16206e-06 3.52216e-06 8.88131e-07"/>
+          <inertial mass="0.0140974" pos="0.00367747 0.01986 0.0055"
+            quat="0.701447 -0.701447 0.0892884 -0.0892884"
+            diaginertia="4.16206e-06 3.52216e-06 8.88131e-07"/>
           <geom class="visual" pos="-0.062026 -0.0503723 0.0055" quat="1 -1 0 0"   mesh="coupler"/>
           <geom class="collision" pos="-0.062026 -0.0503723 0.0055" quat="1 -1 0 0"   mesh="coupler"/>
         </body>
       </body>
       <body name="right_spring_link" pos="0.0127 0.012 0.07222" quat="0 0 -1 1">
-        <inertial mass="0.0221642" pos="-8.65005e-09 0.0181624 0.0212658" quat="0.663403 -0.244737 0.244737 0.663403"
-        diaginertia="8.96853e-06 6.71733e-06 2.63931e-06"/>
+        <inertial mass="0.0221642" pos="-0.0183 -0.0205732 0.01205"
+            quat="0.660941 0.660941 -0.251309 -0.251309"
+            diaginertia="8.96853e-06 6.71733e-06 2.63931e-06"/>
         <joint name="right_spring_link_joint" class="spring_link"/>
         <geom class="visual" pos="0.0127 0.06142 0.01205" quat="1 1 0 0"   mesh="spring_link"/>
         <geom class="collision" pos="0.0127 0.06142 0.01205" quat="1 1 0 0"   mesh="spring_link"/>
         <body name="right_follower" pos="-0.0382079 -0.0425003 0.00295" quat="0 -1 0 0">
-          <inertial mass="0.0125222" pos="0 -0.011046 0.0124786" quat="1 0.1664 0 0"
-          diaginertia="2.67415e-06 2.4559e-06 6.02031e-07"/>
+          <inertial mass="0.0125222" pos="-0.00852976 -0.0014822 -0.00910001"
+            quat="0.359439 0.359439 0.608937 0.608937"
+            diaginertia="2.67415e-06 2.4559e-06 6.02031e-07"/>
           <joint name="right_follower_joint" class="follower"/>
           <geom class="visual" pos="0.0509079 -0.10392 -0.0091" quat="1 -1 0 0"  material="metal" mesh="tongue"/>
           <geom class="visual" pos="0.0509079 -0.10392 -0.0091" quat="1 -1 0 0"   mesh="follower"/>
