@@ -12,7 +12,7 @@ See [CHANGELOG.md](./CHANGELOG.md) for a full history of changes.
 This package contains a MuJoCo robot description (MJCF) of [Rizon4](https://www.flexiv.com/products/rizon) developed by [Flexiv Robotics](https://www.flexiv.com/).
 
 <p float="left">
-  <img src="flexiv_rizon4.png" width="500">
+  <img src="flexiv_rizon4.png" width="600">
 </p>
 
 ## URDF → MJCF derivation steps
