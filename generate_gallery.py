@@ -1,3 +1,6 @@
+# /// script
+# dependencies = ["absl-py", "dm_control", "pillow", "numpy", "tqdm", "mdutils", "opencv-python"]
+# ///
 # Copyright 2024 DeepMind Technologies Limited
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -92,6 +95,7 @@ NAME_MAP = {
     "booster_t1/t1": "t1",
     "agilex_piper/piper": "piper",
     "toddlerbot_2xc/toddlerbot_2xc": "toddlerbot",
+    "flexiv_rizon4/flexiv_rizon4": "rizon4",
 }
 
 MODEL_MAP = {
@@ -136,6 +140,7 @@ MODEL_MAP = {
     "booster_t1/t1": ModelType.HUMANOID,
     "agilex_piper/piper": ModelType.ARM,
     "toddlerbot_2xc/toddlerbot_2xc": ModelType.HUMANOID,
+    "flexiv_rizon4/flexiv_rizon4": ModelType.ARM,
 }
 
 DEFAULT_FOV = 40
@@ -339,6 +344,11 @@ CAMERA_MAP = {
         xyaxes="0.453 0.892 0.000 -0.295 0.150 0.944",
         fovy=DEFAULT_FOV,
     ),
+    "flexiv_rizon4/flexiv_rizon4": dict(
+        pos="0.4 1.1 0.85",
+        xyaxes="-0.994 0.108 0.000 -0.040 -0.369 0.928",
+        fovy=DEFAULT_FOV,
+    ),
 }
 
 # pylint: disable=line-too-long
@@ -350,6 +360,7 @@ KEYFRAME_MAP = {
     "google_robot": "-1.51699e-13 -1.16232e-12 -0.1444 2.9724 -0.146 -0.3759 1.15806e-12 0.5518 0.62275",
     "aloha": "0.43988 -0.206468 1.08253 -0.443382 -1.084 -0.00397598 0.0084 0.00846495 -1.28822 -0.360594 0.717978 -0.000325086 -0.273415 6.76003e-05 0.0084 0.00839987",
     "kuka_iiwa_14": "0 0 0 -1.5708 0 1.5708 0",
+    "flexiv_rizon4": "0 -0.524 0 1.833 0 0.785 0",
 }
 # pylint: enable=line-too-long
 
