@@ -30,11 +30,11 @@ This package contains a MuJoCo robot description (MJCF) of [Rizon4](https://www.
    - `kp = M_ii * w_n^2`
    - `kv = 2 * zeta * M_ii * w_n`
 
-   with a natural frequency of 5 Hz and a damping ratio of 2.0. The overdamped
-   ratio compensates for the absence of reflected motor inertia (armature), which
-   causes the mass matrix diagonal to underestimate the true effective inertia.
-   See [`compute_gains.py`](compute_gains.py) to reproduce or adjust these
-   values.
+   Natural frequencies are chosen per actuator class so that each actuator
+   saturates at approximately 10 degrees of position error (1.5 Hz for `joint1`,
+   2.0 Hz for `joint2`, 6.0 Hz for `joint3`), with a critically damped response
+   (zeta = 1). See [`compute_gains.py`](compute_gains.py) to reproduce or
+   adjust these values.
 6. Added a `home` keyframe.
 7. Added `scene.xml` which includes the robot, with a textured groundplane,
    skybox, and haze.

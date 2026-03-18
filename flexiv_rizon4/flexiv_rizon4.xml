@@ -94,13 +94,13 @@
   </worldbody>
 
   <actuator>
-    <position name="joint1" joint="joint1" class="joint1" kp="81.7" kv="10.4"/>
-    <position name="joint2" joint="joint2" class="joint1" kp="4353" kv="554"/>
-    <position name="joint3" joint="joint3" class="joint2" kp="38" kv="4.83"/>
-    <position name="joint4" joint="joint4" class="joint2" kp="967" kv="123"/>
-    <position name="joint5" joint="joint5" class="joint3" kp="36.6" kv="4.66"/>
-    <position name="joint6" joint="joint6" class="joint3" kp="32.6" kv="4.16"/>
-    <position name="joint7" joint="joint7" class="joint3" kp="0.888" kv="0.113"/>
+    <position name="joint1" joint="joint1" class="joint1" kp="289" kv="61"/>
+    <position name="joint2" joint="joint2" class="joint1" kp="673" kv="143"/>
+    <position name="joint3" joint="joint3" class="joint2" kp="224" kv="36"/>
+    <position name="joint4" joint="joint4" class="joint2" kp="373" kv="59"/>
+    <position name="joint5" joint="joint5" class="joint3" kp="237" kv="13"/>
+    <position name="joint6" joint="joint6" class="joint3" kp="232" kv="12"/>
+    <position name="joint7" joint="joint7" class="joint3" kp="186" kv="9.9"/>
   </actuator>
 
   <keyframe>
