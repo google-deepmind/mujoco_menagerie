@@ -8,13 +8,13 @@
       <geom type="mesh" material="robot"/>
       <position inheritrange="1"/>
       <default class="joint1">
-        <joint actuatorfrcrange="-123 123"/>
+        <joint actuatorfrcrange="-123 123" armature="3.17"/>
       </default>
       <default class="joint2">
-        <joint actuatorfrcrange="-64 64"/>
+        <joint actuatorfrcrange="-64 64" armature="1.38"/>
       </default>
       <default class="joint3">
-        <joint actuatorfrcrange="-39 39"/>
+        <joint actuatorfrcrange="-39 39" armature="0.13"/>
       </default>
     </default>
   </default>
@@ -104,6 +104,6 @@
   </actuator>
 
   <keyframe>
-    <key name="home" qpos="0 0 0 1.57 0 0" ctrl="0 0 0 1.57 0 0"/>
+    <key name="home" qpos="0 0 0 1.57 0 0 0" ctrl="0 0 0 1.57 0 0 0"/>
   </keyframe>
 </mujoco>
