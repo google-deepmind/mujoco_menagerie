@@ -1,12 +1,12 @@
 <mujoco model="flexiv scene">
   <include file="flexiv_rizon4.xml"/>
 
-  <statistic center="0.0 0 0.75" extent="1.8"/>
+  <statistic center="0.2 0 0.5" extent="1.2"/>
 
   <visual>
     <headlight diffuse="0.6 0.6 0.6" ambient="0.3 0.3 0.3" specular="0 0 0"/>
     <rgba haze="0.15 0.25 0.35 1"/>
-    <global azimuth="-120" elevation="-20"/>
+    <global azimuth="120" elevation="-10"/>
   </visual>
 
   <asset>
