@@ -10,21 +10,31 @@ This package contains a robot description (MJCF) of the Franka Mobile FR3 Duo v0
 ## URDF → MJCF derivation steps
 
 1. Generated the URDF using `xacro` from `franka_description/robots/mobile_fr3_duo_v0_2/mobile_fr3_duo_v0_2.urdf.xacro` (without end-effectors).
-2. Added minimal inertials to the virtual planar joint links for MuJoCo compatibility.
-3. Added `<mujoco><compiler discardvisual="true" fusestatic="false" balanceinertia="true"/></mujoco>` to the URDF.
-4. Loaded the URDF into MuJoCo and saved a corresponding MJCF.
-5. Manually edited the MJCF to follow MuJoCo Menagerie style:
+2. Added `<mujoco><compiler discardvisual="true" fusestatic="false" balanceinertia="true"/></mujoco>` to the URDF.
+3. Loaded the URDF into MuJoCo and saved a corresponding MJCF.
+4. Manually edited the MJCF to follow MuJoCo Menagerie style:
+   - The two argo drive modules use position-controlled steering and velocity-controlled driving actuators.
+   - Caster wheels and rocker arm are passive (unactuated).
+   - Added wheel friction for ground contact (argo wheels: 1.5, casters: 0.5).
    - Extracted common properties into the `<default>` section.
    - Added visual meshes (OBJ) from the existing `franka_fr3_v2` menagerie model alongside collision meshes (STL).
    - Added collision meshes for the mobile base, spine, head, and duo mount from `franka_description`.
-   - Added position-controlled actuators for the base (3), spine (1), and both arms (14).
+   - Added position-controlled actuators for the spine (1) and both arms (14).
    - Added a `home` keyframe with the arms in the standard home configuration.
    - Added `scene.xml` with a textured groundplane, skybox, and lighting.
 
 ## Kinematic structure
 
-- **base** → **virtual_x** → **virtual_y** → **base_link**: Planar mobile base (3 DOF: x, y, theta)
-  - TMR v0.2 chassis with wheels (casters + argo drives)
+- **base_link** (freejoint — 6 DOF): TMR v0.2 mobile chassis
+  - **caster_front_left** (passive): Front-left caster wheel (steering + rolling)
+  - **argo_drive_front** (actuated): Front-right swerve module
+    - **tmrv0_2_joint_0**: Steering (position-controlled)
+    - **tmrv0_2_joint_1**: Driving (velocity-controlled)
+  - **rocker_arm_link** (passive): Rear rocker arm (roll joint, ±0.18 rad)
+    - **caster_rear_right** (passive): Rear-right caster wheel
+    - **argo_drive_rear** (actuated): Rear-left swerve module
+      - **tmrv0_2_joint_2**: Steering (position-controlled)
+      - **tmrv0_2_joint_3**: Driving (velocity-controlled)
   - **franka_spine** → **franka_spine_mounting_point**: Vertical spine (1 DOF prismatic)
     - **fr3_duo_mount_mounting_point**: Duo mount bracket
       - **head_link**: Head with camera mounting
@@ -33,7 +43,7 @@ This package contains a robot description (MJCF) of the Franka Mobile FR3 Duo v0
       - **fr3_duo_mount_right**: Right arm mounting (tilted)
         - **right_fr3v2_joint1..7**: Right FR3v2 arm (7 DOF)
 
-**Total actuated DOF**: 18 (3 base + 1 spine + 7 left arm + 7 right arm)
+**Total actuated DOF**: 19 (4 swerve drive + 1 spine + 7 left arm + 7 right arm)
 
 ## License
 

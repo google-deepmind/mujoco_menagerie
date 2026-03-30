@@ -9,3 +9,7 @@ All notable changes to this model will be documented in this file.
 - Spine split into 3 color groups (white, dark gray, black).
 - Fixed arm material assignments to match DAE ground truth (link0, link5, link6, link7).
 - Added missing link5_4 visual geom.
+- Replaced MoveIt planar joint workaround (virtual_x/y/theta) with freejoint and actuated swerve drive.
+- Argo drive modules: position-controlled steering + velocity-controlled driving.
+- Added wheel friction (argo: 1.5, casters: 0.5) and condim=4 for proper ground contact.
+- Housing box geoms (argo/caster mounts) set to non-colliding.
