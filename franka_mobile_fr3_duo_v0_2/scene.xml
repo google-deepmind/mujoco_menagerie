@@ -1,5 +1,5 @@
-<mujoco model="mobile_fr3_duo scene">
-  <include file="mobile_fr3_duo.xml"/>
+<mujoco model="mobile_fr3_duo_v0_2 scene">
+  <include file="mobile_fr3_duo_v0_2.xml"/>
 
   <statistic center="0.2 0 0.8" extent="2.0"/>
 

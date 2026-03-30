@@ -1,8 +1,8 @@
-<mujoco model="mobile_fr3_duo">
+<mujoco model="mobile_fr3_duo_v0_2">
   <compiler angle="radian" meshdir="assets"/>
 
   <default>
-    <default class="mobile_fr3_duo">
+    <default class="mobile_fr3_duo_v0_2">
       <joint damping="0.003" armature="0.195" frictionloss="0.2"/>
       <position inheritrange="1"/>
       <default class="visual">
@@ -102,7 +102,7 @@
   </asset>
 
   <worldbody>
-    <body name="base" childclass="mobile_fr3_duo">
+    <body name="base" childclass="mobile_fr3_duo_v0_2">
       <!-- Planar base joints (x, y, theta) -->
       <body name="virtual_x">
         <inertial pos="0 0 0" mass="0.01" diaginertia="0.0001 0.0001 0.0001"/>
@@ -439,28 +439,28 @@
 
   <actuator>
     <!-- Mobile base actuators -->
-    <position class="mobile_fr3_duo" name="planar_x" joint="planar_x" kp="5000" kv="500"/>
-    <position class="mobile_fr3_duo" name="planar_y" joint="planar_y" kp="5000" kv="500"/>
-    <position class="mobile_fr3_duo" name="planar_theta" joint="planar_theta" kp="5000" kv="500"/>
+    <position class="mobile_fr3_duo_v0_2" name="planar_x" joint="planar_x" kp="5000" kv="500"/>
+    <position class="mobile_fr3_duo_v0_2" name="planar_y" joint="planar_y" kp="5000" kv="500"/>
+    <position class="mobile_fr3_duo_v0_2" name="planar_theta" joint="planar_theta" kp="5000" kv="500"/>
     <!-- Spine actuator -->
-    <position class="mobile_fr3_duo" name="franka_spine_vertical_joint" joint="franka_spine_vertical_joint"
+    <position class="mobile_fr3_duo_v0_2" name="franka_spine_vertical_joint" joint="franka_spine_vertical_joint"
       kp="5000" kv="500"/>
     <!-- Left arm actuators -->
-    <position class="mobile_fr3_duo" name="left_fr3v2_joint1" joint="left_fr3v2_joint1" kp="4500" kv="450"/>
-    <position class="mobile_fr3_duo" name="left_fr3v2_joint2" joint="left_fr3v2_joint2" kp="4500" kv="450"/>
-    <position class="mobile_fr3_duo" name="left_fr3v2_joint3" joint="left_fr3v2_joint3" kp="3500" kv="350"/>
-    <position class="mobile_fr3_duo" name="left_fr3v2_joint4" joint="left_fr3v2_joint4" kp="3500" kv="350"/>
-    <position class="mobile_fr3_duo" name="left_fr3v2_joint5" joint="left_fr3v2_joint5" kp="2000" kv="200"/>
-    <position class="mobile_fr3_duo" name="left_fr3v2_joint6" joint="left_fr3v2_joint6" kp="2000" kv="200"/>
-    <position class="mobile_fr3_duo" name="left_fr3v2_joint7" joint="left_fr3v2_joint7" kp="2000" kv="200"/>
+    <position class="mobile_fr3_duo_v0_2" name="left_fr3v2_joint1" joint="left_fr3v2_joint1" kp="4500" kv="450"/>
+    <position class="mobile_fr3_duo_v0_2" name="left_fr3v2_joint2" joint="left_fr3v2_joint2" kp="4500" kv="450"/>
+    <position class="mobile_fr3_duo_v0_2" name="left_fr3v2_joint3" joint="left_fr3v2_joint3" kp="3500" kv="350"/>
+    <position class="mobile_fr3_duo_v0_2" name="left_fr3v2_joint4" joint="left_fr3v2_joint4" kp="3500" kv="350"/>
+    <position class="mobile_fr3_duo_v0_2" name="left_fr3v2_joint5" joint="left_fr3v2_joint5" kp="2000" kv="200"/>
+    <position class="mobile_fr3_duo_v0_2" name="left_fr3v2_joint6" joint="left_fr3v2_joint6" kp="2000" kv="200"/>
+    <position class="mobile_fr3_duo_v0_2" name="left_fr3v2_joint7" joint="left_fr3v2_joint7" kp="2000" kv="200"/>
     <!-- Right arm actuators -->
-    <position class="mobile_fr3_duo" name="right_fr3v2_joint1" joint="right_fr3v2_joint1" kp="4500" kv="450"/>
-    <position class="mobile_fr3_duo" name="right_fr3v2_joint2" joint="right_fr3v2_joint2" kp="4500" kv="450"/>
-    <position class="mobile_fr3_duo" name="right_fr3v2_joint3" joint="right_fr3v2_joint3" kp="3500" kv="350"/>
-    <position class="mobile_fr3_duo" name="right_fr3v2_joint4" joint="right_fr3v2_joint4" kp="3500" kv="350"/>
-    <position class="mobile_fr3_duo" name="right_fr3v2_joint5" joint="right_fr3v2_joint5" kp="2000" kv="200"/>
-    <position class="mobile_fr3_duo" name="right_fr3v2_joint6" joint="right_fr3v2_joint6" kp="2000" kv="200"/>
-    <position class="mobile_fr3_duo" name="right_fr3v2_joint7" joint="right_fr3v2_joint7" kp="2000" kv="200"/>
+    <position class="mobile_fr3_duo_v0_2" name="right_fr3v2_joint1" joint="right_fr3v2_joint1" kp="4500" kv="450"/>
+    <position class="mobile_fr3_duo_v0_2" name="right_fr3v2_joint2" joint="right_fr3v2_joint2" kp="4500" kv="450"/>
+    <position class="mobile_fr3_duo_v0_2" name="right_fr3v2_joint3" joint="right_fr3v2_joint3" kp="3500" kv="350"/>
+    <position class="mobile_fr3_duo_v0_2" name="right_fr3v2_joint4" joint="right_fr3v2_joint4" kp="3500" kv="350"/>
+    <position class="mobile_fr3_duo_v0_2" name="right_fr3v2_joint5" joint="right_fr3v2_joint5" kp="2000" kv="200"/>
+    <position class="mobile_fr3_duo_v0_2" name="right_fr3v2_joint6" joint="right_fr3v2_joint6" kp="2000" kv="200"/>
+    <position class="mobile_fr3_duo_v0_2" name="right_fr3v2_joint7" joint="right_fr3v2_joint7" kp="2000" kv="200"/>
   </actuator>
 
   <contact>
