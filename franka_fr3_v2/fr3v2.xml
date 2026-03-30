@@ -68,12 +68,12 @@
   <worldbody>
     <body name="base" childclass="fr3v2">
       <body name="fr3v2_link0">
-        <geom mesh="link0_0" material="black" class="visual"/>
+        <geom mesh="link0_0" material="red" class="visual"/>
         <geom mesh="link0_1" material="white" class="visual"/>
-        <geom mesh="link0_2" material="white" class="visual"/>
-        <geom mesh="link0_3" material="white" class="visual"/>
+        <geom mesh="link0_2" material="black" class="visual"/>
+        <geom mesh="link0_3" material="black" class="visual"/>
         <geom mesh="link0_4" material="white" class="visual"/>
-        <geom mesh="link0_5" material="red" class="visual"/>
+        <geom mesh="link0_5" material="gray" class="visual"/>
         <geom name="fr3v2_link0_collision" mesh="link0_coll" class="collision"/>
         <inertial pos="-0.0172 0.0004 0.0745" quat="0.661377 -0.250161 -0.250161 0.661377" mass="3.85"
           diaginertia="0.0115 0.0107656 0.00673444"/>
@@ -112,22 +112,23 @@
                     damping="0.003" frictionloss="0.2"/>
                   <geom name="fr3v2_link5_collision" class="collision" mesh="link5_coll"/>
                   <geom mesh="link5_3" material="white" class="visual"/>
+                  <geom mesh="link5_4" material="black" class="visual"/>
                   <body name="fr3v2_link6" quat="0.707107 0.707107 0 0">
                     <inertial pos="0.070958 -0.014137 -0.035324" quat="-0.141552 0.574736 0.130817 0.795317"
                       mass="1.56762" diaginertia="0.0047496 0.0041461 0.0024043"/>
                     <joint name="fr3v2_joint6" pos="0 0 0" axis="0 0 1" range="0.5445 4.5169" actuatorfrcrange="-12 12"
                       damping="0.003" frictionloss="0.2"/>
                     <geom name="fr3v2_link6_collision" class="collision" mesh="link6_coll"/>
-                    <geom mesh="link6_0" material="gray" class="visual"/>
-                    <geom mesh="link6_1" material="white" class="visual"/>
+                    <geom mesh="link6_0" material="white" class="visual"/>
+                    <geom mesh="link6_1" material="gray" class="visual"/>
                     <geom mesh="link6_2" material="white" class="visual"/>
-                    <geom mesh="link6_3" material="gray" class="visual"/>
-                    <geom mesh="link6_4" material="button_red" class="visual"/>
+                    <geom mesh="link6_3" material="white" class="visual"/>
+                    <geom mesh="link6_4" material="button_green" class="visual"/>
                     <geom mesh="link6_5" material="button_red" class="visual"/>
-                    <geom mesh="link6_6" material="black" class="visual"/>
+                    <geom mesh="link6_6" material="gray" class="visual"/>
                     <geom mesh="link6_7" material="white" class="visual"/>
-                    <geom mesh="link6_8" material="button_red" class="visual"/>
-                    <geom mesh="link6_9" material="white" class="visual"/>
+                    <geom mesh="link6_8" material="button_blue" class="visual"/>
+                    <geom mesh="link6_9" material="black" class="visual"/>
                     <body name="fr3v2_link7" pos="0.088 0 0" quat="0.707107 0.707107 0 0">
                       <inertial pos="0.008204 0.001156 0.061016" quat="0.70836 0.00347393 0.0424735 0.704564"
                         mass="0.682876" diaginertia="0.00110022 0.000899844 0.000699938"/>
@@ -135,10 +136,10 @@
                         actuatorfrcrange="-12 12" damping="0.003" frictionloss="0.2"/>
                       <geom name="fr3v2_link7_collision" class="collision" mesh="link7_coll"/>
                       <geom mesh="link7_0" material="white" class="visual"/>
-                      <geom mesh="link7_1" material="white" class="visual"/>
-                      <geom mesh="link7_2" material="white" class="visual"/>
+                      <geom mesh="link7_1" material="black" class="visual"/>
+                      <geom mesh="link7_2" material="black" class="visual"/>
                       <geom mesh="link7_3" material="white" class="visual"/>
-                      <geom mesh="link7_4" material="white" class="visual"/>
+                      <geom mesh="link7_4" material="gray" class="visual"/>
                       <geom mesh="link7_5" material="white" class="visual"/>
                       <geom mesh="link7_6" material="white" class="visual"/>
                       <body name="fr3v2_link8" pos="0 0 0.107"/>
