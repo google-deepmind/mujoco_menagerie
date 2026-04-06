@@ -1,0 +1,20 @@
+<mujoco>
+  <equality>
+    <joint name="knee_angle_r_translation3_constraint" joint1="knee_angle_r_translation3" joint2="knee_angle_r" polycoef="-1.46191e-05 0.00626543 0.000611649 -0.00445361 0.00120809" solimp="0.9999 0.9999" />
+    <joint name="knee_angle_r_translation2_constraint" joint1="knee_angle_r_translation2" joint2="knee_angle_r" polycoef="7.69254e-11 0.00587971 -0.00125622 -2.61846e-06 6.24355e-07" solimp="0.9999 0.9999" />
+    <joint name="knee_angle_r_translation1_constraint" joint1="knee_angle_r_translation1" joint2="knee_angle_r" polycoef="9.53733e-08 0.00312879 -0.00230804 0.000561561 5.68366e-07" solimp="0.9999 0.9999" />
+    <joint name="knee_angle_r_rotation2_constraint" joint1="knee_angle_r_rotation2" joint2="knee_angle_r" polycoef="-1.47325e-08 0.0791 -0.0328478 -0.0252183 0.0108321" solimp="0.9999 0.9999" />
+    <joint name="knee_angle_r_rotation3_constraint" joint1="knee_angle_r_rotation3" joint2="knee_angle_r" polycoef="1.08939e-08 0.369499 -0.169478 0.0251643 3.50498e-07" solimp="0.9999 0.9999" />
+    <joint name="knee_angle_r_beta_translation2_constraint" joint1="knee_angle_r_beta_translation2" joint2="knee_angle_r" polycoef="-0.0108281 -0.0487847 0.00927644 0.0131673 -0.00349673" solimp="0.9999 0.9999" />
+    <joint name="knee_angle_r_beta_translation1_constraint" joint1="knee_angle_r_beta_translation1" joint2="knee_angle_r" polycoef="0.0524192 -0.0150188 -0.0340522 0.0133393 -0.000879151" solimp="0.9999 0.9999" />
+    <joint name="knee_angle_r_beta_rotation1_constraint" joint1="knee_angle_r_beta_rotation1" joint2="knee_angle_r" polycoef="0.010506 0.0247615 -1.31647 0.716337 -0.138302" solimp="0.9999 0.9999" />
+    <joint name="knee_angle_l_translation3_constraint" joint1="knee_angle_l_translation3" joint2="knee_angle_l" polycoef="1.46191e-05 -0.00626543 -0.000611649 0.00445361 -0.00120809" solimp="0.9999 0.9999" />
+    <joint name="knee_angle_l_translation2_constraint" joint1="knee_angle_l_translation2" joint2="knee_angle_l" polycoef="-7.69254e-11 -0.00587971 0.00125622 2.61846e-06 -6.24355e-07" solimp="0.9999 0.9999" />
+    <joint name="knee_angle_l_translation1_constraint" joint1="knee_angle_l_translation1" joint2="knee_angle_l" polycoef="9.53733e-08 0.00312879 -0.00230804 0.000561561 5.68366e-07" solimp="0.9999 0.9999" />
+    <joint name="knee_angle_l_rotation2_constraint" joint1="knee_angle_l_rotation2" joint2="knee_angle_l" polycoef="-1.47325e-08 0.0791 -0.0328478 -0.0252183 0.0108321" solimp="0.9999 0.9999" />
+    <joint name="knee_angle_l_rotation3_constraint" joint1="knee_angle_l_rotation3" joint2="knee_angle_l" polycoef="-1.08939e-08 -0.369499 0.169478 -0.0251643 -3.50498e-07" solimp="0.9999 0.9999" />
+    <joint name="knee_angle_l_beta_translation2_constraint" joint1="knee_angle_l_beta_translation2" joint2="knee_angle_l" polycoef="-0.0108281 -0.0487847 0.00927644 0.0131673 -0.00349673" solimp="0.9999 0.9999" />
+    <joint name="knee_angle_l_beta_translation1_constraint" joint1="knee_angle_l_beta_translation1" joint2="knee_angle_l" polycoef="0.0524192 -0.0150188 -0.0340522 0.0133393 -0.000879151" solimp="0.9999 0.9999" />
+    <joint name="knee_angle_l_beta_rotation1_constraint" joint1="knee_angle_l_beta_rotation1" joint2="knee_angle_l" polycoef="0.010506 0.0247615 -1.31647 0.716337 -0.138302" solimp="0.9999 0.9999" />
+  </equality>
+</mujoco>

@@ -1,0 +1,482 @@
+<mujoco>
+  <tendon>
+    <spatial name="DELT1_l_tendon">
+      <site site="DELT1_l-P1" />
+      <site site="DELT1_l-P2" />
+      <geom geom="delt2hum_l" sidesite="DELT1_l_delt2hum_l_sidesite" />
+      <site site="DELT1_l-P3" />
+      <site site="DELT1_l-P4" />
+    </spatial>
+    <spatial name="DELT2_l_tendon">
+      <site site="DELT2_l-P1" />
+      <site site="DELT2_l-P2" />
+      <geom geom="Deltoid2_l" sidesite="DELT2_l_Deltoid2_l_sidesite" />
+      <site site="DELT2_l-P3" />
+      <site site="DELT2_l-P4" />
+    </spatial>
+    <spatial name="DELT3_l_tendon">
+      <site site="DELT3_l-P1" />
+      <geom geom="DELT_TMAJ_LAT_PEC_CORBhh_l" sidesite="DELT3_l_DELT_TMAJ_LAT_PEC_CORBhh_l_sidesite" />
+      <site site="DELT3_l-P2" />
+      <site site="DELT3_l-P3" />
+    </spatial>
+    <spatial name="SUPSP_l_tendon">
+      <site site="SUPSP_l-P1" />
+      <geom geom="SUPSP_l" />
+      <site site="SUPSP_l-P2" />
+      <site site="SUPSP_l-P3" />
+    </spatial>
+    <spatial name="INFSP_l_tendon">
+      <site site="INFSP_l-P1" />
+      <geom geom="infsp_new_l" sidesite="INFSP_l_infsp_new_l_sidesite" />
+      <site site="INFSP_l-P2" />
+    </spatial>
+    <spatial name="SUBSC_l_tendon">
+      <site site="SUBSC_l-P1" />
+      <geom geom="SUBSC_l" sidesite="SUBSC_l_SUBSC_l_sidesite" />
+      <site site="SUBSC_l-P2" />
+      <site site="SUBSC_l-P3" />
+    </spatial>
+    <spatial name="TMIN_l_tendon">
+      <site site="TMIN_l-P1" />
+      <geom geom="TMINhum_l" sidesite="TMIN_l_TMINhum_l_sidesite" />
+      <site site="TMIN_l-P2" />
+      <site site="TMIN_l-P3" />
+    </spatial>
+    <spatial name="TMAJ_l_tendon">
+      <site site="TMAJ_l-P1" />
+      <geom geom="TMAJ_LAThum_l" sidesite="TMAJ_l_TMAJ_LAThum_l_sidesite" />
+      <site site="TMAJ_l-P2" />
+      <site site="TMAJ_l-P3" />
+      <site site="TMAJ_l-P4" />
+      <site site="TMAJ_l-P5" />
+    </spatial>
+    <spatial name="PECM1_l_tendon">
+      <site site="PECM1_l-P1" />
+      <site site="PECM1_l-P2" />
+      <geom geom="PEC12hum_l" sidesite="PECM1_l_PEC12hum_l_sidesite" />
+      <site site="PECM1_l-P3" />
+      <site site="PECM1_l-P4" />
+    </spatial>
+    <spatial name="PECM2_l_tendon">
+      <site site="PECM2_l-P1" />
+      <site site="PECM2_l-P2" />
+      <geom geom="TMAJ_LAT_PEC_CORBhh_l" sidesite="PECM2_l_TMAJ_LAT_PEC_CORBhh_l_sidesite" />
+      <site site="PECM2_l-P3" />
+      <site site="PECM2_l-P4" />
+      <site site="PECM2_l-P5" />
+    </spatial>
+    <spatial name="PECM3_l_tendon">
+      <site site="PECM3_l-P1" />
+      <site site="PECM3_l-P2" />
+      <geom geom="PEC3hum_l" sidesite="PECM3_l_PEC3hum_l_sidesite" />
+      <site site="PECM3_l-P3" />
+      <site site="PECM3_l-P4" />
+      <site site="PECM3_l-P5" />
+    </spatial>
+    <spatial name="CORB_l_tendon">
+      <site site="CORB_l-P1" />
+      <site site="CORB_l-P2" />
+      <geom geom="CORBhum_l" sidesite="CORB_l_CORBhum_l_sidesite" />
+      <site site="CORB_l-P3" />
+    </spatial>
+    <spatial name="TRIlong_l_tendon">
+      <site site="TRIlong_l-P1" />
+      <geom geom="TRIlonghh_l" sidesite="TRIlong_l_TRIlonghh_l_sidesite" />
+      <site site="TRIlong_l-P2" />
+      <site site="TRIlong_l-P3" />
+      <site site="TRIlong_l-P4" />
+      <geom geom="TRI_l" sidesite="TRIlong_l_TRI_l_sidesite" />
+      <site site="TRIlong_l-P5" />
+    </spatial>
+    <spatial name="TRIlat_l_tendon">
+      <site site="TRIlat_l-P1" />
+      <site site="TRIlat_l-P2" />
+      <site site="TRIlat_l-P3" />
+      <site site="TRIlat_l-P4" />
+      <geom geom="TRI_l" sidesite="TRIlat_l_TRI_l_sidesite" />
+      <site site="TRIlat_l-P5" />
+    </spatial>
+    <spatial name="TRImed_l_tendon">
+      <site site="TRImed_l-P1" />
+      <site site="TRImed_l-P2" />
+      <site site="TRImed_l-P3" />
+      <site site="TRImed_l-P4" />
+      <geom geom="TRI_l" sidesite="TRImed_l_TRI_l_sidesite" />
+      <site site="TRImed_l-P5" />
+    </spatial>
+    <spatial name="ANC_l_tendon">
+      <site site="ANC_l-P1" />
+      <geom geom="ANC_l" sidesite="ANC_l_ANC_l_sidesite" />
+      <site site="ANC_l-P2" />
+    </spatial>
+    <spatial name="SUP_l_tendon">
+      <site site="SUP_l-P1" />
+      <site site="SUP_l-P2" />
+      <geom geom="SUP_l" sidesite="SUP_l_SUP_l_sidesite" />
+      <site site="SUP_l-P3" />
+    </spatial>
+    <spatial name="BIClong_l_tendon">
+      <site site="BIClong_l-P1" />
+      <site site="BIClong_l-P2" />
+      <geom geom="BIClong_l" />
+      <site site="BIClong_l-P3" />
+      <site site="BIClong_l-P4" />
+      <site site="BIClong_l-P5" />
+      <site site="BIClong_l-P6" />
+      <site site="BIClong_l-P7" />
+      <site site="BIClong_l-P8" />
+      <geom geom="Elbow_BIC_BRD_l" sidesite="BIClong_l_Elbow_BIC_BRD_l_sidesite" />
+      <site site="BIClong_l-P9" />
+      <site site="BIClong_l-P10" />
+    </spatial>
+    <spatial name="BICshort_l_tendon">
+      <site site="BICshort_l-P1" />
+      <site site="BICshort_l-P2" />
+      <site site="BICshort_l-P3" />
+      <site site="BICshort_l-P4" />
+      <site site="BICshort_l-P5" />
+      <geom geom="Elbow_BIC_BRD_l" sidesite="BICshort_l_Elbow_BIC_BRD_l_sidesite" />
+      <site site="BICshort_l-P6" />
+      <site site="BICshort_l-P7" />
+    </spatial>
+    <spatial name="BRA_l_tendon">
+      <site site="BRA_l-P1" />
+      <site site="BRA_l-P2" />
+      <site site="BRA_l-P3" />
+      <site site="BRA_l-P4" />
+    </spatial>
+    <spatial name="BRD_l_tendon">
+      <site site="BRD_l-P1" />
+      <geom geom="Elbow_BIC_BRD_l" sidesite="BRD_l_Elbow_BIC_BRD_l_sidesite" />
+      <site site="BRD_l-P2" />
+      <site site="BRD_l-P3" />
+    </spatial>
+    <spatial name="ECRL_l_tendon">
+      <site site="ECRL_l-P1" />
+      <geom geom="Elbow_Radius_l" />
+      <site site="ECRL_l-P2" />
+      <site site="ECRL_l-P3" />
+      <geom geom="ECRL_torus_wrap_l" sidesite="ECRL_l_ECRL_torus_wrap_l_sidesite" />
+      <site site="ECRL_l-P4" />
+    </spatial>
+    <spatial name="ECRB_l_tendon">
+      <site site="ECRB_l-P1" />
+      <site site="ECRB_l-P2" />
+      <site site="ECRB_l-P3" />
+      <geom geom="ECRB_torus_wrap_l" sidesite="ECRB_l_ECRB_torus_wrap_l_sidesite" />
+      <site site="ECRB_l-P4" />
+    </spatial>
+    <spatial name="ECU_l_tendon">
+      <site site="ECU_l-P1" />
+      <site site="ECU_l-P2" />
+      <site site="ECU_l-P3" />
+      <site site="ECU_l-P4" />
+      <site site="ECU_l-P5" />
+      <geom geom="ECU_torus_wrap_l" sidesite="ECU_l_ECU_torus_wrap_l_sidesite" />
+      <site site="ECU_l-P6" />
+    </spatial>
+    <spatial name="FCR_l_tendon">
+      <site site="FCR_l-P1" />
+      <geom geom="Elbow_Ulna_l" sidesite="FCR_l_Elbow_Ulna_l_sidesite" />
+      <site site="FCR_l-P2" />
+      <geom geom="FCR_torus_wrap_l" sidesite="FCR_l_FCR_torus_wrap_l_sidesite" />
+      <site site="FCR_l-P3" />
+    </spatial>
+    <spatial name="FCU_l_tendon">
+      <site site="FCU_l-P1" />
+      <geom geom="Elbow_Ulna_l" sidesite="FCU_l_Elbow_Ulna_l_sidesite" />
+      <site site="FCU_l-P2" />
+      <site site="FCU_l-P3" />
+      <site site="FCU_l-P4" />
+    </spatial>
+    <spatial name="PL_l_tendon">
+      <site site="PL_l-P1" />
+      <geom geom="Elbow_Ulna_l" sidesite="PL_l_Elbow_Ulna_l_sidesite" />
+      <site site="PL_l-P2" />
+      <site site="PL_l-P3" />
+      <site site="PL_l-P4" />
+    </spatial>
+    <spatial name="PT_l_tendon">
+      <site site="PT_l-P1" />
+      <geom geom="Elbow_Ulna_l" sidesite="PT_l_Elbow_Ulna_l_sidesite" />
+      <site site="PT_l-P2" />
+      <site site="PT_l-P3" />
+      <site site="PT_l-P4" />
+      <site site="PT_l-P5" />
+    </spatial>
+    <spatial name="PQ_l_tendon">
+      <site site="PQ_l-P1" />
+      <geom geom="PQ2_l" sidesite="PQ_l_PQ2_l_sidesite" />
+      <site site="PQ_l-P2" />
+    </spatial>
+    <spatial name="FDSL_l_tendon">
+      <site site="FDSL_l-P1" />
+      <geom geom="Elbow_Ulna_l" sidesite="FDSL_l_Elbow_Ulna_l_sidesite" />
+      <site site="FDSL_l-P2" />
+      <geom geom="FDS_ellipsoid_wrap_l" sidesite="FDSL_l_FDS_ellipsoid_wrap_l_sidesite" />
+      <site site="FDSL_l-P3" />
+      <site site="FDSL_l-P4" />
+      <geom geom="_5rdmcp_FDS_l" sidesite="FDSL_l__5rdmcp_FDS_l_sidesite" />
+      <site site="FDSL_l-P5" />
+      <site site="FDSL_l-P6" />
+      <geom geom="Fifthpm_FDS_l" sidesite="FDSL_l_Fifthpm_FDS_l_sidesite" />
+      <site site="FDSL_l-P7" />
+      <site site="FDSL_l-P8" />
+    </spatial>
+    <spatial name="FDSR_l_tendon">
+      <site site="FDSR_l-P1" />
+      <geom geom="Elbow_Ulna_l" sidesite="FDSR_l_Elbow_Ulna_l_sidesite" />
+      <site site="FDSR_l-P2" />
+      <geom geom="FDS_ellipsoid_wrap_l" sidesite="FDSR_l_FDS_ellipsoid_wrap_l_sidesite" />
+      <site site="FDSR_l-P3" />
+      <site site="FDSR_l-P4" />
+      <geom geom="_4rdmcp_FDS_l" sidesite="FDSR_l__4rdmcp_FDS_l_sidesite" />
+      <site site="FDSR_l-P5" />
+      <site site="FDSR_l-P6" />
+      <geom geom="Fourthpm_FDS_l" sidesite="FDSR_l_Fourthpm_FDS_l_sidesite" />
+      <site site="FDSR_l-P7" />
+      <site site="FDSR_l-P8" />
+    </spatial>
+    <spatial name="FDSM_l_tendon">
+      <site site="FDSM_l-P1" />
+      <site site="FDSM_l-P2" />
+      <geom geom="FDS_ellipsoid_wrap_l" sidesite="FDSM_l_FDS_ellipsoid_wrap_l_sidesite" />
+      <site site="FDSM_l-P3" />
+      <site site="FDSM_l-P4" />
+      <site site="FDSM_l-P5" />
+      <geom geom="_3rdmcp_FDS_l" sidesite="FDSM_l__3rdmcp_FDS_l_sidesite" />
+      <site site="FDSM_l-P6" />
+      <site site="FDSM_l-P7" />
+      <geom geom="Thirdpm_FDS_l" sidesite="FDSM_l_Thirdpm_FDS_l_sidesite" />
+      <site site="FDSM_l-P8" />
+      <site site="FDSM_l-P9" />
+    </spatial>
+    <spatial name="FDSI_l_tendon">
+      <site site="FDSI_l-P1" />
+      <site site="FDSI_l-P2" />
+      <geom geom="FDS_ellipsoid_wrap_l" sidesite="FDSI_l_FDS_ellipsoid_wrap_l_sidesite" />
+      <site site="FDSI_l-P3" />
+      <site site="FDSI_l-P4" />
+      <site site="FDSI_l-P5" />
+      <geom geom="_2rdmcp_FDS_l" sidesite="FDSI_l__2rdmcp_FDS_l_sidesite" />
+      <site site="FDSI_l-P6" />
+      <site site="FDSI_l-P7" />
+      <geom geom="Secondpm_FDS_l" sidesite="FDSI_l_Secondpm_FDS_l_sidesite" />
+      <site site="FDSI_l-P8" />
+      <site site="FDSI_l-P9" />
+    </spatial>
+    <spatial name="FDPL_l_tendon">
+      <site site="FDPL_l-P1" />
+      <site site="FDPL_l-P2" />
+      <geom geom="FDP_ellipsoid_wrap_l" sidesite="FDPL_l_FDP_ellipsoid_wrap_l_sidesite" />
+      <site site="FDPL_l-P3" />
+      <site site="FDPL_l-P4" />
+      <geom geom="_5rdmcp_FDP_l" sidesite="FDPL_l__5rdmcp_FDP_l_sidesite" />
+      <site site="FDPL_l-P5" />
+      <site site="FDPL_l-P6" />
+      <geom geom="Fifthpm_FDP_l" sidesite="FDPL_l_Fifthpm_FDP_l_sidesite" />
+      <site site="FDPL_l-P7" />
+      <site site="FDPL_l-P8" />
+      <geom geom="Fifthmd_flex_l" sidesite="FDPL_l_Fifthmd_flex_l_sidesite" />
+      <site site="FDPL_l-P9" />
+    </spatial>
+    <spatial name="FDPR_l_tendon">
+      <site site="FDPR_l-P1" />
+      <site site="FDPR_l-P2" />
+      <geom geom="FDP_ellipsoid_wrap_l" sidesite="FDPR_l_FDP_ellipsoid_wrap_l_sidesite" />
+      <site site="FDPR_l-P3" />
+      <site site="FDPR_l-P4" />
+      <geom geom="_4rdmcp_FDP_l" sidesite="FDPR_l__4rdmcp_FDP_l_sidesite" />
+      <site site="FDPR_l-P5" />
+      <site site="FDPR_l-P6" />
+      <geom geom="Fourthpm_FDP_l" sidesite="FDPR_l_Fourthpm_FDP_l_sidesite" />
+      <site site="FDPR_l-P7" />
+      <site site="FDPR_l-P8" />
+      <geom geom="Fourthmd_flex_l" sidesite="FDPR_l_Fourthmd_flex_l_sidesite" />
+      <site site="FDPR_l-P9" />
+    </spatial>
+    <spatial name="FDPM_l_tendon">
+      <site site="FDPM_l-P1" />
+      <site site="FDPM_l-P2" />
+      <geom geom="FDP_ellipsoid_wrap_l" sidesite="FDPM_l_FDP_ellipsoid_wrap_l_sidesite" />
+      <site site="FDPM_l-P3" />
+      <site site="FDPM_l-P4" />
+      <site site="FDPM_l-P5" />
+      <geom geom="_3rdmcp_FDP_l" sidesite="FDPM_l__3rdmcp_FDP_l_sidesite" />
+      <site site="FDPM_l-P6" />
+      <site site="FDPM_l-P7" />
+      <geom geom="Thirdpm_FDP_l" sidesite="FDPM_l_Thirdpm_FDP_l_sidesite" />
+      <site site="FDPM_l-P8" />
+      <site site="FDPM_l-P9" />
+      <geom geom="Thirdmd_flex_l" sidesite="FDPM_l_Thirdmd_flex_l_sidesite" />
+      <site site="FDPM_l-P10" />
+    </spatial>
+    <spatial name="FDPI_l_tendon">
+      <site site="FDPI_l-P1" />
+      <site site="FDPI_l-P2" />
+      <geom geom="FDP_ellipsoid_wrap_l" sidesite="FDPI_l_FDP_ellipsoid_wrap_l_sidesite" />
+      <site site="FDPI_l-P3" />
+      <site site="FDPI_l-P4" />
+      <geom geom="_2rdmcp_FDP_l" sidesite="FDPI_l__2rdmcp_FDP_l_sidesite" />
+      <site site="FDPI_l-P5" />
+      <site site="FDPI_l-P6" />
+      <geom geom="Secondpm_FDP_l" sidesite="FDPI_l_Secondpm_FDP_l_sidesite" />
+      <site site="FDPI_l-P7" />
+      <site site="FDPI_l-P8" />
+      <geom geom="Secondmd_flex_l" sidesite="FDPI_l_Secondmd_flex_l_sidesite" />
+      <site site="FDPI_l-P9" />
+    </spatial>
+    <spatial name="EDCL_l_tendon">
+      <site site="EDCL_l-P1" />
+      <site site="EDCL_l-P2" />
+      <site site="EDCL_l-P3" />
+      <geom geom="EDCL_torus_wrap_l" sidesite="EDCL_l_EDCL_torus_wrap_l_sidesite" />
+      <site site="EDCL_l-P4" />
+      <site site="EDCL_l-P5" />
+      <geom geom="_5rdmcp_ext_l" sidesite="EDCL_l__5rdmcp_ext_l_sidesite" />
+      <site site="EDCL_l-P6" />
+      <site site="EDCL_l-P7" />
+      <geom geom="Fifthpm_ext_l" sidesite="EDCL_l_Fifthpm_ext_l_sidesite" />
+      <site site="EDCL_l-P8" />
+      <site site="EDCL_l-P9" />
+      <geom geom="Fifthmd_ext_l" sidesite="EDCL_l_Fifthmd_ext_l_sidesite" />
+      <site site="EDCL_l-P10" />
+    </spatial>
+    <spatial name="EDCR_l_tendon">
+      <site site="EDCR_l-P1" />
+      <site site="EDCR_l-P2" />
+      <site site="EDCR_l-P3" />
+      <geom geom="EDCR_torus_wrap_l" sidesite="EDCR_l_EDCR_torus_wrap_l_sidesite" />
+      <site site="EDCR_l-P4" />
+      <site site="EDCR_l-P5" />
+      <geom geom="_4rdmcp_ext_l" sidesite="EDCR_l__4rdmcp_ext_l_sidesite" />
+      <site site="EDCR_l-P6" />
+      <site site="EDCR_l-P7" />
+      <geom geom="Fourthpm_ext_l" sidesite="EDCR_l_Fourthpm_ext_l_sidesite" />
+      <site site="EDCR_l-P8" />
+      <site site="EDCR_l-P9" />
+      <geom geom="Fourthmd_ext_l" sidesite="EDCR_l_Fourthmd_ext_l_sidesite" />
+      <site site="EDCR_l-P10" />
+    </spatial>
+    <spatial name="EDCM_l_tendon">
+      <site site="EDCM_l-P1" />
+      <site site="EDCM_l-P2" />
+      <site site="EDCM_l-P3" />
+      <geom geom="EDCM_torus_wrap_l" sidesite="EDCM_l_EDCM_torus_wrap_l_sidesite" />
+      <site site="EDCM_l-P4" />
+      <site site="EDCM_l-P5" />
+      <geom geom="_3rdmcp_ext_l" sidesite="EDCM_l__3rdmcp_ext_l_sidesite" />
+      <site site="EDCM_l-P6" />
+      <site site="EDCM_l-P7" />
+      <geom geom="Thirdpm_ext_l" sidesite="EDCM_l_Thirdpm_ext_l_sidesite" />
+      <site site="EDCM_l-P8" />
+      <site site="EDCM_l-P9" />
+      <geom geom="Thirdmd_ext_l" sidesite="EDCM_l_Thirdmd_ext_l_sidesite" />
+      <site site="EDCM_l-P10" />
+      <site site="EDCM_l-P11" />
+    </spatial>
+    <spatial name="EDCI_l_tendon">
+      <site site="EDCI_l-P1" />
+      <site site="EDCI_l-P2" />
+      <site site="EDCI_l-P3" />
+      <geom geom="EDCI_torus_wrap_l" sidesite="EDCI_l_EDCI_torus_wrap_l_sidesite" />
+      <site site="EDCI_l-P4" />
+      <site site="EDCI_l-P5" />
+      <geom geom="_2rdmcp_ext_l" sidesite="EDCI_l__2rdmcp_ext_l_sidesite" />
+      <site site="EDCI_l-P6" />
+      <site site="EDCI_l-P7" />
+      <geom geom="Secondpm_ext_l" sidesite="EDCI_l_Secondpm_ext_l_sidesite" />
+      <site site="EDCI_l-P8" />
+      <site site="EDCI_l-P9" />
+      <geom geom="Secondmd_ext_l" sidesite="EDCI_l_Secondmd_ext_l_sidesite" />
+      <site site="EDCI_l-P10" />
+    </spatial>
+    <spatial name="EDM_l_tendon">
+      <site site="EDM_l-P1" />
+      <site site="EDM_l-P2" />
+      <site site="EDM_l-P3" />
+      <site site="EDM_l-P4" />
+      <geom geom="EDM_ellipsoid_wrap_l" sidesite="EDM_l_EDM_ellipsoid_wrap_l_sidesite" />
+      <site site="EDM_l-P5" />
+      <site site="EDM_l-P6" />
+      <geom geom="_5rdmcp_ext_l" sidesite="EDM_l__5rdmcp_ext_l_sidesite" />
+      <site site="EDM_l-P7" />
+      <site site="EDM_l-P8" />
+      <geom geom="Fifthpm_ext_l" sidesite="EDM_l_Fifthpm_ext_l_sidesite" />
+      <site site="EDM_l-P9" />
+      <site site="EDM_l-P10" />
+      <geom geom="Fifthmd_ext_l" sidesite="EDM_l_Fifthmd_ext_l_sidesite" />
+      <site site="EDM_l-P11" />
+    </spatial>
+    <spatial name="EIP_l_tendon">
+      <site site="EIP_l-P1" />
+      <site site="EIP_l-P2" />
+      <site site="EIP_l-P3" />
+      <geom geom="ExtensorEllipse_ellipsoid_wrap_l" sidesite="EIP_l_ExtensorEllipse_ellipsoid_wrap_l_sidesite" />
+      <site site="EIP_l-P4" />
+      <site site="EIP_l-P5" />
+      <geom geom="_2rdmcp_ext_l" sidesite="EIP_l__2rdmcp_ext_l_sidesite" />
+      <site site="EIP_l-P6" />
+      <site site="EIP_l-P7" />
+      <geom geom="Secondpm_ext_l" sidesite="EIP_l_Secondpm_ext_l_sidesite" />
+      <site site="EIP_l-P8" />
+      <site site="EIP_l-P9" />
+      <geom geom="Secondmd_ext_l" sidesite="EIP_l_Secondmd_ext_l_sidesite" />
+      <site site="EIP_l-P10" />
+    </spatial>
+    <spatial name="EPL_l_tendon">
+      <site site="EPL_l-P1" />
+      <site site="EPL_l-P2" />
+      <site site="EPL_l-P3" />
+      <site site="EPL_l-P4" />
+      <site site="EPL_l-P5" />
+      <site site="EPL_l-P6" />
+      <site site="EPL_l-P7" />
+      <site site="EPL_l-P8" />
+      <site site="EPL_l-P9" />
+      <geom geom="MPthumb_l" />
+      <site site="EPL_l-P10" />
+      <site site="EPL_l-P11" />
+      <site site="EPL_l-P12" />
+    </spatial>
+    <spatial name="EPB_l_tendon">
+      <site site="EPB_l-P1" />
+      <site site="EPB_l-P2" />
+      <site site="EPB_l-P3" />
+      <site site="EPB_l-P4" />
+      <site site="EPB_l-P5" />
+      <site site="EPB_l-P6" />
+      <site site="EPB_l-P7" />
+      <geom geom="MPthumb_l" />
+      <site site="EPB_l-P8" />
+    </spatial>
+    <spatial name="FPL_l_tendon">
+      <site site="FPL_l-P1" />
+      <site site="FPL_l-P2" />
+      <site site="FPL_l-P3" />
+      <site site="FPL_l-P4" />
+      <site site="FPL_l-P5" />
+      <geom geom="FPL_ellipsoid_wrap_l" />
+      <site site="FPL_l-P6" />
+      <site site="FPL_l-P7" />
+      <site site="FPL_l-P8" />
+      <geom geom="MPthumb_l" sidesite="FPL_l_MPthumb_l_sidesite" />
+      <site site="FPL_l-P9" />
+      <site site="FPL_l-P10" />
+      <geom geom="IPthumb_l" sidesite="FPL_l_IPthumb_l_sidesite" />
+      <site site="FPL_l-P11" />
+    </spatial>
+    <spatial name="APL_l_tendon">
+      <site site="APL_l-P1" />
+      <site site="APL_l-P2" />
+      <site site="APL_l-P3" />
+      <site site="APL_l-P4" />
+      <site site="APL_l-P5" />
+      <site site="APL_l-P6" />
+      <site site="APL_l-P7" />
+      <site site="APL_l-P8" />
+      <site site="APL_l-P9" />
+    </spatial>
+  </tendon>
+</mujoco>

@@ -1,0 +1,19 @@
+<mujoco>
+  <contact>
+    <exclude body1="proximal_row" body2="fifthmc" />
+    <exclude body1="trapezium" body2="firstmc" />
+    <exclude body1="firstmc" body2="secondmc" />
+    <exclude body1="secondmc" body2="thirdmc" />
+    <exclude body1="secondmc" body2="3proxph" />
+    <exclude body1="2proxph" body2="thirdmc" />
+    <exclude body1="2proxph" body2="3proxph" />
+    <exclude body1="thirdmc" body2="fourthmc" />
+    <exclude body1="thirdmc" body2="4proxph" />
+    <exclude body1="3proxph" body2="fourthmc" />
+    <exclude body1="3proxph" body2="4proxph" />
+    <exclude body1="fourthmc" body2="fifthmc" />
+    <exclude body1="fourthmc" body2="5proxph" />
+    <exclude body1="4proxph" body2="fifthmc" />
+    <exclude body1="4proxph" body2="5proxph" />
+  </contact>
+</mujoco> 
