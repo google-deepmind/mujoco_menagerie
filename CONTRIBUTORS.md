@@ -20,6 +20,7 @@ Built by the Google DeepMind team with contributions from the open-source commun
 - [Andreas Kuhner](https://github.com/AndreasKuhner)
 - [Andrew Luo](https://github.com/Andrew-Luo1)
 - [Ayzaan Wahid](https://github.com/ayzaan)
+- [Chenhui Zuo](https://github.com/zchJo)
 - [Chintan Desai](https://github.com/hello-chintan)
 - [Chi-Tao Kuan](https://github.com/ctkuan-flexiv)
 - [Christian Rauch](https://github.com/christianrauch)
@@ -43,6 +44,7 @@ Built by the Google DeepMind team with contributions from the open-source commun
 - [Thomas Lips](https://github.com/tlpss)
 - [Thomas Peyrucain](https://github.com/thomaspeyrucain)
 - [Varad Vaidya](https://github.com/varadVaidya)
+- [Yanan Sui](https://github.com/yanansui)
 
 ---
 
