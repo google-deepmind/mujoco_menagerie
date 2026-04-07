@@ -35,7 +35,7 @@ well right out of the gate.
 |<img src='assets/anybotics_anymal_c-anymal_c.png' width=100>|<img src='assets/google_barkour_v0-barkour_v0.png' width=100>|<img src='assets/google_barkour_vb-barkour_vb.png' width=100>|<img src='assets/unitree_go1-go1.png' width=100>|<img src='assets/unitree_go2-go2.png' width=100>|
 |<img src='assets/boston_dynamics_spot-spot_arm.png' width=100>|<img src='assets/agility_cassie-cassie.png' width=100>|<img src='assets/unitree_g1-g1.png' width=100>|<img src='assets/unitree_h1-h1.png' width=100>|<img src='assets/robotis_op3-op3.png' width=100>|
 |<img src='assets/booster_t1-t1.png' width=100>|<img src='assets/pal_talos-talos.png' width=100>|<img src='assets/toddlerbot_2xc-toddlerbot_2xc.png' width=100>|<img src='assets/bitcraze_crazyflie_2-cf2.png' width=100>|<img src='assets/skydio_x2-x2.png' width=100>|
-|<img src='assets/flybody-fruitfly.png' width=100>|<img src='assets/realsense_d435i-d435i.png' width=100>||||
+|<img src='assets/flybody-fruitfly.png' width=100>|<img src='assets/ms_human_render_front.png' width=100>|<img src='assets/realsense_d435i-d435i.png' width=100>||||
 
 
 - [Getting Started](#getting-started)
@@ -276,6 +276,7 @@ Menagerie, see [CONTRIBUTING](CONTRIBUTING.md).
 |------|-------|---------|---------|-----|
 | IIT Softfoot | IIT Softbots | 92 | [BSD-3-Clause](iit_softfoot/LICENSE) |✖️|
 | flybody | Google DeepMind, HHMI Janelia Research Campus | 102 | [Apache-2.0](flybody/LICENSE) |✖️|
+| MS-Human-700 | LNS Group | 157 | [Apache-2.0](ms_human_700/LICENSE) |✔️|
 
 **Miscellaneous.**
 

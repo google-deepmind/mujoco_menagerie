@@ -1,0 +1,14 @@
+<mujoco>
+  <contact>
+    <exclude body1="pelvis" body2="femur_r" />
+    <exclude body1="pelvis" body2="femur_l" />
+    <exclude body1="femur_r" body2="tibia_r" />
+    <exclude body1="femur_r" body2="patella_r" />
+    <exclude body1="tibia_r" body2="calcn_r" />
+    <exclude body1="tibia_r" body2="patella_r" />
+    <exclude body1="femur_l" body2="tibia_l" />
+    <exclude body1="femur_l" body2="patella_l" />
+    <exclude body1="tibia_l" body2="calcn_l" />
+    <exclude body1="tibia_l" body2="patella_l" />
+  </contact>
+</mujoco> 

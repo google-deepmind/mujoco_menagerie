@@ -1,0 +1,91 @@
+<mujoco model="MS_Human_700_Manipulation_Model">
+  <compiler angle="radian" boundmass="0.0001" />
+
+  <size njmax="1000" nconmax="400" nkey="1" nuser_jnt="1" />
+
+  <default>
+    <joint solimplimit="0.9999 0.9999" limited="true" damping="1e-2" armature="1e-2" stiffness="0" />
+    <geom margin="0.001" rgba="1 1 1 1" />
+    <site group="3" />
+    <tendon limited="false" width="0.005" rgba="0.95 0.3 0.3 1" />
+    <default class="muscle">
+      <muscle ctrllimited="true" ctrlrange="0 1" />
+    </default>
+    <default class="bone">
+      <geom contype="0" conaffinity="0" rgba="0.9 0.7 0.5 1" />
+    </default>
+    <default class="skin">
+      <geom type="capsule" group="1" rgba="0.8 0.7 0.5 0.2" />
+    </default>
+    <default class="wrap">
+      <geom contype="0" conaffinity="0" mass="0" group="3" rgba="0.5 0.5 0.9 1" />
+    </default>
+    <default class="hip">
+      <joint damping="1.0" armature="1e-2" stiffness="0" />
+    </default>
+    <default class="knee">
+      <joint damping="0.5" armature="1e-2" stiffness="0" />
+    </default>
+    <default class="ankle">
+      <joint damping="0.1" armature="1e-2" stiffness="0" />
+    </default>
+    <default class="toe">
+      <joint damping="0.05" armature="1e-4" stiffness="0" />
+    </default>
+    <default class="shoulder">
+      <joint damping="0.6" armature="1e-2" stiffness="0" />
+    </default>
+    <default class="elbow">
+      <joint damping="0.3" armature="1e-2" stiffness="0" />
+    </default>
+    <default class="wrist">
+      <joint damping="0.1" armature="1e-2" stiffness="0" />
+    </default>
+    <default class="finger">
+      <joint damping="0.05" armature="1e-4" stiffness="0" />
+    </default>
+    <default class="spine">
+      <joint damping="5.0" armature="0.1" stiffness="10" />
+    </default>
+  </default>
+
+  <worldbody>
+    <body name="pelvis" pos="0 0 0.94" quat="0.707107 0.707107 0 0">
+      <inertial pos="-0.0707 0 0" mass="8.147" diaginertia="0.033 0.0606 0.0403" />
+      <geom name="r_pelvis" class="bone" type="mesh" mesh="r_pelvis" />
+      <geom name="l_pelvis" class="bone" type="mesh" mesh="l_pelvis" />
+      <include file="assets/body_manipulation/Body_Leg_Foot_Vis_r.xml" />
+      <include file="assets/body_manipulation/Body_Leg_Foot_Vis_l.xml" />
+      <include file="assets/body_manipulation/Body_Torso_Unimanual.xml" />
+    </body>
+    <include file="assets/body_manipulation/Body_Waterbottle.xml" />
+    <body name="table" pos="0.45 0 0.9">
+      <geom size="0.4 0.5 0.02" type="box" friction="1.2" material="tablecube" />
+      <geom size="0.04 0.4345" pos="0.3 0.3 -0.4355" quat="0 1 0 0" type="cylinder" contype="0" conaffinity="0" />
+      <geom size="0.04 0.4345" pos="-0.3 0.3 -0.4355" quat="0 1 0 0" type="cylinder" contype="0" conaffinity="0" />
+      <geom size="0.04 0.4345" pos="0.3 -0.3 -0.4355" quat="0 1 0 0" type="cylinder" contype="0" conaffinity="0" />
+      <geom size="0.04 0.4345" pos="-0.3 -0.3 -0.4355" quat="0 1 0 0" type="cylinder" contype="0" conaffinity="0" />
+    </body>
+  </worldbody>
+
+  <include file="assets/asset/Asset_Lowerbody.xml" />
+  <include file="assets/asset/Asset_Torso.xml" />
+  <include file="assets/asset/Asset_Upperbody.xml" />
+  <include file="assets/asset/Asset_Others.xml" />
+
+  <include file="assets/contact/Contact_Upperbody.xml" />
+
+  <include file="assets/equality/Equality_Upperbody_r.xml" />
+
+  <include file="assets/tendon/Tendon_Leg_r.xml" />
+  <include file="assets/tendon/Tendon_Leg_l.xml" />
+  <include file="assets/tendon/Tendon_Arm_Hand_r.xml" />
+  <include file="assets/tendon/Tendon_Arm_Hand_l.xml" />
+  <include file="assets/tendon/Tendon_Torso.xml" />
+
+  <include file="assets/muscle/Muscle_Arm_Hand_r.xml" />
+
+  <keyframe>
+    <key qpos="-0.0726404 0.0307636 -0.0307624 0.0732235 -0.0147169 0.120112 0.0539374 -0.0534441 -0.120205 0.0149685 0.283727 0.302294 -0.284371 -0.0609282 1.00112 1.1 0.0396042 -0.0109725 0.0513543 -0.0110132 0.19932 0.404178 -0.174419 -0.266069 0.171857 0.19443 0.446019 0.263181 -0.0116027 0.297233 0.1745 0.2792 0.000238738 -0.063557 0.088101 0.2403 0.333745 0.000649167 -0.102818 0.005 0.235575 0.3141 0 0 0 -1.57 0.32 0" />
+  </keyframe>
+</mujoco>
