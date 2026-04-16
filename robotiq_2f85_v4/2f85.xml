@@ -45,11 +45,11 @@
       <default class="collision">
         <geom type="mesh" group="3"/>
         <default class="pad_box1">
-          <geom mass="1e-6" type="box" pos="0.043258  0 0.12"  size="0.002 0.011 0.009375" friction="0.7"
+          <geom mass="0.00175" type="box" pos="0.043258  0 0.12"  size="0.002 0.011 0.009375" friction="0.7"
             solimp="0.95 0.99 0.001" solref="0.004 1" priority="1" rgba="0.55 0.55 0.55 1"/>
         </default>
         <default class="pad_box2">
-          <geom mass="1e-6" type="box" pos="0.043258 0 0.13875" size="0.002 0.011 0.009375" friction="0.6"
+          <geom mass="0.00175" type="box" pos="0.043258 0 0.13875" size="0.002 0.011 0.009375" friction="0.6"
             solimp="0.95 0.99 0.001" solref="0.004 1" priority="1" rgba="0.45 0.45 0.45 1"/>
         </default>
       </default>
@@ -65,7 +65,7 @@
       <geom class="visual" pos="0 0 0.0108" quat="0 0 0 1"   mesh="base"/>
       <geom class="visual" pos="0 0 0.004" quat="1 -1 0 0"   mesh="base_coupling"/>
       <geom class="visual" pos="0 0 0.0108" quat="1 0 0 0"  material="metal" mesh="c-a01-85-open"/>
-      <geom class="collision" mesh="base"/>
+      <geom class="collision" pos="0 0 0.0108" quat="0 0 0 1" mesh="base"/>
       <!-- Left-hand side 4-bar linkage -->
       <body name="left_driver" pos="-0.0306011 0.00475 0.0657045" quat="1 -1 0 0">
         <inertial mass="0.00899563" pos="-0.0175297 0.00165308 -0.00469625"
