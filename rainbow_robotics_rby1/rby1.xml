@@ -1,0 +1,478 @@
+<mujoco model="rby1">
+  <compiler angle="radian" autolimits="true" eulerseq="xyz" meshdir="assets"/>
+
+  <default>
+    <joint armature="0.01" damping="5" range="-3.14 3.14" />
+    <material specular="0.5" shininess="0.25" />
+  </default>
+
+  <asset>
+    <!-- material -->
+    <material name="0,0,0" specular="1.0" shininess="1.0" rgba="0.000000 0.000000 0.000000 1.000000" />
+    <material name="10,10,10_LINK_6" specular="1.0" shininess="0.2" rgba="0.039216 0.039216 0.039216 1.000000" />
+    <material name="10,10,10" specular="0.039216" shininess="1.0" rgba="0.039216 0.039216 0.039216 1.000000" />
+    <material name="163,163,175" specular="1.0" shininess="0.2" rgba="0.639216 0.639216 0.686275 1.000000" />
+    <material name="178,0,0" specular="1.0" shininess="0.2" rgba="0.698039 0.000000 0.000000 1.000000" />
+    <material name="190,188,186" specular="1.0" shininess="0.2" rgba="0.745098 0.737255 0.729412 1.000000" />
+    <material name="191,191,191" specular="0.0" shininess="0.3" rgba="0.749020 0.749020 0.749020 1.000000" />
+    <material name="192,192,192" specular="1.0" shininess="0.2" rgba="0.752941 0.752941 0.752941 1.000000" />
+    <material name="216,214,214" specular="1.0" shininess="0.2" rgba="0.847059 0.839216 0.839216 1.000000" />
+    <material name="237,255,168" specular="1.0" shininess="0.2" rgba="0.929412 1.000000 0.658824 1.000000" />
+    <material name="242,236,238" specular="1.0" shininess="0.2" rgba="0.949020 0.925490 0.933333 1.000000" />
+    <material name="244,244,244" specular="0.9568629999999999" shininess="1.0" rgba="0.956863 0.956863 0.956863 1.000000" />
+    <material name="25,25,25" specular="1.0" shininess="0.8" rgba="0.100000 0.100000 0.100000 1.000000" />
+    <material name="254,254,255_LINK_6" specular="1.0" shininess="0.2" rgba="0.996078 0.996078 1.000000 1.000000" />
+    <material name="254,254,255" specular="0.9973853333333333" shininess="1.0" rgba="0.996078 0.996078 1.000000 1.000000" />
+    <material name="65,55,50" specular="1.0" shininess="0.2" rgba="0.254902 0.215686 0.196078 1.000000" />
+    <material name="65,65,65" specular="0.254902" shininess="1.0" rgba="0.254902 0.254902 0.254902 1.000000"/>
+    <material name="69,69,69_1" specular="0.0" shininess="1.0" rgba="0.270588 0.270588 0.270588 1.000000" />
+    <material name="69,69,69" specular="1.0" shininess="1.0" rgba="0.270588 0.270588 0.270588 1.000000" />
+    <material name="70,70,70_FINGER" specular="0.27451" shininess="1.0" rgba="0.274510 0.274510 0.274510 1.000000" />
+    <material name="70,70,70" specular="1.0" shininess="0.2" rgba="0.274510 0.274510 0.274510 1.000000" />
+    <material name="79,79,79" specular="1.0" shininess="0.2" rgba="0.309804 0.309804 0.309804 1.000000" />
+    <material name="80,80,80" specular="0.0" shininess="0.5" rgba="0.313725 0.313725 0.313725 1.000000" />
+    <material name="235,235,235" specular="1.0" shininess="0.2" rgba="0.921569 0.921569 0.921569 1.000000"/>
+  
+    <!-- mesh -->
+    <mesh name="base_0" file="base_0.obj" />
+    <mesh name="base_1" file="base_1.obj" />
+    <mesh name="base_2" file="base_2.obj" />
+    <mesh name="base_3" file="base_3.obj" />
+    <mesh name="EE_BODY" file="EE_BODY.obj" />
+    <mesh name="EE_FINGER_0" file="EE_FINGER_0.obj" />
+    <mesh name="EE_FINGER_1" file="EE_FINGER_1.obj" />
+    <mesh name="FT_SENSOR_L_0" file="FT_SENSOR_L_0.obj" />
+    <mesh name="FT_SENSOR_L_1" file="FT_SENSOR_L_1.obj" />
+    <mesh name="FT_SENSOR_L_2" file="FT_SENSOR_L_2.obj" />
+    <mesh name="FT_SENSOR_L_3" file="FT_SENSOR_L_3.obj" />
+    <mesh name="FT_SENSOR_L_4" file="FT_SENSOR_L_4.obj" />
+    <mesh name="FT_SENSOR_L_5" file="FT_SENSOR_L_5.obj" />
+    <mesh name="FT_SENSOR_L_6" file="FT_SENSOR_L_6.obj" />
+    <mesh name="FT_SENSOR_L_7" file="FT_SENSOR_L_7.obj" />
+    <mesh name="FT_SENSOR_L_8" file="FT_SENSOR_L_8.obj" />
+    <mesh name="FT_SENSOR_L_9" file="FT_SENSOR_L_9.obj" />
+    <mesh name="FT_SENSOR_L_10" file="FT_SENSOR_L_10.obj" />
+    <mesh name="FT_SENSOR_R_0" file="FT_SENSOR_R_0.obj" />
+    <mesh name="FT_SENSOR_R_1" file="FT_SENSOR_R_1.obj" />
+    <mesh name="FT_SENSOR_R_2" file="FT_SENSOR_R_2.obj" />
+    <mesh name="FT_SENSOR_R_3" file="FT_SENSOR_R_3.obj" />
+    <mesh name="FT_SENSOR_R_4" file="FT_SENSOR_R_4.obj" />
+    <mesh name="FT_SENSOR_R_5" file="FT_SENSOR_R_5.obj" />
+    <mesh name="FT_SENSOR_R_6" file="FT_SENSOR_R_6.obj" />
+    <mesh name="FT_SENSOR_R_7" file="FT_SENSOR_R_7.obj" />
+    <mesh name="FT_SENSOR_R_8" file="FT_SENSOR_R_8.obj" />
+    <mesh name="FT_SENSOR_R_9" file="FT_SENSOR_R_9.obj" />
+    <mesh name="FT_SENSOR_R_10" file="FT_SENSOR_R_10.obj" />
+    <mesh name="LINK_1" file="LINK_1.obj" />
+    <mesh name="LINK_2_0" file="LINK_2_0.obj" />
+    <mesh name="LINK_2_1" file="LINK_2_1.obj" />
+    <mesh name="LINK_3_0" file="LINK_3_0.obj" />
+    <mesh name="LINK_3_1" file="LINK_3_1.obj" />
+    <mesh name="LINK_4" file="LINK_4.obj" />
+    <mesh name="LINK_5" file="LINK_5.obj" />
+    <mesh name="LINK_6_0" file="LINK_6_0.obj" />
+    <mesh name="LINK_6_1" file="LINK_6_1.obj" />
+    <mesh name="LINK_6_2" file="LINK_6_2.obj" />
+    <mesh name="LINK_6_3" file="LINK_6_3.obj" />
+    <mesh name="LINK_6_4" file="LINK_6_4.obj" />
+    <mesh name="LINK_6_5" file="LINK_6_5.obj" />
+    <mesh name="LINK_7" file="LINK_7.obj" />
+    <mesh name="LINK_8" file="LINK_8.obj" />
+    <mesh name="LINK_9_0" file="LINK_9_0.obj" />
+    <mesh name="LINK_9_1" file="LINK_9_1.obj" />
+    <mesh name="LINK_10_0" file="LINK_10_0.obj" />
+    <mesh name="LINK_10_1" file="LINK_10_1.obj" />
+    <mesh name="LINK_11" file="LINK_11.obj" />
+    <mesh name="LINK_12_0" file="LINK_12_0.obj" />
+    <mesh name="LINK_12_1" file="LINK_12_1.obj" />
+    <mesh name="LINK_13" file="LINK_13.obj" />
+    <mesh name="LINK_14" file="LINK_14.obj" />
+    <mesh name="LINK_15" file="LINK_15.obj" />
+    <mesh name="LINK_16_0" file="LINK_16_0.obj" />
+    <mesh name="LINK_16_1" file="LINK_16_1.obj" />    
+    <mesh name="LINK_17_0" file="LINK_17_0.obj" />
+    <mesh name="LINK_17_1" file="LINK_17_1.obj" />
+    <mesh name="LINK_18" file="LINK_18.obj" />
+    <mesh name="LINK_19_0" file="LINK_19_0.obj" />
+    <mesh name="LINK_19_1" file="LINK_19_1.obj" />
+    <mesh name="LINK_20" file="LINK_20.obj" />
+    <mesh name="PAN_TILT_1_0" file="PAN_TILT_1_0.obj" />
+    <mesh name="PAN_TILT_1_1" file="PAN_TILT_1_1.obj" />
+    <mesh name="PAN_TILT_1_2" file="PAN_TILT_1_2.obj" />
+    <mesh name="PAN_TILT_2_0" file="PAN_TILT_2_0.obj" />
+    <mesh name="PAN_TILT_2_1" file="PAN_TILT_2_1.obj" />
+    <mesh name="PAN_TILT_2_2" file="PAN_TILT_2_2.obj" />
+    <mesh name="PAN_TILT_3_0" file="PAN_TILT_3_0.obj" />
+    <mesh name="PAN_TILT_3_1" file="PAN_TILT_3_1.obj" />
+    <mesh name="WHEEL" file="WHEEL.obj" />
+  </asset>
+
+  <worldbody>
+    <body name="base">
+      <inertial pos="-0.0615794 -0.00142271 0.135139" quat="0.00383057 0.733861 -0.00742942 0.679248" mass="60.0804" diaginertia="3.77525 2.99424 1.36264" />
+      <joint name="world_j" type="free" limited="false" actuatorfrclimited="false" />
+        <geom mesh="base_0" material="191,191,191" class="visual"/>
+        <geom mesh="base_1" material="237,255,168" class="visual"/>
+        <geom mesh="base_2" material="190,188,186" class="visual"/>
+        <geom mesh="base_3" material="25,25,25" class="visual"/>
+        <geom mesh="base_0" class="collision"/>
+        <geom mesh="base_1" class="collision"/>
+        <geom mesh="base_2" class="collision"/>
+        <geom mesh="base_3" class="collision"/>
+
+      <body name="wheel_r" pos="0.228 -0.265 0.1">
+        <inertial pos="0 -0.00073938 0" quat="0.707107 0 0 0.707107" mass="1.37784" diaginertia="0.00811815 0.00426657 0.00426657" />
+        <joint name="right_wheel" pos="0 0 0" axis="0 -1 0" limited="false" />
+        <geom material="235,235,235" mesh="WHEEL" class="visual"/>
+        <geom mesh="WHEEL" class="collision"/>
+      </body>
+      
+      <body name="wheel_l" pos="0.228 0.265 0.1">
+        <inertial pos="0 0.00073938 0" quat="0.707107 0 0 0.707107" mass="1.37784" diaginertia="0.00811815 0.00426657 0.00426657" />
+        <joint name="left_wheel" pos="0 0 0" axis="0 -1 0" limited="false" />
+        <geom material="235,235,235" mesh="WHEEL" class="visual"/>
+        <geom mesh="WHEEL" class="collision"/>
+      </body>
+
+      <body name="link_torso_0" pos="0 0 0.2805">
+        <inertial pos="-0.0884841 0.00021367 4.6e-07" quat="0.443798 0.550483 -0.443815 0.55049" mass="2.24282" diaginertia="0.0189253 0.0143368 0.00985172" />
+        <joint name="torso_0" pos="0 0 0" axis="1 0 0" limited="true" range="-0.349066 0.349066" />
+        <geom material="254,254,255" mesh="LINK_1" class="visual" />
+        <geom mesh="LINK_1" class="collision" />
+        <geom size="0.105 0.115" pos="-0.115 0 0" quat="0.707105 0 0.707108 0" class="in-model-collision" />
+        
+        <body name="link_torso_1">
+          <inertial pos="0.00728955 -0.0172852 0.0691138" quat="0.997768 -0.0453891 0.0382115 -0.0306483" mass="9.72163" diaginertia="0.149421 0.139376 0.0275059" />
+          <joint name="torso_1" pos="0 0 0" axis="0 1 0" limited="true" range="-1.0472 1.52173" />
+          <geom mesh="LINK_2_0" material="0,0,0" class="visual"/>
+          <geom mesh="LINK_2_1" material="254,254,255" class="visual"/>
+          <geom mesh="LINK_2_0" class="collision"/>
+          <geom mesh="LINK_2_1" class="collision"/>
+          <geom size="0.115 0.11" pos="0.01 0 0.24" class="in-model-collision" />
+          
+          <body name="link_torso_2" pos="0 0 0.35">
+            <inertial pos="0.00653835 -0.0176954 0.0563658" quat="0.99687 -0.052526 0.0433482 -0.0401474" mass="9.21692" diaginertia="0.12242 0.116748 0.0292915" />
+            <joint name="torso_2" pos="0 0 0" axis="0 1 0" limited="true" range="-2.47837 1.5708" />
+            <geom mesh="LINK_3_0" material="10,10,10" class="visual" />
+            <geom mesh="LINK_3_1" material="254,254,255" class="visual" />
+            <geom mesh="LINK_3_0" class="collision" />
+            <geom mesh="LINK_3_1" class="collision" />
+            <geom size="0.095 0.08" pos="0.025 0 0.23" class="in-model-collision" />
+
+            <body name="link_torso_3" pos="0 0 0.35">
+              <inertial pos="-0.00574156 -0.0172598 5.61e-05" quat="0.0913806 0.682262 -0.18841 0.700478" mass="4.18679" diaginertia="0.00955618 0.00946572 0.00832635" />
+              <joint name="torso_3" pos="0 0 0" axis="0 1 0" limited="true" range="-0.785398 1.5708" />
+              <geom mesh="LINK_4" material="10,10,10"  class="visual" />
+              <geom mesh="LINK_4" class="collision" />
+
+              <body name="link_torso_4">
+                <inertial pos="-0.0909709 5.085e-05 0.0260195" quat="-0.0536434 0.4399 -0.0270045 0.896036" mass="4.45566" diaginertia="0.0255574 0.0255082 0.00942882" />
+                <joint name="torso_4" pos="0 0 0" axis="1 0 0" limited="true" range="-0.523599 0.523599" />
+                <geom material="10,10,10" mesh="LINK_5" class="visual" />
+                <geom mesh="LINK_5" class="collision" />
+                <geom size="0.105 0.1" pos="-0.07 0 0.0385" quat="0.707105 0 0.707108 0" class="in-model-collision" />
+
+                <body name="link_torso_5" pos="0 0 0.309427">
+                  <inertial pos="-0.0132199 0.000254676 -0.0318761" quat="0.998675 -0.00438307 -0.0510462 0.00477378" mass="12.6659" diaginertia="0.21618 0.167212 0.132309" />
+                  <joint name="torso_5" pos="0 0 0" axis="0 0 1" limited="true" range="-1.5708 1.5708" />
+                  <geom mesh="LINK_6_0" material="254,254,255_LINK_6" class="visual"/>
+                  <geom mesh="LINK_6_1" material="191,191,191" class="visual"/>
+                  <geom mesh="LINK_6_2" material="70,70,70" class="visual"/>
+                  <geom mesh="LINK_6_3" material="178,0,0" class="visual"/>
+                  <geom mesh="LINK_6_4" material="10,10,10_LINK_6" class="visual"/>
+                  <geom mesh="LINK_6_5" material="254,254,255_LINK_6" class="visual"/>
+                  <geom mesh="LINK_6_0" class="collision"/>
+                  <geom mesh="LINK_6_1" class="collision"/>
+                  <geom mesh="LINK_6_2" class="collision"/>
+                  <geom mesh="LINK_6_3" class="collision"/>
+                  <geom mesh="LINK_6_4" class="collision"/>
+                  <geom mesh="LINK_6_5" class="collision"/>                  
+                  <geom size="0.155 0.0675" pos="0 0 0.0075" class="in-model-collision" />
+
+                  <geom mesh="PAN_TILT_1_0" material="244,244,244" class="visual" />
+                  <geom mesh="PAN_TILT_1_1" material="69,69,69" class="visual" />
+                  <geom mesh="PAN_TILT_1_2" material="191,191,191" class="visual" />
+                  <geom mesh="PAN_TILT_1_0" class="collision" />
+                  <geom mesh="PAN_TILT_1_1" class="collision" />
+                  <geom mesh="PAN_TILT_1_2" class="collision" />
+                  <body name="link_right_arm_0" pos="0 -0.22 0.0800735" quat="0.984808 -0.173648 0 0">
+                    <inertial pos="-0.00316662 0.0343718 -3e-07" quat="0.536676 0.553304 0.439546 0.461122" mass="1.26164" diaginertia="0.00433912 0.00432154 0.00223129" />
+                    <joint name="right_arm_0" pos="0 0 0" axis="0 1 0" limited="true" range="-2.35619 2.35619" />
+                    <geom material="10,10,10" mesh="LINK_7" class="visual" />
+                    <geom mesh="LINK_7" class="collision" />
+                    <geom size="0.075 0.035" pos="-0.015 0.018 -0.008" quat="0.707105 0 0.707108 0" class="in-model-collision" />
+
+                    <body name="link_right_arm_1" quat="0.984808 0.173648 0 0">
+                      <inertial pos="-0.00307855 -0.00124741 -0.0129432" quat="0.691024 -0.061096 -0.016345 0.72006" mass="2.27287" diaginertia="0.00447747 0.0038967 0.00286448" />
+                      <joint name="right_arm_1" pos="0 0 0" axis="1 0 0" limited="true" range="-3.14159 0.05" />
+                      <geom material="10,10,10" mesh="LINK_8" class="visual"/>
+                      <geom mesh="LINK_8" class="collision"/>
+                      <geom size="0.05 0.1" pos="0 0 -0.1" class="in-model-collision" />
+
+                      <body name="link_right_arm_2">
+                        <inertial pos="0.00115434 -0.00196635 -0.161925" quat="0.998316 -0.0390505 -0.0388849 0.0181103" mass="2.46909" diaginertia="0.0098447 0.00928024 0.00322202" />
+                        <joint name="right_arm_2" pos="0 0 0" axis="0 0 1" limited="true" range="-2.0944 2.0944" />
+                        <geom mesh="LINK_9_0" material="254,254,255" class="visual"/>
+                        <geom mesh="LINK_9_1" material="10,10,10" class="visual"/>
+                        <geom mesh="LINK_9_0" class="collision"/>
+                        <geom mesh="LINK_9_1" class="collision"/>
+                        <geom size="0.05 0.04" pos="0.026 0 -0.276" quat="0.707105 0.707108 0 0" class="in-model-collision" />
+                        
+                        <body name="link_right_arm_3" pos="0.031 0 -0.276">
+                          <inertial pos="-0.0160313 -0.00692891 -0.0454981" quat="0.950945 0.0932571 0.100342 0.277377" mass="2.26099" diaginertia="0.0086724 0.00849326 0.00187523" />
+                          <joint name="right_arm_3" pos="0 0 0" axis="0 1 0" limited="true" range="-2.61799 0.01" />
+                          <geom mesh="LINK_10_0" material="254,254,255" class="visual" />
+                          <geom mesh="LINK_10_1" material="10,10,10" class="visual" />
+                          <geom mesh="LINK_10_0" class="collision" />
+                          <geom mesh="LINK_10_1" class="collision" />
+                          <geom size="0.04 0.0575" pos="-0.031 0 -0.1075" class="in-model-collision" />
+                          
+                          <body name="link_right_arm_4" pos="-0.031 0 -0.256">
+                            <inertial pos="-1.1e-07 -0.0269604 0.0618211" quat="0.686909 -0.167796 0.167796 0.686909" mass="0.425087" diaginertia="0.000885625 0.00082466 0.000266295" />
+                            <joint name="right_arm_4" pos="0 0 0" axis="0 0 1" limited="true" range="-6.28319 6.28319" />
+                            <geom material="254,254,255" mesh="LINK_11" class="visual" />
+                            <geom mesh="LINK_11" class="collision" />
+                            <geom size="0.035 0.0475" pos="0 -0.038 0.0175" class="in-model-collision" />
+                            
+                            <body name="link_right_arm_5">
+                              <inertial pos="0.00318034 -0.00532264 -0.0280966" quat="0.559407 0.0608226 -0.0803636 0.822743" mass="1.59194" diaginertia="0.00262685 0.00255036 0.00151658" />
+                              <joint name="right_arm_5" pos="0 0 0" axis="0 1 0" limited="true" range="-1.74533 2.00713" />
+                              <geom mesh="LINK_12_0" material="10,10,10" class="visual"/>
+                              <geom mesh="LINK_12_1" material="254,254,255" class="visual"/>
+                              <geom mesh="LINK_12_0" class="collision"/>
+                              <geom mesh="LINK_12_1" class="collision"/>
+                              <geom size="0.075 0.026" pos="0 0 -0.024" class="in-model-collision" />
+                              
+                              <body name="link_right_arm_6">
+                                <inertial pos="0.00101419 0.000398553 -0.149904" quat="0.730015 -0.0098152 -0.00428736 0.683347" mass="1.16921" diaginertia="0.00296506 0.00265919 0.00114611" />
+                                <joint name="right_arm_6" pos="0 0 0" axis="0 0 1" limited="true" range="-2.96706 2.96706" />
+                                <geom material="69,69,69" mesh="LINK_13" class="visual" />
+                                <geom mesh="LINK_13" class="visual" />
+                                <geom mesh="LINK_13" class="collision" />
+                                
+                                <body name="FT_SENSOR_R" pos="0 0 -0.1087">
+                                  <inertial pos="0 0 0" mass="0" />
+                                  <geom mesh="FT_SENSOR_R_0" material="254,254,255" class="visual" />
+                                  <geom mesh="FT_SENSOR_R_1" material="65,55,50" class="visual" />
+                                  <geom mesh="FT_SENSOR_R_2" material="80,80,80" class="visual" />
+                                  <geom mesh="FT_SENSOR_R_3" material="244,244,244" class="visual" />
+                                  <geom mesh="FT_SENSOR_R_4" material="191,191,191" class="visual" />
+                                  <geom mesh="FT_SENSOR_R_5" material="216,214,214" class="visual" />
+                                  <geom mesh="FT_SENSOR_R_6" material="79,79,79" class="visual" />
+                                  <geom mesh="FT_SENSOR_R_7" material="192,192,192" class="visual" />
+                                  <geom mesh="FT_SENSOR_R_8" material="163,163,175" class="visual" />
+                                  <geom mesh="FT_SENSOR_R_9" material="242,236,238" class="visual" />
+                                  <geom mesh="FT_SENSOR_R_10" material="69,69,69" class="visual" />
+                                  <geom mesh="FT_SENSOR_R_0" class="collision" />
+                                  <geom mesh="FT_SENSOR_R_1" class="collision" />
+                                  <geom mesh="FT_SENSOR_R_2" class="collision" />
+                                  <geom mesh="FT_SENSOR_R_3" class="collision" />
+                                  <geom mesh="FT_SENSOR_R_4" class="collision" />
+                                  <geom mesh="FT_SENSOR_R_5" class="collision" />
+                                  <geom mesh="FT_SENSOR_R_6" class="collision" />
+                                  <geom mesh="FT_SENSOR_R_7" class="collision" />
+                                  <geom mesh="FT_SENSOR_R_8" class="collision" />
+                                  <geom mesh="FT_SENSOR_R_9" class="collision" />
+                                  <geom mesh="FT_SENSOR_R_10" class="collision" />
+                                </body>
+                                <body name="EE_BODY_R" pos="0 0 -0.1548">
+                                  <inertial pos="0 0 0" mass="0" />
+                                    <geom material="70,70,70" mesh="EE_BODY" class="visual"/>
+                                    <geom mesh="EE_BODY" class="collision"/>
+                                </body>
+                                <body name="ee_finger_r1" pos="0.003 0 -0.2278">
+                                  <inertial pos="0.00278346 -3.29e-06 -0.0257011" quat="0.999784 0 0.0208044 0" mass="0.03327" diaginertia="1.23275e-05 1.066e-05 2.22251e-06" />
+                                  <joint name="gripper_finger_r1" pos="0 0 0" axis="-1 0 0" type="slide" limited="true" range="-0.05 0" />
+                                  <geom mesh="EE_FINGER_0" material="191,191,191" class="visual"/>
+                                  <geom mesh="EE_FINGER_1" material="70,70,70_FINGER" class="visual"/>
+                                  <geom mesh="EE_FINGER_0" class="collision"/>
+                                  <geom mesh="EE_FINGER_1" class="collision"/>
+                                </body>
+                                <body name="ee_finger_r2" pos="-0.003 0 -0.2278" quat="4.48966e-11 0 0 1">
+                                  <inertial pos="0.00278346 -3.29e-06 -0.0257011" quat="0.999784 0 0.0208044 0" mass="0.03327" diaginertia="1.23275e-05 1.066e-05 2.22251e-06" />
+                                  <joint name="gripper_finger_r2" pos="0 0 0" axis="1 0 0" type="slide" limited="true" range="0 0.05" />
+                                  <geom mesh="EE_FINGER_0" material="191,191,191" class="visual"/>
+                                  <geom mesh="EE_FINGER_1" material="70,70,70_FINGER" class="visual"/>
+                                  <geom mesh="EE_FINGER_0" class="collision"/>
+                                  <geom mesh="EE_FINGER_1" class="collision"/>
+                                </body>
+                              </body>
+                            </body>
+                          </body>
+                        </body>
+                      </body>
+                    </body>
+                  </body>
+                  <body name="link_left_arm_0" pos="0 0.22 0.0800735" quat="0.984808 0.173648 0 0">
+                    <inertial pos="-0.00316662 -0.0343715 2.42e-06" quat="0.441442 0.459281 0.538276 0.551768" mass="1.26164" diaginertia="0.0043391 0.00432158 0.00223133" />
+                    <joint name="left_arm_0" pos="0 0 0" axis="0 1 0" limited="true" range="-2.35619 2.35619" />
+                    <geom material="10,10,10" mesh="LINK_14" class="visual"/>
+                    <geom mesh="LINK_14" class="collision"/>
+                    <geom size="0.075 0.035" pos="-0.015 -0.018 -0.008" quat="0.707105 0 0.707108 0" class="in-model-collision" />
+                    
+                    <body name="link_left_arm_1" quat="0.984808 -0.173648 0 0">
+                      <inertial pos="-0.0018347 0.00040596 -0.0100873" quat="0.701113 -0.0246572 -0.049881 0.710875" mass="1.88139" diaginertia="0.00355382 0.00296561 0.0022966" />
+                      <joint name="left_arm_1" pos="0 0 0" axis="1 0 0" limited="true" range="-0.05 3.14159" />
+                      <geom material="10,10,10" mesh="LINK_15" class="visual" />
+                      <geom mesh="LINK_15" class="collision" />
+                      <geom size="0.05 0.1" pos="0 0 -0.1" class="in-model-collision" />
+                      
+                      <body name="link_left_arm_2">
+                        <inertial pos="0.00066086 -0.00038583 -0.15743" quat="0.999413 -0.00635373 -0.0335732 -0.00246859" mass="2.35634" diaginertia="0.00845197 0.00802394 0.00293109" />
+                        <joint name="left_arm_2" pos="0 0 0" axis="0 0 1" limited="true" range="-2.0944 2.0944" />
+                        <geom mesh="LINK_16_0" material="254,254,255" class="visual" />
+                        <geom mesh="LINK_16_1" material="10,10,10" class="visual" />
+                        <geom mesh="LINK_16_0" class="collision" />
+                        <geom mesh="LINK_16_1" class="collision" />
+                        <geom size="0.05 0.04" pos="0.026 0 -0.276" quat="0.707105 0.707108 0 0" class="in-model-collision" />
+                        
+                        <body name="link_left_arm_3" pos="0.031 0 -0.276">
+                          <inertial pos="-0.015653 0.00793126 -0.0499794" quat="0.977098 -0.0897025 0.113811 -0.15582" mass="2.00906" diaginertia="0.00798526 0.00783637 0.00146823" />
+                          <joint name="left_arm_3" pos="0 0 0" axis="0 1 0" limited="true" range="-2.61799 0.01" />
+                          <geom mesh="LINK_17_0" material="254,254,255" class="visual" />
+                          <geom mesh="LINK_17_1" material="10,10,10" class="visual" />
+                          <geom mesh="LINK_17_0" class="collision" />
+                          <geom mesh="LINK_17_1" class="collision" />
+                          <geom size="0.04 0.0575" pos="-0.031 0 -0.1075" class="in-model-collision" />
+                          
+                          <body name="link_left_arm_4" pos="-0.031 0 -0.256">
+                            <inertial pos="1.1e-07 0.0269604 0.0618211" quat="0.686909 0.167796 -0.167796 0.686909" mass="0.425087" diaginertia="0.000885625 0.00082466 0.000266295" />
+                            <joint name="left_arm_4" pos="0 0 0" axis="0 0 1" limited="true" range="-6.28319 6.28319" />
+                            <geom material="254,254,255" mesh="LINK_18" class="visual" />
+                            <geom mesh="LINK_18" class="collision" />
+                            <geom size="0.035 0.0475" pos="0 0.038 0.0175" class="in-model-collision" />
+                            
+                            <body name="link_left_arm_5">
+                              <inertial pos="0.00340082 0.00576824 -0.0250731" quat="0.874666 -0.0845974 0.0492323 0.474742" mass="1.44265" diaginertia="0.00238544 0.00231489 0.00134498" />
+                              <joint name="left_arm_5" pos="0 0 0" axis="0 1 0" limited="true" range="-1.74533 2.00713" />
+                              <geom mesh="LINK_19_0" material="10,10,10" class="visual" />
+                              <geom mesh="LINK_19_1" material="254,254,255" class="visual" />
+                              <geom mesh="LINK_19_0" class="collision" />
+                              <geom mesh="LINK_19_1" class="collision" />
+                              <geom size="0.075 0.026" pos="0 0 -0.024" class="in-model-collision" />
+                              
+                              <body name="link_left_arm_6">
+                                <inertial pos="-0.00092669 0.000508285 -0.149904" quat="0.72966 0.00249295 0.012223 0.683697" mass="1.16921" diaginertia="0.00296541 0.00265922 0.00114589" />
+                                <joint name="left_arm_6" pos="0 0 0" axis="0 0 1" limited="true" range="-2.96706 2.96706" />
+                                <geom material="69,69,69" mesh="LINK_20" class="visual" />
+                                <geom mesh="LINK_20" class="collision" />
+                                
+                                <body name="FT_SENSOR_L" pos="0 0 -0.1087">
+                                  <inertial pos="0 0 0" mass="0"/>
+                                  <geom mesh="FT_SENSOR_L_0" material="254,254,255" class="visual"/>
+                                  <geom mesh="FT_SENSOR_L_1" material="65,55,50" class="visual"/>
+                                  <geom mesh="FT_SENSOR_L_2" material="80,80,80" class="visual"/>
+                                  <geom mesh="FT_SENSOR_L_3" material="244,244,244" class="visual"/>
+                                  <geom mesh="FT_SENSOR_L_4" material="191,191,191" class="visual"/>
+                                  <geom mesh="FT_SENSOR_L_5" material="216,214,214" class="visual"/>
+                                  <geom mesh="FT_SENSOR_L_6" material="79,79,79" class="visual"/>
+                                  <geom mesh="FT_SENSOR_L_7" material="192,192,192" class="visual"/>
+                                  <geom mesh="FT_SENSOR_L_8" material="163,163,175" class="visual"/>
+                                  <geom mesh="FT_SENSOR_L_9" material="242,236,238" class="visual"/>
+                                  <geom mesh="FT_SENSOR_L_10" material="69,69,69" class="visual"/>
+                                  <geom mesh="FT_SENSOR_L_0" class="collision"/>
+                                  <geom mesh="FT_SENSOR_L_1" class="collision"/>
+                                  <geom mesh="FT_SENSOR_L_2" class="collision"/>
+                                  <geom mesh="FT_SENSOR_L_3" class="collision"/>
+                                  <geom mesh="FT_SENSOR_L_4" class="collision"/>
+                                  <geom mesh="FT_SENSOR_L_5" class="collision"/>
+                                  <geom mesh="FT_SENSOR_L_6" class="collision"/>
+                                  <geom mesh="FT_SENSOR_L_7" class="collision"/>
+                                  <geom mesh="FT_SENSOR_L_8" class="collision"/>
+                                  <geom mesh="FT_SENSOR_L_9" class="collision"/>
+                                  <geom mesh="FT_SENSOR_L_10" class="collision"/>
+                                </body>
+                                <body name="EE_BODY_L" pos="0 0 -0.1548">
+                                  <inertial pos="0 0 0" mass="0" />
+                                  <geom material="70,70,70" mesh="EE_BODY" class="visual"/>
+                                  <geom mesh="EE_BODY" class="collision"/>
+                                </body>
+                                <body name="ee_finger_l1" pos="-0.003 0 -0.2278" quat="4.48966e-11 0 0 1">
+                                  <inertial pos="0.00278346 -3.29e-06 -0.0257011" quat="0.999784 0 0.0208044 0" mass="0.03327" diaginertia="1.23275e-05 1.066e-05 2.22251e-06" />
+                                  <joint name="gripper_finger_l1" pos="0 0 0" axis="-1 0 0" type="slide" limited="true" range="-0.05 0" />
+                                  <geom mesh="EE_FINGER_0" material="191,191,191" class="visual"/>
+                                  <geom mesh="EE_FINGER_1" material="70,70,70_FINGER" class="visual"/>
+                                  <geom mesh="EE_FINGER_0" class="collision"/>
+                                  <geom mesh="EE_FINGER_1" class="collision"/>
+                                </body>
+                                <body name="ee_finger_l2" pos="0.003 0 -0.2278" quat="-1 0 0 8.97932e-11">
+                                  <inertial pos="0.00278346 -3.29e-06 -0.0257011" quat="0.999784 0 0.0208044 0" mass="0.03327" diaginertia="1.23275e-05 1.066e-05 2.22251e-06" />
+                                  <joint name="gripper_finger_l2" pos="0 0 0" axis="1 0 0" type="slide" limited="true" range="0 0.05" />
+                                  <geom mesh="EE_FINGER_0" material="191,191,191" class="visual"/>
+                                  <geom mesh="EE_FINGER_1" material="70,70,70_FINGER" class="visual"/>
+                                  <geom mesh="EE_FINGER_0" class="collision"/>
+                                  <geom mesh="EE_FINGER_1" class="collision"/>
+                                </body>
+                              </body>
+                            </body>
+                          </body>
+                        </body>
+                      </body>
+                    </body>
+                  </body>
+                  <body name="link_head_1" pos="0.022 0 0.140073">
+                    <inertial pos="-0.0115068 -0.0011427 -0.00031579" quat="0.354317 0.578329 0.650884 0.341093" mass="0.0745058" diaginertia="2.45449e-05 2.18237e-05 1.72614e-05" />
+                    <joint name="head_0" pos="0 0 0" axis="0 0 1" limited="true" range="-0.523 0.523" />
+                    <geom mesh="PAN_TILT_2_0" material="69,69,69_1" class="visual" />
+                    <geom mesh="PAN_TILT_2_1" material="191,191,191" class="visual" />
+                    <geom mesh="PAN_TILT_2_2" material="69,69,69" class="visual" />
+                    <geom mesh="PAN_TILT_2_0" class="collision" />
+                    <geom mesh="PAN_TILT_2_1" class="collision" />
+                    <geom mesh="PAN_TILT_2_2" class="collision" />
+                    <body name="link_head_2">
+                      <inertial pos="-0.00081966 0.00099024 0.022837" quat="0.797736 0.60274 0.0137914 -0.0114992" mass="0.0358537" diaginertia="2.04697e-05 1.31161e-05 1.02242e-05" />
+                      <joint name="head_1" pos="0 0 0" axis="0 1 0" limited="true" range="-0.35 1.57" />
+                      <geom mesh="PAN_TILT_3_0" material="65,65,65" class="visual" />
+                      <geom mesh="PAN_TILT_3_1" material="69,69,69" class="visual" />
+                      <geom mesh="PAN_TILT_3_1" class="collision" />
+                      <geom mesh="PAN_TILT_3_1" class="collision" />
+                    </body>
+                  </body>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+
+ <actuator>
+    <velocity name="left_wheel_act" joint="left_wheel" ctrlrange="-3.14 3.14" />
+    <velocity name="right_wheel_act" joint="right_wheel" ctrlrange="-3.14 3.14" />
+
+    <position name="link1_act" joint="torso_0" ctrlrange="-0.261799388 0.261799388" forcelimited="true" forcerange="-270 270"/>
+    <position name="link2_act" joint="torso_1" ctrlrange="-0.523598776 1.570796327" forcelimited="true" forcerange="-270 270"/>
+    <position name="link3_act" joint="torso_2" ctrlrange="-2.617993878 1.570796327" forcelimited="true" forcerange="-270 270"/>
+    <position name="link4_act" joint="torso_3" ctrlrange="-0.785398163 1.570796327" forcelimited="true" forcerange="-120 120"/>
+    <position name="link5_act" joint="torso_4" ctrlrange="-0.523598776 0.523598776" forcelimited="true" forcerange="-120 120"/>
+    <position name="link6_act" joint="torso_5" ctrlrange="-2.35619449 2.35619449" forcelimited="true" forcerange="-120 120"/>
+
+    <position name="right_arm_1_act" joint="right_arm_0" ctrlrange="-3.141592654 3.141592654" forcelimited="true" forcerange="-70 70"/>
+    <position name="right_arm_2_act" joint="right_arm_1" ctrlrange="-3.141592654 0.017453293" forcelimited="true" forcerange="-70 70"/>
+    <position name="right_arm_3_act" joint="right_arm_2" ctrlrange="-3.141592654 3.141592654" forcelimited="true" forcerange="-70 70"/>
+    <position name="right_arm_4_act" joint="right_arm_3" ctrlrange="-2.617993878 0.017453293" forcelimited="true" forcerange="-40 40"/>
+    <position name="right_arm_5_act" joint="right_arm_4" ctrlrange="-3.141592654 3.141592654" forcelimited="true" forcerange="-10 10"/>
+    <position name="right_arm_6_act" joint="right_arm_5" ctrlrange="-1.570796327 1.919862177" forcelimited="true" forcerange="-10 10"/>
+    <position name="right_arm_7_act" joint="right_arm_6" ctrlrange="-2.792526803 2.792526803" forcelimited="true" forcerange="-8 8"/>
+
+    <position name="left_arm_1_act" joint="left_arm_0" ctrlrange="-3.141592654 3.141592654" forcelimited="true" forcerange="-70 70"/>
+    <position name="left_arm_2_act" joint="left_arm_1" ctrlrange="-0.017453293 3.141592654" forcelimited="true" forcerange="-70 70"/>
+    <position name="left_arm_3_act" joint="left_arm_2" ctrlrange="-3.141592654 3.141592654" forcelimited="true" forcerange="-70 70"/>
+    <position name="left_arm_4_act" joint="left_arm_3" ctrlrange="-2.617993878 0.017453293" forcelimited="true" forcerange="-40 40"/>
+    <position name="left_arm_5_act" joint="left_arm_4" ctrlrange="-3.141592654 3.141592654" forcelimited="true" forcerange="-10 10"/>
+    <position name="left_arm_6_act" joint="left_arm_5" ctrlrange="-1.570796327 1.919862177" forcelimited="true" forcerange="-10 10"/>
+    <position name="left_arm_7_act" joint="left_arm_6" ctrlrange="-2.792526803 2.792526803" forcelimited="true" forcerange="-8 8"/>
+
+    <position name="head_0_act" joint="head_0" ctrlrange="-0.523 0.523" forcelimited="true" forcerange="-7.3 7.3"/>
+    <position name="head_1_act" joint="head_1" ctrlrange="-0.35 1.57" forcelimited="true" forcerange="-7.3 7.3"/>
+
+    <motor name="right_finger_act" joint="gripper_finger_r2" />
+    <motor name="left_finger_act" joint="gripper_finger_l1" />
+  </actuator>
+
+  <equality>
+    <joint name="right_finger" joint1="gripper_finger_r1" joint2="gripper_finger_r2" polycoef="0 -1 0 0 0" />
+    <joint name="left_finger" joint1="gripper_finger_l1" joint2="gripper_finger_l2" polycoef="0 -1 0 0 0" />
+  </equality>
+</mujoco>
