@@ -1,0 +1,84 @@
+<mujoco model="MS_Human_700_Locomotion_Model">
+  <compiler angle="radian" boundmass="0.0001" />
+
+  <size njmax="1000" nconmax="400" nkey="1" nuser_jnt="1" />
+
+  <default>
+    <joint solimplimit="0.9999 0.9999" limited="true" damping="1e-2" armature="1e-2" stiffness="0" />
+    <geom margin="0.001" rgba="1 1 1 1" />
+    <site group="3" />
+    <tendon limited="false" width="0.005" rgba="0.95 0.3 0.3 1" />
+    <default class="muscle">
+      <muscle ctrllimited="true" ctrlrange="0 1" />
+    </default>
+    <default class="bone">
+      <geom contype="0" conaffinity="0" rgba="0.9 0.7 0.5 1" />
+    </default>
+    <default class="skin">
+      <geom type="capsule" group="1" rgba="0.8 0.7 0.5 0.2" />
+    </default>
+    <default class="wrap">
+      <geom contype="0" conaffinity="0" mass="0" group="3" rgba="0.5 0.5 0.9 1" />
+    </default>
+    <default class="hip">
+      <joint damping="1.0" armature="1e-2" stiffness="0" />
+    </default>
+    <default class="knee">
+      <joint damping="0.5" armature="1e-2" stiffness="0" />
+    </default>
+    <default class="ankle">
+      <joint damping="0.1" armature="1e-2" stiffness="0" />
+    </default>
+    <default class="toe">
+      <joint damping="0.05" armature="1e-4" stiffness="0" />
+    </default>
+    <default class="shoulder">
+      <joint damping="0.6" armature="1e-2" stiffness="0" />
+    </default>
+    <default class="elbow">
+      <joint damping="0.3" armature="1e-2" stiffness="0" />
+    </default>
+    <default class="wrist">
+      <joint damping="0.1" armature="1e-2" stiffness="0" />
+    </default>
+    <default class="spine">
+      <joint damping="5.0" armature="0.1" stiffness="10" />
+    </default>
+  </default>
+
+  <worldbody>
+    <body name="pelvis" pos="0 0 0.95" quat="0.707107 0.707107 0 0">
+      <inertial pos="-0.0707 0 0" mass="8.147" diaginertia="0.033 0.0606 0.0403" />
+      <joint name="pelvis_tz" pos="0 0 0" axis="0 0 1" type="slide" limited="false" range="-3 3" armature="0" damping="0" />
+      <joint name="pelvis_ty" pos="0 0 0" axis="0 1 0" type="slide" limited="false" range="-1 2" armature="0" damping="0" />
+      <joint name="pelvis_tx" pos="0 0 0" axis="1 0 0" type="slide" limited="false" range="-5 5" armature="0" damping="0" />
+      <joint name="pelvis_tilt" pos="0 0 0" axis="0 0 1" limited="false" range="-1.5708 1.5708" armature="0" damping="0" />
+      <joint name="pelvis_list" pos="0 0 0" axis="1 0 0" limited="false" range="-1.5708 1.5708" armature="0" damping="0" />
+      <joint name="pelvis_rotation" pos="0 0 0" axis="0 1 0" limited="false" range="-1.5708 1.5708" armature="0" damping="0" />
+      <geom name="r_pelvis" class="bone" type="mesh" mesh="r_pelvis" contype="1" conaffinity="1" />
+      <geom name="l_pelvis" class="bone" type="mesh" mesh="l_pelvis" contype="1" conaffinity="1" />
+      <include file="assets/body_locomotion/Body_Leg_Foot_r.xml" />
+      <include file="assets/body_locomotion/Body_Leg_Foot_l.xml" />
+      <include file="assets/body_locomotion/Body_Torso_Simple.xml" />
+    </body>
+  </worldbody>
+
+  <include file="assets/asset/Asset_Lowerbody.xml" />
+  <include file="assets/asset/Asset_Torso.xml" />
+  <include file="assets/asset/Asset_Upperbody.xml" />
+  <include file="assets/asset/Asset_Others.xml" />
+
+  <include file="assets/contact/Contact_Lowerbody.xml" />
+
+  <include file="assets/equality/Equality_Lowerbody.xml" />
+
+  <include file="assets/tendon/Tendon_Leg_r.xml" />
+  <include file="assets/tendon/Tendon_Leg_l.xml" />
+
+  <include file="assets/muscle/Muscle_Leg_r.xml" />
+  <include file="assets/muscle/Muscle_Leg_l.xml" />
+
+  <keyframe>
+    <key name="init" qpos="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -0.019 0.052 0 0 0 0 0 0 0 0 0 0 0 0 0 -0.019 0.052 0" />
+  </keyframe>
+</mujoco>

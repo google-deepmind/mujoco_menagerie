@@ -1,0 +1,18 @@
+<mujoco>
+  <equality>
+    <joint name="sternoclavicular_r2_con_r" joint1="sternoclavicular_r2_r" joint2="shoulder_elv_r" polycoef="0 -0.242001 0 0 0" solimp="0.9999 0.9999" />
+    <joint name="sternoclavicular_r3_con_r" joint1="sternoclavicular_r3_r" joint2="shoulder_elv_r" polycoef="0 0.1025 0 0 0" solimp="0.9999 0.9999" />
+    <joint name="unrotscap_r2_con_r" joint1="unrotscap_r2_r" joint2="shoulder_elv_r" polycoef="0 0.242001 0 0 0" solimp="0.9999 0.9999" />
+    <joint name="unrotscap_r3_con_r" joint1="unrotscap_r3_r" joint2="shoulder_elv_r" polycoef="0 -0.1025 0 0 0" solimp="0.9999 0.9999" />
+    <joint name="acromioclavicular_r1_con_r" joint1="acromioclavicular_r1_r" joint2="shoulder_elv_r" polycoef="0 0.178 0 0 0" solimp="0.9999 0.9999" />
+    <joint name="acromioclavicular_r2_con_r" joint1="acromioclavicular_r2_r" joint2="shoulder_elv_r" polycoef="0 -0.0490002 0 0 0" solimp="0.9999 0.9999" />
+    <joint name="acromioclavicular_r3_con_r" joint1="acromioclavicular_r3_r" joint2="shoulder_elv_r" polycoef="0 0.396002 0 0 0" solimp="0.9999 0.9999" />
+    <joint name="unrothum_r1_con_r" joint1="unrothum_r1_r" joint2="shoulder_elv_r" polycoef="0 -0.178 0 0 0" solimp="0.9999 0.9999" />
+    <joint name="unrothum_r2_con_r" joint1="unrothum_r2_r" joint2="shoulder_elv_r" polycoef="0 0.0490002 0 0 0" solimp="0.9999 0.9999" />
+    <joint name="unrothum_r3_con_r" joint1="unrothum_r3_r" joint2="shoulder_elv_r" polycoef="0 -0.396002 0 0 0" solimp="0.9999 0.9999" />
+    <joint name="shoulder1_r2_con_r" joint1="shoulder1_r2_r" joint2="elv_angle_r" polycoef="0 -1 0 0 0" solimp="0.9999 0.9999" />
+    <joint name="wrist_hand_r1_con_r" joint1="wrist_hand_r1_r" joint2="deviation_r" polycoef="0 1.35714 -0.818507 0 0" solimp="0.9999 0.9999" />
+    <joint name="wrist_hand_r3_con_r" joint1="wrist_hand_r3_r" joint2="flexion_r" polycoef="0 1 0 0 0" solimp="0.9999 0.9999" />
+    <joint name="CMC5_r_r1_r_con_r" joint1="CMC5_r1" joint2="4cmc_flexion" polycoef="0 2.72 0 0 0" solimp="0.9999 0.9999" />
+  </equality>
+</mujoco>

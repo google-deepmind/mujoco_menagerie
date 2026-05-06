@@ -55,8 +55,8 @@
   <actuator>
     <motor class="x2" name="thrust1" site="thrust1" gear="0 0 1 0 0 -.0201"/>
     <motor class="x2" name="thrust2" site="thrust2" gear="0 0 1 0 0  .0201"/>
-    <motor class="x2" name="thrust3" site="thrust3" gear="0 0 1 0 0  .0201"/>
-    <motor class="x2" name="thrust4" site="thrust4" gear="0 0 1 0 0 -.0201"/>
+    <motor class="x2" name="thrust3" site="thrust3" gear="0 0 1 0 0 -.0201"/>
+    <motor class="x2" name="thrust4" site="thrust4" gear="0 0 1 0 0  .0201"/>
   </actuator>
 
   <sensor>

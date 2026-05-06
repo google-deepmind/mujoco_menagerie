@@ -17,11 +17,16 @@ Built by the Google DeepMind team with contributions from the open-source commun
 
 - [Albert Li](https://github.com/alberthli)
 - [Alper Ahmetoglu](https://github.com/alper111)
+- [Andreas Kuhner](https://github.com/AndreasKuhner)
 - [Andrew Luo](https://github.com/Andrew-Luo1)
 - [Ayzaan Wahid](https://github.com/ayzaan)
+- [Chenhui Zuo](https://github.com/zchJo)
 - [Chintan Desai](https://github.com/hello-chintan)
+- [Chi-Tao Kuan](https://github.com/ctkuan-flexiv)
+- [Christian Rauch](https://github.com/christianrauch)
 - [Dada Tian](https://github.com/lonelyfluency)
 - [Eugene Frizza](https://github.com/eufrizz)
+- [Haochen Shi](https://github.com/hshi74)
 - [Ian Noh](https://github.com/dongridong)
 - [Jason Chen](https://github.com/chenxin199305)
 - [Jonathan Zamora](https://github.com/jonzamora)
@@ -39,6 +44,7 @@ Built by the Google DeepMind team with contributions from the open-source commun
 - [Thomas Lips](https://github.com/tlpss)
 - [Thomas Peyrucain](https://github.com/thomaspeyrucain)
 - [Varad Vaidya](https://github.com/varadVaidya)
+- [Yanan Sui](https://github.com/yanansui)
 
 ---
 

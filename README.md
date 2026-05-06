@@ -26,15 +26,17 @@ well right out of the gate.
 
 ### Gallery
 
-|<img src="assets/franka_fr3-fr3.png" width=100>|<img src="assets/kinova_gen3-gen3.png" width=100>|<img src="assets/kuka_iiwa_14-iiwa14.png" width=100>|<img src="assets/ufactory_lite6-lite6.png" width=100>|<img src="assets/franka_emika_panda-panda.png" width=100>|
+|<img src='assets/flexiv_rizon4-flexiv_rizon4.png' width=100>|<img src='assets/franka_fr3-fr3.png' width=100>|<img src='assets/kinova_gen3-gen3.png' width=100>|<img src='assets/kuka_iiwa_14-iiwa14.png' width=100>|<img src='assets/ufactory_lite6-lite6.png' width=100>|
 | :---: | :---: | :---: | :---: | :---: |
-|<img src="assets/agilex_piper-piper.png" width=100>|<img src="assets/rethink_robotics_sawyer-sawyer.png" width=100>|<img src="assets/universal_robots_ur10e-ur10e.png" width=100>|<img src="assets/universal_robots_ur5e-ur5e.png" width=100>|<img src="assets/trossen_vx300s-vx300s.png" width=100>|
-|<img src="assets/ufactory_xarm7-xarm7.png" width=100>|<img src="assets/unitree_z1-z1.png" width=100>|<img src="assets/aloha-aloha.png" width=100>|<img src="assets/robotiq_2f85-2f85.png" width=100>|<img src="assets/franka_emika_panda-hand.png" width=100>|
-|<img src="assets/ufactory_xarm7-hand.png" width=100>|<img src="assets/wonik_allegro-left_hand.png" width=100>|<img src="assets/shadow_hand-left_hand.png" width=100>|<img src="assets/leap_hand-left_hand.png" width=100>|<img src="assets/shadow_dexee-shadow_dexee.png" width=100>|
-|<img src="assets/google_robot-robot.png" width=100>|<img src="assets/unitree_a1-a1.png" width=100>|<img src="assets/anybotics_anymal_b-anymal_b.png" width=100>|<img src="assets/anybotics_anymal_c-anymal_c.png" width=100>|<img src="assets/google_barkour_v0-barkour_v0.png" width=100>|
-|<img src="assets/google_barkour_vb-barkour_vb.png" width=100>|<img src="assets/unitree_go1-go1.png" width=100>|<img src="assets/unitree_go2-go2.png" width=100>|<img src="assets/boston_dynamics_spot-spot_arm.png" width=100>|<img src="assets/agility_cassie-cassie.png" width=100>|
-|<img src="assets/unitree_g1-g1.png" width=100>|<img src="assets/unitree_h1-h1.png" width=100>|<img src="assets/robotis_op3-op3.png" width=100>|<img src="assets/booster_t1-t1.png" width=100>|<img src="assets/pal_talos-talos.png" width=100>|
-|<img src="assets/bitcraze_crazyflie_2-cf2.png" width=100>|<img src="assets/skydio_x2-x2.png" width=100>|<img src="assets/flybody-fruitfly.png" width=100>|<img src="assets/realsense_d435i-d435i.png" width=100>||
+|<img src='assets/franka_emika_panda-panda.png' width=100>|<img src='assets/agilex_piper-piper.png' width=100>|<img src='assets/rethink_robotics_sawyer-sawyer.png' width=100>|<img src='assets/universal_robots_ur10e-ur10e.png' width=100>|<img src='assets/universal_robots_ur5e-ur5e.png' width=100>|
+|<img src='assets/trossen_vx300s-vx300s.png' width=100>|<img src='assets/ufactory_xarm7-xarm7.png' width=100>|<img src='assets/unitree_z1-z1.png' width=100>|<img src='assets/aloha-aloha.png' width=100>|<img src='assets/robotiq_2f85-2f85.png' width=100>|
+|<img src='assets/franka_emika_panda-hand.png' width=100>|<img src='assets/ufactory_xarm7-hand.png' width=100>|<img src='assets/wonik_allegro-left_hand.png' width=100>|<img src='assets/shadow_hand-left_hand.png' width=100>|<img src='assets/leap_hand-left_hand.png' width=100>|
+|<img src='assets/shadow_dexee-shadow_dexee.png' width=100>|<img src='assets/google_robot-robot.png' width=100>|<img src='assets/hello_robot_stretch-stretch.png' width=100>|<img src='assets/unitree_a1-a1.png' width=100>|<img src='assets/anybotics_anymal_b-anymal_b.png' width=100>|
+|<img src='assets/anybotics_anymal_c-anymal_c.png' width=100>|<img src='assets/google_barkour_v0-barkour_v0.png' width=100>|<img src='assets/google_barkour_vb-barkour_vb.png' width=100>|<img src='assets/unitree_go1-go1.png' width=100>|<img src='assets/unitree_go2-go2.png' width=100>|
+|<img src='assets/boston_dynamics_spot-spot_arm.png' width=100>|<img src='assets/agility_cassie-cassie.png' width=100>|<img src='assets/unitree_g1-g1.png' width=100>|<img src='assets/unitree_h1-h1.png' width=100>|<img src='assets/robotis_op3-op3.png' width=100>|
+|<img src='assets/booster_t1-t1.png' width=100>|<img src='assets/pal_talos-talos.png' width=100>|<img src='assets/toddlerbot_2xc-toddlerbot_2xc.png' width=100>|<img src='assets/bitcraze_crazyflie_2-cf2.png' width=100>|<img src='assets/skydio_x2-x2.png' width=100>|
+|<img src='assets/flybody-fruitfly.png' width=100>|<img src='assets/ms_human_render_front.png' width=100>|<img src='assets/realsense_d435i-d435i.png' width=100>||||
+
 
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
@@ -179,6 +181,7 @@ Menagerie, see [CONTRIBUTING](CONTRIBUTING.md).
 | iiwa14 | KUKA | 7 | [BSD-3-Clause](kuka_iiwa_14/LICENSE) |✖️|
 | Lite6 | UFACTORY | 6 | [BSD-3-Clause](ufactory_lite6/LICENSE) |✖️|
 | Panda | Franka Robotics | 7 | [BSD-3-Clause](franka_emika_panda/LICENSE) |✔️|
+| Rizon4 | Flexiv Robotics | 7 | [Apache-2.0](flexiv_rizon4/LICENSE) |✖️|
 | Sawyer | Rethink Robotics | 7 | [Apache-2.0](rethink_robotics_sawyer/LICENSE) |✖️|
 | Unitree Z1 | Unitree Robotics | 6 | [BSD-3-Clause](unitree_z1/LICENSE) |✖️|
 | UR5e | Universal Robots | 6 | [BSD-3-Clause](universal_robots_ur5e/LICENSE) |✖️|
@@ -251,6 +254,8 @@ Menagerie, see [CONTRIBUTING](CONTRIBUTING.md).
 | TALOS | PAL Robotics | 32 | [Apache-2.0](pal_talos/LICENSE) |✖️|
 | Unitree G1 | Unitree Robotics | 37 | [BSD-3-Clause](unitree_g1/LICENSE) |✔️|
 | Unitree H1 | Unitree Robotics | 19 | [BSD-3-Clause](unitree_h1/LICENSE) |✖️|
+| ToddlerBot 2XC | Stanford University | 30 | [MIT](toddlerbot_2xc/LICENSE) |✔️|
+| ToddlerBot 2XM | Stanford University | 30 | [MIT](toddlerbot_2xm/LICENSE) |✔️|
 
 **Quadrupeds.**
 
@@ -271,6 +276,7 @@ Menagerie, see [CONTRIBUTING](CONTRIBUTING.md).
 |------|-------|---------|---------|-----|
 | IIT Softfoot | IIT Softbots | 92 | [BSD-3-Clause](iit_softfoot/LICENSE) |✖️|
 | flybody | Google DeepMind, HHMI Janelia Research Campus | 102 | [Apache-2.0](flybody/LICENSE) |✖️|
+| MS-Human-700 | LNS Group | 157 | [Apache-2.0](ms_human_700/LICENSE) |✔️|
 
 **Miscellaneous.**
 

@@ -1,0 +1,27 @@
+<mujoco model="MS_Human_700_Locomotion_Model scene">
+  <include file="MS-Human-700-Locomotion.xml" />
+
+  <statistic center="0 0 1.0" extent="1.2" />
+
+  <visual>
+    <headlight ambient="0.4 0.4 0.4" diffuse="0.8 0.8 0.8" specular="0.1 0.1 0.1" />
+    <rgba haze="0.15 0.25 0.35 1" />
+    <global azimuth="140" elevation="-20" offwidth="3840" offheight="2160" />
+    <quality shadowsize="8192" offsamples="24" />
+    <map znear="0.002" />
+    <scale framelength="0.2" framewidth="0.01" />
+  </visual>
+
+  <asset>
+    <texture type="skybox" builtin="gradient" rgb1="0.3 0.5 0.7" rgb2="0 0 0" width="512" height="3072" />
+    <texture type="2d" name="groundplane" builtin="checker" mark="edge" rgb1="0.2 0.3 0.4" rgb2="0.1 0.2 0.3"
+      markrgb="0.8 0.8 0.8" width="300" height="300" />
+    <material name="groundplane" texture="groundplane" texuniform="true" texrepeat="2 2" reflectance="0.2" />
+  </asset>
+
+  <worldbody>
+    <light pos="1 0 4" dir="0 0 -1" directional="true" />
+    <geom name="floor" size="0 0 0.05" type="plane" material="groundplane" />
+    <camera name="record_camera" pos="2.818 -0.003 1.306" xyaxes="0.014 1.000 0.000 -0.131 0.002 0.991"/>
+  </worldbody>
+</mujoco>

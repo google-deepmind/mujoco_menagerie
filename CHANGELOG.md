@@ -2,6 +2,18 @@
 
 All notable changes to this repository will be documented here.
 
+## [2026-04-07]
+
+- Added [MS-Human-700](ms_human_700/README.md) from LNS Group.
+
+## [2026-03-18]
+
+- Added [Flexiv Rizon4](flexiv_rizon4/README.md) from Flexiv Robotics. Contribution by @ctkuan-flexiv.
+
+## [2025-12-12]
+
+- fix Skydio X2 gear settings for yaw control
+
 ## [2025-05-30]
 
 - Added an MJX-tuned version of the G1 model.

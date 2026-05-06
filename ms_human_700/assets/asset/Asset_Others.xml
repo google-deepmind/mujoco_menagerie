@@ -1,0 +1,9 @@
+<mujoco>
+  <asset>
+    <texture type="cube" name="marblecube" file="marble.png" />
+    <material name="tablecube" texture="marblecube" rgba="0.8 0.8 0.8 1" />
+    <mesh name="waterbottle" content_type="model/stl" file="../geometry/waterbottle/waterbottle.stl" scale="0.8 0.8 1.3" />
+    <mesh name="waterbottle_contact0" content_type="model/stl" file="../geometry/waterbottle/waterbottle_contact0.stl" scale="0.8 0.8 1.3" />
+    <mesh name="waterbottle_contact1" content_type="model/stl" file="../geometry/waterbottle/waterbottle_contact1.stl" scale="0.8 0.8 1.3" />
+  </asset>
+</mujoco> 
