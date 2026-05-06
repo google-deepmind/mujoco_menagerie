@@ -25,6 +25,8 @@ def main():
   xml_path = os.path.join(dir_path, SINGLE_ARM_XML)
   output_path = os.path.join(dir_path, BI_ARM_XML)
 
+  os.chdir(dir_path)
+
   # Load single arm spec
   arm_spec = mujoco.MjSpec.from_file(xml_path)
 
@@ -46,6 +48,21 @@ def main():
   # Create bi-arm spec
   biarm_spec = mujoco.MjSpec()
   biarm_spec.modelname = "wxai_biarm"
+
+  # Copy visual settings from the single-arm spec
+  biarm_spec.visual.headlight.diffuse = arm_spec.visual.headlight.diffuse
+  biarm_spec.visual.headlight.ambient = arm_spec.visual.headlight.ambient
+  biarm_spec.visual.headlight.specular = arm_spec.visual.headlight.specular
+  biarm_spec.visual.scale.contactwidth = arm_spec.visual.scale.contactwidth
+  biarm_spec.visual.scale.contactheight = arm_spec.visual.scale.contactheight
+  biarm_spec.visual.scale.forcewidth = arm_spec.visual.scale.forcewidth
+
+  # NOTE: maxhullvert is injected via XML post-processing below,
+  # because the MjSpec roundtrip (to_xml/from_string) drops it.
+  maxhullvert = max(
+      (m.maxhullvert for m in arm_spec.meshes if m.maxhullvert > 0),
+      default=-1,
+  )
 
   # Add sites for attachment
   left_site = biarm_spec.worldbody.add_site(
@@ -74,6 +91,14 @@ def main():
 
   # Save to file and post-process
   xml_string = biarm_spec.to_xml()
+
+  # Inject maxhullvert default (lost during to_xml/from_string roundtrip)
+  if maxhullvert > 0:
+    xml_string = xml_string.replace(
+        "<default>",
+        f'<default>\n    <mesh maxhullvert="{maxhullvert}"/>',
+        1,  # only the first (top-level) <default>
+    )
 
   # Add equality constraints for gripper coupling (hardcoded for this model)
   equality_xml = """
