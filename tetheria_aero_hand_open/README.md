@@ -14,14 +14,14 @@ This package contains a **tendon-driven** robotic hand model for MuJoCo manipula
 
 
 ## URDF → MJCF derivation steps
-- Use `mjcf.from_path` to load the URDF file, and export the initial MJCF model with `mjcf.export_with_assets`.  
-- Manually define simplified collision geometries.  
-- Exclude unwanted collisions between specific geometries.  
-- Design pulley elements to represent the cable routing in the hand.  
-- Define tendons that follow the cable paths and wrap around the pulleys.  
-- Add springs with the same specifications as those used in the *Aero Hand Open*.  
-- Implement position actuators for the tendons and the hand’s abduction joint, setting parameters (e.g., armature) to match the motors from the *Aero Hand Open*.  
-- Adjust stiffness, damping, and actuator gains to reproduce dynamics similar to the *Aero Hand Open*.  
+- Use `mjcf.from_path` to load the URDF file, and export the initial MJCF model with `mjcf.export_with_assets`.
+- Manually define simplified collision geometries.
+- Exclude unwanted collisions between specific geometries.
+- Design pulley elements to represent the cable routing in the hand.
+- Define tendons that follow the cable paths and wrap around the pulleys.
+- Add springs with the same specifications as those used in the *Aero Hand Open*.
+- Implement position actuators for the tendons and the hand’s abduction joint, setting parameters (e.g., armature) to match the motors from the *Aero Hand Open*.
+- Adjust stiffness, damping, and actuator gains to reproduce dynamics similar to the *Aero Hand Open*.
 
 ## License
 
