@@ -4,6 +4,18 @@
   <default>
     <joint armature="0.01" damping="5" range="-3.14 3.14"/>
     <material specular="0.5" shininess="0.25"/>
+    <motor ctrllimited="true" ctrlrange="-100 100" />
+    <velocity ctrllimited="true" />
+    <position ctrllimited="true" kp="4000" kv="400" />
+    <default class="visual">
+      <geom group="2" type="mesh" contype="0" conaffinity="0" />
+    </default>
+    <default class="collision">
+      <geom group="3" type="mesh" />
+    </default>
+    <default class="in-model-collision">
+      <geom group="2" contype="1" conaffinity="1" rgba="0.3 0 0 0.0" />
+    </default>
   </default>
   <asset>
     <!-- material -->
@@ -226,10 +238,8 @@
                                 <inertial pos="0.00024951 -0.00019562 -0.10711314" mass="0.42751673" fullinertia="0.00029613 0.00030651 0.00048946 -0.00000186 -0.00000157 0.00000221"/>
                                 <joint name="right_arm_6" pos="0 0 0" axis="0 0 1" limited="true" range="-2.96706 2.96706"/>
                                 <geom material="244,244,244" mesh="LINK_13_0_V1.1" class="visual"/>
-                                <geom mesh="LINK_13_0_V1.1" class="visual"/>
                                 <geom mesh="LINK_13_0_V1.1" class="in-model-collision"/>
                                 <geom material="69,69,69" mesh="LINK_13_1_V1.1" class="visual"/>
-                                <geom mesh="LINK_13_1_V1.1" class="visual"/>
                                 <geom mesh="LINK_13_1_V1.1" class="in-model-collision"/>
                                 <body name="EE_BODY_R" pos="0 0 -0.1261">
                                   <inertial pos="0.00212703 0.00000615 -0.04287176" mass="0.46704998" fullinertia="0.00032067 0.00059559 0.00052732 0.00002383 -0.00000785 -0.00000007"/>
@@ -359,6 +369,8 @@
     </body>
   </worldbody>
   <contact>
+    <exclude body1="base" body2="link_torso_1"/>
+    <exclude body1="link_torso_2" body2="link_torso_4"/>
     <exclude body1="ee_finger_r1" body2="ee_finger_r2"/>
     <exclude body1="ee_finger_l1" body2="ee_finger_l2"/>
   </contact>

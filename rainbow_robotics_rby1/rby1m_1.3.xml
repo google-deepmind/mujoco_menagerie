@@ -4,6 +4,18 @@
   <default>
     <joint armature="0.01" damping="5" range="-3.14 3.14"/>
     <material specular="0.5" shininess="0.25"/>
+    <motor ctrllimited="true" ctrlrange="-100 100" />
+    <velocity ctrllimited="true" />
+    <position ctrllimited="true" kp="4000" kv="400" />
+    <default class="visual">
+      <geom group="2" type="mesh" contype="0" conaffinity="0" />
+    </default>
+    <default class="collision">
+      <geom group="3" type="mesh" />
+    </default>
+    <default class="in-model-collision">
+      <geom group="2" contype="1" conaffinity="1" rgba="0.3 0 0 0.0" />
+    </default>
   </default>
   <asset>
     <!-- material -->
@@ -346,6 +358,8 @@
     </body>
   </worldbody>
   <contact>
+    <exclude body1="base" body2="link_torso_1"/>
+    <exclude body1="link_torso_2" body2="link_torso_4"/>
     <exclude body1="link_right_arm_4" body2="link_right_arm_6"/>
     <exclude body1="link_left_arm_4" body2="link_left_arm_6"/>
     <exclude body1="ee_finger_r1" body2="ee_finger_r2"/>
