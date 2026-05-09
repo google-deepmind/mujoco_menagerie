@@ -12,6 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+
 """Script to generate a bi-arm MuJoCo model from a single-arm model."""
 
 import os
