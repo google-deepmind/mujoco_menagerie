@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mujoco model="rbq">
+    <compiler
+        angle="radian"
+        coordinate="local"
+        autolimits="true"
+    />
+
+    <option
+        timestep="0.001"
+        gravity="0 0 -9.81"
+        integrator="RK4"
+        cone="elliptic"
+        impratio="100"
+        tolerance="1e-10" >
+        <flag warmstart="enable" energy="enable" contact="enable" frictionloss="enable"/>
+    </option>
+
+    <default>
+        <default class="rbq">
+            <geom friction="0.0" margin="0.001" condim="1"/>
+
+            <default class="abduction">
+                <default class="left_abduction">
+                    <joint axis="1 0 0" range="-0.5411 0.7330" damping="0." armature="0.014058265" frictionloss="0.5"/>
+                    <motor ctrlrange="-100 100" ctrllimited="true"/>
+                </default>
+                <default class="right_abduction">
+                    <joint axis="1 0 0" range="-0.7330 0.5411" damping="0." armature="0.014058265" frictionloss="0.5"/>
+                    <motor ctrlrange="-100 100" ctrllimited="true"/>
+                </default>
+            </default>
+            <default class="hip">
+                <joint axis="0 1 0" range="-6.2832 6.2832" damping="0." armature="0.014058265" frictionloss="0.5"/>
+                <motor ctrlrange="-120. 120" ctrllimited="true"/>
+            </default>
+            <default class="knee">
+                <joint axis="0 1 0" range="-2.8274 -0.4189" damping="0." armature="0.0214816" frictionloss="0.5"/>
+                <motor ctrlrange="-150. 150" ctrllimited="true"/>
+            </default>
+            <default class="visual">
+                <geom type="mesh" contype="0" conaffinity="0" group="2"/>
+            </default>
+            <default class="collision">
+                <geom contype="1" conaffinity="1" group="3"/>
+                <default class="foot">
+                    <geom type="sphere" size="0.03" priority="1" condim="6"
+                        friction="0.8 0.8 0.8"/>
+                </default>
+            </default>
+        </default>
+    </default>
+
+    <asset>
+        <material name="metal" rgba=".9 .95 .95 1"/>
+        <material name="black" rgba="0 0 0 1"/>
+        <material name="white" rgba="1 1 1 1"/>
+        <material name="gray" rgba="0.671705 0.692426 0.774270 1"/>
+        <material name="graygray" rgba="0.4 0.4 0.4 1"/>
+        <material name="tan" rgba="0.823 0.706 0.549 1"/>
+        <material name="palegoldenrod" rgba="0.9334 0.91 0.667 1.0"/>
+        <material name="charcoal" rgba="0.3 0.3 0.3 1.0"/>
+        <material name="darker_gray" rgba="0.2 0.2 0.2 1.0"/>
+
+        <texture name="trunk_texture" type="2d" file="assets/trunk_skin.png"/>
+        <texture name="hip_texture" type="2d" file="assets/hip_skin.png"/>
+        <texture name="thigh_left_texture" type="2d" file="assets/thigh_left_skin.png"/>
+        <texture name="thigh_right_texture" type="2d" file="assets/thigh_right_skin.png"/>
+        <texture name="calf_texture" type="2d" file="assets/calf_skin.png"/>
+
+        <material name="trunk_material" texture="trunk_texture"/>
+        <material name="hip_material" texture="hip_texture"/>
+        <material name="thigh_left_material" texture="thigh_left_texture"/>
+        <material name="thigh_right_material" texture="thigh_right_texture"/>
+        <material name="calf_material" texture="calf_texture"/>
+
+        <mesh name="trunk" file="assets/trunk.obj" scale="1 1 1"/>
+        <mesh name="trunk_collision" file="assets/trunk_collision.obj" scale="1 1 1"/>
+        <mesh name="hip2" file="assets/hip2.obj" scale="1 1 1"/>
+        <mesh name="hip3" file="assets/hip3.obj" scale="1 1 1"/>
+        <mesh name="thigh" file="assets/thigh.obj" scale="1 1 1"/>
+        <mesh name="calf" file="assets/calf.obj" scale="1 1 1"/>
+    </asset>
+
+    <worldbody>
+        <body name="base_link" pos="0 0 0.7" quat="1 0 0 0" childclass="rbq">
+            <inertial
+                pos="-0.013265 0.0 0.011765"
+                mass="16.758"
+                fullinertia="0.163831629266 0.590891341306 0.678714788268 -0.000271071491 0.040352639311 0.000216428332"/>
+            <freejoint/>
+            <geom type="mesh" mesh="trunk" material="trunk_material" class="visual"/>
+            <geom type="mesh" mesh="trunk_collision" material="graygray" class="collision"/>
+
+            <camera name="track_cam" mode="track" target="base_link" pos="0 -2 1" euler="20 0 0"/>
+
+            <site name="imu" pos="0.00665 0 -0.0404"/>
+
+            <body name="BT0_body" pos="0.36462 0 -0.02663" quat="0 -0.1736482 0 0.9848078">
+                <camera name="BT0"
+                    mode="fixed"
+                    pos="0 0 0"
+                    quat="1 0 0 0"
+                    focal="1.93e-3 1.93e-3"
+                    resolution="640 360"
+                    sensorsize="3896e-6 2140e-6"/>
+            </body>
+            <body name="BT1_body" pos="0.26053 0 -0.04759" quat="0 0.1218693 0 0.9925462">
+                <camera name="BT1"
+                    mode="fixed"
+                    pos="0 0 0"
+                    quat="1 0 0 0"
+                    focal="1.93e-3 1.93e-3"
+                    resolution="640 360"
+                    sensorsize="3896e-6 2140e-6"/>
+            </body>
+            <body name="BT2_body" pos="-0.19515 0 -0.04832" quat="0 0 0 1">
+                <camera name="BT2"
+                    mode="fixed"
+                    pos="0 0 0"
+                    quat="1 0 0 0"
+                    focal="1.93e-3 1.93e-3"
+                    resolution="640 360"
+                    sensorsize="3896e-6 2140e-6"/>
+            </body>
+            <body name="BT3_body" pos="-0.352993 0 -0.020514" quat="0.9848078 0 0.1736482 0">
+                <camera name="BT3"
+                    mode="fixed"
+                    pos="0 0 0"
+                    quat="1 0 0 0"
+                    focal="1.93e-3 1.93e-3"
+                    resolution="640 360"
+                    sensorsize="3896e-6 2140e-6"/>
+            </body>
+            <body name="FT0_body" pos="0.388031 -0.037500 0.037764" quat="0.5 0.5 -0.5 -0.5">
+                <camera name="FT0"
+                    mode="fixed"
+                    pos="0 0 0"
+                    quat="1 0 0 0"
+                    focal="1.93e-3 1.93e-3"
+                    resolution="640 360"
+                    sensorsize="384e-5 240e-5"/>
+            </body>
+            <body name="RR0_body" pos="-0.388031 0.037500 0.037764" quat="-0.5 -0.5 -0.5 -0.5">
+                <camera name="RR0"
+                    mode="fixed"
+                    pos="0 0 0"
+                    quat="1 0 0 0"
+                    focal="1.93e-3 1.93e-3"
+                    resolution="640 360"
+                    sensorsize="384e-5 240e-5"/>
+            </body>
+
+            <!-- RR 다리 -->
+            <body name="RR_hip" pos="-0.31218 -0.09 0." euler="0 0 0">
+                <inertial pos="0.027522 -0.01681 -0.00187" mass="3.669344"
+                    fullinertia="0.006957590282 0.00993982268 0.012145140245 -0.0017011378 -0.000029676183 0.000087952172"/>
+                <joint name="joint0_HRR" class="right_abduction"/>
+                <geom type="mesh" mesh="hip3" material="hip_material" euler="0 0 3.141592" class="visual"/>
+
+                <body name="RR_thigh" pos="0 -0.10285 0" euler="0 0 0">
+                    <inertial pos="-0.004765 -0.00441 -0.06311" mass="1.80014"
+                        fullinertia="0.018990787558 0.019770882672 0.001828257915 0.000045769435 -0.001024809563 0.000510504233"/>
+                    <joint name="joint1_HRP" class="hip"/>
+                    <geom type="mesh" mesh="thigh" material="thigh_right_material" class="visual"/>
+                    <geom type="cylinder" size="0.06 0.035" euler="1.57 0 0" class="collision"/>
+                    <geom type="box" size="0.025 0.02 0.125" pos="-0.035 0 -0.125" class="collision"/>
+
+                    <body name="RR_calf" pos="0 0 -0.33" euler="0 0 0">
+                        <inertial pos="0.008988 0.000072 -0.14911" mass="0.4520"
+                            fullinertia="0.00214256 0.00216568 0.0000616440919 0.000000075939 0.0000230368745 0.000009344688"/>
+                        <joint name="joint2_HRK" class="knee"/>
+                        <geom type="mesh" mesh="calf" material="calf_material" class="visual"/>
+                        <geom type="box" size="0.01 0.015 0.105" pos="0.01 0 -0.065" euler="0 -0.226893 0" class="collision"/>
+                        <geom type="box" size="0.01 0.015 0.04" pos="0.03 0 -0.23" euler="0 0.11 0" class="collision"/>
+
+                        <body name="RR_foot" pos="0 0 -0.33">
+                            <inertial pos="0 0 0" mass="0.06"
+                                fullinertia="9.6e-06 9.6e-06 9.6e-06 0 0 0"/>
+                            <geom name="RR" type="sphere" pos="-0.01 0 -0.005" size="0.03" class="foot"/>
+                        </body>
+                    </body>
+                </body>
+            </body>
+
+            <!-- RL 다리 -->
+            <body name="RL_hip" pos="-0.31218 0.09 0">
+                <inertial pos="0.027522 0.01681 -0.00187" mass="3.669344"
+                    fullinertia="0.006957590282 0.00993982268 0.012145140245 0.0017011378 -0.000029676183 -0.000087952172"/>
+                <joint name="joint3_HLR" class="left_abduction"/>
+                <geom type="mesh" mesh="hip2" material="hip_material" euler="0 0 -3.141592" class="visual"/>
+
+                <body name="RL_thigh" pos="0 0.10285 0">
+                    <inertial pos="-0.004765 0.00441 -0.06311" mass="1.80014"
+                        fullinertia="0.018990787558 0.019770882672 0.001828257915 -0.000045769435 -0.001024809563 -0.000510504233"/>
+                    <joint name="joint4_HLP" class="hip"/>
+                    <geom type="mesh" mesh="thigh" material="thigh_left_material" class="visual"/>
+                    <geom type="cylinder" size="0.06 0.035" euler="1.57 0 0" class="collision"/>
+                    <geom type="box" size="0.025 0.02 0.125" pos="-0.035 0 -0.125" class="collision"/>
+
+                    <body name="RL_calf" pos="0 0 -0.33">
+                        <inertial pos="0.008988 -0.000072 -0.14911" mass="0.4520"
+                            fullinertia="0.00214256 0.00216568 0.0000616440919 -0.000000075939 0.0000230368745 -0.000009344688"/>
+                        <joint name="joint5_HLK" class="knee"/>
+                        <geom type="mesh" mesh="calf" material="calf_material" class="visual"/>
+                        <geom type="box" size="0.01 0.015 0.105" pos="0.01 0 -0.065" euler="0 -0.226893 0" class="collision"/>
+                        <geom type="box" size="0.01 0.015 0.04" pos="0.03 0 -0.23" euler="0 0.11 0" class="collision"/>
+
+                        <body name="RL_foot" pos="0 0 -0.33">
+                            <inertial pos="0 0 0" mass="0.06"
+                                fullinertia="9.6e-06 9.6e-06 9.6e-06 0 0 0"/>
+                            <geom name="RL"  pos="-0.01 0 -0.005" type="sphere" size="0.03" class="foot"/>
+                        </body>
+                    </body>
+                </body>
+            </body>
+
+            <!-- FR 다리 -->
+            <body name="FR_hip" pos="0.31218 -0.09 0" euler="0 0 0">
+                <inertial pos="-0.027522 -0.01681 -0.00187" mass="3.669344"
+                    fullinertia="0.006957590282 0.00993982268 0.012145140245 0.0017011378 0.000029676183 0.000087952172"/>
+                <joint name="joint6_FRR" class="right_abduction"/>
+                <geom type="mesh" mesh="hip2" material="hip_material" euler="0 0 0" class="visual"/>
+
+                <body name="FR_thigh" pos="0 -0.10285 0" euler="0 0 0">
+                    <inertial pos="-0.004765 -0.00441 -0.06311" mass="1.80014"
+                        fullinertia="0.018990787558 0.019770882672 0.001828257915 0.000045769435 -0.001024809563 0.000510504233"/>
+                    <joint name="joint7_FRP" class="hip"/>
+                    <geom type="mesh" mesh="thigh" material="thigh_right_material" class="visual"/>
+                    <geom type="cylinder" size="0.06 0.035" euler="1.57 0 0" class="collision"/>
+                    <geom type="box" size="0.025 0.02 0.125" pos="-0.035 0 -0.125" class="collision"/>
+
+                    <body name="FR_calf" pos="0 0 -0.33" euler="0 0 0">
+                        <inertial pos="0.008988 0.000072 -0.14911" mass="0.4520"
+                            fullinertia="0.00214256 0.00216568 0.0000616440919 0.000000075939 0.0000230368745 0.000009344688"/>
+                        <joint name="joint8_FRK" class="knee"/>
+                        <geom type="mesh" mesh="calf" material="calf_material" class="visual"/>
+                        <geom type="box" size="0.01 0.015 0.105" pos="0.01 0 -0.065" euler="0 -0.226893 0" class="collision"/>
+                        <geom type="box" size="0.01 0.015 0.04" pos="0.03 0 -0.23" euler="0 0.11 0" class="collision"/>
+
+                        <body name="FR_foot" pos="0 0 -0.33">
+                            <inertial pos="0 0 0" mass="0.06"
+                                fullinertia="9.6e-06 9.6e-06 9.6e-06 0 0 0"/>
+                            <geom name="FR"  pos="-0.01 0 -0.005" type="sphere" size="0.03" class="foot"/>
+                        </body>
+                    </body>
+                </body>
+            </body>
+
+            <!-- FL 다리 -->
+            <body name="FL_hip" pos="0.31218 0.09 0">
+                <inertial pos="-0.027522 0.01681 -0.00187" mass="3.669344"
+                    fullinertia="0.006957590282 0.00993982268 0.012145140245 -0.0017011378 0.000029676183 -0.000087952172"/>
+                <joint name="joint9_FLR" class="left_abduction"/>
+                <geom type="mesh" mesh="hip3" material="hip_material" euler="0 0 0" class="visual"/>
+
+                <body name="FL_thigh" pos="0 0.10285 0">
+                    <inertial pos="-0.004765 0.00441 -0.06311" mass="1.80014"
+                        fullinertia="0.018990787558 0.019770882672 0.001828257915 -0.000045769435 -0.001024809563 -0.000510504233"/>
+                    <joint name="joint10_FLP" class="hip"/>
+                    <geom type="mesh" mesh="thigh" material="thigh_left_material" class="visual"/>
+                    <geom type="cylinder" size="0.06 0.035" euler="1.57 0 0" class="collision"/>
+                    <geom type="box" size="0.025 0.02 0.125" pos="-0.035 0 -0.125" class="collision"/>
+
+                    <body name="FL_calf" pos="0 0 -0.33">
+                        <inertial pos="0.008988 -0.000072 -0.14911" mass="0.4520"
+                            fullinertia="0.00214256 0.00216568 0.0000616440919 -0.000000075939 0.0000230368745 -0.000009344688"/>
+                        <joint name="joint11_FLK" class="knee"/>
+                        <geom type="mesh" mesh="calf" material="calf_material" class="visual"/>
+                        <geom type="box" size="0.01 0.015 0.105" pos="0.01 0 -0.065" euler="0 -0.226893 0" class="collision"/>
+                        <geom type="box" size="0.01 0.015 0.04" pos="0.03 0 -0.23" euler="0 0.11 0" class="collision"/>
+
+                        <body name="FL_foot" pos="0 0 -0.33">
+                            <inertial pos="0 0 0" mass="0.06"
+                                fullinertia="9.6e-06 9.6e-06 9.6e-06 0 0 0"/>
+                            <geom name="FL"  pos="-0.01 0 -0.005" type="sphere" size="0.03" class="foot"/>
+                        </body>
+                    </body>
+                </body>
+            </body>
+
+        </body>
+    </worldbody>
+
+    <actuator>
+        <!-- RR 다리 모터 -->
+        <motor class="right_abduction" name="motor0_HRR" joint="joint0_HRR"/>
+        <motor class="hip" name="motor1_HRP" joint="joint1_HRP"/>
+        <motor class="knee" name="motor2_HRK" joint="joint2_HRK"/>
+
+        <!-- RL 다리 모터 -->
+        <motor class="left_abduction" name="motor3_HLR" joint="joint3_HLR"/>
+        <motor class="hip" name="motor4_HLP" joint="joint4_HLP"/>
+        <motor class="knee" name="motor5_HLK" joint="joint5_HLK"/>
+
+        <!-- FR 다리 모터 -->
+        <motor class="right_abduction" name="motor6_FRR" joint="joint6_FRR"/>
+        <motor class="hip" name="motor7_FRP" joint="joint7_FRP"/>
+        <motor class="knee" name="motor8_FRK" joint="joint8_FRK"/>
+
+        <!-- FL 다리 모터 -->
+        <motor class="left_abduction" name="motor9_FLR" joint="joint9_FLR"/>
+        <motor class="hip" name="motor10_FLP" joint="joint10_FLP"/>
+        <motor class="knee" name="motor11_FLK" joint="joint11_FLK"/>
+        <!-- position, velocity, 를 따로 정의 내릴 수 있음 -->
+
+    </actuator>
+
+    <sensor>
+        <jointpos name="joint0_HRR_pos" joint="joint0_HRR"/>
+        <jointpos name="joint1_HRP_pos" joint="joint1_HRP"/>
+        <jointpos name="joint2_HRK_pos" joint="joint2_HRK"/>
+        <jointpos name="joint3_HLR_pos" joint="joint3_HLR"/>
+        <jointpos name="joint4_HLP_pos" joint="joint4_HLP"/>
+        <jointpos name="joint5_HLK_pos" joint="joint5_HLK"/>
+        <jointpos name="joint6_FRR_pos" joint="joint6_FRR"/>
+        <jointpos name="joint7_FRP_pos" joint="joint7_FRP"/>
+        <jointpos name="joint8_FRK_pos" joint="joint8_FRK"/>
+        <jointpos name="joint9_FLR_pos" joint="joint9_FLR"/>
+        <jointpos name="joint10_FLP_pos" joint="joint10_FLP"/>
+        <jointpos name="joint11_FLK_pos" joint="joint11_FLK"/>
+
+        <jointvel name="joint0_HRR_vel" joint="joint0_HRR"/>
+        <jointvel name="joint1_HRP_vel" joint="joint1_HRP"/>
+        <jointvel name="joint2_HRK_vel" joint="joint2_HRK"/>
+        <jointvel name="joint3_HLR_vel" joint="joint3_HLR"/>
+        <jointvel name="joint4_HLP_vel" joint="joint4_HLP"/>
+        <jointvel name="joint5_HLK_vel" joint="joint5_HLK"/>
+        <jointvel name="joint6_FRR_vel" joint="joint6_FRR"/>
+        <jointvel name="joint7_FRP_vel" joint="joint7_FRP"/>
+        <jointvel name="joint8_FRK_vel" joint="joint8_FRK"/>
+        <jointvel name="joint9_FLR_vel" joint="joint9_FLR"/>
+        <jointvel name="joint10_FLP_vel" joint="joint10_FLP"/>
+        <jointvel name="joint11_FLK_vel" joint="joint11_FLK"/>
+
+        <jointactuatorfrc name="joint0_HRR_torque" joint="joint0_HRR" noise="0.0"/>
+        <jointactuatorfrc name="joint1_HRP_torque" joint="joint1_HRP" noise="0.0"/>
+        <jointactuatorfrc name="joint2_HRK_torque" joint="joint2_HRK" noise="0.0"/>
+        <jointactuatorfrc name="joint3_HLR_torque" joint="joint3_HLR" noise="0.0"/>
+        <jointactuatorfrc name="joint4_HLP_torque" joint="joint4_HLP" noise="0.0"/>
+        <jointactuatorfrc name="joint5_HLK_torque" joint="joint5_HLK" noise="0.0"/>
+        <jointactuatorfrc name="joint6_FRR_torque" joint="joint6_FRR" noise="0.0"/>
+        <jointactuatorfrc name="joint7_FRP_torque" joint="joint7_FRP" noise="0.0"/>
+        <jointactuatorfrc name="joint8_FRK_torque" joint="joint8_FRK" noise="0.0"/>
+        <jointactuatorfrc name="joint9_FLR_torque" joint="joint9_FLR" noise="0.0"/>
+        <jointactuatorfrc name="joint10_FLP_torque" joint="joint10_FLP" noise="0.0"/>
+        <jointactuatorfrc name="joint11_FLK_torque" joint="joint11_FLK" noise="0.0"/>
+
+        <framequat name="imu_quat" objtype="site" objname="imu"/>
+        <gyro name="imu_gyro" site="imu"/>
+        <accelerometer name="imu_acc" site="imu"/>
+
+        <framepos name="frame_pos" objtype="site" objname="imu"/>
+        <framelinvel name="frame_vel" objtype="site" objname="imu"/>
+    </sensor>
+
+</mujoco>
