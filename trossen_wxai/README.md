@@ -5,7 +5,7 @@
 
 ## Changelog
 
-See [CHANGELOG.md](./CHANGELOG.md) for a full history of changes.
+1. 2026-05-13 run [system identification](https://github.com/google-deepmind/mujoco/tree/f7e00d041e05ee1eb4131d3f33e32892aa5d2752/python/mujoco/sysid#system-identification-toolbox) on the robot after collecting 4 trajectories on the robot.
 
 ## Overview
 
