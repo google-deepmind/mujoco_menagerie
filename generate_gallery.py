@@ -1,6 +1,3 @@
-# /// script
-# dependencies = ["absl-py", "dm_control", "pillow", "numpy", "tqdm", "mdutils", "opencv-python"]
-# ///
 # Copyright 2024 DeepMind Technologies Limited
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,6 +11,10 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+
+# /// script
+# dependencies = ["absl-py", "dm_control", "pillow", "numpy", "tqdm", "mdutils", "opencv-python"]
+# ///
 """Generate a markdown table with images of some of the models in Menagerie.
 
 Requirements:
@@ -156,8 +157,9 @@ CAMERA_MAP = {
         fovy=60,
     ),
     "flybody/fruitfly": dict(
-        pos="0.430 -0.361 0.326", xyaxes="0.589 0.808 0.000 -0.486 0.354 0.799",
-        fovy=50
+        pos="0.430 -0.361 0.326",
+        xyaxes="0.589 0.808 0.000 -0.486 0.354 0.799",
+        fovy=50,
     ),
     "wonik_allegro/left_hand": dict(
         pos="0.002 0.043 0.432", xyaxes="0.052 -0.999 0.000 0.998 0.052 0.017"
@@ -213,8 +215,9 @@ CAMERA_MAP = {
         fovy=45,
     ),
     "robotis_op3/op3": dict(
-        pos="0.673 -0.024 0.447", xyaxes="0.035 0.999 0.000 -0.252 0.009 0.968",
-        fovy=45
+        pos="0.673 -0.024 0.447",
+        xyaxes="0.035 0.999 0.000 -0.252 0.009 0.968",
+        fovy=45,
     ),
     "universal_robots_ur5e/ur5e": dict(
         pos="0.603 1.012 0.595",
@@ -353,12 +356,32 @@ CAMERA_MAP = {
 
 # pylint: disable=line-too-long
 KEYFRAME_MAP = {
-    "pal_talos": "0 0 1.025 0 0 0 0 0 0.15 0 0 0.3 0.4 -0.5 -1.5 0 0 0 0 -0.4 0 0 0 0 0 -0.3 -0.4 0.5 -1.5 0 0 0 0 -0.4 0 0 0 0 0 0 0 -0.4 0.8 -0.4 0 0 0 -0.4 0.8 -0.4 0",
-    "robotis_op3": "0 0 0.2789 1 0 0 0 0.0 0.0 -0.0890 0.7931 -0.79 0.0874 -0.7946 0.7855 -0.0015 -0.0460 -0.1626 0.2316 0.1565 -0.0230 0.0 0.0445 0.1611 -0.2332 -0.1580 0.0215",
-    "google_barkour_vb": "0 0 0.21 1 0 0 0 0 0.5 1.0 0 0.5 1.0 0 0.5 1.0 0 0.5 1.0",
-    "hello_robot_stretch": "0 0 0 1 0 0 0 0 0 0.1325 0.07995 0.07995 0.07605 0.0702 1.585 0 0.198 0 0 0.126 0 0 0 0",
-    "google_robot": "-1.51699e-13 -1.16232e-12 -0.1444 2.9724 -0.146 -0.3759 1.15806e-12 0.5518 0.62275",
-    "aloha": "0.43988 -0.206468 1.08253 -0.443382 -1.084 -0.00397598 0.0084 0.00846495 -1.28822 -0.360594 0.717978 -0.000325086 -0.273415 6.76003e-05 0.0084 0.00839987",
+    "pal_talos": (
+        "0 0 1.025 0 0 0 0 0 0.15 0 0 0.3 0.4 -0.5 -1.5 0 0 0 0 -0.4 0 0 0 0 0"
+        " -0.3 -0.4 0.5 -1.5 0 0 0 0 -0.4 0 0 0 0 0 0 0 -0.4 0.8 -0.4 0 0 0"
+        " -0.4 0.8 -0.4 0"
+    ),
+    "robotis_op3": (
+        "0 0 0.2789 1 0 0 0 0.0 0.0 -0.0890 0.7931 -0.79 0.0874 -0.7946 0.7855"
+        " -0.0015 -0.0460 -0.1626 0.2316 0.1565 -0.0230 0.0 0.0445 0.1611"
+        " -0.2332 -0.1580 0.0215"
+    ),
+    "google_barkour_vb": (
+        "0 0 0.21 1 0 0 0 0 0.5 1.0 0 0.5 1.0 0 0.5 1.0 0 0.5 1.0"
+    ),
+    "hello_robot_stretch": (
+        "0 0 0 1 0 0 0 0 0 0.1325 0.07995 0.07995 0.07605 0.0702 1.585 0 0.198"
+        " 0 0 0.126 0 0 0 0"
+    ),
+    "google_robot": (
+        "-1.51699e-13 -1.16232e-12 -0.1444 2.9724 -0.146 -0.3759 1.15806e-12"
+        " 0.5518 0.62275"
+    ),
+    "aloha": (
+        "0.43988 -0.206468 1.08253 -0.443382 -1.084 -0.00397598 0.0084"
+        " 0.00846495 -1.28822 -0.360594 0.717978 -0.000325086 -0.273415"
+        " 6.76003e-05 0.0084 0.00839987"
+    ),
     "kuka_iiwa_14": "0 0 0 -1.5708 0 1.5708 0",
     "flexiv_rizon4": "0 -0.524 0 1.833 0 0.785 0",
 }
