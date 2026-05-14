@@ -1,16 +1,8 @@
 # Copyright 2026 DeepMind Technologies Limited
 #
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#      http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+
 
 """Script to generate a bi-arm MuJoCo model from a single-arm model."""
 
@@ -21,10 +13,11 @@ import mujoco
 SINGLE_ARM_XML = "wxai_follower.xml"
 BI_ARM_XML = "wxai_follower_biarm.xml"
 
-# Arm placement (copied from trossen_ai_bimanual.xml)
-LEFT_POS = [-0.4575, -0.019, 0.0]
+# Arm placement — bases are 82cm apart.
+HALF_SPACING = 0.41  # 82cm / 2
+LEFT_POS = [-HALF_SPACING, -0.019, 0.0]
 LEFT_QUAT = [1, 0, 0, 0]  # Identity rotation
-RIGHT_POS = [0.4575, -0.019, 0.0]
+RIGHT_POS = [HALF_SPACING, -0.019, 0.0]
 RIGHT_QUAT = [0, 0, 0, 1]  # 180 degree rotation around Z
 
 
@@ -32,6 +25,8 @@ def main():
   dir_path = os.path.dirname(__file__)
   xml_path = os.path.join(dir_path, SINGLE_ARM_XML)
   output_path = os.path.join(dir_path, BI_ARM_XML)
+
+  os.chdir(dir_path)
 
   # Load single arm spec
   arm_spec = mujoco.MjSpec.from_file(xml_path)
@@ -54,6 +49,21 @@ def main():
   # Create bi-arm spec
   biarm_spec = mujoco.MjSpec()
   biarm_spec.modelname = "wxai_biarm"
+
+  # Copy visual settings from the single-arm spec
+  biarm_spec.visual.headlight.diffuse = arm_spec.visual.headlight.diffuse
+  biarm_spec.visual.headlight.ambient = arm_spec.visual.headlight.ambient
+  biarm_spec.visual.headlight.specular = arm_spec.visual.headlight.specular
+  biarm_spec.visual.scale.contactwidth = arm_spec.visual.scale.contactwidth
+  biarm_spec.visual.scale.contactheight = arm_spec.visual.scale.contactheight
+  biarm_spec.visual.scale.forcewidth = arm_spec.visual.scale.forcewidth
+
+  # NOTE: maxhullvert is injected via XML post-processing below,
+  # because the MjSpec roundtrip (to_xml/from_string) drops it.
+  maxhullvert = max(
+      (m.maxhullvert for m in arm_spec.meshes if m.maxhullvert > 0),
+      default=-1,
+  )
 
   # Add sites for attachment
   left_site = biarm_spec.worldbody.add_site(
@@ -82,6 +92,14 @@ def main():
 
   # Save to file and post-process
   xml_string = biarm_spec.to_xml()
+
+  # Inject maxhullvert default (lost during to_xml/from_string roundtrip)
+  if maxhullvert > 0:
+    xml_string = xml_string.replace(
+        "<default>",
+        f'<default>\n    <mesh maxhullvert="{maxhullvert}"/>',
+        1,  # only the first (top-level) <default>
+    )
 
   # Add equality constraints for gripper coupling (hardcoded for this model)
   equality_xml = """
