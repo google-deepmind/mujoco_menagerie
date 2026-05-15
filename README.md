@@ -35,7 +35,8 @@ well right out of the gate.
 |<img src='assets/anybotics_anymal_c-anymal_c.png' width=100>|<img src='assets/google_barkour_v0-barkour_v0.png' width=100>|<img src='assets/google_barkour_vb-barkour_vb.png' width=100>|<img src='assets/unitree_go1-go1.png' width=100>|<img src='assets/unitree_go2-go2.png' width=100>|
 |<img src='assets/boston_dynamics_spot-spot_arm.png' width=100>|<img src='assets/agility_cassie-cassie.png' width=100>|<img src='assets/unitree_g1-g1.png' width=100>|<img src='assets/unitree_h1-h1.png' width=100>|<img src='assets/robotis_op3-op3.png' width=100>|
 |<img src='assets/booster_t1-t1.png' width=100>|<img src='assets/pal_talos-talos.png' width=100>|<img src='assets/toddlerbot_2xc-toddlerbot_2xc.png' width=100>|<img src='assets/bitcraze_crazyflie_2-cf2.png' width=100>|<img src='assets/skydio_x2-x2.png' width=100>|
-|<img src='assets/flybody-fruitfly.png' width=100>|<img src='assets/ms_human_render_front.png' width=100>|<img src='assets/realsense_d435i-d435i.png' width=100>||||
+|<img src='assets/flybody-fruitfly.png' width=100>|<img src='assets/ms_human_render_front.png' width=100>|<img src='assets/realsense_d435i-d435i.png' width=100>|<img src='assets/dynamixel_2r-dynamixel_2r.png' width=100>|<img src='assets/franka_fr3_v2-fr3v2.png' width=100>|
+|<img src='assets/robotiq_2f85_v4-2f85.png' width=100>|<img src='assets/robotstudio_so101-so101.png' width=100>|<img src='assets/tetheria_aero_hand_open-aero_hand_open.png' width=100>|<img src='assets/trossen_wxai-trossen_wxai.png' width=100>|||
 
 
 - [Getting Started](#getting-started)
@@ -176,8 +177,10 @@ Menagerie, see [CONTRIBUTING](CONTRIBUTING.md).
 | Name | Maker | DoFs    | License | MJX |
 |------|-------|---------|---------|-----|
 | ARX L5 | ARX Robotics | 7 | [BSD-3-Clause](arx_l5/LICENSE) |✖️|
+| Dynamixel 2R | Rhoban | 2 | [MIT](dynamixel_2r/LICENSE) |✖️|
 | PiPER | AgileX | 7 | [MIT](agilex_piper/LICENSE) |✖️|
 | FR3 | Franka Robotics | 7 | [Apache-2.0](franka_fr3/LICENSE) |✖️|
+| FR3 v2 | Franka Robotics | 7 | [Apache-2.0](franka_fr3_v2/LICENSE) |✖️|
 | iiwa14 | KUKA | 7 | [BSD-3-Clause](kuka_iiwa_14/LICENSE) |✖️|
 | Lite6 | UFACTORY | 6 | [BSD-3-Clause](ufactory_lite6/LICENSE) |✖️|
 | Panda | Franka Robotics | 7 | [BSD-3-Clause](franka_emika_panda/LICENSE) |✔️|
@@ -191,8 +194,10 @@ Menagerie, see [CONTRIBUTING](CONTRIBUTING.md).
 | xarm7 | UFACTORY | 7 | [BSD-3-Clause](ufactory_xarm7/LICENSE) |✖️|
 | Gen3 | Kinova Robotics | 7 | [BSD-3-Clause](kinova_gen3/LICENSE) |✖️|
 | SO-ARM100 | The Robot Studio | 5 | [Apache-2.0](trs_so_arm100/LICENSE) |✖️|
+| SO-101 | The Robot Studio | 6 | [Apache-2.0](robotstudio_so101/LICENSE) |✖️|
 | Koch v1.1 Low-Cost Robot | Hugging Face | 5 | [Apache-2.0](low_cost_robot_arm/LICENSE) |✖️|
 | YAM | I2RT Robotics | 7 | [MIT](i2rt_yam/LICENSE) |✖️|
+| WXAI | Trossen Robotics | 8 | [BSD-3-Clause](trossen_wxai/LICENSE) |✖️|
 
 **Bipeds.**
 
@@ -221,6 +226,8 @@ Menagerie, see [CONTRIBUTING](CONTRIBUTING.md).
 | UMI Gripper | Stanford University | 1 | [MIT](umi_gripper/LICENSE) |✖️|
 | LEAP Hand | Carnegie Mellon University | 16 | [MIT](leap_hand/LICENSE) |✖️|
 | Robotiq 2F-85 | Robotiq | 8 | [BSD-2-Clause](robotiq_2f85/LICENSE) |✖️|
+| Robotiq 2F-85 v4 | Robotiq | 6 | [BSD-2-Clause](robotiq_2f85_v4/LICENSE) |✖️|
+| Tetheria Aero Hand Open | Tetheria | 7 | [Apache-2.0](tetheria_aero_hand_open/LICENSE) |✖️|
 | Shadow Hand EM35 | Shadow Robot Company | 24 | [Apache-2.0](shadow_hand/LICENSE) |✖️|
 | Shadow DEX-EE Hand | Shadow Robot Company | 12 | [Apache-2.0](shadow_dexee/LICENSE) |✖️|
 
