@@ -1,0 +1,22 @@
+<mujoco model="tiago pro position scene">   
+
+  <include file="tiago_pro_position.xml"/>
+
+  <visual>
+    <headlight diffuse="0.6 0.6 0.6" ambient="0.3 0.3 0.3" specular="0 0 0"/>
+    <rgba haze="0.15 0.25 0.35 1"/>
+    <global azimuth="150" elevation="-20" realtime="1"/>
+  </visual>
+
+  <worldbody>
+    <light mode="targetbody" name="spotlight" pos="1 0 10" target="base_footprint" />
+    <geom conaffinity="1" contype="1" friction="0.001 0.0 0.0" group="0" material="groundplane" name="floor" size="0 0 0.05" type="plane" />
+  </worldbody>
+
+  <asset>
+    <texture builtin="gradient" height="3072" rgb1="0.3 0.5 0.7" rgb2="0 0 0" type="skybox" width="512" />
+    <texture builtin="checker" height="300" mark="edge" markrgb="0.8 0.8 0.8" name="groundplane" rgb1="0.2 0.3 0.4" rgb2="0.1 0.2 0.3" type="2d" width="300" />
+    <material name="groundplane" reflectance="0.2" texrepeat="5 5" texture="groundplane" texuniform="true" />
+  </asset>
+    
+</mujoco>
