@@ -52,4 +52,4 @@
     <mesh name="Rib12R" content_type="model/obj" file="../geometry/Rib12R.obj" />
     <mesh name="Rib12L" content_type="model/obj" file="../geometry/Rib12L.obj" />
   </asset>
-</mujoco> 
+</mujoco>

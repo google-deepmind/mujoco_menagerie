@@ -1,0 +1,30 @@
+# Run with: pre-commit run --all-files
+# Install the git hook with: pre-commit install
+
+exclude: '\.(patch|ipynb)$'
+
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-merge-conflict
+      - id: mixed-line-ending
+
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.8.4
+    hooks:
+      - id: ruff
+        args: [--fix]
+      - id: ruff-format
+
+  - repo: local
+    hooks:
+      - id: regenerate-license
+        name: Check top-level LICENSE is up to date
+        entry: python3 regenerate_license.py --check
+        language: system
+        pass_filenames: false
+        files: '(^|/)LICENSE$|^regenerate_license\.py$'

@@ -119,4 +119,4 @@
     <mesh name="5midph_new_mirror" content_type="model/obj" file="../geometry/5midph_new_mirror.obj" />
     <mesh name="5distph_new_mirror" content_type="model/obj" file="../geometry/5distph_new_mirror.obj" />
   </asset>
-</mujoco> 
+</mujoco>

@@ -4,6 +4,7 @@ All notable changes to this repository will be documented here.
 
 ## [2026-05-18]
 
+- Added pre-commit hooks (ruff lint+format for Python, trailing-whitespace and EOF fixers, license check) with a matching CI workflow. Contributors can install locally with `uv tool install pre-commit && pre-commit install`. Excludes `.patch` and `.ipynb` files.
 - Removed the MJX column from the README model tables and dropped the MJX test from CI. MJX-compatible XMLs are still shipped per-model.
 - Added a CI lint that every model directory ships a README, LICENSE, CHANGELOG, and scene*.xml, and that `CONTRIBUTORS.md` stays sorted. Backfilled missing changelogs and renamed `rainbow_robotics_rby1/LICENSE.txt` to `LICENSE`.
 

@@ -16,4 +16,4 @@
     <exclude body1="4proxph" body2="fifthmc" />
     <exclude body1="4proxph" body2="5proxph" />
   </contact>
-</mujoco> 
+</mujoco>

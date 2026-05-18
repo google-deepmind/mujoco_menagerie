@@ -62,17 +62,17 @@ M_Y = np.diag([1.0, -1.0, 1.0])
 # that needs mirroring (e.g. ``<geom quat="1 1 -1 1"/>`` inside an
 # elastomer_visual default — inherited by every elastomer geom).
 _DEFAULT_CLASS_NAMES = (
-  "main",
-  "sharpa",
-  "visual",
-  "collision",
-  "elastomer_visual",
-  "elastomer_collision",
-  "CMC_joint",
-  "PCMC_joint",
-  "MCP_joint",
-  "PIP_joint",
-  "DIP_joint",
+  'main',
+  'sharpa',
+  'visual',
+  'collision',
+  'elastomer_visual',
+  'elastomer_collision',
+  'CMC_joint',
+  'PCMC_joint',
+  'MCP_joint',
+  'PIP_joint',
+  'DIP_joint',
 )
 
 
@@ -125,32 +125,34 @@ def preprocess_meshes(src_dir: Path, dst_dir: Path, force: bool):
   """
   dst_dir.mkdir(parents=True, exist_ok=True)
   n = 0
-  for asset in sorted(src_dir.rglob("*")):
-    if asset.is_dir() or asset.suffix.lower() not in (".stl", ".obj"):
+  for asset in sorted(src_dir.rglob('*')):
+    if asset.is_dir() or asset.suffix.lower() not in ('.stl', '.obj'):
       continue
     rel = asset.relative_to(src_dir)
     # Rename "left_" → "right_" in the filename and any parent dirs.
-    rel_renamed = Path(*[p.replace("left_", "right_") for p in rel.parts])
+    rel_renamed = Path(*[p.replace('left_', 'right_') for p in rel.parts])
     out_path = dst_dir / rel_renamed
     out_path.parent.mkdir(parents=True, exist_ok=True)
     if out_path.exists() and not force:
       continue
-    m = trimesh.load(str(asset), force="mesh", process=False)
+    m = trimesh.load(str(asset), force='mesh', process=False)
     verts = np.asarray(m.vertices, dtype=float)
     verts[:, 1] *= -1.0
     faces = np.asarray(m.faces, dtype=np.int64)[:, [0, 2, 1]]
-    trimesh.Trimesh(vertices=verts, faces=faces, process=False).export(str(out_path))
+    trimesh.Trimesh(vertices=verts, faces=faces, process=False).export(
+      str(out_path)
+    )
     n += 1
-  print(f"preprocessed {n} mesh files into {dst_dir}")
+  print(f'preprocessed {n} mesh files into {dst_dir}')
 
 
 def mirror_body(body):
   """Recursively mirror a body and all its children through the Y=0 plane."""
   body.pos = mirror_pos(body.pos)
   body.quat = mirror_quat_wxyz(body.quat)
-  if hasattr(body, "ipos"):
+  if hasattr(body, 'ipos'):
     body.ipos = mirror_pos(body.ipos)
-  if hasattr(body, "iquat"):
+  if hasattr(body, 'iquat'):
     body.iquat = mirror_quat_wxyz(body.iquat)
 
   for joint in body.joints:
@@ -192,7 +194,9 @@ def mirror_defaults(spec):
     d.site.quat = mirror_quat_wxyz(d.site.quat)
 
 
-def build_mirrored_spec(left_xml: Path, right_meshdir_rel: str) -> mujoco.MjSpec:
+def build_mirrored_spec(
+  left_xml: Path, right_meshdir_rel: str
+) -> mujoco.MjSpec:
   spec = mujoco.MjSpec.from_file(str(left_xml))
   spec.compiler.meshdir = right_meshdir_rel
   # Repoint mesh ``file=`` attributes at the renamed mirrored files.
@@ -201,8 +205,8 @@ def build_mirrored_spec(left_xml: Path, right_meshdir_rel: str) -> mujoco.MjSpec
   # Mesh ``name`` attributes (and geom ``mesh=`` refs) are renamed later in the
   # XML rewrite pass — they're string-only and don't need to resolve to a file.
   for mesh in spec.meshes:
-    if "left_" in mesh.file:
-      mesh.file = mesh.file.replace("left_", "right_")
+    if 'left_' in mesh.file:
+      mesh.file = mesh.file.replace('left_', 'right_')
   mirror_defaults(spec)
   for body in spec.worldbody.bodies:
     mirror_body(body)
@@ -212,59 +216,74 @@ def build_mirrored_spec(left_xml: Path, right_meshdir_rel: str) -> mujoco.MjSpec
 # Word-boundary "left_" → "right_" rewrite. We match the literal token; the
 # polished left_hand.xml contains "left_" only as a prefix on identifiers and
 # mesh filenames, never inside larger words, so a plain substitution is safe.
-_LEFT_TOKEN = re.compile(r"left_")
+_LEFT_TOKEN = re.compile(r'left_')
 _MODEL_NAME = re.compile(r'(<mujoco[^>]*\bmodel=")left([^"]*")')
 
 
 def rewrite_left_to_right(xml_text: str) -> str:
-  xml_text = _LEFT_TOKEN.sub("right_", xml_text)
+  xml_text = _LEFT_TOKEN.sub('right_', xml_text)
   # Catch the model name attribute even if the prefix is "left" (no underscore).
-  xml_text = _MODEL_NAME.sub(r"\1right\2", xml_text)
+  xml_text = _MODEL_NAME.sub(r'\1right\2', xml_text)
   return xml_text
 
 
 def main():
   p = argparse.ArgumentParser()
-  p.add_argument("--left-xml", type=Path,
-                 default=HERE / "left_hand.xml")
-  p.add_argument("--left-meshdir", type=Path,
-                 default=HERE / "assets" / "left",
-                 help="Source mesh dir (relative paths inside the XML are resolved here).")
-  p.add_argument("--out-xml", type=Path,
-                 default=HERE / "right_hand.xml")
-  p.add_argument("--out-meshdir", type=Path,
-                 default=HERE / "assets" / "right",
-                 help="Destination dir for the Y-mirrored copies of every mesh.")
-  p.add_argument("--force-meshes", action="store_true",
-                 help="Re-export mirrored meshes even if the destination already has them.")
-  p.add_argument("--view", action="store_true",
-                 help="Launch the MuJoCo viewer on the produced right hand.")
+  p.add_argument('--left-xml', type=Path, default=HERE / 'left_hand.xml')
+  p.add_argument(
+    '--left-meshdir',
+    type=Path,
+    default=HERE / 'assets' / 'left',
+    help='Source mesh dir (relative paths inside the XML are resolved here).',
+  )
+  p.add_argument('--out-xml', type=Path, default=HERE / 'right_hand.xml')
+  p.add_argument(
+    '--out-meshdir',
+    type=Path,
+    default=HERE / 'assets' / 'right',
+    help='Destination dir for the Y-mirrored copies of every mesh.',
+  )
+  p.add_argument(
+    '--force-meshes',
+    action='store_true',
+    help='Re-export mirrored meshes even if the destination already has them.',
+  )
+  p.add_argument(
+    '--view',
+    action='store_true',
+    help='Launch the MuJoCo viewer on the produced right hand.',
+  )
   args = p.parse_args()
 
-  preprocess_meshes(args.left_meshdir, args.out_meshdir, force=args.force_meshes)
+  preprocess_meshes(
+    args.left_meshdir, args.out_meshdir, force=args.force_meshes
+  )
 
   # meshdir in the output XML is recorded relative to the XML file's parent,
   # matching the left XML's convention (``meshdir="assets/left/"``).
-  out_meshdir_rel = args.out_meshdir.relative_to(args.out_xml.parent).as_posix() + "/"
+  out_meshdir_rel = (
+    args.out_meshdir.relative_to(args.out_xml.parent).as_posix() + '/'
+  )
   spec = build_mirrored_spec(args.left_xml, out_meshdir_rel)
 
   raw_xml = spec.to_xml()
   rewritten = rewrite_left_to_right(raw_xml)
   args.out_xml.write_text(rewritten)
-  print(f"wrote {args.out_xml}")
+  print(f'wrote {args.out_xml}')
 
   model = mujoco.MjModel.from_xml_path(str(args.out_xml))
   print(
-    f"compiled: nq={model.nq} nv={model.nv} nbody={model.nbody} "
-    f"njnt={model.njnt} ngeom={model.ngeom} nsite={model.nsite} nu={model.nu}"
+    f'compiled: nq={model.nq} nv={model.nv} nbody={model.nbody} '
+    f'njnt={model.njnt} ngeom={model.ngeom} nsite={model.nsite} nu={model.nu}'
   )
 
   if args.view:
     from mujoco import viewer as mj_viewer
+
     data = mujoco.MjData(model)
     mujoco.mj_forward(model, data)
     mj_viewer.launch(model, data)
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
   main()

@@ -198,4 +198,3 @@
     <position name="right_carriage_joint" joint="right_carriage_joint" kp="339.018069" forcerange="-35 35" ctrlrange="-0.002 0.045"/>
   </actuator>
 </mujoco>
-

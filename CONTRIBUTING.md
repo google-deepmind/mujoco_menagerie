@@ -50,12 +50,25 @@ extension. Once installed, you will need to edit its settings as follows:
 Once installed, you can format an XML file by opening the command palette and
 executing `Format Document`.
 
+## Pre-commit hooks
+
+We use [pre-commit](https://pre-commit.com/) to lint and format Python files,
+fix trailing whitespace and line endings, and verify that the top-level
+`LICENSE` file is up to date. The same hooks run on every PR in CI, so it's
+worth installing them locally:
+
+```bash
+uv tool install pre-commit
+pre-commit install              # auto-run on every git commit
+pre-commit run --all-files      # run all hooks against the entire repo
+```
+
 ## Unit Tests
 
 Before submitting your PR, you can test your change locally by invoking pytest:
 
 ```bash
-pytest test/
+uv run --with-requirements test/requirements.txt pytest test/
 ```
 
 This same test will run on GitHub CI once you open your PR. Currently,

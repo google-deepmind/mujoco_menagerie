@@ -43,7 +43,7 @@
     <material name="79,79,79" specular="1.0" shininess="0.2" rgba="0.309804 0.309804 0.309804 1.000000"/>
     <material name="80,80,80" specular="0.0" shininess="0.5" rgba="0.313725 0.313725 0.313725 1.000000"/>
     <material name="235,235,235" specular="1.0" shininess="0.2" rgba="0.921569 0.921569 0.921569 1.000000"/>
-    <material name="1.3_WRIST" specular="0.8000000000000002" shininess="0.5" rgba="0.8 0.8 0.8 1"/> 
+    <material name="1.3_WRIST" specular="0.8000000000000002" shininess="0.5" rgba="0.8 0.8 0.8 1"/>
     <!-- mesh -->
     <mesh name="m_base_1" file="m_base_1.obj"/>
     <mesh name="m_base_2" file="m_base_2.obj"/>
@@ -220,7 +220,7 @@
                           <body name="link_right_arm_4" pos="-0.031 0 -0.3095">
                             <inertial pos="-6.159e-05 0.00402933 0.0953963" quat="0.999907 -0.013359 9.85194e-05 -0.00269294" mass="1.49373" diaginertia="0.00327356 0.00252276 0.00186781" />
                             <joint name="right_arm_4" pos="0 0 0" axis="0 0 1" limited="true" range="-3.14159 3.14159" />
-                            <geom mesh="LINK_11_V1.3" material="1.3_WRIST" class="visual"/>                          
+                            <geom mesh="LINK_11_V1.3" material="1.3_WRIST" class="visual"/>
                             <geom mesh="LINK_11_V1.3" class="in-model-collision"/>
                             <geom size="0.035 0.0475" pos="0 -0.038 0.0175" class="in-model-collision" />
                             <body name="link_right_arm_5">

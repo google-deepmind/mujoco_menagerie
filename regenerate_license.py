@@ -28,7 +28,7 @@ import argparse
 import pathlib
 import sys
 
-HLINE = "=" * 80 + "\n"
+HLINE = '=' * 80 + '\n'
 
 
 def get_base_license(root: pathlib.Path) -> str:
@@ -43,21 +43,21 @@ def get_base_license(root: pathlib.Path) -> str:
   Returns:
     The base project license text.
   """
-  opensource_license = root / "opensource" / "LICENSE"
+  opensource_license = root / 'opensource' / 'LICENSE'
   if opensource_license.exists():
     return opensource_license.read_text()
 
   # Fall back to extracting from the existing concatenated LICENSE.
-  existing = root / "LICENSE"
+  existing = root / 'LICENSE'
   if existing.exists():
-    sections = existing.read_text().split(HLINE + "\n")
+    sections = existing.read_text().split(HLINE + '\n')
     if sections:
       return sections[-1]
 
-  print("ERROR: Cannot find base license.", file=sys.stderr)
+  print('ERROR: Cannot find base license.', file=sys.stderr)
   print(
-      "Expected either opensource/LICENSE or an existing top-level LICENSE.",
-      file=sys.stderr,
+    'Expected either opensource/LICENSE or an existing top-level LICENSE.',
+    file=sys.stderr,
   )
   sys.exit(1)
 
@@ -72,23 +72,23 @@ def generate_license(root: pathlib.Path) -> str:
     The concatenated LICENSE content.
   """
   license_files = sorted(
-      root.glob("*/LICENSE"),
-      key=lambda f: f.parent.name,
+    root.glob('*/LICENSE'),
+    key=lambda f: f.parent.name,
   )
-  license_files = [f for f in license_files if f.parent.name != "opensource"]
+  license_files = [f for f in license_files if f.parent.name != 'opensource']
 
   base_license = get_base_license(root)
 
-  out = ""
+  out = ''
   for lf in license_files:
     out += HLINE
     out += f"License for contents in the directory '{lf.parent.name}/'\n"
-    out += HLINE + "\n"
-    out += lf.read_text() + "\n\n"
+    out += HLINE + '\n'
+    out += lf.read_text() + '\n\n'
 
   out += HLINE
-  out += "The following license applies to all other contents\n"
-  out += HLINE + "\n"
+  out += 'The following license applies to all other contents\n'
+  out += HLINE + '\n'
   out += base_license
 
   return out
@@ -96,40 +96,40 @@ def generate_license(root: pathlib.Path) -> str:
 
 def main():
   parser = argparse.ArgumentParser(
-      description="Regenerate the top-level LICENSE file."
+    description='Regenerate the top-level LICENSE file.'
   )
   parser.add_argument(
-      "--check",
-      action="store_true",
-      help="Check if the LICENSE is up to date without modifying it.",
+    '--check',
+    action='store_true',
+    help='Check if the LICENSE is up to date without modifying it.',
   )
   args = parser.parse_args()
 
   root = pathlib.Path(__file__).resolve().parent
   generated = generate_license(root)
 
-  license_path = root / "LICENSE"
+  license_path = root / 'LICENSE'
 
   if args.check:
     if not license_path.exists():
-      print("FAIL: LICENSE file does not exist.", file=sys.stderr)
+      print('FAIL: LICENSE file does not exist.', file=sys.stderr)
       sys.exit(1)
 
     current = license_path.read_text()
     if current != generated:
       print(
-          "FAIL: LICENSE file is out of date. "
-          "Run 'python regenerate_license.py' to fix.",
-          file=sys.stderr,
+        'FAIL: LICENSE file is out of date. '
+        "Run 'python regenerate_license.py' to fix.",
+        file=sys.stderr,
       )
       sys.exit(1)
 
-    print("OK: LICENSE file is up to date.")
+    print('OK: LICENSE file is up to date.')
     return
 
   license_path.write_text(generated)
-  print(f"LICENSE file regenerated at {license_path}")
+  print(f'LICENSE file regenerated at {license_path}')
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
   main()

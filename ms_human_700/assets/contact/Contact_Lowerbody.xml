@@ -11,4 +11,4 @@
     <exclude body1="tibia_l" body2="calcn_l" />
     <exclude body1="tibia_l" body2="patella_l" />
   </contact>
-</mujoco> 
+</mujoco>

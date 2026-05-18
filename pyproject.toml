@@ -1,0 +1,19 @@
+[tool.ruff]
+line-length = 80
+indent-width = 2
+
+[tool.ruff.format]
+quote-style = "single"
+indent-style = "space"
+
+[tool.ruff.lint]
+# Conservative starter set: pyflakes (F), pycodestyle errors (E) and
+# warnings (W), and import sorting (I). Expand as needed.
+select = ["E", "F", "W", "I"]
+ignore = [
+  "E501",  # line-too-long is handled by the formatter.
+]
+
+[tool.ruff.lint.isort]
+force-single-line = true
+known-first-party = []

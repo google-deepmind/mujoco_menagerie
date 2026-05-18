@@ -16,9 +16,9 @@
 import pathlib
 from collections.abc import Iterator
 
+import mujoco
 from absl.testing import absltest
 from absl.testing import parameterized
-import mujoco
 
 # Internal import.
 
@@ -43,10 +43,10 @@ _NOISE_SCALE = 1.0
 
 
 def _pseudorandom_ctrlnoise(
-    model: mujoco.MjModel,
-    data: mujoco.MjData,
-    i: int,
-    noise: float,
+  model: mujoco.MjModel,
+  data: mujoco.MjData,
+  i: int,
+  noise: float,
 ) -> None:
   for j in range(model.nu):
     ctrlrange = model.actuator_ctrlrange[j]
@@ -56,7 +56,9 @@ def _pseudorandom_ctrlnoise(
     else:
       center = 0.0
       radius = 1.0
-    data.ctrl[j] = center + radius * noise * (2*mujoco.mju_Halton(i, j+2) - 1)
+    data.ctrl[j] = center + radius * noise * (
+      2 * mujoco.mju_Halton(i, j + 2) - 1
+    )
 
 
 class ModelsTest(parameterized.TestCase):
@@ -73,10 +75,13 @@ class ModelsTest(parameterized.TestCase):
       i += 1
     # Check no warnings were triggered during the simulation.
     if not all(data.warning.number == 0):
-      warning_info = '\n'.join([
+      warning_info = '\n'.join(
+        [
           f'{mujoco.mjtWarning(enum_value).name}: count={count}'
-          for enum_value, count in enumerate(data.warning.number) if count
-      ])
+          for enum_value, count in enumerate(data.warning.number)
+          if count
+        ]
+      )
       self.fail(f'MuJoCo warning(s) encountered:\n{warning_info}')
 
 

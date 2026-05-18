@@ -18,4 +18,4 @@
     <mesh name="l_bofoot" content_type="model/stl" file="../geometry/l_bofoot.stl" />
     <mesh name="l_patella" content_type="model/stl" file="../geometry/l_patella.stl" />
   </asset>
-</mujoco> 
+</mujoco>
