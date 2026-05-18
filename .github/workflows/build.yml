@@ -17,7 +17,5 @@ jobs:
           python-version: "3.12"
           enable-cache: true
           cache-dependency-glob: test/requirements.txt
-      - name: Install dependencies
-        run: uv pip install --system -r test/requirements.txt
       - name: Test with pytest
-        run: pytest -n auto
+        run: uv run --with-requirements test/requirements.txt pytest -n auto
