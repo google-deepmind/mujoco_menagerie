@@ -1,11 +1,11 @@
 name: Check LICENSE
 
 on:
+  push:
+    branches: [main]
   pull_request:
-    paths:
-      - '*/LICENSE'
-      - 'LICENSE'
-      - 'regenerate_license.py'
+    branches: [main]
+  workflow_dispatch:
 
 jobs:
   check-license:
