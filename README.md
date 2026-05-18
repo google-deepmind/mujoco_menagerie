@@ -223,6 +223,7 @@ Menagerie, see [CONTRIBUTING](CONTRIBUTING.md).
 | Robotiq 2F-85 | Robotiq | 8 | [BSD-2-Clause](robotiq_2f85/LICENSE) |✖️|
 | Shadow Hand EM35 | Shadow Robot Company | 24 | [Apache-2.0](shadow_hand/LICENSE) |✖️|
 | Shadow DEX-EE Hand | Shadow Robot Company | 12 | [Apache-2.0](shadow_dexee/LICENSE) |✖️|
+| Sharpa Wave | Sharpa | 22 | [Apache-2.0](sharpa_wave/LICENSE) |✖️|
 
 **Mobile Manipulators.**
 
