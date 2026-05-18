@@ -14,7 +14,7 @@
 """Tests for all models."""
 
 import pathlib
-from typing import List
+from collections.abc import Iterator
 
 from absl.testing import absltest
 from absl.testing import parameterized
@@ -25,15 +25,14 @@ import mujoco
 
 _ROOT_DIR = pathlib.Path(__file__).parent.parent
 _MODEL_DIRS = [f for f in _ROOT_DIR.iterdir() if f.is_dir()]
-_MODEL_XMLS: List[pathlib.Path] = []
 
 
-def _get_xmls(pattern: str) -> List[pathlib.Path]:
+def _get_xmls(pattern: str) -> Iterator[tuple[str, pathlib.Path]]:
   for d in _MODEL_DIRS:
-    # Produce tuples of test name and XML path.
     for f in d.glob(pattern):
       test_name = str(f).removeprefix(str(f.parent.parent))
       yield (test_name, f)
+
 
 _MODEL_XMLS = list(_get_xmls('scene*.xml'))
 

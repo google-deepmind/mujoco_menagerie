@@ -2,6 +2,10 @@
 
 All notable changes to this repository will be documented here.
 
+## [2026-05-18]
+
+- Removed the MJX column from the README model tables and dropped the MJX test from CI. MJX-compatible XMLs are still shipped per-model.
+
 ## [2026-04-07]
 
 - Added [MS-Human-700](ms_human_700/README.md) from LNS Group.

@@ -92,8 +92,7 @@ included one model directory since all others follow the exact same pattern.
   potentially other objects
 - `<model>.png`: a PNG image of `scene.xml`
 - `<model>_mjx.xml`: contains an MJX-compatible version of the model. Not all
-  models have an MJX variant (see [Menagerie Models](#menagerie-models) for more
-  information).
+  models have an MJX variant.
 - `scene_mjx.xml`: same as `scene.xml` but loads the MJX variant
 
 Note that `<model>.xml` solely describes the model, i.e., no other entity is
@@ -173,117 +172,117 @@ Menagerie, see [CONTRIBUTING](CONTRIBUTING.md).
 
 **Arms.**
 
-| Name | Maker | DoFs    | License | MJX |
-|------|-------|---------|---------|-----|
-| ARX L5 | ARX Robotics | 7 | [BSD-3-Clause](arx_l5/LICENSE) |✖️|
-| PiPER | AgileX | 7 | [MIT](agilex_piper/LICENSE) |✖️|
-| FR3 | Franka Robotics | 7 | [Apache-2.0](franka_fr3/LICENSE) |✖️|
-| iiwa14 | KUKA | 7 | [BSD-3-Clause](kuka_iiwa_14/LICENSE) |✖️|
-| Lite6 | UFACTORY | 6 | [BSD-3-Clause](ufactory_lite6/LICENSE) |✖️|
-| Panda | Franka Robotics | 7 | [BSD-3-Clause](franka_emika_panda/LICENSE) |✔️|
-| Rizon4 | Flexiv Robotics | 7 | [Apache-2.0](flexiv_rizon4/LICENSE) |✖️|
-| Sawyer | Rethink Robotics | 7 | [Apache-2.0](rethink_robotics_sawyer/LICENSE) |✖️|
-| Unitree Z1 | Unitree Robotics | 6 | [BSD-3-Clause](unitree_z1/LICENSE) |✖️|
-| UR5e | Universal Robots | 6 | [BSD-3-Clause](universal_robots_ur5e/LICENSE) |✖️|
-| UR10e | Universal Robots | 6 | [BSD-3-Clause](universal_robots_ur10e/LICENSE) |✖️|
-| ViperX 300 | Trossen Robotics | 8 | [BSD-3-Clause](trossen_vx300s/LICENSE) |✖️|
-| WidowX 250 | Trossen Robotics | 8 | [BSD-3-Clause](trossen_wx250s/LICENSE) |✖️|
-| xarm7 | UFACTORY | 7 | [BSD-3-Clause](ufactory_xarm7/LICENSE) |✖️|
-| Gen3 | Kinova Robotics | 7 | [BSD-3-Clause](kinova_gen3/LICENSE) |✖️|
-| SO-ARM100 | The Robot Studio | 5 | [Apache-2.0](trs_so_arm100/LICENSE) |✖️|
-| Koch v1.1 Low-Cost Robot | Hugging Face | 5 | [Apache-2.0](low_cost_robot_arm/LICENSE) |✖️|
-| YAM | I2RT Robotics | 7 | [MIT](i2rt_yam/LICENSE) |✖️|
+| Name | Maker | DoFs    | License |
+|------|-------|---------|---------|
+| ARX L5 | ARX Robotics | 7 | [BSD-3-Clause](arx_l5/LICENSE) |
+| PiPER | AgileX | 7 | [MIT](agilex_piper/LICENSE) |
+| FR3 | Franka Robotics | 7 | [Apache-2.0](franka_fr3/LICENSE) |
+| iiwa14 | KUKA | 7 | [BSD-3-Clause](kuka_iiwa_14/LICENSE) |
+| Lite6 | UFACTORY | 6 | [BSD-3-Clause](ufactory_lite6/LICENSE) |
+| Panda | Franka Robotics | 7 | [BSD-3-Clause](franka_emika_panda/LICENSE) |
+| Rizon4 | Flexiv Robotics | 7 | [Apache-2.0](flexiv_rizon4/LICENSE) |
+| Sawyer | Rethink Robotics | 7 | [Apache-2.0](rethink_robotics_sawyer/LICENSE) |
+| Unitree Z1 | Unitree Robotics | 6 | [BSD-3-Clause](unitree_z1/LICENSE) |
+| UR5e | Universal Robots | 6 | [BSD-3-Clause](universal_robots_ur5e/LICENSE) |
+| UR10e | Universal Robots | 6 | [BSD-3-Clause](universal_robots_ur10e/LICENSE) |
+| ViperX 300 | Trossen Robotics | 8 | [BSD-3-Clause](trossen_vx300s/LICENSE) |
+| WidowX 250 | Trossen Robotics | 8 | [BSD-3-Clause](trossen_wx250s/LICENSE) |
+| xarm7 | UFACTORY | 7 | [BSD-3-Clause](ufactory_xarm7/LICENSE) |
+| Gen3 | Kinova Robotics | 7 | [BSD-3-Clause](kinova_gen3/LICENSE) |
+| SO-ARM100 | The Robot Studio | 5 | [Apache-2.0](trs_so_arm100/LICENSE) |
+| Koch v1.1 Low-Cost Robot | Hugging Face | 5 | [Apache-2.0](low_cost_robot_arm/LICENSE) |
+| YAM | I2RT Robotics | 7 | [MIT](i2rt_yam/LICENSE) |
 
 **Bipeds.**
 
-| Name | Maker | DoFs    | License | MJX |
-|------|-------|---------|---------|-----|
-| Cassie | Agility Robotics | 28 | [BSD-3-Clause](agility_cassie/LICENSE) |✖️|
+| Name | Maker | DoFs    | License |
+|------|-------|---------|---------|
+| Cassie | Agility Robotics | 28 | [BSD-3-Clause](agility_cassie/LICENSE) |
 
 **Dual Arms.**
 
-| Name | Maker | DoFs    | License | MJX |
-|------|-------|---------|---------|-----|
-| ALOHA 2 | Trossen Robotics, Google DeepMind | 16 | [BSD-3-Clause](aloha/LICENSE) |✔️|
+| Name | Maker | DoFs    | License |
+|------|-------|---------|---------|
+| ALOHA 2 | Trossen Robotics, Google DeepMind | 16 | [BSD-3-Clause](aloha/LICENSE) |
 
 **Drones.**
 
-| Name | Maker | DoFs    | License | MJX |
-|------|-------|---------|---------|-----|
-| Crazyflie 2 | Bitcraze | 0 | [MIT](bitcraze_crazyflie_2/LICENSE) |✖️|
-| Skydio X2 | Skydio | 0 | [Apache-2.0](skydio_x2/LICENSE) |✖️|
+| Name | Maker | DoFs    | License |
+|------|-------|---------|---------|
+| Crazyflie 2 | Bitcraze | 0 | [MIT](bitcraze_crazyflie_2/LICENSE) |
+| Skydio X2 | Skydio | 0 | [Apache-2.0](skydio_x2/LICENSE) |
 
 **End-effectors.**
 
-| Name | Maker | DoFs    | License | MJX |
-|------|-------|---------|---------|-----|
-| Allegro Hand V3 | Wonik Robotics | 16 | [BSD-2-Clause](wonik_allegro/LICENSE) |✖️|
-| UMI Gripper | Stanford University | 1 | [MIT](umi_gripper/LICENSE) |✖️|
-| LEAP Hand | Carnegie Mellon University | 16 | [MIT](leap_hand/LICENSE) |✖️|
-| Robotiq 2F-85 | Robotiq | 8 | [BSD-2-Clause](robotiq_2f85/LICENSE) |✖️|
-| Shadow Hand EM35 | Shadow Robot Company | 24 | [Apache-2.0](shadow_hand/LICENSE) |✖️|
-| Shadow DEX-EE Hand | Shadow Robot Company | 12 | [Apache-2.0](shadow_dexee/LICENSE) |✖️|
-| Sharpa Wave | Sharpa | 22 | [Apache-2.0](sharpa_wave/LICENSE) |✖️|
+| Name | Maker | DoFs    | License |
+|------|-------|---------|---------|
+| Allegro Hand V3 | Wonik Robotics | 16 | [BSD-2-Clause](wonik_allegro/LICENSE) |
+| UMI Gripper | Stanford University | 1 | [MIT](umi_gripper/LICENSE) |
+| LEAP Hand | Carnegie Mellon University | 16 | [MIT](leap_hand/LICENSE) |
+| Robotiq 2F-85 | Robotiq | 8 | [BSD-2-Clause](robotiq_2f85/LICENSE) |
+| Shadow Hand EM35 | Shadow Robot Company | 24 | [Apache-2.0](shadow_hand/LICENSE) |
+| Shadow DEX-EE Hand | Shadow Robot Company | 12 | [Apache-2.0](shadow_dexee/LICENSE) |
+| Sharpa Wave | Sharpa | 22 | [Apache-2.0](sharpa_wave/LICENSE) |
 
 **Mobile Manipulators.**
 
-| Name | Maker | DoFs    | License | MJX |
-|------|-------|---------|---------|-----|
-| Google Robot | Google DeepMind | 9 | [Apache-2.0](google_robot/LICENSE) |✖️|
-| Stanford TidyBot | Stanford University | 11 | [MIT](stanford_tidybot/LICENSE) |✖️|
-| Stretch 2 | Hello Robot | 17 | [Clear BSD](hello_robot_stretch/LICENSE) |✖️|
-| Stretch 3 | Hello Robot | 17 | [Apache-2.0](hello_robot_stretch_3/LICENSE) |✖️|
-| PAL Tiago | PAL Robotics | 12 | [Apache-2.0](pal_tiago/LICENSE) |✖️|
-| PAL Tiago Dual | PAL Robotics | 21 | [Apache-2.0](pal_tiago_dual/LICENSE) |✖️|
+| Name | Maker | DoFs    | License |
+|------|-------|---------|---------|
+| Google Robot | Google DeepMind | 9 | [Apache-2.0](google_robot/LICENSE) |
+| Stanford TidyBot | Stanford University | 11 | [MIT](stanford_tidybot/LICENSE) |
+| Stretch 2 | Hello Robot | 17 | [Clear BSD](hello_robot_stretch/LICENSE) |
+| Stretch 3 | Hello Robot | 17 | [Apache-2.0](hello_robot_stretch_3/LICENSE) |
+| PAL Tiago | PAL Robotics | 12 | [Apache-2.0](pal_tiago/LICENSE) |
+| PAL Tiago Dual | PAL Robotics | 21 | [Apache-2.0](pal_tiago_dual/LICENSE) |
 
 **Mobile Bases.**
 
-| Name | Maker | DoFs    | License | MJX |
-|------|-------|---------|---------|-----|
-| Omniwheel Soccer Robot | Robot Soccer Kit | 4 | [MIT](robot_soccer_kit/LICENSE) |✖️|
+| Name | Maker | DoFs    | License |
+|------|-------|---------|---------|
+| Omniwheel Soccer Robot | Robot Soccer Kit | 4 | [MIT](robot_soccer_kit/LICENSE) |
 
 **Humanoids.**
 
-| Name | Maker | DoFs    | License | MJX |
-|------|-------|---------|---------|-----|
-| Adam Lite | PNDbotics | 25 | [MIT](pndbotics_adam_lite/LICENSE) |✖️|
-| Apptronik Apollo | Apptronik | 32 | [Apache-2.0](apptronik_apollo/LICENSE) |✔️|
-| Berkeley Humanoid | Hybrid Robotics | 12 | [BSD-3-Clause](berkeley_humanoid/LICENSE) |✖️|
-| Booster T1 | Booster Robotics | 23 | [Apache-2.0](booster_t1/LICENSE) |✖️|
-| Fourier N1 | Fourier Robotics | 30 | [Apache-2.0](fourier_n1/LICENSE) |✖️|
-| Robotis OP3 | Robotis | 20 | [Apache-2.0](robotis_op3/LICENSE) |✖️|
-| TALOS | PAL Robotics | 32 | [Apache-2.0](pal_talos/LICENSE) |✖️|
-| Unitree G1 | Unitree Robotics | 37 | [BSD-3-Clause](unitree_g1/LICENSE) |✔️|
-| Unitree H1 | Unitree Robotics | 19 | [BSD-3-Clause](unitree_h1/LICENSE) |✖️|
-| ToddlerBot 2XC | Stanford University | 30 | [MIT](toddlerbot_2xc/LICENSE) |✔️|
-| ToddlerBot 2XM | Stanford University | 30 | [MIT](toddlerbot_2xm/LICENSE) |✔️|
+| Name | Maker | DoFs    | License |
+|------|-------|---------|---------|
+| Adam Lite | PNDbotics | 25 | [MIT](pndbotics_adam_lite/LICENSE) |
+| Apptronik Apollo | Apptronik | 32 | [Apache-2.0](apptronik_apollo/LICENSE) |
+| Berkeley Humanoid | Hybrid Robotics | 12 | [BSD-3-Clause](berkeley_humanoid/LICENSE) |
+| Booster T1 | Booster Robotics | 23 | [Apache-2.0](booster_t1/LICENSE) |
+| Fourier N1 | Fourier Robotics | 30 | [Apache-2.0](fourier_n1/LICENSE) |
+| Robotis OP3 | Robotis | 20 | [Apache-2.0](robotis_op3/LICENSE) |
+| TALOS | PAL Robotics | 32 | [Apache-2.0](pal_talos/LICENSE) |
+| Unitree G1 | Unitree Robotics | 37 | [BSD-3-Clause](unitree_g1/LICENSE) |
+| Unitree H1 | Unitree Robotics | 19 | [BSD-3-Clause](unitree_h1/LICENSE) |
+| ToddlerBot 2XC | Stanford University | 30 | [MIT](toddlerbot_2xc/LICENSE) |
+| ToddlerBot 2XM | Stanford University | 30 | [MIT](toddlerbot_2xm/LICENSE) |
 
 **Quadrupeds.**
 
-| Name | Maker | DoFs    | License | MJX |
-|------|-------|---------|---------|-----|
-| ANYmal B | ANYbotics | 12 | [BSD-3-Clause](anybotics_anymal_b/LICENSE) |✖️|
-| ANYmal C | ANYbotics | 12 | [BSD-3-Clause](anybotics_anymal_c/LICENSE) |✔️|
-| Spot | Boston Dynamics | 12 | [BSD-3-Clause](boston_dynamics_spot/LICENSE) |✖️|
-| Unitree A1 | Unitree Robotics | 12 | [BSD-3-Clause](unitree_a1/LICENSE) |✖️|
-| Unitree Go1 | Unitree Robotics | 12 | [BSD-3-Clause](unitree_go1/LICENSE) |✖️|
-| Unitree Go2 | Unitree Robotics | 12 | [BSD-3-Clause](unitree_go2/LICENSE) |✔️|
-| Google Barkour v0 | Google DeepMind | 12 | [Apache-2.0](google_barkour_v0/LICENSE) |✔️|
-| Google Barkour vB | Google DeepMind | 12 | [Apache-2.0](google_barkour_vb/LICENSE) |✔️|
+| Name | Maker | DoFs    | License |
+|------|-------|---------|---------|
+| ANYmal B | ANYbotics | 12 | [BSD-3-Clause](anybotics_anymal_b/LICENSE) |
+| ANYmal C | ANYbotics | 12 | [BSD-3-Clause](anybotics_anymal_c/LICENSE) |
+| Spot | Boston Dynamics | 12 | [BSD-3-Clause](boston_dynamics_spot/LICENSE) |
+| Unitree A1 | Unitree Robotics | 12 | [BSD-3-Clause](unitree_a1/LICENSE) |
+| Unitree Go1 | Unitree Robotics | 12 | [BSD-3-Clause](unitree_go1/LICENSE) |
+| Unitree Go2 | Unitree Robotics | 12 | [BSD-3-Clause](unitree_go2/LICENSE) |
+| Google Barkour v0 | Google DeepMind | 12 | [Apache-2.0](google_barkour_v0/LICENSE) |
+| Google Barkour vB | Google DeepMind | 12 | [Apache-2.0](google_barkour_vb/LICENSE) |
 
 **Biomechanical.**
 
-| Name | Maker | DoFs    | License | MJX |
-|------|-------|---------|---------|-----|
-| IIT Softfoot | IIT Softbots | 92 | [BSD-3-Clause](iit_softfoot/LICENSE) |✖️|
-| flybody | Google DeepMind, HHMI Janelia Research Campus | 102 | [Apache-2.0](flybody/LICENSE) |✖️|
-| MS-Human-700 | LNS Group | 157 | [Apache-2.0](ms_human_700/LICENSE) |✔️|
+| Name | Maker | DoFs    | License |
+|------|-------|---------|---------|
+| IIT Softfoot | IIT Softbots | 92 | [BSD-3-Clause](iit_softfoot/LICENSE) |
+| flybody | Google DeepMind, HHMI Janelia Research Campus | 102 | [Apache-2.0](flybody/LICENSE) |
+| MS-Human-700 | LNS Group | 157 | [Apache-2.0](ms_human_700/LICENSE) |
 
 **Miscellaneous.**
 
-| Name | Maker | DoFs    | License | MJX |
-|------|-------|---------|---------|-----|
-| D435i | Intel Realsense | 0 | [Apache-2.0](realsense_d435i/LICENSE) |✖️|
+| Name | Maker | DoFs    | License |
+|------|-------|---------|---------|
+| D435i | Intel Realsense | 0 | [Apache-2.0](realsense_d435i/LICENSE) |
 
 ## Citing Menagerie
 
