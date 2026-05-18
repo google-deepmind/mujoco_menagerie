@@ -96,7 +96,8 @@
           <joint name="head_1_joint" range="-1.309 1.309" actuatorfrcrange="-5.197 5.197" damping="0.5"/>
           <geom material="white" mesh="head_1"/>
           <body name="head_2_link" pos="0.005 0 0.098" quat="1 1 0 0">
-            <inertial pos="0.0558274 0.0609987 1.58542e-05" mass="0.88693" diaginertia="0.00554181 0.00436261 0.00347586"/>
+            <inertial pos="0.0558274 0.0609987 1.58542e-05" mass="0.88693"
+              diaginertia="0.00554181 0.00436261 0.00347586"/>
             <joint name="head_2_joint" range="-1.0472 0.785398" actuatorfrcrange="-5.197 5.197" damping="0.5"/>
             <geom material="white" mesh="head_2"/>
           </body>
@@ -122,24 +123,29 @@
                   <joint name="arm_left_5_joint" range="-2.0944 2.0944" actuatorfrcrange="-3 3" damping="1"/>
                   <geom material="mercury" mesh="arm_left_5"/>
                   <body name="arm_left_6_link" pos="0 0 -0.15" quat="0.5 -0.5 -0.5 -0.5">
-                    <inertial pos="-0.000153 -0.003122 0.000183" mass="0.370063" diaginertia="0.000215 0.000174828 0.000169172"/>
+                    <inertial pos="-0.000153 -0.003122 0.000183" mass="0.370063"
+                      diaginertia="0.000215 0.000174828 0.000169172"/>
                     <joint name="arm_left_6_joint" range="-1.41372 1.41372" actuatorfrcrange="-6.6 6.6" damping="1"/>
                     <geom material="mercury" mesh="arm_left_6"/>
                     <body name="arm_left_7_link" quat="0.5 0.5 0.5 0.5">
-                      <inertial pos="0.000156301 0.000155213 -0.07437" mass="1.13701" diaginertia="0.00313273 0.00277743 0.000778245"/>
+                      <inertial pos="0.000156301 0.000155213 -0.07437" mass="1.13701"
+                        diaginertia="0.00313273 0.00277743 0.000778245"/>
                       <joint name="arm_left_7_joint" range="-2.0944 2.0944" actuatorfrcrange="-6.6 6.6" damping="1"/>
                       <geom size="0.005 0.0025" pos="0 0 -0.047" quat="0 -1 1 0" type="cylinder" material="mercury"/>
                       <geom size="0.0225 0.00785" pos="0 0 -0.05385" quat="0 0 1 0" type="cylinder" material="mercury"/>
-                      <geom size="0.025 0.004875" pos="0 0 -0.066575" quat="0 -1 1 0" type="cylinder" material="gray10"/>
+                      <geom size="0.025 0.004875" pos="0 0 -0.066575" quat="0 -1 1 0" type="cylinder"
+                        material="gray10"/>
                       <geom pos="0 0 -0.076575" quat="1 0 0 -1" material="white" mesh="gripper_link"/>
                       <body name="gripper_left_right_finger_link" pos="0 0 -0.076575" quat="1 0 0 -1">
-                        <inertial pos="0.008658 0.019724 -0.149125" mass="0.107001" diaginertia="0.000242 0.000236 0.000018"/>
+                        <inertial pos="0.008658 0.019724 -0.149125" mass="0.107001"
+                          diaginertia="0.000242 0.000236 0.000018"/>
                         <joint name="gripper_left_right_finger_joint" axis="1 0 0" type="slide" range="0 0.045"
                           damping="1"/>
                         <geom quat="4.63268e-05 0 0 1" material="black" mesh="gripper_right_finger_link"/>
                       </body>
                       <body name="gripper_left_left_finger_link" pos="0 0 -0.076575" quat="1 0 0 -1">
-                        <inertial pos="-0.008658 -0.019724 -0.149125" mass="0.107001" diaginertia="0.000242 0.000236 0.000018"/>
+                        <inertial pos="-0.008658 -0.019724 -0.149125" mass="0.107001"
+                          diaginertia="0.000242 0.000236 0.000018"/>
                         <joint name="gripper_left_left_finger_joint" axis="-1 0 0" type="slide" range="0 0.045"
                           damping="1"/>
                         <geom quat="4.63268e-05 0 0 1" material="black" mesh="gripper_left_finger_link"/>
@@ -168,28 +174,33 @@
                 <joint name="arm_right_4_joint" range="-0.392699 2.35619" actuatorfrcrange="-26 26" damping="40"/>
                 <geom material="gray10" mesh="arm_right_4"/>
                 <body name="arm_right_5_link" pos="-0.162 0.02 0.027" quat="1 0 -1 0">
-                  <inertial pos="0.001078 -0.000151 -0.077173" mass="0.935914" diaginertia="0.00103619 0.000794527 0.000439824"/>
+                  <inertial pos="0.001078 -0.000151 -0.077173" mass="0.935914"
+                    diaginertia="0.00103619 0.000794527 0.000439824"/>
                   <joint name="arm_right_5_joint" range="-2.0944 2.0944" actuatorfrcrange="-3 3" damping="1"/>
                   <geom material="mercury" mesh="arm_right_5"/>
                   <body name="arm_right_6_link" pos="0 0 0.15" quat="0.5 -0.5 -0.5 -0.5">
-                    <inertial pos="-0.000153 -0.003122 0.000183" mass="0.302758" diaginertia="3.85419e-05 3.33205e-05 3.29226e-05"/>
+                    <inertial pos="-0.000153 -0.003122 0.000183" mass="0.302758"
+                      diaginertia="3.85419e-05 3.33205e-05 3.29226e-05"/>
                     <joint name="arm_right_6_joint" range="-1.41372 1.41372" actuatorfrcrange="-6.6 6.6" damping="1"/>
                     <geom material="mercury" mesh="arm_right_6"/>
                     <body name="arm_right_7_link" quat="0.5 0.5 0.5 0.5">
-                      <inertial pos="-0.000173894 0.000176395 0.0817355" mass="1.00276" diaginertia="0.0025841 0.0022568 0.000746434"/>
+                      <inertial pos="-0.000173894 0.000176395 0.0817355" mass="1.00276"
+                        diaginertia="0.0025841 0.0022568 0.000746434"/>
                       <joint name="arm_right_7_joint" range="-2.0944 2.0944" actuatorfrcrange="-6.6 6.6" damping="1"/>
                       <geom size="0.005 0.0025" pos="0 0 0.047" quat="-1 0 0 1" type="cylinder" material="mercury"/>
                       <geom size="0.0225 0.00785" pos="0 0 0.05385" quat="-1 0 0 0" type="cylinder" material="mercury"/>
                       <geom size="0.025 0.004875" pos="0 0 0.066575" quat="-1 0 0 1" type="cylinder" material="gray10"/>
                       <geom pos="0 0 0.076575" quat="0 -1 1 0" material="white" mesh="gripper_link"/>
                       <body name="gripper_right_right_finger_link" pos="0 0 0.076575" quat="0 -1 1 0">
-                        <inertial pos="0.008658 0.019724 -0.149125" mass="0.107001" diaginertia="0.000242 0.000236 0.000018"/>
+                        <inertial pos="0.008658 0.019724 -0.149125" mass="0.107001"
+                          diaginertia="0.000242 0.000236 0.000018"/>
                         <joint name="gripper_right_right_finger_joint" axis="1 0 0" type="slide" range="0 0.045"
                           damping="1"/>
                         <geom quat="4.63268e-05 0 0 1" material="black" mesh="gripper_right_finger_link"/>
                       </body>
                       <body name="gripper_right_left_finger_link" pos="0 0 0.076575" quat="0 -1 1 0">
-                        <inertial pos="-0.008658 -0.019724 -0.149125" mass="0.107001" diaginertia="0.000242 0.000236 0.000018"/>
+                        <inertial pos="-0.008658 -0.019724 -0.149125" mass="0.107001"
+                          diaginertia="0.000242 0.000236 0.000018"/>
                         <joint name="gripper_right_left_finger_joint" axis="-1 0 0" type="slide" range="0 0.045"
                           damping="1"/>
                         <geom quat="4.63268e-05 0 0 1" material="black" mesh="gripper_left_finger_link"/>
@@ -211,5 +222,4 @@
     <exclude body1="gripper_left_right_finger_link" body2="gripper_left_left_finger_link"/>
     <exclude body1="gripper_right_right_finger_link" body2="gripper_right_left_finger_link"/>
   </contact>
-
 </mujoco>

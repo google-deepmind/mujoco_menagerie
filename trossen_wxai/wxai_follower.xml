@@ -35,63 +35,70 @@
     <mesh name="d405" content_type="model/stl" file="assets/meshes/d405/d405.stl" scale="0.001 0.001 0.001"/>
     <mesh name="gripper_left" file="assets/meshes/wxai/gripper_left.obj"/>
     <mesh name="gripper_right" file="assets/meshes/wxai/gripper_right.obj"/>
-    <mesh name="base_link_collision" file="assets/meshes/wxai/base_link_collision.obj" />
-    <mesh name="base_link_collision.001" file="assets/meshes/wxai/base_link_collision.001.obj" />
-    <mesh name="base_link_collision.002" file="assets/meshes/wxai/base_link_collision.002.obj" />
-    <mesh name="base_link_collision.003" file="assets/meshes/wxai/base_link_collision.003.obj" />
-    <mesh name="camera_mount_d405_collision" file="assets/meshes/d405/camera_mount_d405_collision.obj" />
-    <mesh name="camera_mount_d405_collision.001" file="assets/meshes/d405/camera_mount_d405_collision.001.obj" />
-    <mesh name="carriage_left_collision" file="assets/meshes/wxai/carriage_left_collision.obj" />
-    <mesh name="carriage_right_collision" file="assets/meshes/wxai/carriage_right_collision.obj" />
-    <mesh name="gripper_left_collision" file="assets/meshes/wxai/gripper_left_collision.obj" />
-    <mesh name="gripper_right_collision" file="assets/meshes/wxai/gripper_right_collision.obj" />
-    <mesh name="link_1_collision" file="assets/meshes/wxai/link_1_collision.obj" />
-    <mesh name="link_1_collision.001" file="assets/meshes/wxai/link_1_collision.001.obj" />
-    <mesh name="link_1_collision.002" file="assets/meshes/wxai/link_1_collision.002.obj" />
-    <mesh name="link_1_collision.003" file="assets/meshes/wxai/link_1_collision.003.obj" />
-    <mesh name="link_2_collision" file="assets/meshes/wxai/link_2_collision.obj" />
-    <mesh name="link_2_collision.001" file="assets/meshes/wxai/link_2_collision.001.obj" />
-    <mesh name="link_2_collision.002" file="assets/meshes/wxai/link_2_collision.002.obj" />
-    <mesh name="link_2_collision.003" file="assets/meshes/wxai/link_2_collision.003.obj" />
-    <mesh name="link_3_collision" file="assets/meshes/wxai/link_3_collision.obj" />
-    <mesh name="link_3_collision.001" file="assets/meshes/wxai/link_3_collision.001.obj" />
-    <mesh name="link_3_collision.002" file="assets/meshes/wxai/link_3_collision.002.obj" />
-    <mesh name="link_3_collision.003" file="assets/meshes/wxai/link_3_collision.003.obj" />
-    <mesh name="link_3_collision.004" file="assets/meshes/wxai/link_3_collision.004.obj" />
-    <mesh name="link_4_collision" file="assets/meshes/wxai/link_4_collision.obj" />
-    <mesh name="link_4_collision.001" file="assets/meshes/wxai/link_4_collision.001.obj" />
-    <mesh name="link_4_collision.002" file="assets/meshes/wxai/link_4_collision.002.obj" />
-    <mesh name="link_5_collision" file="assets/meshes/wxai/link_5_collision.obj" />
-    <mesh name="link_6_collision" file="assets/meshes/wxai/link_6_collision.obj" />
+    <mesh name="base_link_collision" file="assets/meshes/wxai/base_link_collision.obj"/>
+    <mesh name="base_link_collision.001" file="assets/meshes/wxai/base_link_collision.001.obj"/>
+    <mesh name="base_link_collision.002" file="assets/meshes/wxai/base_link_collision.002.obj"/>
+    <mesh name="base_link_collision.003" file="assets/meshes/wxai/base_link_collision.003.obj"/>
+    <mesh name="camera_mount_d405_collision" file="assets/meshes/d405/camera_mount_d405_collision.obj"/>
+    <mesh name="camera_mount_d405_collision.001" file="assets/meshes/d405/camera_mount_d405_collision.001.obj"/>
+    <mesh name="carriage_left_collision" file="assets/meshes/wxai/carriage_left_collision.obj"/>
+    <mesh name="carriage_right_collision" file="assets/meshes/wxai/carriage_right_collision.obj"/>
+    <mesh name="gripper_left_collision" file="assets/meshes/wxai/gripper_left_collision.obj"/>
+    <mesh name="gripper_right_collision" file="assets/meshes/wxai/gripper_right_collision.obj"/>
+    <mesh name="link_1_collision" file="assets/meshes/wxai/link_1_collision.obj"/>
+    <mesh name="link_1_collision.001" file="assets/meshes/wxai/link_1_collision.001.obj"/>
+    <mesh name="link_1_collision.002" file="assets/meshes/wxai/link_1_collision.002.obj"/>
+    <mesh name="link_1_collision.003" file="assets/meshes/wxai/link_1_collision.003.obj"/>
+    <mesh name="link_2_collision" file="assets/meshes/wxai/link_2_collision.obj"/>
+    <mesh name="link_2_collision.001" file="assets/meshes/wxai/link_2_collision.001.obj"/>
+    <mesh name="link_2_collision.002" file="assets/meshes/wxai/link_2_collision.002.obj"/>
+    <mesh name="link_2_collision.003" file="assets/meshes/wxai/link_2_collision.003.obj"/>
+    <mesh name="link_3_collision" file="assets/meshes/wxai/link_3_collision.obj"/>
+    <mesh name="link_3_collision.001" file="assets/meshes/wxai/link_3_collision.001.obj"/>
+    <mesh name="link_3_collision.002" file="assets/meshes/wxai/link_3_collision.002.obj"/>
+    <mesh name="link_3_collision.003" file="assets/meshes/wxai/link_3_collision.003.obj"/>
+    <mesh name="link_3_collision.004" file="assets/meshes/wxai/link_3_collision.004.obj"/>
+    <mesh name="link_4_collision" file="assets/meshes/wxai/link_4_collision.obj"/>
+    <mesh name="link_4_collision.001" file="assets/meshes/wxai/link_4_collision.001.obj"/>
+    <mesh name="link_4_collision.002" file="assets/meshes/wxai/link_4_collision.002.obj"/>
+    <mesh name="link_5_collision" file="assets/meshes/wxai/link_5_collision.obj"/>
+    <mesh name="link_6_collision" file="assets/meshes/wxai/link_6_collision.obj"/>
   </asset>
 
   <worldbody>
     <body name="base_link">
-      <inertial pos="-0.00014175 -5.228e-05 0.0317518" quat="0.708444 0.00673042 0.00910019 0.705677" mass="0.459699" diaginertia="0.000448963 0.000416701 0.000213926"/>
+      <inertial pos="-0.00014175 -5.228e-05 0.0317518" quat="0.708444 0.00673042 0.00910019 0.705677" mass="0.459699"
+        diaginertia="0.000448963 0.000416701 0.000213926"/>
       <geom class="visual" mesh="base_link"/>
       <geom class="collision" mesh="base_link_collision"/>
       <geom class="collision" mesh="base_link_collision.001"/>
       <geom class="collision" mesh="base_link_collision.002"/>
       <geom class="collision" mesh="base_link_collision.003"/>
       <body name="link_1" pos="0 0 0.05725">
-        <inertial pos="-0.00011075 0.00171176 0.0204459" quat="0.313955 0.305238 -0.643575 0.627752" mass="0.152704" diaginertia="0.000203432 0.000173907 8.3521e-05"/>
-        <joint name="joint_0" axis="0 0 1" range="-3.05433 3.05433" actuatorfrcrange="-27 27" damping="14.17367" armature="0.844846" frictionloss="0.0"/>
+        <inertial pos="-0.00011075 0.00171176 0.0204459" quat="0.313955 0.305238 -0.643575 0.627752" mass="0.152704"
+          diaginertia="0.000203432 0.000173907 8.3521e-05"/>
+        <joint name="joint_0" axis="0 0 1" range="-3.05433 3.05433" actuatorfrcrange="-27 27" damping="14.17367"
+          armature="0.844846" frictionloss="0.0"/>
         <geom class="visual" mesh="link_1"/>
         <geom class="collision" mesh="link_1_collision"/>
         <geom class="collision" mesh="link_1_collision.001"/>
         <geom class="collision" mesh="link_1_collision.002"/>
         <geom class="collision" mesh="link_1_collision.003"/>
         <body name="link_2" pos="0.02 0 0.04625">
-          <inertial pos="-0.131215 -0.00292583 0.00021345" quat="-0.00123582 0.706546 -0.00109575 0.707665" mass="1.15316" diaginertia="0.0179449 0.0173612 0.00102628"/>
-          <joint name="joint_1" axis="0 1 0" range="0 3.14159" actuatorfrcrange="-27 27" damping="8.0188" armature="0.094783" frictionloss="0.0"/>
+          <inertial pos="-0.131215 -0.00292583 0.00021345" quat="-0.00123582 0.706546 -0.00109575 0.707665"
+            mass="1.15316" diaginertia="0.0179449 0.0173612 0.00102628"/>
+          <joint name="joint_1" axis="0 1 0" range="0 3.14159" actuatorfrcrange="-27 27" damping="8.0188"
+            armature="0.094783" frictionloss="0.0"/>
           <geom class="visual" mesh="link_2"/>
           <geom class="collision" mesh="link_2_collision"/>
           <geom class="collision" mesh="link_2_collision.001"/>
           <geom class="collision" mesh="link_2_collision.002"/>
           <geom class="collision" mesh="link_2_collision.003"/>
           <body name="link_3" pos="-0.264 0 0">
-            <inertial pos="0.180836 -0.0009409 0.0555494" quat="0.0103901 0.669684 -0.0033175 0.742566" mass="0.686666" diaginertia="0.00566898 0.00547578 0.00059316"/>
-            <joint name="joint_2" axis="0 -1 0" range="0 2.35619" actuatorfrcrange="-27 27" damping="0.725663" armature="0.0" frictionloss="0.1"/>
+            <inertial pos="0.180836 -0.0009409 0.0555494" quat="0.0103901 0.669684 -0.0033175 0.742566" mass="0.686666"
+              diaginertia="0.00566898 0.00547578 0.00059316"/>
+            <joint name="joint_2" axis="0 -1 0" range="0 2.35619" actuatorfrcrange="-27 27" damping="0.725663"
+              armature="0.0" frictionloss="0.1"/>
             <geom class="visual" mesh="link_3"/>
             <geom class="collision" mesh="link_3_collision"/>
             <geom class="collision" mesh="link_3_collision.001"/>
@@ -99,63 +106,78 @@
             <geom class="collision" mesh="link_3_collision.003"/>
             <geom class="collision" mesh="link_3_collision.004"/>
             <body name="link_4" pos="0.245 0 0.06">
-              <inertial pos="0.0579784 0.00027145 0.0588445" quat="0.948688 0.0346237 0.307828 0.0635164" mass="0.457899" diaginertia="0.000670827 0.000661455 0.000288648"/>
-              <joint name="joint_3" axis="0 -1 0" range="-1.5708 1.5708" actuatorfrcrange="-7 7" damping="2.315707" armature="0.131812" frictionloss="0.004603"/>
+              <inertial pos="0.0579784 0.00027145 0.0588445" quat="0.948688 0.0346237 0.307828 0.0635164"
+                mass="0.457899" diaginertia="0.000670827 0.000661455 0.000288648"/>
+              <joint name="joint_3" axis="0 -1 0" range="-1.5708 1.5708" actuatorfrcrange="-7 7" damping="2.315707"
+                armature="0.131812" frictionloss="0.004603"/>
               <geom class="visual" mesh="link_4"/>
               <geom class="collision" mesh="link_4_collision"/>
               <geom class="collision" mesh="link_4_collision.001"/>
               <geom class="collision" mesh="link_4_collision.002"/>
               <body name="link_5" pos="0.06775 0 0.0455">
-                <inertial pos="0.00412447 -1.138e-05 -0.0428318" quat="0.496144 0.502128 0.503595 0.498098" mass="0.366939" diaginertia="0.000320622 0.00026751 0.000189108"/>
-                <joint name="joint_4" axis="0 0 -1" range="-1.5708 1.5708" actuatorfrcrange="-7 7" damping="2.368174" armature="0.138205"/>
+                <inertial pos="0.00412447 -1.138e-05 -0.0428318" quat="0.496144 0.502128 0.503595 0.498098"
+                  mass="0.366939" diaginertia="0.000320622 0.00026751 0.000189108"/>
+                <joint name="joint_4" axis="0 0 -1" range="-1.5708 1.5708" actuatorfrcrange="-7 7" damping="2.368174"
+                  armature="0.138205"/>
                 <geom class="visual" mesh="link_5"/>
                 <geom class="collision" mesh="link_5_collision"/>
                 <body name="link_6" pos="0.02895 0 -0.0455">
-                  <inertial pos="0.0457277 -7.26e-06 1.402e-05" quat="0.500491 0.4997 -0.500266 0.499542" mass="0.554693" diaginertia="0.001086 0.000824291 0.000487589"/>
-                  <joint name="joint_5" axis="1 0 0" range="-3.14159 3.14159" actuatorfrcrange="-7 7" damping="0.684856" armature="0.039831" frictionloss="0.0"/>
+                  <inertial pos="0.0457277 -7.26e-06 1.402e-05" quat="0.500491 0.4997 -0.500266 0.499542"
+                    mass="0.554693" diaginertia="0.001086 0.000824291 0.000487589"/>
+                  <joint name="joint_5" axis="1 0 0" range="-3.14159 3.14159" actuatorfrcrange="-7 7" damping="0.684856"
+                    armature="0.039831" frictionloss="0.0"/>
                   <site name="ee_gripper_link" pos="0.156062 0 0" size="0.01" type="sphere" rgba="1 0 0 1" group="5"/>
                   <geom class="visual" mesh="link_6"/>
                   <geom class="collision" mesh="link_6_collision"/>
                   <body name="camera_mount_d405" pos="0.012 0 0">
-                    <inertial pos="0.0302338 0.00679835 0.0500669" quat="0.501514 0.851949 0.0948108 -0.116954" mass="0.0451801" diaginertia="3.52003e-05 2.55005e-05 1.80592e-05"/>
+                    <inertial pos="0.0302338 0.00679835 0.0500669" quat="0.501514 0.851949 0.0948108 -0.116954"
+                      mass="0.0451801" diaginertia="3.52003e-05 2.55005e-05 1.80592e-05"/>
                     <geom class="visual" mesh="camera_mount_d405"/>
                     <geom class="collision" mesh="camera_mount_d405_collision"/>
                     <geom class="collision" mesh="camera_mount_d405_collision.001"/>
                     <body name="camera_link" pos="0.046650 0.009 0.054272" quat="0.984808 0 0.173648 0">
-                        <inertial pos="0 0 0" mass="0.072" diaginertia="2.117e-05 1.3758e-05 1.3758e-05"/>
-                        <geom pos="0.0038 -0.009 0" quat="0.5 0.5 0.5 0.5" class="visual" mesh="d405"/>
-                        <geom class="collision" type="box" size="0.0115 0.021 0.021" pos="-0.0078 -0.009 0"/>
-                        <camera name="wrist_cam" pos="0 0 0" quat="0.5 0.5 -0.5 -0.5"
-                         focal="1.93e-3 1.93e-3" resolution="1280 720" sensorsize="3896e-6 2140e-6"/>
-                      </body>
+                      <inertial pos="0 0 0" mass="0.072" diaginertia="2.117e-05 1.3758e-05 1.3758e-05"/>
+                      <geom pos="0.0038 -0.009 0" quat="0.5 0.5 0.5 0.5" class="visual" mesh="d405"/>
+                      <geom class="collision" type="box" size="0.0115 0.021 0.021" pos="-0.0078 -0.009 0"/>
+                      <camera name="wrist_cam" pos="0 0 0" quat="0.5 0.5 -0.5 -0.5" focal="1.93e-3 1.93e-3"
+                        resolution="1280 720" sensorsize="3896e-6 2140e-6"/>
+                    </body>
                   </body>
                   <body name="carriage_right" pos="0.0865 -0.023 0">
-                    <inertial pos="-0.00889602 0.00403514 0.00457901" quat="0.616415 0.778591 0.0236991 -0.115186" mass="0.0503631" diaginertia="1.77614e-05 1.40157e-05 5.27289e-06"/>
-                    <joint name="right_carriage_joint" axis="0 -1 0" type="slide" range="-0.01 0.045" actuatorfrcrange="-400 400" damping="2.373963" armature="2.574872" frictionloss="0.1"/>
+                    <inertial pos="-0.00889602 0.00403514 0.00457901" quat="0.616415 0.778591 0.0236991 -0.115186"
+                      mass="0.0503631" diaginertia="1.77614e-05 1.40157e-05 5.27289e-06"/>
+                    <joint name="right_carriage_joint" axis="0 -1 0" type="slide" range="-0.01 0.045"
+                      actuatorfrcrange="-400 400" damping="2.373963" armature="2.574872" frictionloss="0.1"/>
                     <geom class="visual" mesh="carriage_right"/>
                     <geom class="collision" mesh="carriage_right_collision"/>
                     <body name="gripper_right">
-                      <inertial pos="0.0189399 0.00901216 -0.00215461" quat="0.382396 0.419236 0.596564 0.567562" mass="0.0309079" diaginertia="1.60975e-05 1.18601e-05 6.44247e-06"/>
+                      <inertial pos="0.0189399 0.00901216 -0.00215461" quat="0.382396 0.419236 0.596564 0.567562"
+                        mass="0.0309079" diaginertia="1.60975e-05 1.18601e-05 6.44247e-06"/>
                       <geom class="visual" mesh="gripper_right"/>
                       <geom class="gripper_collision" mesh="gripper_right_collision" pos="0 -0.00154 0"/>
                       <geom class="gripper_collision" type="box" size="0.005 0.016 0.028" pos="-0.004 0 0"/>
-                      <geom name="gripper_right_pad" class="gripper_collision" type="box" size="0.008 0.002 0.005" pos="0.0615 0.021 0" rgba="0 0.5 0 0.5"/>
+                      <geom name="gripper_right_pad" class="gripper_collision" type="box" size="0.008 0.002 0.005"
+                        pos="0.0615 0.021 0" rgba="0 0.5 0 0.5"/>
                       <geom class="gripper_collision" type="sphere" size="0.001" pos="0.062 0.0223 -0.005"/>
                       <geom class="gripper_collision" type="sphere" size="0.001" pos="0.067 0.0223 0"/>
                       <geom class="gripper_collision" type="sphere" size="0.001" pos="0.062 0.0223 0.005"/>
                     </body>
                   </body>
                   <body name="carriage_left" pos="0.0865 0.023 0">
-                    <inertial pos="-0.00889602 -0.00403515 -0.00457908" quat="0.616415 0.778591 0.0236991 -0.115186" mass="0.0503631" diaginertia="1.77614e-05 1.40157e-05 5.27289e-06"/>
-                    <joint name="left_carriage_joint" axis="0 1 0" type="slide" range="-0.01 0.045" actuatorfrcrange="-400 400" damping="10.70" armature="0.0005" frictionloss="0.0180"/>
+                    <inertial pos="-0.00889602 -0.00403515 -0.00457908" quat="0.616415 0.778591 0.0236991 -0.115186"
+                      mass="0.0503631" diaginertia="1.77614e-05 1.40157e-05 5.27289e-06"/>
+                    <joint name="left_carriage_joint" axis="0 1 0" type="slide" range="-0.01 0.045"
+                      actuatorfrcrange="-400 400" damping="10.70" armature="0.0005" frictionloss="0.0180"/>
                     <geom class="visual" mesh="carriage_left"/>
                     <geom class="collision" mesh="carriage_left_collision"/>
                     <body name="gripper_left">
-                      <inertial pos="0.0189399 -0.00901223 -0.00215453" quat="0.567562 0.596564 0.419236 0.382396" mass="0.0309079" diaginertia="1.60975e-05 1.18601e-05 6.44247e-06"/>
+                      <inertial pos="0.0189399 -0.00901223 -0.00215453" quat="0.567562 0.596564 0.419236 0.382396"
+                        mass="0.0309079" diaginertia="1.60975e-05 1.18601e-05 6.44247e-06"/>
                       <geom class="visual" mesh="gripper_left"/>
                       <geom class="gripper_collision" mesh="gripper_left_collision" pos="0 0.00154 0"/>
                       <geom class="gripper_collision" type="box" size="0.005 0.016 0.028" pos="-0.004 0 0"/>
-                      <geom name="gripper_left_pad" class="gripper_collision" type="box" size="0.008 0.002 0.005" pos="0.0615 -0.021 0" rgba="0 0.5 0 0.5"/>
+                      <geom name="gripper_left_pad" class="gripper_collision" type="box" size="0.008 0.002 0.005"
+                        pos="0.0615 -0.021 0" rgba="0 0.5 0 0.5"/>
                       <geom class="gripper_collision" type="sphere" size="0.001" pos="0.062 -0.0223 -0.005"/>
                       <geom class="gripper_collision" type="sphere" size="0.001" pos="0.067 -0.0223 0"/>
                       <geom class="gripper_collision" type="sphere" size="0.001" pos="0.062 -0.0223 0.005"/>
@@ -180,12 +202,9 @@
   </equality>
 
   <keyframe>
-    <key
-      time="199.554"
-      qpos="-1.5359e-26 -0.00231776 1.10539 0.652472 -0.000250995 0.000167313 0.02178 0.0217803"
+    <key time="199.554" qpos="-1.5359e-26 -0.00231776 1.10539 0.652472 -0.000250995 0.000167313 0.02178 0.0217803"
       qvel="-1.5359e-23 5.95298e-17 3.40214e-14 -2.59294e-14 -5.72012e-18 -6.42267e-18 7.3271e-16 6.88375e-16"
-      ctrl="0 0 1.10741 0.644028 0 0 0.02178"
-    />
+      ctrl="0 0 1.10741 0.644028 0 0 0.02178"/>
   </keyframe>
 
   <actuator>
@@ -195,6 +214,7 @@
     <position name="joint_3" joint="joint_3" kp="45.972562" forcerange="-22 22" ctrlrange="-1.5708 1.5708"/>
     <position name="joint_4" joint="joint_4" kp="11.364627" forcerange="-35 35" ctrlrange="-1.5708 1.5708"/>
     <position name="joint_5" joint="joint_5" kp="4.388846" forcerange="-35 35" ctrlrange="-3.14159 3.14159"/>
-    <position name="right_carriage_joint" joint="right_carriage_joint" kp="339.018069" forcerange="-35 35" ctrlrange="-0.002 0.045"/>
+    <position name="right_carriage_joint" joint="right_carriage_joint" kp="339.018069" forcerange="-35 35"
+      ctrlrange="-0.002 0.045"/>
   </actuator>
 </mujoco>

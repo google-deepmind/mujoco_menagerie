@@ -104,7 +104,8 @@
     <light name="spotlight" mode="targetbodycom" target="base" pos="0 -1 2" cutoff="30"/>
     <body name="base" pos="0 0 0.62" quat="0 0 0 1" childclass="anymal_c">
       <freejoint/>
-      <inertial mass="19.2035" pos="0.0025 0 0.0502071" quat="0.5 0.5 0.5 0.5" diaginertia="0.639559 0.624031 0.217374"/>
+      <inertial mass="19.2035" pos="0.0025 0 0.0502071" quat="0.5 0.5 0.5 0.5"
+        diaginertia="0.639559 0.624031 0.217374"/>
       <geom mesh="base_0" material="green" class="visual"/>
       <geom mesh="base_1" material="yellow" class="visual"/>
       <geom mesh="base_2" material="red" class="visual"/>
@@ -206,7 +207,8 @@
             <geom class="collision" size="0.06 0.02" pos="0.02 0 0" quat="0.5 0.5 0.5 0.5"/>
             <geom class="collision" size="0.057499 0.03375 0.019" pos="0.02 0.057499 0" quat="0.5 0.5 0.5 0.5"
               type="box"/>
-            <geom pos="0.01305 0.08795 -0.33797" quat="0.382683 0 0 0.92388" material="foot" mesh="foot" class="visual"/>
+            <geom pos="0.01305 0.08795 -0.33797" quat="0.382683 0 0 0.92388" material="foot" mesh="foot"
+              class="visual"/>
             <geom class="collision" size="0.0175 0.141252" pos="0.01305 0.08795 -0.168985" quat="1 0 0 1"/>
             <geom class="foot" pos="0.01305 0.08795 -0.31547" quat="1 0 0 1"/>
           </body>

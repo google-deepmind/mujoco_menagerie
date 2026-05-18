@@ -24,7 +24,23 @@ repos:
     hooks:
       - id: regenerate-license
         name: Check top-level LICENSE is up to date
-        entry: python3 regenerate_license.py --check
+        entry: uv run --quiet regenerate_license.py --check
         language: system
         pass_filenames: false
         files: '(^|/)LICENSE$|^regenerate_license\.py$'
+
+      - id: format-xml
+        name: Check MJCF XML files are formatted
+        entry: uv run --quiet format_xml.py --check
+        language: system
+        files: '\.xml$'
+
+      - id: pytest
+        name: Run pytest (model simulation + structural lint)
+        entry: uv run --quiet --with-requirements test/requirements.txt pytest test/ -q
+        language: system
+        pass_filenames: false
+        # Only the manual stage — pytest is too slow to run on every commit.
+        # Run it on demand with: pre-commit run --hook-stage manual pytest
+        # CI runs it via the existing 'build' workflow.
+        stages: [manual]

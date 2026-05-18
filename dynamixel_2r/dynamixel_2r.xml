@@ -1,7 +1,3 @@
-<?xml version="1.0"?>
-<!-- Generated using onshape-to-robot -->
-<!-- Onshape
-https://cad.onshape.com/documents/c261e707fbd05d9a111bbdd3/w/2b2b7908e9fc282f8fc113ce/e/67a067163b98ae778d880134 -->
 <mujoco model="dynamixel_2r">
   <compiler angle="radian" meshdir="assets" autolimits="true"/>
   <option noslip_iterations="1"/>

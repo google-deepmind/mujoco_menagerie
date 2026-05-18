@@ -195,7 +195,8 @@
                   diaginertia="0.000691311 0.000618011 0.000388977"/>
                 <joint name="left_shoulder_roll_joint" axis="1 0 0" range="-1.5882 2.2515" actuatorfrcrange="-25 25"/>
                 <geom class="visual" mesh="left_shoulder_roll_link"/>
-                <geom size="0.03 0.015" pos="-0.004 0.006 -0.053" type="cylinder" rgba="0.7 0.7 0.7 1" class="collision"/>
+                <geom size="0.03 0.015" pos="-0.004 0.006 -0.053" type="cylinder" rgba="0.7 0.7 0.7 1"
+                  class="collision"/>
                 <body name="left_shoulder_yaw_link" pos="0 0.00624 -0.1032">
                   <inertial pos="0.010773 -0.002949 -0.072009" quat="0.716879 -0.0964829 -0.0679942 0.687134"
                     mass="0.734" diaginertia="0.00106187 0.00103217 0.000400661"/>
@@ -343,22 +344,7 @@
   </sensor>
 
   <keyframe>
-    <key name="stand"
-      qpos="
-      0 0 0.79
-      1 0 0 0
-      0 0 0 0 0 0
-      0 0 0 0 0 0
-      0 0 0
-      0.2 0.2 0 1.28 0 0 0
-      0.2 -0.2 0 1.28 0 0 0
-      "
-      ctrl="
-      0 0 0 0 0 0
-      0 0 0 0 0 0
-      0 0 0
-      0.2 0.2 0 1.28 0 0 0
-      0.2 -0.2 0 1.28 0 0 0
-      "/>
+    <key name="stand" qpos="0 0 0.79 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0.2 0 1.28 0 0 0 0.2 -0.2 0 1.28 0 0 0"
+      ctrl="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0.2 0 1.28 0 0 0 0.2 -0.2 0 1.28 0 0 0"/>
   </keyframe>
 </mujoco>

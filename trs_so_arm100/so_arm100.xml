@@ -117,10 +117,14 @@
                   <geom type="mesh" mesh="Moving_Jaw_Collision_1" class="collision"/>
                   <geom type="mesh" mesh="Moving_Jaw_Collision_2" class="collision"/>
                   <geom type="mesh" mesh="Moving_Jaw_Collision_3" class="collision"/>
-                  <geom class="finger_collision" name="moving_jaw_pad_1" size="0.001 0.005 0.004" pos="-0.0113 -0.077 0"/>
-                  <geom class="finger_collision" name="moving_jaw_pad_2" size="0.001 0.005 0.006" pos="-0.0093 -0.067 0"/>
-                  <geom class="finger_collision" name="moving_jaw_pad_3" size="0.001 0.01 0.006" pos="-0.0073 -0.055 0"/>
-                  <geom class="finger_collision" name="moving_jaw_pad_4" size="0.001 0.01 0.008" pos="-0.0073 -0.035 0"/>
+                  <geom class="finger_collision" name="moving_jaw_pad_1" size="0.001 0.005 0.004"
+                    pos="-0.0113 -0.077 0"/>
+                  <geom class="finger_collision" name="moving_jaw_pad_2" size="0.001 0.005 0.006"
+                    pos="-0.0093 -0.067 0"/>
+                  <geom class="finger_collision" name="moving_jaw_pad_3" size="0.001 0.01 0.006"
+                    pos="-0.0073 -0.055 0"/>
+                  <geom class="finger_collision" name="moving_jaw_pad_4" size="0.001 0.01 0.008"
+                    pos="-0.0073 -0.035 0"/>
                 </body>
               </body>
             </body>

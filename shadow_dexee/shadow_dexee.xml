@@ -116,7 +116,8 @@
         <geom name="F0/base_pulley_block_geom" class="finger/visual" mass="0" mesh="r3_finger_pulley_block"/>
         <geom name="F0/base_lid_white_geom" class="finger/visual" material="white_aluminium" mass="0"
           mesh="r3_finger_lid_white"/>
-        <geom name="F0/base_lid_logo_geom" class="finger/visual" material="jet_black" mass="0" mesh="r3_finger_lid_logo"/>
+        <geom name="F0/base_lid_logo_geom" class="finger/visual" material="jet_black" mass="0"
+          mesh="r3_finger_lid_logo"/>
         <geom name="F0/base_cover_small_left_geom" class="finger/visual" material="jet_black" mass="0"
           mesh="r3_finger_cover_small_left"/>
         <geom name="F0/base_cover_small_right_geom" class="finger/visual" material="jet_black" mass="0"
@@ -124,7 +125,8 @@
         <geom name="F0/base_geom_col" class="finger/collision_hard" quat="1 -1 0 0" mesh="r3_finger_base_col"/>
         <body name="F0/finger_knuckle" pos="0 0.015 0.17902" euler="-1.0472 0 0" gravcomp="1">
           <site name="F0/j0_site"/>
-          <joint name="F0/J0" axis="0 0 -1" range="-0.8727 0.8727" armature="8e-05" damping="0.009" frictionloss="0.009"/>
+          <joint name="F0/J0" axis="0 0 -1" range="-0.8727 0.8727" armature="8e-05" damping="0.009"
+            frictionloss="0.009"/>
           <geom name="F0/knuckle_geom" class="finger/visual" material="jet_black" mass="0.13077995"
             mesh="r3_finger_knuckle"/>
           <geom name="F0/knuckle_geom_col" class="finger/collision_hard" mesh="r3_finger_knuckle_col"/>
@@ -193,7 +195,8 @@
         <geom name="F1/base_pulley_block_geom" class="finger/visual" mass="0" mesh="r3_finger_pulley_block"/>
         <geom name="F1/base_lid_white_geom" class="finger/visual" material="white_aluminium" mass="0"
           mesh="r3_finger_lid_white"/>
-        <geom name="F1/base_lid_logo_geom" class="finger/visual" material="jet_black" mass="0" mesh="r3_finger_lid_logo"/>
+        <geom name="F1/base_lid_logo_geom" class="finger/visual" material="jet_black" mass="0"
+          mesh="r3_finger_lid_logo"/>
         <geom name="F1/base_cover_small_left_geom" class="finger/visual" material="jet_black" mass="0"
           mesh="r3_finger_cover_small_left"/>
         <geom name="F1/base_cover_small_right_geom" class="finger/visual" material="jet_black" mass="0"
@@ -201,7 +204,8 @@
         <geom name="F1/base_geom_col" class="finger/collision_hard" quat="1 -1 0 0" mesh="r3_finger_base_col"/>
         <body name="F1/finger_knuckle" pos="0 0.015 0.17902" euler="-1.0472 0 0" gravcomp="1">
           <site name="F1/j0_site"/>
-          <joint name="F1/J0" axis="0 0 -1" range="-0.8727 0.8727" armature="8e-05" damping="0.009" frictionloss="0.009"/>
+          <joint name="F1/J0" axis="0 0 -1" range="-0.8727 0.8727" armature="8e-05" damping="0.009"
+            frictionloss="0.009"/>
           <geom name="F1/knuckle_geom" class="finger/visual" material="jet_black" mass="0.13077995"
             mesh="r3_finger_knuckle"/>
           <geom name="F1/knuckle_geom_col" class="finger/collision_hard" mesh="r3_finger_knuckle_col"/>
@@ -270,7 +274,8 @@
         <geom name="F2/base_pulley_block_geom" class="finger/visual" mass="0" mesh="r3_finger_pulley_block"/>
         <geom name="F2/base_lid_white_geom" class="finger/visual" material="white_aluminium" mass="0"
           mesh="r3_finger_lid_white"/>
-        <geom name="F2/base_lid_logo_geom" class="finger/visual" material="jet_black" mass="0" mesh="r3_finger_lid_logo"/>
+        <geom name="F2/base_lid_logo_geom" class="finger/visual" material="jet_black" mass="0"
+          mesh="r3_finger_lid_logo"/>
         <geom name="F2/base_cover_small_left_geom" class="finger/visual" material="jet_black" mass="0"
           mesh="r3_finger_cover_small_left"/>
         <geom name="F2/base_cover_small_right_geom" class="finger/visual" material="jet_black" mass="0"
@@ -278,7 +283,8 @@
         <geom name="F2/base_geom_col" class="finger/collision_hard" quat="1 -1 0 0" mesh="r3_finger_base_col"/>
         <body name="F2/finger_knuckle" pos="0 0.015 0.17902" euler="-1.0472 0 0" gravcomp="1">
           <site name="F2/j0_site"/>
-          <joint name="F2/J0" axis="0 0 -1" range="-0.8727 0.8727" armature="8e-05" damping="0.009" frictionloss="0.009"/>
+          <joint name="F2/J0" axis="0 0 -1" range="-0.8727 0.8727" armature="8e-05" damping="0.009"
+            frictionloss="0.009"/>
           <geom name="F2/knuckle_geom" class="finger/visual" material="jet_black" mass="0.13077995"
             mesh="r3_finger_knuckle"/>
           <geom name="F2/knuckle_geom_col" class="finger/collision_hard" mesh="r3_finger_knuckle_col"/>

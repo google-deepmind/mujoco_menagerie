@@ -168,6 +168,22 @@ this toolbox later this year.
 For more information regarding contributions, for example to add a new model to
 Menagerie, see [CONTRIBUTING](CONTRIBUTING.md).
 
+### Quick contributor setup
+
+All linting, formatting, and license checks are wrapped in
+[pre-commit](https://pre-commit.com/) and run automatically on every commit.
+Set it up once:
+
+```bash
+uv tool install pre-commit
+pre-commit install
+```
+
+Then just `git commit` — the hooks handle Python lint/format, MJCF XML
+formatting (`format_xml.py`), trailing-whitespace, and the top-level
+`LICENSE` check. Tests run in CI; you can also invoke them locally with
+`pre-commit run --hook-stage manual pytest --all-files`.
+
 ## Menagerie Models
 
 **Arms.**

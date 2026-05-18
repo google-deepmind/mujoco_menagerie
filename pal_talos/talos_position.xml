@@ -65,7 +65,8 @@
       ctrlrange="-0.5236 0.5236"/>
     <position class="position" name="leg_right_3_joint_position" joint="leg_right_3_joint" kp="1000"
       ctrlrange="-2.095 0.7"/>
-    <position class="position" name="leg_right_4_joint_position" joint="leg_right_4_joint" kp="1000" ctrlrange="0 2.618"/>
+    <position class="position" name="leg_right_4_joint_position" joint="leg_right_4_joint" kp="1000"
+      ctrlrange="0 2.618"/>
     <position class="position" name="leg_right_5_joint_position" joint="leg_right_5_joint" kp="10000"
       ctrlrange="-1.27 0.68"/>
     <position class="position" name="leg_right_6_joint_position" joint="leg_right_6_joint" kp="10000"

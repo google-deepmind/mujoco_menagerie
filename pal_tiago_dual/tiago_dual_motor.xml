@@ -20,21 +20,24 @@
     <motor name="arm_left_3_joint_torque" joint="arm_left_3_joint"/>
     <motor name="arm_left_4_joint_torque" joint="arm_left_4_joint"/>
     <motor name="arm_left_5_joint_torque" joint="arm_left_5_joint"/>
-    <motor name="arm_left_6_joint_torque" joint="arm_left_6_joint" />
-    <motor name="arm_left_7_joint_torque" joint="arm_left_7_joint" />
-    <position name="gripper_left_left_finger_joint_position" joint="gripper_left_left_finger_joint" kp="500" inheritrange="0.999" />
-    <position name="gripper_left_right_finger_joint_position" joint="gripper_left_right_finger_joint" kp="500" inheritrange="0.999" />
+    <motor name="arm_left_6_joint_torque" joint="arm_left_6_joint"/>
+    <motor name="arm_left_7_joint_torque" joint="arm_left_7_joint"/>
+    <position name="gripper_left_left_finger_joint_position" joint="gripper_left_left_finger_joint" kp="500"
+      inheritrange="0.999"/>
+    <position name="gripper_left_right_finger_joint_position" joint="gripper_left_right_finger_joint" kp="500"
+      inheritrange="0.999"/>
 
     <!-- Right arm actuators -->
-    <motor name="arm_right_1_joint_torque" joint="arm_right_1_joint" />
-    <motor name="arm_right_2_joint_torque" joint="arm_right_2_joint" />
-    <motor name="arm_right_3_joint_torque" joint="arm_right_3_joint" />
-    <motor name="arm_right_4_joint_torque" joint="arm_right_4_joint" />
-    <motor name="arm_right_5_joint_torque" joint="arm_right_5_joint" />
-    <motor name="arm_right_6_joint_torque" joint="arm_right_6_joint" />
-    <motor name="arm_right_7_joint_torque" joint="arm_right_7_joint" />
-    <position name="gripper_right_left_finger_joint_position" joint="gripper_right_left_finger_joint" kp="500" inheritrange="0.999"/>
-    <position name="gripper_right_right_finger_joint_position" joint="gripper_right_right_finger_joint" kp="500" inheritrange="0.999"/>
+    <motor name="arm_right_1_joint_torque" joint="arm_right_1_joint"/>
+    <motor name="arm_right_2_joint_torque" joint="arm_right_2_joint"/>
+    <motor name="arm_right_3_joint_torque" joint="arm_right_3_joint"/>
+    <motor name="arm_right_4_joint_torque" joint="arm_right_4_joint"/>
+    <motor name="arm_right_5_joint_torque" joint="arm_right_5_joint"/>
+    <motor name="arm_right_6_joint_torque" joint="arm_right_6_joint"/>
+    <motor name="arm_right_7_joint_torque" joint="arm_right_7_joint"/>
+    <position name="gripper_right_left_finger_joint_position" joint="gripper_right_left_finger_joint" kp="500"
+      inheritrange="0.999"/>
+    <position name="gripper_right_right_finger_joint_position" joint="gripper_right_right_finger_joint" kp="500"
+      inheritrange="0.999"/>
   </actuator>
-
 </mujoco>

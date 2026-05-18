@@ -36,42 +36,56 @@ guidelines:
   first, then worldbody and actuators, etc.
 - Always have a `scene.xml` that includes the model
 
-Furthermore, we automatically format our XMLs in [Visual Studio Code](https://code.visualstudio.com/)
-using the [XML Language Support by Red Hat](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-xml)
-extension. Once installed, you will need to edit its settings as follows:
+XML formatting is enforced by `format_xml.py` at the repo root, which the
+pre-commit hook runs in `--check` mode. Run it locally before committing:
 
-- View > Command Palette > `Preferences: Open User Settings`
-- Search for XML
-- `Enforce quote style` → preferred
-- `Max line width` → 120
-- `Preserve attribute line breaks` → toggle OFF
-- `Xml › Format: Space Before Empty Close Tag` → toggle OFF
+```bash
+uv run format_xml.py --write path/to/file.xml ...   # rewrite in place
+uv run format_xml.py --check path/to/file.xml ...   # exit 1 if not formatted
+```
 
-Once installed, you can format an XML file by opening the command palette and
-executing `Format Document`.
+The script enforces:
+
+- 2-space indentation
+- Double-quoted attribute values
+- Self-closing empty elements as `<foo/>` (no space before the slash)
+- Lines wrap at 120 characters; overflow attributes continue at `(depth + 1) *
+  2` spaces of indent
+- Blank lines between sibling elements are preserved
+- Multi-line attribute values are collapsed to a single line (XML attribute
+  value normalization makes them un-recoverable after parsing anyway)
+
+If you prefer formatting in VS Code, the
+[XML Language Support by Red Hat](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-xml)
+extension produces output that is close to (but not always byte-identical to)
+`format_xml.py`. Use the script as the source of truth — its output is what
+CI checks.
 
 ## Pre-commit hooks
 
-We use [pre-commit](https://pre-commit.com/) to lint and format Python files,
-fix trailing whitespace and line endings, and verify that the top-level
-`LICENSE` file is up to date. The same hooks run on every PR in CI, so it's
-worth installing them locally:
+All linting, formatting, and license checks are wrapped in
+[pre-commit](https://pre-commit.com/) so the same gates run locally and in CI.
+Set it up once:
 
 ```bash
 uv tool install pre-commit
 pre-commit install              # auto-run on every git commit
-pre-commit run --all-files      # run all hooks against the entire repo
 ```
 
-## Unit Tests
-
-Before submitting your PR, you can test your change locally by invoking pytest:
+From then on, the hooks fire on every commit. To run everything against the
+whole repo (e.g. after a rebase):
 
 ```bash
-uv run --with-requirements test/requirements.txt pytest test/
+pre-commit run --all-files
 ```
 
-This same test will run on GitHub CI once you open your PR. Currently,
+To also run the slow pytest suite (model simulation tests and the structural
+lint over every model directory):
+
+```bash
+pre-commit run --hook-stage manual pytest --all-files
+```
+
 `model_test.py` simply simulates each robot for a fixed duration of time and
 checks that no simulation instabilities occur. In the future, we will likely add
 more tests that check for model realism (e.g., that a trajectory in real matches

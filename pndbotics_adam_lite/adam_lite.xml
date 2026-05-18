@@ -142,7 +142,8 @@
                 <body name="toeLeft">
                   <inertial pos="0.0370066 -2.063e-05 -0.0419868" quat="0.00469469 0.673963 -0.00294814 0.738744"
                     mass="0.4758" diaginertia="0.00159292 0.00152195 0.000273726"/>
-                  <joint name="ankleRoll_Left" pos="0 0 0" axis="1 0 0" range="-0.3491 0.3491" actuatorfrcrange="-12 12"/>
+                  <joint name="ankleRoll_Left" pos="0 0 0" axis="1 0 0" range="-0.3491 0.3491"
+                    actuatorfrcrange="-12 12"/>
                   <geom mesh="toeLeft_0" material="pnd_logo" class="visual"/>
                   <geom mesh="toeLeft_1" class="visual"/>
                   <geom mesh="toeLeft_2" material="pnd_logo" class="visual"/>

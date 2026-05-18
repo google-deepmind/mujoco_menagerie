@@ -182,11 +182,13 @@
                           material="white"/>
                         <geom size="0.0225 0.00785" pos="0 0 -0.051" quat="-1 0 0 -1" type="cylinder" material="white"
                           class="collision"/>
-                        <geom size="0.025 0.004875" pos="0 0 -0.063725" type="cylinder" class="visual" material="black"/>
+                        <geom size="0.025 0.004875" pos="0 0 -0.063725" type="cylinder" class="visual"
+                          material="black"/>
                         <geom size="0.025 0.004875" pos="0 0 -0.063725" type="cylinder" class="collision"
                           material="black"/>
                         <geom pos="0 0 -0.092475" class="visual" mesh="gripper_base_link" material="black"/>
-                        <geom pos="0 0 -0.092475" mesh="gripper_base_link_collision" class="collision" material="black"/>
+                        <geom pos="0 0 -0.092475" mesh="gripper_base_link_collision" class="collision"
+                          material="black"/>
                         <body name="gripper_left_motor_double_link" pos="0 0.02025 -0.122475">
                           <inertial pos="0.019654 0.018572 -0.011998" quat="0.434706 0.588708 -0.0217956 0.68116"
                             mass="0.134356" diaginertia="0.000272 0.000221 8e-05"/>
@@ -283,7 +285,8 @@
                       <body name="arm_right_7_link">
                         <inertial pos="0.0023011 -0.00361697 -0.0837948" quat="0.927123 -0.0149278 0.0465372 0.371557"
                           mass="1.04198" diaginertia="0.00273231 0.00271796 0.00105208"/>
-                        <joint name="arm_right_7_joint" axis="0 1 0" range="-0.680678 0.680678" actuatorfrcrange="-8 8"/>
+                        <joint name="arm_right_7_joint" axis="0 1 0" range="-0.680678 0.680678"
+                          actuatorfrcrange="-8 8"/>
                         <geom class="visual" mesh="r_arm_7" material="black"/>
                         <geom mesh="r_arm_7c" class="collision" material="black"/>
                         <geom size="0.0225 0.00785" pos="0 0 -0.051" quat="1 0 0 -1" type="cylinder" class="visual"
@@ -358,7 +361,7 @@
         </body>
       </body>
       <body name="leg_left_1_link" pos="-0.02 0.085 -0.27105">
-         <inertial pos="0.0847284 0.109974 0.017059" quat="0.522748 -0.852371 -0.00673577 0.012351" mass="2.23501"
+        <inertial pos="0.0847284 0.109974 0.017059" quat="0.522748 -0.852371 -0.00673577 0.012351" mass="2.23501"
           diaginertia="0.0105013 0.0076913 0.00473271"/>
         <joint name="leg_left_1_joint" axis="0 0 1" range="-0.349066 1.5708" actuatorfrcrange="-100 100"/>
         <geom class="visual" mesh="l_hip_z_lo_res" material="black"/>
@@ -506,7 +509,8 @@
     <joint joint1="gripper_left_inner_single_joint" joint2="gripper_left_inner_double_joint" solref="0.01 1"
       polycoef="0 -1 0 0 0"/>
     <!-- Joint constraints for right gripper -->
-    <joint joint1="gripper_right_motor_single_joint" joint2="gripper_right_joint" solref="0.01 1" polycoef="0 -1 0 0 0"/>
+    <joint joint1="gripper_right_motor_single_joint" joint2="gripper_right_joint" solref="0.01 1"
+      polycoef="0 -1 0 0 0"/>
     <joint joint1="gripper_right_joint" joint2="gripper_right_inner_double_joint" solref="0.01 1" polycoef="0 1 0 0 0"/>
     <joint joint1="gripper_right_inner_single_joint" joint2="gripper_right_inner_double_joint" solref="0.01 1"
       polycoef="0 -1 0 0 0"/>

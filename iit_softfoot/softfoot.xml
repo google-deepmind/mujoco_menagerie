@@ -75,7 +75,8 @@
             mesh="phalanx_distal_injection"/>
           <geom name="heel_2_visual" class="standard_chain" type="mesh" material="gray" pos="0 0 0.018499999999999999"
             mesh="phalanx_distal_injection"/>
-          <geom name="heel_3_visual" class="standard_chain" type="mesh" material="gray" mesh="phalanx_distal_injection"/>
+          <geom name="heel_3_visual" class="standard_chain" type="mesh" material="gray"
+            mesh="phalanx_distal_injection"/>
           <geom name="heel_4_visual" class="standard_chain" type="mesh" material="gray" pos="0 0 -0.017999999999999999"
             mesh="phalanx_distal_injection"/>
           <geom name="heel_5_visual" class="standard_chain" type="mesh" material="gray" pos="0 0 -0.036999999999999998"
@@ -91,7 +92,8 @@
             pos="0.00080000000000000004 0.037999999999999999 0.036999999999999998"/>
           <site name="site_roll_heel_1_extreme" class="tendon" size="0.001 0.001 0.001"
             pos="-0.0070000000000000001 0.012 0.036999999999999998"/>
-          <geom name="roll_virtual_phalanx_1_1" class="virtual_pulley" pos="0.012999999999999999 0 0.036999999999999998"/>
+          <geom name="roll_virtual_phalanx_1_1" class="virtual_pulley"
+            pos="0.012999999999999999 0 0.036999999999999998"/>
           <site name="site_roll_virtual_phalanx_1_1" class="tendon"
             pos="0.017000000000000001 0.002 0.036999999999999998"/>
 
@@ -101,7 +103,8 @@
           <site name="site_roll_heel_2" class="tendon"
             pos="0.00080000000000000004 0.037999999999999999 0.018499999999999999"/>
           <site name="site_roll_heel_2_extreme" class="tendon" pos="-0.0070000000000000001 0.012 0.018499999999999999"/>
-          <geom name="roll_virtual_phalanx_1_2" class="virtual_pulley" pos="0.012999999999999999 0 0.018499999999999999"/>
+          <geom name="roll_virtual_phalanx_1_2" class="virtual_pulley"
+            pos="0.012999999999999999 0 0.018499999999999999"/>
           <site name="site_roll_virtual_phalanx_1_2" class="tendon"
             pos="0.017000000000000001 0.002 0.018499999999999999"/>
 
@@ -117,7 +120,8 @@
             pos="0.00080000000000000004 0.033500000000000002 -0.018499999999999996"/>
           <site name="site_roll_heel_4" class="tendon"
             pos="0.00080000000000000004 0.037999999999999999 -0.018499999999999996"/>
-          <site name="site_roll_heel_4_extreme" class="tendon" pos="-0.0070000000000000001 0.012 -0.018499999999999996"/>
+          <site name="site_roll_heel_4_extreme" class="tendon"
+            pos="-0.0070000000000000001 0.012 -0.018499999999999996"/>
           <geom name="roll_virtual_phalanx_1_4" class="virtual_pulley"
             pos="0.012999999999999999 0 -0.018499999999999996"/>
           <site name="site_roll_virtual_phalanx_1_4" class="tendon"
@@ -128,12 +132,12 @@
             pos="0.00080000000000000004 0.033500000000000002 -0.036999999999999998"/>
           <site name="site_roll_heel_5" class="tendon"
             pos="0.00080000000000000004 0.037999999999999999 -0.036999999999999998"/>
-          <site name="site_roll_heel_5_extreme" class="tendon" pos="-0.0070000000000000001 0.012 -0.036999999999999998"/>
+          <site name="site_roll_heel_5_extreme" class="tendon"
+            pos="-0.0070000000000000001 0.012 -0.036999999999999998"/>
           <geom name="roll_virtual_phalanx_1_5" class="virtual_pulley"
             pos="0.012999999999999999 0 -0.036999999999999998"/>
           <site name="site_roll_virtual_phalanx_1_5" class="tendon"
             pos="0.017000000000000001 0.002 -0.036999999999999998"/>
-
 
           <!--   FIRST CHAIN   -->
           <body name="phalanx_1_1" pos="0.017380606797550806 -0.012172278537059241 0.036999999999999998"
@@ -174,7 +178,8 @@
                 <joint name="virtual_3_1_to_phalanx_3_1" class="standard_chain" pos="0 0 0" axis="0 0 1"/>
                 <geom name="phalanx_3_1_visual" class="standard_chain" type="mesh" mesh="phalanx_short_injection"/>
                 <geom name="phalanx_3_1_collision" class="collision" type="box"
-                  size="0.01 0.010500000000000001 0.0054999999999999997" pos="0.0050000000000000001 0 0" euler="0 0 -0"/>
+                  size="0.01 0.010500000000000001 0.0054999999999999997" pos="0.0050000000000000001 0 0"
+                  euler="0 0 -0"/>
                 <geom name="roll_phalanx_3_1" class="virtual_pulley" pos="0 0 0"/>
                 <site name="site_roll_phalanx_3_1" class="tendon"/>
                 <geom name="roll_virtual_phalanx_4_1" class="virtual_pulley" pos="0.0089999999999999993 0 0"/>
@@ -226,7 +231,8 @@
                       <site name="site_roll_virtual_reverse_phalanx_1" class="tendon" pos="0.01 0.0038 0"/>
                       <body name="rollover_phalanx_1" pos="0.023300000000000001 0 0" quat="1 0 0 0">
                         <joint name="reverse_phalanx_1_to_virtual_7_1" class="standard_chain"
-                          pos="-0.012999999999999999 0 0" axis="0 0 1" range="-0.78539816339744828 0.15707963267948966"/>
+                          pos="-0.012999999999999999 0 0" axis="0 0 1"
+                          range="-0.78539816339744828 0.15707963267948966"/>
                         <inertial pos="0.0098241600000000002 -0.00192716 1.2476099999999999e-07"
                           mass="0.0069295499999999996"
                           diaginertia="3.2379098000000002e-07 4.8681188999999998e-07 6.2561966999999998e-07"/>
@@ -256,7 +262,8 @@
                           <geom name="roll_phalanx_6_1" class="virtual_pulley" pos="0 0 0"/>
                           <site name="site_roll_phalanx_6_1" class="tendon"/>
                           <geom name="roll_virtual_phalanx_7_1" class="virtual_pulley" pos="0.0089999999999999993 0 0"/>
-                          <site name="site_roll_virtual_phalanx_7_1" class="tendon" pos="0.0089999999999999993 0.0038 0"/>
+                          <site name="site_roll_virtual_phalanx_7_1" class="tendon"
+                            pos="0.0089999999999999993 0.0038 0"/>
                           <body name="distal_phalanx_1" pos="0.021999999999999999 0 0" quat="1 0 0 0">
                             <joint name="phalanx_6_1_to_virtual_9_1" class="standard_chain"
                               pos="-0.012999999999999999 0 0" axis="0 0 1"/>
@@ -322,7 +329,8 @@
                 <joint name="virtual_3_2_to_phalanx_3_2" class="standard_chain" pos="0 0 0" axis="0 0 1"/>
                 <geom name="phalanx_3_2_visual" class="standard_chain" type="mesh" mesh="phalanx_short_injection"/>
                 <geom name="phalanx_3_2collision" class="collision" type="box"
-                  size="0.01 0.010500000000000001 0.0054999999999999997" pos="0.0050000000000000001 0 0" euler="0 0 -0"/>
+                  size="0.01 0.010500000000000001 0.0054999999999999997" pos="0.0050000000000000001 0 0"
+                  euler="0 0 -0"/>
                 <geom name="roll_phalanx_3_2" class="virtual_pulley" pos="0 0 0"/>
                 <site name="site_roll_phalanx_3_2" class="tendon"/>
                 <geom name="roll_virtual_phalanx_4_2" class="virtual_pulley" pos="0.0089999999999999993 0 0"/>
@@ -374,7 +382,8 @@
                       <site name="site_roll_virtual_reverse_phalanx_2" class="tendon" pos="0.01 0.0038 0"/>
                       <body name="rollover_phalanx_2" pos="0.023300000000000001 0 0" quat="1 0 0 0">
                         <joint name="reverse_phalanx_2_to_virtual_7_2" class="standard_chain"
-                          pos="-0.012999999999999999 0 0" axis="0 0 1" range="-0.78539816339744828 0.15707963267948966"/>
+                          pos="-0.012999999999999999 0 0" axis="0 0 1"
+                          range="-0.78539816339744828 0.15707963267948966"/>
                         <inertial pos="0.0098241600000000002 -0.00192716 1.2476099999999999e-07"
                           mass="0.0069295499999999996"
                           diaginertia="3.2379098000000002e-07 4.8681188999999998e-07 6.2561966999999998e-07"/>
@@ -404,7 +413,8 @@
                           <geom name="roll_phalanx_6_2" class="virtual_pulley" pos="0 0 0"/>
                           <site name="site_roll_phalanx_6_2" class="tendon"/>
                           <geom name="roll_virtual_phalanx_7_2" class="virtual_pulley" pos="0.0089999999999999993 0 0"/>
-                          <site name="site_roll_virtual_phalanx_7_2" class="tendon" pos="0.0089999999999999993 0.0038 0"/>
+                          <site name="site_roll_virtual_phalanx_7_2" class="tendon"
+                            pos="0.0089999999999999993 0.0038 0"/>
                           <body name="distal_phalanx_2" pos="0.021999999999999999 0 0" quat="1 0 0 0">
                             <joint name="phalanx_6_2_to_virtual_9_2" class="standard_chain"
                               pos="-0.012999999999999999 0 0" axis="0 0 1"/>
@@ -470,7 +480,8 @@
                 <joint name="virtual_3_3_to_phalanx_3_3" class="standard_chain" pos="0 0 0" axis="0 0 1"/>
                 <geom name="phalanx_3_3_visual" class="standard_chain" type="mesh" mesh="phalanx_short_injection"/>
                 <geom name="phalanx_3_3_collision" class="collision" type="box"
-                  size="0.01 0.010500000000000001 0.0054999999999999997" pos="0.0050000000000000001 0 0" euler="0 0 -0"/>
+                  size="0.01 0.010500000000000001 0.0054999999999999997" pos="0.0050000000000000001 0 0"
+                  euler="0 0 -0"/>
                 <geom name="roll_phalanx_3_3" class="virtual_pulley" pos="0 0 0"/>
                 <site name="site_roll_phalanx_3_3" class="tendon"/>
                 <geom name="roll_virtual_phalanx_4_3" class="virtual_pulley" pos="0.0089999999999999993 0 0"/>
@@ -522,7 +533,8 @@
                       <site name="site_roll_virtual_reverse_phalanx_3" class="tendon" pos="0.01 0.0038 0"/>
                       <body name="rollover_phalanx_3" pos="0.023300000000000001 0 0" quat="1 0 0 0">
                         <joint name="reverse_phalanx_3_to_virtual_7_3" class="standard_chain"
-                          pos="-0.012999999999999999 0 0" axis="0 0 1" range="-0.78539816339744828 0.15707963267948966"/>
+                          pos="-0.012999999999999999 0 0" axis="0 0 1"
+                          range="-0.78539816339744828 0.15707963267948966"/>
                         <inertial pos="0.0098241600000000002 -0.00192716 1.2476099999999999e-07"
                           mass="0.0069295499999999996"
                           diaginertia="3.2379098000000002e-07 4.8681188999999998e-07 6.2561966999999998e-07"/>
@@ -552,7 +564,8 @@
                           <geom name="roll_phalanx_6_3" class="virtual_pulley" pos="0 0 0"/>
                           <site name="site_roll_phalanx_6_3" class="tendon"/>
                           <geom name="roll_virtual_phalanx_7_3" class="virtual_pulley" pos="0.0089999999999999993 0 0"/>
-                          <site name="site_roll_virtual_phalanx_7_3" class="tendon" pos="0.0089999999999999993 0.0038 0"/>
+                          <site name="site_roll_virtual_phalanx_7_3" class="tendon"
+                            pos="0.0089999999999999993 0.0038 0"/>
                           <body name="distal_phalanx_3" pos="0.021999999999999999 0 0" quat="1 0 0 0">
                             <joint name="phalanx_6_3_to_virtual_9_3" class="standard_chain"
                               pos="-0.012999999999999999 0 0" axis="0 0 1"/>
@@ -618,7 +631,8 @@
                 <joint name="virtual_3_4_to_phalanx_3_4" class="standard_chain" pos="0 0 0" axis="0 0 1"/>
                 <geom name="phalanx_3_4_visual" class="standard_chain" type="mesh" mesh="phalanx_short_injection"/>
                 <geom name="phalanx_3_4_collision" class="collision" type="box"
-                  size="0.01 0.010500000000000001 0.0054999999999999997" pos="0.0050000000000000001 0 0" euler="0 0 -0"/>
+                  size="0.01 0.010500000000000001 0.0054999999999999997" pos="0.0050000000000000001 0 0"
+                  euler="0 0 -0"/>
                 <geom name="roll_phalanx_3_4" class="virtual_pulley" pos="0 0 0"/>
                 <site name="site_roll_phalanx_3_4" class="tendon"/>
                 <geom name="roll_virtual_phalanx_4_4" class="virtual_pulley" pos="0.0089999999999999993 0 0"/>
@@ -670,7 +684,8 @@
                       <site name="site_roll_virtual_reverse_phalanx_4" class="tendon" pos="0.01 0.0038 0"/>
                       <body name="rollover_phalanx_4" pos="0.023300000000000001 0 0" quat="1 0 0 0">
                         <joint name="reverse_phalanx_4_to_virtual_7_4" class="standard_chain"
-                          pos="-0.012999999999999999 0 0" axis="0 0 1" range="-0.78539816339744828 0.15707963267948966"/>
+                          pos="-0.012999999999999999 0 0" axis="0 0 1"
+                          range="-0.78539816339744828 0.15707963267948966"/>
                         <inertial pos="0.0098241600000000002 -0.00192716 1.2476099999999999e-07"
                           mass="0.0069295499999999996"
                           diaginertia="3.2379098000000002e-07 4.8681188999999998e-07 6.2561966999999998e-07"/>
@@ -700,7 +715,8 @@
                           <geom name="roll_phalanx_6_4" class="virtual_pulley" pos="0 0 0"/>
                           <site name="site_roll_phalanx_6_4" class="tendon"/>
                           <geom name="roll_virtual_phalanx_7_4" class="virtual_pulley" pos="0.0089999999999999993 0 0"/>
-                          <site name="site_roll_virtual_phalanx_7_4" class="tendon" pos="0.0089999999999999993 0.0038 0"/>
+                          <site name="site_roll_virtual_phalanx_7_4" class="tendon"
+                            pos="0.0089999999999999993 0.0038 0"/>
                           <body name="distal_phalanx_4" pos="0.021999999999999999 0 0" quat="1 0 0 0">
                             <joint name="phalanx_6_4_to_virtual_9_4" class="standard_chain"
                               pos="-0.012999999999999999 0 0" axis="0 0 1"/>
@@ -766,7 +782,8 @@
                 <joint name="virtual_3_5_to_phalanx_3_5" class="standard_chain" pos="0 0 0" axis="0 0 1"/>
                 <geom name="phalanx_3_5_visual" class="standard_chain" type="mesh" mesh="phalanx_short_injection"/>
                 <geom name="phalanx_3_5_collision" class="collision" type="box"
-                  size="0.01 0.010500000000000001 0.0054999999999999997" pos="0.0050000000000000001 0 0" euler="0 0 -0"/>
+                  size="0.01 0.010500000000000001 0.0054999999999999997" pos="0.0050000000000000001 0 0"
+                  euler="0 0 -0"/>
                 <geom name="roll_phalanx_3_5" class="virtual_pulley" pos="0 0 0"/>
                 <site name="site_roll_phalanx_3_5" class="tendon"/>
                 <geom name="roll_virtual_phalanx_4_5" class="virtual_pulley" pos="0.0089999999999999993 0 0"/>
@@ -818,7 +835,8 @@
                       <site name="site_roll_virtual_reverse_phalanx_5" class="tendon" pos="0.01 0.0038 0"/>
                       <body name="rollover_phalanx_5" pos="0.023300000000000001 0 0" quat="1 0 0 0">
                         <joint name="reverse_phalanx_5_to_virtual_7_5" class="standard_chain"
-                          pos="-0.012999999999999999 0 0" axis="0 0 1" range="-0.78539816339744828 0.15707963267948966"/>
+                          pos="-0.012999999999999999 0 0" axis="0 0 1"
+                          range="-0.78539816339744828 0.15707963267948966"/>
                         <inertial pos="0.0098241600000000002 -0.00192716 1.2476099999999999e-07"
                           mass="0.0069295499999999996"
                           diaginertia="3.2379098000000002e-07 4.8681188999999998e-07 6.2561966999999998e-07"/>
@@ -848,7 +866,8 @@
                           <geom name="roll_phalanx_6_5" class="virtual_pulley" pos="0 0 0"/>
                           <site name="site_roll_phalanx_6_5" class="tendon"/>
                           <geom name="roll_virtual_phalanx_7_5" class="virtual_pulley" pos="0.0089999999999999993 0 0"/>
-                          <site name="site_roll_virtual_phalanx_7_5" class="tendon" pos="0.0089999999999999993 0.0038 0"/>
+                          <site name="site_roll_virtual_phalanx_7_5" class="tendon"
+                            pos="0.0089999999999999993 0.0038 0"/>
                           <body name="distal_phalanx_5" pos="0.021999999999999999 0 0" quat="1 0 0 0">
                             <joint name="phalanx_6_5_to_virtual_9_5" class="standard_chain"
                               pos="-0.012999999999999999 0 0" axis="0 0 1"/>
