@@ -13,6 +13,7 @@ Please check off each item (`[x]`) once complete, or mark it as `[N/A]` if it do
   - [ ] Global changelog (if your change affects the overall repo)
   - [ ] Model-specific changelog (if it affects a specific model only)
 - [ ] Followed the XML formatting/style guidelines (if editing MJCF)
+- [ ] Ran `python regenerate_license.py` if you added/removed a model or changed any `LICENSE` file
 - [ ] Ran `pytest test/` locally and ensured all tests pass
 - [ ] Signed the [Contributor License Agreement (CLA)](https://cla.developers.google.com/)
 

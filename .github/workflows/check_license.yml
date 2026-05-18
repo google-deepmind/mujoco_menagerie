@@ -1,0 +1,19 @@
+name: Check LICENSE
+
+on:
+  pull_request:
+    paths:
+      - '*/LICENSE'
+      - 'LICENSE'
+      - 'regenerate_license.py'
+
+jobs:
+  check-license:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Check LICENSE is up to date
+        run: python regenerate_license.py --check
