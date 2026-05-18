@@ -51,23 +51,23 @@ class ModelDirLayoutTest(parameterized.TestCase):
   @parameterized.named_parameters(_MODEL_DIRS)
   def test_has_readme(self, model_dir: pathlib.Path) -> None:
     self.assertTrue(
-        (model_dir / 'README.md').is_file(),
-        f'{model_dir.name}/README.md is missing.',
+      (model_dir / 'README.md').is_file(),
+      f'{model_dir.name}/README.md is missing.',
     )
 
   @parameterized.named_parameters(_MODEL_DIRS)
   def test_has_license(self, model_dir: pathlib.Path) -> None:
     self.assertTrue(
-        (model_dir / 'LICENSE').is_file(),
-        f'{model_dir.name}/LICENSE is missing (note: the filename must be '
-        'exactly "LICENSE", not "LICENSE.txt" or similar).',
+      (model_dir / 'LICENSE').is_file(),
+      f'{model_dir.name}/LICENSE is missing (note: the filename must be '
+      'exactly "LICENSE", not "LICENSE.txt" or similar).',
     )
 
   @parameterized.named_parameters(_MODEL_DIRS)
   def test_has_changelog(self, model_dir: pathlib.Path) -> None:
     self.assertTrue(
-        (model_dir / 'CHANGELOG.md').is_file(),
-        f'{model_dir.name}/CHANGELOG.md is missing.',
+      (model_dir / 'CHANGELOG.md').is_file(),
+      f'{model_dir.name}/CHANGELOG.md is missing.',
     )
 
   @parameterized.named_parameters(_MODEL_DIRS)
@@ -75,8 +75,8 @@ class ModelDirLayoutTest(parameterized.TestCase):
     if model_dir.name in _NO_SCENE_REQUIRED:
       self.skipTest(f'{model_dir.name} is exempt from the scene*.xml rule.')
     self.assertTrue(
-        any(model_dir.glob('scene*.xml')),
-        f'{model_dir.name} has no scene*.xml.',
+      any(model_dir.glob('scene*.xml')),
+      f'{model_dir.name} has no scene*.xml.',
     )
 
 
@@ -103,13 +103,13 @@ class ContributorsTest(absltest.TestCase):
       sorted_lines = sorted(lines, key=str.casefold)
       if lines != sorted_lines:
         first_bad = next(
-            (i for i, (a, b) in enumerate(zip(lines, sorted_lines)) if a != b),
-            0,
+          (i for i, (a, b) in enumerate(zip(lines, sorted_lines)) if a != b),
+          0,
         )
         self.fail(
-            f'CONTRIBUTORS.md section starting at line {start + 1} is not '
-            f'sorted. First out-of-order entry: {lines[first_bad]!r} '
-            f'(expected {sorted_lines[first_bad]!r}).'
+          f'CONTRIBUTORS.md section starting at line {start + 1} is not '
+          f'sorted. First out-of-order entry: {lines[first_bad]!r} '
+          f'(expected {sorted_lines[first_bad]!r}).'
         )
 
 
