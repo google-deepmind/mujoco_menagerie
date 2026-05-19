@@ -170,19 +170,17 @@ Menagerie, see [CONTRIBUTING](CONTRIBUTING.md).
 
 ### Quick contributor setup
 
-All linting, formatting, and license checks are wrapped in
-[pre-commit](https://pre-commit.com/) and run automatically on every commit.
-Set it up once:
+Two commands and you're set up. You need [`uv`](https://docs.astral.sh/uv/)
+installed; that's the only prerequisite.
 
 ```bash
-uv tool install pre-commit
-pre-commit install
+make install   # one-time: installs pre-commit + git hook
+make all       # run every check CI runs (lint + format + license + XML + tests)
 ```
 
-Then just `git commit` — the hooks handle Python lint/format, MJCF XML
-formatting (`format_xml.py`), trailing-whitespace, and the top-level
-`LICENSE` check. Tests run in CI; you can also invoke them locally with
-`pre-commit run --hook-stage manual pytest --all-files`.
+After `make install`, the fast checks fire automatically on every `git commit`.
+Run `make all` before pushing. See [CONTRIBUTING.md](CONTRIBUTING.md) for the
+full breakdown.
 
 ## Menagerie Models
 

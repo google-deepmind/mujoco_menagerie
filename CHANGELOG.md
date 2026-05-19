@@ -2,6 +2,10 @@
 
 All notable changes to this repository will be documented here.
 
+## [2026-05-19]
+
+- Streamlined the contributor workflow behind a top-level `Makefile`: `make install` for one-time setup, `make check` for lint/format/license/XML, `make test` for the simulation suite, `make all` for everything CI runs. Slimmed the PR template and rewrote the CONTRIBUTING dev-setup section to match. Removed the redundant `check_license.yml` workflow (its job is already covered by the pre-commit workflow).
+
 ## [2026-05-18]
 
 - Added `format_xml.py`, an XML formatter for MJCF files (2-space indent, 120-col wrap, single-line attribute values). Wired into pre-commit so the same check runs locally and in CI. Reformatted every existing XML in the repo so the rules are now actually enforced.
