@@ -13,12 +13,12 @@
 # limitations under the License.
 
 # /// script
-# dependencies = ["absl-py", "dm_control", "pillow", "numpy", "tqdm", "mdutils", "opencv-python"]
+# dependencies = ["absl-py", "mujoco", "pillow", "numpy", "tqdm", "mdutils", "opencv-python"]
 # ///
 """Generate a markdown table with images of some of the models in Menagerie.
 
 Requirements:
-    pip install absl-py dm_control pillow numpy tqdm mdutils opencv-python
+    pip install absl-py mujoco pillow numpy tqdm mdutils opencv-python
 
 Instructions:
     `python generate_gallery.py` will create a markdown document called
@@ -31,10 +31,10 @@ import math
 import pathlib
 
 import cv2
+import mujoco
 import numpy as np
 import tqdm.auto
 from absl import app
-from dm_control import mjcf
 from mdutils import mdutils
 from PIL import Image
 
@@ -390,24 +390,27 @@ KEYFRAME_MAP = {
 KEEP_LIGHT = ['go1', 'a1', 'op3', 'aloha', 'left_hand', 'stretch', 'piper']
 
 
-def create_arena():
-  arena = mjcf.RootElement()
-  arena.visual.quality.shadowsize = 8192
-  arena.visual.headlight.diffuse = (0.6,) * 3
-  arena.visual.headlight.ambient = (0.3,) * 3
-  arena.visual.headlight.specular = (0.2,) * 3
-  getattr(arena.visual, 'global').offheight = 720
-  getattr(arena.visual, 'global').offwidth = 1280
-  arena.asset.add(
-    'texture',
-    type='skybox',
-    builtin='gradient',
+def _parse_floats(s):
+  return [float(t) for t in s.split()]
+
+
+def apply_gallery_settings(spec):
+  """Apply the gallery's visual settings and white skybox to a model spec."""
+  spec.visual.quality.shadowsize = 8192
+  spec.visual.headlight.diffuse = [0.6, 0.6, 0.6]
+  spec.visual.headlight.ambient = [0.3, 0.3, 0.3]
+  spec.visual.headlight.specular = [0.2, 0.2, 0.2]
+  spec.visual.global_.offheight = 720
+  spec.visual.global_.offwidth = 1280
+  spec.add_texture(
+    name='gallery_skybox',
+    type=mujoco.mjtTexture.mjTEXTURE_SKYBOX,
+    builtin=mujoco.mjtBuiltin.mjBUILTIN_GRADIENT,
     height=512,
     width=512,
-    rgb1='1 1 1',
-    rgb2='1 1 1',
+    rgb1=[1, 1, 1],
+    rgb2=[1, 1, 1],
   )
-  return arena
 
 
 MODEL_XMLS = [pathlib.Path(f'./{k}.xml') for k in MODEL_MAP.keys()]
@@ -436,41 +439,46 @@ def main(argv):
       if robot not in CAMERA_MAP:
         continue
 
-      arena = create_arena()
+      spec = mujoco.MjSpec.from_file(xml.as_posix())
+      apply_gallery_settings(spec)
 
+      if robot_name not in KEEP_LIGHT:
+        for light in list(spec.lights):
+          spec.delete(light)
+
+      camera_kwargs = dict(CAMERA_MAP[robot])
+      camera_kwargs['pos'] = _parse_floats(camera_kwargs['pos'])
+      camera_kwargs['xyaxes'] = _parse_floats(camera_kwargs['xyaxes'])
+      spec.worldbody.add_camera(name='thumbnail', **camera_kwargs)
+
+      gallery_key_name = None
       if robot_maker in KEYFRAME_MAP:
-        arena.keyframe.add('key', qpos=KEYFRAME_MAP[robot_maker])
-
-      model_xml = mjcf.from_path(xml.as_posix(), escape_separators=True)
-      for light in model_xml.find_all('light'):
-        if robot_name not in KEEP_LIGHT:
-          light.remove()
-
-      if robot in CAMERA_MAP:
-        camera_kwargs = CAMERA_MAP[robot]
-        arena.worldbody.add('camera', name='thumbnail', **camera_kwargs)
+        gallery_key_name = 'gallery_thumbnail'
+        spec.add_key(
+          name=gallery_key_name,
+          qpos=_parse_floats(KEYFRAME_MAP[robot_maker]),
+        )
 
       if robot_maker == 'aloha':
-        right_base = model_xml.find('body', 'right\\base_link')
-        right_base.pos[0] = 0.3
-        left_base = model_xml.find('body', 'left\\base_link')
-        left_base.pos[0] = -0.3
+        spec.body('right/base_link').pos[0] = 0.3
+        spec.body('left/base_link').pos[0] = -0.3
 
-      arena.include_copy(model_xml, override_attributes=True)
-
-      physics = mjcf.Physics.from_mjcf_model(arena)
-
-      try:
-        physics.reset(keyframe_id=0)
-      except Exception:
-        physics.reset()
-
-      physics.forward()
-
-      if robot in CAMERA_MAP:
-        img = physics.render(height=500, width=500, camera_id='thumbnail')
+      model = spec.compile()
+      data = mujoco.MjData(model)
+      if gallery_key_name is not None:
+        key_id = mujoco.mj_name2id(
+          model, mujoco.mjtObj.mjOBJ_KEY, gallery_key_name
+        )
+        mujoco.mj_resetDataKeyframe(model, data, key_id)
+      elif model.nkey > 0:
+        mujoco.mj_resetDataKeyframe(model, data, 0)
       else:
-        img = physics.render(height=500, width=500)
+        mujoco.mj_resetData(model, data)
+      mujoco.mj_forward(model, data)
+
+      renderer = mujoco.Renderer(model, height=500, width=500)
+      renderer.update_scene(data, camera='thumbnail')
+      img = renderer.render()
 
       img = cv2.putText(
         img.copy(),
