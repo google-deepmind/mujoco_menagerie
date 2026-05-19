@@ -23,7 +23,6 @@ Built by the Google DeepMind team with contributions from the open-source commun
 - [Chenhui Zuo](https://github.com/zchJo)
 - [Chi-Tao Kuan](https://github.com/ctkuan-flexiv)
 - [Chintan Desai](https://github.com/hello-chintan)
-- [Chi-Tao Kuan](https://github.com/ctkuan-flexiv)
 - [Christian Rauch](https://github.com/christianrauch)
 - [Dada Tian](https://github.com/lonelyfluency)
 - [Eugene Frizza](https://github.com/eufrizz)
