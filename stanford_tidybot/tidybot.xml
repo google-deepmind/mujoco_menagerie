@@ -6,6 +6,7 @@
 
   <default>
     <default class="base">
+      <geom mass="0"/>
       <default class="base/visual">
         <geom type="mesh" contype="0" conaffinity="0" group="2"/>
       </default>
@@ -101,13 +102,12 @@
 
   <worldbody>
     <body name="base_link">
-      <inertial pos="0 0 0.035" mass="60" diaginertia="0.001 0.001 0.001"/>
       <joint name="joint_x" type="slide" axis="1 0 0"/>
       <joint name="joint_y" type="slide" axis="0 1 0"/>
       <joint name="joint_th"/>
       <geom class="base/visual" mesh="bumper" material="black"/>
       <geom class="base/visual" mesh="bottom_plate" material="dark_gray"/>
-      <geom class="base/visual" mesh="body" material="gray"/>
+      <geom class="base/visual" mesh="body" material="gray" mass="60"/>
       <geom class="base/visual" mesh="top_plate" material="dark_gray"/>
       <geom class="base/visual" mesh="arm_plate" material="gray"/>
       <geom class="base/collision" mesh="bumper"/>
