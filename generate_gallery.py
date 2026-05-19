@@ -144,215 +144,14 @@ MODEL_MAP = {
   'flexiv_rizon4/flexiv_rizon4': ModelType.ARM,
 }
 
-DEFAULT_FOV = 40
-
-CAMERA_MAP = {
-  'pal_talos/talos': dict(
-    pos='2.312 0.005 1.144',
-    xyaxes='-0.002 1.000 -0.000 -0.107 -0.000 0.994',
-  ),
-  'skydio_x2/x2': dict(
-    pos='-0.580 -0.260 0.622',
-    xyaxes='0.442 -0.897 -0.000 0.428 0.211 0.879',
-    fovy=60,
-  ),
-  'flybody/fruitfly': dict(
-    pos='0.430 -0.361 0.326',
-    xyaxes='0.589 0.808 0.000 -0.486 0.354 0.799',
-    fovy=50,
-  ),
-  'wonik_allegro/left_hand': dict(
-    pos='0.002 0.043 0.432', xyaxes='0.052 -0.999 0.000 0.998 0.052 0.017'
-  ),
-  'ufactory_xarm7/xarm7': dict(
-    pos='0.852 -0.383 0.860',
-    xyaxes='0.487 0.874 0.000 -0.354 0.197 0.914',
-    fovy=DEFAULT_FOV,
-  ),
-  'ufactory_xarm7/hand': dict(
-    pos='-0.282 0.013 0.118',
-    xyaxes='-0.047 -0.999 0.000 0.160 -0.007 0.987',
-    fovy=45,
-  ),
-  'shadow_hand/left_hand': dict(
-    pos='0.172 0.005 0.615',
-    xyaxes='-0.508 -0.861 -0.000 0.861 -0.508 0.017',
-    fovy=45,
-  ),
-  'franka_emika_panda/panda': dict(
-    pos='0.412 1.106 0.849',
-    xyaxes='-0.994 0.108 0.000 -0.040 -0.369 0.928',
-    fovy=DEFAULT_FOV,
-  ),
-  'franka_fr3/fr3': dict(
-    pos='0.412 1.106 0.849',
-    xyaxes='-0.994 0.108 0.000 -0.040 -0.369 0.928',
-    fovy=DEFAULT_FOV,
-  ),
-  'franka_emika_panda/hand': dict(
-    pos='0.340 0.008 0.059',
-    xyaxes='-0.023 1.000 0.000 -0.084 -0.002 0.996',
-    fovy=DEFAULT_FOV,
-  ),
-  'kuka_iiwa_14/iiwa14': dict(
-    pos='0.212 1.138 0.977',
-    xyaxes='-1.000 0.027 0.000 -0.012 -0.441 0.898',
-    fovy=45,
-  ),
-  'ufactory_lite6/lite6': dict(
-    pos='0.077 -0.778 0.528',
-    xyaxes='1.000 -0.004 -0.000 0.001 0.274 0.962',
-    fovy=45,
-  ),
-  'unitree_g1/g1': dict(
-    pos='1.466 -0.082 1.271',
-    xyaxes='0.072 0.997 -0.000 -0.377 0.027 0.926',
-    fovy=45,
-  ),
-  'unitree_h1/h1': dict(
-    pos='2.098 0.006 1.893',
-    xyaxes='0.007 1.000 -0.000 -0.394 0.003 0.919',
-    fovy=45,
-  ),
-  'robotis_op3/op3': dict(
-    pos='0.673 -0.024 0.447',
-    xyaxes='0.035 0.999 0.000 -0.252 0.009 0.968',
-    fovy=45,
-  ),
-  'universal_robots_ur5e/ur5e': dict(
-    pos='0.603 1.012 0.595',
-    xyaxes='-0.932 0.363 -0.000 -0.080 -0.206 0.975',
-    fovy=DEFAULT_FOV,
-  ),
-  'universal_robots_ur10e/ur10e': dict(
-    pos='1.286 -0.798 0.889',
-    xyaxes='0.696 0.718 -0.000 -0.224 0.218 0.950',
-    fovy=DEFAULT_FOV,
-  ),
-  'unitree_z1/z1': dict(
-    pos='0.305 -0.400 0.552',
-    xyaxes='0.755 0.656 0.000 -0.359 0.413 0.837',
-    fovy=DEFAULT_FOV,
-  ),
-  'unitree_go2/go2': dict(
-    pos='0.753 -0.427 0.433',
-    xyaxes='0.518 0.856 0.000 -0.284 0.172 0.943',
-    fovy=DEFAULT_FOV,
-  ),
-  'unitree_go1/go1': dict(
-    pos='0.679 -0.553 0.530',
-    xyaxes='0.638 0.770 -0.000 -0.328 0.272 0.905',
-    fovy=DEFAULT_FOV,
-  ),
-  'unitree_a1/a1': dict(
-    pos='0.654 -0.564 0.536',
-    xyaxes='0.676 0.737 -0.000 -0.327 0.299 0.896',
-    fovy=DEFAULT_FOV,
-  ),
-  'trossen_vx300s/vx300s': dict(
-    pos='0.583 0.317 0.549',
-    xyaxes='-0.531 0.847 0.000 -0.434 -0.272 0.859',
-    fovy=DEFAULT_FOV,
-  ),
-  'robotiq_2f85/2f85': dict(
-    pos='-0.009 -0.251 0.107',
-    xyaxes='0.999 -0.033 -0.000 0.005 0.150 0.989',
-    fovy=45,
-  ),
-  'rethink_robotics_sawyer/sawyer': dict(
-    pos='1.014 -0.494 0.876',
-    xyaxes='0.555 0.832 -0.000 -0.372 0.248 0.895',
-    fovy=DEFAULT_FOV,
-  ),
-  'realsense_d435i/d435i': dict(
-    pos='-0.000 -0.002 0.128',
-    xyaxes='1.000 -0.000 0.000 0.000 1.000 0.017',
-    fovy=DEFAULT_FOV,
-  ),
-  'hello_robot_stretch/stretch': dict(
-    pos='1.464 -0.514 1.439',
-    xyaxes='0.271 0.963 -0.000 -0.362 0.102 0.927',
-    fovy=45,
-  ),
-  'google_robot/robot': dict(
-    pos='1.753 -0.231 1.305',
-    xyaxes='0.025 1.000 0.000 -0.306 0.008 0.952',
-    fovy=50,
-  ),
-  'google_barkour_vb/barkour_vb': dict(
-    pos='0.887 0.338 0.565',
-    xyaxes='-0.388 0.922 0.000 -0.460 -0.194 0.867',
-    fovy=DEFAULT_FOV,
-  ),
-  'google_barkour_v0/barkour_v0': dict(
-    pos='0.733 0.320 0.558',
-    xyaxes='-0.416 0.909 -0.000 -0.441 -0.202 0.875',
-    fovy=DEFAULT_FOV,
-  ),
-  'bitcraze_crazyflie_2/cf2': dict(
-    pos='0.037 -0.142 0.206',
-    xyaxes='0.963 0.268 0.000 -0.167 0.599 0.783',
-    fovy=DEFAULT_FOV,
-  ),
-  'anybotics_anymal_b/anymal_b': dict(
-    pos='0.930 -1.239 1.221',
-    xyaxes='0.809 0.587 0.000 -0.308 0.424 0.852',
-    fovy=DEFAULT_FOV,
-  ),
-  'anybotics_anymal_c/anymal_c': dict(
-    pos='1.547 -0.577 0.941',
-    xyaxes='0.378 0.926 -0.000 -0.358 0.146 0.922',
-    fovy=45,
-  ),
-  'aloha/aloha': dict(
-    pos='0.484 1.158 0.836',
-    xyaxes='-0.939 0.345 -0.000 -0.162 -0.441 0.883',
-    fovy=DEFAULT_FOV,
-  ),
-  'agility_cassie/cassie': dict(
-    pos='1.277 -1.122 1.053',
-    xyaxes='0.655 0.756 0.000 -0.196 0.170 0.966',
-    fovy=DEFAULT_FOV,
-  ),
-  'boston_dynamics_spot/spot_arm': dict(
-    pos='1.326 -0.829 0.651',
-    xyaxes='0.573 0.820 -0.000 -0.154 0.108 0.982',
-    fovy=DEFAULT_FOV,
-  ),
-  'shadow_dexee/shadow_dexee': dict(
-    pos='-0.003 -0.541 0.221',
-    xyaxes='1.000 0.000 -0.000 -0.000 0.131 0.991',
-    fovy=45,
-  ),
-  'leap_hand/left_hand': dict(
-    pos='-0.123 0.096 0.512',
-    xyaxes='0.004 -1.000 -0.000 0.995 0.004 0.101',
-  ),
-  'kinova_gen3/gen3': dict(
-    pos='0.252 -1.047 0.521',
-    xyaxes='0.988 0.156 -0.000 -0.024 0.153 0.988',
-  ),
-  'booster_t1/t1': dict(
-    pos='1.499 -0.777 1.2',
-    xyaxes='0.453 0.892 0.000 -0.295 0.150 0.944',
-    fovy=DEFAULT_FOV,
-  ),
-  'agilex_piper/piper': dict(
-    pos='0.288 -0.480 0.294',
-    xyaxes='0.866 0.500 0.000 -0.171 0.296 0.940',
-    fovy=50,
-  ),
-  'toddlerbot_2xc/toddlerbot_2xc': dict(
-    pos='0.75 -0.38 0.55',
-    xyaxes='0.453 0.892 0.000 -0.295 0.150 0.944',
-    fovy=DEFAULT_FOV,
-  ),
-  'flexiv_rizon4/flexiv_rizon4': dict(
-    pos='0.4 1.1 0.85',
-    xyaxes='-0.994 0.108 0.000 -0.040 -0.369 0.928',
-    fovy=DEFAULT_FOV,
-  ),
-}
+# Per-model camera overrides. Populated only when auto-camera produces a
+# bad thumbnail; the dict can stay empty otherwise. Example entry:
+#   'pal_talos/talos': dict(
+#       pos='2.312 0.005 1.144',
+#       xyaxes='-0.002 1.000 -0.000 -0.107 -0.000 0.994',
+#       fovy=45,
+#   ),
+CAMERA_MAP = {}
 
 # pylint: disable=line-too-long
 KEYFRAME_MAP = {
@@ -392,6 +191,66 @@ KEEP_LIGHT = ['go1', 'a1', 'op3', 'aloha', 'left_hand', 'stretch', 'piper']
 
 def _parse_floats(s):
   return [float(t) for t in s.split()]
+
+
+AUTO_FOVY = 45
+# Padding around the projected model AABB. 1.0 = model touches the frame
+# edge; >1 leaves margin around the model.
+AUTO_PADDING = 1.08
+
+# (azimuth_deg, elevation_deg). Azimuth is measured from +X around +Z.
+# Arms and end-effectors in Menagerie are typically mounted facing +Y, so we
+# view from ~70° (front-right). Legged robots default to facing +X (identity
+# quat), so we view them from ~20–-30° (front-right of +X).
+VIEW_ANGLES = {
+  ModelType.ARM: (70, 25),
+  ModelType.DUAL_ARM: (70, 25),
+  ModelType.END_EFFECTOR: (90, 20),
+  ModelType.MOBILE_MANIPULATOR: (15, 25),
+  ModelType.QUADRUPED: (-30, 25),
+  ModelType.BIPED: (-30, 25),
+  ModelType.HUMANOID: (15, 25),
+  ModelType.DRONE: (110, 30),
+  ModelType.BIOMECHANICAL: (110, 25),
+  ModelType.MISC: (80, 25),
+}
+
+
+def posed_bounds(model, data):
+  """AABB of visible geoms in the current (forward-evaluated) pose."""
+  visible = np.where(model.geom_group != 3)[0]
+  centers = data.geom_xpos[visible]
+  sizes = model.geom_size[visible]
+  lo = (centers - sizes).min(axis=0)
+  hi = (centers + sizes).max(axis=0)
+  return lo, hi
+
+
+def auto_camera(lo, hi, model_type):
+  """Frame the model's AABB tightly from a per-type viewing direction."""
+  azimuth_deg, elevation_deg = VIEW_ANGLES[model_type]
+  az = math.radians(azimuth_deg)
+  el = math.radians(elevation_deg)
+  z_cam = np.array(
+    [math.cos(el) * math.cos(az), math.cos(el) * math.sin(az), math.sin(el)]
+  )
+  x_cam = np.cross([0.0, 0.0, 1.0], z_cam)
+  x_cam /= np.linalg.norm(x_cam)
+  y_cam = np.cross(z_cam, x_cam)
+  # Project the 8 AABB corners onto camera X/Y to get tight framing in both
+  # screen axes. Distance must satisfy proj/dist <= tan(half_fov) for both.
+  center = (lo + hi) / 2
+  corners = np.stack(np.meshgrid(*zip(lo, hi))).reshape(3, -1).T - center
+  half_w = np.abs(corners @ x_cam).max()
+  half_h = np.abs(corners @ y_cam).max()
+  half_fov = math.radians(AUTO_FOVY / 2)
+  dist = max(half_w, half_h) / math.tan(half_fov) * AUTO_PADDING
+  pos = center + z_cam * dist
+  return dict(
+    pos=pos.tolist(),
+    xyaxes=x_cam.tolist() + y_cam.tolist(),
+    fovy=AUTO_FOVY,
+  )
 
 
 def apply_gallery_settings(spec):
@@ -436,20 +295,12 @@ def main(argv):
       robot_name = xml.stem
       robot = f'{robot_maker}/{robot_name}'
 
-      if robot not in CAMERA_MAP:
-        continue
-
       spec = mujoco.MjSpec.from_file(xml.as_posix())
       apply_gallery_settings(spec)
 
       if robot_name not in KEEP_LIGHT:
         for light in list(spec.lights):
           spec.delete(light)
-
-      camera_kwargs = dict(CAMERA_MAP[robot])
-      camera_kwargs['pos'] = _parse_floats(camera_kwargs['pos'])
-      camera_kwargs['xyaxes'] = _parse_floats(camera_kwargs['xyaxes'])
-      spec.worldbody.add_camera(name='thumbnail', **camera_kwargs)
 
       gallery_key_name = None
       if robot_maker in KEYFRAME_MAP:
@@ -462,6 +313,28 @@ def main(argv):
       if robot_maker == 'aloha':
         spec.body('right/base_link').pos[0] = 0.3
         spec.body('left/base_link').pos[0] = -0.3
+
+      if robot in CAMERA_MAP:
+        camera_kwargs = dict(CAMERA_MAP[robot])
+        camera_kwargs['pos'] = _parse_floats(camera_kwargs['pos'])
+        camera_kwargs['xyaxes'] = _parse_floats(camera_kwargs['xyaxes'])
+      else:
+        # Compile once to get the posed geometry, then place the camera.
+        probe_model = spec.compile()
+        probe_data = mujoco.MjData(probe_model)
+        if gallery_key_name is not None:
+          probe_key = mujoco.mj_name2id(
+            probe_model, mujoco.mjtObj.mjOBJ_KEY, gallery_key_name
+          )
+          mujoco.mj_resetDataKeyframe(probe_model, probe_data, probe_key)
+        elif probe_model.nkey > 0:
+          mujoco.mj_resetDataKeyframe(probe_model, probe_data, 0)
+        else:
+          mujoco.mj_resetData(probe_model, probe_data)
+        mujoco.mj_forward(probe_model, probe_data)
+        lo, hi = posed_bounds(probe_model, probe_data)
+        camera_kwargs = auto_camera(lo, hi, MODEL_MAP[robot])
+      spec.worldbody.add_camera(name='thumbnail', **camera_kwargs)
 
       model = spec.compile()
       data = mujoco.MjData(model)
