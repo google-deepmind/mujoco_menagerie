@@ -189,6 +189,37 @@ KEYFRAME_MAP = {
 
 KEEP_LIGHT = ['go1', 'a1', 'op3', 'aloha', 'left_hand', 'stretch', 'piper']
 
+# Each thumbnail in gallery.md links to a live preview of the model XML on
+# live.mujoco.org. The repo's PR-preview workflow uses
+# `github:OWNER/REPO/pull/N/head/PATH`; the analog for a branch ref is
+# `github:OWNER/REPO/blob/REF/PATH` (mirrors GitHub's web URL).
+LIVE_REPO = 'google-deepmind/mujoco_menagerie'
+LIVE_REF = 'main'
+
+# Default preview target is `<maker>/scene.xml`. Override per robot when that
+# file doesn't exist or wraps the wrong model (e.g., panda/scene.xml loads
+# the full arm; for the standalone gripper we want hand.xml directly).
+PREVIEW_OVERRIDES = {
+  'franka_emika_panda/hand': 'franka_emika_panda/hand.xml',
+  'ufactory_xarm7/hand': 'ufactory_xarm7/hand.xml',
+  'leap_hand/left_hand': 'leap_hand/scene_left.xml',
+  'shadow_hand/left_hand': 'shadow_hand/scene_left.xml',
+  'wonik_allegro/left_hand': 'wonik_allegro/scene_left.xml',
+  'realsense_d435i/d435i': 'realsense_d435i/d435i.xml',
+  'pal_talos/talos': 'pal_talos/scene_position.xml',
+}
+
+
+def preview_path(robot, robot_maker):
+  return PREVIEW_OVERRIDES.get(robot, f'{robot_maker}/scene.xml')
+
+
+def live_url(xml_path):
+  return (
+    f'https://live.mujoco.org/?model='
+    f'github:{LIVE_REPO}/blob/{LIVE_REF}/{xml_path}'
+  )
+
 
 def _parse_floats(s):
   return [float(t) for t in s.split()]
@@ -377,7 +408,7 @@ def main(argv):
       )
 
       filename = f'assets/{robot_maker}-{robot_name}.png'
-      paths.append(filename)
+      paths.append((filename, preview_path(robot, robot_maker)))
 
       png = np.zeros((500, 500, 4), dtype=np.uint8)
       u, v = np.where(np.all(img == 255, axis=-1))
@@ -403,7 +434,11 @@ def main(argv):
       if i >= n_models:
         row.append('')
       else:
-        row.append(f"<img src='{paths[i]}' width=100>")
+        png_path, xml_path = paths[i]
+        url = live_url(xml_path)
+        row.append(
+          f"<a href='{url}'><img src='{png_path}' width=100></a>"
+        )
     table.extend(row)
 
   mdfile = mdutils.MdUtils(file_name='gallery')
