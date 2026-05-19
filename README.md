@@ -197,6 +197,7 @@ formatting (`format_xml.py`), trailing-whitespace, and the top-level
 | Lite6 | UFACTORY | 6 | [BSD-3-Clause](ufactory_lite6/LICENSE) |
 | Panda | Franka Robotics | 7 | [BSD-3-Clause](franka_emika_panda/LICENSE) |
 | Rizon4 | Flexiv Robotics | 7 | [Apache-2.0](flexiv_rizon4/LICENSE) |
+| Rizon4s | Flexiv Robotics | 7 | [Apache-2.0](flexiv_rizon4s/LICENSE) |
 | Sawyer | Rethink Robotics | 7 | [Apache-2.0](rethink_robotics_sawyer/LICENSE) |
 | Unitree Z1 | Unitree Robotics | 6 | [BSD-3-Clause](unitree_z1/LICENSE) |
 | UR5e | Universal Robots | 6 | [BSD-3-Clause](universal_robots_ur5e/LICENSE) |
