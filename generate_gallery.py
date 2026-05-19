@@ -155,34 +155,35 @@ CAMERA_MAP = {}
 
 # pylint: disable=line-too-long
 KEYFRAME_MAP = {
-  'pal_talos': (
+  'pal_talos/talos': (
     '0 0 1.025 0 0 0 0 0 0.15 0 0 0.3 0.4 -0.5 -1.5 0 0 0 0 -0.4 0 0 0 0 0'
     ' -0.3 -0.4 0.5 -1.5 0 0 0 0 -0.4 0 0 0 0 0 0 0 -0.4 0.8 -0.4 0 0 0'
     ' -0.4 0.8 -0.4 0'
   ),
-  'robotis_op3': (
+  'robotis_op3/op3': (
     '0 0 0.2789 1 0 0 0 0.0 0.0 -0.0890 0.7931 -0.79 0.0874 -0.7946 0.7855'
     ' -0.0015 -0.0460 -0.1626 0.2316 0.1565 -0.0230 0.0 0.0445 0.1611'
     ' -0.2332 -0.1580 0.0215'
   ),
-  'google_barkour_vb': (
+  'google_barkour_vb/barkour_vb': (
     '0 0 0.21 1 0 0 0 0 0.5 1.0 0 0.5 1.0 0 0.5 1.0 0 0.5 1.0'
   ),
-  'hello_robot_stretch': (
+  'hello_robot_stretch/stretch': (
     '0 0 0 1 0 0 0 0 0 0.1325 0.07995 0.07995 0.07605 0.0702 1.585 0 0.198'
     ' 0 0 0.126 0 0 0 0'
   ),
-  'google_robot': (
+  'google_robot/robot': (
     '-1.51699e-13 -1.16232e-12 -0.1444 2.9724 -0.146 -0.3759 1.15806e-12'
     ' 0.5518 0.62275'
   ),
-  'aloha': (
+  'aloha/aloha': (
     '0.43988 -0.206468 1.08253 -0.443382 -1.084 -0.00397598 0.0084'
     ' 0.00846495 -1.28822 -0.360594 0.717978 -0.000325086 -0.273415'
     ' 6.76003e-05 0.0084 0.00839987'
   ),
-  'kuka_iiwa_14': '0 0 0 -1.5708 0 1.5708 0',
-  'flexiv_rizon4': '0 -0.524 0 1.833 0 0.785 0',
+  'kuka_iiwa_14/iiwa14': '0 0 0 -1.5708 0 1.5708 0',
+  'flexiv_rizon4/flexiv_rizon4': '0 -0.524 0 1.833 0 0.785 0',
+  'franka_emika_panda/hand': '0.04 0.04',
 }
 # pylint: enable=line-too-long
 
@@ -205,7 +206,9 @@ AUTO_PADDING = 1.08
 VIEW_ANGLES = {
   ModelType.ARM: (70, 25),
   ModelType.DUAL_ARM: (70, 25),
-  ModelType.END_EFFECTOR: (90, 20),
+  # End-effectors look bad from the side — fingers extend ~horizontally so
+  # a high elevation looks down at the spread of the digits.
+  ModelType.END_EFFECTOR: (45, 55),
   ModelType.MOBILE_MANIPULATOR: (15, 25),
   ModelType.QUADRUPED: (-30, 25),
   ModelType.BIPED: (-30, 25),
@@ -216,14 +219,21 @@ VIEW_ANGLES = {
 }
 
 
+_CORNER_SIGNS = np.array(np.meshgrid([-1, 1], [-1, 1], [-1, 1])).T.reshape(-1, 3)
+
+
 def posed_bounds(model, data):
-  """AABB of visible geoms in the current (forward-evaluated) pose."""
+  """World-frame AABB of visible geoms in the current forward-evaluated pose."""
   visible = np.where(model.geom_group != 3)[0]
-  centers = data.geom_xpos[visible]
-  sizes = model.geom_size[visible]
-  lo = (centers - sizes).min(axis=0)
-  hi = (centers + sizes).max(axis=0)
-  return lo, hi
+  aabb = model.geom_aabb[visible]  # (n, 6): center_xyz + halfsize_xyz, in local frame
+  c_local = aabb[:, :3]
+  h_local = aabb[:, 3:]
+  corners_local = c_local[:, None, :] + h_local[:, None, :] * _CORNER_SIGNS  # (n, 8, 3)
+  rot = data.geom_xmat[visible].reshape(-1, 3, 3)
+  trans = data.geom_xpos[visible]
+  corners_world = np.einsum('nij,nkj->nki', rot, corners_local) + trans[:, None, :]
+  pts = corners_world.reshape(-1, 3)
+  return pts.min(axis=0), pts.max(axis=0)
 
 
 def auto_camera(lo, hi, model_type):
@@ -237,14 +247,16 @@ def auto_camera(lo, hi, model_type):
   x_cam = np.cross([0.0, 0.0, 1.0], z_cam)
   x_cam /= np.linalg.norm(x_cam)
   y_cam = np.cross(z_cam, x_cam)
-  # Project the 8 AABB corners onto camera X/Y to get tight framing in both
-  # screen axes. Distance must satisfy proj/dist <= tan(half_fov) for both.
+  # Pick the smallest distance along Z_cam such that all 8 AABB corners fall
+  # inside the perspective frustum (corners closer to the camera need more
+  # margin, since they project larger).
   center = (lo + hi) / 2
   corners = np.stack(np.meshgrid(*zip(lo, hi))).reshape(3, -1).T - center
-  half_w = np.abs(corners @ x_cam).max()
-  half_h = np.abs(corners @ y_cam).max()
   half_fov = math.radians(AUTO_FOVY / 2)
-  dist = max(half_w, half_h) / math.tan(half_fov) * AUTO_PADDING
+  depth = corners @ z_cam
+  dist_x = (depth + np.abs(corners @ x_cam) / math.tan(half_fov)).max()
+  dist_y = (depth + np.abs(corners @ y_cam) / math.tan(half_fov)).max()
+  dist = max(dist_x, dist_y) * AUTO_PADDING
   pos = center + z_cam * dist
   return dict(
     pos=pos.tolist(),
@@ -303,11 +315,11 @@ def main(argv):
           spec.delete(light)
 
       gallery_key_name = None
-      if robot_maker in KEYFRAME_MAP:
+      if robot in KEYFRAME_MAP:
         gallery_key_name = 'gallery_thumbnail'
         spec.add_key(
           name=gallery_key_name,
-          qpos=_parse_floats(KEYFRAME_MAP[robot_maker]),
+          qpos=_parse_floats(KEYFRAME_MAP[robot]),
         )
 
       if robot_maker == 'aloha':
