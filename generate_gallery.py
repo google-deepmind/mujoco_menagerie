@@ -13,29 +13,28 @@
 # limitations under the License.
 
 # /// script
-# dependencies = ["absl-py", "mujoco", "pillow", "numpy", "tqdm", "mdutils", "opencv-python"]
+# dependencies = ["absl-py", "mujoco", "pillow", "numpy", "tqdm"]
 # ///
-"""Generate a markdown table with images of some of the models in Menagerie.
+"""Render every Menagerie model's thumbnail and update the README gallery.
 
 Requirements:
-    pip install absl-py mujoco pillow numpy tqdm mdutils opencv-python
+    pip install absl-py mujoco pillow numpy tqdm
 
 Instructions:
-    `python generate_gallery.py` will create a markdown document called
-    `gallery.md` with a table of images. Copy this table into README.md to
-    display the images.
+    `python generate_gallery.py` (or `make gallery`) regenerates the
+    thumbnails in `assets/` and splices a categorized table between the
+    `<!-- BEGIN MODELS -->` / `<!-- END MODELS -->` markers in README.md.
 """
 
 import enum
 import math
 import pathlib
+import re
 
-import cv2
 import mujoco
 import numpy as np
 import tqdm.auto
 from absl import app
-from mdutils import mdutils
 from PIL import Image
 
 DEFAULT_FOV = 40
@@ -46,58 +45,43 @@ class ModelType(int, enum.Enum):
   DUAL_ARM = 1
   END_EFFECTOR = 2
   MOBILE_MANIPULATOR = 3
-  QUADRUPED = 4
-  BIPED = 5
-  HUMANOID = 6
-  DRONE = 7
-  BIOMECHANICAL = 8
-  MISC = 9
+  MOBILE_BASE = 4
+  QUADRUPED = 5
+  BIPED = 6
+  HUMANOID = 7
+  DRONE = 8
+  BIOMECHANICAL = 9
+  MISC = 10
 
 
-NAME_MAP = {
-  'franka_emika_panda/panda': 'panda',
-  'franka_emika_panda/hand': 'panda gripper',
-  'franka_fr3/fr3': 'franka fr3',
-  'ufactory_lite6/lite6': 'lite6',
-  'flybody/fruitfly': 'fruitfly',
-  'skydio_x2/x2': 'skydio x2',
-  'unitree_h1/h1': 'h1',
-  'bitcraze_crazyflie_2/cf2': 'crazyflie 2',
-  'google_robot/robot': 'google robot',
-  'unitree_a1/a1': 'a1',
-  'google_barkour_v0/barkour_v0': 'barkour v0',
-  'anybotics_anymal_b/anymal_b': 'anymal b',
-  'unitree_go1/go1': 'go1',
-  'unitree_z1/z1': 'z1',
-  'anybotics_anymal_c/anymal_c': 'anymal c',
-  'agility_cassie/cassie': 'cassie',
-  'realsense_d435i/d435i': 'd435i',
-  'universal_robots_ur5e/ur5e': 'ur5e',
-  'aloha/aloha': 'aloha 2',
-  'rethink_robotics_sawyer/sawyer': 'sawyer',
-  'robotis_op3/op3': 'op3',
-  'universal_robots_ur10e/ur10e': 'ur10e',
-  'kuka_iiwa_14/iiwa14': 'iiwa 14',
-  'trossen_vx300s/vx300s': 'vx300s',
-  'unitree_g1/g1': 'g1',
-  'robotiq_2f85/2f85': '2f85',
-  'ufactory_xarm7/hand': 'xarm7 gripper',
-  'ufactory_xarm7/xarm7': 'xarm7',
-  'hello_robot_stretch/stretch': 'stretch 2',
-  'google_barkour_vb/barkour_vb': 'barkour vb',
-  'unitree_go2/go2': 'go2',
-  'boston_dynamics_spot/spot_arm': 'spot',
-  'shadow_dexee/shadow_dexee': 'dex-ee',
-  'pal_talos/talos': 'talos',
-  'leap_hand/left_hand': 'left leap',
-  'wonik_allegro/left_hand': 'left allegro',
-  'shadow_hand/left_hand': 'left shadow',
-  'kinova_gen3/gen3': 'gen3',
-  'booster_t1/t1': 't1',
-  'agilex_piper/piper': 'piper',
-  'toddlerbot_2xc/toddlerbot_2xc': 'toddlerbot',
-  'flexiv_rizon4/flexiv_rizon4': 'rizon4',
+# Display name overrides for robots whose model-dir README title is too
+# verbose, doesn't exist, or describes a different variant than the entry.
+# Everything else is extracted from the first `# <name> Description (MJCF)`
+# line of `<maker>/README.md`.
+DISPLAY_NAME_OVERRIDE = {
+  'franka_emika_panda/hand': 'Panda Gripper',
+  'ufactory_xarm7/hand': 'xarm7 Gripper',
 }
+
+
+_README_TITLE_SUFFIX = re.compile(
+  r'\s*(description\s*)?\(mjcf\)\s*$|\s+description\s*$',
+  re.IGNORECASE,
+)
+
+
+def display_name(robot):
+  if robot in DISPLAY_NAME_OVERRIDE:
+    return DISPLAY_NAME_OVERRIDE[robot]
+  maker = robot.split('/')[0]
+  readme = pathlib.Path(f'{maker}/README.md')
+  if readme.exists():
+    title = readme.read_text().splitlines()[0].strip().lstrip('#').strip()
+    title = _README_TITLE_SUFFIX.sub('', title).rstrip()
+    if title:
+      return title
+  return robot.split('/')[-1]
+
 
 MODEL_MAP = {
   'franka_emika_panda/panda': ModelType.ARM,
@@ -142,6 +126,26 @@ MODEL_MAP = {
   'agilex_piper/piper': ModelType.ARM,
   'toddlerbot_2xc/toddlerbot_2xc': ModelType.HUMANOID,
   'flexiv_rizon4/flexiv_rizon4': ModelType.ARM,
+  'arx_l5/arx_l5': ModelType.ARM,
+  'flexiv_rizon4s/flexiv_rizon4s': ModelType.ARM,
+  'trossen_wx250s/wx250s': ModelType.ARM,
+  'trs_so_arm100/so_arm100': ModelType.ARM,
+  'low_cost_robot_arm/low_cost_robot_arm': ModelType.ARM,
+  'i2rt_yam/yam': ModelType.ARM,
+  'umi_gripper/umi_gripper': ModelType.END_EFFECTOR,
+  'sharpa_wave/left_hand': ModelType.END_EFFECTOR,
+  'stanford_tidybot/tidybot': ModelType.MOBILE_MANIPULATOR,
+  'hello_robot_stretch_3/stretch': ModelType.MOBILE_MANIPULATOR,
+  'pal_tiago/tiago': ModelType.MOBILE_MANIPULATOR,
+  'pal_tiago_dual/tiago_dual': ModelType.MOBILE_MANIPULATOR,
+  'robot_soccer_kit/robot_soccer_kit': ModelType.MOBILE_BASE,
+  'pndbotics_adam_lite/adam_lite': ModelType.HUMANOID,
+  'apptronik_apollo/apptronik_apollo': ModelType.HUMANOID,
+  'berkeley_humanoid/berkeley_humanoid': ModelType.HUMANOID,
+  'fourier_n1/n1': ModelType.HUMANOID,
+  'toddlerbot_2xm/toddlerbot_2xm': ModelType.HUMANOID,
+  'iit_softfoot/softfoot': ModelType.BIOMECHANICAL,
+  'ms_human_700/MS-Human-700': ModelType.BIOMECHANICAL,
 }
 
 # Per-model camera overrides. Populated only when auto-camera produces a
@@ -191,8 +195,9 @@ KEEP_LIGHT = ['go1', 'a1', 'op3', 'aloha', 'left_hand', 'stretch', 'piper']
 
 # Each thumbnail in gallery.md links to a live preview of the model XML on
 # live.mujoco.org. The repo's PR-preview workflow uses
-# `github:OWNER/REPO/pull/N/head/PATH`; the analog for a branch ref is
-# `github:OWNER/REPO/blob/REF/PATH` (mirrors GitHub's web URL).
+# `github:OWNER/REPO/pull/N/head/PATH`; for a branch the parser expects the
+# bare ref: `github:OWNER/REPO/REF/PATH` (same shape as raw.githubusercontent
+# paths, just without the host).
 LIVE_REPO = 'google-deepmind/mujoco_menagerie'
 LIVE_REF = 'main'
 
@@ -205,8 +210,12 @@ PREVIEW_OVERRIDES = {
   'leap_hand/left_hand': 'leap_hand/scene_left.xml',
   'shadow_hand/left_hand': 'shadow_hand/scene_left.xml',
   'wonik_allegro/left_hand': 'wonik_allegro/scene_left.xml',
+  'sharpa_wave/left_hand': 'sharpa_wave/scene_left.xml',
   'realsense_d435i/d435i': 'realsense_d435i/d435i.xml',
   'pal_talos/talos': 'pal_talos/scene_position.xml',
+  'pal_tiago/tiago': 'pal_tiago/scene_position.xml',
+  'pal_tiago_dual/tiago_dual': 'pal_tiago_dual/scene_position.xml',
+  'ms_human_700/MS-Human-700': 'ms_human_700/scene.xml',
 }
 
 
@@ -217,7 +226,7 @@ def preview_path(robot, robot_maker):
 def live_url(xml_path):
   return (
     f'https://live.mujoco.org/?model='
-    f'github:{LIVE_REPO}/blob/{LIVE_REF}/{xml_path}'
+    f'github:{LIVE_REPO}/{LIVE_REF}/{xml_path}'
   )
 
 
@@ -234,6 +243,14 @@ AUTO_PADDING = 1.08
 # Arms and end-effectors in Menagerie are typically mounted facing +Y, so we
 # view from ~70° (front-right). Legged robots default to facing +X (identity
 # quat), so we view them from ~20–-30° (front-right of +X).
+# Per-robot view angle override, falling back to VIEW_ANGLES[category].
+VIEW_ANGLE_OVERRIDE = {
+  # Default biomechanical angle catches MS-Human-700 from the side; nudge
+  # to a near-frontal 3/4.
+  'ms_human_700/MS-Human-700': (20, 15),
+}
+
+
 VIEW_ANGLES = {
   ModelType.ARM: (70, 25),
   ModelType.DUAL_ARM: (70, 25),
@@ -241,6 +258,7 @@ VIEW_ANGLES = {
   # a high elevation looks down at the spread of the digits.
   ModelType.END_EFFECTOR: (45, 55),
   ModelType.MOBILE_MANIPULATOR: (15, 25),
+  ModelType.MOBILE_BASE: (-30, 35),
   ModelType.QUADRUPED: (-30, 25),
   ModelType.BIPED: (-30, 25),
   ModelType.HUMANOID: (15, 25),
@@ -250,26 +268,36 @@ VIEW_ANGLES = {
 }
 
 
-_CORNER_SIGNS = np.array(np.meshgrid([-1, 1], [-1, 1], [-1, 1])).T.reshape(-1, 3)
+_CORNER_SIGNS = np.array(np.meshgrid([-1, 1], [-1, 1], [-1, 1])).T.reshape(
+  -1, 3
+)
 
 
 def posed_bounds(model, data):
   """World-frame AABB of visible geoms in the current forward-evaluated pose."""
   visible = np.where(model.geom_group != 3)[0]
-  aabb = model.geom_aabb[visible]  # (n, 6): center_xyz + halfsize_xyz, in local frame
+  aabb = model.geom_aabb[
+    visible
+  ]  # (n, 6): center_xyz + halfsize_xyz, in local frame
   c_local = aabb[:, :3]
   h_local = aabb[:, 3:]
-  corners_local = c_local[:, None, :] + h_local[:, None, :] * _CORNER_SIGNS  # (n, 8, 3)
+  corners_local = (
+    c_local[:, None, :] + h_local[:, None, :] * _CORNER_SIGNS
+  )  # (n, 8, 3)
   rot = data.geom_xmat[visible].reshape(-1, 3, 3)
   trans = data.geom_xpos[visible]
-  corners_world = np.einsum('nij,nkj->nki', rot, corners_local) + trans[:, None, :]
+  corners_world = (
+    np.einsum('nij,nkj->nki', rot, corners_local) + trans[:, None, :]
+  )
   pts = corners_world.reshape(-1, 3)
   return pts.min(axis=0), pts.max(axis=0)
 
 
-def auto_camera(lo, hi, model_type):
+def auto_camera(lo, hi, model_type, robot=None):
   """Frame the model's AABB tightly from a per-type viewing direction."""
-  azimuth_deg, elevation_deg = VIEW_ANGLES[model_type]
+  azimuth_deg, elevation_deg = VIEW_ANGLE_OVERRIDE.get(
+    robot, VIEW_ANGLES[model_type]
+  )
   az = math.radians(azimuth_deg)
   el = math.radians(elevation_deg)
   z_cam = np.array(
@@ -327,18 +355,120 @@ def sort_func(xml):
 MODEL_XMLS = sorted(MODEL_XMLS, key=sort_func)
 
 
+# Section heading for each ModelType in the README. Iteration order
+# determines display order.
+SECTION_LABEL = {
+  ModelType.ARM: 'Arms',
+  ModelType.BIPED: 'Bipeds',
+  ModelType.DUAL_ARM: 'Dual Arms',
+  ModelType.DRONE: 'Drones',
+  ModelType.END_EFFECTOR: 'End-effectors',
+  ModelType.MOBILE_MANIPULATOR: 'Mobile Manipulators',
+  ModelType.MOBILE_BASE: 'Mobile Bases',
+  ModelType.HUMANOID: 'Humanoids',
+  ModelType.QUADRUPED: 'Quadrupeds',
+  ModelType.BIOMECHANICAL: 'Biomechanical',
+  ModelType.MISC: 'Miscellaneous',
+}
+
+THUMB_WIDTH = 120
+
+MODELS_BEGIN = (
+  '<!-- BEGIN MODELS (auto-generated by `make gallery` — do not edit) -->'
+)
+MODELS_END = '<!-- END MODELS -->'
+
+
+def detect_license(license_path):
+  """Identify the SPDX license name from the LICENSE file contents."""
+  text = pathlib.Path(license_path).read_text()
+  lower = text.lower()
+  if 'apache license' in lower and 'version 2' in lower:
+    return 'Apache-2.0'
+  if 'clear bsd' in lower:
+    return 'BSD-3-Clause-Clear'
+  if 'redistribution and use in source' in lower:
+    return 'BSD-3-Clause' if 'neither the name' in lower else 'BSD-2-Clause'
+  if 'permission is hereby granted, free of charge' in lower:
+    return 'MIT'
+  return 'Unknown'
+
+
+def _row(robot, png_path, xml_path, nu):
+  maker = robot.split('/')[0]
+  name = display_name(robot)
+  license_path = f'{maker}/LICENSE'
+  license_name = (
+    detect_license(license_path)
+    if pathlib.Path(license_path).exists()
+    else 'Unknown'
+  )
+  if png_path is not None:
+    preview = (
+      f"<a href='{live_url(xml_path)}' title='Open live preview for {name}'>"
+      f"<img src='{png_path}' width={THUMB_WIDTH}></a>"
+    )
+  else:
+    preview = ''
+  dof = str(nu) if nu is not None else '—'
+  return f'| {preview} | {name} | {dof} | [{license_name}]({license_path}) |'
+
+
+def write_gallery_to_readme(rendered, dofs, readme_path='README.md'):
+  """Replace the Menagerie Models section between markers with auto-gen tables.
+
+  rendered: list of (robot, png_path, xml_path) for successfully rendered models.
+  dofs: dict[robot -> nu] populated for all models that compiled.
+  """
+  rendered_by_robot = {robot: (png, xml) for robot, png, xml in rendered}
+
+  sections = []
+  for cat, label in SECTION_LABEL.items():
+    rows = []
+    for robot, robot_cat in MODEL_MAP.items():
+      if robot_cat != cat:
+        continue
+      png, xml = rendered_by_robot.get(robot, (None, None))
+      rows.append(_row(robot, png, xml, dofs.get(robot)))
+    if not rows:
+      continue
+    table = (
+      f'**{label}.**\n\n'
+      '| Preview | Name | DoFs | License |\n'
+      '|:---:|---|---|---|\n' + '\n'.join(rows)
+    )
+    sections.append(table)
+
+  body = '\n\n'.join(sections)
+  readme = pathlib.Path(readme_path).read_text()
+  pattern = re.compile(
+    re.escape(MODELS_BEGIN) + r'.*?' + re.escape(MODELS_END), re.DOTALL
+  )
+  if not pattern.search(readme):
+    raise SystemExit(
+      f'models markers not found in {readme_path}; expected\n  {MODELS_BEGIN}\n  {MODELS_END}'
+    )
+  new = pattern.sub(f'{MODELS_BEGIN}\n\n{body}\n\n{MODELS_END}', readme)
+  pathlib.Path(readme_path).write_text(new)
+
+
 def main(argv):
   del argv
 
   paths = []
   pngs = []
+  dofs = {}
   for xml in tqdm.auto.tqdm(MODEL_XMLS):
-    try:
-      robot_maker = xml.parent.stem
-      robot_name = xml.stem
-      robot = f'{robot_maker}/{robot_name}'
+    robot_maker = xml.parent.stem
+    robot_name = xml.stem
+    robot = f'{robot_maker}/{robot_name}'
 
-      spec = mujoco.MjSpec.from_file(xml.as_posix())
+    try:
+      # Load with an absolute path so each XML's own directory is used to
+      # resolve nested includes and per-model meshdir. chdir-ing into the
+      # model dir caused mesh-cache collisions across specs that share asset
+      # filenames (e.g., UR5e + UR10e both ship `assets/base_0.obj`).
+      spec = mujoco.MjSpec.from_file(str(xml.resolve()))
       apply_gallery_settings(spec)
 
       if robot_name not in KEEP_LIGHT:
@@ -376,10 +506,12 @@ def main(argv):
           mujoco.mj_resetData(probe_model, probe_data)
         mujoco.mj_forward(probe_model, probe_data)
         lo, hi = posed_bounds(probe_model, probe_data)
-        camera_kwargs = auto_camera(lo, hi, MODEL_MAP[robot])
+        camera_kwargs = auto_camera(lo, hi, MODEL_MAP[robot], robot)
       spec.worldbody.add_camera(name='thumbnail', **camera_kwargs)
 
       model = spec.compile()
+      n_freejoints = int((model.jnt_type == mujoco.mjtJoint.mjJNT_FREE).sum())
+      dofs[robot] = int(model.nq) - 7 * n_freejoints
       data = mujoco.MjData(model)
       if gallery_key_name is not None:
         key_id = mujoco.mj_name2id(
@@ -395,55 +527,28 @@ def main(argv):
       renderer = mujoco.Renderer(model, height=500, width=500)
       renderer.update_scene(data, camera='thumbnail')
       img = renderer.render()
-
-      img = cv2.putText(
-        img.copy(),
-        NAME_MAP[robot],
-        (5, 480),
-        cv2.FONT_HERSHEY_SIMPLEX,
-        1.3,
-        (0, 0, 0),
-        1,
-        cv2.LINE_AA,
-      )
+      # Build the alpha mask from a segmentation render so background
+      # pixels become transparent without nuking any geom (chroma-keying
+      # against the white skybox would eat white robot parts like UR5e's
+      # aluminum links).
+      renderer.enable_segmentation_rendering()
+      renderer.update_scene(data, camera='thumbnail')
+      mask = renderer.render()[..., 0] != -1
+      renderer.disable_segmentation_rendering()
 
       filename = f'assets/{robot_maker}-{robot_name}.png'
-      paths.append((filename, preview_path(robot, robot_maker)))
+      paths.append((robot, filename, preview_path(robot, robot_maker)))
 
       png = np.zeros((500, 500, 4), dtype=np.uint8)
-      u, v = np.where(np.all(img == 255, axis=-1))
-      png[u, v, -1] = 0
-      png[u, v, :3] = 0
-      u, v = np.where(np.any(img != 255, axis=-1))
-      png[u, v, :3] = img[u, v]
-      png[u, v, -1] = 255
+      png[mask, :3] = img[mask]
+      png[mask, 3] = 255
       pngs.append(png.copy())
       Image.fromarray(png).save(filename)
     except Exception as e:
       print(e)
       print(f'failed to load {xml.as_posix()}')
 
-  n_models = len(paths)
-  n_cols = 5
-  n_rows = int(math.ceil(n_models / n_cols))
-  table = []
-  for r in range(n_rows):
-    row = []
-    for c in range(n_cols):
-      i = r * n_cols + c
-      if i >= n_models:
-        row.append('')
-      else:
-        png_path, xml_path = paths[i]
-        url = live_url(xml_path)
-        row.append(
-          f"<a href='{url}'><img src='{png_path}' width=100></a>"
-        )
-    table.extend(row)
-
-  mdfile = mdutils.MdUtils(file_name='gallery')
-  mdfile.new_table(columns=n_cols, rows=n_rows, text=table, text_align='center')
-  mdfile.create_md_file()
+  write_gallery_to_readme(paths, dofs)
 
 
 if __name__ == '__main__':
