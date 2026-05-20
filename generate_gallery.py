@@ -358,16 +358,16 @@ MODEL_XMLS = sorted(MODEL_XMLS, key=sort_func)
 # Section heading for each ModelType in the README. Iteration order
 # determines display order.
 SECTION_LABEL = {
-  ModelType.ARM: 'Arms',
-  ModelType.BIPED: 'Bipeds',
-  ModelType.DUAL_ARM: 'Dual Arms',
-  ModelType.DRONE: 'Drones',
-  ModelType.END_EFFECTOR: 'End-effectors',
-  ModelType.MOBILE_MANIPULATOR: 'Mobile Manipulators',
-  ModelType.MOBILE_BASE: 'Mobile Bases',
   ModelType.HUMANOID: 'Humanoids',
   ModelType.QUADRUPED: 'Quadrupeds',
+  ModelType.BIPED: 'Bipeds',
   ModelType.BIOMECHANICAL: 'Biomechanical',
+  ModelType.DUAL_ARM: 'Dual Arms',
+  ModelType.MOBILE_MANIPULATOR: 'Mobile Manipulators',
+  ModelType.DRONE: 'Drones',
+  ModelType.ARM: 'Arms',
+  ModelType.END_EFFECTOR: 'End-effectors',
+  ModelType.MOBILE_BASE: 'Mobile Bases',
   ModelType.MISC: 'Miscellaneous',
 }
 
