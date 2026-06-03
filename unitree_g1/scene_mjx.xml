@@ -25,9 +25,12 @@
 
   <contact>
     <!-- left foot - floor -->
-    <pair name="left_foot1_floor" geom1="left_foot1_collision" geom2="floor" solref="0.008 1" friction="1 1" condim="3"/>
-    <pair name="left_foot2_floor" geom1="left_foot2_collision" geom2="floor" solref="0.008 1" friction="1 1" condim="3"/>
-    <pair name="left_foot3_floor" geom1="left_foot3_collision" geom2="floor" solref="0.008 1" friction="1 1" condim="3"/>
+    <pair name="left_foot1_floor" geom1="left_foot1_collision" geom2="floor" solref="0.008 1" friction="1 1"
+      condim="3"/>
+    <pair name="left_foot2_floor" geom1="left_foot2_collision" geom2="floor" solref="0.008 1" friction="1 1"
+      condim="3"/>
+    <pair name="left_foot3_floor" geom1="left_foot3_collision" geom2="floor" solref="0.008 1" friction="1 1"
+      condim="3"/>
     <!-- right foot - floor -->
     <pair name="right_foot1_floor" geom1="right_foot1_collision" geom2="floor" solref="0.008 1" friction="1 1"
       condim="3"/>
@@ -109,38 +112,10 @@
 
   <keyframe>
     <key name="home"
-      qpos="
-      0 0 0.783675
-      1 0 0 0
-      -0.1 0 0 0.3 -0.2 0
-      -0.1 0 0 0.3 -0.2 0
-      0 0 0
-      0.2 0.2 0 1.28 0 0 0
-      0.2 -0.2 0 1.28 0 0 0
-      "
-      ctrl="
-      -0.1 0 0 0.3 -0.2 0
-      -0.1 0 0 0.3 -0.2 0
-      0 0 0
-      0.2 0.2 0 1.28 0 0 0
-      0.2 -0.2 0 1.28 0 0 0
-      "/>
+      qpos="0 0 0.783675 1 0 0 0 -0.1 0 0 0.3 -0.2 0 -0.1 0 0 0.3 -0.2 0 0 0 0 0.2 0.2 0 1.28 0 0 0 0.2 -0.2 0 1.28 0 0 0"
+      ctrl="-0.1 0 0 0.3 -0.2 0 -0.1 0 0 0.3 -0.2 0 0 0 0 0.2 0.2 0 1.28 0 0 0 0.2 -0.2 0 1.28 0 0 0"/>
     <key name="knees_bent"
-      qpos="
-      0 0 0.755
-      1 0 0 0
-      -0.312 0 0 0.669 -0.363 0
-      -0.312 0 0 0.669 -0.363 0
-      0 0 0.073
-      0.2 0.22 0 1 0 0 0
-      0.2 -0.22 0 1 0 0 0
-      "
-      ctrl="
-      -0.312 0 0 0.669 -0.363 0
-      -0.312 0 0 0.669 -0.363 0
-      0 0 0.073
-      0.2 0.22 0 1 0 0 0
-      0.2 -0.22 0 1 0 0 0
-    "/>
+      qpos="0 0 0.755 1 0 0 0 -0.312 0 0 0.669 -0.363 0 -0.312 0 0 0.669 -0.363 0 0 0 0.073 0.2 0.22 0 1 0 0 0 0.2 -0.22 0 1 0 0 0"
+      ctrl="-0.312 0 0 0.669 -0.363 0 -0.312 0 0 0.669 -0.363 0 0 0 0.073 0.2 0.22 0 1 0 0 0 0.2 -0.22 0 1 0 0 0"/>
   </keyframe>
 </mujoco>

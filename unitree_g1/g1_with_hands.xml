@@ -201,7 +201,8 @@
                 diaginertia="0.000465864 0.000432842 0.000406394"/>
               <joint name="left_shoulder_pitch_joint" axis="0 1 0" range="-3.0892 2.6704" actuatorfrcrange="-25 25"/>
               <geom class="visual" mesh="left_shoulder_pitch_link"/>
-              <geom size="0.03 0.025" pos="0 0.04 -0.01" quat="0.707107 0 0.707107 0" type="cylinder" class="collision"/>
+              <geom size="0.03 0.025" pos="0 0.04 -0.01" quat="0.707107 0 0.707107 0" type="cylinder"
+                class="collision"/>
               <body name="left_shoulder_roll_link" pos="0 0.038 -0.013831" quat="0.990268 -0.139172 0 0">
                 <inertial pos="-0.000227 0.00727 -0.063243" quat="0.701256 -0.0196223 -0.00710317 0.712604" mass="0.643"
                   diaginertia="0.000691311 0.000618011 0.000388977"/>
@@ -317,7 +318,8 @@
                 diaginertia="0.000465864 0.000432842 0.000406394"/>
               <joint name="right_shoulder_pitch_joint" axis="0 1 0" range="-3.0892 2.6704" actuatorfrcrange="-25 25"/>
               <geom class="visual" mesh="right_shoulder_pitch_link"/>
-              <geom size="0.03 0.025" pos="0 -0.04 -0.01" quat="0.707107 0 0.707107 0" type="cylinder" class="collision"/>
+              <geom size="0.03 0.025" pos="0 -0.04 -0.01" quat="0.707107 0 0.707107 0" type="cylinder"
+                class="collision"/>
               <body name="right_shoulder_roll_link" pos="0 -0.038 -0.013831" quat="0.990268 0.139172 0 0">
                 <inertial pos="-0.000227 -0.00727 -0.063243" quat="0.712604 -0.00710317 -0.0196223 0.701256"
                   mass="0.643" diaginertia="0.000691311 0.000618011 0.000388977"/>
@@ -491,25 +493,7 @@
 
   <keyframe>
     <key name="stand"
-      qpos="
-      0 0 0.79
-      1 0 0 0
-      0 0 0 0 0 0
-      0 0 0 0 0 0
-      0 0 0
-      0.2 0.2 0 1.28 0 0 0
-      0 1.05 0 0 0 0 0
-      0.2 -0.2 0 1.28 0 0 0
-      0 -1.05 0 0 0 0 0
-      "
-      ctrl="
-      0 0 0 0 0 0
-      0 0 0 0 0 0
-      0 0 0
-      0.2 0.2 0 1.28 0 0 0
-      0 1.05 0 0 0 0 0
-      0.2 -0.2 0 1.28 0 0 0
-      0 -1.05 0 0 0 0 0
-      "/>
+      qpos="0 0 0.79 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0.2 0 1.28 0 0 0 0 1.05 0 0 0 0 0 0.2 -0.2 0 1.28 0 0 0 0 -1.05 0 0 0 0 0"
+      ctrl="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0.2 0 1.28 0 0 0 0 1.05 0 0 0 0 0 0.2 -0.2 0 1.28 0 0 0 0 -1.05 0 0 0 0 0"/>
   </keyframe>
 </mujoco>

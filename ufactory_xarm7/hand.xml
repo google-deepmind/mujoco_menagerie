@@ -37,10 +37,12 @@
       <default class="collision">
         <geom type="mesh" group="3"/>
         <default class="pad_box1">
-          <geom type="box" friction="0.7" solimp="0.95 0.99 0.001" solref="0.004 1" mass="0" priority="1" size="0.015 0.002 0.0095" rgba="0.0 0.1 0.7 1"/>
+          <geom type="box" friction="0.7" solimp="0.95 0.99 0.001" solref="0.004 1" mass="0" priority="1"
+            size="0.015 0.002 0.0095" rgba="0.0 0.1 0.7 1"/>
         </default>
         <default class="pad_box2">
-          <geom type="box" friction="0.6" solimp="0.95 0.99 0.001" solref="0.004 1" mass="0" priority="1" size="0.015 0.002 0.0095" rgba="0.0 0.5 0.5 1"/>
+          <geom type="box" friction="0.6" solimp="0.95 0.99 0.001" solref="0.004 1" mass="0" priority="1"
+            size="0.015 0.002 0.0095" rgba="0.0 0.5 0.5 1"/>
         </default>
       </default>
     </default>

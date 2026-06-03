@@ -104,7 +104,8 @@
     <body name="base" pos="0 0 0.62" quat="0 0 0 1" childclass="anymal_c">
       <camera name="track" pos="0 -2.5 0" xyaxes="1 0 0 0 1 5" mode="trackcom"/>
       <freejoint/>
-      <inertial mass="19.2035" pos="0.0025 0 0.0502071" quat="0.5 0.5 0.5 0.5" diaginertia="0.639559 0.624031 0.217374"/>
+      <inertial mass="19.2035" pos="0.0025 0 0.0502071" quat="0.5 0.5 0.5 0.5"
+        diaginertia="0.639559 0.624031 0.217374"/>
       <geom mesh="base_0" material="green" class="visual"/>
       <geom mesh="base_1" material="yellow" class="visual"/>
       <geom mesh="base_2" material="red" class="visual"/>
@@ -161,7 +162,8 @@
               diaginertia="0.0101637 0.00923838 0.00111927"/>
             <joint name="RF_KFE" axis="-1 0 0" range="-9.42478 9.42478"/>
             <geom quat="1 0 0 1" material="shank" mesh="shank_r" class="visual"/>
-            <geom pos="0.01305 0.08795 -0.33797" quat="0.382683 0 0 0.92388" material="foot" mesh="foot" class="visual"/>
+            <geom pos="0.01305 0.08795 -0.33797" quat="0.382683 0 0 0.92388" material="foot" mesh="foot"
+              class="visual"/>
             <geom class="foot" pos="0.01305 0.08795 -0.31547"/>
           </body>
         </body>

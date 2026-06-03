@@ -1,5 +1,3 @@
-<!-- This example scene attaches to a foot to a simple loading test rig, demonstrating
-the foot's compliance against an obstacle.-->
 <mujoco model="softfoot scene">
   <statistic center="0 0 0.1" extent=".3"/>
 

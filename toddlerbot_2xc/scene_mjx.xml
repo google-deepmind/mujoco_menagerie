@@ -1,4 +1,3 @@
-<?xml version="1.0"?>
 <mujoco model="toddlerbot_2xc_mjx_scene">
   <include file="toddlerbot_2xc_mjx.xml"/>
 

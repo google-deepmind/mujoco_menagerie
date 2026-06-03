@@ -1,4 +1,3 @@
-<?xml version="1.0"?>
 <mujoco model="toddlerbot_2xm">
   <compiler angle="radian" meshdir="assets" autolimits="true"/>
 
@@ -144,7 +143,8 @@
               size="0.04295 0.0212 0.02325" name="left_hip_pitch_link_collision"
               material="hip_pitch_link_visual_material"/>
             <body name="left_hip_roll_link" pos="-0.023 0.019 -0.024" quat="1 0 0 0">
-              <joint axis="1 0 0" name="left_hip_roll" range="-0.7853981633975363 1.5707963267948084" class="XM430-W350"/>
+              <joint axis="1 0 0" name="left_hip_roll" range="-0.7853981633975363 1.5707963267948084"
+                class="XM430-W350"/>
               <inertial pos="0.0246449 -3.22e-06 -0.0172318" mass="0.022"
                 fullinertia="9.95174e-06 8.77725e-06 4.31095e-06 4.28756e-10 1.73581e-09 8.52448e-08"/>
               <geom type="mesh" class="visual" pos="0.0246449 -3.22e-06 -0.0172318" quat="1 0 0 0"
@@ -369,7 +369,8 @@
         <geom type="mesh" class="visual" pos="0 -0.0129132 0" quat="1 0 0 0" mesh="right_shoulder_pitch_link_visual"
           material="shoulder_pitch_link_visual_material"/>
         <body name="right_shoulder_roll_link" pos="0.019 -0.027 0" quat="1 0 0 0">
-          <joint axis="-1 0 0" name="right_shoulder_roll" range="-0.4363323129976375 1.5707963267958416" class="2XC430"/>
+          <joint axis="-1 0 0" name="right_shoulder_roll" range="-0.4363323129976375 1.5707963267958416"
+            class="2XC430"/>
           <inertial pos="-0.0185402 -0.0117736 -0.00203648" mass="0.1152"
             fullinertia="2.66052e-05 3.22099e-05 3.47029e-05 -5.25219e-07 3.29206e-08 -6.36632e-07"/>
           <geom type="mesh" class="visual" pos="-0.0185402 -0.0117736 -0.00203648" quat="1 0 0 0"
@@ -393,7 +394,8 @@
             <geom type="box" class="collision" pos="0 0 -0.04425" quat="1 0 0 0" size="0.023 0.0129925 0.027107"
               name="right_shoulder_yaw_link_collision" material="shoulder_yaw_link_visual_material"/>
             <body name="right_elbow_roll_link" pos="0.019 0 -0.061" quat="1 0 0 0">
-              <joint axis="-1 0 0" name="right_elbow_roll" range="-2.2689280275929393 1.9198621771934514" class="2XC430"/>
+              <joint axis="-1 0 0" name="right_elbow_roll" range="-2.2689280275929393 1.9198621771934514"
+                class="2XC430"/>
               <inertial pos="-0.0185402 -0.0117736 -0.00203648" mass="0.1152"
                 fullinertia="2.66052e-05 3.22099e-05 3.47029e-05 -5.25219e-07 -3.29206e-08 6.36632e-07"/>
               <geom type="mesh" class="visual" pos="-0.0185402 -0.0117736 -0.00203648" quat="1 0 0 0"

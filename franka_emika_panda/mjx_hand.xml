@@ -13,8 +13,8 @@
       <default class="collision">
         <geom group="3" type="mesh" contype="0" conaffinity="0"/>
         <default class="primitive_collision">
-          <geom group="3" type="box" contype="0" conaffinity="0"
-           condim="3" solimp="0.99 0.995 0.01" solref="0.01 1" friction="1 0.005 0.0001"/>
+          <geom group="3" type="box" contype="0" conaffinity="0" condim="3" solimp="0.99 0.995 0.01" solref="0.01 1"
+            friction="1 0.005 0.0001"/>
           <default class="fingertip_pad_collision_1">
             <geom type="box" size="0.011 0.0075 0.01" pos="0 0.0185 0.011"/>
           </default>
@@ -56,9 +56,8 @@
       <geom mesh="hand_3" material="white" class="visual"/>
       <geom mesh="hand_4" material="off_white" class="visual"/>
       <geom mesh="hand_c" class="collision"/>
-      <geom name="hand_capsule" type="capsule"
-       class="collision" conaffinity="1" size="0.04 0.06"
-       quat="1 1 0 0" pos="0 0 0.03"/>
+      <geom name="hand_capsule" type="capsule" class="collision" conaffinity="1" size="0.04 0.06" quat="1 1 0 0"
+        pos="0 0 0.03"/>
       <site name="gripper" pos="0 0 0.1"/>
       <body name="left_finger" pos="0 0 0.0584">
         <inertial mass="0.015" pos="0 0 0" diaginertia="2.375e-6 2.375e-6 7.5e-7"/>
@@ -90,7 +89,7 @@
   </equality>
 
   <actuator>
-    <general class="panda" name="actuator8" joint="finger_joint1"
-     ctrlrange="0 0.04" gainprm="350 0 0" biasprm="0 -350 -10" forcerange="-200 200"/>
+    <general class="panda" name="actuator8" joint="finger_joint1" ctrlrange="0 0.04" gainprm="350 0 0"
+      biasprm="0 -350 -10" forcerange="-200 200"/>
   </actuator>
 </mujoco>

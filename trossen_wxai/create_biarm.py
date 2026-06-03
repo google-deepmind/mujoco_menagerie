@@ -7,11 +7,12 @@
 """Script to generate a bi-arm MuJoCo model from a single-arm model."""
 
 import os
+
 import mujoco
 
 # Constants
-SINGLE_ARM_XML = "wxai_follower.xml"
-BI_ARM_XML = "wxai_follower_biarm.xml"
+SINGLE_ARM_XML = 'wxai_follower.xml'
+BI_ARM_XML = 'wxai_follower_biarm.xml'
 
 # Arm placement — bases are 82cm apart.
 HALF_SPACING = 0.41  # 82cm / 2
@@ -48,7 +49,7 @@ def main():
 
   # Create bi-arm spec
   biarm_spec = mujoco.MjSpec()
-  biarm_spec.modelname = "wxai_biarm"
+  biarm_spec.modelname = 'wxai_biarm'
 
   # Copy visual settings from the single-arm spec
   biarm_spec.visual.headlight.diffuse = arm_spec.visual.headlight.diffuse
@@ -61,33 +62,33 @@ def main():
   # NOTE: maxhullvert is injected via XML post-processing below,
   # because the MjSpec roundtrip (to_xml/from_string) drops it.
   maxhullvert = max(
-      (m.maxhullvert for m in arm_spec.meshes if m.maxhullvert > 0),
-      default=-1,
+    (m.maxhullvert for m in arm_spec.meshes if m.maxhullvert > 0),
+    default=-1,
   )
 
   # Add sites for attachment
   left_site = biarm_spec.worldbody.add_site(
-      name="left_attach", pos=LEFT_POS, quat=LEFT_QUAT
+    name='left_attach', pos=LEFT_POS, quat=LEFT_QUAT
   )
   right_site = biarm_spec.worldbody.add_site(
-      name="right_attach", pos=RIGHT_POS, quat=RIGHT_QUAT
+    name='right_attach', pos=RIGHT_POS, quat=RIGHT_QUAT
   )
 
   # Attach arms
-  biarm_spec.attach(arm_spec_left, site=left_site, prefix="left/")
-  biarm_spec.attach(arm_spec_right, site=right_site, prefix="right/")
+  biarm_spec.attach(arm_spec_left, site=left_site, prefix='left/')
+  biarm_spec.attach(arm_spec_right, site=right_site, prefix='right/')
 
   # Add excludes back with prefixes
   for body1, body2 in excludes:
     biarm_spec.add_exclude(
-        name=f"left_{body1}_{body2}",
-        bodyname1=f"left/{body1}",
-        bodyname2=f"left/{body2}",
+      name=f'left_{body1}_{body2}',
+      bodyname1=f'left/{body1}',
+      bodyname2=f'left/{body2}',
     )
     biarm_spec.add_exclude(
-        name=f"right_{body1}_{body2}",
-        bodyname1=f"right/{body1}",
-        bodyname2=f"right/{body2}",
+      name=f'right_{body1}_{body2}',
+      bodyname1=f'right/{body1}',
+      bodyname2=f'right/{body2}',
     )
 
   # Save to file and post-process
@@ -96,9 +97,9 @@ def main():
   # Inject maxhullvert default (lost during to_xml/from_string roundtrip)
   if maxhullvert > 0:
     xml_string = xml_string.replace(
-        "<default>",
-        f'<default>\n    <mesh maxhullvert="{maxhullvert}"/>',
-        1,  # only the first (top-level) <default>
+      '<default>',
+      f'<default>\n    <mesh maxhullvert="{maxhullvert}"/>',
+      1,  # only the first (top-level) <default>
     )
 
   # Add equality constraints for gripper coupling (hardcoded for this model)
@@ -108,13 +109,13 @@ def main():
   <joint joint1="right/left_carriage_joint" joint2="right/right_carriage_joint" polycoef="0 1 0 0 0"/>
 </equality>
 """
-  xml_string = xml_string.replace("</mujoco>", equality_xml + "</mujoco>")
+  xml_string = xml_string.replace('</mujoco>', equality_xml + '</mujoco>')
 
-  with open(output_path, "w") as f:
+  with open(output_path, 'w') as f:
     f.write(xml_string)
 
-  print(f"Successfully created {output_path}")
+  print(f'Successfully created {output_path}')
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
   main()

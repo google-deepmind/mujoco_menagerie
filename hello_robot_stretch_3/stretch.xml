@@ -19,7 +19,8 @@
         <general ctrlrange="0.0 1.1" gainprm="400" biasprm="0 -200 -100" forcerange="-70 70"/>
       </default>
       <default class="telescope">
-        <joint type="slide" axis="0 0 1" damping="50" stiffness="0.02" armature="0.01" range="0 0.13" frictionloss="1.5"/>
+        <joint type="slide" axis="0 0 1" damping="50" stiffness="0.02" armature="0.01" range="0 0.13"
+          frictionloss="1.5"/>
         <general ctrlrange="0 0.52" gainprm="150" biasprm="0 -100 -10" forcerange="-56 56"/>
       </default>
       <default class="head">
@@ -298,7 +299,8 @@
         <geom mesh="link_lift_9" class="collision" mass="1.5"/>
         <body name="link_arm_l4" gravcomp="1">
           <geom mesh="link_arm_l4_0" pos="-0.2547 0 0" quat="0.5 0.5 -0.5 -0.5" material="Carbon_Fiber" class="visual"/>
-          <geom mesh="link_arm_l4_1" pos="-0.2547 0 0" quat="0.5 0.5 -0.5 -0.5" material="3D_Print_Black" class="visual"/>
+          <geom mesh="link_arm_l4_1" pos="-0.2547 0 0" quat="0.5 0.5 -0.5 -0.5" material="3D_Print_Black"
+            class="visual"/>
           <geom mesh="link_arm_l4_0" pos="-0.2547 0 0" quat="0.5 0.5 -0.5 -0.5" class="collision" mass="0.168095"/>
           <geom mesh="link_arm_l4_1" pos="-0.2547 0 0" quat="0.5 0.5 -0.5 -0.5" class="collision"/>
           <body name="link_arm_l3" pos="-0.2677 0 0" quat="0.5 0.5 -0.5 -0.5" gravcomp="1">
@@ -373,7 +375,7 @@
                             </body>
                           </body>
                         </body>
-                        <body name="link_grasp_center" pos="0 0 0.23" euler="-1.5707963267949 -1.5707963267948 0"> </body>
+                        <body name="link_grasp_center" pos="0 0 0.23" euler="-1.5707963267949 -1.5707963267948 0"/>
                         <!-- Gripper Mechanism -->
                         <body name="link_gripper_slider" euler="0 0 0" pos="0 0 0" gravcomp="1">
                           <joint name="joint_gripper_slide" class="finger_slide"/>
@@ -522,7 +524,8 @@
     <joint joint1="joint_arm_l1" joint2="joint_arm_l2"/>
     <joint joint1="joint_arm_l2" joint2="joint_arm_l3"/>
     <joint joint1="joint_gripper_finger_left_open" joint2="joint_gripper_slide" polycoef="0 10 0 0 0" solref="0.005 1"/>
-    <joint joint1="joint_gripper_finger_right_open" joint2="joint_gripper_slide" polycoef="0 10 0 0 0" solref="0.005 1"/>
+    <joint joint1="joint_gripper_finger_right_open" joint2="joint_gripper_slide" polycoef="0 10 0 0 0"
+      solref="0.005 1"/>
   </equality>
 
   <actuator>

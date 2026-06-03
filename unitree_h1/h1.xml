@@ -163,7 +163,8 @@
               diaginertia="0.00170388 0.00158256 0.00100336"/>
             <joint name="left_shoulder_roll" axis="1 0 0" range="-0.34 3.11"/>
             <geom class="visual" mesh="left_shoulder_roll_link"/>
-            <geom name="left_shoulder" class="collision" type="capsule" size="0.04" fromto="0 0.01 0.008 0 -0.07 -0.02"/>
+            <geom name="left_shoulder" class="collision" type="capsule" size="0.04"
+              fromto="0 0.01 0.008 0 -0.07 -0.02"/>
             <body name="left_shoulder_yaw_link" pos="0 0 -0.1343">
               <inertial pos="0.01365 0.002767 -0.16266" quat="0.703042 -0.0331229 -0.0473362 0.708798" mass="0.839"
                 diaginertia="0.00408038 0.00370367 0.000622687"/>
@@ -191,7 +192,8 @@
               diaginertia="0.00170388 0.00158256 0.00100336"/>
             <joint name="right_shoulder_roll" axis="1 0 0" range="-3.11 0.34"/>
             <geom class="visual" mesh="right_shoulder_roll_link"/>
-            <geom name="right_shoulder" class="collision" type="capsule" size="0.04" fromto="0 -0.01 0.008 0 0.07 -0.02"/>
+            <geom name="right_shoulder" class="collision" type="capsule" size="0.04"
+              fromto="0 -0.01 0.008 0 0.07 -0.02"/>
             <body name="right_shoulder_yaw_link" pos="0 0 -0.1343">
               <inertial pos="0.01365 -0.002767 -0.16266" quat="0.708798 -0.0473362 -0.0331229 0.703042" mass="0.839"
                 diaginertia="0.00408038 0.00370367 0.000622687"/>

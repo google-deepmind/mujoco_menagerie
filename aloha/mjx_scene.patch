@@ -1,21 +1,22 @@
---- scene.xml	2024-07-24 11:38:17.000000000 -0700
-+++ mjx_scene.xml	2024-09-25 10:13:59.000000000 -0700
-@@ -1,7 +1,13 @@
+--- scene.xml
++++ mjx_scene.xml
+@@ -1,8 +1,14 @@
  <mujoco model="aloha_scene">
    <compiler meshdir="assets" texturedir="assets"/>
  
 -  <include file="aloha.xml"/>
 +  <include file="mjx_aloha.xml"/>
-+
+ 
 +  <custom>
 +    <numeric data="12" name="max_contact_points"/>
 +  </custom>
 +
 +  <option iterations="8" ls_iterations="8" timestep="0.005"/>
- 
++
    <statistic center="0 -0.1 0.2" extent="0.6" meansize="0.05"/>
  
-@@ -40,17 +46,17 @@
+   <visual>
+@@ -40,17 +46,18 @@
  
    <default>
      <default class="frame">
@@ -32,7 +33,8 @@
      <geom mesh="tabletop" material="table" class="visual" pos="0 0 -0.75" quat="1 0 0 1"/>
      <geom mesh="tablelegs" material="table" class="visual" pos="0 0 -0.75" quat="1 0 0 1"/>
 -    <geom name="table" pos="0 0 -0.1009" size="0.61 0.37 0.1" type="box" class="collision"/>
-+    <geom name="table" pos="0 0 0.0008" size="0.61 0.37 0.1" type="plane" class="collision" contype="1" conaffinity="1"/>
++    <geom name="table" pos="0 0 0.0008" size="0.61 0.37 0.1" type="plane" class="collision" contype="1"
++      conaffinity="1"/>
      <camera name="overhead_cam" focal="1.93e-3 1.93e-3" resolution="1280 720" sensorsize="3896e-6 2140e-6"
-             pos="0 -0.303794 1.02524" mode="fixed" quat="0.976332 0.216277 0 0"/>
+       pos="0 -0.303794 1.02524" mode="fixed" quat="0.976332 0.216277 0 0"/>
      <camera name="worms_eye_cam" focal="1.93e-3 1.93e-3" resolution="1280 720" sensorsize="3896e-6 2140e-6"
