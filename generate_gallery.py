@@ -13,29 +13,28 @@
 # limitations under the License.
 
 # /// script
-# dependencies = ["absl-py", "dm_control", "pillow", "numpy", "tqdm", "mdutils", "opencv-python"]
+# dependencies = ["absl-py", "mujoco", "pillow", "numpy", "tqdm"]
 # ///
-"""Generate a markdown table with images of some of the models in Menagerie.
+"""Render every Menagerie model's thumbnail and update the README gallery.
 
 Requirements:
-    pip install absl-py dm_control pillow numpy tqdm mdutils opencv-python
+    pip install absl-py mujoco pillow numpy tqdm
 
 Instructions:
-    `python generate_gallery.py` will create a markdown document called
-    `gallery.md` with a table of images. Copy this table into README.md to
-    display the images.
+    `python generate_gallery.py` (or `make gallery`) regenerates the
+    thumbnails in `assets/` and splices a categorized table between the
+    `<!-- BEGIN MODELS -->` / `<!-- END MODELS -->` markers in README.md.
 """
 
 import enum
 import math
 import pathlib
+import re
 
-import cv2
+import mujoco
 import numpy as np
 import tqdm.auto
 from absl import app
-from dm_control import mjcf
-from mdutils import mdutils
 from PIL import Image
 
 DEFAULT_FOV = 40
@@ -46,58 +45,43 @@ class ModelType(int, enum.Enum):
   DUAL_ARM = 1
   END_EFFECTOR = 2
   MOBILE_MANIPULATOR = 3
-  QUADRUPED = 4
-  BIPED = 5
-  HUMANOID = 6
-  DRONE = 7
-  BIOMECHANICAL = 8
-  MISC = 9
+  MOBILE_BASE = 4
+  QUADRUPED = 5
+  BIPED = 6
+  HUMANOID = 7
+  DRONE = 8
+  BIOMECHANICAL = 9
+  MISC = 10
 
 
-NAME_MAP = {
-  'franka_emika_panda/panda': 'panda',
-  'franka_emika_panda/hand': 'panda gripper',
-  'franka_fr3/fr3': 'franka fr3',
-  'ufactory_lite6/lite6': 'lite6',
-  'flybody/fruitfly': 'fruitfly',
-  'skydio_x2/x2': 'skydio x2',
-  'unitree_h1/h1': 'h1',
-  'bitcraze_crazyflie_2/cf2': 'crazyflie 2',
-  'google_robot/robot': 'google robot',
-  'unitree_a1/a1': 'a1',
-  'google_barkour_v0/barkour_v0': 'barkour v0',
-  'anybotics_anymal_b/anymal_b': 'anymal b',
-  'unitree_go1/go1': 'go1',
-  'unitree_z1/z1': 'z1',
-  'anybotics_anymal_c/anymal_c': 'anymal c',
-  'agility_cassie/cassie': 'cassie',
-  'realsense_d435i/d435i': 'd435i',
-  'universal_robots_ur5e/ur5e': 'ur5e',
-  'aloha/aloha': 'aloha 2',
-  'rethink_robotics_sawyer/sawyer': 'sawyer',
-  'robotis_op3/op3': 'op3',
-  'universal_robots_ur10e/ur10e': 'ur10e',
-  'kuka_iiwa_14/iiwa14': 'iiwa 14',
-  'trossen_vx300s/vx300s': 'vx300s',
-  'unitree_g1/g1': 'g1',
-  'robotiq_2f85/2f85': '2f85',
-  'ufactory_xarm7/hand': 'xarm7 gripper',
-  'ufactory_xarm7/xarm7': 'xarm7',
-  'hello_robot_stretch/stretch': 'stretch 2',
-  'google_barkour_vb/barkour_vb': 'barkour vb',
-  'unitree_go2/go2': 'go2',
-  'boston_dynamics_spot/spot_arm': 'spot',
-  'shadow_dexee/shadow_dexee': 'dex-ee',
-  'pal_talos/talos': 'talos',
-  'leap_hand/left_hand': 'left leap',
-  'wonik_allegro/left_hand': 'left allegro',
-  'shadow_hand/left_hand': 'left shadow',
-  'kinova_gen3/gen3': 'gen3',
-  'booster_t1/t1': 't1',
-  'agilex_piper/piper': 'piper',
-  'toddlerbot_2xc/toddlerbot_2xc': 'toddlerbot',
-  'flexiv_rizon4/flexiv_rizon4': 'rizon4',
+# Display name overrides for robots whose model-dir README title is too
+# verbose, doesn't exist, or describes a different variant than the entry.
+# Everything else is extracted from the first `# <name> Description (MJCF)`
+# line of `<maker>/README.md`.
+DISPLAY_NAME_OVERRIDE = {
+  'franka_emika_panda/hand': 'Panda Gripper',
+  'ufactory_xarm7/hand': 'xarm7 Gripper',
 }
+
+
+_README_TITLE_SUFFIX = re.compile(
+  r'\s*(description\s*)?\(mjcf\)\s*$|\s+description\s*$',
+  re.IGNORECASE,
+)
+
+
+def display_name(robot):
+  if robot in DISPLAY_NAME_OVERRIDE:
+    return DISPLAY_NAME_OVERRIDE[robot]
+  maker = robot.split('/')[0]
+  readme = pathlib.Path(f'{maker}/README.md')
+  if readme.exists():
+    title = readme.read_text().splitlines()[0].strip().lstrip('#').strip()
+    title = _README_TITLE_SUFFIX.sub('', title).rstrip()
+    if title:
+      return title
+  return robot.split('/')[-1]
+
 
 MODEL_MAP = {
   'franka_emika_panda/panda': ModelType.ARM,
@@ -142,272 +126,221 @@ MODEL_MAP = {
   'agilex_piper/piper': ModelType.ARM,
   'toddlerbot_2xc/toddlerbot_2xc': ModelType.HUMANOID,
   'flexiv_rizon4/flexiv_rizon4': ModelType.ARM,
+  'arx_l5/arx_l5': ModelType.ARM,
+  'flexiv_rizon4s/flexiv_rizon4s': ModelType.ARM,
+  'trossen_wx250s/wx250s': ModelType.ARM,
+  'trs_so_arm100/so_arm100': ModelType.ARM,
+  'low_cost_robot_arm/low_cost_robot_arm': ModelType.ARM,
+  'i2rt_yam/yam': ModelType.ARM,
+  'umi_gripper/umi_gripper': ModelType.END_EFFECTOR,
+  'sharpa_wave/left_hand': ModelType.END_EFFECTOR,
+  'stanford_tidybot/tidybot': ModelType.MOBILE_MANIPULATOR,
+  'hello_robot_stretch_3/stretch': ModelType.MOBILE_MANIPULATOR,
+  'pal_tiago/tiago': ModelType.MOBILE_MANIPULATOR,
+  'pal_tiago_dual/tiago_dual': ModelType.MOBILE_MANIPULATOR,
+  'robot_soccer_kit/robot_soccer_kit': ModelType.MOBILE_BASE,
+  'pndbotics_adam_lite/adam_lite': ModelType.HUMANOID,
+  'apptronik_apollo/apptronik_apollo': ModelType.HUMANOID,
+  'berkeley_humanoid/berkeley_humanoid': ModelType.HUMANOID,
+  'fourier_n1/n1': ModelType.HUMANOID,
+  'toddlerbot_2xm/toddlerbot_2xm': ModelType.HUMANOID,
+  'iit_softfoot/softfoot': ModelType.BIOMECHANICAL,
+  'ms_human_700/MS-Human-700': ModelType.BIOMECHANICAL,
 }
 
-DEFAULT_FOV = 40
-
-CAMERA_MAP = {
-  'pal_talos/talos': dict(
-    pos='2.312 0.005 1.144',
-    xyaxes='-0.002 1.000 -0.000 -0.107 -0.000 0.994',
-  ),
-  'skydio_x2/x2': dict(
-    pos='-0.580 -0.260 0.622',
-    xyaxes='0.442 -0.897 -0.000 0.428 0.211 0.879',
-    fovy=60,
-  ),
-  'flybody/fruitfly': dict(
-    pos='0.430 -0.361 0.326',
-    xyaxes='0.589 0.808 0.000 -0.486 0.354 0.799',
-    fovy=50,
-  ),
-  'wonik_allegro/left_hand': dict(
-    pos='0.002 0.043 0.432', xyaxes='0.052 -0.999 0.000 0.998 0.052 0.017'
-  ),
-  'ufactory_xarm7/xarm7': dict(
-    pos='0.852 -0.383 0.860',
-    xyaxes='0.487 0.874 0.000 -0.354 0.197 0.914',
-    fovy=DEFAULT_FOV,
-  ),
-  'ufactory_xarm7/hand': dict(
-    pos='-0.282 0.013 0.118',
-    xyaxes='-0.047 -0.999 0.000 0.160 -0.007 0.987',
-    fovy=45,
-  ),
-  'shadow_hand/left_hand': dict(
-    pos='0.172 0.005 0.615',
-    xyaxes='-0.508 -0.861 -0.000 0.861 -0.508 0.017',
-    fovy=45,
-  ),
-  'franka_emika_panda/panda': dict(
-    pos='0.412 1.106 0.849',
-    xyaxes='-0.994 0.108 0.000 -0.040 -0.369 0.928',
-    fovy=DEFAULT_FOV,
-  ),
-  'franka_fr3/fr3': dict(
-    pos='0.412 1.106 0.849',
-    xyaxes='-0.994 0.108 0.000 -0.040 -0.369 0.928',
-    fovy=DEFAULT_FOV,
-  ),
-  'franka_emika_panda/hand': dict(
-    pos='0.340 0.008 0.059',
-    xyaxes='-0.023 1.000 0.000 -0.084 -0.002 0.996',
-    fovy=DEFAULT_FOV,
-  ),
-  'kuka_iiwa_14/iiwa14': dict(
-    pos='0.212 1.138 0.977',
-    xyaxes='-1.000 0.027 0.000 -0.012 -0.441 0.898',
-    fovy=45,
-  ),
-  'ufactory_lite6/lite6': dict(
-    pos='0.077 -0.778 0.528',
-    xyaxes='1.000 -0.004 -0.000 0.001 0.274 0.962',
-    fovy=45,
-  ),
-  'unitree_g1/g1': dict(
-    pos='1.466 -0.082 1.271',
-    xyaxes='0.072 0.997 -0.000 -0.377 0.027 0.926',
-    fovy=45,
-  ),
-  'unitree_h1/h1': dict(
-    pos='2.098 0.006 1.893',
-    xyaxes='0.007 1.000 -0.000 -0.394 0.003 0.919',
-    fovy=45,
-  ),
-  'robotis_op3/op3': dict(
-    pos='0.673 -0.024 0.447',
-    xyaxes='0.035 0.999 0.000 -0.252 0.009 0.968',
-    fovy=45,
-  ),
-  'universal_robots_ur5e/ur5e': dict(
-    pos='0.603 1.012 0.595',
-    xyaxes='-0.932 0.363 -0.000 -0.080 -0.206 0.975',
-    fovy=DEFAULT_FOV,
-  ),
-  'universal_robots_ur10e/ur10e': dict(
-    pos='1.286 -0.798 0.889',
-    xyaxes='0.696 0.718 -0.000 -0.224 0.218 0.950',
-    fovy=DEFAULT_FOV,
-  ),
-  'unitree_z1/z1': dict(
-    pos='0.305 -0.400 0.552',
-    xyaxes='0.755 0.656 0.000 -0.359 0.413 0.837',
-    fovy=DEFAULT_FOV,
-  ),
-  'unitree_go2/go2': dict(
-    pos='0.753 -0.427 0.433',
-    xyaxes='0.518 0.856 0.000 -0.284 0.172 0.943',
-    fovy=DEFAULT_FOV,
-  ),
-  'unitree_go1/go1': dict(
-    pos='0.679 -0.553 0.530',
-    xyaxes='0.638 0.770 -0.000 -0.328 0.272 0.905',
-    fovy=DEFAULT_FOV,
-  ),
-  'unitree_a1/a1': dict(
-    pos='0.654 -0.564 0.536',
-    xyaxes='0.676 0.737 -0.000 -0.327 0.299 0.896',
-    fovy=DEFAULT_FOV,
-  ),
-  'trossen_vx300s/vx300s': dict(
-    pos='0.583 0.317 0.549',
-    xyaxes='-0.531 0.847 0.000 -0.434 -0.272 0.859',
-    fovy=DEFAULT_FOV,
-  ),
-  'robotiq_2f85/2f85': dict(
-    pos='-0.009 -0.251 0.107',
-    xyaxes='0.999 -0.033 -0.000 0.005 0.150 0.989',
-    fovy=45,
-  ),
-  'rethink_robotics_sawyer/sawyer': dict(
-    pos='1.014 -0.494 0.876',
-    xyaxes='0.555 0.832 -0.000 -0.372 0.248 0.895',
-    fovy=DEFAULT_FOV,
-  ),
-  'realsense_d435i/d435i': dict(
-    pos='-0.000 -0.002 0.128',
-    xyaxes='1.000 -0.000 0.000 0.000 1.000 0.017',
-    fovy=DEFAULT_FOV,
-  ),
-  'hello_robot_stretch/stretch': dict(
-    pos='1.464 -0.514 1.439',
-    xyaxes='0.271 0.963 -0.000 -0.362 0.102 0.927',
-    fovy=45,
-  ),
-  'google_robot/robot': dict(
-    pos='1.753 -0.231 1.305',
-    xyaxes='0.025 1.000 0.000 -0.306 0.008 0.952',
-    fovy=50,
-  ),
-  'google_barkour_vb/barkour_vb': dict(
-    pos='0.887 0.338 0.565',
-    xyaxes='-0.388 0.922 0.000 -0.460 -0.194 0.867',
-    fovy=DEFAULT_FOV,
-  ),
-  'google_barkour_v0/barkour_v0': dict(
-    pos='0.733 0.320 0.558',
-    xyaxes='-0.416 0.909 -0.000 -0.441 -0.202 0.875',
-    fovy=DEFAULT_FOV,
-  ),
-  'bitcraze_crazyflie_2/cf2': dict(
-    pos='0.037 -0.142 0.206',
-    xyaxes='0.963 0.268 0.000 -0.167 0.599 0.783',
-    fovy=DEFAULT_FOV,
-  ),
-  'anybotics_anymal_b/anymal_b': dict(
-    pos='0.930 -1.239 1.221',
-    xyaxes='0.809 0.587 0.000 -0.308 0.424 0.852',
-    fovy=DEFAULT_FOV,
-  ),
-  'anybotics_anymal_c/anymal_c': dict(
-    pos='1.547 -0.577 0.941',
-    xyaxes='0.378 0.926 -0.000 -0.358 0.146 0.922',
-    fovy=45,
-  ),
-  'aloha/aloha': dict(
-    pos='0.484 1.158 0.836',
-    xyaxes='-0.939 0.345 -0.000 -0.162 -0.441 0.883',
-    fovy=DEFAULT_FOV,
-  ),
-  'agility_cassie/cassie': dict(
-    pos='1.277 -1.122 1.053',
-    xyaxes='0.655 0.756 0.000 -0.196 0.170 0.966',
-    fovy=DEFAULT_FOV,
-  ),
-  'boston_dynamics_spot/spot_arm': dict(
-    pos='1.326 -0.829 0.651',
-    xyaxes='0.573 0.820 -0.000 -0.154 0.108 0.982',
-    fovy=DEFAULT_FOV,
-  ),
-  'shadow_dexee/shadow_dexee': dict(
-    pos='-0.003 -0.541 0.221',
-    xyaxes='1.000 0.000 -0.000 -0.000 0.131 0.991',
-    fovy=45,
-  ),
-  'leap_hand/left_hand': dict(
-    pos='-0.123 0.096 0.512',
-    xyaxes='0.004 -1.000 -0.000 0.995 0.004 0.101',
-  ),
-  'kinova_gen3/gen3': dict(
-    pos='0.252 -1.047 0.521',
-    xyaxes='0.988 0.156 -0.000 -0.024 0.153 0.988',
-  ),
-  'booster_t1/t1': dict(
-    pos='1.499 -0.777 1.2',
-    xyaxes='0.453 0.892 0.000 -0.295 0.150 0.944',
-    fovy=DEFAULT_FOV,
-  ),
-  'agilex_piper/piper': dict(
-    pos='0.288 -0.480 0.294',
-    xyaxes='0.866 0.500 0.000 -0.171 0.296 0.940',
-    fovy=50,
-  ),
-  'toddlerbot_2xc/toddlerbot_2xc': dict(
-    pos='0.75 -0.38 0.55',
-    xyaxes='0.453 0.892 0.000 -0.295 0.150 0.944',
-    fovy=DEFAULT_FOV,
-  ),
-  'flexiv_rizon4/flexiv_rizon4': dict(
-    pos='0.4 1.1 0.85',
-    xyaxes='-0.994 0.108 0.000 -0.040 -0.369 0.928',
-    fovy=DEFAULT_FOV,
-  ),
-}
+# Per-model camera overrides. Populated only when auto-camera produces a
+# bad thumbnail; the dict can stay empty otherwise. Example entry:
+#   'pal_talos/talos': dict(
+#       pos='2.312 0.005 1.144',
+#       xyaxes='-0.002 1.000 -0.000 -0.107 -0.000 0.994',
+#       fovy=45,
+#   ),
+CAMERA_MAP = {}
 
 # pylint: disable=line-too-long
 KEYFRAME_MAP = {
-  'pal_talos': (
+  'pal_talos/talos': (
     '0 0 1.025 0 0 0 0 0 0.15 0 0 0.3 0.4 -0.5 -1.5 0 0 0 0 -0.4 0 0 0 0 0'
     ' -0.3 -0.4 0.5 -1.5 0 0 0 0 -0.4 0 0 0 0 0 0 0 -0.4 0.8 -0.4 0 0 0'
     ' -0.4 0.8 -0.4 0'
   ),
-  'robotis_op3': (
+  'robotis_op3/op3': (
     '0 0 0.2789 1 0 0 0 0.0 0.0 -0.0890 0.7931 -0.79 0.0874 -0.7946 0.7855'
     ' -0.0015 -0.0460 -0.1626 0.2316 0.1565 -0.0230 0.0 0.0445 0.1611'
     ' -0.2332 -0.1580 0.0215'
   ),
-  'google_barkour_vb': (
+  'google_barkour_vb/barkour_vb': (
     '0 0 0.21 1 0 0 0 0 0.5 1.0 0 0.5 1.0 0 0.5 1.0 0 0.5 1.0'
   ),
-  'hello_robot_stretch': (
+  'hello_robot_stretch/stretch': (
     '0 0 0 1 0 0 0 0 0 0.1325 0.07995 0.07995 0.07605 0.0702 1.585 0 0.198'
     ' 0 0 0.126 0 0 0 0'
   ),
-  'google_robot': (
+  'google_robot/robot': (
     '-1.51699e-13 -1.16232e-12 -0.1444 2.9724 -0.146 -0.3759 1.15806e-12'
     ' 0.5518 0.62275'
   ),
-  'aloha': (
+  'aloha/aloha': (
     '0.43988 -0.206468 1.08253 -0.443382 -1.084 -0.00397598 0.0084'
     ' 0.00846495 -1.28822 -0.360594 0.717978 -0.000325086 -0.273415'
     ' 6.76003e-05 0.0084 0.00839987'
   ),
-  'kuka_iiwa_14': '0 0 0 -1.5708 0 1.5708 0',
-  'flexiv_rizon4': '0 -0.524 0 1.833 0 0.785 0',
+  'kuka_iiwa_14/iiwa14': '0 0 0 -1.5708 0 1.5708 0',
+  'flexiv_rizon4/flexiv_rizon4': '0 -0.524 0 1.833 0 0.785 0',
+  'franka_emika_panda/hand': '0.04 0.04',
 }
 # pylint: enable=line-too-long
 
 KEEP_LIGHT = ['go1', 'a1', 'op3', 'aloha', 'left_hand', 'stretch', 'piper']
 
+# Each thumbnail in gallery.md links to a live preview of the model XML on
+# live.mujoco.org. The repo's PR-preview workflow uses
+# `github:OWNER/REPO/pull/N/head/PATH`; for a branch the parser expects the
+# bare ref: `github:OWNER/REPO/REF/PATH` (same shape as raw.githubusercontent
+# paths, just without the host).
+LIVE_REPO = 'google-deepmind/mujoco_menagerie'
+LIVE_REF = 'main'
 
-def create_arena():
-  arena = mjcf.RootElement()
-  arena.visual.quality.shadowsize = 8192
-  arena.visual.headlight.diffuse = (0.6,) * 3
-  arena.visual.headlight.ambient = (0.3,) * 3
-  arena.visual.headlight.specular = (0.2,) * 3
-  getattr(arena.visual, 'global').offheight = 720
-  getattr(arena.visual, 'global').offwidth = 1280
-  arena.asset.add(
-    'texture',
-    type='skybox',
-    builtin='gradient',
+# Default preview target is `<maker>/scene.xml`. Override per robot when that
+# file doesn't exist or wraps the wrong model (e.g., panda/scene.xml loads
+# the full arm; for the standalone gripper we want hand.xml directly).
+PREVIEW_OVERRIDES = {
+  'franka_emika_panda/hand': 'franka_emika_panda/hand.xml',
+  'ufactory_xarm7/hand': 'ufactory_xarm7/hand.xml',
+  'leap_hand/left_hand': 'leap_hand/scene_left.xml',
+  'shadow_hand/left_hand': 'shadow_hand/scene_left.xml',
+  'wonik_allegro/left_hand': 'wonik_allegro/scene_left.xml',
+  'sharpa_wave/left_hand': 'sharpa_wave/scene_left.xml',
+  'realsense_d435i/d435i': 'realsense_d435i/d435i.xml',
+  'pal_talos/talos': 'pal_talos/scene_position.xml',
+  'pal_tiago/tiago': 'pal_tiago/scene_position.xml',
+  'pal_tiago_dual/tiago_dual': 'pal_tiago_dual/scene_position.xml',
+  'ms_human_700/MS-Human-700': 'ms_human_700/scene.xml',
+}
+
+
+def preview_path(robot, robot_maker):
+  return PREVIEW_OVERRIDES.get(robot, f'{robot_maker}/scene.xml')
+
+
+def live_url(xml_path):
+  return (
+    f'https://live.mujoco.org/?model='
+    f'github:{LIVE_REPO}/{LIVE_REF}/{xml_path}'
+  )
+
+
+def _parse_floats(s):
+  return [float(t) for t in s.split()]
+
+
+AUTO_FOVY = 45
+# Padding around the projected model AABB. 1.0 = model touches the frame
+# edge; >1 leaves margin around the model.
+AUTO_PADDING = 1.08
+
+# (azimuth_deg, elevation_deg). Azimuth is measured from +X around +Z.
+# Arms and end-effectors in Menagerie are typically mounted facing +Y, so we
+# view from ~70° (front-right). Legged robots default to facing +X (identity
+# quat), so we view them from ~20–-30° (front-right of +X).
+# Per-robot view angle override, falling back to VIEW_ANGLES[category].
+VIEW_ANGLE_OVERRIDE = {
+  # Default biomechanical angle catches MS-Human-700 from the side; nudge
+  # to a near-frontal 3/4.
+  'ms_human_700/MS-Human-700': (20, 15),
+}
+
+
+VIEW_ANGLES = {
+  ModelType.ARM: (70, 25),
+  ModelType.DUAL_ARM: (70, 25),
+  # End-effectors look bad from the side — fingers extend ~horizontally so
+  # a high elevation looks down at the spread of the digits.
+  ModelType.END_EFFECTOR: (45, 55),
+  ModelType.MOBILE_MANIPULATOR: (15, 25),
+  ModelType.MOBILE_BASE: (-30, 35),
+  ModelType.QUADRUPED: (-30, 25),
+  ModelType.BIPED: (-30, 25),
+  ModelType.HUMANOID: (15, 25),
+  ModelType.DRONE: (110, 30),
+  ModelType.BIOMECHANICAL: (110, 25),
+  ModelType.MISC: (80, 25),
+}
+
+
+_CORNER_SIGNS = np.array(np.meshgrid([-1, 1], [-1, 1], [-1, 1])).T.reshape(
+  -1, 3
+)
+
+
+def posed_bounds(model, data):
+  """World-frame AABB of visible geoms in the current forward-evaluated pose."""
+  visible = np.where(model.geom_group != 3)[0]
+  aabb = model.geom_aabb[
+    visible
+  ]  # (n, 6): center_xyz + halfsize_xyz, in local frame
+  c_local = aabb[:, :3]
+  h_local = aabb[:, 3:]
+  corners_local = (
+    c_local[:, None, :] + h_local[:, None, :] * _CORNER_SIGNS
+  )  # (n, 8, 3)
+  rot = data.geom_xmat[visible].reshape(-1, 3, 3)
+  trans = data.geom_xpos[visible]
+  corners_world = (
+    np.einsum('nij,nkj->nki', rot, corners_local) + trans[:, None, :]
+  )
+  pts = corners_world.reshape(-1, 3)
+  return pts.min(axis=0), pts.max(axis=0)
+
+
+def auto_camera(lo, hi, model_type, robot=None):
+  """Frame the model's AABB tightly from a per-type viewing direction."""
+  azimuth_deg, elevation_deg = VIEW_ANGLE_OVERRIDE.get(
+    robot, VIEW_ANGLES[model_type]
+  )
+  az = math.radians(azimuth_deg)
+  el = math.radians(elevation_deg)
+  z_cam = np.array(
+    [math.cos(el) * math.cos(az), math.cos(el) * math.sin(az), math.sin(el)]
+  )
+  x_cam = np.cross([0.0, 0.0, 1.0], z_cam)
+  x_cam /= np.linalg.norm(x_cam)
+  y_cam = np.cross(z_cam, x_cam)
+  # Pick the smallest distance along Z_cam such that all 8 AABB corners fall
+  # inside the perspective frustum (corners closer to the camera need more
+  # margin, since they project larger).
+  center = (lo + hi) / 2
+  corners = np.stack(np.meshgrid(*zip(lo, hi))).reshape(3, -1).T - center
+  half_fov = math.radians(AUTO_FOVY / 2)
+  depth = corners @ z_cam
+  dist_x = (depth + np.abs(corners @ x_cam) / math.tan(half_fov)).max()
+  dist_y = (depth + np.abs(corners @ y_cam) / math.tan(half_fov)).max()
+  dist = max(dist_x, dist_y) * AUTO_PADDING
+  pos = center + z_cam * dist
+  return dict(
+    pos=pos.tolist(),
+    xyaxes=x_cam.tolist() + y_cam.tolist(),
+    fovy=AUTO_FOVY,
+  )
+
+
+def apply_gallery_settings(spec):
+  """Apply the gallery's visual settings and white skybox to a model spec."""
+  spec.visual.quality.shadowsize = 8192
+  spec.visual.headlight.diffuse = [0.6, 0.6, 0.6]
+  spec.visual.headlight.ambient = [0.3, 0.3, 0.3]
+  spec.visual.headlight.specular = [0.2, 0.2, 0.2]
+  spec.visual.global_.offheight = 720
+  spec.visual.global_.offwidth = 1280
+  spec.add_texture(
+    name='gallery_skybox',
+    type=mujoco.mjtTexture.mjTEXTURE_SKYBOX,
+    builtin=mujoco.mjtBuiltin.mjBUILTIN_GRADIENT,
     height=512,
     width=512,
-    rgb1='1 1 1',
-    rgb2='1 1 1',
+    rgb1=[1, 1, 1],
+    rgb2=[1, 1, 1],
   )
-  return arena
 
 
 MODEL_XMLS = [pathlib.Path(f'./{k}.xml') for k in MODEL_MAP.keys()]
@@ -422,100 +355,200 @@ def sort_func(xml):
 MODEL_XMLS = sorted(MODEL_XMLS, key=sort_func)
 
 
+# Section heading for each ModelType in the README. Iteration order
+# determines display order.
+SECTION_LABEL = {
+  ModelType.HUMANOID: 'Humanoids',
+  ModelType.QUADRUPED: 'Quadrupeds',
+  ModelType.BIPED: 'Bipeds',
+  ModelType.BIOMECHANICAL: 'Biomechanical',
+  ModelType.DUAL_ARM: 'Dual Arms',
+  ModelType.MOBILE_MANIPULATOR: 'Mobile Manipulators',
+  ModelType.DRONE: 'Drones',
+  ModelType.ARM: 'Arms',
+  ModelType.END_EFFECTOR: 'End-effectors',
+  ModelType.MOBILE_BASE: 'Mobile Bases',
+  ModelType.MISC: 'Miscellaneous',
+}
+
+THUMB_WIDTH = 120
+
+MODELS_BEGIN = (
+  '<!-- BEGIN MODELS (auto-generated by `make gallery` — do not edit) -->'
+)
+MODELS_END = '<!-- END MODELS -->'
+
+
+def detect_license(license_path):
+  """Identify the SPDX license name from the LICENSE file contents."""
+  text = pathlib.Path(license_path).read_text()
+  lower = text.lower()
+  if 'apache license' in lower and 'version 2' in lower:
+    return 'Apache-2.0'
+  if 'clear bsd' in lower:
+    return 'BSD-3-Clause-Clear'
+  if 'redistribution and use in source' in lower:
+    return 'BSD-3-Clause' if 'neither the name' in lower else 'BSD-2-Clause'
+  if 'permission is hereby granted, free of charge' in lower:
+    return 'MIT'
+  return 'Unknown'
+
+
+def _row(robot, png_path, xml_path, nu):
+  maker = robot.split('/')[0]
+  name = display_name(robot)
+  license_path = f'{maker}/LICENSE'
+  license_name = (
+    detect_license(license_path)
+    if pathlib.Path(license_path).exists()
+    else 'Unknown'
+  )
+  if png_path is not None:
+    preview = (
+      f"<a href='{live_url(xml_path)}' title='Open live preview for {name}'>"
+      f"<img src='{png_path}' width={THUMB_WIDTH}></a>"
+    )
+  else:
+    preview = ''
+  dof = str(nu) if nu is not None else '—'
+  return f'| {preview} | {name} | {dof} | [{license_name}]({license_path}) |'
+
+
+def write_gallery_to_readme(rendered, dofs, readme_path='README.md'):
+  """Replace the Menagerie Models section between markers with auto-gen tables.
+
+  rendered: list of (robot, png_path, xml_path) for successfully rendered models.
+  dofs: dict[robot -> nu] populated for all models that compiled.
+  """
+  rendered_by_robot = {robot: (png, xml) for robot, png, xml in rendered}
+
+  sections = []
+  for cat, label in SECTION_LABEL.items():
+    rows = []
+    for robot, robot_cat in MODEL_MAP.items():
+      if robot_cat != cat:
+        continue
+      png, xml = rendered_by_robot.get(robot, (None, None))
+      rows.append(_row(robot, png, xml, dofs.get(robot)))
+    if not rows:
+      continue
+    table = (
+      f'**{label}.**\n\n'
+      '| Preview | Name | DoFs | License |\n'
+      '|:---:|---|---|---|\n' + '\n'.join(rows)
+    )
+    sections.append(table)
+
+  body = '\n\n'.join(sections)
+  readme = pathlib.Path(readme_path).read_text()
+  pattern = re.compile(
+    re.escape(MODELS_BEGIN) + r'.*?' + re.escape(MODELS_END), re.DOTALL
+  )
+  if not pattern.search(readme):
+    raise SystemExit(
+      f'models markers not found in {readme_path}; expected\n  {MODELS_BEGIN}\n  {MODELS_END}'
+    )
+  new = pattern.sub(f'{MODELS_BEGIN}\n\n{body}\n\n{MODELS_END}', readme)
+  pathlib.Path(readme_path).write_text(new)
+
+
 def main(argv):
   del argv
 
   paths = []
   pngs = []
+  dofs = {}
   for xml in tqdm.auto.tqdm(MODEL_XMLS):
+    robot_maker = xml.parent.stem
+    robot_name = xml.stem
+    robot = f'{robot_maker}/{robot_name}'
+
     try:
-      robot_maker = xml.parent.stem
-      robot_name = xml.stem
-      robot = f'{robot_maker}/{robot_name}'
+      # Load with an absolute path so each XML's own directory is used to
+      # resolve nested includes and per-model meshdir. chdir-ing into the
+      # model dir caused mesh-cache collisions across specs that share asset
+      # filenames (e.g., UR5e + UR10e both ship `assets/base_0.obj`).
+      spec = mujoco.MjSpec.from_file(str(xml.resolve()))
+      apply_gallery_settings(spec)
 
-      if robot not in CAMERA_MAP:
-        continue
+      if robot_name not in KEEP_LIGHT:
+        for light in list(spec.lights):
+          spec.delete(light)
 
-      arena = create_arena()
-
-      if robot_maker in KEYFRAME_MAP:
-        arena.keyframe.add('key', qpos=KEYFRAME_MAP[robot_maker])
-
-      model_xml = mjcf.from_path(xml.as_posix(), escape_separators=True)
-      for light in model_xml.find_all('light'):
-        if robot_name not in KEEP_LIGHT:
-          light.remove()
-
-      if robot in CAMERA_MAP:
-        camera_kwargs = CAMERA_MAP[robot]
-        arena.worldbody.add('camera', name='thumbnail', **camera_kwargs)
+      gallery_key_name = None
+      if robot in KEYFRAME_MAP:
+        gallery_key_name = 'gallery_thumbnail'
+        spec.add_key(
+          name=gallery_key_name,
+          qpos=_parse_floats(KEYFRAME_MAP[robot]),
+        )
 
       if robot_maker == 'aloha':
-        right_base = model_xml.find('body', 'right\\base_link')
-        right_base.pos[0] = 0.3
-        left_base = model_xml.find('body', 'left\\base_link')
-        left_base.pos[0] = -0.3
-
-      arena.include_copy(model_xml, override_attributes=True)
-
-      physics = mjcf.Physics.from_mjcf_model(arena)
-
-      try:
-        physics.reset(keyframe_id=0)
-      except Exception:
-        physics.reset()
-
-      physics.forward()
+        spec.body('right/base_link').pos[0] = 0.3
+        spec.body('left/base_link').pos[0] = -0.3
 
       if robot in CAMERA_MAP:
-        img = physics.render(height=500, width=500, camera_id='thumbnail')
+        camera_kwargs = dict(CAMERA_MAP[robot])
+        camera_kwargs['pos'] = _parse_floats(camera_kwargs['pos'])
+        camera_kwargs['xyaxes'] = _parse_floats(camera_kwargs['xyaxes'])
       else:
-        img = physics.render(height=500, width=500)
+        # Compile once to get the posed geometry, then place the camera.
+        probe_model = spec.compile()
+        probe_data = mujoco.MjData(probe_model)
+        if gallery_key_name is not None:
+          probe_key = mujoco.mj_name2id(
+            probe_model, mujoco.mjtObj.mjOBJ_KEY, gallery_key_name
+          )
+          mujoco.mj_resetDataKeyframe(probe_model, probe_data, probe_key)
+        elif probe_model.nkey > 0:
+          mujoco.mj_resetDataKeyframe(probe_model, probe_data, 0)
+        else:
+          mujoco.mj_resetData(probe_model, probe_data)
+        mujoco.mj_forward(probe_model, probe_data)
+        lo, hi = posed_bounds(probe_model, probe_data)
+        camera_kwargs = auto_camera(lo, hi, MODEL_MAP[robot], robot)
+      spec.worldbody.add_camera(name='thumbnail', **camera_kwargs)
 
-      img = cv2.putText(
-        img.copy(),
-        NAME_MAP[robot],
-        (5, 480),
-        cv2.FONT_HERSHEY_SIMPLEX,
-        1.3,
-        (0, 0, 0),
-        1,
-        cv2.LINE_AA,
-      )
+      model = spec.compile()
+      n_freejoints = int((model.jnt_type == mujoco.mjtJoint.mjJNT_FREE).sum())
+      dofs[robot] = int(model.nq) - 7 * n_freejoints
+      data = mujoco.MjData(model)
+      if gallery_key_name is not None:
+        key_id = mujoco.mj_name2id(
+          model, mujoco.mjtObj.mjOBJ_KEY, gallery_key_name
+        )
+        mujoco.mj_resetDataKeyframe(model, data, key_id)
+      elif model.nkey > 0:
+        mujoco.mj_resetDataKeyframe(model, data, 0)
+      else:
+        mujoco.mj_resetData(model, data)
+      mujoco.mj_forward(model, data)
+
+      renderer = mujoco.Renderer(model, height=500, width=500)
+      renderer.update_scene(data, camera='thumbnail')
+      img = renderer.render()
+      # Build the alpha mask from a segmentation render so background
+      # pixels become transparent without nuking any geom (chroma-keying
+      # against the white skybox would eat white robot parts like UR5e's
+      # aluminum links).
+      renderer.enable_segmentation_rendering()
+      renderer.update_scene(data, camera='thumbnail')
+      mask = renderer.render()[..., 0] != -1
+      renderer.disable_segmentation_rendering()
 
       filename = f'assets/{robot_maker}-{robot_name}.png'
-      paths.append(filename)
+      paths.append((robot, filename, preview_path(robot, robot_maker)))
 
       png = np.zeros((500, 500, 4), dtype=np.uint8)
-      u, v = np.where(np.all(img == 255, axis=-1))
-      png[u, v, -1] = 0
-      png[u, v, :3] = 0
-      u, v = np.where(np.any(img != 255, axis=-1))
-      png[u, v, :3] = img[u, v]
-      png[u, v, -1] = 255
+      png[mask, :3] = img[mask]
+      png[mask, 3] = 255
       pngs.append(png.copy())
       Image.fromarray(png).save(filename)
     except Exception as e:
       print(e)
       print(f'failed to load {xml.as_posix()}')
 
-  n_models = len(paths)
-  n_cols = 5
-  n_rows = int(math.ceil(n_models / n_cols))
-  table = []
-  for r in range(n_rows):
-    row = []
-    for c in range(n_cols):
-      i = r * n_cols + c
-      if i >= n_models:
-        row.append('')
-      else:
-        row.append(f"<img src='{paths[i]}' width=100>")
-    table.extend(row)
-
-  mdfile = mdutils.MdUtils(file_name='gallery')
-  mdfile.new_table(columns=n_cols, rows=n_rows, text=table, text_align='center')
-  mdfile.create_md_file()
+  write_gallery_to_readme(paths, dofs)
 
 
 if __name__ == '__main__':

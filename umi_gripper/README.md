@@ -22,7 +22,7 @@ This model was contributed by Omar Rayyan (@omarrayyann).
 
 ### SOLIDWORKS -> URDF -> MJCF derivation step
 
-1. Converted the the CAD model provided [(here)](https://docs.google.com/document/d/1TPYwV9sNVPAi0ZlAupDMkXZ4CA1hsZx7YDMSmcEy6EU/edit?tab=t.0) to the URDF format using [this](http://wiki.ros.org/sw_urdf_exporter) SolidWorks add-in.
+1. Converted the CAD model provided [(here)](https://docs.google.com/document/d/1TPYwV9sNVPAi0ZlAupDMkXZ4CA1hsZx7YDMSmcEy6EU/edit?tab=t.0) to the URDF format using [this](http://wiki.ros.org/sw_urdf_exporter) SolidWorks add-in.
 2.  Added `<mujoco> <compiler balanceinertia="true" discardvisual="false"/> </mujoco>` to the URDF's
    `<robot>` clause in order to preserve visual geometries.
 3. Loaded the URDF into MuJoCo and saved a corresponding MJCF.
