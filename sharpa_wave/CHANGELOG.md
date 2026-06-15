@@ -12,3 +12,9 @@
   phalanges.
 - `make_right.py` mirror-generation script and the `meshes_right/` mirrored
   asset directory.
+
+### Fixed
+
+- Right hand joint axes now match the real hardware. `make_right.py` mirrored
+  the left hand's motion, which actuated every joint backwards; it now relabels
+  the joint coordinate instead (negate the axis, keep the range).

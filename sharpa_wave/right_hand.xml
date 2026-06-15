@@ -135,31 +135,31 @@
       <body name="right_thumb_CMC_VL" pos="0.01 0.026 0.0214" quat="0.707105 0 0 0.707108">
         <inertial pos="-0.00065 0.0002 0" quat="0.557664 -0.434754 -0.557664 -0.434754" mass="0.0025"
           diaginertia="2.6e-07 2.12661e-07 1.34339e-07"/>
-        <joint name="right_thumb_CMC_FE" class="CMC_joint" pos="0 0 0" axis="0 0 1" range="-1.9199 0.1745"/>
+        <joint name="right_thumb_CMC_FE" class="CMC_joint" pos="0 0 0" axis="0 0 -1" range="-0.1745 1.9199"/>
         <geom class="visual" mesh="right_thumb_CMC_VL"/>
         <geom name="right_thumb_CMC_VL_fit" size="0.0120419 0.00625" pos="0.000957197 -0.000412167 1.20218e-10"
           type="cylinder" group="3" rgba="0.2 0.6 0.2 0.35"/>
         <body name="right_thumb_MC" pos="0 0.005 0" quat="0.65328 -0.653282 -0.270598 -0.270599">
           <inertial pos="0.03643 0.01024 -0.00517" quat="-0.154462 0.683763 -0.151259 0.696943" mass="0.13587"
             diaginertia="4.69153e-05 4.29066e-05 1.92101e-05"/>
-          <joint name="right_thumb_CMC_AA" class="CMC_joint" pos="0 0 0" axis="0 0 1" range="-0.3491 0.3491"/>
+          <joint name="right_thumb_CMC_AA" class="CMC_joint" pos="0 0 0" axis="0 0 -1" range="-0.3491 0.3491"/>
           <geom class="visual" mesh="right_thumb_MC_visual"/>
           <geom name="right_thumb_MC_fit" size="0.0207081 0.0169273" pos="0.0397656 0.0106861 -0.0110947"
             quat="0.707107 0 0.707107 0" type="capsule" group="3" rgba="0.2 0.6 0.2 0.35"/>
           <body name="right_thumb_MCP_VL" pos="0.065 0.006 -0.010392" quat="0.965926 0.25882 0 0">
-            <joint name="right_thumb_MCP_FE" class="MCP_joint" pos="0 0 0" axis="0 0 1" range="-1.3963 0.5236"/>
+            <joint name="right_thumb_MCP_FE" class="MCP_joint" pos="0 0 0" axis="0 0 -1" range="-0.5236 1.3963"/>
             <geom class="visual" mass="8e-05" mesh="right_thumb_MCP_VL_visual"/>
             <body name="right_thumb_PP" quat="0.707105 -0.707108 0 0">
               <inertial pos="0.021256 0.00095 0.00092" quat="0.511613 -0.44358 0.554609 -0.483631" mass="0.03078"
                 diaginertia="6.08344e-06 5.91207e-06 1.22148e-06"/>
-              <joint name="right_thumb_MCP_AA" class="MCP_joint" pos="0 0 0" axis="0 0 1" range="-0.3491 0.3491"/>
+              <joint name="right_thumb_MCP_AA" class="MCP_joint" pos="0 0 0" axis="0 0 -1" range="-0.3491 0.3491"/>
               <geom class="visual" mesh="right_thumb_PP_visual"/>
               <geom name="right_thumb_PP_fit" size="0.011707 0.0137066" pos="0.0237179 8.06477e-10 0.0012143"
                 quat="0.707107 0 0.707107 0" type="capsule" group="3" rgba="0.2 0.6 0.2 0.35"/>
               <body name="right_thumb_DP" pos="0.039 0 0" quat="0.707105 0.707108 0 0">
                 <inertial pos="0.00823663 0.00178196 -0.00099988" quat="0.255956 0.713878 0.187417 0.624291"
                   mass="0.00998" diaginertia="1.09014e-06 1.041e-06 2.95174e-07"/>
-                <joint name="right_thumb_IP" class="PIP_joint" pos="0 0 0" axis="0 0 1" range="-1.7453 0"/>
+                <joint name="right_thumb_IP" class="PIP_joint" pos="0 0 0" axis="0 0 -1" range="0 1.7453"/>
                 <geom class="visual" mesh="DP_Visual_HB1_TH"/>
                 <geom class="visual" quat="-0.5 0.5 0.5 0.5" material="green" mesh="elastomer_HB1_TH"/>
                 <geom class="elastomer_collision" size="0.00943065 0.00677499" pos="0.0163733 0.00176519 2.7474e-08"
@@ -173,28 +173,28 @@
       <body name="right_index_MCP_VL" pos="0.001 0.0303 0.0959" quat="0.499998 0.500002 -0.5 0.5">
         <inertial pos="-0.0092 0.0013 0" quat="-0.479506 0.519686 0.479506 0.519686" mass="0.00221"
           diaginertia="2.23e-07 1.77435e-07 1.09965e-07"/>
-        <joint name="right_index_MCP_FE" class="MCP_joint" pos="0 0 0" axis="0 0 1" range="-1.5708 0.174533"/>
+        <joint name="right_index_MCP_FE" class="MCP_joint" pos="0 0 0" axis="0 0 -1" range="-0.174533 1.5708"/>
         <geom class="visual" mesh="right_MCP_VL_visual"/>
         <geom name="right_index_MCP_VL_fit" size="0.0125535 0.0057" pos="0.00165159 -0.00045 1.0897e-10" type="cylinder"
           group="3" rgba="0.2 0.6 0.2 0.35"/>
         <body name="right_index_PP" quat="0.707105 -0.707108 0 0">
           <inertial pos="0.027 0.00055 -0.00068" quat="0.502719 -0.479286 0.512565 -0.504813" mass="0.04741"
             diaginertia="1.14061e-05 1.10467e-05 2.15425e-06"/>
-          <joint name="right_index_MCP_AA" class="MCP_joint" pos="0 0 0" axis="0 0 1" range="-0.3491 0.3491"/>
+          <joint name="right_index_MCP_AA" class="MCP_joint" pos="0 0 0" axis="0 0 -1" range="-0.3491 0.3491"/>
           <geom class="visual" mesh="right_PP_visual"/>
           <geom name="right_index_PP_fit" size="0.0104766 0.0172474" pos="0.0305371 -8.5591e-06 0.000140714"
             quat="0.707107 0 0.707107 0" type="capsule" group="3" rgba="0.2 0.6 0.2 0.35"/>
           <body name="right_index_MP" pos="0.047 0 0" quat="0.707105 0.707108 0 0">
             <inertial pos="0.01212 0.00116 0.00058" quat="0.0266408 0.732558 0.0189273 0.67992" mass="0.01824"
               diaginertia="2.00683e-06 1.9229e-06 5.68878e-07"/>
-            <joint name="right_index_PIP" class="PIP_joint" pos="0 0 0" axis="0 0 1" range="-1.7453 0"/>
+            <joint name="right_index_PIP" class="PIP_joint" pos="0 0 0" axis="0 0 -1" range="0 1.7453"/>
             <geom class="visual" mesh="right_MP_visual"/>
             <geom name="right_index_MP_fit" size="0.0104174 0.0147236" pos="0.0147146 0.00118535 -4.70523e-07"
               quat="0.707107 0 0.707107 0" type="capsule" group="3" rgba="0.2 0.6 0.2 0.35"/>
             <body name="right_index_DP" pos="0.0315 0 0">
               <inertial pos="0.0124856 0.00257344 -0.000107634" quat="0.0491898 0.71664 0.0584115 0.69325"
                 mass="0.00465" diaginertia="3.15145e-07 3.09574e-07 1.34852e-07"/>
-              <joint name="right_index_DIP" class="DIP_joint" pos="0 0 0" axis="0 0 1" range="-1.3963 0"/>
+              <joint name="right_index_DIP" class="DIP_joint" pos="0 0 0" axis="0 0 -1" range="0 1.3963"/>
               <geom class="visual" mesh="DP_visual_HB1_4F"/>
               <geom class="visual" quat="-0.5 0.5 0.5 0.5" material="green" mesh="elastomer_HB1_4F"/>
               <geom class="elastomer_collision" size="0.00806303 0.00535098" pos="0.0139214 0.00086892 -1.32248e-06"
@@ -207,28 +207,28 @@
       <body name="right_middle_MCP_VL" pos="0 0.01 0.0989" quat="0.499998 0.500002 -0.5 0.5">
         <inertial pos="-0.0092 0.0013 0" quat="-0.479506 0.519686 0.479506 0.519686" mass="0.00221"
           diaginertia="2.23e-07 1.77435e-07 1.09965e-07"/>
-        <joint name="right_middle_MCP_FE" class="MCP_joint" pos="0 0 0" axis="0 0 1" range="-1.5708 0.174533"/>
+        <joint name="right_middle_MCP_FE" class="MCP_joint" pos="0 0 0" axis="0 0 -1" range="-0.174533 1.5708"/>
         <geom class="visual" mesh="right_MCP_VL_visual"/>
         <geom name="right_middle_MCP_VL_fit" size="0.0125535 0.0057" pos="0.00165159 -0.00045 1.0897e-10"
           type="cylinder" group="3" rgba="0.2 0.6 0.2 0.35"/>
         <body name="right_middle_PP" quat="0.707105 -0.707108 0 0">
           <inertial pos="0.027 0.00055 -0.00068" quat="0.502719 -0.479286 0.512565 -0.504813" mass="0.04741"
             diaginertia="1.14061e-05 1.10467e-05 2.15425e-06"/>
-          <joint name="right_middle_MCP_AA" class="MCP_joint" pos="0 0 0" axis="0 0 1" range="-0.3491 0.3491"/>
+          <joint name="right_middle_MCP_AA" class="MCP_joint" pos="0 0 0" axis="0 0 -1" range="-0.3491 0.3491"/>
           <geom class="visual" mesh="right_PP_visual"/>
           <geom name="right_middle_PP_fit" size="0.00934798 0.0172474" pos="0.0305371 -8.5591e-06 0.000140714"
             quat="0.707107 0 0.707107 0" type="capsule" group="3" rgba="0.2 0.6 0.2 0.35"/>
           <body name="right_middle_MP" pos="0.047 0 0" quat="0.707105 0.707108 0 0">
             <inertial pos="0.01212 0.00116 0.00058" quat="0.0266408 0.732558 0.0189273 0.67992" mass="0.01824"
               diaginertia="2.00683e-06 1.9229e-06 5.68878e-07"/>
-            <joint name="right_middle_PIP" class="PIP_joint" pos="0 0 0" axis="0 0 1" range="-1.7453 0"/>
+            <joint name="right_middle_PIP" class="PIP_joint" pos="0 0 0" axis="0 0 -1" range="0 1.7453"/>
             <geom class="visual" mesh="right_MP_visual"/>
             <geom name="right_middle_MP_fit" size="0.00940724 0.0147236" pos="0.0147146 0.00118535 -4.70523e-07"
               quat="0.707107 0 0.707107 0" type="capsule" group="3" rgba="0.2 0.6 0.2 0.35"/>
             <body name="right_middle_DP" pos="0.0315 0 0">
               <inertial pos="0.0124856 0.00257344 -0.000107634" quat="0.0491898 0.71664 0.0584115 0.69325"
                 mass="0.00465" diaginertia="3.15145e-07 3.09574e-07 1.34852e-07"/>
-              <joint name="right_middle_DIP" class="DIP_joint" pos="0 0 0" axis="0 0 1" range="-1.3963 0"/>
+              <joint name="right_middle_DIP" class="DIP_joint" pos="0 0 0" axis="0 0 -1" range="0 1.3963"/>
               <geom class="visual" mesh="DP_visual_HB1_4F"/>
               <geom class="visual" quat="-0.5 0.5 0.5 0.5" material="green" mesh="elastomer_HB1_4F"/>
               <geom class="elastomer_collision" size="0.00806303 0.00535098" pos="0.0139214 0.00086892 -1.32248e-06"
@@ -241,28 +241,28 @@
       <body name="right_ring_MCP_VL" pos="0.0015 -0.0103 0.0929" quat="0.499998 0.500002 -0.5 0.5">
         <inertial pos="-0.0092 0.0013 0" quat="-0.479506 0.519686 0.479506 0.519686" mass="0.00221"
           diaginertia="2.23e-07 1.77435e-07 1.09965e-07"/>
-        <joint name="right_ring_MCP_FE" class="MCP_joint" pos="0 0 0" axis="0 0 1" range="-1.5708 0.174533"/>
+        <joint name="right_ring_MCP_FE" class="MCP_joint" pos="0 0 0" axis="0 0 -1" range="-0.174533 1.5708"/>
         <geom class="visual" mesh="right_MCP_VL_visual"/>
         <geom name="right_ring_MCP_VL_fit" size="0.0125535 0.0057" pos="0.00165159 -0.00045 1.0897e-10" type="cylinder"
           group="3" rgba="0.2 0.6 0.2 0.35"/>
         <body name="right_ring_PP" quat="0.707105 -0.707108 0 0">
           <inertial pos="0.027 0.00055 -0.00068" quat="0.502719 -0.479286 0.512565 -0.504813" mass="0.04741"
             diaginertia="1.14061e-05 1.10467e-05 2.15425e-06"/>
-          <joint name="right_ring_MCP_AA" class="MCP_joint" pos="0 0 0" axis="0 0 1" range="-0.3491 0.3491"/>
+          <joint name="right_ring_MCP_AA" class="MCP_joint" pos="0 0 0" axis="0 0 -1" range="-0.3491 0.3491"/>
           <geom class="visual" mesh="right_PP_visual"/>
           <geom name="right_ring_PP_fit" size="0.00970157 0.0172474" pos="0.0305371 -8.5591e-06 0.000140714"
             quat="0.707107 0 0.707107 0" type="capsule" group="3" rgba="0.2 0.6 0.2 0.35"/>
           <body name="right_ring_MP" pos="0.047 0 0" quat="0.707105 0.707108 0 0">
             <inertial pos="0.01212 0.00116 0.00058" quat="0.0266408 0.732558 0.0189273 0.67992" mass="0.01824"
               diaginertia="2.00683e-06 1.9229e-06 5.68878e-07"/>
-            <joint name="right_ring_PIP" class="PIP_joint" pos="0 0 0" axis="0 0 1" range="-1.7453 0"/>
+            <joint name="right_ring_PIP" class="PIP_joint" pos="0 0 0" axis="0 0 -1" range="0 1.7453"/>
             <geom class="visual" mesh="right_MP_visual"/>
             <geom name="right_ring_MP_fit" size="0.0104481 0.0147236" pos="0.0147146 0.00118535 -4.70523e-07"
               quat="0.707107 0 0.707107 0" type="capsule" group="3" rgba="0.2 0.6 0.2 0.35"/>
             <body name="right_ring_DP" pos="0.0315 0 0">
               <inertial pos="0.0124856 0.00257344 -0.000107634" quat="0.0491898 0.71664 0.0584115 0.69325"
                 mass="0.00465" diaginertia="3.15145e-07 3.09574e-07 1.34852e-07"/>
-              <joint name="right_ring_DIP" class="DIP_joint" pos="0 0 0" axis="0 0 1" range="-1.3963 0"/>
+              <joint name="right_ring_DIP" class="DIP_joint" pos="0 0 0" axis="0 0 -1" range="0 1.3963"/>
               <geom class="visual" mesh="DP_visual_HB1_4F"/>
               <geom class="visual" quat="-0.499998 0.5 0.5 0.500002" material="green" mesh="elastomer_HB1_4F"/>
               <geom class="elastomer_collision" size="0.00806303 0.00535098" pos="0.0139214 0.00086892 -1.32248e-06"
@@ -274,34 +274,34 @@
         </body>
       </body>
       <body name="right_pinky_MC" pos="0.01136 -0.0263 0.0869" quat="-1.34924e-11 3.67321e-06 1 -3.67321e-06">
-        <joint name="right_pinky_CMC" class="PCMC_joint" pos="0 0 0" axis="0 0 1" range="-0.2618 0"/>
+        <joint name="right_pinky_CMC" class="PCMC_joint" pos="0 0 0" axis="0 0 -1" range="0 0.2618"/>
         <geom class="visual" mass="0.12541" mesh="right_pinky_MC_visual"/>
         <geom class="collision" mesh="right_pinky_MC"/>
         <body name="right_pinky_MCP_VL" pos="0.00836 -0.0048 0" quat="-0.499998 -0.5 -0.5 0.500002">
           <inertial pos="-0.0092 0.0013 0" quat="-0.479506 0.519686 0.479506 0.519686" mass="0.00221"
             diaginertia="2.23e-07 1.77435e-07 1.09965e-07"/>
-          <joint name="right_pinky_MCP_FE" class="MCP_joint" pos="0 0 0" axis="0 0 1" range="-1.5708 0.174533"/>
+          <joint name="right_pinky_MCP_FE" class="MCP_joint" pos="0 0 0" axis="0 0 -1" range="-0.174533 1.5708"/>
           <geom class="visual" mesh="right_MCP_VL_visual"/>
           <geom name="right_pinky_MCP_VL_fit" size="0.0125535 0.0057" pos="0.00165159 -0.00045 1.0897e-10"
             type="cylinder" group="3" rgba="0.2 0.6 0.2 0.35"/>
           <body name="right_pinky_PP" quat="0.707105 -0.707108 0 0">
             <inertial pos="0.027 0.00055 -0.00068" quat="0.502719 -0.479286 0.512565 -0.504813" mass="0.04741"
               diaginertia="1.14061e-05 1.10467e-05 2.15425e-06"/>
-            <joint name="right_pinky_MCP_AA" class="MCP_joint" pos="0 0 0" axis="0 0 1" range="-0.3491 0.3491"/>
+            <joint name="right_pinky_MCP_AA" class="MCP_joint" pos="0 0 0" axis="0 0 -1" range="-0.3491 0.3491"/>
             <geom class="visual" mesh="right_PP_visual"/>
             <geom name="right_pinky_PP_fit" size="0.0106522 0.0172474" pos="0.0305371 -8.5591e-06 0.000140714"
               quat="0.707107 0 0.707107 0" type="capsule" group="3" rgba="0.2 0.6 0.2 0.35"/>
             <body name="right_pinky_MP" pos="0.047 0 0" quat="0.707105 0.707108 0 0">
               <inertial pos="0.01212 0.00116 0.00058" quat="0.0266408 0.732558 0.0189273 0.67992" mass="0.01824"
                 diaginertia="2.00683e-06 1.9229e-06 5.68878e-07"/>
-              <joint name="right_pinky_PIP" class="PIP_joint" pos="0 0 0" axis="0 0 1" range="-1.7453 0"/>
+              <joint name="right_pinky_PIP" class="PIP_joint" pos="0 0 0" axis="0 0 -1" range="0 1.7453"/>
               <geom class="visual" mesh="right_MP_visual"/>
               <geom name="right_pinky_MP_fit" size="0.00990499 0.0147236" pos="0.0147146 0.00118535 -4.70523e-07"
                 quat="0.707107 0 0.707107 0" type="capsule" group="3" rgba="0.2 0.6 0.2 0.35"/>
               <body name="right_pinky_DP" pos="0.0315 0 0">
                 <inertial pos="0.0124856 0.00257344 -0.000107634" quat="0.0491898 0.71664 0.0584115 0.69325"
                   mass="0.00465" diaginertia="3.15145e-07 3.09574e-07 1.34852e-07"/>
-                <joint name="right_pinky_DIP" class="DIP_joint" pos="0 0 0" axis="0 0 1" range="-1.3963 0"/>
+                <joint name="right_pinky_DIP" class="DIP_joint" pos="0 0 0" axis="0 0 -1" range="0 1.3963"/>
                 <geom class="visual" mesh="DP_visual_HB1_4F"/>
                 <geom class="visual" quat="-0.5 0.5 0.5 0.5" material="green" mesh="elastomer_HB1_4F"/>
                 <geom class="elastomer_collision" size="0.00806303 0.00535098" pos="0.0139214 0.00086892 -1.32248e-06"
@@ -345,49 +345,49 @@
   </contact>
 
   <actuator>
-    <general name="right_thumb_CMC_FE" class="sharpa" joint="right_thumb_CMC_FE" ctrlrange="-1.9199 0.1745"
+    <general name="right_thumb_CMC_FE" class="sharpa" joint="right_thumb_CMC_FE" ctrlrange="-0.1745 1.9199"
       gainprm="6.95" biasprm="0 -6.95 0.9"/>
     <general name="right_thumb_CMC_AA" class="sharpa" joint="right_thumb_CMC_AA" ctrlrange="-0.3491 0.3491"
       gainprm="13.2" biasprm="0 -13.2 0.9"/>
-    <general name="right_thumb_MCP_FE" class="sharpa" joint="right_thumb_MCP_FE" ctrlrange="-1.3963 0.5236"
+    <general name="right_thumb_MCP_FE" class="sharpa" joint="right_thumb_MCP_FE" ctrlrange="-0.5236 1.3963"
       gainprm="4.76" biasprm="0 -4.76 0.9"/>
     <general name="right_thumb_MCP_AA" class="sharpa" joint="right_thumb_MCP_AA" ctrlrange="-0.3491 0.3491"
       gainprm="6.62" biasprm="0 -6.62 0.9"/>
-    <general name="right_thumb_IP" class="sharpa" joint="right_thumb_IP" ctrlrange="-1.7453 0" gainprm="0.9"
+    <general name="right_thumb_IP" class="sharpa" joint="right_thumb_IP" ctrlrange="0 1.7453" gainprm="0.9"
       biasprm="0 -0.9 0.9"/>
-    <general name="right_index_MCP_FE" class="sharpa" joint="right_index_MCP_FE" ctrlrange="-1.5708 0.174533"
+    <general name="right_index_MCP_FE" class="sharpa" joint="right_index_MCP_FE" ctrlrange="-0.174533 1.5708"
       gainprm="4.76" biasprm="0 -4.76 0.9"/>
     <general name="right_index_MCP_AA" class="sharpa" joint="right_index_MCP_AA" ctrlrange="-0.3491 0.3491"
       gainprm="6.62" biasprm="0 -6.62 0.9"/>
-    <general name="right_index_PIP" class="sharpa" joint="right_index_PIP" ctrlrange="-1.7453 0" gainprm="0.9"
+    <general name="right_index_PIP" class="sharpa" joint="right_index_PIP" ctrlrange="0 1.7453" gainprm="0.9"
       biasprm="0 -0.9 0.9"/>
-    <general name="right_index_DIP" class="sharpa" joint="right_index_DIP" ctrlrange="-1.3963 0" gainprm="0.9"
+    <general name="right_index_DIP" class="sharpa" joint="right_index_DIP" ctrlrange="0 1.3963" gainprm="0.9"
       biasprm="0 -0.9 0.9"/>
-    <general name="right_middle_MCP_FE" class="sharpa" joint="right_middle_MCP_FE" ctrlrange="-1.5708 0.174533"
+    <general name="right_middle_MCP_FE" class="sharpa" joint="right_middle_MCP_FE" ctrlrange="-0.174533 1.5708"
       gainprm="4.76" biasprm="0 -4.76 0.9"/>
     <general name="right_middle_MCP_AA" class="sharpa" joint="right_middle_MCP_AA" ctrlrange="-0.3491 0.3491"
       gainprm="6.62" biasprm="0 -6.62 0.9"/>
-    <general name="right_middle_PIP" class="sharpa" joint="right_middle_PIP" ctrlrange="-1.7453 0" gainprm="0.9"
+    <general name="right_middle_PIP" class="sharpa" joint="right_middle_PIP" ctrlrange="0 1.7453" gainprm="0.9"
       biasprm="0 -0.9 0.9"/>
-    <general name="right_middle_DIP" class="sharpa" joint="right_middle_DIP" ctrlrange="-1.3963 0" gainprm="0.9"
+    <general name="right_middle_DIP" class="sharpa" joint="right_middle_DIP" ctrlrange="0 1.3963" gainprm="0.9"
       biasprm="0 -0.9 0.9"/>
-    <general name="right_ring_MCP_FE" class="sharpa" joint="right_ring_MCP_FE" ctrlrange="-1.5708 0.174533"
+    <general name="right_ring_MCP_FE" class="sharpa" joint="right_ring_MCP_FE" ctrlrange="-0.174533 1.5708"
       gainprm="4.76" biasprm="0 -4.76 0.9"/>
     <general name="right_ring_MCP_AA" class="sharpa" joint="right_ring_MCP_AA" ctrlrange="-0.3491 0.3491" gainprm="6.62"
       biasprm="0 -6.62 0.9"/>
-    <general name="right_ring_PIP" class="sharpa" joint="right_ring_PIP" ctrlrange="-1.7453 0" gainprm="0.9"
+    <general name="right_ring_PIP" class="sharpa" joint="right_ring_PIP" ctrlrange="0 1.7453" gainprm="0.9"
       biasprm="0 -0.9 0.9"/>
-    <general name="right_ring_DIP" class="sharpa" joint="right_ring_DIP" ctrlrange="-1.3963 0" gainprm="0.9"
+    <general name="right_ring_DIP" class="sharpa" joint="right_ring_DIP" ctrlrange="0 1.3963" gainprm="0.9"
       biasprm="0 -0.9 0.9"/>
-    <general name="right_pinky_CMC" class="sharpa" joint="right_pinky_CMC" ctrlrange="-0.2618 0" gainprm="1.38"
+    <general name="right_pinky_CMC" class="sharpa" joint="right_pinky_CMC" ctrlrange="0 0.2618" gainprm="1.38"
       biasprm="0 -1.38 0.9"/>
-    <general name="right_pinky_MCP_FE" class="sharpa" joint="right_pinky_MCP_FE" ctrlrange="-1.5708 0.174533"
+    <general name="right_pinky_MCP_FE" class="sharpa" joint="right_pinky_MCP_FE" ctrlrange="-0.174533 1.5708"
       gainprm="4.76" biasprm="0 -4.76 0.9"/>
     <general name="right_pinky_MCP_AA" class="sharpa" joint="right_pinky_MCP_AA" ctrlrange="-0.3491 0.3491"
       gainprm="6.62" biasprm="0 -6.62 0.9"/>
-    <general name="right_pinky_PIP" class="sharpa" joint="right_pinky_PIP" ctrlrange="-1.7453 0" gainprm="0.9"
+    <general name="right_pinky_PIP" class="sharpa" joint="right_pinky_PIP" ctrlrange="0 1.7453" gainprm="0.9"
       biasprm="0 -0.9 0.9"/>
-    <general name="right_pinky_DIP" class="sharpa" joint="right_pinky_DIP" ctrlrange="-1.3963 0" gainprm="0.9"
+    <general name="right_pinky_DIP" class="sharpa" joint="right_pinky_DIP" ctrlrange="0 1.3963" gainprm="0.9"
       biasprm="0 -0.9 0.9"/>
   </actuator>
 </mujoco>

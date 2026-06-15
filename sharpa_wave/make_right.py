@@ -102,17 +102,25 @@ def mirror_quat_wxyz(q):
 
 
 def mirror_axis(a):
-  return mirror_pos(a)
+  """Reflect the axis through M_y, then negate it (``0 0 1`` -> ``0 0 -1``).
+
+  SHARPA does not motion-mirror its two hands: the upstream left and right URDFs
+  share one joint convention (``axis="0 0 1"`` with identical ranges), so the
+  same encoder sign drives both and positive ``q`` is flexion on each hand. We
+  must reproduce that, not the geometric motion-mirror of the left. The fix is a
+  pure relabel of the mirrored joint coordinate ``q -> -q``, i.e. negate the
+  (M_y-reflected) axis here and keep the range in ``mirror_joint_range``. The
+  result matches the upstream right URDF in both reachable configs and qpos sign.
+  Negating the axis without restoring the range would flip the motion direction
+  but leave the range on the wrong (extension) side."""
+  return -mirror_pos(a)
 
 
 def mirror_joint_range(r):
-  """Under our convention (axis kept numerically), the joint angle's sign flips
-  to preserve physical motion: R(M_y a, θ) = R(a, −θ) ∘ M_y conjugation, so
-  ``[lo, up] → [-up, -lo]``. Symmetric ranges are unchanged."""
-  r = np.asarray(r, dtype=float)
-  if r[0] == 0.0 and r[1] == 0.0:
-    return r
-  return np.array([-r[1], -r[0]])
+  """Keep the range identical to the left hand: mirroring is only of the
+  geometry; the joint coordinate is relabeled ``q -> -q`` via the axis negation
+  in ``mirror_axis``, so the range stays the left's ``[lo, up]``."""
+  return np.asarray(r, dtype=float)
 
 
 def preprocess_meshes(src_dir: Path, dst_dir: Path, force: bool):
