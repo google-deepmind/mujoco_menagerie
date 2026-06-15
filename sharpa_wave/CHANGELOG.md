@@ -12,6 +12,8 @@
   phalanges.
 - `make_right.py` mirror-generation script and the `meshes_right/` mirrored
   asset directory.
+- Names on the fingertip collision geoms of both hands, e.g.
+  `right_thumb_fingertip_collision`.
 
 ### Fixed
 

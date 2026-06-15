@@ -163,8 +163,8 @@
                 <joint name="left_thumb_IP" class="PIP_joint" pos="0 0 0" axis="0 0 1" range="0 1.7453"/>
                 <geom class="visual" mesh="DP_Visual_HB1_TH"/>
                 <geom class="visual" quat="0.5 0.5 -0.5 0.5" material="green" mesh="elastomer_HB1_TH"/>
-                <geom class="elastomer_collision" size="0.00943065 0.00677499" pos="0.0163733 -0.00176519 2.7474e-08"
-                  quat="0.508797 0.508797 0.491045 0.491045" type="capsule"/>
+                <geom name="left_thumb_fingertip_collision" class="elastomer_collision" size="0.00943065 0.00677499"
+                  pos="0.0163733 -0.00176519 2.7474e-08" quat="0.508797 0.508797 0.491045 0.491045" type="capsule"/>
                 <site name="left_thumb_fingertip" pos="0.0276109 0 0" quat="0.5 0.5 0.5 0.5"/>
               </body>
             </body>
@@ -198,8 +198,8 @@
               <joint name="left_index_DIP" class="DIP_joint" pos="0 0 0" axis="0 0 1" range="0 1.3963"/>
               <geom class="visual" mesh="DP_visual_HB1_4F"/>
               <geom class="visual" quat="0.5 0.5 -0.5 0.5" material="green" mesh="elastomer_HB1_4F"/>
-              <geom class="elastomer_collision" size="0.00806303 0.00535098" pos="0.0139214 -0.00086892 -1.32248e-06"
-                quat="-0.0228873 0.706736 0.0228873 0.706736" type="capsule"/>
+              <geom name="left_index_fingertip_collision" class="elastomer_collision" size="0.00806303 0.00535098"
+                pos="0.0139214 -0.00086892 -1.32248e-06" quat="-0.0228873 0.706736 0.0228873 0.706736" type="capsule"/>
               <site name="left_index_fingertip" pos="0.0260093 0 0" quat="0.5 0.5 0.5 0.5"/>
             </body>
           </body>
@@ -232,8 +232,8 @@
               <joint name="left_middle_DIP" class="DIP_joint" pos="0 0 0" axis="0 0 1" range="0 1.3963"/>
               <geom class="visual" mesh="DP_visual_HB1_4F"/>
               <geom class="visual" quat="0.5 0.5 -0.5 0.5" material="green" mesh="elastomer_HB1_4F"/>
-              <geom class="elastomer_collision" size="0.00806303 0.00535098" pos="0.0139214 -0.00086892 -1.32248e-06"
-                quat="-0.0228873 0.706736 0.0228873 0.706736" type="capsule"/>
+              <geom name="left_middle_fingertip_collision" class="elastomer_collision" size="0.00806303 0.00535098"
+                pos="0.0139214 -0.00086892 -1.32248e-06" quat="-0.0228873 0.706736 0.0228873 0.706736" type="capsule"/>
               <site name="left_middle_fingertip" pos="0.0260093 0 0" quat="0.5 0.5 0.5 0.5"/>
             </body>
           </body>
@@ -266,8 +266,8 @@
               <joint name="left_ring_DIP" class="DIP_joint" pos="0 0 0" axis="0 0 1" range="0 1.3963"/>
               <geom class="visual" mesh="DP_visual_HB1_4F"/>
               <geom class="visual" quat="0.499998 0.5 -0.5 0.500002" material="green" mesh="elastomer_HB1_4F"/>
-              <geom class="elastomer_collision" size="0.00806303 0.00535098" pos="0.0139214 -0.00086892 -1.32248e-06"
-                quat="-0.0228873 0.706736 0.0228873 0.706736" type="capsule"/>
+              <geom name="left_ring_fingertip_collision" class="elastomer_collision" size="0.00806303 0.00535098"
+                pos="0.0139214 -0.00086892 -1.32248e-06" quat="-0.0228873 0.706736 0.0228873 0.706736" type="capsule"/>
               <site name="left_ring_fingertip" pos="0.0260093 1.04037e-07 1.04037e-07"
                 quat="0.5 0.499998 0.5 0.500002"/>
             </body>
@@ -305,8 +305,9 @@
                 <joint name="left_pinky_DIP" class="DIP_joint" pos="0 0 0" axis="0 0 1" range="0 1.3963"/>
                 <geom class="visual" mesh="DP_visual_HB1_4F"/>
                 <geom class="visual" quat="0.5 0.5 -0.5 0.5" material="green" mesh="elastomer_HB1_4F"/>
-                <geom class="elastomer_collision" size="0.00806303 0.00535098" pos="0.0139214 -0.00086892 -1.32248e-06"
-                  quat="-0.0228873 0.706736 0.0228873 0.706736" type="capsule"/>
+                <geom name="left_pinky_fingertip_collision" class="elastomer_collision" size="0.00806303 0.00535098"
+                  pos="0.0139214 -0.00086892 -1.32248e-06" quat="-0.0228873 0.706736 0.0228873 0.706736"
+                  type="capsule"/>
                 <site name="left_pinky_fingertip" pos="0.0260093 0 0" quat="0.5 0.5 0.5 0.5"/>
               </body>
             </body>
