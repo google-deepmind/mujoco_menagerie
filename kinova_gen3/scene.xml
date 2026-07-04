@@ -1,7 +1,7 @@
 <mujoco model="gen3 scene">
   <include file="gen3.xml"/>
 
-  <statistic center="0.3 0 0.45" extent="0.8" meansize="0.05"/>
+  <statistic meansize="0.05"/>
 
   <visual>
     <headlight diffuse="0.6 0.6 0.6" ambient="0.1 0.1 0.1" specular="0 0 0"/>

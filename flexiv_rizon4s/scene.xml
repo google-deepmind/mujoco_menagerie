@@ -1,8 +1,6 @@
 <mujoco model="flexiv scene">
   <include file="flexiv_rizon4s.xml"/>
 
-  <statistic center="0.0 0 0.75" extent="1.8"/>
-
   <visual>
     <headlight diffuse="0.6 0.6 0.6" ambient="0.3 0.3 0.3" specular="0 0 0"/>
     <rgba haze="0.15 0.25 0.35 1"/>

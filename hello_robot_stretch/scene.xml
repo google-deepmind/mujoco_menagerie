@@ -1,7 +1,7 @@
 <mujoco model="stretch scene">
   <include file="stretch.xml"/>
 
-  <statistic center="0 0 .75" extent="1.2" meansize="0.05"/>
+  <statistic meansize="0.05" extent="1.2"/>
 
   <visual>
     <headlight diffuse="0.6 0.6 0.6" ambient="0.3 0.3 0.3" specular="0 0 0"/>

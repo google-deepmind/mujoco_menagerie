@@ -1,7 +1,7 @@
 <mujoco model="tidybot scene">
   <include file="tidybot.xml"/>
 
-  <statistic center="0 0 0.525" extent="1.1" meansize="0.05"/>
+  <statistic meansize="0.05"/>
 
   <visual>
     <headlight diffuse="0.6 0.6 0.6" ambient="0.1 0.1 0.1" specular="0 0 0"/>

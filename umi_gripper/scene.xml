@@ -2,7 +2,7 @@
 
   <include file="umi_gripper.xml"/>
 
-  <statistic center="0.2 0 0.2" extent="1.0"/>
+  <statistic extent="1.0"/>
 
   <visual>
     <headlight diffuse="0.3 0.3 0.3" ambient="0.2 0.2 0.2" specular="0 0 0"/>

@@ -1,7 +1,7 @@
 <mujoco model="wxai_scene">
   <compiler angle="radian"/>
 
-  <statistic center="0 0 0.1" extent="0.8"/>
+  <statistic extent="0.8"/>
 
   <visual>
     <headlight diffuse="0.6 0.6 0.6" ambient="0.3 0.3 0.3" specular="0 0 0"/>

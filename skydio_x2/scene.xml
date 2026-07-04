@@ -1,7 +1,7 @@
 <mujoco model="Skydio X2 scene">
   <include file="x2.xml"/>
 
-  <statistic center="0 0 0.1" extent="0.6" meansize=".05"/>
+  <statistic meansize=".05"/>
 
   <visual>
     <headlight diffuse="0.6 0.6 0.6" ambient="0.3 0.3 0.3" specular="0 0 0"/>

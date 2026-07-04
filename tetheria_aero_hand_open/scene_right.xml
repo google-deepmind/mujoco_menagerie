@@ -1,7 +1,7 @@
 <mujoco model="tetheria_aero_hand_open_right_scene">
   <include file="right_hand.xml"/>
 
-  <statistic center="0.15 0 0" extent="0.4" meansize="0.01"/>
+  <statistic meansize="0.01"/>
 
   <visual>
     <headlight diffuse=".8 .8 .8" ambient=".2 .2 .2" specular="1 1 1"/>

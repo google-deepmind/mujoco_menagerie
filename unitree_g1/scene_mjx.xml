@@ -1,7 +1,7 @@
 <mujoco model="g1 mjx flat terrain scene">
   <include file="g1_mjx.xml"/>
 
-  <statistic center="0 0 0.7" extent="1.2" meansize="0.02"/>
+  <statistic meansize="0.02"/>
 
   <visual>
     <headlight diffuse="0.6 0.6 0.6" ambient="0.1 0.1 0.1" specular="0.9 0.9 0.9"/>

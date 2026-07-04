@@ -1,8 +1,6 @@
 <mujoco model="MS_Human_700_Primary_Model scene">
   <include file="MS-Human-700.xml"/>
 
-  <statistic center="0 0 1.0" extent="1.2"/>
-
   <visual>
     <headlight ambient="0.4 0.4 0.4" diffuse="0.8 0.8 0.8" specular="0.1 0.1 0.1"/>
     <rgba haze="0.15 0.25 0.35 1"/>

@@ -2,6 +2,10 @@
 
 All notable changes to this repository will be documented here.
 
+## [2026-07-04]
+
+- Cleaned up manual `<statistic>` camera overrides across scene XMLs to improve visualizer default framings. Removed arbitrary `center` attributes, only keeping `extent` where finite floor surfaces or heightfields require custom framing bounds.
+
 ## [2026-05-19]
 
 - Streamlined the contributor workflow behind a top-level `Makefile`: `make install` for one-time setup, `make check` for lint/format/license/XML, `make test` for the simulation suite, `make all` for everything CI runs. Slimmed the PR template and rewrote the CONTRIBUTING dev-setup section to match. Removed the redundant `check_license.yml` workflow (its job is already covered by the pre-commit workflow).

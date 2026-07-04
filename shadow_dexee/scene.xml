@@ -1,7 +1,7 @@
 <mujoco model="shadow dex-ee hand scene">
   <include file="shadow_dexee.xml"/>
 
-  <statistic extent=".5" center="0 0 0.1"/>
+  <statistic extent=".5"/>
 
   <visual>
     <headlight ambient=".3 .3 .3" diffuse=".6 .6 .6" specular="0 0 0"/>
