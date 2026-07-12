@@ -84,7 +84,9 @@ class ContributorsTest(absltest.TestCase):
   """Checks CONTRIBUTORS.md sections are sorted alphabetically by first name."""
 
   def test_sorted(self) -> None:
-    contributors = (_ROOT_DIR / 'CONTRIBUTORS.md').read_text().splitlines()
+    contributors = (
+      (_ROOT_DIR / 'CONTRIBUTORS.md').read_text(encoding='utf-8').splitlines()
+    )
 
     # Each section is a contiguous block of lines starting with "- ".
     section_start = None
