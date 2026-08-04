@@ -5,6 +5,8 @@ All notable changes to this model will be documented in this file.
 ## [2026-08-03]
 
 - Set joint `armature` from the manufacturer's design parameters.
+- Fixed collision geoms contributing mass. The `collision` class set no `density`,
+  inflating the two bodies that carry no explicit `<inertial>` by 96 g in total.
 
 ## [2026-06-15]
 

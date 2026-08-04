@@ -14,7 +14,7 @@
         </default>
       </default>
       <default class="collision">
-        <geom type="mesh" group="3" solref="0.01" rgba="0.2 0.6 0.2 0.25"/>
+        <geom type="mesh" group="3" density="0" solref="0.01" rgba="0.2 0.6 0.2 0.25"/>
         <default class="elastomer_collision">
           <geom solref="0.06 0.9"/>
         </default>
