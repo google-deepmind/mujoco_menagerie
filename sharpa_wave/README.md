@@ -58,7 +58,8 @@ The model is derived from the URDF and assets published at
    - `CMC_joint` / `PCMC_joint` / `MCP_joint` / `PIP_joint` / `DIP_joint`
      carrying `armature`, `damping`, `frictionloss`, and `actuatorfrcrange`
      values specific to each joint class, matched to the Sharpa controller
-     specs.
+     specs. `armature` is the reflected rotor inertia compted from the manufacturer's
+     design parameters.
 
 4. Replaced the auxiliary massless fingertip link (a TCP marker in the URDF)
    with a `<site>`, then resaved with `fusestatic="true"`. `fusestatic` merges
