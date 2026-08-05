@@ -133,7 +133,8 @@
     <light name="spotlight" mode="targetbodycom" target="base" pos="0 -1 2" cutoff="30"/>
     <body name="base" pos="0 0 0.58" quat="0 0 0 1" childclass="anymal_b">
       <freejoint/>
-      <inertial mass="19.2035" pos="0.0025 0 0.0502071" quat="0.5 0.5 0.5 0.5" diaginertia="0.639559 0.624031 0.217374"/>
+      <inertial mass="19.2035" pos="0.0025 0 0.0502071" quat="0.5 0.5 0.5 0.5"
+        diaginertia="0.639559 0.624031 0.217374"/>
       <geom class="visual" mesh="anymal_base_0" material="yellow_emcy"/>
       <geom class="visual" mesh="anymal_base_1" material="rot_emcy"/>
       <geom class="visual" mesh="anymal_base_2" material="dark_gray"/>

@@ -1,7 +1,7 @@
 <mujoco model="spot with arm scene">
   <include file="spot_arm.xml"/>
 
-  <statistic center="0.15 0.1 0.38" extent=".8" meansize="0.05"/>
+  <statistic meansize="0.05"/>
 
   <visual>
     <headlight diffuse="0.6 0.6 0.6" ambient="0.3 0.3 0.3" specular="0 0 0"/>

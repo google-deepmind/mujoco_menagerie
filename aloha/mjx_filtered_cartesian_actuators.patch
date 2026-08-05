@@ -1,7 +1,7 @@
---- filtered_cartesian_actuators.xml	2024-05-01 08:51:26.000000000 -0700
-+++ mjx_filtered_cartesian_actuators.xml	2024-05-01 08:51:26.000000000 -0700
+--- filtered_cartesian_actuators.xml
++++ mjx_filtered_cartesian_actuators.xml
 @@ -2,16 +2,13 @@
- <!-- The dynamical parameters in this file are not the result of system identification.
+   <!-- The dynamical parameters in this file are not the result of system identification.
  They were chosen for MJPC efficiency. The resulting qfrc is still limited by every joint's actuator_frcrange,
  as specified in the main model. -->
 -  <option integrator="implicitfast"/>

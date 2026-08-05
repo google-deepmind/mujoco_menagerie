@@ -465,7 +465,8 @@
                 <body name="abdomen_6" pos="0 0.0213 0" quat="0.998 -0.0662 0.000156 -0.000351">
                   <joint name="abdomen_abduct_6" class="abduct_abdomen"/>
                   <joint name="abdomen_6" class="extend_abdomen"/>
-                  <geom name="abdomen_6" pos="0.000707 -0.0626 -0.161" quat="0.674 0.208 -0.208 0.677" mesh="abdomen_6"/>
+                  <geom name="abdomen_6" pos="0.000707 -0.0626 -0.161" quat="0.674 0.208 -0.208 0.677"
+                    mesh="abdomen_6"/>
                   <geom name="abdomen_6_lower" material="lower" pos="0.000707 -0.0626 -0.161"
                     quat="0.674 0.208 -0.208 0.677" mesh="abdomen_6_lower"/>
                   <geom name="abdomen_6_collision" class="collision" type="cylinder" size="0.0334 0.0141 0"
@@ -511,7 +512,8 @@
             fromto="0.00263 0.00263 0.00438 0 0.0662 0"/>
           <body name="tibia_T1_left" pos="0 0.0697 0" quat="0.186 0.162 0.677 -0.694">
             <joint name="tibia_T1_left" class="extend_tibia"/>
-            <geom name="tibia_T1_left" pos="-0.00315 -0.0396 0.118" quat="-0.183 0.354 0.797 0.453" mesh="tibia_T1_left"/>
+            <geom name="tibia_T1_left" pos="-0.00315 -0.0396 0.118" quat="-0.183 0.354 0.797 0.453"
+              mesh="tibia_T1_left"/>
             <geom name="tibia_T1_left_collision" class="collision" size="0.00362" fromto="0 0 0 0 -0.051 0.00175"/>
             <body name="tarsus_T1_left" pos="0 -0.051 0.00175" quat="0.039 0.998 0.00674 0.0474">
               <joint name="tarsus_T1_left" class="extend_tarsus_T1"/>
@@ -564,7 +566,8 @@
         <body name="femur_T1_right" pos="0 -0.0436 0" quat="0 0 0.261 0.965">
           <joint name="femur_twist_T1_right" class="twist_femur"/>
           <joint name="femur_T1_right" class="extend_femur_T1"/>
-          <geom name="femur_T1_right" pos="0.0104 0.0492 -0.0376" quat="-0.31 0.0726 0.321 -0.892" mesh="femur_T1_right"/>
+          <geom name="femur_T1_right" pos="0.0104 0.0492 -0.0376" quat="-0.31 0.0726 0.321 -0.892"
+            mesh="femur_T1_right"/>
           <geom name="femur_T1_right_collision" class="collision" size="0.005"
             fromto="-0.00263 -0.00263 -0.00438 0 -0.0663 0"/>
           <body name="tibia_T1_right" pos="0 -0.0698 0" quat="0.163 0.148 0.688 -0.692">
@@ -623,7 +626,8 @@
         <body name="femur_T2_left" pos="0 0.0281 0" quat="0 0 0.128 0.992">
           <joint name="femur_twist_T2_left" class="twist_femur_T2"/>
           <joint name="femur_T2_left" class="extend_femur_T2"/>
-          <geom name="femur_T2_left" pos="-0.0287 -0.0285 0.0493" quat="0.251 -0.957 0.116 -0.0879" mesh="femur_T2_left"/>
+          <geom name="femur_T2_left" pos="-0.0287 -0.0285 0.0493" quat="0.251 -0.957 0.116 -0.0879"
+            mesh="femur_T2_left"/>
           <geom name="femur_T2_left_collision" class="collision" size="0.00469" fromto="0 0.00263 0.00438 0 0.0789 0"/>
           <body name="tibia_T2_left" pos="0 0.083 0" quat="0.107 0.0834 0.656 -0.742">
             <joint name="tibia_T2_left" class="extend_tibia_T2"/>
@@ -674,7 +678,8 @@
         <joint name="coxa_abduct_T2_right" class="abduct_coxa_T2"/>
         <joint name="coxa_twist_T2_right" class="twist_coxa_T2"/>
         <joint name="coxa_T2_right" class="extend_coxa_T2"/>
-        <geom name="coxa_T2_right" pos="-0.0285 -0.0685 -0.0403" quat="-0.916 0.374 -0.0709 0.126" mesh="coxa_T2_right"/>
+        <geom name="coxa_T2_right" pos="-0.0285 -0.0685 -0.0403" quat="-0.916 0.374 -0.0709 0.126"
+          mesh="coxa_T2_right"/>
         <geom name="coxa_T2_right_collision" class="collision" type="ellipsoid" size="0.00788 0.007 0.0149"
           pos="-0.000335 -0.0143 0.00206" quat="0.707 0.707 0 0"/>
         <body name="femur_T2_right" pos="0 -0.0282 0" quat="0 0 0.134 0.991">
@@ -740,7 +745,8 @@
         <body name="femur_T3_left" pos="-0.00398 0.0232 -0.00668" quat="0 0 -0.668 -0.744">
           <joint name="femur_twist_T3_left" class="twist_femur_T3"/>
           <joint name="femur_T3_left" class="extend_femur_T3"/>
-          <geom name="femur_T3_left" pos="-0.0375 -0.0625 0.0209" quat="0.153 -0.849 -0.398 -0.312" mesh="femur_T3_left"/>
+          <geom name="femur_T3_left" pos="-0.0375 -0.0625 0.0209" quat="0.153 -0.849 -0.398 -0.312"
+            mesh="femur_T3_left"/>
           <geom name="femur_T3_left_collision" class="collision" size="0.00544"
             fromto="-0.00263 0.00263 0.00438 -0.00263 0.0766 1.52e-07"/>
           <body name="tibia_T3_left" pos="0 0.0779 1.6e-07" quat="-0.117 -0.104 -0.711 0.685">

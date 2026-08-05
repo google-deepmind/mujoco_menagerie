@@ -1,8 +1,6 @@
 <mujoco model="talos position scene">
   <include file="talos_position.xml"/>
 
-  <statistic center="0 0 .9" extent="1.5"/>
-
   <visual>
     <rgba haze="0.15 0.25 0.35 1"/>
     <global azimuth="160" elevation="-10"/>

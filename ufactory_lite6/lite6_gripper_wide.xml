@@ -100,25 +100,32 @@
                   <site name="attachment_site"/>
                   <body name="gripper_body" pos="0 0 0" quat="1 0 0 0">
                     <inertial pos="0.0 0.0 0.026" quat="1 0 0 0" mass="0.26"
-                      diaginertia="0.00016117 0.000118 0.00014455" />
+                      diaginertia="0.00016117 0.000118 0.00014455"/>
                     <geom class="visual" mesh="gripper_lite_body" material="white"/>
                     <geom name="gripper_lite_body_c" class="collision" mesh="gripper_lite_body_c"/>
                     <!-- Finger and base separated to avoid convex hull preventing gripping -->
                     <body name="gripper_left_finger" pos="0 0 0.054" quat="1 0 0 0">
                       <inertial pos="0.0 -0.01 0.01" quat="1 0 0 0" mass="0.024"
-                        diaginertia="1.961e-6 2.274e-6 1.238e-6" />
-                      <joint name="gripper_left_finger" pos="0 0 0" axis="0 1 0" type="slide" limited="true" range="-0.0081 -1e-5" frictionloss="0.4" />
+                        diaginertia="1.961e-6 2.274e-6 1.238e-6"/>
+                      <joint name="gripper_left_finger" pos="0 0 0" axis="0 1 0" type="slide" limited="true"
+                        range="-0.0081 -1e-5" frictionloss="0.4"/>
                       <geom mesh="gripper_lite_left_finger_wide" class="visual" material="black"/>
-                      <geom name="gripper_left_finger_base" class="collision" mesh="gripper_lite_left_finger_wide_base" material="black" condim="1" solimp="2 1 0.01" solref="0.01 1" friction="6 0.5 0.1"/>
-                      <geom name="gripper_left_finger" class="collision" mesh="gripper_lite_left_finger_wide_tip" material="black" condim="4" solimp="2 1 0.01" solref="0.01 1" friction="6 0.5 0.1"/>
+                      <geom name="gripper_left_finger_base" class="collision" mesh="gripper_lite_left_finger_wide_base"
+                        material="black" condim="1" solimp="2 1 0.01" solref="0.01 1" friction="6 0.5 0.1"/>
+                      <geom name="gripper_left_finger" class="collision" mesh="gripper_lite_left_finger_wide_tip"
+                        material="black" condim="4" solimp="2 1 0.01" solref="0.01 1" friction="6 0.5 0.1"/>
                     </body>
                     <body name="gripper_right_finger" pos="0 0 0.054" quat="1 0 0 0">
                       <inertial pos="0.0 0.01 0.01" quat="1 0 0 0" mass="0.024"
-                        diaginertia="1.961e-6 2.274e-6 1.238e-6" />
-                      <joint name="gripper_right_finger" pos="0 0 0" axis="0 1 0" type="slide" limited="true" range="1e-5 0.0081" frictionloss="0.4" />
+                        diaginertia="1.961e-6 2.274e-6 1.238e-6"/>
+                      <joint name="gripper_right_finger" pos="0 0 0" axis="0 1 0" type="slide" limited="true"
+                        range="1e-5 0.0081" frictionloss="0.4"/>
                       <geom mesh="gripper_lite_right_finger_wide" class="visual" material="black"/>
-                      <geom name="gripper_right_finger_base" class="collision" mesh="gripper_lite_right_finger_wide_base" material="black" condim="1" solimp="2 1 0.01" solref="0.01 1" friction="5 0.5 0.1"/>
-                      <geom name="gripper_right_finger" class="collision" mesh="gripper_lite_right_finger_wide_tip" material="black" condim="4" solimp="2 1 0.01" solref="0.01 1" friction="5 0.5 0.1"/>
+                      <geom name="gripper_right_finger_base" class="collision"
+                        mesh="gripper_lite_right_finger_wide_base" material="black" condim="1" solimp="2 1 0.01"
+                        solref="0.01 1" friction="5 0.5 0.1"/>
+                      <geom name="gripper_right_finger" class="collision" mesh="gripper_lite_right_finger_wide_tip"
+                        material="black" condim="4" solimp="2 1 0.01" solref="0.01 1" friction="5 0.5 0.1"/>
                     </body>
                     <!-- End effector reference point is in the centre at the tip of the grippers -->
                     <site name="end_effector" pos="0 0 0.0811"/>

@@ -1,7 +1,3 @@
-<?xml version="1.0"?>
-<!-- Generated using onshape-to-robot -->
-<!-- Onshape
-https://cad.onshape.com/documents/81e7adfaf4d8d74f2936fbd5/w/97141f458dee8c3b80cbf3d2/e/5e1ff591ff562de3da8ed2af -->
 <mujoco model="robot_soccer_kit">
   <compiler angle="radian" meshdir="assets" autolimits="true"/>
   <option noslip_iterations="1"/>
@@ -342,7 +338,8 @@ https://cad.onshape.com/documents/81e7adfaf4d8d74f2936fbd5/w/97141f458dee8c3b80c
           <geom type="mesh" class="visual" pos="-3.1225e-17 -1.38778e-17 0.002" quat="0 1 0 0" mesh="oring"
             material="oring_material"/>
           <!-- Part pin_4 -->
-          <geom type="mesh" class="visual" pos="0 6.93889e-18 0.0035" quat="0 1 0 0" mesh="pin" material="pin_material"/>
+          <geom type="mesh" class="visual" pos="0 6.93889e-18 0.0035" quat="0 1 0 0" mesh="pin"
+            material="pin_material"/>
           <!-- Part bearing_4 -->
           <geom class="collision" pos="-3.12256e-17 -1.38785e-17 -1.40513e-16" quat="0 1 0 0" type="cylinder"
             size="0.006 0.002"/>
@@ -413,7 +410,8 @@ https://cad.onshape.com/documents/81e7adfaf4d8d74f2936fbd5/w/97141f458dee8c3b80c
           <geom type="mesh" class="visual" pos="3.46945e-18 -7.63278e-17 0.002" quat="0 1 0 0" mesh="oring"
             material="oring_material"/>
           <!-- Part pin_8 -->
-          <geom type="mesh" class="visual" pos="1.73472e-18 0 0.0035" quat="0 1 0 0" mesh="pin" material="pin_material"/>
+          <geom type="mesh" class="visual" pos="1.73472e-18 0 0.0035" quat="0 1 0 0" mesh="pin"
+            material="pin_material"/>
           <!-- Part bearing_8 -->
           <geom class="collision" pos="3.39657e-18 -7.61468e-17 -9.02056e-17" quat="0 1 0 0" type="cylinder"
             size="0.006 0.002"/>
@@ -431,7 +429,8 @@ https://cad.onshape.com/documents/81e7adfaf4d8d74f2936fbd5/w/97141f458dee8c3b80c
           <geom type="mesh" class="visual" pos="5.55112e-17 -9.19403e-17 0.002" quat="0 1 0 0" mesh="oring"
             material="oring_material"/>
           <!-- Part pin_9 -->
-          <geom type="mesh" class="visual" pos="0 -1.73472e-18 0.0035" quat="0 1 0 0" mesh="pin" material="pin_material"/>
+          <geom type="mesh" class="visual" pos="0 -1.73472e-18 0.0035" quat="0 1 0 0" mesh="pin"
+            material="pin_material"/>
           <!-- Part bearing_9 -->
           <geom class="collision" pos="5.55112e-17 -9.19428e-17 -1.02349e-16" quat="0 1 0 0" type="cylinder"
             size="0.006 0.002"/>
@@ -484,7 +483,8 @@ https://cad.onshape.com/documents/81e7adfaf4d8d74f2936fbd5/w/97141f458dee8c3b80c
           <geom type="mesh" class="visual" pos="-9.02056e-17 3.1225e-17 0.002" quat="0 1 0 0" mesh="oring"
             material="oring_material"/>
           <!-- Part pin_12 -->
-          <geom type="mesh" class="visual" pos="-6.93889e-18 0 0.0035" quat="0 1 0 0" mesh="pin" material="pin_material"/>
+          <geom type="mesh" class="visual" pos="-6.93889e-18 0 0.0035" quat="0 1 0 0" mesh="pin"
+            material="pin_material"/>
           <!-- Part bearing_12 -->
           <geom class="collision" pos="-9.0164e-17 3.13033e-17 -1.09288e-16" quat="0 1 0 0" type="cylinder"
             size="0.006 0.002"/>
@@ -510,7 +510,8 @@ https://cad.onshape.com/documents/81e7adfaf4d8d74f2936fbd5/w/97141f458dee8c3b80c
             material="bearing_material"/>
         </body>
         <!-- Link pin_bearing_oring_14 -->
-        <body name="pin_bearing_oring_14" pos="0.0271051 -0.00880698 -0.01" quat="0.698401 0.698401 -0.110616 -0.110616">
+        <body name="pin_bearing_oring_14" pos="0.0271051 -0.00880698 -0.01"
+          quat="0.698401 0.698401 -0.110616 -0.110616">
           <!-- Joint from wheel_no_passives to pin_bearing_oring_14 -->
           <joint name="wheel1_passive_14" type="hinge"/>
           <inertial pos="-1.38909e-16 6.21183e-17 -2.89387e-17" mass="0.00337198"
@@ -519,7 +520,8 @@ https://cad.onshape.com/documents/81e7adfaf4d8d74f2936fbd5/w/97141f458dee8c3b80c
           <geom type="mesh" class="visual" pos="-1.56125e-16 6.93889e-17 0.002" quat="0 1 0 0" mesh="oring"
             material="oring_material"/>
           <!-- Part pin_14 -->
-          <geom type="mesh" class="visual" pos="0 6.93889e-18 0.0035" quat="0 1 0 0" mesh="pin" material="pin_material"/>
+          <geom type="mesh" class="visual" pos="0 6.93889e-18 0.0035" quat="0 1 0 0" mesh="pin"
+            material="pin_material"/>
           <!-- Part bearing_14 -->
           <geom class="collision" pos="-1.5612e-16 6.93887e-17 -3.29597e-17" quat="0 1 0 0" type="cylinder"
             size="0.006 0.002"/>
@@ -591,7 +593,8 @@ https://cad.onshape.com/documents/81e7adfaf4d8d74f2936fbd5/w/97141f458dee8c3b80c
           <geom type="mesh" class="visual" pos="-2.08167e-17 7.63278e-17 0.002" quat="0 1 0 0" mesh="oring"
             material="oring_material"/>
           <!-- Part pin_18 -->
-          <geom type="mesh" class="visual" pos="6.93889e-18 0 0.0035" quat="0 1 0 0" mesh="pin" material="pin_material"/>
+          <geom type="mesh" class="visual" pos="6.93889e-18 0 0.0035" quat="0 1 0 0" mesh="pin"
+            material="pin_material"/>
           <!-- Part bearing_18 -->
           <geom class="collision" pos="-2.3781e-17 7.59564e-17 4.77049e-18" quat="0 1 0 0" type="cylinder"
             size="0.006 0.002"/>
@@ -599,7 +602,8 @@ https://cad.onshape.com/documents/81e7adfaf4d8d74f2936fbd5/w/97141f458dee8c3b80c
             material="bearing_material"/>
         </body>
         <!-- Link pin_bearing_oring_19 -->
-        <body name="pin_bearing_oring_19" pos="0.00880698 0.0271051 -0.01" quat="0.698401 -0.110616 -0.698401 -0.110616">
+        <body name="pin_bearing_oring_19" pos="0.00880698 0.0271051 -0.01"
+          quat="0.698401 -0.110616 -0.698401 -0.110616">
           <!-- Joint from wheel_no_passives to pin_bearing_oring_19 -->
           <joint name="wheel1_passive_19" type="hinge"/>
           <inertial pos="-1.19704e-17 -5.58435e-17 -9.27842e-17" mass="0.00337198"
@@ -608,7 +612,8 @@ https://cad.onshape.com/documents/81e7adfaf4d8d74f2936fbd5/w/97141f458dee8c3b80c
           <geom type="mesh" class="visual" pos="-1.38778e-17 -6.245e-17 0.002" quat="0 1 0 0" mesh="oring"
             material="oring_material"/>
           <!-- Part pin_19 -->
-          <geom type="mesh" class="visual" pos="6.93889e-18 0 0.0035" quat="0 1 0 0" mesh="pin" material="pin_material"/>
+          <geom type="mesh" class="visual" pos="6.93889e-18 0 0.0035" quat="0 1 0 0" mesh="pin"
+            material="pin_material"/>
           <!-- Part bearing_19 -->
           <geom class="collision" pos="-1.41222e-17 -6.24542e-17 -1.04083e-16" quat="0 1 0 0" type="cylinder"
             size="0.006 0.002"/>
@@ -737,7 +742,8 @@ https://cad.onshape.com/documents/81e7adfaf4d8d74f2936fbd5/w/97141f458dee8c3b80c
           mesh="hex_socket_head_cap_screw_m3x0_50_x_8__cca8b3192bff7455e4b9cc3364d29e0e"
           material="hex_socket_head_cap_screw_m3x0_50_x_8__cca8b3192bff7455e4b9cc3364d29e0e_material"/>
         <!-- Link pin_bearing_oring_21 -->
-        <body name="pin_bearing_oring_21" pos="0.0271051 -0.00880698 -0.01" quat="0.698401 -0.698401 0.110616 -0.110616">
+        <body name="pin_bearing_oring_21" pos="0.0271051 -0.00880698 -0.01"
+          quat="0.698401 -0.698401 0.110616 -0.110616">
           <!-- Joint from wheel_no_passives_2 to pin_bearing_oring_21 -->
           <joint name="wheel2_passive1" type="hinge"/>
           <inertial pos="1.76593e-17 5.86536e-18 4.40535e-18" mass="0.00337198"
@@ -746,7 +752,8 @@ https://cad.onshape.com/documents/81e7adfaf4d8d74f2936fbd5/w/97141f458dee8c3b80c
           <geom type="mesh" class="visual" pos="2.08167e-17 6.93889e-18 0.002" quat="0 1 0 0" mesh="oring"
             material="oring_material"/>
           <!-- Part pin_21 -->
-          <geom type="mesh" class="visual" pos="-6.93889e-18 0 0.0035" quat="0 1 0 0" mesh="pin" material="pin_material"/>
+          <geom type="mesh" class="visual" pos="-6.93889e-18 0 0.0035" quat="0 1 0 0" mesh="pin"
+            material="pin_material"/>
           <!-- Part bearing_21 -->
           <geom class="collision" pos="2.08802e-17 6.9641e-18 5.20417e-18" quat="0 1 0 0" type="cylinder"
             size="0.006 0.002"/>
@@ -763,7 +770,8 @@ https://cad.onshape.com/documents/81e7adfaf4d8d74f2936fbd5/w/97141f458dee8c3b80c
           <geom type="mesh" class="visual" pos="6.93889e-18 0 0.002" quat="0 1 0 0" mesh="oring"
             material="oring_material"/>
           <!-- Part pin_22 -->
-          <geom type="mesh" class="visual" pos="0 -6.93889e-18 0.0035" quat="0 1 0 0" mesh="pin" material="pin_material"/>
+          <geom type="mesh" class="visual" pos="0 -6.93889e-18 0.0035" quat="0 1 0 0" mesh="pin"
+            material="pin_material"/>
           <!-- Part bearing_22 -->
           <geom class="collision" pos="6.92749e-18 -1.10527e-19 8.23994e-18" quat="0 1 0 0" type="cylinder"
             size="0.006 0.002"/>
@@ -798,7 +806,8 @@ https://cad.onshape.com/documents/81e7adfaf4d8d74f2936fbd5/w/97141f458dee8c3b80c
           <geom type="mesh" class="visual" pos="6.93889e-18 0 0.002" quat="0 1 0 0" mesh="oring"
             material="oring_material"/>
           <!-- Part pin_24 -->
-          <geom type="mesh" class="visual" pos="-6.93889e-18 0 0.0035" quat="0 1 0 0" mesh="pin" material="pin_material"/>
+          <geom type="mesh" class="visual" pos="-6.93889e-18 0 0.0035" quat="0 1 0 0" mesh="pin"
+            material="pin_material"/>
           <!-- Part bearing_24 -->
           <geom class="collision" pos="7.1724e-18 -1.2755e-19 1.69136e-17" quat="0 1 0 0" type="cylinder"
             size="0.006 0.002"/>
@@ -816,7 +825,8 @@ https://cad.onshape.com/documents/81e7adfaf4d8d74f2936fbd5/w/97141f458dee8c3b80c
           <geom type="mesh" class="visual" pos="-1.38778e-17 1.38778e-17 0.002" quat="0 1 0 0" mesh="oring"
             material="oring_material"/>
           <!-- Part pin_25 -->
-          <geom type="mesh" class="visual" pos="-1.38778e-17 0 0.0035" quat="0 1 0 0" mesh="pin" material="pin_material"/>
+          <geom type="mesh" class="visual" pos="-1.38778e-17 0 0.0035" quat="0 1 0 0" mesh="pin"
+            material="pin_material"/>
           <!-- Part bearing_25 -->
           <geom class="collision" pos="-1.37227e-17 1.38778e-17 8.67362e-19" quat="0 1 0 0" type="cylinder"
             size="0.006 0.002"/>
@@ -824,7 +834,8 @@ https://cad.onshape.com/documents/81e7adfaf4d8d74f2936fbd5/w/97141f458dee8c3b80c
             material="bearing_material"/>
         </body>
         <!-- Link pin_bearing_oring_26 -->
-        <body name="pin_bearing_oring_26" pos="-0.00880698 -0.0271051 -0.01" quat="0.110616 -0.698401 0.110616 0.698401">
+        <body name="pin_bearing_oring_26" pos="-0.00880698 -0.0271051 -0.01"
+          quat="0.110616 -0.698401 0.110616 0.698401">
           <!-- Joint from wheel_no_passives_2 to pin_bearing_oring_26 -->
           <joint name="wheel2_passive6" type="hinge"/>
           <inertial pos="6.79399e-18 6.62236e-18 -2.09403e-17" mass="0.00337198"
@@ -887,7 +898,8 @@ https://cad.onshape.com/documents/81e7adfaf4d8d74f2936fbd5/w/97141f458dee8c3b80c
           <geom type="mesh" class="visual" pos="0 1.04083e-17 0.002" quat="0 1 0 0" mesh="oring"
             material="oring_material"/>
           <!-- Part pin_29 -->
-          <geom type="mesh" class="visual" pos="0 3.46945e-18 0.0035" quat="0 1 0 0" mesh="pin" material="pin_material"/>
+          <geom type="mesh" class="visual" pos="0 3.46945e-18 0.0035" quat="0 1 0 0" mesh="pin"
+            material="pin_material"/>
           <!-- Part bearing_29 -->
           <geom class="collision" pos="-1.41e-20 1.04754e-17 3.46945e-18" quat="0 1 0 0" type="cylinder"
             size="0.006 0.002"/>
@@ -904,7 +916,8 @@ https://cad.onshape.com/documents/81e7adfaf4d8d74f2936fbd5/w/97141f458dee8c3b80c
           <geom type="mesh" class="visual" pos="6.93889e-18 6.93889e-17 0.002" quat="0 1 0 0" mesh="oring"
             material="oring_material"/>
           <!-- Part pin_30 -->
-          <geom type="mesh" class="visual" pos="6.93889e-18 0 0.0035" quat="0 1 0 0" mesh="pin" material="pin_material"/>
+          <geom type="mesh" class="visual" pos="6.93889e-18 0 0.0035" quat="0 1 0 0" mesh="pin"
+            material="pin_material"/>
           <!-- Part bearing_30 -->
           <geom class="collision" pos="6.89888e-18 6.92132e-17 -1.12757e-16" quat="0 1 0 0" type="cylinder"
             size="0.006 0.002"/>
@@ -1011,7 +1024,8 @@ https://cad.onshape.com/documents/81e7adfaf4d8d74f2936fbd5/w/97141f458dee8c3b80c
           <geom type="mesh" class="visual" pos="-2.08167e-17 9.02056e-17 0.002" quat="0 1 0 0" mesh="oring"
             material="oring_material"/>
           <!-- Part pin_36 -->
-          <geom type="mesh" class="visual" pos="0 6.93889e-18 0.0035" quat="0 1 0 0" mesh="pin" material="pin_material"/>
+          <geom type="mesh" class="visual" pos="0 6.93889e-18 0.0035" quat="0 1 0 0" mesh="pin"
+            material="pin_material"/>
           <!-- Part bearing_36 -->
           <geom class="collision" pos="-2.07644e-17 9.03239e-17 -1.11022e-16" quat="0 1 0 0" type="cylinder"
             size="0.006 0.002"/>
@@ -1028,7 +1042,8 @@ https://cad.onshape.com/documents/81e7adfaf4d8d74f2936fbd5/w/97141f458dee8c3b80c
           <geom type="mesh" class="visual" pos="2.08167e-17 3.46945e-17 0.002" quat="0 1 0 0" mesh="oring"
             material="oring_material"/>
           <!-- Part pin_37 -->
-          <geom type="mesh" class="visual" pos="0 1.38778e-17 0.0035" quat="0 1 0 0" mesh="pin" material="pin_material"/>
+          <geom type="mesh" class="visual" pos="0 1.38778e-17 0.0035" quat="0 1 0 0" mesh="pin"
+            material="pin_material"/>
           <!-- Part bearing_37 -->
           <geom class="collision" pos="2.05419e-17 3.46279e-17 -1.31405e-16" quat="0 1 0 0" type="cylinder"
             size="0.006 0.002"/>
@@ -1036,7 +1051,8 @@ https://cad.onshape.com/documents/81e7adfaf4d8d74f2936fbd5/w/97141f458dee8c3b80c
             material="bearing_material"/>
         </body>
         <!-- Link pin_bearing_oring_38 -->
-        <body name="pin_bearing_oring_38" pos="-0.0271051 -0.00880698 -0.01" quat="0.415627 -0.572061 0.415627 0.572061">
+        <body name="pin_bearing_oring_38" pos="-0.0271051 -0.00880698 -0.01"
+          quat="0.415627 -0.572061 0.415627 0.572061">
           <!-- Joint from wheel_no_passives_2 to pin_bearing_oring_38 -->
           <joint name="wheel2_passive18" type="hinge"/>
           <inertial pos="-3.79361e-17 1.11997e-17 -1.13167e-16" mass="0.00337198"
@@ -1063,7 +1079,8 @@ https://cad.onshape.com/documents/81e7adfaf4d8d74f2936fbd5/w/97141f458dee8c3b80c
           <geom type="mesh" class="visual" pos="-2.08167e-17 1.04083e-17 0.002" quat="0 1 0 0" mesh="oring"
             material="oring_material"/>
           <!-- Part pin_39 -->
-          <geom type="mesh" class="visual" pos="0 3.46945e-18 0.0035" quat="0 1 0 0" mesh="pin" material="pin_material"/>
+          <geom type="mesh" class="visual" pos="0 3.46945e-18 0.0035" quat="0 1 0 0" mesh="pin"
+            material="pin_material"/>
           <!-- Part bearing_39 -->
           <geom class="collision" pos="-2.08167e-17 1.04083e-17 -1.11022e-16" quat="0 1 0 0" type="cylinder"
             size="0.006 0.002"/>
@@ -1205,7 +1222,8 @@ https://cad.onshape.com/documents/81e7adfaf4d8d74f2936fbd5/w/97141f458dee8c3b80c
           <geom type="mesh" class="visual" pos="-6.93889e-18 -4.16334e-17 0.002" quat="0 1 0 0" mesh="oring"
             material="oring_material"/>
           <!-- Part pin_41 -->
-          <geom type="mesh" class="visual" pos="-6.93889e-18 0 0.0035" quat="0 1 0 0" mesh="pin" material="pin_material"/>
+          <geom type="mesh" class="visual" pos="-6.93889e-18 0 0.0035" quat="0 1 0 0" mesh="pin"
+            material="pin_material"/>
           <!-- Part bearing_41 -->
           <geom class="collision" pos="-6.93889e-18 -4.16417e-17 -8.67362e-19" quat="0 1 0 0" type="cylinder"
             size="0.006 0.002"/>
@@ -1213,7 +1231,8 @@ https://cad.onshape.com/documents/81e7adfaf4d8d74f2936fbd5/w/97141f458dee8c3b80c
             material="bearing_material"/>
         </body>
         <!-- Link pin_bearing_oring_42 -->
-        <body name="pin_bearing_oring_42" pos="-0.00880698 0.0271051 -0.01" quat="0.572061 0.572061 -0.415627 -0.415627">
+        <body name="pin_bearing_oring_42" pos="-0.00880698 0.0271051 -0.01"
+          quat="0.572061 0.572061 -0.415627 -0.415627">
           <!-- Joint from wheel_no_passives_3 to pin_bearing_oring_42 -->
           <joint name="wheel3_passive2" type="hinge"/>
           <inertial pos="1.23228e-17 6.60924e-18 -1.52136e-18" mass="0.00337198"
@@ -1222,7 +1241,8 @@ https://cad.onshape.com/documents/81e7adfaf4d8d74f2936fbd5/w/97141f458dee8c3b80c
           <geom type="mesh" class="visual" pos="1.38778e-17 6.93889e-18 0.002" quat="0 1 0 0" mesh="oring"
             material="oring_material"/>
           <!-- Part pin_42 -->
-          <geom type="mesh" class="visual" pos="0 6.93889e-18 0.0035" quat="0 1 0 0" mesh="pin" material="pin_material"/>
+          <geom type="mesh" class="visual" pos="0 6.93889e-18 0.0035" quat="0 1 0 0" mesh="pin"
+            material="pin_material"/>
           <!-- Part bearing_42 -->
           <geom class="collision" pos="1.39967e-17 6.93889e-18 -1.73472e-18" quat="0 1 0 0" type="cylinder"
             size="0.006 0.002"/>
@@ -1239,7 +1259,8 @@ https://cad.onshape.com/documents/81e7adfaf4d8d74f2936fbd5/w/97141f458dee8c3b80c
           <geom type="mesh" class="visual" pos="-6.93889e-18 6.93889e-18 0.002" quat="0 1 0 0" mesh="oring"
             material="oring_material"/>
           <!-- Part pin_43 -->
-          <geom type="mesh" class="visual" pos="0 6.93889e-18 0.0035" quat="0 1 0 0" mesh="pin" material="pin_material"/>
+          <geom type="mesh" class="visual" pos="0 6.93889e-18 0.0035" quat="0 1 0 0" mesh="pin"
+            material="pin_material"/>
           <!-- Part bearing_43 -->
           <geom class="collision" pos="-6.86165e-18 6.93889e-18 8.67362e-19" quat="0 1 0 0" type="cylinder"
             size="0.006 0.002"/>
@@ -1256,7 +1277,8 @@ https://cad.onshape.com/documents/81e7adfaf4d8d74f2936fbd5/w/97141f458dee8c3b80c
           <geom type="mesh" class="visual" pos="2.77556e-17 0 0.002" quat="0 1 0 0" mesh="oring"
             material="oring_material"/>
           <!-- Part pin_44 -->
-          <geom type="mesh" class="visual" pos="6.93889e-18 0 0.0035" quat="0 1 0 0" mesh="pin" material="pin_material"/>
+          <geom type="mesh" class="visual" pos="6.93889e-18 0 0.0035" quat="0 1 0 0" mesh="pin"
+            material="pin_material"/>
           <!-- Part bearing_44 -->
           <geom class="collision" pos="2.78888e-17 -1.57318e-34 1.73472e-17" quat="0 1 0 0" type="cylinder"
             size="0.006 0.002"/>
@@ -1264,7 +1286,8 @@ https://cad.onshape.com/documents/81e7adfaf4d8d74f2936fbd5/w/97141f458dee8c3b80c
             material="bearing_material"/>
         </body>
         <!-- Link pin_bearing_oring_45 -->
-        <body name="pin_bearing_oring_45" pos="-0.0271051 0.00880698 -0.01" quat="0.698401 0.698401 -0.110616 -0.110616">
+        <body name="pin_bearing_oring_45" pos="-0.0271051 0.00880698 -0.01"
+          quat="0.698401 0.698401 -0.110616 -0.110616">
           <!-- Joint from wheel_no_passives_3 to pin_bearing_oring_45 -->
           <joint name="wheel3_passive5" type="hinge"/>
           <inertial pos="-1.33712e-19 -3.29654e-19 1.32149e-18" mass="0.00337198"
@@ -1324,7 +1347,8 @@ https://cad.onshape.com/documents/81e7adfaf4d8d74f2936fbd5/w/97141f458dee8c3b80c
           <geom type="mesh" class="visual" pos="-3.46945e-18 0 0.002" quat="0 1 0 0" mesh="oring"
             material="oring_material"/>
           <!-- Part pin_48 -->
-          <geom type="mesh" class="visual" pos="3.46945e-18 0 0.0035" quat="0 1 0 0" mesh="pin" material="pin_material"/>
+          <geom type="mesh" class="visual" pos="3.46945e-18 0 0.0035" quat="0 1 0 0" mesh="pin"
+            material="pin_material"/>
           <!-- Part bearing_48 -->
           <geom class="collision" pos="-3.37725e-18 3.13638e-35 -1.73472e-18" quat="0 1 0 0" type="cylinder"
             size="0.006 0.002"/>
@@ -1376,7 +1400,8 @@ https://cad.onshape.com/documents/81e7adfaf4d8d74f2936fbd5/w/97141f458dee8c3b80c
           <geom type="mesh" class="visual" pos="-6.93889e-18 3.46945e-18 0.002" quat="0 1 0 0" mesh="oring"
             material="oring_material"/>
           <!-- Part pin_51 -->
-          <geom type="mesh" class="visual" pos="-6.93889e-18 0 0.0035" quat="0 1 0 0" mesh="pin" material="pin_material"/>
+          <geom type="mesh" class="visual" pos="-6.93889e-18 0 0.0035" quat="0 1 0 0" mesh="pin"
+            material="pin_material"/>
           <!-- Part bearing_51 -->
           <geom class="collision" pos="-6.93889e-18 3.46807e-18 4.33681e-19" quat="0 1 0 0" type="cylinder"
             size="0.006 0.002"/>
@@ -1384,7 +1409,8 @@ https://cad.onshape.com/documents/81e7adfaf4d8d74f2936fbd5/w/97141f458dee8c3b80c
             material="bearing_material"/>
         </body>
         <!-- Link pin_bearing_oring_52 -->
-        <body name="pin_bearing_oring_52" pos="0.00880698 -0.0271051 -0.01" quat="0.572061 0.572061 -0.415627 -0.415627">
+        <body name="pin_bearing_oring_52" pos="0.00880698 -0.0271051 -0.01"
+          quat="0.572061 0.572061 -0.415627 -0.415627">
           <!-- Joint from wheel_no_passives_3 to pin_bearing_oring_52 -->
           <joint name="wheel3_passive12" type="hinge"/>
           <inertial pos="-1.83068e-18 -3.29654e-19 6.14007e-18" mass="0.00337198"
@@ -1393,7 +1419,8 @@ https://cad.onshape.com/documents/81e7adfaf4d8d74f2936fbd5/w/97141f458dee8c3b80c
           <geom type="mesh" class="visual" pos="-1.73472e-18 0 0.002" quat="0 1 0 0" mesh="oring"
             material="oring_material"/>
           <!-- Part pin_52 -->
-          <geom type="mesh" class="visual" pos="-1.73472e-18 0 0.0035" quat="0 1 0 0" mesh="pin" material="pin_material"/>
+          <geom type="mesh" class="visual" pos="-1.73472e-18 0 0.0035" quat="0 1 0 0" mesh="pin"
+            material="pin_material"/>
           <!-- Part bearing_52 -->
           <geom class="collision" pos="-1.69277e-18 2.45128e-34 6.93889e-18" quat="0 1 0 0" type="cylinder"
             size="0.006 0.002"/>
@@ -1428,7 +1455,8 @@ https://cad.onshape.com/documents/81e7adfaf4d8d74f2936fbd5/w/97141f458dee8c3b80c
           <geom type="mesh" class="visual" pos="6.93889e-18 0 0.002" quat="0 1 0 0" mesh="oring"
             material="oring_material"/>
           <!-- Part pin_54 -->
-          <geom type="mesh" class="visual" pos="-3.46945e-18 0 0.0035" quat="0 1 0 0" mesh="pin" material="pin_material"/>
+          <geom type="mesh" class="visual" pos="-3.46945e-18 0 0.0035" quat="0 1 0 0" mesh="pin"
+            material="pin_material"/>
           <!-- Part bearing_54 -->
           <geom class="collision" pos="6.70989e-18 2.37513e-34 -8.67362e-18" quat="0 1 0 0" type="cylinder"
             size="0.006 0.002"/>
@@ -1436,7 +1464,8 @@ https://cad.onshape.com/documents/81e7adfaf4d8d74f2936fbd5/w/97141f458dee8c3b80c
             material="bearing_material"/>
         </body>
         <!-- Link pin_bearing_oring_55 -->
-        <body name="pin_bearing_oring_55" pos="0.0271051 -0.00880698 -0.01" quat="0.698401 0.698401 -0.110616 -0.110616">
+        <body name="pin_bearing_oring_55" pos="0.0271051 -0.00880698 -0.01"
+          quat="0.698401 0.698401 -0.110616 -0.110616">
           <!-- Joint from wheel_no_passives_3 to pin_bearing_oring_55 -->
           <joint name="wheel3_passive15" type="hinge"/>
           <inertial pos="1.25075e-17 -3.29654e-19 -9.47199e-18" mass="0.00337198"
@@ -1445,7 +1474,8 @@ https://cad.onshape.com/documents/81e7adfaf4d8d74f2936fbd5/w/97141f458dee8c3b80c
           <geom type="mesh" class="visual" pos="1.38778e-17 0 0.002" quat="0 1 0 0" mesh="oring"
             material="oring_material"/>
           <!-- Part pin_55 -->
-          <geom type="mesh" class="visual" pos="3.46945e-18 0 0.0035" quat="0 1 0 0" mesh="pin" material="pin_material"/>
+          <geom type="mesh" class="visual" pos="3.46945e-18 0 0.0035" quat="0 1 0 0" mesh="pin"
+            material="pin_material"/>
           <!-- Part bearing_55 -->
           <geom class="collision" pos="1.38112e-17 -1.99156e-34 -1.04083e-17" quat="0 1 0 0" type="cylinder"
             size="0.006 0.002"/>
@@ -1462,7 +1492,8 @@ https://cad.onshape.com/documents/81e7adfaf4d8d74f2936fbd5/w/97141f458dee8c3b80c
           <geom type="mesh" class="visual" pos="-2.77556e-17 6.93889e-18 0.002" quat="0 1 0 0" mesh="oring"
             material="oring_material"/>
           <!-- Part pin_56 -->
-          <geom type="mesh" class="visual" pos="-6.93889e-18 0 0.0035" quat="0 1 0 0" mesh="pin" material="pin_material"/>
+          <geom type="mesh" class="visual" pos="-6.93889e-18 0 0.0035" quat="0 1 0 0" mesh="pin"
+            material="pin_material"/>
           <!-- Part bearing_56 -->
           <geom class="collision" pos="-2.78479e-17 6.93889e-18 4.33681e-19" quat="0 1 0 0" type="cylinder"
             size="0.006 0.002"/>
@@ -1514,7 +1545,8 @@ https://cad.onshape.com/documents/81e7adfaf4d8d74f2936fbd5/w/97141f458dee8c3b80c
           <geom type="mesh" class="visual" pos="-6.93889e-18 6.93889e-18 0.002" quat="0 1 0 0" mesh="oring"
             material="oring_material"/>
           <!-- Part pin_59 -->
-          <geom type="mesh" class="visual" pos="0 -6.93889e-18 0.0035" quat="0 1 0 0" mesh="pin" material="pin_material"/>
+          <geom type="mesh" class="visual" pos="0 -6.93889e-18 0.0035" quat="0 1 0 0" mesh="pin"
+            material="pin_material"/>
           <!-- Part bearing_59 -->
           <geom class="collision" pos="-6.85676e-18 6.93889e-18 -2.77556e-17" quat="0 1 0 0" type="cylinder"
             size="0.006 0.002"/>

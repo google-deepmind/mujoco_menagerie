@@ -70,7 +70,8 @@
           <joint name="joint2" range="0 3.66519" class="dm4340"/>
           <geom class="visual" pos="0.0199992 -0.1041 -2.44738e-05" quat="1 -1 -1 -1" mesh="model2__3"/>
           <geom class="visual" pos="0.0199992 -0.1041 -2.44738e-05" quat="1 -1 -1 -1" mesh="model2__4"/>
-          <geom class="visual" pos="0.0199992 -0.1041 -2.44738e-05" quat="1 -1 -1 -1" mesh="model2__5" material="white"/>
+          <geom class="visual" pos="0.0199992 -0.1041 -2.44738e-05" quat="1 -1 -1 -1" mesh="model2__5"
+            material="white"/>
           <geom class="collision" size="0.032 0.11" pos="0.13 0 0" quat="1 0 1 0"/>
           <geom class="collision" size="0.033 0.02" pos="0 0.0 0" quat="1 0 0 0"/>
           <geom class="collision" size="0.033 0.025" pos="0.265 0 0" quat="1 0 0 0"/>
@@ -80,7 +81,8 @@
             <joint name="joint3" range="0 3.66519" class="dm4340"/>
             <geom class="visual" pos="-0.244001 0.104101 2.44738e-05" quat="1 1 1 -1" mesh="model2__6"/>
             <geom class="visual" pos="-0.244001 0.104101 2.44738e-05" quat="1 1 1 -1" mesh="model2__7"/>
-            <geom class="visual" pos="-0.244001 0.104101 2.44738e-05" quat="1 1 1 -1" mesh="model2__8" material="white"/>
+            <geom class="visual" pos="-0.244001 0.104101 2.44738e-05" quat="1 1 1 -1" mesh="model2__8"
+              material="white"/>
             <geom class="visual" pos="-0.244001 0.104101 2.44738e-05" quat="1 1 1 -1" mesh="model2__9"/>
             <geom class="collision" size="0.034 0.12" pos="-0.14 -0.06 0.0" quat="1 0 1 0"/>
             <geom class="collision" size="0.034 0.015" pos="-0.24 -0.06 0.0" quat="1 0 0 0"/>
@@ -129,11 +131,11 @@
                           rgba="0.381493 0.492734 0.780446 1"/>
                         <geom class="collision" type="box" size="0.006 0.002 0.039" pos="0.027 -0.0024 0.053"
                           quat="1 0 2.5 0" rgba="0.381493 0.492734 0.780446 1"/>
-                        <geom class="sphere_collision" pos="0.003  -0.0004 0.078"/>
+                        <geom class="sphere_collision" pos="0.003 -0.0004 0.078"/>
                         <geom class="sphere_collision" pos="-0.003 -0.0004 0.078"/>
-                        <geom class="sphere_collision" pos="0.003  -0.0004 0.07"/>
+                        <geom class="sphere_collision" pos="0.003 -0.0004 0.07"/>
                         <geom class="sphere_collision" pos="-0.003 -0.0004 0.07"/>
-                        <geom class="sphere_collision" pos="0.003  -0.0004 0.06"/>
+                        <geom class="sphere_collision" pos="0.003 -0.0004 0.06"/>
                         <geom class="sphere_collision" pos="-0.003 -0.0004 0.06"/>
                       </body>
                     </body>
@@ -160,11 +162,11 @@
                           rgba="0.381493 0.492734 0.780446 1"/>
                         <geom class="collision" type="box" size="0.006 0.002 0.039" pos="-0.027 -0.0024 0.053"
                           quat="1 0 -2.5 0" rgba="0.381493 0.492734 0.780446 1"/>
-                        <geom class="sphere_collision" pos="0.003  -0.0004 0.078"/>
+                        <geom class="sphere_collision" pos="0.003 -0.0004 0.078"/>
                         <geom class="sphere_collision" pos="-0.003 -0.0004 0.078"/>
-                        <geom class="sphere_collision" pos="0.003  -0.0004 0.07"/>
+                        <geom class="sphere_collision" pos="0.003 -0.0004 0.07"/>
                         <geom class="sphere_collision" pos="-0.003 -0.0004 0.07"/>
-                        <geom class="sphere_collision" pos="0.003  -0.0004 0.06"/>
+                        <geom class="sphere_collision" pos="0.003 -0.0004 0.06"/>
                         <geom class="sphere_collision" pos="-0.003 -0.0004 0.06"/>
                       </body>
                     </body>

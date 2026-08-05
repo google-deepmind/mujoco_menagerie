@@ -17,8 +17,8 @@
       <default class="collision">
         <geom group="3" type="mesh" contype="0" conaffinity="0"/>
         <default class="primitive_collision">
-          <geom group="3" type="box" contype="0" conaffinity="0"
-           condim="3" solimp="0.99 0.995 0.01" solref="0.01 1" friction="1 0.005 0.0001"/>
+          <geom group="3" type="box" contype="0" conaffinity="0" condim="3" solimp="0.99 0.995 0.01" solref="0.01 1"
+            friction="1 0.005 0.0001"/>
           <default class="fingertip_pad_collision_1">
             <geom type="box" size="0.011 0.0075 0.01" pos="0 0.0185 0.011"/>
           </default>
@@ -215,9 +215,8 @@
                       <geom mesh="hand_3" material="white" class="visual"/>
                       <geom mesh="hand_4" material="off_white" class="visual"/>
                       <geom mesh="hand_c" class="collision"/>
-                      <geom name="hand_capsule" type="capsule"
-                       class="collision" conaffinity="1" size="0.04 0.06"
-                       quat="1 1 0 0" pos="0 0 0.03"/>
+                      <geom name="hand_capsule" type="capsule" class="collision" conaffinity="1" size="0.04 0.06"
+                        quat="1 1 0 0" pos="0 0 0.03"/>
                       <site name="gripper" pos="0 0 0.1"/>
                       <body name="left_finger" pos="0 0 0.0584">
                         <inertial mass="0.015" pos="0 0 0" diaginertia="2.375e-6 2.375e-6 7.5e-7"/>
@@ -257,21 +256,17 @@
   </equality>
 
   <actuator>
-    <position class="panda" name="actuator1" joint="joint1" kp="1000" kv="20"
-     ctrlrange="-2.8973 2.8973"/>
-    <position class="panda" name="actuator2" joint="joint2" kp="1000" kv="20"
-     ctrlrange="-1.7628 1.7628"/>
-    <position class="panda" name="actuator3" joint="joint3" kp="750" kv="4"
-     ctrlrange="-2.8973 2.8973"/>
-    <position class="panda" name="actuator4" joint="joint4" kp="750" kv="4"
-     ctrlrange="-3.0718 -0.0698"/>
-    <position class="panda" name="actuator5" joint="joint5" kp="300" kv="2"
-     forcerange="-12 12" ctrlrange="-2.8973 2.8973"/>
+    <position class="panda" name="actuator1" joint="joint1" kp="1000" kv="20" ctrlrange="-2.8973 2.8973"/>
+    <position class="panda" name="actuator2" joint="joint2" kp="1000" kv="20" ctrlrange="-1.7628 1.7628"/>
+    <position class="panda" name="actuator3" joint="joint3" kp="750" kv="4" ctrlrange="-2.8973 2.8973"/>
+    <position class="panda" name="actuator4" joint="joint4" kp="750" kv="4" ctrlrange="-3.0718 -0.0698"/>
+    <position class="panda" name="actuator5" joint="joint5" kp="300" kv="2" forcerange="-12 12"
+      ctrlrange="-2.8973 2.8973"/>
     <position class="panda" name="actuator6" joint="joint6" kp="300" kv="2" forcerange="-12 12"
       ctrlrange="-0.0175 3.7525"/>
     <position class="panda" name="actuator7" joint="joint7" kp="300" kv="2" forcerange="-12 12"/>
-    <general class="panda" name="actuator8" joint="finger_joint1"
-     ctrlrange="0 0.04" gainprm="350 0 0" biasprm="0 -350 -10" forcerange="-200 200"/>
+    <general class="panda" name="actuator8" joint="finger_joint1" ctrlrange="0 0.04" gainprm="350 0 0"
+      biasprm="0 -350 -10" forcerange="-200 200"/>
   </actuator>
 
   <contact>

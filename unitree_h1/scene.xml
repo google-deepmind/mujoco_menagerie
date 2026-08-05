@@ -1,8 +1,6 @@
 <mujoco model="h1 scene">
   <include file="h1.xml"/>
 
-  <statistic center="0 0 1" extent="1.8"/>
-
   <visual>
     <headlight diffuse="0.6 0.6 0.6" ambient="0.3 0.3 0.3" specular="0 0 0"/>
     <rgba haze="0.15 0.25 0.35 1"/>
@@ -22,14 +20,6 @@
   </worldbody>
 
   <keyframe>
-    <key name="home"
-      qpos="
-    0 0 0.98
-    1 0 0 0
-    0 0 -0.4 0.8 -0.4
-    0 0 -0.4 0.8 -0.4
-    0
-    0 0 0 0
-    0 0 0 0"/>
+    <key name="home" qpos="0 0 0.98 1 0 0 0 0 0 -0.4 0.8 -0.4 0 0 -0.4 0.8 -0.4 0 0 0 0 0 0 0 0 0"/>
   </keyframe>
 </mujoco>

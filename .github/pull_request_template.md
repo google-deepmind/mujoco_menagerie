@@ -1,19 +1,15 @@
 # Description
 
-<!-- Briefly describe what this PR does -->
+<!-- Briefly describe what this PR does. -->
 
-Fixes: <!-- List any GitHub issues this PR addresses -->
+Fixes: <!-- GitHub issues this PR addresses, if any -->
 
 # Checklist
 
-Please check off each item (`[x]`) once complete, or mark it as `[N/A]` if it doesn't apply:
+New here? Run `make install` once, then `make all` before pushing. See
+[CONTRIBUTING.md](../CONTRIBUTING.md) for details.
 
-- [ ] Added your name to `CONTRIBUTORS.md` (alphabetically by first name)
-- [ ] Updated `CHANGELOG.md`:
-  - [ ] Global changelog (if your change affects the overall repo)
-  - [ ] Model-specific changelog (if it affects a specific model only)
-- [ ] Followed the XML formatting/style guidelines (if editing MJCF)
-- [ ] Ran `pytest test/` locally and ensured all tests pass
+- [ ] `make all` passes locally (lint, format, license, XML, tests)
+- [ ] Added my name to [`CONTRIBUTORS.md`](../CONTRIBUTORS.md) (alphabetical by first name)
+- [ ] Updated the relevant `CHANGELOG.md` — global for repo-wide changes, model-local for model-specific changes
 - [ ] Signed the [Contributor License Agreement (CLA)](https://cla.developers.google.com/)
-
-Refer to the [contributing guide](https://github.com/google-deepmind/mujoco_menagerie/blob/main/CONTRIBUTING.md) if you're unsure about any of the steps.

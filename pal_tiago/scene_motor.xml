@@ -20,5 +20,4 @@
     <light name="spotlight" mode="targetbody" target="base_link" pos="1 0 10"/>
     <geom name="floor" pos="0 0 -0.99" size="0 0 1" type="plane" material="MatPlane" contype="1" conaffinity="1"/>
   </worldbody>
-
 </mujoco>

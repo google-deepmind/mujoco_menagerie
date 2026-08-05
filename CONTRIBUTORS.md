@@ -9,9 +9,9 @@ Built by the Google DeepMind team with contributions from the open-source commun
 - [Kevin Zakka](https://github.com/kevinzakka) — Maintainer, Google DeepMind
 - [Nimrod Gileadi](https://github.com/nimrod-gileadi) — Google DeepMind
 - [Saran Tunyasuvunakool](https://github.com/saran-t) — Google DeepMind
+- [Silvia Cruciani](https://github.com/silviacruciani) — Google DeepMind
 - [Tom Erez](https://github.com/erez-tom) — Google DeepMind
 - [Yuval Tassa](https://github.com/yuvaltassa) — Google DeepMind
-- [Silvia Cruciani](https://github.com/silviacruciani) - Google DeepMind
 
 ## Community Contributors
 
@@ -20,6 +20,8 @@ Built by the Google DeepMind team with contributions from the open-source commun
 - [Andreas Kuhner](https://github.com/AndreasKuhner)
 - [Andrew Luo](https://github.com/Andrew-Luo1)
 - [Ayzaan Wahid](https://github.com/ayzaan)
+- [Chenhui Zuo](https://github.com/zchJo)
+- [Chi-Tao Kuan](https://github.com/ctkuan-flexiv)
 - [Chintan Desai](https://github.com/hello-chintan)
 - [Christian Rauch](https://github.com/christianrauch)
 - [Dada Tian](https://github.com/lonelyfluency)
@@ -43,6 +45,7 @@ Built by the Google DeepMind team with contributions from the open-source commun
 - [Thomas Lips](https://github.com/tlpss)
 - [Thomas Peyrucain](https://github.com/thomaspeyrucain)
 - [Varad Vaidya](https://github.com/varadVaidya)
+- [Yanan Sui](https://github.com/yanansui)
 
 ---
 

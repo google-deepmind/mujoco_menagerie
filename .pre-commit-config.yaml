@@ -1,0 +1,46 @@
+# Run with: pre-commit run --all-files
+# Install the git hook with: pre-commit install
+
+exclude: '\.(patch|ipynb)$'
+
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-merge-conflict
+      - id: mixed-line-ending
+
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.8.4
+    hooks:
+      - id: ruff
+        args: [--fix]
+      - id: ruff-format
+
+  - repo: local
+    hooks:
+      - id: regenerate-license
+        name: Check top-level LICENSE is up to date
+        entry: uv run --quiet regenerate_license.py --check
+        language: system
+        pass_filenames: false
+        files: '(^|/)LICENSE$|^regenerate_license\.py$'
+
+      - id: format-xml
+        name: Check MJCF XML files are formatted
+        entry: uv run --quiet format_xml.py --check
+        language: system
+        files: '\.xml$'
+
+      - id: pytest
+        name: Run pytest (model simulation + structural lint)
+        entry: uv run --quiet --with-requirements test/requirements.txt pytest test/ -q
+        language: system
+        pass_filenames: false
+        # Only the manual stage — pytest is too slow to run on every commit.
+        # Run it on demand with: pre-commit run --hook-stage manual pytest
+        # CI runs it via the existing 'build' workflow.
+        stages: [manual]

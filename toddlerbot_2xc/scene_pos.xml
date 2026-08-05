@@ -1,8 +1,5 @@
-<?xml version="1.0"?>
 <mujoco model="toddlerbot_2xc_pos_scene">
   <include file="toddlerbot_2xc_pos.xml"/>
-
-  <statistic center="0 0 0.25" extent="0.6"/>
 
   <visual>
     <headlight diffuse="0.6 0.6 0.6" ambient="0.3 0.3 0.3" specular="0 0 0"/>

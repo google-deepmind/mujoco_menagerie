@@ -1,0 +1,23 @@
+<mujoco>
+  <body name="waterbottle" pos="0.3 -0.28 0.94">
+    <joint name="objTx" pos="0 0 0" axis="1 0 0" type="slide" limited="false" damping="0.001"/>
+    <joint name="objTy" pos="0 0 0" axis="0 1 0" type="slide" limited="false" damping="0.001"/>
+    <joint name="objTz" pos="0 0 0" axis="0 0 1" type="slide" limited="false" damping="0.001"/>
+    <joint name="objRx" pos="0 0 0" axis="1 0 0" limited="false" damping="0.001"/>
+    <joint name="objRy" pos="0 0 0" axis="0 1 0" limited="false" damping="0.001"/>
+    <joint name="objRz" pos="0 0 0" axis="0 0 1" limited="false" damping="0.001"/>
+    <geom name="waterbottle_visual" type="mesh" rgba="1 0 0 0" mesh="waterbottle"/>
+    <geom name="waterbottle_contact0" type="mesh" rgba="0.25 0.23 0.2 1" mesh="waterbottle_contact0"/>
+    <geom name="waterbottle_contact1" type="mesh" rgba="0.31 0.29 0.75 1" mesh="waterbottle_contact1"/>
+    <site name="Object" pos="0 0 0" size="0.005" group="4"/>
+    <site name="waterbottle_up" pos="0 0 0.07" size="0.005" group="4"/>
+    <site name="waterbottle_down" pos="0 0 -0.07" size="0.005" group="4"/>
+  </body>
+
+  <body name="target" pos="0.3 -0.28 0.94">
+    <geom name="target_0" type="mesh" contype="0" conaffinity="0" rgba="0.25 0.23 0.2 0.3" mesh="waterbottle_contact0"/>
+    <geom name="target_1" type="mesh" contype="0" conaffinity="0" rgba="0.31 0.29 0.75 0.3"
+      mesh="waterbottle_contact1"/>
+    <site name="target_indicator" pos="0 0 0" rgba="0.2 1.7 0.2 0.1"/>
+  </body>
+</mujoco>

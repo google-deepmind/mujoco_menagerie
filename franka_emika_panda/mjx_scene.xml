@@ -1,8 +1,6 @@
 <mujoco model="panda scene">
   <include file="mjx_panda.xml"/>
 
-  <statistic center="0.3 0 0.4" extent="1"/>
-
   <option timestep="0.005" iterations="5" ls_iterations="8" integrator="implicitfast">
     <flag eulerdamp="disable"/>
   </option>

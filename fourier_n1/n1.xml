@@ -115,7 +115,8 @@
                 <body name="left_foot_pitch_link">
                   <inertial pos="0.031083 -0.00011033 -0.031859" quat="5.38314e-05 0.70921 -0.0030347 0.704991"
                     mass="0.528" diaginertia="0.00183246 0.00168042 0.000253637"/>
-                  <joint class="joint_4530E" name="left_ankle_pitch_joint" pos="0 0 0" axis="0 1 0" range="-0.785 0.785"/>
+                  <joint class="joint_4530E" name="left_ankle_pitch_joint" pos="0 0 0" axis="0 1 0"
+                    range="-0.785 0.785"/>
                   <geom class="visual" mesh="left_foot_pitch_link"/>
                   <geom class="collision" type="mesh" mesh="left_foot_pitch_link"/>
                 </body>
@@ -206,18 +207,21 @@
               <body name="left_upper_arm_yaw_link" pos="0 0 -0.1005">
                 <inertial pos="0 -0.00057869 -0.060729" quat="0.671373 -0.00487491 0.00703306 0.74107" mass="0.913"
                   diaginertia="0.00291415 0.00289523 0.000604574"/>
-                <joint class="joint_4530E" name="left_shoulder_yaw_joint" pos="0 0 0" axis="0 0 1" range="-1.832 1.832"/>
+                <joint class="joint_4530E" name="left_shoulder_yaw_joint" pos="0 0 0" axis="0 0 1"
+                  range="-1.832 1.832"/>
                 <geom class="visual" mesh="left_upper_arm_yaw_link"/>
                 <geom class="collision" size="0.032 0.06" type="cylinder"/>
                 <body name="left_lower_arm_pitch_link" pos="0 0 -0.1095" quat="0.707105 0 -0.707108 0">
                   <inertial pos="-0.00053164 0.0049499 -0.04337" quat="0.998268 -0.0583286 -0.0018086 -0.00739958"
                     mass="0.716" diaginertia="0.00189663 0.00180416 0.000471669"/>
-                  <joint class="joint_4530E" name="left_elbow_pitch_joint" pos="0 0 0" axis="0 1 0" range="-0.349 1.658"/>
+                  <joint class="joint_4530E" name="left_elbow_pitch_joint" pos="0 0 0" axis="0 1 0"
+                    range="-0.349 1.658"/>
                   <geom class="visual" mesh="left_lower_arm_pitch_link"/>
                   <body name="left_hand_yaw_link" pos="0 0 -0.1005">
                     <inertial pos="-0.0020835 6.386e-05 -0.013715" quat="0.999837 -0.00132735 -0.00221673 0.0178597"
                       mass="0.44" diaginertia="0.000433576 0.000407568 0.000270066"/>
-                    <joint class="joint_4530E" name="left_wrist_yaw_joint" pos="0 0 0" axis="0 0 1" range="-1.832 1.832"/>
+                    <joint class="joint_4530E" name="left_wrist_yaw_joint" pos="0 0 0" axis="0 0 1"
+                      range="-1.832 1.832"/>
                     <geom class="visual" mesh="left_hand_yaw_link"/>
                     <geom class="collision" size="0.032 0.06" type="cylinder"/>
                     <body name="left_end_effector_link" pos="0 0 -0.1045">
@@ -240,13 +244,15 @@
             <body name="right_upper_arm_roll_link" pos="0 -0.078 0">
               <inertial pos="0.0049504 -0.0005218 -0.043377" quat="0.700715 0.0424814 0.0400053 0.711051" mass="0.716"
                 diaginertia="0.00189633 0.00180386 0.000471402"/>
-              <joint class="joint_4530E" name="right_shoulder_roll_joint" pos="0 0 0" axis="1 0 0" range="-2.792 0.174"/>
+              <joint class="joint_4530E" name="right_shoulder_roll_joint" pos="0 0 0" axis="1 0 0"
+                range="-2.792 0.174"/>
               <geom class="visual" mesh="right_upper_arm_roll_link"/>
               <geom class="collision" size="0.032"/>
               <body name="right_upper_arm_yaw_link" pos="0 0 -0.1005">
                 <inertial pos="0 0.00055669 -0.060729" quat="0.621814 0.00470192 -0.00715628 0.783118" mass="0.913"
                   diaginertia="0.00291604 0.00289334 0.000604613"/>
-                <joint class="joint_4530E" name="right_shoulder_yaw_joint" pos="0 0 0" axis="0 0 1" range="-1.832 1.832"/>
+                <joint class="joint_4530E" name="right_shoulder_yaw_joint" pos="0 0 0" axis="0 0 1"
+                  range="-1.832 1.832"/>
                 <geom class="visual" mesh="right_upper_arm_yaw_link"/>
                 <geom class="collision" size="0.032 0.06" type="cylinder"/>
                 <body name="right_lower_arm_pitch_link" pos="0 0 -0.1095" quat="0.707105 0 -0.707108 0">
@@ -277,7 +283,6 @@
       </body>
     </body>
   </worldbody>
-
 
   <actuator>
     <!-- left leg -->

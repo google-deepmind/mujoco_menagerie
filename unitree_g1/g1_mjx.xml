@@ -164,7 +164,8 @@
               <joint name="left_knee_joint" class="knee"/>
               <geom class="visual" mesh="left_knee_link"/>
               <geom name="left_shin_collision" class="collision" size="0.045" fromto="0.01 0 0 0.01 0 -0.15"/>
-              <geom name="left_linkage_brace_collision" class="collision" size="0.03" fromto="0.01 0 -0.2 0.01 0 -0.28"/>
+              <geom name="left_linkage_brace_collision" class="collision" size="0.03"
+                fromto="0.01 0 -0.2 0.01 0 -0.28"/>
               <body name="left_ankle_pitch_link" pos="0 -9.4445e-05 -0.30001">
                 <inertial pos="-0.007269 0 0.011137" quat="0.603053 0.369225 0.369225 0.603053" mass="0.074"
                   diaginertia="1.89e-05 1.40805e-05 6.9195e-06"/>
@@ -210,7 +211,8 @@
               <joint name="right_knee_joint" class="knee"/>
               <geom class="visual" mesh="right_knee_link"/>
               <geom name="right_shin_collision" class="collision" size="0.045" fromto="0.01 0 0 0.01 0 -0.15"/>
-              <geom name="right_linkage_brace_collision" class="collision" size="0.03" fromto="0.01 0 -0.2 0.01 0 -0.28"/>
+              <geom name="right_linkage_brace_collision" class="collision" size="0.03"
+                fromto="0.01 0 -0.2 0.01 0 -0.28"/>
               <body name="right_ankle_pitch_link" pos="0 9.4445e-05 -0.30001">
                 <inertial pos="-0.007269 0 0.011137" quat="0.603053 0.369225 0.369225 0.603053" mass="0.074"
                   diaginertia="1.89e-05 1.40805e-05 6.9195e-06"/>
@@ -223,7 +225,8 @@
                   <joint name="right_ankle_roll_joint" class="ankle_roll"/>
                   <geom class="visual" material="black" mesh="right_ankle_roll_link"/>
                   <geom name="right_foot_box_collision" class="foot_box"/>
-                  <geom name="right_foot1_collision" class="foot_capsule" fromto="0.1 -0.026 -0.025 0.05 -0.026 -0.025"/>
+                  <geom name="right_foot1_collision" class="foot_capsule"
+                    fromto="0.1 -0.026 -0.025 0.05 -0.026 -0.025"/>
                   <geom name="right_foot2_collision" class="foot_capsule" fromto="-0.045 0 -0.015 0.12 0 -0.015"
                     size="0.02"/>
                   <geom name="right_foot3_collision" class="foot_capsule" fromto="0.1 0.026 -0.025 0.05 0.026 -0.025"/>

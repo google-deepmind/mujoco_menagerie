@@ -5,7 +5,7 @@
 
 ## Changelog
 
-See [CHANGELOG.md](./CHANGELOG.md) for a full history of changes.
+1. 2026-05-13 run [system identification](https://github.com/google-deepmind/mujoco/tree/f7e00d041e05ee1eb4131d3f33e32892aa5d2752/python/mujoco/sysid#system-identification-toolbox) on the robot after collecting 4 trajectories on the robot.
 
 ## Overview
 
@@ -17,19 +17,17 @@ This package contains a simplified robot description (MJCF) of the [Trossen WXAI
 
 ## URDF → MJCF derivation steps
 
-1. Added `<mujoco> <compiler discardvisual="false" strippath="false" fusestatic="false"/> </mujoco>` to the URDF's
+1. Added `<mujoco> <compiler discardvisual="false" strippath="false" fusestatic="false"/> </mujoco>` to the `wxai_follower.urdf`'s
    `<robot>` clause in order to preserve visual geometries.
 2. Loaded the URDF into MuJoCo and saved a corresponding MJCF.
 3. Manually edited the MJCF to extract common properties into the `<default>` section.
 4. Used [`interbotix_black.png`](https://github.com/Interbotix/interbotix_ros_manipulators/blob/main/interbotix_ros_xsarms/interbotix_xsarm_descriptions/meshes/interbotix_black.png) to texture the visual geoms.
 5. Added a light to track `gripper_link`.
-6. Removed `gripper` joint.
-7. Added an equality constraint so that the right finger mimics the position of the left finger.
-8. Manually designed box collision geoms for the gripper.
-9. Added `exclude` clause to prevent collisions between `base_link` and `shoulder_link`.
-10. Added position controlled actuators.
-11. Added `impratio=10` and `cone=elliptic` for better noslip.
-12. Added `scene.xml` which includes the robot, with a textured groundplane, skybox, and haze.
+6. Added an equality constraint so that the right finger mimics the position of the left finger.
+7. Added `exclude` clause to prevent collisions between `base_link` and `shoulder_link`.
+8. Added `impratio=10` and `cone=elliptic` for better noslip.
+9. Added joint damping and position controlled actuators with rough estimates.
+10. Added a script to create the biarm version, along with `scene.xml` which includes the biarm platform on a textured table, with skybox and haze.
 
 ## License
 

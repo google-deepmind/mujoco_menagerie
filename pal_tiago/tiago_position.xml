@@ -19,10 +19,10 @@
     <position class="position" name="arm_position_6_position" joint="arm_6_joint" inheritrange="1.0" kp="500"/>
     <position class="position" name="arm_position_7_position" joint="arm_7_joint" inheritrange="1.0" kp="500"/>
     <!-- End effector actuators -->
-    <position class="position" name="gripper_left_finger_position" joint="gripper_left_finger_joint" inheritrange="0.999"
-      forcerange="-5.197 5.197" kp="1000" kv="80"/>
-    <position class="position" name="gripper_right_finger_position" joint="gripper_right_finger_joint" inheritrange="0.999"
-      forcerange="-5.197 5.197" kp="1000" kv="80"/>
+    <position class="position" name="gripper_left_finger_position" joint="gripper_left_finger_joint"
+      inheritrange="0.999" forcerange="-5.197 5.197" kp="1000" kv="80"/>
+    <position class="position" name="gripper_right_finger_position" joint="gripper_right_finger_joint"
+      inheritrange="0.999" forcerange="-5.197 5.197" kp="1000" kv="80"/>
     <!-- Head actuators -->
     <position class="position" name="head_1_joint_position" joint="head_1_joint" inheritrange="1.0" kp="20"/>
     <position class="position" name="head_2_joint_position" joint="head_2_joint" inheritrange="1.0" kp="20"/>
@@ -37,5 +37,4 @@
     <key name="home" ctrl="0.2 -1.34 -0.2 1.94 -1.57 1.37 0 0 0 0 0 0.15 0 0"
       qpos="0 0 -0.985 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.15 0 0 0.20 -1.34 -0.20 1.94 -1.57 1.37 0.0 0 0"/>
   </keyframe>
-
 </mujoco>
