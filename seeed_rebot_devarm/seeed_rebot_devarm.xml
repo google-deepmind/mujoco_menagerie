@@ -159,8 +159,8 @@
     <position class="gripper" name="joint_right" joint="joint_right" ctrlrange="0 0.05"/>
   </actuator>
   <equality>
-    <joint joint1="joint_left" joint2="joint_right" polycoef="0 1 0 0 0"
-      solref="0.004 1" solimp="0.9999 0.99999 0.001 0.5 2"/>
+    <joint joint1="joint_left" joint2="joint_right" polycoef="0 1 0 0 0" solref="0.004 1"
+      solimp="0.9999 0.99999 0.001 0.5 2"/>
   </equality>
   <keyframe>
     <key name="home" qpos="0 0 0 0 0 0 0 0" ctrl="0 0 0 0 0 0 0 0"/>
