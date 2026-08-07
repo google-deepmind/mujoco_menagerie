@@ -14,25 +14,25 @@
         </default>
       </default>
       <default class="collision">
-        <geom type="mesh" group="3" solref="0.01" rgba="0.2 0.6 0.2 0.25"/>
+        <geom type="mesh" group="3" density="0" solref="0.01" rgba="0.2 0.6 0.2 0.25"/>
         <default class="elastomer_collision">
           <geom solref="0.06 0.9"/>
         </default>
       </default>
       <default class="CMC_joint">
-        <joint actuatorfrcrange="-3.3 3.3" armature="0.0032" damping="4.2e-05" frictionloss="0.132"/>
+        <joint actuatorfrcrange="-3.3 3.3" armature="0.00451" damping="4.2e-05" frictionloss="0.132"/>
       </default>
       <default class="PCMC_joint">
-        <joint actuatorfrcrange="-0.5285 0.5285" armature="0.00012" damping="4.2e-05" frictionloss="0.012"/>
+        <joint actuatorfrcrange="-0.5285 0.5285" armature="0.000136" damping="4.2e-05" frictionloss="0.012"/>
       </default>
       <default class="MCP_joint">
-        <joint actuatorfrcrange="-1.864 1.864" armature="0.00265" damping="2.38e-05" frictionloss="0.07456"/>
+        <joint actuatorfrcrange="-1.864 1.864" armature="0.00129" damping="2.38e-05" frictionloss="0.07456"/>
       </default>
       <default class="PIP_joint">
-        <joint actuatorfrcrange="-0.638 0.638" armature="0.0006" damping="4.06e-06" frictionloss="0.01276"/>
+        <joint actuatorfrcrange="-0.638 0.638" armature="0.000415" damping="4.06e-06" frictionloss="0.01276"/>
       </default>
       <default class="DIP_joint">
-        <joint actuatorfrcrange="-0.189369 0.189369" armature="0.00042" damping="1.21e-06" frictionloss="0.00378738"/>
+        <joint actuatorfrcrange="-0.189369 0.189369" armature="2.42e-05" damping="1.21e-06" frictionloss="0.00378738"/>
       </default>
     </default>
   </default>
