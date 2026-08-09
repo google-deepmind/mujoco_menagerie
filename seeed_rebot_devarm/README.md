@@ -40,7 +40,7 @@ repository.
    gripper, aluminium brackets) from the mesh filenames — the source URDF
    stores every visual as flat grey.
 8. Generated the collision geometry as a convex *decomposition* per link with
-   [VisACD](https://github.com/3dlg-hcvc/visacd) (8–26 parts per link), and
+   [VisACD](https://github.com/3dlg-hcvc/visacd) (8–12 parts per link), and
    capped hull complexity with `<mesh maxhullvert="64"/>`.
 9. Added `scene.xml` which includes the robot, a textured ground plane, skybox
    and haze.
@@ -56,9 +56,11 @@ Eleven body pairs are excluded in `<contact>`. Nine are adjacent links that
 share a motor housing and genuinely interpenetrate in the source meshes. The
 other two — `gripper_left`/`gripper_right` and `link2`/`link5` — clear each
 other by 0.15 mm and 0.77 mm respectively at the `home` keyframe (measured with
-exact mesh-mesh queries on the source STLs), gaps below what any convex
-decomposition can represent, since the parts necessarily bulge ~1–2 mm past the
-original concave surface. Both keyframes are contact-free.
+exact mesh-mesh queries on the source STLs). For the fingers that near-contact
+is at the interleaved slider rail at the base of each finger, not at the jaws,
+which cross scissor-fashion and never meet. Gaps that small are below what any
+convex decomposition can represent, since the parts necessarily bulge ~1–2 mm
+past the original concave surface. Both keyframes are contact-free.
 
 ### Validation
 

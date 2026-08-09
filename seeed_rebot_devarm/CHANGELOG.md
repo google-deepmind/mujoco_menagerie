@@ -3,8 +3,12 @@
 All notable changes to this model will be documented in this file.
 
 ## [2026-08-09]
+- Correct the stated reason for the `gripper_left`/`gripper_right` exclude. The
+  0.15 mm near-contact is at the interleaved slider rail at the base of the
+  fingers, not at the jaws: the two jaws cross scissor-fashion and never meet,
+  so no jaw pad primitive applies here.
 - Replace the single convex hull per link with a VisACD convex decomposition
-  (8–26 parts per link), reducing collision volume from 3.24× to 1.89× the true
+  (8–12 parts per link), reducing collision volume from 3.24× to 1.89× the true
   link volume, and cap hull complexity with `<mesh maxhullvert="64"/>`.
 - Enable self-collision. Eleven body pairs are excluded: nine adjacent links
   whose source meshes genuinely interpenetrate, plus `gripper_left`/
