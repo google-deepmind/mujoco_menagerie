@@ -1,7 +1,7 @@
 # Seeed Studio reBot DevArm Description (MJCF)
 
 > [!IMPORTANT]
-> Requires MuJoCo 2.3.4 or later.
+> Requires MuJoCo 3.2.0 or later.
 
 ## Changelog
 
@@ -34,33 +34,38 @@ repository.
 4. Extracted joint and actuator properties into `<default>` classes.
 5. Added position-controlled actuators with `ctrlrange` equal to the joint
    limits. Joint torque limits come from the actuator ratings (RS-06: 36 N·m,
-   RS-00: 14 N·m).
+   RS-00: 14 N·m), each read from the motor firmware over CAN on a physical arm.
 6. Added `home` and `raised` keyframes.
 7. Recovered the per-part colours (lime accent covers, black motors and
    gripper, aluminium brackets) from the mesh filenames — the source URDF
    stores every visual as flat grey.
-8. Generated the collision geometry as a convex *decomposition* per link with
+8. Generated the collision geometry as a convex decomposition per link with
    [VisACD](https://github.com/3dlg-hcvc/visacd) (8–12 parts per link), and
    capped hull complexity with `<mesh maxhullvert="64"/>`.
 9. Added `scene.xml` which includes the robot, a textured ground plane, skybox
    and haze.
 
+### Gripper
+
+The two fingers are driven by a single 1:1 rack and pinion, so they are coupled
+through an `<equality joint>` rather than modelled as independent DOFs, and the
+finger gains are derived from that transmission.
+
 ### Self-collision
 
-Self-collision is **enabled**. The collision geometry is a convex decomposition
+Self-collision is enabled. The collision geometry is a convex decomposition
 rather than one hull per link, which brings the collision volume down from
-3.24× the true link volume (single hull) to 1.89× and makes robot–robot
-contacts usable.
+3.24× the true link volume to 1.89× and makes robot–robot contacts usable.
 
 Eleven body pairs are excluded in `<contact>`. Nine are adjacent links that
 share a motor housing and genuinely interpenetrate in the source meshes. The
 other two — `gripper_left`/`gripper_right` and `link2`/`link5` — clear each
-other by 0.15 mm and 0.77 mm respectively at the `home` keyframe (measured with
-exact mesh-mesh queries on the source STLs). For the fingers that near-contact
-is at the interleaved slider rail at the base of each finger, not at the jaws,
-which cross scissor-fashion and never meet. Gaps that small are below what any
-convex decomposition can represent, since the parts necessarily bulge ~1–2 mm
-past the original concave surface. Both keyframes are contact-free.
+other by only 0.15 mm and 0.77 mm at the `home` keyframe, measured with exact
+mesh-mesh queries on the source STLs. For the fingers that near-contact is at
+the interleaved slider rail at the base, not at the jaws, which cross
+scissor-fashion and never meet. Gaps that small are below what a convex
+decomposition can represent, since its parts necessarily bulge ~1–2 mm past the
+original concave surface. Both keyframes are contact-free.
 
 ### Validation
 
@@ -71,6 +76,10 @@ two agree to under 1e-5 N·m. Pinocchio in turn matches the NVIDIA Isaac Sim
 (PhysX and Newton) drive droop and the on-hardware measurements, so the model is
 dynamically consistent with the URDF, the vendor's Isaac Sim asset, and the
 physical arm.
+
+Self-collision detection was checked against the source geometry: across
+sampled poses, every body pair that actually interpenetrates in the source
+meshes and is not deliberately excluded is reported as a contact by MuJoCo.
 
 ## License
 
