@@ -1,0 +1,363 @@
+<mujoco model="seeed_rebot_devarm">
+  <compiler angle="radian" meshdir="assets" autolimits="true"/>
+
+  <option integrator="implicitfast" cone="elliptic" impratio="10"/>
+
+  <default>
+    <default class="seeed">
+      <default class="visual">
+        <geom contype="0" conaffinity="0" group="2" type="mesh"/>
+      </default>
+      <default class="collision">
+        <geom group="3" type="mesh"/>
+      </default>
+      <joint armature="0.01" frictionloss="0.2"/>
+      <default class="rs06">
+        <joint damping="5"/>
+        <position kp="900" kv="60" forcerange="-36 36"/>
+      </default>
+      <default class="rs00">
+        <joint damping="2"/>
+        <position kp="120" kv="10" forcerange="-14 14"/>
+      </default>
+      <default class="gripper">
+        <joint damping="1"/>
+        <position kp="5000" kv="41.28" forcerange="-1904 1904"/>
+      </default>
+      <mesh maxhullvert="64"/>
+    </default>
+  </default>
+
+  <asset>
+    <material name="alum" rgba="0.78 0.78 0.80 1" specular="0.4" shininess="0.3"/>
+    <material name="lime" rgba="0.72 0.85 0.20 1" specular="0.4" shininess="0.3"/>
+    <material name="black" rgba="0.05 0.05 0.06 1" specular="0.4" shininess="0.3"/>
+    <mesh name="base_link" file="base_link.STL"/>
+    <mesh name="cnc2" file="cnc2.STL"/>
+    <mesh name="cnc3" file="cnc3.STL"/>
+    <mesh name="cnc4" file="cnc4.STL"/>
+    <mesh name="cnc5" file="cnc5.STL"/>
+    <mesh name="cnc7" file="cnc7.STL"/>
+    <mesh name="cnc_left" file="cnc_left.STL"/>
+    <mesh name="cnc_right" file="cnc_right.STL"/>
+    <mesh name="link1" file="link1.STL"/>
+    <mesh name="link6" file="link6.STL"/>
+    <mesh name="motor_2_3" file="motor_2_3.STL"/>
+    <mesh name="motor_4" file="motor_4.STL"/>
+    <mesh name="motor_5" file="motor_5.STL"/>
+    <mesh name="motor_6" file="motor_6.STL"/>
+    <mesh name="motor_7" file="motor_7.STL"/>
+    <mesh name="pla2_black" file="pla2_black.STL"/>
+    <mesh name="pla2_green" file="pla2_green.STL"/>
+    <mesh name="pla3_black" file="pla3_black.STL"/>
+    <mesh name="pla3_green" file="pla3_green.STL"/>
+    <mesh name="pla5_green" file="pla5_green.STL"/>
+    <mesh name="pla7_green" file="pla7_green.STL"/>
+    <mesh name="pla_left" file="pla_left.STL"/>
+    <mesh name="pla_right" file="pla_right.STL"/>
+    <mesh name="base_link_col_0" file="base_link_col_0.stl"/>
+    <mesh name="base_link_col_1" file="base_link_col_1.stl"/>
+    <mesh name="base_link_col_2" file="base_link_col_2.stl"/>
+    <mesh name="base_link_col_3" file="base_link_col_3.stl"/>
+    <mesh name="base_link_col_4" file="base_link_col_4.stl"/>
+    <mesh name="base_link_col_5" file="base_link_col_5.stl"/>
+    <mesh name="base_link_col_6" file="base_link_col_6.stl"/>
+    <mesh name="base_link_col_7" file="base_link_col_7.stl"/>
+    <mesh name="link1_col_0" file="link1_col_0.stl"/>
+    <mesh name="link1_col_1" file="link1_col_1.stl"/>
+    <mesh name="link1_col_2" file="link1_col_2.stl"/>
+    <mesh name="link1_col_3" file="link1_col_3.stl"/>
+    <mesh name="link1_col_4" file="link1_col_4.stl"/>
+    <mesh name="link1_col_5" file="link1_col_5.stl"/>
+    <mesh name="link1_col_6" file="link1_col_6.stl"/>
+    <mesh name="link1_col_7" file="link1_col_7.stl"/>
+    <mesh name="link1_col_8" file="link1_col_8.stl"/>
+    <mesh name="link1_col_9" file="link1_col_9.stl"/>
+    <mesh name="link1_col_10" file="link1_col_10.stl"/>
+    <mesh name="link2_col_0" file="link2_col_0.stl"/>
+    <mesh name="link2_col_1" file="link2_col_1.stl"/>
+    <mesh name="link2_col_2" file="link2_col_2.stl"/>
+    <mesh name="link2_col_3" file="link2_col_3.stl"/>
+    <mesh name="link2_col_4" file="link2_col_4.stl"/>
+    <mesh name="link2_col_5" file="link2_col_5.stl"/>
+    <mesh name="link2_col_6" file="link2_col_6.stl"/>
+    <mesh name="link2_col_7" file="link2_col_7.stl"/>
+    <mesh name="link3_col_0" file="link3_col_0.stl"/>
+    <mesh name="link3_col_1" file="link3_col_1.stl"/>
+    <mesh name="link3_col_2" file="link3_col_2.stl"/>
+    <mesh name="link3_col_3" file="link3_col_3.stl"/>
+    <mesh name="link3_col_4" file="link3_col_4.stl"/>
+    <mesh name="link3_col_5" file="link3_col_5.stl"/>
+    <mesh name="link3_col_6" file="link3_col_6.stl"/>
+    <mesh name="link3_col_7" file="link3_col_7.stl"/>
+    <mesh name="link3_col_8" file="link3_col_8.stl"/>
+    <mesh name="link3_col_9" file="link3_col_9.stl"/>
+    <mesh name="link4_col_0" file="link4_col_0.stl"/>
+    <mesh name="link4_col_1" file="link4_col_1.stl"/>
+    <mesh name="link4_col_2" file="link4_col_2.stl"/>
+    <mesh name="link4_col_3" file="link4_col_3.stl"/>
+    <mesh name="link4_col_4" file="link4_col_4.stl"/>
+    <mesh name="link4_col_5" file="link4_col_5.stl"/>
+    <mesh name="link4_col_6" file="link4_col_6.stl"/>
+    <mesh name="link4_col_7" file="link4_col_7.stl"/>
+    <mesh name="link4_col_8" file="link4_col_8.stl"/>
+    <mesh name="link5_col_0" file="link5_col_0.stl"/>
+    <mesh name="link5_col_1" file="link5_col_1.stl"/>
+    <mesh name="link5_col_2" file="link5_col_2.stl"/>
+    <mesh name="link5_col_3" file="link5_col_3.stl"/>
+    <mesh name="link5_col_4" file="link5_col_4.stl"/>
+    <mesh name="link5_col_5" file="link5_col_5.stl"/>
+    <mesh name="link5_col_6" file="link5_col_6.stl"/>
+    <mesh name="link5_col_7" file="link5_col_7.stl"/>
+    <mesh name="link5_col_8" file="link5_col_8.stl"/>
+    <mesh name="link5_col_9" file="link5_col_9.stl"/>
+    <mesh name="link6_col_0" file="link6_col_0.stl"/>
+    <mesh name="link6_col_1" file="link6_col_1.stl"/>
+    <mesh name="link6_col_2" file="link6_col_2.stl"/>
+    <mesh name="link6_col_3" file="link6_col_3.stl"/>
+    <mesh name="link6_col_4" file="link6_col_4.stl"/>
+    <mesh name="link6_col_5" file="link6_col_5.stl"/>
+    <mesh name="link6_col_6" file="link6_col_6.stl"/>
+    <mesh name="link6_col_7" file="link6_col_7.stl"/>
+    <mesh name="gripper_end_col_0" file="gripper_end_col_0.stl"/>
+    <mesh name="gripper_end_col_1" file="gripper_end_col_1.stl"/>
+    <mesh name="gripper_end_col_2" file="gripper_end_col_2.stl"/>
+    <mesh name="gripper_end_col_3" file="gripper_end_col_3.stl"/>
+    <mesh name="gripper_end_col_4" file="gripper_end_col_4.stl"/>
+    <mesh name="gripper_end_col_5" file="gripper_end_col_5.stl"/>
+    <mesh name="gripper_end_col_6" file="gripper_end_col_6.stl"/>
+    <mesh name="gripper_end_col_7" file="gripper_end_col_7.stl"/>
+    <mesh name="gripper_end_col_8" file="gripper_end_col_8.stl"/>
+    <mesh name="gripper_end_col_9" file="gripper_end_col_9.stl"/>
+    <mesh name="gripper_end_col_10" file="gripper_end_col_10.stl"/>
+    <mesh name="gripper_end_col_11" file="gripper_end_col_11.stl"/>
+    <mesh name="gripper_left_col_0" file="gripper_left_col_0.stl"/>
+    <mesh name="gripper_left_col_1" file="gripper_left_col_1.stl"/>
+    <mesh name="gripper_left_col_2" file="gripper_left_col_2.stl"/>
+    <mesh name="gripper_left_col_3" file="gripper_left_col_3.stl"/>
+    <mesh name="gripper_left_col_4" file="gripper_left_col_4.stl"/>
+    <mesh name="gripper_left_col_5" file="gripper_left_col_5.stl"/>
+    <mesh name="gripper_left_col_6" file="gripper_left_col_6.stl"/>
+    <mesh name="gripper_left_col_7" file="gripper_left_col_7.stl"/>
+    <mesh name="gripper_right_col_0" file="gripper_right_col_0.stl"/>
+    <mesh name="gripper_right_col_1" file="gripper_right_col_1.stl"/>
+    <mesh name="gripper_right_col_2" file="gripper_right_col_2.stl"/>
+    <mesh name="gripper_right_col_3" file="gripper_right_col_3.stl"/>
+    <mesh name="gripper_right_col_4" file="gripper_right_col_4.stl"/>
+    <mesh name="gripper_right_col_5" file="gripper_right_col_5.stl"/>
+    <mesh name="gripper_right_col_6" file="gripper_right_col_6.stl"/>
+    <mesh name="gripper_right_col_7" file="gripper_right_col_7.stl"/>
+  </asset>
+
+  <worldbody>
+    <body name="base_link" childclass="seeed" pos="0 0 0">
+      <inertial pos="2.87641888266442E-06 -0.000122302488725115 0.0243376121934547" mass="1.1774"
+        fullinertia="0.00133040 0.00213119 0.00275877 0.00000001 0.00000000 0.00000000"/>
+      <geom class="collision" mesh="base_link_col_0"/>
+      <geom class="collision" mesh="base_link_col_1"/>
+      <geom class="collision" mesh="base_link_col_2"/>
+      <geom class="collision" mesh="base_link_col_3"/>
+      <geom class="collision" mesh="base_link_col_4"/>
+      <geom class="collision" mesh="base_link_col_5"/>
+      <geom class="collision" mesh="base_link_col_6"/>
+      <geom class="collision" mesh="base_link_col_7"/>
+      <body name="link1" pos="-0.00034283 -0.00098683 0.075">
+        <inertial pos="0.00817652280320541 0.00122584211922395 0.0331419658967293" mass="0.4655"
+          fullinertia="0.00025207 0.00015464 0.00023416 0.00000000 -0.00002832 0.00000000"/>
+        <joint name="joint1" type="hinge" range="-2.8 2.8" axis="0 0 1" class="rs06"/>
+        <geom class="collision" mesh="link1_col_0"/>
+        <geom class="collision" mesh="link1_col_1"/>
+        <geom class="collision" mesh="link1_col_2"/>
+        <geom class="collision" mesh="link1_col_3"/>
+        <geom class="collision" mesh="link1_col_4"/>
+        <geom class="collision" mesh="link1_col_5"/>
+        <geom class="collision" mesh="link1_col_6"/>
+        <geom class="collision" mesh="link1_col_7"/>
+        <geom class="collision" mesh="link1_col_8"/>
+        <geom class="collision" mesh="link1_col_9"/>
+        <geom class="collision" mesh="link1_col_10"/>
+        <body name="link2" pos="0.020343 0.027237 0.07" quat="0.7071 -0.7071 0 0">
+          <inertial pos="-0.117864812717456 -0.00342226413942967 -0.0271551938501484" mass="1.552"
+            fullinertia="0.000577466775 0.00988484698 0.0100847496 -3.3841785e-07 6.69752535e-06 1.00738337e-06"/>
+          <joint name="joint2" type="hinge" range="-3.14 0" axis="0 0 -1" class="rs06"/>
+          <geom class="collision" mesh="link2_col_0"/>
+          <geom class="collision" mesh="link2_col_1"/>
+          <geom class="collision" mesh="link2_col_2"/>
+          <geom class="collision" mesh="link2_col_3"/>
+          <geom class="collision" mesh="link2_col_4"/>
+          <geom class="collision" mesh="link2_col_5"/>
+          <geom class="collision" mesh="link2_col_6"/>
+          <geom class="collision" mesh="link2_col_7"/>
+          <body name="link3" pos="-0.236 0 0">
+            <inertial pos="0.103427154487799 -0.0664137912104635 -0.0271068687716704" mass="1.252"
+              fullinertia="0.000551811337 0.00745889021 0.00764192742 -4.07430508e-05 -5.02214689e-05 7.07344633e-08"/>
+            <joint name="joint3" type="hinge" range="-3.14 0" axis="0 0 1" class="rs06"/>
+            <geom class="collision" mesh="link3_col_0"/>
+            <geom class="collision" mesh="link3_col_1"/>
+            <geom class="collision" mesh="link3_col_2"/>
+            <geom class="collision" mesh="link3_col_3"/>
+            <geom class="collision" mesh="link3_col_4"/>
+            <geom class="collision" mesh="link3_col_5"/>
+            <geom class="collision" mesh="link3_col_6"/>
+            <geom class="collision" mesh="link3_col_7"/>
+            <geom class="collision" mesh="link3_col_8"/>
+            <geom class="collision" mesh="link3_col_9"/>
+            <body name="link4" pos="0.228 -0.072746 0.0045">
+              <inertial pos="0.0475544540775559 -0.0441113470158517 -0.0314111924918381" mass="0.46"
+                fullinertia="0.000320508485 0.000524525455 0.000465171515 0.000168799091 0 0"/>
+              <joint name="joint4" type="hinge" range="-1.79 1.69" axis="0 0 1" class="rs00"/>
+              <geom class="collision" mesh="link4_col_0"/>
+              <geom class="collision" mesh="link4_col_1"/>
+              <geom class="collision" mesh="link4_col_2"/>
+              <geom class="collision" mesh="link4_col_3"/>
+              <geom class="collision" mesh="link4_col_4"/>
+              <geom class="collision" mesh="link4_col_5"/>
+              <geom class="collision" mesh="link4_col_6"/>
+              <geom class="collision" mesh="link4_col_7"/>
+              <geom class="collision" mesh="link4_col_8"/>
+              <body name="link5" pos="0.087 -0.048 -0.03075" quat="0.7071 -0.7071 0 0">
+                <inertial pos="-0.0114400622356175 4.7907739316217E-06 0.0480487481818926" mass="0.20120457182895"
+                  fullinertia="9.84090046e-05 7.39220615e-05 7.10245279e-05 1.81878283e-08 -1.15016294e-06 -1.77912637e-08"/>
+                <joint name="joint5" type="hinge" range="-1.57 1.57" axis="0 0 1" class="rs00"/>
+                <geom class="collision" mesh="link5_col_0"/>
+                <geom class="collision" mesh="link5_col_1"/>
+                <geom class="collision" mesh="link5_col_2"/>
+                <geom class="collision" mesh="link5_col_3"/>
+                <geom class="collision" mesh="link5_col_4"/>
+                <geom class="collision" mesh="link5_col_5"/>
+                <geom class="collision" mesh="link5_col_6"/>
+                <geom class="collision" mesh="link5_col_7"/>
+                <geom class="collision" mesh="link5_col_8"/>
+                <geom class="collision" mesh="link5_col_9"/>
+                <body name="link6" pos="0.0365 0 0.048" quat="0.7071 0 0.7071 0">
+                  <inertial pos="1.80196022567525E-05 2.48334592051007E-08 0.00434805764057547" mass="0.1"
+                    fullinertia="1.47424612e-05 1.45728507e-05 2.8476646e-05 1.05586155e-11 5.06176061e-10 -7.39546725e-12"/>
+                  <joint name="joint6" type="hinge" range="-3.14 3.14" axis="0 0 1" class="rs00"/>
+                  <geom class="collision" mesh="link6_col_0"/>
+                  <geom class="collision" mesh="link6_col_1"/>
+                  <geom class="collision" mesh="link6_col_2"/>
+                  <geom class="collision" mesh="link6_col_3"/>
+                  <geom class="collision" mesh="link6_col_4"/>
+                  <geom class="collision" mesh="link6_col_5"/>
+                  <geom class="collision" mesh="link6_col_6"/>
+                  <geom class="collision" mesh="link6_col_7"/>
+                  <body name="gripper_end" pos="0 0 0.16621" quat="0 0.7071 0 0.7071">
+                    <inertial pos="-0.112751692515958 0.000128443070436966 -5.72602449749882E-06" mass="0.65"
+                      fullinertia="0.00037354 0.00015830 0.00045353 -0.00000011 0.00000050 0.00000348"/>
+                    <geom class="collision" mesh="gripper_end_col_0"/>
+                    <geom class="collision" mesh="gripper_end_col_1"/>
+                    <geom class="collision" mesh="gripper_end_col_2"/>
+                    <geom class="collision" mesh="gripper_end_col_3"/>
+                    <geom class="collision" mesh="gripper_end_col_4"/>
+                    <geom class="collision" mesh="gripper_end_col_5"/>
+                    <geom class="collision" mesh="gripper_end_col_6"/>
+                    <geom class="collision" mesh="gripper_end_col_7"/>
+                    <geom class="collision" mesh="gripper_end_col_8"/>
+                    <geom class="collision" mesh="gripper_end_col_9"/>
+                    <geom class="collision" mesh="gripper_end_col_10"/>
+                    <geom class="collision" mesh="gripper_end_col_11"/>
+                    <body name="gripper_left" pos="-0.041939 -7.3385E-05 0" quat="0.5 0.5 -0.5 0.5">
+                      <inertial pos="-0.00218008703135955 0.0187090355934181 0.00932188568692145" mass="0.0752"
+                        fullinertia="1.09877964176176E-05 9.50146036720166E-06 9.30779991911125E-06 0 0 0"/>
+                      <joint name="joint_left" type="slide" range="0 0.05" axis="0 0 1" class="gripper"/>
+                      <geom class="collision" mesh="gripper_left_col_0"/>
+                      <geom class="collision" mesh="gripper_left_col_1"/>
+                      <geom class="collision" mesh="gripper_left_col_2"/>
+                      <geom class="collision" mesh="gripper_left_col_3"/>
+                      <geom class="collision" mesh="gripper_left_col_4"/>
+                      <geom class="collision" mesh="gripper_left_col_5"/>
+                      <geom class="collision" mesh="gripper_left_col_6"/>
+                      <geom class="collision" mesh="gripper_left_col_7"/>
+                      <geom type="mesh" class="visual" material="black" mesh="pla_left" pos="0 0 0" quat="1 0 0 0"/>
+                      <geom type="mesh" class="visual" material="alum" mesh="cnc_left" pos="0 0 0" quat="1 0 0 0"/>
+                    </body>
+                    <body name="gripper_right" pos="-0.041939 7.3385E-05 0" quat="0.5 -0.5 -0.5 -0.5">
+                      <inertial pos="0.00218008703135955 -0.018709035593418 0.00932188568692151" mass="0.0752"
+                        fullinertia="1.09877964176176E-05 9.50146036720166E-06 9.30779991911125E-06 0 0 0"/>
+                      <joint name="joint_right" type="slide" range="0 0.05" axis="0 0 1" class="gripper"/>
+                      <geom class="collision" mesh="gripper_right_col_0"/>
+                      <geom class="collision" mesh="gripper_right_col_1"/>
+                      <geom class="collision" mesh="gripper_right_col_2"/>
+                      <geom class="collision" mesh="gripper_right_col_3"/>
+                      <geom class="collision" mesh="gripper_right_col_4"/>
+                      <geom class="collision" mesh="gripper_right_col_5"/>
+                      <geom class="collision" mesh="gripper_right_col_6"/>
+                      <geom class="collision" mesh="gripper_right_col_7"/>
+                      <geom type="mesh" class="visual" material="black" mesh="pla_right" pos="0 0 0" quat="1 0 0 0"/>
+                      <geom type="mesh" class="visual" material="alum" mesh="cnc_right" pos="0 0 0" quat="1 0 0 0"/>
+                    </body>
+                    <geom type="mesh" class="visual" material="lime" mesh="pla7_green" pos="0 0 0" quat="1 0 0 0"/>
+                    <geom type="mesh" class="visual" material="alum" mesh="cnc7" pos="0 0 0" quat="1 0 0 0"/>
+                    <geom type="mesh" class="visual" material="black" mesh="motor_7" pos="0 0 0" quat="1 0 0 0"/>
+                  </body>
+                  <geom type="mesh" class="visual" material="alum" mesh="link6" pos="0 0 0" quat="1 0 0 0"/>
+                </body>
+                <geom type="mesh" class="visual" material="black" mesh="motor_6" pos="0 0 0" quat="1 0 0 0"/>
+                <geom type="mesh" class="visual" material="alum" mesh="cnc5" pos="0 0 0" quat="1 0 0 0"/>
+                <geom type="mesh" class="visual" material="lime" mesh="pla5_green" pos="0 0 0" quat="1 0 0 0"/>
+              </body>
+              <geom type="mesh" class="visual" material="black" mesh="motor_5" pos="0 0 0" quat="1 0 0 0"/>
+              <geom type="mesh" class="visual" material="alum" mesh="cnc4" pos="0 0 0" quat="1 0 0 0"/>
+            </body>
+            <geom type="mesh" class="visual" material="alum" mesh="cnc3" pos="0 0 0" quat="1 0 0 0"/>
+            <geom type="mesh" class="visual" material="black" mesh="motor_4" pos="0 0 0" quat="1 0 0 0"/>
+            <geom type="mesh" class="visual" material="black" mesh="pla3_black" pos="0 0 0" quat="1 0 0 0"/>
+            <geom type="mesh" class="visual" material="lime" mesh="pla3_green" pos="0 0 0" quat="1 0 0 0"/>
+          </body>
+          <geom type="mesh" class="visual" material="black" mesh="motor_2_3" pos="0 0 0" quat="1 0 0 0"/>
+          <geom type="mesh" class="visual" material="alum" mesh="cnc2" pos="0 0 0" quat="1 0 0 0"/>
+          <geom type="mesh" class="visual" material="black" mesh="pla2_black" pos="0 0 0" quat="1 0 0 0"/>
+          <geom type="mesh" class="visual" material="lime" mesh="pla2_green" pos="0 0 0" quat="1 0 0 0"/>
+        </body>
+        <geom type="mesh" class="visual" material="alum" mesh="link1" pos="0 0 0" quat="1 0 0 0"/>
+      </body>
+      <geom type="mesh" class="visual" material="alum" mesh="base_link" pos="0 0 0" quat="1 0 0 0"/>
+    </body>
+  </worldbody>
+
+  <contact>
+    <!--
+      Self-collision is enabled. Adjacent links that share a motor housing
+      genuinely interpenetrate in the source meshes, so they are excluded.
+      The last two pairs clear each other by less than a millimetre in the
+      source geometry: 0.15 mm between the fingers and 0.77 mm between
+      link2 and link5 at the home keyframe. For the fingers that near-contact
+      is at the interleaved slider rail at the base of each finger, not at
+      the jaws, which cross scissor-fashion and never meet. Gaps that small
+      are below what a convex decomposition can represent, since its parts
+      necessarily bulge 1-2 mm past the original concave surface.
+    -->
+    <exclude body1="base_link" body2="link1"/>
+    <exclude body1="link1" body2="link2"/>
+    <exclude body1="link2" body2="link3"/>
+    <exclude body1="link3" body2="link4"/>
+    <exclude body1="link4" body2="link5"/>
+    <exclude body1="link5" body2="link6"/>
+    <exclude body1="link6" body2="gripper_end"/>
+    <exclude body1="gripper_end" body2="gripper_left"/>
+    <exclude body1="gripper_end" body2="gripper_right"/>
+    <exclude body1="gripper_left" body2="gripper_right"/>
+    <exclude body1="link2" body2="link5"/>
+  </contact>
+
+  <equality>
+    <joint joint1="joint_left" joint2="joint_right" polycoef="0 1 0 0 0" solref="0.004 1"
+      solimp="0.9999 0.99999 0.001 0.5 2"/>
+  </equality>
+
+  <actuator>
+    <position class="rs06" name="joint1" joint="joint1" ctrlrange="-2.8 2.8"/>
+    <position class="rs06" name="joint2" joint="joint2" ctrlrange="-3.14 0"/>
+    <position class="rs06" name="joint3" joint="joint3" ctrlrange="-3.14 0"/>
+    <position class="rs00" name="joint4" joint="joint4" ctrlrange="-1.79 1.69"/>
+    <position class="rs00" name="joint5" joint="joint5" ctrlrange="-1.57 1.57"/>
+    <position class="rs00" name="joint6" joint="joint6" ctrlrange="-3.14 3.14"/>
+    <position class="gripper" name="joint_left" joint="joint_left" ctrlrange="0 0.05"/>
+    <position class="gripper" name="joint_right" joint="joint_right" ctrlrange="0 0.05"/>
+  </actuator>
+
+  <keyframe>
+    <key name="home" qpos="0 0 0 0 0 0 0 0" ctrl="0 0 0 0 0 0 0 0"/>
+    <key name="raised" qpos="0 -0.7 -1.1 0 0 0 0 0" ctrl="0 -0.7 -1.1 0 0 0 0 0"/>
+  </keyframe>
+</mujoco>
