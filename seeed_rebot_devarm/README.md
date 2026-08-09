@@ -24,13 +24,12 @@ repository.
 
 ### URDF → MJCF derivation steps
 
-1. Converted the URDF body tree with [`urdf-to-mjcf`](https://github.com/discoverse-dev/urdf-to-mjcf),
-   using CoACD to generate convex collision meshes.
-2. Kept `gripper_end` as a separate welded body and preserved all six components
-   of every URDF inertia tensor, including products of inertia (MuJoCo's built-in
-   URDF importer mis-rotates the merged
-   fixed-joint inertial, which introduces a spurious ~1 N·m gravity torque at
-   the wrist).
+1. Converted the URDF body tree with [`urdf-to-mjcf`](https://github.com/discoverse-dev/urdf-to-mjcf).
+2. Kept `gripper_end` as a separate body rather than merging it into `link6`
+   across the fixed joint, and preserved all six components of every URDF
+   inertia tensor, including the products of inertia. This keeps the MJCF
+   bodies in one-to-one correspondence with the URDF links, so the two can be
+   diffed link by link.
 3. Fixed the base to the world and added the base link inertial.
 4. Extracted joint and actuator properties into `<default>` classes.
 5. Added position-controlled actuators with `ctrlrange` equal to the joint
@@ -40,20 +39,26 @@ repository.
 7. Recovered the per-part colours (lime accent covers, black motors and
    gripper, aluminium brackets) from the mesh filenames — the source URDF
    stores every visual as flat grey.
-8. Added `scene.xml` which includes the robot, a textured ground plane, skybox
+8. Generated the collision geometry as a convex *decomposition* per link with
+   [VisACD](https://github.com/3dlg-hcvc/visacd) (8–26 parts per link), and
+   capped hull complexity with `<mesh maxhullvert="64"/>`.
+9. Added `scene.xml` which includes the robot, a textured ground plane, skybox
    and haze.
 
-### Known limitations
+### Self-collision
 
-Self-collision is disabled (collision geoms use `contype="0"
-conaffinity="1"`, so the robot still collides with the floor and objects).
-The collision meshes are single convex hulls per link, and these hulls
-interpenetrate at legitimate poses — the two finger hulls overlap by ~35 mm
-at the closed `home` keyframe (they separate when the gripper opens), and
-the wrist hull grazes the upper-arm hull in the `home` keyframe — so
-enabling robot–robot contacts would report the default poses as in
-collision. Re-enable self-collision only with finer collision
-geometry.
+Self-collision is **enabled**. The collision geometry is a convex decomposition
+rather than one hull per link, which brings the collision volume down from
+3.24× the true link volume (single hull) to 1.89× and makes robot–robot
+contacts usable.
+
+Eleven body pairs are excluded in `<contact>`. Nine are adjacent links that
+share a motor housing and genuinely interpenetrate in the source meshes. The
+other two — `gripper_left`/`gripper_right` and `link2`/`link5` — clear each
+other by 0.15 mm and 0.77 mm respectively at the `home` keyframe (measured with
+exact mesh-mesh queries on the source STLs), gaps below what any convex
+decomposition can represent, since the parts necessarily bulge ~1–2 mm past the
+original concave surface. Both keyframes are contact-free.
 
 ### Validation
 
