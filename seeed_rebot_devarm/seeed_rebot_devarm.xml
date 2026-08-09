@@ -1,6 +1,33 @@
 <mujoco model="seeed_rebot_devarm">
   <compiler angle="radian" meshdir="assets" autolimits="true"/>
+
   <option integrator="implicitfast" cone="elliptic" impratio="10"/>
+
+  <default>
+    <default class="seeed">
+      <default class="visual">
+        <geom contype="0" conaffinity="0" group="2" type="mesh"/>
+      </default>
+      <default class="collision">
+        <geom group="3" type="mesh"/>
+      </default>
+      <joint armature="0.01" frictionloss="0.2"/>
+      <default class="rs06">
+        <joint damping="5"/>
+        <position kp="900" kv="60" forcerange="-36 36"/>
+      </default>
+      <default class="rs00">
+        <joint damping="2"/>
+        <position kp="120" kv="10" forcerange="-14 14"/>
+      </default>
+      <default class="gripper">
+        <joint damping="1"/>
+        <position kp="5000" kv="41.28" forcerange="-1904 1904"/>
+      </default>
+      <mesh maxhullvert="64"/>
+    </default>
+  </default>
+
   <asset>
     <material name="alum" rgba="0.78 0.78 0.80 1" specular="0.4" shininess="0.3"/>
     <material name="lime" rgba="0.72 0.85 0.20 1" specular="0.4" shininess="0.3"/>
@@ -121,30 +148,7 @@
     <mesh name="gripper_right_col_6" file="gripper_right_col_6.stl"/>
     <mesh name="gripper_right_col_7" file="gripper_right_col_7.stl"/>
   </asset>
-  <default>
-    <default class="seeed">
-      <default class="visual">
-        <geom contype="0" conaffinity="0" group="2" type="mesh"/>
-      </default>
-      <default class="collision">
-        <geom group="3" type="mesh"/>
-      </default>
-      <joint armature="0.01" frictionloss="0.2"/>
-      <default class="rs06">
-        <joint damping="5"/>
-        <position kp="900" kv="60" forcerange="-36 36"/>
-      </default>
-      <default class="rs00">
-        <joint damping="2"/>
-        <position kp="120" kv="10" forcerange="-14 14"/>
-      </default>
-      <default class="gripper">
-        <joint damping="1"/>
-        <position kp="5000" kv="41.28" forcerange="-1904 1904"/>
-      </default>
-      <mesh maxhullvert="64"/>
-    </default>
-  </default>
+
   <worldbody>
     <body name="base_link" childclass="seeed" pos="0 0 0">
       <inertial pos="2.87641888266442E-06 -0.000122302488725115 0.0243376121934547" mass="1.1774"
@@ -310,6 +314,7 @@
       <geom type="mesh" class="visual" material="alum" mesh="base_link" pos="0 0 0" quat="1 0 0 0"/>
     </body>
   </worldbody>
+
   <contact>
     <!--
       Self-collision is enabled. Adjacent links that share a motor housing
@@ -331,10 +336,12 @@
     <exclude body1="gripper_left" body2="gripper_right"/>
     <exclude body1="link2" body2="link5"/>
   </contact>
+
   <equality>
     <joint joint1="joint_left" joint2="joint_right" polycoef="0 1 0 0 0" solref="0.004 1"
       solimp="0.9999 0.99999 0.001 0.5 2"/>
   </equality>
+
   <actuator>
     <position class="rs06" name="joint1" joint="joint1" ctrlrange="-2.8 2.8"/>
     <position class="rs06" name="joint2" joint="joint2" ctrlrange="-3.14 0"/>
@@ -345,6 +352,7 @@
     <position class="gripper" name="joint_left" joint="joint_left" ctrlrange="0 0.05"/>
     <position class="gripper" name="joint_right" joint="joint_right" ctrlrange="0 0.05"/>
   </actuator>
+
   <keyframe>
     <key name="home" qpos="0 0 0 0 0 0 0 0" ctrl="0 0 0 0 0 0 0 0"/>
     <key name="raised" qpos="0 -0.7 -1.1 0 0 0 0 0" ctrl="0 -0.7 -1.1 0 0 0 0 0"/>
