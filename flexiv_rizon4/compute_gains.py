@@ -38,9 +38,14 @@ def compute_gains(model_path: Path) -> None:
   data = mujoco.MjData(model)
   mujoco.mj_forward(model, data)
 
-  # Dense mass matrix at qpos0.
+  # Dense mass matrix at qpos0. The mj_fullM signature changed in MuJoCo 3.10
+  # (from (model, dst, data.qM) to (model, data, dst)), so dispatch on the API
+  # actually available instead of pinning a specific version.
   M = np.zeros((model.nv, model.nv))
-  mujoco.mj_fullM(model, M, data.qM)
+  try:
+    mujoco.mj_fullM(model, M, data.qM)
+  except (AttributeError, TypeError):
+    mujoco.mj_fullM(model, data, M)
   effective_inertia = np.diag(M)
 
   delta_theta = math.radians(SATURATION_ANGLE_DEG)
@@ -51,7 +56,10 @@ def compute_gains(model_path: Path) -> None:
     joint_id = model.actuator_trnid[i, 0]
     name = mujoco.mj_id2name(model, mujoco.mjtObj.mjOBJ_JOINT, joint_id)
     frc_max = model.jnt_actfrcrange[joint_id, 1]
-    m_ii = effective_inertia[joint_id]
+    # The mass-matrix diagonal is indexed by DOF address (jnt_dofadr), not by
+    # joint id: the two diverge whenever a free joint, ball joint or any
+    # multi-DOF joint precedes this one in the model.
+    m_ii = effective_inertia[model.jnt_dofadr[joint_id]]
     # Use forcerange as class key.
     key = frc_max
     if key not in classes:
