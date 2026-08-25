@@ -146,6 +146,7 @@ MODEL_MAP = {
   'toddlerbot_2xm/toddlerbot_2xm': ModelType.HUMANOID,
   'iit_softfoot/softfoot': ModelType.BIOMECHANICAL,
   'ms_human_700/MS-Human-700': ModelType.BIOMECHANICAL,
+  'seeed_rebot_devarm/seeed_rebot_devarm': ModelType.ARM,
 }
 
 # Per-model camera overrides. Populated only when auto-camera produces a

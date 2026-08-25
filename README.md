@@ -265,6 +265,7 @@ full breakdown.
 | <a href='https://live.mujoco.org/?model=github:google-deepmind/mujoco_menagerie/main/trs_so_arm100/scene.xml' title='Open live preview for Standard Open Arm-100 5DOF - Version 1.3'><img src='assets/trs_so_arm100-so_arm100.png' width=120></a> | Standard Open Arm-100 5DOF - Version 1.3 | 6 | [Apache-2.0](trs_so_arm100/LICENSE) |
 | <a href='https://live.mujoco.org/?model=github:google-deepmind/mujoco_menagerie/main/low_cost_robot_arm/scene.xml' title='Open live preview for Low-Cost Robot Arm'><img src='assets/low_cost_robot_arm-low_cost_robot_arm.png' width=120></a> | Low-Cost Robot Arm | 6 | [Apache-2.0](low_cost_robot_arm/LICENSE) |
 | <a href='https://live.mujoco.org/?model=github:google-deepmind/mujoco_menagerie/main/i2rt_yam/scene.xml' title='Open live preview for Yet Another Manipulator (YAM)'><img src='assets/i2rt_yam-yam.png' width=120></a> | Yet Another Manipulator (YAM) | 8 | [MIT](i2rt_yam/LICENSE) |
+| <a href='https://live.mujoco.org/?model=github:google-deepmind/mujoco_menagerie/main/seeed_rebot_devarm/scene.xml' title='Open live preview for Seeed Studio reBot DevArm'><img src='assets/seeed_rebot_devarm-seeed_rebot_devarm.png' width=120></a> | Seeed Studio reBot DevArm | 8 | [MIT](seeed_rebot_devarm/LICENSE) |
 
 **End-effectors.**
 

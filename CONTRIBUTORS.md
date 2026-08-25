@@ -29,6 +29,7 @@ Built by the Google DeepMind team with contributions from the open-source commun
 - [Haochen Shi](https://github.com/hshi74)
 - [Ian Noh](https://github.com/dongridong)
 - [Jason Chen](https://github.com/chenxin199305)
+- [Johnny Nunez](https://github.com/johnnynunez)
 - [Jonathan Zamora](https://github.com/jonzamora)
 - [Kallinteris Andreas](https://github.com/Kallinteris-Andreas)
 - [Lev Kozlov](https://github.com/lvjonok)
