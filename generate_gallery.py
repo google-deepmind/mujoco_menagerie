@@ -147,6 +147,7 @@ MODEL_MAP = {
   'iit_softfoot/softfoot': ModelType.BIOMECHANICAL,
   'ms_human_700/MS-Human-700': ModelType.BIOMECHANICAL,
   'seeed_rebot_devarm/seeed_rebot_devarm': ModelType.ARM,
+  'ostrich/ostrich': ModelType.BIOMECHANICAL,
 }
 
 # Per-model camera overrides. Populated only when auto-camera produces a
@@ -249,6 +250,9 @@ VIEW_ANGLE_OVERRIDE = {
   # Default biomechanical angle catches MS-Human-700 from the side; nudge
   # to a near-frontal 3/4.
   'ms_human_700/MS-Human-700': (20, 15),
+  # The ostrich faces +X, so the default biomechanical angle catches it from
+  # behind; swing round to a front-right 3/4.
+  'ostrich/ostrich': (-40, 12),
 }
 
 

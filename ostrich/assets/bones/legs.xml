@@ -1,0 +1,577 @@
+<mujoco>
+  <geom name="r_ilfb_hip" class="wrapping" size="0.095 0.25" pos="-0.05809 -0.0736 0.09738"
+    quat="0.7788 0.4197 0.4354 0.1669"/>
+  <geom name="l_ilfb_hip" class="wrapping" size="0.095 0.25" pos="-0.05809 0.0508 0.09738"
+    quat="0.4197 0.7788 -0.1669 -0.4354"/>
+  <geom name="r_pifm_l_hip" group="4" class="wrapping" size="0.19 0.25" pos="-0.1512 -0.1114 0.2303"
+    quat="0.6167 0.7451 0.1913 -0.1673"/>
+  <geom name="l_pifm_l_hip" group="4" class="wrapping" size="0.19 0.25" pos="-0.1512 0.0886 0.2303"
+    quat="0.7451 0.6167 0.1673 -0.1913"/>
+  <geom name="r_cfp_hip" class="wrapping" size="0.09 0.25" pos="-0.1675 -0.151 0.1893"
+    quat="0.7276 0.6152 -0.1991 0.2291"/>
+  <geom name="l_cfp_hip" class="wrapping" size="0.09 0.25" pos="-0.1675 0.1282 0.1893"
+    quat="0.6151 0.7276 -0.2291 0.1991"/>
+  <geom name="r_il_hip" class="wrapping" group="5" size="0.1 0.25" pos="-0.09218 -0.0914 0.09117"
+    quat="-0.6082 0.3607 -0.3608 0.6081"/>
+  <geom name="l_il_hip" class="wrapping" group="5" size="0.1 0.25" pos="-0.09218 0.0686 0.09117"
+    quat="-0.6082 0.3607 -0.3608 0.6081"/>
+  <geom name="pelvis" pos="-0.1144 -0.0114 0.136" quat="0.7422 0.6228 -0.1895 0.159" mesh="pelvis"/>
+  <site name="root" pos="-0.1144 -0.0114 0.136"/>
+  <site name="r_il_hip" group="5" pos="-0.1736 -0.3114 0.2176"/>
+  <site name="l_il_hip" group="5" pos="-0.1736 0.2886 0.2176"/>
+  <site name="r_ilfb_hip" group="5" pos="-0.1127 -0.1569 0.1063"/>
+  <site name="r_cfp_hip" group="5" pos="-0.1081 -0.1654 -0.08847"/>
+  <site name="l_ilfb_hip" group="5" pos="-0.1127 0.1341 0.1063"/>
+  <site name="l_cfp_hip" group="5" pos="-0.1081 0.1426 -0.08846"/>
+  <site name="r_ic-p1" pos="0.01568 -0.03187 0.2131"/>
+  <site name="r_ila-p1" pos="-0.2215 -0.05415 0.1798"/>
+  <site name="r_ilp-p1" pos="-0.3023 -0.04251 0.1352"/>
+  <site name="r_amb1-p1" pos="-0.06096 -0.03867 0.09751"/>
+  <site name="r_amb2-p1" pos="-0.04218 -0.0485 0.1721"/>
+  <site name="r_ilfba-p1" pos="-0.2446 -0.04765 0.1424"/>
+  <site name="r_ilfba-p2" pos="-0.2183 -0.0774 0.1344"/>
+  <site name="r_ilfbp-p1" pos="-0.3241 -0.04243 0.1109"/>
+  <site name="r_ilfbp-p2" pos="-0.287 -0.07631 0.1011"/>
+  <site name="r_ife-p1" pos="-0.1724 -0.07254 0.185"/>
+  <site name="r_itca-p1" pos="-0.06102 -0.03375 0.2115"/>
+  <site name="r_itca-p2" pos="-0.09728 -0.05096 0.206"/>
+  <site name="r_itcp-p1" pos="-0.1032 -0.03646 0.2142"/>
+  <site name="r_itcp-p2" pos="-0.1187 -0.05237 0.2069"/>
+  <site name="r_itcr-p1" pos="-0.0408 -0.03784 0.2043"/>
+  <site name="r_itm-p1" pos="-0.0971 -0.04431 0.1885"/>
+  <site name="r_itm-p2" pos="-0.09363 -0.06055 0.1898"/>
+  <site name="r_ifi-p1" pos="-0.07613 -0.03691 0.1983"/>
+  <site name="r_ifi-p2" pos="-0.07206 -0.05708 0.1458"/>
+  <site name="r_fclp-p1" pos="-0.3836 -0.04171 0.07164"/>
+  <site name="r_fclp-p2" pos="-0.3702 -0.06864 0.05611"/>
+  <site name="r_fcm-p1" pos="-0.3544 -0.08104 -0.00287"/>
+  <site name="r_pifm+l-p1" pos="-0.2344 -0.05796 0.04223"/>
+  <site name="r_om-p1" pos="-0.2272 -0.06931 0.017"/>
+  <site name="r_om-p2" pos="-0.133 -0.03939 0.07945"/>
+  <site name="r_om-p3" pos="-0.1261 -0.04551 0.08951"/>
+  <site name="r_isf-p1" pos="-0.1843 -0.04959 0.09013"/>
+  <site name="r_cfp-p1" pos="-0.3813 -0.03673 0.06965"/>
+  <site name="l_ic-p1" pos="0.01568 0.009072 0.2131"/>
+  <site name="l_ila-p1" pos="-0.2215 0.03135 0.1798"/>
+  <site name="l_ilp-p1" pos="-0.3023 0.01971 0.1352"/>
+  <site name="l_amb1-p1" pos="-0.06096 0.01587 0.09751"/>
+  <site name="l_amb2-p1" pos="-0.04218 0.0257 0.1721"/>
+  <site name="l_ilfba-p1" pos="-0.2446 0.02485 0.1424"/>
+  <site name="l_ilfba-p2" pos="-0.2183 0.0546 0.1344"/>
+  <site name="l_ilfbp-p1" pos="-0.3241 0.01963 0.1109"/>
+  <site name="l_ilfbp-p2" pos="-0.287 0.05351 0.1011"/>
+  <site name="l_ife-p1" pos="-0.1724 0.04974 0.185"/>
+  <site name="l_itca-p1" pos="-0.06102 0.01095 0.2115"/>
+  <site name="l_itca-p2" pos="-0.09728 0.02816 0.206"/>
+  <site name="l_itcp-p1" pos="-0.1032 0.01366 0.2142"/>
+  <site name="l_itcp-p2" pos="-0.1187 0.02957 0.2069"/>
+  <site name="l_itcr-p1" pos="-0.0408 0.01504 0.2043"/>
+  <site name="l_itm-p1" pos="-0.0971 0.02151 0.1885"/>
+  <site name="l_itm-p2" pos="-0.09363 0.03775 0.1899"/>
+  <site name="l_ifi-p1" pos="-0.07613 0.01411 0.1983"/>
+  <site name="l_ifi-p2" pos="-0.07206 0.03428 0.1458"/>
+  <site name="l_fclp-p1" pos="-0.3836 0.01891 0.07164"/>
+  <site name="l_fclp-p2" pos="-0.3702 0.04584 0.05611"/>
+  <site name="l_fcm-p1" pos="-0.3544 0.05824 -0.002868"/>
+  <site name="l_pifm+l-p1" pos="-0.2344 0.03516 0.04223"/>
+  <site name="l_om-p1" pos="-0.2272 0.04651 0.017"/>
+  <site name="l_om-p2" pos="-0.133 0.01659 0.07945"/>
+  <site name="l_om-p3" pos="-0.1261 0.02271 0.08951"/>
+  <site name="l_isf-p1" pos="-0.1843 0.02679 0.09013"/>
+  <site name="l_cfp-p1" pos="-0.3813 0.01393 0.06965"/>
+  <!-- right leg -->
+  <body name="r_femur" pos="-0.1144 -0.0469 0.136">
+    <inertial pos="0.008385 -0.03406 -0.1093" quat="0.1318 0.639 -0.7575 0.02286" mass="7.833844"
+      diaginertia="0.04598 0.0452 0.003406"/>
+    <joint name="r_hip_x" pos="0 0 0" axis="1 0 0" range="-0.5 0.2"/>
+    <joint name="r_hip_y" pos="0 0 0" axis="0 1 0" range="-1.5 0.3"/>
+    <joint name="r_hip_z" pos="0 0 0" axis="0 0 1" range="-1 0.6"/>
+    <geom name="r_itc_itm_hip" class="wrapping" size="0.02 0.25" pos="0.0086 0.0067 -0.0017"
+      quat="0.787 0.593 0.1359 0.1024"/>
+    <geom name="r_itcr_hip" class="wrapping" size="0.02 0.25" pos="0.0395 0.003401 -0.0379"
+      quat="0.787 0.593 0.1359 0.1024"/>
+    <geom name="r_itcr_femur" class="wrapping" size="0.055 0.25" pos="0.0086 -0.0181 -0.0882"
+      quat="0.1372 0.9758 0.1686 -0.02369"/>
+    <geom name="r_deep_knee_flexors" class="wrapping" size="0.015 0.1" pos="-0.0197 -0.0799 -0.2006"
+      quat="0.4657 0.7997 0.3003 0.2311"/>
+    <geom name="r_femur" class="leg" quat="0.7071 0.7071 4.66e-08 2.427e-06" mesh="r_femur"/>
+    <site name="r_itc_itm_hip" group="5" pos="0.1028 0.03895 -0.01095"/>
+    <site name="r_itcr_hip" group="5" pos="0.1337 0.03565 -0.04714"/>
+    <site name="r_ic-p2" pos="0.04007 0.0284 -0.2151"/>
+    <site name="r_ila-p2" pos="0.04286 -0.08141 -0.166"/>
+    <site name="r_ilp-p2" pos="0.0362 -0.107 -0.1659"/>
+    <site name="r_fmtl-p1" pos="0.02641 -0.05062 -0.08096"/>
+    <site name="r_fmtl-p2" pos="0.0409 -0.06183 -0.1664"/>
+    <site name="r_fmtim-p1" pos="0.02044 -0.01269 -0.08193"/>
+    <site name="r_fmtim-p2" pos="0.02678 2.659e-06 -0.1872"/>
+    <site name="r_fmtm-p1" pos="-0.01325 -0.03101 -0.1237"/>
+    <site name="r_fmtm-p2" pos="-0.01794 0.0006028 -0.2059"/>
+    <site name="r_amb1-p2" pos="-0.03492 -0.01377 -0.2097"/>
+    <site name="r_amb2-p2" pos="0.03086 0.01991 -0.1818"/>
+    <site name="r_ife-p2" pos="0.04201 -0.0387 -0.0239"/>
+    <site name="r_itca-p3" pos="0.07284 -0.0092 -0.01077"/>
+    <site name="r_itca-p4" pos="0.05228 -0.03164 -0.01892"/>
+    <site name="r_itcp-p3" pos="0.07366 -0.00802 -0.00221"/>
+    <site name="r_itcp-p4" pos="0.0509 -0.03433 -0.01365"/>
+    <site name="r_itcr-p2" pos="0.06629 -0.01056 -0.0384"/>
+    <site name="r_itcr-p3" pos="0.05231 -0.0355 -0.03508"/>
+    <site name="r_itm-p3" pos="0.07469 -0.004299 -0.02248"/>
+    <site name="r_itm-p4" pos="0.05276 -0.0319 -0.02598"/>
+    <site name="r_ifi-p3" pos="-0.00619 -0.01879 -0.05886"/>
+    <site name="r_fclp-p3" pos="-0.0853 -0.1429 -0.1337"/>
+    <site name="r_pifm+l-p2" pos="-0.01522 -0.05472 -0.1491"/>
+    <site name="r_om-p4" pos="0.02169 -0.04932 0.005649"/>
+    <site name="r_om-p5" pos="0.04177 -0.03871 0.00454"/>
+    <site name="r_isf-p2" pos="0.01832 -0.05298 -0.009141"/>
+    <site name="r_isf-p3" pos="0.04091 -0.04254 -0.01021"/>
+    <site name="r_cfp-p2" pos="0.00346 -0.0494 -0.07167"/>
+    <site name="r_gl-p1" pos="0.01405 -0.06649 -0.1919"/>
+    <site name="r_gl-p2" pos="0.01349 -0.09997 -0.201"/>
+    <site name="r_gim-p1" pos="-0.02829 -0.04962 -0.1587"/>
+    <site name="r_gim-p2" pos="-0.04749 -0.06308 -0.189"/>
+    <site name="r_tcf-p1" pos="0.001181 -0.04849 -0.2374"/>
+    <site name="r_fhl-p1" pos="-0.008509 -0.0687 -0.1765"/>
+    <site name="r_fhl-p2" pos="-0.01509 -0.07434 -0.1837"/>
+    <site name="r_fhl-p3" pos="-0.02648 -0.07857 -0.1795"/>
+    <site name="r_fpd3-p1" pos="-0.01774 -0.06824 -0.1793"/>
+    <site name="r_fpd3-p2" pos="-0.025 -0.07519 -0.1793"/>
+    <site name="r_fpd4-p1" pos="-0.01026 -0.07342 -0.1749"/>
+    <site name="r_fpd4-p2" pos="-0.02017 -0.07668 -0.1823"/>
+    <site name="r_fpd4-p3" pos="-0.02493 -0.07929 -0.1793"/>
+    <site name="r_fl-p1" pos="0.02539 -0.09404 -0.2879"/>
+    <body name="r_tibiotarsus" pos="9.772e-07 -0.0543 -0.2338">
+      <inertial pos="0.001886 -0.002379 -0.2124" quat="-0.01647 0.6978 -0.7161 0.006417" mass="5.30291"
+        diaginertia="0.1206 0.1205 0.002178"/>
+      <joint name="r_knee_y" pos="0 0 0" axis="0 1 0" range="0 2"/>
+      <joint name="r_knee_z" pos="0 0 0" axis="0 0 1" range="-0.5 0.5"/>
+      <geom name="r_fmtim_fmtl_knee" class="wrapping" size="0.038 0.25" pos="-0.0014 -0.0093 0.0103"
+        quat="0.654 0.654 -0.2688 0.2688"/>
+      <geom name="r_gastroc_ankle" class="wrapping" size="0.035 0.075" pos="-0.005799 0.009006 -0.4435"
+        quat="0.7071 0.7071 4.66e-08 2.427e-06"/>
+      <geom name="r_fps_deep_ankle" class="wrapping" size="0.03 0.1" pos="0.003102 -0.008994 -0.4537"
+        quat="0.6408 0.683 -0.2988 0.183"/>
+      <geom name="r_fdl_fhl_ankle" class="wrapping" size="0.03 0.25" pos="-0.001398 -9.384e-05 -0.4501"
+        quat="0.6645 0.6645 -0.2418 0.2418"/>
+      <geom name="r_ambd_knee" class="wrapping" size="0.038 0.05" pos="0.025 0.0012 0.0126"
+        quat="0.7071 0.7071 4.66e-08 2.427e-06"/>
+      <geom name="r_ic_knee" class="wrapping" size="0.03 0.25" pos="-0.0143 0.0054 0.0098"
+        quat="0.6409 0.6409 0.2988 0.2988"/>
+      <geom name="r_edl_tc_ankle" class="wrapping" size="0.02 0.05" pos="0.0111 -0.0008937 -0.453"
+        quat="0.68 0.7207 -0.09434 -0.09602"/>
+      <geom name="r_tibiotarsus" class="leg" quat="0.7071 0.7071 4.66e-08 2.427e-06" mesh="r_tibiotarsus"/>
+      <site name="r_fmtim_fmtl_knee" group="5" pos="0.06969 -0.009301 0.08063"/>
+      <site name="r_gastroc_ankle" group="5" pos="-0.1058 0.009006 -0.4435"/>
+      <site name="r_fps_deep_ankle" group="5" pos="-0.07234 0.00837 -0.517"/>
+      <site name="r_fdl_fhl_ankle" group="5" pos="-0.078 -9.322e-05 -0.5144"/>
+      <site name="r_ambd_knee" group="5" pos="0.125 0.0012 0.0126"/>
+      <site name="r_ic_knee" group="5" pos="0.04998 0.082 0.009801"/>
+      <site name="r_edl_tc_ankle" group="5" pos="0.1075 -0.02755 -0.454"/>
+      <site name="r_ic-p3" pos="0.00922 0.01565 -0.01128"/>
+      <site name="r_ila-p3" pos="0.0144 -0.02866 0.01634"/>
+      <site name="r_ila-p4" pos="0.04358 -0.01832 -0.00834"/>
+      <site name="r_ilp-p3" pos="0.02376 -0.041 0.0007695"/>
+      <site name="r_ilp-p4" pos="0.04388 -0.02347 -0.01463"/>
+      <site name="r_fmtl-p3" pos="0.03878 -0.02914 -0.02884"/>
+      <site name="r_fmtim-p3" pos="0.052 -0.011 -0.014"/>
+      <site name="r_fmtm-p3" pos="0.01038 0.01091 -0.01164"/>
+      <site name="r_amb1-p3" pos="0.00364 0.01766 -0.01357"/>
+      <site name="r_amb2-p3" pos="0.08447 -0.00453 0.00169"/>
+      <site name="r_amb2-p4" pos="0.0412 -0.02664 -0.08594"/>
+      <site name="r_amb2-p5" pos="0.00575 -0.0295 -0.1057"/>
+      <site name="r_ilfba-p3" pos="-0.001849 -0.0336 -0.1406"/>
+      <site name="r_ilfbp-p3" pos="-0.001849 -0.0336 -0.1406"/>
+      <site name="r_fclp-p4" pos="-0.01369 -0.0146 -0.1197"/>
+      <site name="r_fcm-p4" pos="-0.01611 -0.007458 -0.1202"/>
+      <site name="r_gl-p3" pos="-0.001966 -0.07206 -0.02661"/>
+      <site name="r_gl-p4" pos="-0.01765 -0.03604 -0.1598"/>
+      <site name="r_gl-p5" pos="-0.02582 -0.001835 -0.3675"/>
+      <site name="r_gim-p3" pos="-0.01754 -0.03541 -0.159"/>
+      <site name="r_gim-p4" pos="-0.02523 -0.001275 -0.3667"/>
+      <site name="r_gm-p1" pos="0.05348 0.03327 0.0342"/>
+      <site name="r_gm-p2" pos="0.02616 0.03254 -0.09808"/>
+      <site name="r_gm-p3" pos="-0.02631 0.004065 -0.3665"/>
+      <site name="r_edl-p1" pos="0.01628 -0.006038 -0.1065"/>
+      <site name="r_edl-p2" pos="0.02397 0.001504 -0.2864"/>
+      <site name="r_edl-p3" pos="0.0153 0.001006 -0.419"/>
+      <site name="r_tcf-p2" pos="0.01874 -0.02283 -0.02663"/>
+      <site name="r_tcf-p3" pos="0.02312 -0.01127 -0.1552"/>
+      <site name="r_tcf-p4" pos="0.02191 0.003006 -0.403"/>
+      <site name="r_tct-p1" pos="0.0466 -0.01982 -0.04363"/>
+      <site name="r_tct-p2" pos="0.02331 -0.008998 -0.155"/>
+      <site name="r_tct-p3" pos="0.0212 0.006006 -0.402"/>
+      <site name="r_fdl-p1" pos="-0.03149 -0.01282 -0.04311"/>
+      <site name="r_fdl-p2" pos="-0.01645 -0.01218 -0.1445"/>
+      <site name="r_fdl-p3" pos="-0.01492 -0.006225 -0.379"/>
+      <site name="r_fhl-p4" pos="-0.01536 -0.005748 -0.1428"/>
+      <site name="r_fhl-p5" pos="-0.01053 0.0002351 -0.3785"/>
+      <site name="r_fp_pd3-p1" pos="-0.04937 -0.02582 0.004319"/>
+      <site name="r_fp_pd3-p2" pos="-0.03999 -0.02865 -0.0713"/>
+      <site name="r_fp_pd3-p3" pos="-0.01648 -0.005255 -0.3602"/>
+      <site name="r_fp_pd3-p4" pos="-0.02482 0.007786 -0.4238"/>
+      <site name="r_fpd3-p4" pos="-0.036 -0.01744 -0.11"/>
+      <site name="r_fpd3-p5" pos="-0.02065 -0.002585 -0.3947"/>
+      <site name="r_fpd3-p6" pos="-0.02272 0.0001058 -0.4305"/>
+      <site name="r_fpd4-p4" pos="-0.0112 -0.02737 -0.1465"/>
+      <site name="r_fpd4-p5" pos="-0.01799 -0.005835 -0.3968"/>
+      <site name="r_fpd4-p6" pos="-0.0204 -0.003454 -0.4257"/>
+      <site name="r_fl-p2" pos="0.04252 -0.04356 -0.08611"/>
+      <site name="r_fl-p3" pos="0.01879 -0.03632 -0.2251"/>
+      <site name="r_fl-p4" pos="0.01022 -0.02305 -0.3995"/>
+      <site name="r_fl-p5" pos="-0.004998 -0.03351 -0.4561"/>
+      <body name="r_tarsometatarsus" pos="1.488e-06 6.056e-06 -0.442">
+        <inertial pos="0.002975 0.002176 -0.2295" quat="-0.003585 0.974 -0.2265 -0.002015" mass="1.037683"
+          diaginertia="0.01956 0.01951 0.0002057"/>
+        <joint name="r_ankle_y" axis="0 1 0" range="-2.3 0"/>
+        <geom name="r_toe_flexors_deep" class="wrapping" size="0.023 0.05" pos="0.002501 0.002406 -0.4319"
+          quat="0.7229 0.6807 -0.08457 -0.08303"/>
+        <geom name="r_fpd4_toe" class="wrapping" size="0.023 0.05" pos="0.0002015 -0.002494 -0.4326"
+          quat="0.6922 0.6922 -0.1442 -0.1442"/>
+        <geom name="r_edl_toes" class="wrapping" size="0.023 0.05" pos="0.002901 0.01521 -0.4312"
+          quat="0.7143 0.6994 -0.02092 -0.01218"/>
+        <geom name="r_toe_flexors_superficial" class="wrapping" size="0.023 0.05" pos="-0.001999 -0.0001941 -0.4296"
+          quat="0.7016 0.7105 -0.02848 -0.04751"/>
+        <geom name="r_tarsometatarsus" class="leg" quat="0.7071 0.7071 4.66e-08 2.427e-06" mesh="r_tarsometatarsus"/>
+        <site name="r_toe_flexors_deep" group="5" pos="-0.1947 0.02592 -0.3328"/>
+        <site name="r_fpd4_toe" group="5" pos="-0.1915 0.03745 -0.4326"/>
+        <site name="r_edl_toes" group="5" pos="0.1028 0.01054 -0.4299"/>
+        <site name="r_toe_flexors_superficial" group="5" pos="-0.2 0.01052 -0.3"/>
+        <site name="r_gl-p6" pos="-0.0359 0.002661 -0.05455"/>
+        <site name="r_gl-p7" pos="-0.01602 -0.001428 -0.1625"/>
+        <site name="r_gim-p5" pos="-0.03728 0.006011 -0.05387"/>
+        <site name="r_gim-p6" pos="-0.01663 0.001102 -0.1623"/>
+        <site name="r_gm-p4" pos="-0.03806 0.008861 -0.05337"/>
+        <site name="r_gm-p5" pos="-0.0149 0.004592 -0.1622"/>
+        <site name="r_edl-p4" pos="0.019 -0.001949 -0.034"/>
+        <site name="r_edl-p5" pos="0.01787 -0.001639 -0.07374"/>
+        <site name="r_edl-p6" pos="0.02376 0.001024 -0.3198"/>
+        <site name="r_edl-p7" pos="0.02491 0.002475 -0.3725"/>
+        <site name="r_tcf-p5" pos="0.03272 0.01029 -0.04332"/>
+        <site name="r_tcf-p6" pos="0.02092 0.009801 -0.09836"/>
+        <site name="r_tct-p4" pos="0.03329 0.01319 -0.04262"/>
+        <site name="r_tct-p5" pos="0.02082 0.01253 -0.09834"/>
+        <site name="r_fdl-p4" pos="-0.0212 -0.01152 -0.0393"/>
+        <site name="r_fdl-p5" pos="-0.01588 -0.007617 -0.2353"/>
+        <site name="r_fdl-p6" pos="-0.001729 -0.0002247 -0.3865"/>
+        <site name="r_fdl-p7" pos="-0.007408 0.005006 -0.4068"/>
+        <site name="r_fhl-p6" pos="-0.02219 -0.008969 -0.03922"/>
+        <site name="r_fhl-p7" pos="-0.01661 -0.003807 -0.2355"/>
+        <site name="r_fhl-p8" pos="-0.003479 0.004055 -0.3865"/>
+        <site name="r_fhl-p9" pos="-0.007228 0.006118 -0.407"/>
+        <site name="r_fp_pd3-p5" pos="-0.02758 -0.002199 -0.04894"/>
+        <site name="r_fp_pd3-p6" pos="-0.01949 -0.001087 -0.2373"/>
+        <site name="r_fp_pd3-p7" pos="-0.005729 0.007725 -0.3969"/>
+        <site name="r_fp_pd3-p8" pos="-0.017 0.007005 -0.405"/>
+        <site name="r_fpd3-p7" pos="-0.02736 0.01532 -0.04498"/>
+        <site name="r_fpd3-p8" pos="-0.02518 0.01601 -0.08081"/>
+        <site name="r_fpd3-p9" pos="-0.02121 0.008293 -0.2383"/>
+        <site name="r_fpd3-p10" pos="-0.004179 0.01364 -0.3989"/>
+        <site name="r_fpd3-p11" pos="-0.0161 0.01178 -0.405"/>
+        <site name="r_fpd4-p7" pos="-0.02945 -0.009419 -0.04521"/>
+        <site name="r_fpd4-p8" pos="-0.02588 -0.004849 -0.08225"/>
+        <site name="r_fpd4-p9" pos="-0.02009 -0.003687 -0.237"/>
+        <site name="r_fpd4-p10" pos="-0.002959 -0.005694 -0.4004"/>
+        <site name="r_fl-p6" pos="-0.00854 -0.03128 -0.03975"/>
+        <site name="r_fl-p7" pos="-0.01516 -0.01417 -0.09679"/>
+        <site name="r_fl-p8" pos="-0.02342 0.009802 -0.1306"/>
+        <site name="r_fl-p9" pos="-0.0218 0.002563 -0.2375"/>
+        <site name="r_fl-p10" pos="-0.005559 0.01117 -0.3986"/>
+        <body name="r_pes" pos="1.434e-06 5.837e-06 -0.426">
+          <inertial pos="0.06599 -0.005481 -0.05537" quat="-0.1785 0.7799 -0.1385 0.5837" mass="0.582115"
+            diaginertia="0.002102 0.001931 0.0003652"/>
+          <joint name="r_mtp_y" pos="0 0 0" axis="0 1 0" range="-0.3 2"/>
+          <geom name="r_phalanx1" class="leg" quat="0.6513 0.6513 0.2754 -0.2754" mesh="r_phalanx1"/>
+          <geom name="r_phalanx2" class="leg" pos="-0.035 7.682e-07 -0.065" quat="0.7071 0.7071 4.66e-08 2.427e-06"
+            mesh="r_phalanx2"/>
+          <geom name="r_phalanx3" class="leg" pos="-0.035 7.682e-07 -0.065" quat="0.7071 0.7071 4.66e-08 2.427e-06"
+            mesh="r_phalanx3"/>
+          <geom name="r_phalanx4" class="leg" pos="-0.04 7.507e-07 -0.065" quat="0.7071 0.7071 4.66e-08 2.427e-06"
+            mesh="r_phalanx4"/>
+          <geom name="r_thumb" class="leg" quat="0.5836 0.5836 0.3993 -0.3993" mesh="r_thumb"/>
+          <site name="r_fpd4-p12" pos="-0.0074 -0.02453 -0.02829"/>
+          <site name="r_fpd4-p13" pos="0.00344 -0.03246 -0.04105"/>
+          <site name="r_fpd4-p14" pos="0.01464 -0.04732 -0.07"/>
+          <site name="r_fpd4-p15" pos="0.04209 -0.07435 -0.08281"/>
+          <site name="r_edl-p8" pos="0.02633 -0.00852 0.02126"/>
+          <site name="r_edl-p9" pos="0.05763 0.006261 -0.05815"/>
+          <site name="r_edl-p10" pos="0.1071 0.007131 -0.06189"/>
+          <site name="r_edl-p11" pos="0.1188 0.003981 -0.06185"/>
+          <site name="r_fdl-p8" pos="0.02411 -0.003759 -0.055"/>
+          <site name="r_fdl-p9" pos="0.04896 -0.0008987 -0.0827"/>
+          <site name="r_fdl-p10" pos="0.07061 -0.0008885 -0.08751"/>
+          <site name="r_fdl-p11" pos="0.1118 0.001892 -0.08555"/>
+          <site name="r_fdl-p12" pos="0.1509 0.002532 -0.08637"/>
+          <site name="r_fdl-p13" pos="0.1845 0.002752 -0.07934"/>
+          <site name="r_fhl-p10" pos="0.02411 0.008721 -0.0523"/>
+          <site name="r_fhl-p11" pos="0.04854 0.002671 -0.08336"/>
+          <site name="r_fhl-p12" pos="0.07094 0.004031 -0.08795"/>
+          <site name="r_fhl-p13" pos="0.112 0.002422 -0.08597"/>
+          <site name="r_fhl-p14" pos="0.1513 0.0002617 -0.08648"/>
+          <site name="r_fhl-p15" pos="0.1857 -4.824e-05 -0.08132"/>
+          <site name="r_fp_pd3-p9" pos="0.02633 0.007961 -0.05041"/>
+          <site name="r_fp_pd3-p10" pos="0.05383 0.001141 -0.08533"/>
+          <site name="r_fp_pd3-p11" pos="0.0672 0.0001914 -0.08555"/>
+          <site name="r_fp_pd3-p12" pos="0.111 -0.002498 -0.08313"/>
+          <site name="r_fp_pd3-p13" pos="0.1396 -0.001948 -0.08303"/>
+          <site name="r_fp_pd3-p14" pos="0.1547 -0.001478 -0.0817"/>
+          <site name="r_fpd3-p12" pos="0.02411 0.01366 -0.05166"/>
+          <site name="r_fpd3-p13" pos="0.05338 0.006601 -0.08749"/>
+          <site name="r_fpd3-p14" pos="0.06833 0.005141 -0.08763"/>
+          <site name="r_fpd3-p15" pos="0.1113 0.001922 -0.08342"/>
+          <site name="r_fl-p12" pos="0.02411 0.01108 -0.055"/>
+          <site name="r_fl-p13" pos="0.08668 0.003311 -0.08738"/>
+          <site name="r_fl-p14" pos="0.1029 0.003132 -0.0861"/>
+          <site name="r_fl-p15" pos="0.1459 -0.0007383 -0.08404"/>
+        </body>
+      </body>
+    </body>
+  </body>
+  <!-- left leg -->
+  <body name="l_femur" pos="-0.1144 0.0241 0.136">
+    <inertial pos="0.008384 0.03406 -0.1093" quat="-0.02287 0.7575 -0.639 -0.1318" mass="7.833844"
+      diaginertia="0.04598 0.0452 0.003406"/>
+    <joint name="l_hip_x" pos="0 0 0" axis="1 0 0" range="-0.2 0.5"/>
+    <joint name="l_hip_y" pos="0 0 0" axis="0 1 0" range="-1.5 0.3"/>
+    <joint name="l_hip_z" pos="0 0 0" axis="0 0 1" range="-0.6 1"/>
+    <geom name="l_itc_itm_hip" class="wrapping" size="0.02 0.25" pos="0.0086 -0.0067 -0.0017"
+      quat="0.593 0.787 -0.1024 -0.1359"/>
+    <geom name="l_itcr_hip" class="wrapping" size="0.02 0.25" pos="0.0395 -0.003399 -0.0379"
+      quat="0.593 0.787 -0.1024 -0.1359"/>
+    <geom name="l_itcr_femur" class="wrapping" size="0.055 0.25" pos="0.0086 0.0181 -0.0882"
+      quat="0.9758 0.1372 0.02369 -0.1686"/>
+    <geom name="l_deep_knee_flexors" class="wrapping" size="0.015 0.1" pos="-0.0197 0.0799 -0.2006"
+      quat="0.7997 0.4657 -0.2311 -0.3003"/>
+    <geom name="l_femur" class="leg" quat="0.7071 0.7071 4.66e-08 2.427e-06" mesh="l_femur"/>
+    <site name="l_itc_itm_hip" pos="0.1028 -0.03895 -0.01095"/>
+    <site name="l_itcr_hip" pos="0.1337 -0.03564 -0.04715"/>
+    <site name="l_ic-p2" pos="0.04007 -0.0284 -0.2151"/>
+    <site name="l_ila-p2" pos="0.04286 0.08141 -0.166"/>
+    <site name="l_ilp-p2" pos="0.0362 0.107 -0.1659"/>
+    <site name="l_fmtl-p1" pos="0.02641 0.05062 -0.08096"/>
+    <site name="l_fmtl-p2" pos="0.0409 0.06183 -0.1664"/>
+    <site name="l_fmtim-p1" pos="0.02044 0.01269 -0.08193"/>
+    <site name="l_fmtim-p2" pos="0.02678 2.659e-06 -0.1872"/>
+    <site name="l_fmtm-p1" pos="-0.01325 0.03101 -0.1237"/>
+    <site name="l_fmtm-p2" pos="-0.01794 -0.0005972 -0.2059"/>
+    <site name="l_amb1-p2" pos="-0.03492 0.01377 -0.2097"/>
+    <site name="l_amb2-p2" pos="0.03086 -0.01991 -0.1818"/>
+    <site name="l_ife-p2" pos="0.04201 0.0387 -0.0239"/>
+    <site name="l_itca-p3" pos="0.07284 0.0092 -0.01077"/>
+    <site name="l_itca-p4" pos="0.05228 0.03164 -0.01892"/>
+    <site name="l_itcp-p3" pos="0.07366 0.00802 -0.00221"/>
+    <site name="l_itcp-p4" pos="0.0509 0.03433 -0.01365"/>
+    <site name="l_itcr-p2" pos="0.06629 0.01056 -0.0384"/>
+    <site name="l_itcr-p3" pos="0.05231 0.0355 -0.03508"/>
+    <site name="l_itm-p3" pos="0.07469 0.004301 -0.02248"/>
+    <site name="l_itm-p4" pos="0.05276 0.0319 -0.02598"/>
+    <site name="l_ifi-p3" pos="-0.00619 0.01879 -0.05886"/>
+    <site name="l_fclp-p3" pos="-0.0853 0.1429 -0.1337"/>
+    <site name="l_pifm+l-p2" pos="-0.01522 0.05472 -0.1491"/>
+    <site name="l_om-p4" pos="0.02169 0.04932 0.005651"/>
+    <site name="l_om-p5" pos="0.04177 0.03871 0.004541"/>
+    <site name="l_isf-p2" pos="0.01832 0.05298 -0.009139"/>
+    <site name="l_isf-p3" pos="0.04091 0.04254 -0.01021"/>
+    <site name="l_cfp-p2" pos="0.00346 0.0494 -0.07167"/>
+    <site name="l_gl-p1" pos="0.01405 0.06649 -0.1919"/>
+    <site name="l_gl-p2" pos="0.01349 0.09997 -0.201"/>
+    <site name="l_gim-p1" pos="-0.02829 0.04962 -0.1587"/>
+    <site name="l_gim-p2" pos="-0.04749 0.06308 -0.189"/>
+    <site name="l_tcf-p1" pos="0.001181 0.04849 -0.2374"/>
+    <site name="l_fhl-p1" pos="-0.00851 0.0687 -0.1765"/>
+    <site name="l_fhl-p2" pos="-0.01509 0.07434 -0.1837"/>
+    <site name="l_fhl-p3" pos="-0.02648 0.07857 -0.1794"/>
+    <site name="l_fpd3-p1" pos="-0.01774 0.06824 -0.1793"/>
+    <site name="l_fpd3-p2" pos="-0.025 0.07519 -0.1793"/>
+    <site name="l_fpd4-p1" pos="-0.01026 0.07342 -0.1749"/>
+    <site name="l_fpd4-p2" pos="-0.02017 0.07668 -0.1823"/>
+    <site name="l_fpd4-p3" pos="-0.02493 0.07929 -0.1793"/>
+    <site name="l_fl-p1" pos="0.02539 0.09404 -0.2879"/>
+    <body name="l_tibiotarsus" pos="5.972e-07 0.0543 -0.2338">
+      <inertial pos="0.001886 0.002385 -0.2124" quat="-0.006427 0.7161 -0.6978 0.01646" mass="5.30291"
+        diaginertia="0.1206 0.1205 0.002178"/>
+      <joint name="l_knee_y" pos="0 0 0" axis="0 1 0" range="0 2"/>
+      <joint name="l_knee_z" pos="0 0 0" axis="0 0 1" range="-0.5 0.5"/>
+      <geom name="l_fmtim_fmtl_knee" class="wrapping" size="0.038 0.25" pos="-0.0014 0.0093 0.0103"
+        quat="0.654 0.654 -0.2688 0.2688"/>
+      <geom name="l_gastroc_ankle" class="wrapping" size="0.035 0.075" pos="-0.005798 -0.008994 -0.4435"
+        quat="0.7071 0.7071 4.66e-08 2.427e-06"/>
+      <geom name="l_fps_deep_ankle" class="wrapping" size="0.03 0.1" pos="0.003101 0.009006 -0.4537"
+        quat="0.683 0.6408 -0.183 0.2988"/>
+      <geom name="l_fdl_fhl_ankle" class="wrapping" size="0.03 0.25" pos="-0.001398 0.0001062 -0.4501"
+        quat="0.6645 0.6645 -0.2418 0.2418"/>
+      <geom name="l_ambd_knee" class="wrapping" size="0.038 0.05" pos="0.025 -0.0012 0.0126"
+        quat="0.7071 0.7071 4.66e-08 2.427e-06"/>
+      <geom name="l_ic_knee" class="wrapping" size="0.03 0.25" pos="-0.0143 -0.0054 0.0098"
+        quat="0.6409 0.6409 -0.2988 -0.2988"/>
+      <geom name="l_edl_tc_ankle" class="wrapping" size="0.02 0.05" pos="0.0111 0.0009062 -0.453"
+        quat="0.7207 0.68 0.09603 0.09434"/>
+      <geom name="l_tibiotarsus" class="leg" quat="0.7071 0.7071 4.66e-08 2.427e-06" mesh="l_tibiotarsus"/>
+      <site name="l_fmtim_fmtl_knee" group="5" pos="0.06969 0.009299 0.08063"/>
+      <site name="l_gastroc_ankle" group="5" pos="-0.1058 -0.008994 -0.4435"/>
+      <site name="l_fps_deep_ankle" group="5" pos="-0.07234 -0.008356 -0.517"/>
+      <site name="l_fdl_fhl_ankle" group="5" pos="-0.078 0.0001068 -0.5144"/>
+      <site name="l_ambd_knee" group="5" pos="0.125 -0.0012 0.0126"/>
+      <site name="l_ic_knee" group="5" pos="0.04998 -0.082 0.009799"/>
+      <site name="l_edl_tc_ankle" group="5" pos="0.1075 0.02757 -0.454"/>
+      <site name="l_ic-p3" pos="0.00922 -0.01565 -0.01128"/>
+      <site name="l_ila-p3" pos="0.0144 0.02866 0.01634"/>
+      <site name="l_ila-p4" pos="0.04358 0.01832 -0.00834"/>
+      <site name="l_ilp-p3" pos="0.02376 0.041 0.0007706"/>
+      <site name="l_ilp-p4" pos="0.04388 0.02347 -0.01463"/>
+      <site name="l_fmtl-p3" pos="0.03878 0.02914 -0.02884"/>
+      <site name="l_fmtim-p3" pos="0.052 0.011 -0.014"/>
+      <site name="l_fmtm-p3" pos="0.01038 -0.01091 -0.01164"/>
+      <site name="l_amb1-p3" pos="0.00364 -0.01766 -0.01357"/>
+      <site name="l_amb2-p3" pos="0.08447 0.00453 0.00169"/>
+      <site name="l_amb2-p4" pos="0.0412 0.02664 -0.08594"/>
+      <site name="l_amb2-p5" pos="0.00575 0.0295 -0.1057"/>
+      <site name="l_ilfba-p3" pos="-0.00185 0.0336 -0.1406"/>
+      <site name="l_ilfbp-p3" pos="-0.00185 0.0336 -0.1406"/>
+      <site name="l_fclp-p4" pos="-0.01369 0.0146 -0.1197"/>
+      <site name="l_fcm-p4" pos="-0.01611 0.007462 -0.1202"/>
+      <site name="l_gl-p3" pos="-0.001966 0.07206 -0.02661"/>
+      <site name="l_gl-p4" pos="-0.01765 0.03604 -0.1598"/>
+      <site name="l_gl-p5" pos="-0.02582 0.001845 -0.3675"/>
+      <site name="l_gim-p3" pos="-0.01754 0.03541 -0.159"/>
+      <site name="l_gim-p4" pos="-0.02523 0.001285 -0.3667"/>
+      <site name="l_gm-p1" pos="0.05348 -0.03327 0.0342"/>
+      <site name="l_gm-p2" pos="0.02616 -0.03254 -0.09808"/>
+      <site name="l_gm-p3" pos="-0.02631 -0.004055 -0.3665"/>
+      <site name="l_edl-p1" pos="0.01628 0.006041 -0.1065"/>
+      <site name="l_edl-p2" pos="0.02397 -0.001496 -0.2864"/>
+      <site name="l_edl-p3" pos="0.0153 -0.0009942 -0.419"/>
+      <site name="l_tcf-p2" pos="0.01874 0.02283 -0.02663"/>
+      <site name="l_tcf-p3" pos="0.02312 0.01127 -0.1552"/>
+      <site name="l_tcf-p4" pos="0.02191 -0.002994 -0.403"/>
+      <site name="l_tct-p1" pos="0.0466 0.01982 -0.04363"/>
+      <site name="l_tct-p2" pos="0.02331 0.009002 -0.155"/>
+      <site name="l_tct-p3" pos="0.0212 -0.005994 -0.402"/>
+      <site name="l_fdl-p1" pos="-0.03149 0.01282 -0.04311"/>
+      <site name="l_fdl-p2" pos="-0.01645 0.01218 -0.1445"/>
+      <site name="l_fdl-p3" pos="-0.01492 0.006235 -0.379"/>
+      <site name="l_fhl-p4" pos="-0.01536 0.005752 -0.1428"/>
+      <site name="l_fhl-p5" pos="-0.01053 -0.0002248 -0.3785"/>
+      <site name="l_fp_pd3-p1" pos="-0.04937 0.02582 0.00432"/>
+      <site name="l_fp_pd3-p2" pos="-0.03999 0.02865 -0.0713"/>
+      <site name="l_fp_pd3-p3" pos="-0.01648 0.005265 -0.3602"/>
+      <site name="l_fp_pd3-p4" pos="-0.02482 -0.007774 -0.4238"/>
+      <site name="l_fpd3-p4" pos="-0.036 0.01744 -0.11"/>
+      <site name="l_fpd3-p5" pos="-0.02065 0.002595 -0.3947"/>
+      <site name="l_fpd3-p6" pos="-0.02272 -9.418e-05 -0.4305"/>
+      <site name="l_fpd4-p4" pos="-0.0112 0.02737 -0.1465"/>
+      <site name="l_fpd4-p5" pos="-0.01799 0.005845 -0.3968"/>
+      <site name="l_fpd4-p6" pos="-0.0204 0.003466 -0.4257"/>
+      <site name="l_fl-p2" pos="0.04252 0.04356 -0.08611"/>
+      <site name="l_fl-p3" pos="0.01879 0.03632 -0.2251"/>
+      <site name="l_fl-p4" pos="0.01022 0.02307 -0.3995"/>
+      <site name="l_fl-p5" pos="-0.004999 0.03353 -0.4561"/>
+      <body name="l_tarsometatarsus" pos="1.488e-06 6.056e-06 -0.442">
+        <inertial pos="0.002975 -0.00217 -0.2295" quat="0.003572 0.974 0.2265 -0.002012" mass="1.037683"
+          diaginertia="0.01956 0.01951 0.0002057"/>
+        <joint name="l_ankle_y" axis="0 1 0" range="-2.3 0"/>
+        <geom name="l_toe_flexors_superficial" class="wrapping" size="0.023 0.05" pos="-0.001999 0.0002059 -0.4296"
+          quat="0.7016 0.7105 -0.02848 -0.04751"/>
+        <geom name="l_toe_flexors_deep" class="wrapping" size="0.023 0.05" pos="0.002501 -0.002394 -0.4319"
+          quat="0.6807 0.7229 0.08303 0.08457"/>
+        <geom name="l_toe_extensors_superficial" class="wrapping" size="0.023 0.05" pos="0.015 -0.0004943 -0.41"
+          quat="0.7016 0.7105 -0.02848 -0.04751"/>
+        <geom name="l_fpd4_toe" class="wrapping" size="0.023 0.05" pos="0.0002014 0.002506 -0.4326"
+          quat="0.6922 0.6922 0.1442 0.1442"/>
+        <geom name="l_edl_toes" class="wrapping" size="0.023 0.05" pos="0.002901 -0.01519 -0.4312"
+          quat="0.6994 0.7143 0.01219 0.02092"/>
+        <geom name="l_tarsometatarsus" class="leg" quat="0.7071 0.7071 4.66e-08 2.427e-06" mesh="l_tarsometatarsus"/>
+        <site name="l_toe_flexors_superficial" group="5" pos="-0.2 -0.01051 -0.3"/>
+        <site name="l_extensors_site" group="5" pos="0.1 4.461e-06 -0.3"/>
+        <site name="l_toe_flexors_deep" group="5" pos="-0.1947 -0.02591 -0.3328"/>
+        <site name="l_fpd4_toe" group="5" pos="-0.09148 -0.03743 -0.4326"/>
+        <site name="l_edl_toes" group="5" pos="0.1028 -0.01053 -0.4299"/>
+        <site name="l_gl-p6" pos="-0.0359 -0.002659 -0.05455"/>
+        <site name="l_gl-p7" pos="-0.01602 0.001432 -0.1625"/>
+        <site name="l_gim-p5" pos="-0.03728 -0.006009 -0.05387"/>
+        <site name="l_gim-p6" pos="-0.01663 -0.001098 -0.1623"/>
+        <site name="l_gm-p4" pos="-0.03806 -0.008859 -0.05337"/>
+        <site name="l_gm-p5" pos="-0.0149 -0.004588 -0.1622"/>
+        <site name="l_edl-p4" pos="0.019 0.001951 -0.034"/>
+        <site name="l_edl-p5" pos="0.01787 0.001641 -0.07374"/>
+        <site name="l_edl-p6" pos="0.02376 -0.001016 -0.3198"/>
+        <site name="l_edl-p7" pos="0.02491 -0.002465 -0.3725"/>
+        <site name="l_tcf-p5" pos="0.03272 -0.01029 -0.04332"/>
+        <site name="l_tcf-p6" pos="0.02092 -0.009799 -0.09836"/>
+        <site name="l_tct-p4" pos="0.03329 -0.01319 -0.04262"/>
+        <site name="l_tct-p5" pos="0.02082 -0.01253 -0.09834"/>
+        <site name="l_fdl-p4" pos="-0.0212 0.01152 -0.0393"/>
+        <site name="l_fdl-p5" pos="-0.01588 0.007623 -0.2353"/>
+        <site name="l_fdl-p6" pos="-0.001729 0.0002353 -0.3865"/>
+        <site name="l_fdl-p7" pos="-0.007408 -0.004994 -0.4068"/>
+        <site name="l_fhl-p6" pos="-0.02219 0.00897 -0.03922"/>
+        <site name="l_fhl-p7" pos="-0.01661 0.003813 -0.2355"/>
+        <site name="l_fhl-p8" pos="-0.003479 -0.004045 -0.3865"/>
+        <site name="l_fhl-p9" pos="-0.007228 -0.006107 -0.407"/>
+        <site name="l_fp_pd3-p5" pos="-0.02758 0.002201 -0.04894"/>
+        <site name="l_fp_pd3-p6" pos="-0.01949 0.001093 -0.2373"/>
+        <site name="l_fp_pd3-p7" pos="-0.005729 -0.007715 -0.3969"/>
+        <site name="l_fp_pd3-p8" pos="-0.017 -0.006994 -0.405"/>
+        <site name="l_fpd3-p7" pos="-0.02736 -0.01532 -0.04498"/>
+        <site name="l_fpd3-p8" pos="-0.02518 -0.01601 -0.08081"/>
+        <site name="l_fpd3-p9" pos="-0.02121 -0.008287 -0.2383"/>
+        <site name="l_fpd3-p10" pos="-0.004179 -0.01362 -0.3989"/>
+        <site name="l_fpd3-p11" pos="-0.0161 -0.01177 -0.405"/>
+        <site name="l_fpd4-p7" pos="-0.02945 0.00942 -0.04521"/>
+        <site name="l_fpd4-p8" pos="-0.02588 0.004851 -0.08225"/>
+        <site name="l_fpd4-p9" pos="-0.02009 0.003693 -0.237"/>
+        <site name="l_fpd4-p10" pos="-0.002959 0.005705 -0.4004"/>
+        <site name="l_fl-p6" pos="-0.00854 0.03128 -0.03975"/>
+        <site name="l_fl-p7" pos="-0.01516 0.01417 -0.09679"/>
+        <site name="l_fl-p8" pos="-0.02342 -0.009798 -0.1306"/>
+        <site name="l_fl-p9" pos="-0.0218 -0.002557 -0.2375"/>
+        <site name="l_fl-p10" pos="-0.005559 -0.01115 -0.3986"/>
+        <body name="l_pes" pos="1.434e-06 5.837e-06 -0.426">
+          <inertial pos="0.06599 -0.005481 -0.05537" quat="0.1768 0.7849 0.1414 0.5798" mass="0.582115"
+            diaginertia="0.002102 0.001931 0.0003652"/>
+          <joint name="l_mtp_y" pos="0 0 0" axis="0 1 0" range="-0.3 2"/>
+          <geom name="l_phalanx1" class="leg" quat="0.6513 0.6513 0.2754 -0.2754" mesh="l_phalanx1"/>
+          <geom name="l_phalanx2" class="leg" pos="-0.035 7.682e-07 -0.065" quat="0.7071 0.7071 4.66e-08 2.427e-06"
+            mesh="l_phalanx2"/>
+          <geom name="l_phalanx3" class="leg" pos="-0.035 7.682e-07 -0.065" quat="0.7071 0.7071 4.66e-08 2.427e-06"
+            mesh="l_phalanx3"/>
+          <geom name="l_phalanx4" class="leg" pos="-0.04 7.507e-07 -0.065" quat="0.7071 0.7071 4.66e-08 2.427e-06"
+            mesh="l_phalanx4"/>
+          <geom name="l_thumb" class="leg" quat="0.5836 0.5836 0.3993 -0.3993" mesh="l_thumb"/>
+          <site name="l_fpd4-p12" pos="-0.0074 0.02453 -0.02829"/>
+          <site name="l_fpd4-p13" pos="0.00344 0.03246 -0.04105"/>
+          <site name="l_fpd4-p14" pos="0.01464 0.04732 -0.07"/>
+          <site name="l_fpd4-p15" pos="0.04209 0.07435 -0.08281"/>
+          <site name="l_edl-p8" pos="0.02633 -0.00852 0.02126"/>
+          <site name="l_edl-p9" pos="0.05763 -0.006259 -0.05815"/>
+          <site name="l_edl-p10" pos="0.1071 -0.007129 -0.06189"/>
+          <site name="l_edl-p11" pos="0.1188 -0.003979 -0.06185"/>
+          <site name="l_fdl-p8" pos="0.02411 -0.003759 -0.055"/>
+          <site name="l_fdl-p9" pos="0.04896 -0.0008987 -0.0827"/>
+          <site name="l_fdl-p10" pos="0.07061 -0.0008885 -0.08751"/>
+          <site name="l_fdl-p11" pos="0.1118 0.001892 -0.08555"/>
+          <site name="l_fdl-p12" pos="0.1509 0.002532 -0.08637"/>
+          <site name="l_fdl-p13" pos="0.1845 0.002752 -0.07934"/>
+          <site name="l_fhl-p10" pos="0.02411 -0.008719 -0.0523"/>
+          <site name="l_fhl-p11" pos="0.04854 -0.002669 -0.08336"/>
+          <site name="l_fhl-p12" pos="0.07094 -0.004029 -0.08795"/>
+          <site name="l_fhl-p13" pos="0.112 -0.002418 -0.08597"/>
+          <site name="l_fhl-p14" pos="0.1513 -0.0002583 -0.08648"/>
+          <site name="l_fhl-p15" pos="0.1857 5.176e-05 -0.08132"/>
+          <site name="l_fp_pd3-p9" pos="0.02633 -0.007959 -0.05041"/>
+          <site name="l_fp_pd3-p10" pos="0.05383 -0.001139 -0.08533"/>
+          <site name="l_fp_pd3-p11" pos="0.0672 -0.0001886 -0.08555"/>
+          <site name="l_fp_pd3-p12" pos="0.111 0.002502 -0.08313"/>
+          <site name="l_fp_pd3-p13" pos="0.1396 0.001952 -0.08303"/>
+          <site name="l_fp_pd3-p14" pos="0.1547 0.001482 -0.0817"/>
+          <site name="l_fpd3-p12" pos="0.02411 -0.01366 -0.05166"/>
+          <site name="l_fpd3-p13" pos="0.05338 -0.006599 -0.08749"/>
+          <site name="l_fpd3-p14" pos="0.06833 -0.005139 -0.08763"/>
+          <site name="l_fpd3-p15" pos="0.1113 -0.001918 -0.08342"/>
+          <site name="l_fl-p12" pos="0.02411 -0.01108 -0.055"/>
+          <site name="l_fl-p13" pos="0.08668 -0.003308 -0.08738"/>
+          <site name="l_fl-p14" pos="0.1029 -0.003128 -0.0861"/>
+          <site name="l_fl-p15" pos="0.1459 0.0007417 -0.08404"/>
+        </body>
+      </body>
+    </body>
+  </body>
+</mujoco>

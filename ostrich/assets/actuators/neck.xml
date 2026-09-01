@@ -1,0 +1,57 @@
+<mujoco>
+  <actuator>
+    <muscle scale="200" name="longus_colli_dorsali" lengthrange="1.029 1.348" tendon="longus_colli_dorsali"
+      force="1600.0"/>
+    <muscle scale="200" name="tendon_front1" lengthrange="1.077 1.356" tendon="tendon_front_left" force="1600.0"/>
+    <muscle scale="200" name="tendon_front2" lengthrange="1.104 1.36" tendon="tendon_front_right" force="1600.0"/>
+    <muscle scale="200" name="tendon_back_right" lengthrange="1.032 1.382" tendon="tendon_back_right" force="1600.0"/>
+    <muscle scale="200" name="tendon_back_left" lengthrange="1.03 1.392" tendon="tendon_back_left" force="1600.0"/>
+    <muscle scale="200" name="frontal1" lengthrange="0.4231 0.5566" tendon="frontal1" force="1200.0"/>
+    <muscle scale="200" name="frontal2" lengthrange="0.4231 0.5566" tendon="frontal2" force="1200.0"/>
+    <muscle scale="200" name="frontal3" lengthrange="0.4229 0.5503" tendon="frontal3" force="1200.0"/>
+    <muscle scale="200" name="frontal4" lengthrange="0.4199 0.539" tendon="frontal4" force="1200.0"/>
+    <muscle scale="200" name="frontal5" lengthrange="0.4164 0.5322" tendon="frontal5" force="1200.0"/>
+    <muscle scale="200" name="frontal6" lengthrange="0.4126 0.5257" tendon="frontal6" force="1200.0"/>
+    <muscle scale="200" name="frontal7" lengthrange="0.4044 0.5196" tendon="frontal7" force="1200.0"/>
+    <muscle scale="200" name="frontal8" lengthrange="0.3836 0.4923" tendon="frontal8" force="1200.0"/>
+    <muscle scale="200" name="frontal9" lengthrange="0.3482 0.4466" tendon="frontal9" force="1200.0"/>
+    <muscle scale="200" name="frontal10" lengthrange="0.3183 0.4101" tendon="frontal10" force="1200.0"/>
+    <muscle scale="200" name="frontal11" lengthrange="0.2898 0.3685" tendon="frontal11" force="1200.0"/>
+    <muscle scale="200" name="complexus" lengthrange="0.1865 0.2145" tendon="complexus" force="1200.0"/>
+    <muscle scale="200" name="complexus_left" lengthrange="0.1951 0.2425" tendon="complexus_left" force="1200.0"/>
+    <muscle scale="200" name="complexus_right" lengthrange="0.1865 0.2385" tendon="complexus_right" force="1200.0"/>
+    <muscle scale="200" name="caudalis1" lengthrange="0.3656 0.5651" tendon="caudalis1" force="1200.0"/>
+    <muscle scale="200" name="caudalis2" lengthrange="0.3785 0.5311" tendon="caudalis2" force="1200.0"/>
+    <muscle scale="200" name="caudalis3" lengthrange="0.3928 0.5425" tendon="caudalis3" force="1200.0"/>
+    <muscle scale="200" name="caudalis4" lengthrange="0.3885 0.5321" tendon="caudalis4" force="1200.0"/>
+    <muscle scale="200" name="caudalis5" lengthrange="0.3713 0.519" tendon="caudalis5" force="1200.0"/>
+    <muscle scale="200" name="caudalis6" lengthrange="0.3629 0.5084" tendon="caudalis6" force="1200.0"/>
+    <muscle scale="200" name="caudalis7" lengthrange="0.3334 0.4945" tendon="caudalis7" force="1200.0"/>
+    <muscle scale="200" name="caudalis8" lengthrange="0.3196 0.4761" tendon="caudalis8" force="1200.0"/>
+    <muscle scale="200" name="caudalis9" lengthrange="0.3006 0.4451" tendon="caudalis9" force="1200.0"/>
+    <muscle scale="200" name="caudalis10" lengthrange="0.2716 0.4085" tendon="caudalis10" force="1200.0"/>
+    <muscle scale="200" name="caudalis11" lengthrange="0.2584 0.3751" tendon="caudalis11" force="1200.0"/>
+    <muscle scale="200" name="lateral_right1" lengthrange="0.3403 0.5353" tendon="lateral_right1" force="1200.0"/>
+    <muscle scale="200" name="lateral_right2" lengthrange="0.3689 0.5296" tendon="lateral_right2" force="1200.0"/>
+    <muscle scale="200" name="lateral_right3" lengthrange="0.3963 0.5269" tendon="lateral_right3" force="1200.0"/>
+    <muscle scale="200" name="lateral_right4" lengthrange="0.4079 0.5133" tendon="lateral_right4" force="1200.0"/>
+    <muscle scale="200" name="lateral_right5" lengthrange="0.4123 0.4986" tendon="lateral_right5" force="1200.0"/>
+    <muscle scale="200" name="lateral_right6" lengthrange="0.418 0.4896" tendon="lateral_right6" force="1200.0"/>
+    <muscle scale="200" name="lateral_right7" lengthrange="0.3983 0.4799" tendon="lateral_right7" force="1200.0"/>
+    <muscle scale="200" name="lateral_right8" lengthrange="0.3747 0.462" tendon="lateral_right8" force="1200.0"/>
+    <muscle scale="200" name="lateral_right9" lengthrange="0.3413 0.4295" tendon="lateral_right9" force="1200.0"/>
+    <muscle scale="200" name="lateral_right10" lengthrange="0.3055 0.4007" tendon="lateral_right10" force="1200.0"/>
+    <muscle scale="200" name="lateral_right11" lengthrange="0.2719 0.3687" tendon="lateral_right11" force="1200.0"/>
+    <muscle scale="200" name="lateral_left1" lengthrange="0.3427 0.536" tendon="lateral_left1" force="1200.0"/>
+    <muscle scale="200" name="lateral_left2" lengthrange="0.373 0.5285" tendon="lateral_left2" force="1200.0"/>
+    <muscle scale="200" name="lateral_left3" lengthrange="0.3981 0.5258" tendon="lateral_left3" force="1200.0"/>
+    <muscle scale="200" name="lateral_left4" lengthrange="0.41 0.5129" tendon="lateral_left4" force="1200.0"/>
+    <muscle scale="200" name="lateral_left5" lengthrange="0.4108 0.4986" tendon="lateral_left5" force="1200.0"/>
+    <muscle scale="200" name="lateral_left6" lengthrange="0.4177 0.4886" tendon="lateral_left6" force="1200.0"/>
+    <muscle scale="200" name="lateral_left7" lengthrange="0.3997 0.4789" tendon="lateral_left7" force="1200.0"/>
+    <muscle scale="200" name="lateral_left8" lengthrange="0.3768 0.4639" tendon="lateral_left8" force="1200.0"/>
+    <muscle scale="200" name="lateral_left9" lengthrange="0.3398 0.4289" tendon="lateral_left9" force="1200.0"/>
+    <muscle scale="200" name="lateral_left10" lengthrange="0.3073 0.3984" tendon="lateral_left10" force="1200.0"/>
+    <muscle scale="200" name="lateral_left11" lengthrange="0.2702 0.368" tendon="lateral_left11" force="1200.0"/>
+  </actuator>
+</mujoco>

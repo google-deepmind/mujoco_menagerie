@@ -1,0 +1,74 @@
+<mujoco>
+  <actuator>
+    <!-- right leg -->
+    <muscle scale="200" name="r_ic" lengthrange="0.1782 0.5241" tendon="r_ic" force="1389.44"/>
+    <muscle scale="200" name="r_ila" lengthrange="0.2875 0.5639" tendon="r_ila" force="1765.4672"/>
+    <muscle scale="200" name="r_ilp" lengthrange="0.2825 0.6084" tendon="r_ilp" force="1765.4672"/>
+    <muscle scale="200" name="r_fmtl" lengthrange="0.1839 0.278" tendon="r_fmtl" force="1934.678"/>
+    <muscle scale="200" name="r_fmtim" lengthrange="0.1823 0.282" tendon="r_fmtim" force="2206.5728"/>
+    <muscle scale="200" name="r_fmtm" lengthrange="0.1369 0.1603" tendon="r_fmtm" force="1589.02484"/>
+    <muscle scale="200" name="r_amb1" lengthrange="0.183 0.2855" tendon="r_amb1" force="1471.8776"/>
+    <muscle scale="200" name="r_amb2" lengthrange="0.3325 0.5616" tendon="r_amb2" force="2293.3472"/>
+    <muscle scale="200" name="r_ilfba" lengthrange="0.1686 0.6193" tendon="r_ilfba" force="1753.8968"/>
+    <muscle scale="200" name="r_ilfbp" lengthrange="0.124 0.6876" tendon="r_ilfbp" force="1753.8968"/>
+    <muscle scale="200" name="r_ife" lengthrange="0.06704 0.14" tendon="r_ife" force="978.70808"/>
+    <muscle scale="200" name="r_itca" lengthrange="0.07405 0.207" tendon="r_itca" force="1396.67384"/>
+    <muscle scale="200" name="r_itcp" lengthrange="0.0714 0.1943" tendon="r_itcp" force="1396.67384"/>
+    <muscle scale="200" name="r_itcr" lengthrange="0.05227 0.1797" tendon="r_itcr" force="829.74452"/>
+    <muscle scale="200" name="r_itm" lengthrange="0.07094 0.1943" tendon="r_itm" force="680.78096"/>
+    <muscle scale="200" name="r_ifi" lengthrange="0.07421 0.156" tendon="r_ifi" force="910.73444"/>
+    <muscle scale="200" name="r_fclp" lengthrange="0.1789 0.7125" tendon="r_fclp" force="1043.78936"/>
+    <muscle scale="200" name="r_fcm" lengthrange="0.0523 0.6147" tendon="r_fcm" force="1609.2722"/>
+    <muscle scale="200" name="r_pifml" lengthrange="0.04157 0.3196" tendon="r_pifml" force="1315.68392"/>
+    <muscle scale="200" name="r_om" lengthrange="0.1942 0.2554" tendon="r_om" force="3623.8964"/>
+    <muscle scale="200" name="r_isf" lengthrange="0.0822 0.1627" tendon="r_isf" force="919.41188"/>
+    <muscle scale="200" name="r_cfp" lengthrange="0.2103 0.3785" tendon="r_cfp" force="1625.18096"/>
+    <muscle scale="200" name="r_gl" lengthrange="0.6557 0.7993" tendon="r_gl" force="2336.0"/>
+    <muscle scale="200" name="r_gim" lengthrange="0.5898 0.7896" tendon="r_gim" force="1298.32892"/>
+    <muscle scale="200" name="r_gm" lengthrange="0.6518 0.7393" tendon="r_gm" force="3623.8964"/>
+    <muscle scale="200" name="r_edl" lengthrange="0.8401 0.9571" tendon="r_edl" force="5333.03892"/>
+    <muscle scale="200" name="r_tcf" lengthrange="0.484 0.6649" tendon="r_tcf" force="5185.5216"/>
+    <muscle scale="200" name="r_tct" lengthrange="0.4302 0.6024" tendon="r_tct" force="5185.5216"/>
+    <muscle scale="200" name="r_fdl" lengthrange="1.044 1.177" tendon="r_fdl" force="1630.96604"/>
+    <muscle scale="200" name="r_fhl" lengthrange="1.07 1.304" tendon="r_fhl" force="968.5844"/>
+    <muscle scale="200" name="r_fp_pd3" lengthrange="1.056 1.198" tendon="r_fp_pd3" force="1654.106"/>
+    <muscle scale="200" name="r_fpd3" lengthrange="0.9756 1.215" tendon="r_fpd3" force="3710.6708"/>
+    <muscle scale="200" name="r_fpd4" lengthrange="0.9452 1.186" tendon="r_fpd4" force="1934.678"/>
+    <muscle scale="200" name="r_fl" lengthrange="1 1.181" tendon="r_fl" force="2770.61"/>
+    <!-- left leg -->
+    <muscle scale="200" name="l_ic" lengthrange="0.1787 0.5238" tendon="l_ic" force="1389.44"/>
+    <muscle scale="200" name="l_ila" lengthrange="0.2878 0.5632" tendon="l_ila" force="1765.4672"/>
+    <muscle scale="200" name="l_ilp" lengthrange="0.2834 0.6076" tendon="l_ilp" force="1765.4672"/>
+    <muscle scale="200" name="l_fmtl" lengthrange="0.1839 0.278" tendon="l_fmtl" force="1934.678"/>
+    <muscle scale="200" name="l_fmtim" lengthrange="0.1823 0.282" tendon="l_fmtim" force="2206.5728"/>
+    <muscle scale="200" name="l_fmtm" lengthrange="0.1369 0.1603" tendon="l_fmtm" force="1589.02484"/>
+    <muscle scale="200" name="l_amb1" lengthrange="0.183 0.2868" tendon="l_amb1" force="1471.8776"/>
+    <muscle scale="200" name="l_amb2" lengthrange="0.3324 0.5608" tendon="l_amb2" force="2293.3472"/>
+    <muscle scale="200" name="l_ilfba" lengthrange="0.168 0.6241" tendon="l_ilfba" force="1753.8968"/>
+    <muscle scale="200" name="l_ilfbp" lengthrange="0.1266 0.6926" tendon="l_ilfbp" force="1753.8968"/>
+    <muscle scale="200" name="l_ife" lengthrange="0.06685 0.1401" tendon="l_ife" force="978.70808"/>
+    <muscle scale="200" name="l_itca" lengthrange="0.07405 0.2069" tendon="l_itca" force="1396.67384"/>
+    <muscle scale="200" name="l_itcp" lengthrange="0.07129 0.1937" tendon="l_itcp" force="1396.67384"/>
+    <muscle scale="200" name="l_itcr" lengthrange="0.05227 0.18" tendon="l_itcr" force="829.74452"/>
+    <muscle scale="200" name="l_itm" lengthrange="0.07085 0.1944" tendon="l_itm" force="680.78096"/>
+    <muscle scale="200" name="l_ifi" lengthrange="0.07425 0.1561" tendon="l_ifi" force="910.73444"/>
+    <muscle scale="200" name="l_fclp" lengthrange="0.1783 0.7117" tendon="l_fclp" force="1043.78936"/>
+    <muscle scale="200" name="l_fcm" lengthrange="0.05242 0.617" tendon="l_fcm" force="1609.2722"/>
+    <muscle scale="200" name="l_pifml" lengthrange="0.04106 0.3193" tendon="l_pifml" force="1315.68392"/>
+    <muscle scale="200" name="l_om" lengthrange="0.1945 0.2554" tendon="l_om" force="3623.8964"/>
+    <muscle scale="200" name="l_isf" lengthrange="0.08204 0.1627" tendon="l_isf" force="919.41188"/>
+    <muscle scale="200" name="l_cfp" lengthrange="0.2105 0.3784" tendon="l_cfp" force="1625.18096"/>
+    <muscle scale="200" name="l_gl" lengthrange="0.6567 0.7994" tendon="l_gl" force="2336.0"/>
+    <muscle scale="200" name="l_gim" lengthrange="0.5897 0.7891" tendon="l_gim" force="1298.32892"/>
+    <muscle scale="200" name="l_gm" lengthrange="0.6518 0.7393" tendon="l_gm" force="3623.8964"/>
+    <muscle scale="200" name="l_edl" lengthrange="0.8374 0.9559" tendon="l_edl" force="5333.03892"/>
+    <muscle scale="200" name="l_tcf" lengthrange="0.484 0.6651" tendon="l_tcf" force="5185.5216"/>
+    <muscle scale="200" name="l_tct" lengthrange="0.4302 0.6024" tendon="l_tct" force="5185.5216"/>
+    <muscle scale="200" name="l_fdl" lengthrange="1.043 1.175" tendon="l_fdl" force="1630.96604"/>
+    <muscle scale="200" name="l_fhl" lengthrange="1.07 1.304" tendon="l_fhl" force="968.5844"/>
+    <muscle scale="200" name="l_fp_pd3" lengthrange="1.056 1.2" tendon="l_fp_pd3" force="1654.106"/>
+    <muscle scale="200" name="l_fpd3" lengthrange="0.9761 1.219" tendon="l_fpd3" force="3710.6708"/>
+    <muscle scale="200" name="l_fpd4" lengthrange="0.9454 1.187" tendon="l_fpd4" force="1934.678"/>
+    <muscle scale="200" name="l_fl" lengthrange="0.9998 1.184" tendon="l_fl" force="2770.61"/>
+  </actuator>
+</mujoco>

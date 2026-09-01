@@ -1,0 +1,35 @@
+<mujoco>
+  <geom name="ribcage_mesh" type="mesh" conaffinity="131071" mass="20.1385" pos="0.2521 -0.01348 0.05243"
+    mesh="ribcage"/>
+  <site name="t2" pos="0.224 -0.007874 0.2359"/>
+  <site name="sternum" pos="0.3849 -0.007991 0.01837"/>
+  <site name="front_spine0" pos="0.389 -0.006841 0.05299"/>
+  <site name="back_spine0" pos="0.2786 -0.01874 0.2235"/>
+  <site name="right_spine0" pos="0.3625 0.07968 0.1112"/>
+  <site name="left_spine0" pos="0.3628 -0.09131 0.1125"/>
+  <body name="humerusr" pos="0.2298 0.1277 0.03018">
+    <geom name="r_humerus" type="mesh" mesh="r_humerus"/>
+    <site name="proximalr_humerus" pos="0.1133 0.004385 0.008786"/>
+    <site name="r_humerus" pos="-0.01798 0.0255 0.006039"/>
+    <site name="shaftr_humerus" pos="-0.04929 0.002776 0.004325"/>
+    <site name="proximal_posteriorr_humerus" pos="0.08362 -0.01613 0.01148"/>
+    <body name="radiusr" pos="-0.1738 0.02202 -0.06151">
+      <geom name="r_radius" type="mesh" mesh="r_radius"/>
+      <geom name="r_ulna" type="mesh" mesh="r_ulna"/>
+      <geom name="r_hand" type="mesh" pos="0.02074 -0.01584 -0.1058" mesh="r_hand"/>
+    </body>
+  </body>
+  <body name="humerusl" pos="0.2424 -0.1476 0.02764">
+    <geom name="l_humerus" type="mesh" mesh="l_humerus"/>
+    <site name="proximall_humerus" pos="0.09885 -0.004779 0.02376"/>
+    <site name="l_humerus" pos="-0.03463 -0.04016 0.002909"/>
+    <site name="shaftl_humerus" pos="-0.07009 -0.02032 -0.004572"/>
+    <site name="proximal_posteriorl_humerus" pos="0.06112 0.01439 0.008901"/>
+    <body name="radiusl" pos="-0.1645 -0.04654 -0.08103">
+      <geom name="l_radius" type="mesh" mesh="l_radius"/>
+      <geom name="l_ulna" type="mesh" mesh="l_ulna"/>
+      <geom name="l_hand" type="mesh" pos="0.03072 0.01871 -0.1032" mesh="l_hand"/>
+    </body>
+  </body>
+  <inertial pos="-0.01 -0.01 0.03" quat="0.0001445 0.7148 0.0004324 0.6993" mass="43.566" diaginertia="2.45 3 1"/>
+</mujoco>

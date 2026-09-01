@@ -2,6 +2,11 @@
 
 All notable changes to this repository will be documented here.
 
+## [2026-08-31]
+
+- Added the [Ostrich](ostrich/README.md) musculoskeletal model, ported from [OstrichRL](https://github.com/vittorione94/ostrichrl).
+- Added `render_orbit_gif.py`, which renders a looping 360° orbit GIF of any model at a fixed, jitter-free camera distance.
+
 ## [2026-07-04]
 
 - Cleaned up manual `<statistic>` camera overrides across scene XMLs to improve visualizer default framings. Removed arbitrary `center` attributes, only keeping `extent` where finite floor surfaces or heightfields require custom framing bounds.

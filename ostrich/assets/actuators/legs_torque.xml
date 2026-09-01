@@ -1,0 +1,19 @@
+<mujoco>
+  <actuator>
+    <!-- right leg -->
+    <motor name="right_hip_x" gear="120" joint="r_hip_x"/>
+    <motor name="right_hip_y" gear="120" joint="r_hip_y"/>
+    <motor name="right_hip_z" gear="120" joint="r_hip_z"/>
+    <motor name="right_knee_z" gear="90" joint="r_knee_y"/>
+    <motor name="right_ankle_z" gear="60" joint="r_ankle_y"/>
+    <motor name="right_mtp_z" gear="30" joint="r_mtp_y"/>
+
+    <!-- left leg -->
+    <motor name="left_hip_x" gear="120" joint="l_hip_x"/>
+    <motor name="left_hip_y" gear="120" joint="l_hip_y"/>
+    <motor name="left_hip_z" gear="120" joint="l_hip_z"/>
+    <motor name="left_knee_z" gear="90" joint="l_knee_y"/>
+    <motor name="left_ankle_z" gear="60" joint="l_ankle_y"/>
+    <motor name="left_mtp_z" gear="30" joint="l_mtp_y"/>
+  </actuator>
+</mujoco>

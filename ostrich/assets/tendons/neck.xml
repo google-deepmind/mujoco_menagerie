@@ -1,0 +1,738 @@
+<mujoco>
+  <tendon>
+    <spatial name="longus_colli_dorsali">
+      <site site="back_spine0"/>
+      <geom geom="v1wrapgeom" sidesite="v1_side_site_back"/>
+      <site site="back1"/>
+      <geom geom="v2wrapgeom" sidesite="v2_side_site_back"/>
+      <site site="back2"/>
+      <geom geom="v3wrapgeom" sidesite="v3_side_site_back"/>
+      <site site="back3"/>
+      <geom geom="v4wrapgeom" sidesite="v4_side_site_back"/>
+      <site site="back4"/>
+      <geom geom="v5wrapgeom" sidesite="v5_side_site_back"/>
+      <site site="back5"/>
+      <geom geom="v6wrapgeom" sidesite="v6_side_site_back"/>
+      <site site="back6"/>
+      <geom geom="v7wrapgeom" sidesite="v7_side_site_back"/>
+      <site site="back7"/>
+      <geom geom="v8wrapgeom" sidesite="v8_side_site_back"/>
+      <site site="back8"/>
+      <geom geom="v9wrapgeom" sidesite="v9_side_site_back"/>
+      <site site="back9"/>
+      <geom geom="v10wrapgeom" sidesite="v10_side_site_back"/>
+      <site site="back10"/>
+      <geom geom="v11wrapgeom" sidesite="v11_side_site_back"/>
+      <site site="back11"/>
+      <geom geom="v12wrapgeom" sidesite="v12_side_site_back"/>
+      <site site="back12"/>
+      <geom geom="v13wrapgeom" sidesite="v13_side_site_back"/>
+      <site site="back13"/>
+      <geom geom="v14wrapgeom" sidesite="v14_side_site_back"/>
+      <site site="back14"/>
+      <geom geom="v15wrapgeom" sidesite="v15_side_site_back"/>
+      <site site="back15"/>
+      <geom geom="v16wrapgeom" sidesite="v16_side_site_back"/>
+      <site site="back16"/>
+      <geom geom="v17wrapgeom" sidesite="v17_side_site_back"/>
+      <site site="back17"/>
+    </spatial>
+    <spatial name="tendon_front_left">
+      <site site="right_spine0"/>
+      <geom geom="v1wrapgeom" sidesite="v1_side_site_front"/>
+      <site site="front_right1"/>
+      <geom geom="v2wrapgeom" sidesite="v2_side_site_front"/>
+      <site site="front_right2"/>
+      <geom geom="v3wrapgeom" sidesite="v3_side_site_front"/>
+      <site site="front_right3"/>
+      <geom geom="v4wrapgeom" sidesite="v4_side_site_front"/>
+      <site site="front_right4"/>
+      <geom geom="v5wrapgeom" sidesite="v5_side_site_front"/>
+      <site site="front_right5"/>
+      <geom geom="v6wrapgeom" sidesite="v6_side_site_front"/>
+      <site site="front_right6"/>
+      <geom geom="v7wrapgeom" sidesite="v7_side_site_front"/>
+      <site site="front_right7"/>
+      <geom geom="v8wrapgeom" sidesite="v8_side_site_front"/>
+      <site site="front_right8"/>
+      <geom geom="v9wrapgeom" sidesite="v9_side_site_front"/>
+      <site site="front_right9"/>
+      <geom geom="v10wrapgeom" sidesite="v10_side_site_front"/>
+      <site site="front_right10"/>
+      <geom geom="v11wrapgeom" sidesite="v11_side_site_front"/>
+      <site site="front_right11"/>
+      <geom geom="v12wrapgeom" sidesite="v12_side_site_front"/>
+      <site site="front_right12"/>
+      <geom geom="v13wrapgeom" sidesite="v13_side_site_front"/>
+      <site site="front_right13"/>
+      <geom geom="v14wrapgeom" sidesite="v14_side_site_front"/>
+      <site site="front_right14"/>
+      <geom geom="v15wrapgeom" sidesite="v15_side_site_front"/>
+      <site site="front_right15"/>
+      <geom geom="v16wrapgeom" sidesite="v16_side_site_front"/>
+      <site site="front_right16"/>
+      <geom geom="v17wrapgeom" sidesite="v17_side_site_front"/>
+      <site site="front_right17"/>
+    </spatial>
+    <spatial name="tendon_front_right">
+      <site site="left_spine0"/>
+      <geom geom="v1wrapgeom" sidesite="v1_side_site_front"/>
+      <site site="front_left1"/>
+      <geom geom="v2wrapgeom" sidesite="v2_side_site_front"/>
+      <site site="front_left2"/>
+      <geom geom="v3wrapgeom" sidesite="v3_side_site_front"/>
+      <site site="front_left3"/>
+      <geom geom="v4wrapgeom" sidesite="v4_side_site_front"/>
+      <site site="front_left4"/>
+      <geom geom="v5wrapgeom" sidesite="v5_side_site_front"/>
+      <site site="front_left5"/>
+      <geom geom="v6wrapgeom" sidesite="v6_side_site_front"/>
+      <site site="front_left6"/>
+      <geom geom="v7wrapgeom" sidesite="v7_side_site_front"/>
+      <site site="front_left7"/>
+      <geom geom="v8wrapgeom" sidesite="v8_side_site_front"/>
+      <site site="front_left8"/>
+      <geom geom="v9wrapgeom" sidesite="v9_side_site_front"/>
+      <site site="front_left9"/>
+      <geom geom="v10wrapgeom" sidesite="v10_side_site_front"/>
+      <site site="front_left10"/>
+      <geom geom="v11wrapgeom" sidesite="v11_side_site_front"/>
+      <site site="front_left11"/>
+      <geom geom="v12wrapgeom" sidesite="v12_side_site_front"/>
+      <site site="front_left12"/>
+      <geom geom="v13wrapgeom" sidesite="v13_side_site_front"/>
+      <site site="front_left13"/>
+      <geom geom="v14wrapgeom" sidesite="v14_side_site_front"/>
+      <site site="front_left14"/>
+      <geom geom="v15wrapgeom" sidesite="v15_side_site_front"/>
+      <site site="front_left15"/>
+      <geom geom="v16wrapgeom" sidesite="v16_side_site_front"/>
+      <site site="front_left16"/>
+      <geom geom="v17wrapgeom" sidesite="v17_side_site_front"/>
+      <site site="front_left17"/>
+    </spatial>
+    <spatial name="tendon_back_right">
+      <site site="back_spine0"/>
+      <geom geom="v1wrapgeom" sidesite="v1_side_site_back"/>
+      <site site="back_right1"/>
+      <geom geom="v2wrapgeom" sidesite="v2_side_site_back"/>
+      <site site="back_right2"/>
+      <geom geom="v3wrapgeom" sidesite="v3_side_site_back"/>
+      <site site="back_right3"/>
+      <geom geom="v4wrapgeom" sidesite="v4_side_site_back"/>
+      <site site="back_right4"/>
+      <geom geom="v5wrapgeom" sidesite="v5_side_site_back"/>
+      <site site="back_right5"/>
+      <geom geom="v6wrapgeom" sidesite="v6_side_site_back"/>
+      <site site="back_right6"/>
+      <geom geom="v7wrapgeom" sidesite="v7_side_site_back"/>
+      <site site="back_right7"/>
+      <geom geom="v8wrapgeom" sidesite="v8_side_site_back"/>
+      <site site="back_right8"/>
+      <geom geom="v9wrapgeom" sidesite="v9_side_site_back"/>
+      <site site="back_right9"/>
+      <geom geom="v10wrapgeom" sidesite="v10_side_site_back"/>
+      <site site="back_right10"/>
+      <geom geom="v11wrapgeom" sidesite="v11_side_site_back"/>
+      <site site="back_right11"/>
+      <geom geom="v12wrapgeom" sidesite="v12_side_site_back"/>
+      <site site="back_right12"/>
+      <geom geom="v13wrapgeom" sidesite="v13_side_site_back"/>
+      <site site="back_right13"/>
+      <geom geom="v14wrapgeom" sidesite="v14_side_site_back"/>
+      <site site="back_right14"/>
+      <geom geom="v15wrapgeom" sidesite="v15_side_site_back"/>
+      <site site="back_right15"/>
+      <geom geom="v16wrapgeom" sidesite="v16_side_site_back"/>
+      <site site="back_right16"/>
+      <geom geom="v17wrapgeom" sidesite="v17_side_site_back"/>
+      <site site="back_right17"/>
+    </spatial>
+    <spatial name="tendon_back_left">
+      <site site="back_spine0"/>
+      <geom geom="v1wrapgeom" sidesite="v1_side_site_back"/>
+      <site site="back_left1"/>
+      <geom geom="v2wrapgeom" sidesite="v2_side_site_back"/>
+      <site site="back_left2"/>
+      <geom geom="v3wrapgeom" sidesite="v3_side_site_back"/>
+      <site site="back_left3"/>
+      <geom geom="v4wrapgeom" sidesite="v4_side_site_back"/>
+      <site site="back_left4"/>
+      <geom geom="v5wrapgeom" sidesite="v5_side_site_back"/>
+      <site site="back_left5"/>
+      <geom geom="v6wrapgeom" sidesite="v6_side_site_back"/>
+      <site site="back_left6"/>
+      <geom geom="v7wrapgeom" sidesite="v7_side_site_back"/>
+      <site site="back_left7"/>
+      <geom geom="v8wrapgeom" sidesite="v8_side_site_back"/>
+      <site site="back_left8"/>
+      <geom geom="v9wrapgeom" sidesite="v9_side_site_back"/>
+      <site site="back_left9"/>
+      <geom geom="v10wrapgeom" sidesite="v10_side_site_back"/>
+      <site site="back_left10"/>
+      <geom geom="v11wrapgeom" sidesite="v11_side_site_back"/>
+      <site site="back_left11"/>
+      <geom geom="v12wrapgeom" sidesite="v12_side_site_back"/>
+      <site site="back_left12"/>
+      <geom geom="v13wrapgeom" sidesite="v13_side_site_back"/>
+      <site site="back_left13"/>
+      <geom geom="v14wrapgeom" sidesite="v14_side_site_back"/>
+      <site site="back_left14"/>
+      <geom geom="v15wrapgeom" sidesite="v15_side_site_back"/>
+      <site site="back_left15"/>
+      <geom geom="v16wrapgeom" sidesite="v16_side_site_back"/>
+      <site site="back_left16"/>
+      <geom geom="v17wrapgeom" sidesite="v17_side_site_back"/>
+      <site site="back_left17"/>
+    </spatial>
+    <spatial name="complexus">
+      <site site="back14"/>
+      <site site="back15"/>
+      <site site="back16"/>
+      <site site="back17"/>
+      <site site="head_back"/>
+    </spatial>
+    <spatial name="complexus_left">
+      <site site="back14"/>
+      <site site="back15"/>
+      <site site="back16"/>
+      <site site="back17"/>
+      <site site="head_back_left"/>
+    </spatial>
+    <spatial name="complexus_right">
+      <site site="back14"/>
+      <site site="back15"/>
+      <site site="back16"/>
+      <site site="back17"/>
+      <site site="head_back_right"/>
+    </spatial>
+    <spatial name="caudalis1">
+      <site site="back1"/>
+      <geom geom="v2wrapgeom" sidesite="v2_side_site_back"/>
+      <site site="back2"/>
+      <geom geom="v3wrapgeom" sidesite="v3_side_site_back"/>
+      <site site="back3"/>
+      <geom geom="v4wrapgeom" sidesite="v4_side_site_back"/>
+      <site site="back4"/>
+      <geom geom="v5wrapgeom" sidesite="v5_side_site_back"/>
+      <site site="back5"/>
+      <geom geom="v6wrapgeom" sidesite="v6_side_site_back"/>
+      <site site="back6"/>
+      <geom geom="v7wrapgeom" sidesite="v7_side_site_back"/>
+      <site site="back7"/>
+    </spatial>
+    <spatial name="caudalis2">
+      <site site="back2"/>
+      <geom geom="v3wrapgeom" sidesite="v3_side_site_back"/>
+      <site site="back3"/>
+      <geom geom="v4wrapgeom" sidesite="v4_side_site_back"/>
+      <site site="back4"/>
+      <geom geom="v5wrapgeom" sidesite="v5_side_site_back"/>
+      <site site="back5"/>
+      <geom geom="v6wrapgeom" sidesite="v6_side_site_back"/>
+      <site site="back6"/>
+      <geom geom="v7wrapgeom" sidesite="v7_side_site_back"/>
+      <site site="back7"/>
+      <geom geom="v8wrapgeom" sidesite="v8_side_site_back"/>
+      <site site="back8"/>
+    </spatial>
+    <spatial name="caudalis3">
+      <site site="back3"/>
+      <geom geom="v4wrapgeom" sidesite="v4_side_site_back"/>
+      <site site="back4"/>
+      <geom geom="v5wrapgeom" sidesite="v5_side_site_back"/>
+      <site site="back5"/>
+      <geom geom="v6wrapgeom" sidesite="v6_side_site_back"/>
+      <site site="back6"/>
+      <geom geom="v7wrapgeom" sidesite="v7_side_site_back"/>
+      <site site="back7"/>
+      <geom geom="v8wrapgeom" sidesite="v8_side_site_back"/>
+      <site site="back8"/>
+      <geom geom="v9wrapgeom" sidesite="v9_side_site_back"/>
+      <site site="back9"/>
+    </spatial>
+    <spatial name="caudalis4">
+      <site site="back4"/>
+      <geom geom="v5wrapgeom" sidesite="v5_side_site_back"/>
+      <site site="back5"/>
+      <geom geom="v6wrapgeom" sidesite="v6_side_site_back"/>
+      <site site="back6"/>
+      <geom geom="v7wrapgeom" sidesite="v7_side_site_back"/>
+      <site site="back7"/>
+      <geom geom="v8wrapgeom" sidesite="v8_side_site_back"/>
+      <site site="back8"/>
+      <geom geom="v9wrapgeom" sidesite="v9_side_site_back"/>
+      <site site="back9"/>
+      <geom geom="v10wrapgeom" sidesite="v10_side_site_back"/>
+      <site site="back10"/>
+    </spatial>
+    <spatial name="caudalis5">
+      <site site="back5"/>
+      <geom geom="v6wrapgeom" sidesite="v6_side_site_back"/>
+      <site site="back6"/>
+      <geom geom="v7wrapgeom" sidesite="v7_side_site_back"/>
+      <site site="back7"/>
+      <geom geom="v8wrapgeom" sidesite="v8_side_site_back"/>
+      <site site="back8"/>
+      <geom geom="v9wrapgeom" sidesite="v9_side_site_back"/>
+      <site site="back9"/>
+      <geom geom="v10wrapgeom" sidesite="v10_side_site_back"/>
+      <site site="back10"/>
+      <geom geom="v11wrapgeom" sidesite="v11_side_site_back"/>
+      <site site="back11"/>
+    </spatial>
+    <spatial name="caudalis6">
+      <site site="back6"/>
+      <geom geom="v7wrapgeom" sidesite="v7_side_site_back"/>
+      <site site="back7"/>
+      <geom geom="v8wrapgeom" sidesite="v8_side_site_back"/>
+      <site site="back8"/>
+      <geom geom="v9wrapgeom" sidesite="v9_side_site_back"/>
+      <site site="back9"/>
+      <geom geom="v10wrapgeom" sidesite="v10_side_site_back"/>
+      <site site="back10"/>
+      <geom geom="v11wrapgeom" sidesite="v11_side_site_back"/>
+      <site site="back11"/>
+      <geom geom="v12wrapgeom" sidesite="v12_side_site_back"/>
+      <site site="back12"/>
+    </spatial>
+    <spatial name="caudalis7">
+      <site site="back7"/>
+      <geom geom="v8wrapgeom" sidesite="v8_side_site_back"/>
+      <site site="back8"/>
+      <geom geom="v9wrapgeom" sidesite="v9_side_site_back"/>
+      <site site="back9"/>
+      <geom geom="v10wrapgeom" sidesite="v10_side_site_back"/>
+      <site site="back10"/>
+      <geom geom="v11wrapgeom" sidesite="v11_side_site_back"/>
+      <site site="back11"/>
+      <geom geom="v12wrapgeom" sidesite="v12_side_site_back"/>
+      <site site="back12"/>
+      <geom geom="v13wrapgeom" sidesite="v13_side_site_back"/>
+      <site site="back13"/>
+    </spatial>
+    <spatial name="caudalis8">
+      <site site="back8"/>
+      <geom geom="v9wrapgeom" sidesite="v9_side_site_back"/>
+      <site site="back9"/>
+      <geom geom="v10wrapgeom" sidesite="v10_side_site_back"/>
+      <site site="back10"/>
+      <geom geom="v11wrapgeom" sidesite="v11_side_site_back"/>
+      <site site="back11"/>
+      <geom geom="v12wrapgeom" sidesite="v12_side_site_back"/>
+      <site site="back12"/>
+      <geom geom="v13wrapgeom" sidesite="v13_side_site_back"/>
+      <site site="back13"/>
+      <geom geom="v14wrapgeom" sidesite="v14_side_site_back"/>
+      <site site="back14"/>
+    </spatial>
+    <spatial name="caudalis9">
+      <site site="back9"/>
+      <geom geom="v10wrapgeom" sidesite="v10_side_site_back"/>
+      <site site="back10"/>
+      <geom geom="v11wrapgeom" sidesite="v11_side_site_back"/>
+      <site site="back11"/>
+      <geom geom="v12wrapgeom" sidesite="v12_side_site_back"/>
+      <site site="back12"/>
+      <geom geom="v13wrapgeom" sidesite="v13_side_site_back"/>
+      <site site="back13"/>
+      <geom geom="v14wrapgeom" sidesite="v14_side_site_back"/>
+      <site site="back14"/>
+      <geom geom="v15wrapgeom" sidesite="v15_side_site_back"/>
+      <site site="back15"/>
+    </spatial>
+    <spatial name="caudalis10">
+      <site site="back10"/>
+      <geom geom="v11wrapgeom" sidesite="v11_side_site_back"/>
+      <site site="back11"/>
+      <geom geom="v12wrapgeom" sidesite="v12_side_site_back"/>
+      <site site="back12"/>
+      <geom geom="v13wrapgeom" sidesite="v13_side_site_back"/>
+      <site site="back13"/>
+      <geom geom="v14wrapgeom" sidesite="v14_side_site_back"/>
+      <site site="back14"/>
+      <geom geom="v15wrapgeom" sidesite="v15_side_site_back"/>
+      <site site="back15"/>
+      <geom geom="v16wrapgeom" sidesite="v16_side_site_back"/>
+      <site site="back16"/>
+    </spatial>
+    <spatial name="caudalis11">
+      <site site="back11"/>
+      <geom geom="v12wrapgeom" sidesite="v12_side_site_back"/>
+      <site site="back12"/>
+      <geom geom="v13wrapgeom" sidesite="v13_side_site_back"/>
+      <site site="back13"/>
+      <geom geom="v14wrapgeom" sidesite="v14_side_site_back"/>
+      <site site="back14"/>
+      <geom geom="v15wrapgeom" sidesite="v15_side_site_back"/>
+      <site site="back15"/>
+      <geom geom="v16wrapgeom" sidesite="v16_side_site_back"/>
+      <site site="back16"/>
+      <geom geom="v17wrapgeom" sidesite="v17_side_site_back"/>
+      <site site="back17"/>
+    </spatial>
+    <spatial name="lateral_right1">
+      <site site="lateral_right1"/>
+      <site site="lateral_right2"/>
+      <site site="lateral_right3"/>
+      <site site="lateral_right4"/>
+      <site site="lateral_right5"/>
+      <site site="lateral_right6"/>
+      <site site="lateral_right7"/>
+    </spatial>
+    <spatial name="lateral_left1">
+      <site site="lateral_left1"/>
+      <site site="lateral_left2"/>
+      <site site="lateral_left3"/>
+      <site site="lateral_left4"/>
+      <site site="lateral_left5"/>
+      <site site="lateral_left6"/>
+      <site site="lateral_left7"/>
+    </spatial>
+    <spatial name="lateral_right2">
+      <site site="lateral_right2"/>
+      <site site="lateral_right3"/>
+      <site site="lateral_right4"/>
+      <site site="lateral_right5"/>
+      <site site="lateral_right6"/>
+      <site site="lateral_right7"/>
+      <site site="lateral_right8"/>
+    </spatial>
+    <spatial name="lateral_left2">
+      <site site="lateral_left2"/>
+      <site site="lateral_left3"/>
+      <site site="lateral_left4"/>
+      <site site="lateral_left5"/>
+      <site site="lateral_left6"/>
+      <site site="lateral_left7"/>
+      <site site="lateral_left8"/>
+    </spatial>
+    <spatial name="lateral_right3">
+      <site site="lateral_right3"/>
+      <site site="lateral_right4"/>
+      <site site="lateral_right5"/>
+      <site site="lateral_right6"/>
+      <site site="lateral_right7"/>
+      <site site="lateral_right8"/>
+      <site site="lateral_right9"/>
+    </spatial>
+    <spatial name="lateral_left3">
+      <site site="lateral_left3"/>
+      <site site="lateral_left4"/>
+      <site site="lateral_left5"/>
+      <site site="lateral_left6"/>
+      <site site="lateral_left7"/>
+      <site site="lateral_left8"/>
+      <site site="lateral_left9"/>
+    </spatial>
+    <spatial name="lateral_right4">
+      <site site="lateral_right4"/>
+      <site site="lateral_right5"/>
+      <site site="lateral_right6"/>
+      <site site="lateral_right7"/>
+      <site site="lateral_right8"/>
+      <site site="lateral_right9"/>
+      <site site="lateral_right10"/>
+    </spatial>
+    <spatial name="lateral_left4">
+      <site site="lateral_left4"/>
+      <site site="lateral_left5"/>
+      <site site="lateral_left6"/>
+      <site site="lateral_left7"/>
+      <site site="lateral_left8"/>
+      <site site="lateral_left9"/>
+      <site site="lateral_left10"/>
+    </spatial>
+    <spatial name="lateral_right5">
+      <site site="lateral_right5"/>
+      <site site="lateral_right6"/>
+      <site site="lateral_right7"/>
+      <site site="lateral_right8"/>
+      <site site="lateral_right9"/>
+      <site site="lateral_right10"/>
+      <site site="lateral_right11"/>
+    </spatial>
+    <spatial name="lateral_left5">
+      <site site="lateral_left5"/>
+      <site site="lateral_left6"/>
+      <site site="lateral_left7"/>
+      <site site="lateral_left8"/>
+      <site site="lateral_left9"/>
+      <site site="lateral_left10"/>
+      <site site="lateral_left11"/>
+    </spatial>
+    <spatial name="lateral_right6">
+      <site site="lateral_right6"/>
+      <site site="lateral_right7"/>
+      <site site="lateral_right8"/>
+      <site site="lateral_right9"/>
+      <site site="lateral_right10"/>
+      <site site="lateral_right11"/>
+      <site site="lateral_right12"/>
+    </spatial>
+    <spatial name="lateral_left6">
+      <site site="lateral_left6"/>
+      <site site="lateral_left7"/>
+      <site site="lateral_left8"/>
+      <site site="lateral_left9"/>
+      <site site="lateral_left10"/>
+      <site site="lateral_left11"/>
+      <site site="lateral_left12"/>
+    </spatial>
+    <spatial name="lateral_right7">
+      <site site="lateral_right7"/>
+      <site site="lateral_right8"/>
+      <site site="lateral_right9"/>
+      <site site="lateral_right10"/>
+      <site site="lateral_right11"/>
+      <site site="lateral_right12"/>
+      <site site="lateral_right13"/>
+    </spatial>
+    <spatial name="lateral_left7">
+      <site site="lateral_left7"/>
+      <site site="lateral_left8"/>
+      <site site="lateral_left9"/>
+      <site site="lateral_left10"/>
+      <site site="lateral_left11"/>
+      <site site="lateral_left12"/>
+      <site site="lateral_left13"/>
+    </spatial>
+    <spatial name="lateral_right8">
+      <site site="lateral_right8"/>
+      <site site="lateral_right9"/>
+      <site site="lateral_right10"/>
+      <site site="lateral_right11"/>
+      <site site="lateral_right12"/>
+      <site site="lateral_right13"/>
+      <site site="lateral_right14"/>
+    </spatial>
+    <spatial name="lateral_left8">
+      <site site="lateral_left8"/>
+      <site site="lateral_left9"/>
+      <site site="lateral_left10"/>
+      <site site="lateral_left11"/>
+      <site site="lateral_left12"/>
+      <site site="lateral_left13"/>
+      <site site="lateral_left14"/>
+    </spatial>
+    <spatial name="lateral_right9">
+      <site site="lateral_right9"/>
+      <site site="lateral_right10"/>
+      <site site="lateral_right11"/>
+      <site site="lateral_right12"/>
+      <site site="lateral_right13"/>
+      <site site="lateral_right14"/>
+      <site site="lateral_right15"/>
+    </spatial>
+    <spatial name="lateral_left9">
+      <site site="lateral_left9"/>
+      <site site="lateral_left10"/>
+      <site site="lateral_left11"/>
+      <site site="lateral_left12"/>
+      <site site="lateral_left13"/>
+      <site site="lateral_left14"/>
+      <site site="lateral_left15"/>
+    </spatial>
+    <spatial name="lateral_right10">
+      <site site="lateral_right10"/>
+      <site site="lateral_right11"/>
+      <site site="lateral_right12"/>
+      <site site="lateral_right13"/>
+      <site site="lateral_right14"/>
+      <site site="lateral_right15"/>
+      <site site="lateral_right16"/>
+    </spatial>
+    <spatial name="lateral_left10">
+      <site site="lateral_left10"/>
+      <site site="lateral_left11"/>
+      <site site="lateral_left12"/>
+      <site site="lateral_left13"/>
+      <site site="lateral_left14"/>
+      <site site="lateral_left15"/>
+      <site site="lateral_left16"/>
+    </spatial>
+    <spatial name="lateral_right11">
+      <site site="lateral_right11"/>
+      <site site="lateral_right12"/>
+      <site site="lateral_right13"/>
+      <site site="lateral_right14"/>
+      <site site="lateral_right15"/>
+      <site site="lateral_right16"/>
+      <site site="lateral_right17"/>
+    </spatial>
+    <spatial name="lateral_left11">
+      <site site="lateral_left11"/>
+      <site site="lateral_left12"/>
+      <site site="lateral_left13"/>
+      <site site="lateral_left14"/>
+      <site site="lateral_left15"/>
+      <site site="lateral_left16"/>
+      <site site="lateral_left17"/>
+    </spatial>
+    <spatial name="frontal1">
+      <site site="front1"/>
+      <geom geom="v2wrapgeom" sidesite="v2_side_site_front"/>
+      <site site="front2"/>
+      <geom geom="v3wrapgeom" sidesite="v3_side_site_front"/>
+      <site site="front3"/>
+      <geom geom="v4wrapgeom" sidesite="v4_side_site_front"/>
+      <site site="front4"/>
+      <geom geom="v5wrapgeom" sidesite="v5_side_site_front"/>
+      <site site="front5"/>
+      <geom geom="v6wrapgeom" sidesite="v6_side_site_front"/>
+      <site site="front6"/>
+      <geom geom="v7wrapgeom" sidesite="v7_side_site_front"/>
+      <site site="front7"/>
+    </spatial>
+    <spatial name="frontal2">
+      <site site="front2"/>
+      <geom geom="v3wrapgeom" sidesite="v3_side_site_front"/>
+      <site site="front3"/>
+      <geom geom="v4wrapgeom" sidesite="v4_side_site_front"/>
+      <site site="front4"/>
+      <geom geom="v5wrapgeom" sidesite="v5_side_site_front"/>
+      <site site="front5"/>
+      <geom geom="v6wrapgeom" sidesite="v6_side_site_front"/>
+      <site site="front6"/>
+      <geom geom="v7wrapgeom" sidesite="v7_side_site_front"/>
+      <site site="front7"/>
+      <geom geom="v8wrapgeom" sidesite="v8_side_site_front"/>
+      <site site="front8"/>
+    </spatial>
+    <spatial name="frontal3">
+      <site site="front3"/>
+      <geom geom="v4wrapgeom" sidesite="v4_side_site_front"/>
+      <site site="front4"/>
+      <geom geom="v5wrapgeom" sidesite="v5_side_site_front"/>
+      <site site="front5"/>
+      <geom geom="v6wrapgeom" sidesite="v6_side_site_front"/>
+      <site site="front6"/>
+      <geom geom="v7wrapgeom" sidesite="v7_side_site_front"/>
+      <site site="front7"/>
+      <geom geom="v8wrapgeom" sidesite="v8_side_site_front"/>
+      <site site="front8"/>
+      <geom geom="v9wrapgeom" sidesite="v9_side_site_front"/>
+      <site site="front9"/>
+    </spatial>
+    <spatial name="frontal4">
+      <site site="front4"/>
+      <geom geom="v5wrapgeom" sidesite="v5_side_site_front"/>
+      <site site="front5"/>
+      <geom geom="v6wrapgeom" sidesite="v6_side_site_front"/>
+      <site site="front6"/>
+      <geom geom="v7wrapgeom" sidesite="v7_side_site_front"/>
+      <site site="front7"/>
+      <geom geom="v8wrapgeom" sidesite="v8_side_site_front"/>
+      <site site="front8"/>
+      <geom geom="v9wrapgeom" sidesite="v9_side_site_front"/>
+      <site site="front9"/>
+      <geom geom="v10wrapgeom" sidesite="v10_side_site_front"/>
+      <site site="front10"/>
+    </spatial>
+    <spatial name="frontal5">
+      <site site="front5"/>
+      <geom geom="v6wrapgeom" sidesite="v6_side_site_front"/>
+      <site site="front6"/>
+      <geom geom="v7wrapgeom" sidesite="v7_side_site_front"/>
+      <site site="front7"/>
+      <geom geom="v8wrapgeom" sidesite="v8_side_site_front"/>
+      <site site="front8"/>
+      <geom geom="v9wrapgeom" sidesite="v9_side_site_front"/>
+      <site site="front9"/>
+      <geom geom="v10wrapgeom" sidesite="v10_side_site_front"/>
+      <site site="front10"/>
+      <geom geom="v11wrapgeom" sidesite="v11_side_site_front"/>
+      <site site="front11"/>
+    </spatial>
+    <spatial name="frontal6">
+      <site site="front6"/>
+      <geom geom="v7wrapgeom" sidesite="v7_side_site_front"/>
+      <site site="front7"/>
+      <geom geom="v8wrapgeom" sidesite="v8_side_site_front"/>
+      <site site="front8"/>
+      <geom geom="v9wrapgeom" sidesite="v9_side_site_front"/>
+      <site site="front9"/>
+      <geom geom="v10wrapgeom" sidesite="v10_side_site_front"/>
+      <site site="front10"/>
+      <geom geom="v11wrapgeom" sidesite="v11_side_site_front"/>
+      <site site="front11"/>
+      <geom geom="v12wrapgeom" sidesite="v12_side_site_front"/>
+      <site site="front12"/>
+    </spatial>
+    <spatial name="frontal7">
+      <site site="front7"/>
+      <geom geom="v8wrapgeom" sidesite="v8_side_site_front"/>
+      <site site="front8"/>
+      <geom geom="v9wrapgeom" sidesite="v9_side_site_front"/>
+      <site site="front9"/>
+      <geom geom="v10wrapgeom" sidesite="v10_side_site_front"/>
+      <site site="front10"/>
+      <geom geom="v11wrapgeom" sidesite="v11_side_site_front"/>
+      <site site="front11"/>
+      <geom geom="v12wrapgeom" sidesite="v12_side_site_front"/>
+      <site site="front12"/>
+      <geom geom="v13wrapgeom" sidesite="v13_side_site_front"/>
+      <site site="front13"/>
+    </spatial>
+    <spatial name="frontal8">
+      <site site="front8"/>
+      <geom geom="v9wrapgeom" sidesite="v9_side_site_front"/>
+      <site site="front9"/>
+      <geom geom="v10wrapgeom" sidesite="v10_side_site_front"/>
+      <site site="front10"/>
+      <geom geom="v11wrapgeom" sidesite="v11_side_site_front"/>
+      <site site="front11"/>
+      <geom geom="v12wrapgeom" sidesite="v12_side_site_front"/>
+      <site site="front12"/>
+      <geom geom="v13wrapgeom" sidesite="v13_side_site_front"/>
+      <site site="front13"/>
+      <geom geom="v14wrapgeom" sidesite="v14_side_site_front"/>
+      <site site="front14"/>
+    </spatial>
+    <spatial name="frontal9">
+      <site site="front9"/>
+      <geom geom="v10wrapgeom" sidesite="v10_side_site_front"/>
+      <site site="front10"/>
+      <geom geom="v11wrapgeom" sidesite="v11_side_site_front"/>
+      <site site="front11"/>
+      <geom geom="v12wrapgeom" sidesite="v12_side_site_front"/>
+      <site site="front12"/>
+      <geom geom="v13wrapgeom" sidesite="v13_side_site_front"/>
+      <site site="front13"/>
+      <geom geom="v14wrapgeom" sidesite="v14_side_site_front"/>
+      <site site="front14"/>
+      <geom geom="v15wrapgeom" sidesite="v15_side_site_front"/>
+      <site site="front15"/>
+    </spatial>
+    <spatial name="frontal10">
+      <site site="front10"/>
+      <geom geom="v11wrapgeom" sidesite="v11_side_site_front"/>
+      <site site="front11"/>
+      <geom geom="v12wrapgeom" sidesite="v12_side_site_front"/>
+      <site site="front12"/>
+      <geom geom="v13wrapgeom" sidesite="v13_side_site_front"/>
+      <site site="front13"/>
+      <geom geom="v14wrapgeom" sidesite="v14_side_site_front"/>
+      <site site="front14"/>
+      <geom geom="v15wrapgeom" sidesite="v15_side_site_front"/>
+      <site site="front15"/>
+      <geom geom="v16wrapgeom" sidesite="v16_side_site_front"/>
+      <site site="front16"/>
+    </spatial>
+    <spatial name="frontal11">
+      <site site="front11"/>
+      <geom geom="v12wrapgeom" sidesite="v12_side_site_front"/>
+      <site site="front12"/>
+      <geom geom="v13wrapgeom" sidesite="v13_side_site_front"/>
+      <site site="front13"/>
+      <geom geom="v14wrapgeom" sidesite="v14_side_site_front"/>
+      <site site="front14"/>
+      <geom geom="v15wrapgeom" sidesite="v15_side_site_front"/>
+      <site site="front15"/>
+      <geom geom="v16wrapgeom" sidesite="v16_side_site_front"/>
+      <site site="front16"/>
+      <geom geom="v17wrapgeom" sidesite="v17_side_site_front"/>
+      <site site="front17"/>
+    </spatial>
+  </tendon>
+</mujoco>
