@@ -170,14 +170,14 @@ def main() -> int:
 
   failed: list[pathlib.Path] = []
   for p in args.paths:
-    text = p.read_text()
+    text = p.read_text(encoding='utf-8')
     formatted = format_xml(text)
     if args.check:
       if text != formatted:
         failed.append(p)
     elif args.write:
       if text != formatted:
-        p.write_text(formatted)
+        p.write_text(formatted, encoding='utf-8')
     else:
       sys.stdout.write(formatted)
 

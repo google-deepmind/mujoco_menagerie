@@ -76,7 +76,13 @@ def display_name(robot):
   maker = robot.split('/')[0]
   readme = pathlib.Path(f'{maker}/README.md')
   if readme.exists():
-    title = readme.read_text().splitlines()[0].strip().lstrip('#').strip()
+    title = (
+      readme.read_text(encoding='utf-8')
+      .splitlines()[0]
+      .strip()
+      .lstrip('#')
+      .strip()
+    )
     title = _README_TITLE_SUFFIX.sub('', title).rstrip()
     if title:
       return title
@@ -382,7 +388,7 @@ MODELS_END = '<!-- END MODELS -->'
 
 def detect_license(license_path):
   """Identify the SPDX license name from the LICENSE file contents."""
-  text = pathlib.Path(license_path).read_text()
+  text = pathlib.Path(license_path).read_text(encoding='utf-8')
   lower = text.lower()
   if 'apache license' in lower and 'version 2' in lower:
     return 'Apache-2.0'
@@ -441,7 +447,7 @@ def write_gallery_to_readme(rendered, dofs, readme_path='README.md'):
     sections.append(table)
 
   body = '\n\n'.join(sections)
-  readme = pathlib.Path(readme_path).read_text()
+  readme = pathlib.Path(readme_path).read_text(encoding='utf-8')
   pattern = re.compile(
     re.escape(MODELS_BEGIN) + r'.*?' + re.escape(MODELS_END), re.DOTALL
   )
@@ -450,7 +456,7 @@ def write_gallery_to_readme(rendered, dofs, readme_path='README.md'):
       f'models markers not found in {readme_path}; expected\n  {MODELS_BEGIN}\n  {MODELS_END}'
     )
   new = pattern.sub(f'{MODELS_BEGIN}\n\n{body}\n\n{MODELS_END}', readme)
-  pathlib.Path(readme_path).write_text(new)
+  pathlib.Path(readme_path).write_text(new, encoding='utf-8')
 
 
 def main(argv):
