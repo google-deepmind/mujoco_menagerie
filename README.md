@@ -217,6 +217,7 @@ full breakdown.
 | <a href='https://live.mujoco.org/?model=github:google-deepmind/mujoco_menagerie/main/flybody/scene.xml' title='Open live preview for Flybody'><img src='assets/flybody-fruitfly.png' width=120></a> | Flybody | 102 | [Apache-2.0](flybody/LICENSE) |
 | <a href='https://live.mujoco.org/?model=github:google-deepmind/mujoco_menagerie/main/iit_softfoot/scene.xml' title='Open live preview for IIT SoftFoot'><img src='assets/iit_softfoot-softfoot.png' width=120></a> | IIT SoftFoot | 92 | [BSD-3-Clause](iit_softfoot/LICENSE) |
 | <a href='https://live.mujoco.org/?model=github:google-deepmind/mujoco_menagerie/main/ms_human_700/scene.xml' title='Open live preview for MS-Human-700'><img src='assets/ms_human_700-MS-Human-700.png' width=120></a> | MS-Human-700 | 85 | [Apache-2.0](ms_human_700/LICENSE) |
+| <a href='https://live.mujoco.org/?model=github:google-deepmind/mujoco_menagerie/main/musculoskeletal_dog/scene_muscles_Millard.xml' title='Open live preview for Musculoskeletal Dog'><img src='assets/musculoskeletal_dog-dog_muscles_Millard.png' width=120></a> | Musculoskeletal Dog | 73 | [MIT](musculoskeletal_dog/LICENSE) |
 
 **Dual Arms.**
 
