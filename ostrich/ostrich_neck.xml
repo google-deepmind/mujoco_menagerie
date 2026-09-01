@@ -1,0 +1,45 @@
+<mujoco model="ostrich_neck">
+  <compiler meshdir="assets" angle="radian" eulerseq="xyz" balanceinertia="true"/>
+
+  <option timestep="0.0025"/>
+
+  <default>
+    <joint limited="true" solimplimit="0 0.99 0.01" stiffness="10" armature="0.01" damping="5"/>
+    <site group="4" rgba="0 1 0 1" size="0.01 0.01 0.01"/>
+    <tendon width="0.006" rgba="0.95 0.3 0.3 1"/>
+    <muscle ctrllimited="true" ctrlrange="-1 1"/>
+
+    <default class="ostrich">
+      <geom type="mesh" contype="1" conaffinity="0" group="0" friction="0.7" solref="0.015 1" solimp="0.95 0.99 0.003"
+        material="bone"/>
+
+      <default class="leg">
+        <geom contype="3" conaffinity="2"/>
+      </default>
+
+      <default class="wrapping">
+        <geom type="cylinder" contype="0" conaffinity="0" group="5" rgba="0 0 0.8 0.5"/>
+      </default>
+    </default>
+  </default>
+
+  <include file="assets/bones/assets.xml"/>
+
+  <worldbody>
+    <body name="ostrich" childclass="ostrich" pos="0 0 1.05">
+      <camera name="side" pos="0.5 -2.8 1.2" euler="-5 0 0"/>
+      <camera name="back" pos="-2.8 0 1.2" xyaxes="0 -1 0 1 0 3"/>
+
+      <include file="assets/bones/torso.xml"/>
+      <include file="assets/bones/neck.xml"/>
+    </body>
+
+    <!-- Targets used by the OstrichRL foraging task. -->
+    <site name="target" type="sphere" size="0.05" pos="0 0 1.3" group="0" rgba="0.3 0.6 0.3 0.5"/>
+    <site name="allowed_sphere" type="sphere" size="0.8" pos="0.5 0 1.3" group="5" rgba="0 0 1 0.2"/>
+    <site name="forbidden_sphere" type="sphere" size="0.6" pos="-0.1 0 1" group="5" rgba="1 0 0 0.2"/>
+  </worldbody>
+
+  <include file="assets/tendons/neck.xml"/>
+  <include file="assets/actuators/neck.xml"/>
+</mujoco>

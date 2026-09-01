@@ -1,0 +1,401 @@
+<mujoco>
+  <body name="vertebra1" pos="0.3964 0 0.1991">
+    <geom name="v1" contype="131072" conaffinity="98303" mesh="vertebra1"/>
+    <site name="front_right1" rgba="1 0 0 1" pos="0 0.01 -0.03"/>
+    <site name="front_left1" rgba="1 0 0 1" pos="0 -0.01 -0.03"/>
+    <site name="front1" rgba="1 0 0 1" pos="0 0 -0.03"/>
+    <site name="front_left21" rgba="1 0 0 1" pos="0.01 -0.02 -0.03"/>
+    <site name="front_right21" rgba="1 0 0 1" pos="0.01 0.02 -0.03"/>
+    <site name="back1" rgba="1 0 0 1" pos="-0.01 -0 0.03"/>
+    <site name="back_left1" rgba="1 0 0 1" pos="-0.01 -0.02 0.01"/>
+    <site name="back_right1" rgba="1 0 0 1" pos="-0.01 0.02 0.01"/>
+    <site name="lateral_left1" rgba="1 1 0 1" pos="0 -0.03 0"/>
+    <site name="lateral_right1" rgba="1 1 0 1" pos="0 0.03 0"/>
+    <geom name="v1wrapgeom" class="wrapping" size="0.025 0.075" pos="-0.04 0 -0.01" quat="0.7071 0.7071 0 0"/>
+    <site name="v1_side_site_back" pos="-0.09 0 0.02"/>
+    <site name="v1_side_site_front" pos="0.085 0 -0.05"/>
+    <joint name="v1_y" type="hinge" pos="-0.04 0 -0.01" axis="0 1 0" limited="true" stiffness="34.851207285434937"
+      range="-0 0.6981"/>
+    <joint name="v1_x" type="hinge" pos="-0.04 0 -0.01" axis="0.4488 0 -0.8936" limited="true"
+      stiffness="66.17992474959439" range="-0.2618 0.2618"/>
+    <body name="vertebra2" pos="0.05642 0 0.04695">
+      <geom name="v2" contype="65536" conaffinity="180223" mesh="vertebra2"/>
+      <site name="front_right2" rgba="1 0 0 1" pos="0.015 0.01 -0.01"/>
+      <site name="front_left2" rgba="1 0 0 1" pos="0.015 -0.01 -0.01"/>
+      <site name="front2" rgba="1 0 0 1" pos="0.015 0 -0.01"/>
+      <site name="front_left22" rgba="1 0 0 1" pos="0.025 -0.02 -0.01"/>
+      <site name="front_right22" rgba="1 0 0 1" pos="0.025 0.02 -0.01"/>
+      <site name="back2" rgba="1 0 0 1" pos="-0.025 -0 0.01"/>
+      <site name="back_left2" rgba="1 0 0 1" pos="-0.02 -0.02 0"/>
+      <site name="back_right2" rgba="1 0 0 1" pos="-0.02 0.02 0"/>
+      <site name="lateral_left2" rgba="1 1 0 1" pos="0 -0.03 0"/>
+      <site name="lateral_right2" rgba="1 1 0 1" pos="0 0.03 0"/>
+      <geom name="v2wrapgeom" class="wrapping" size="0.025 0.075" pos="-0.03 0 -0.03" quat="0.7071 0.7071 0 0"/>
+      <site name="v2_side_site_back" pos="-0.075 0 0.04"/>
+      <site name="v2_side_site_front" pos="0.07 0 -0.07"/>
+      <joint name="v2_y" type="hinge" pos="-0.03 0 -0.03" axis="0 1 0" limited="true" stiffness="32.472774581045716"
+        range="-0 0.7854"/>
+      <joint name="v2_x" type="hinge" pos="-0.03 0 -0.03" axis="0.6396 0 -0.7687" limited="true"
+        stiffness="45.070201163859252" range="-0.8727 0.8727"/>
+      <body name="vertebra3" pos="0.02718 0 0.07063">
+        <geom name="v3" contype="32768" conaffinity="221183" mesh="vertebra3"/>
+        <site name="front_right3" rgba="1 0 0 1" pos="0.015 0.01 0"/>
+        <site name="front_left3" rgba="1 0 0 1" pos="0.015 -0.01 0"/>
+        <site name="front3" rgba="1 0 0 1" pos="0.015 0 0"/>
+        <site name="front_left23" rgba="1 0 0 1" pos="0.02 -0.02 -0.01"/>
+        <site name="front_right23" rgba="1 0 0 1" pos="0.02 0.02 -0.01"/>
+        <site name="back3" rgba="1 0 0 1" pos="-0.025 -0 -0"/>
+        <site name="back_left3" rgba="1 0 0 1" pos="-0.02 -0.02 0"/>
+        <site name="back_right3" rgba="1 0 0 1" pos="-0.02 0.02 0"/>
+        <site name="lateral_left3" rgba="1 1 0 1" pos="0 -0.025 0"/>
+        <site name="lateral_right3" rgba="1 1 0 1" pos="0 0.025 0"/>
+        <geom name="v3wrapgeom" class="wrapping" size="0.025 0.075" pos="-0.01 0 -0.03" quat="0.7071 0.7071 0 0"/>
+        <site name="v3_side_site_back" pos="-0.075 0 0.05"/>
+        <site name="v3_side_site_front" pos="0.07 0 -0.08"/>
+        <joint name="v3_y" type="hinge" pos="-0.01 0 -0.03" axis="0 1 0" limited="true" stiffness="27.922942225104967"
+          range="-0.4014 0.6109"/>
+        <joint name="v3_x" type="hinge" pos="-0.01 0 -0.03" axis="0.9333 0 -0.3591" limited="true"
+          stiffness="45.070201163859252" range="-0.8727 0.8727"/>
+        <body name="vertebra4" pos="0.01137 0 0.08235">
+          <geom name="v4" contype="16384" conaffinity="241663" mesh="vertebra4"/>
+          <site name="front_right4" rgba="1 0 0 1" pos="0.015 0.01 0"/>
+          <site name="front_left4" rgba="1 0 0 1" pos="0.015 -0.01 0"/>
+          <site name="front4" rgba="1 0 0 1" pos="0.015 0 0"/>
+          <site name="front_left24" rgba="1 0 0 1" pos="0.02 -0.02 -0.01"/>
+          <site name="front_right24" rgba="1 0 0 1" pos="0.02 0.02 -0.01"/>
+          <site name="back4" rgba="1 0 0 1" pos="-0.025 -0 -0"/>
+          <site name="back_left4" rgba="1 0 0 1" pos="-0.02 -0.02 0"/>
+          <site name="back_right4" rgba="1 0 0 1" pos="-0.02 0.02 0"/>
+          <site name="lateral_left4" rgba="1 1 0 1" pos="0 -0.02 0"/>
+          <site name="lateral_right4" rgba="1 1 0 1" pos="0 0.02 0"/>
+          <geom name="v4wrapgeom" class="wrapping" size="0.025 0.075" pos="0 0 -0.03" quat="0.7071 0.7071 0 0"/>
+          <site name="v4_side_site_back" pos="-0.075 0 0.05"/>
+          <site name="v4_side_site_front" pos="0.07 0 -0.08"/>
+          <joint name="v4_y" type="hinge" pos="0 0 -0.03" axis="0 1 0" limited="true" stiffness="29.43376764576258"
+            range="-0.4014 0.5236"/>
+          <joint name="v4_x" type="hinge" pos="0 0 -0.03" axis="0.9906 0 -0.1368" limited="true"
+            stiffness="45.070201163859252" range="-0.8727 0.8727"/>
+          <body name="vertebra5" pos="-0.003932 0 0.07807">
+            <geom name="v5" contype="8192" conaffinity="251903" mesh="vertebra5"/>
+            <site name="front_right5" rgba="1 0 0 1" pos="0.015 0.01 0"/>
+            <site name="front_left5" rgba="1 0 0 1" pos="0.015 -0.01 0"/>
+            <site name="front5" rgba="1 0 0 1" pos="0.015 0 0"/>
+            <site name="front_left25" rgba="1 0 0 1" pos="0.02 -0.02 -0.01"/>
+            <site name="front_right25" rgba="1 0 0 1" pos="0.02 0.02 -0.01"/>
+            <site name="back5" rgba="1 0 0 1" pos="-0.025 -0 -0"/>
+            <site name="back_left5" rgba="1 0 0 1" pos="-0.02 -0.02 0"/>
+            <site name="back_right5" rgba="1 0 0 1" pos="-0.02 0.02 0"/>
+            <site name="lateral_left5" rgba="1 1 0 1" pos="0 -0.02 0"/>
+            <site name="lateral_right5" rgba="1 1 0 1" pos="0 0.02 0"/>
+            <geom name="v5wrapgeom" class="wrapping" size="0.02 0.075" pos="0.005 0 -0.03" quat="0.7071 0.7071 0 0"/>
+            <site name="v5_side_site_back" pos="-0.075 0 0.05"/>
+            <site name="v5_side_site_front" pos="0.07 0 -0.08"/>
+            <joint name="v5_y" type="hinge" pos="0.005 0 -0.03" axis="0 1 0" limited="true"
+              stiffness="29.110148118838934" range="-0.4887 0.4538"/>
+            <joint name="v5_x" type="hinge" pos="0.005 0 -0.03" axis="0.9987 -0 0.0503" limited="true"
+              stiffness="45.070201163859252" range="-0.8727 0.8727"/>
+            <body name="vertebra6" pos="-0.009233 0 0.07946">
+              <geom name="v6" contype="4096" conaffinity="257023" mesh="vertebra6"/>
+              <site name="front_right6" rgba="1 0 0 1" pos="0.015 0.01 0"/>
+              <site name="front_left6" rgba="1 0 0 1" pos="0.015 -0.01 0"/>
+              <site name="front6" rgba="1 0 0 1" pos="0.015 0 0"/>
+              <site name="front_left26" rgba="1 0 0 1" pos="0.02 -0.02 -0.01"/>
+              <site name="front_right26" rgba="1 0 0 1" pos="0.02 0.02 -0.01"/>
+              <site name="back6" rgba="1 0 0 1" pos="-0.025 -0 -0"/>
+              <site name="back_left6" rgba="1 0 0 1" pos="-0.02 -0.02 0"/>
+              <site name="back_right6" rgba="1 0 0 1" pos="-0.02 0.02 0"/>
+              <site name="lateral_left6" rgba="1 1 0 1" pos="0 -0.02 0"/>
+              <site name="lateral_right6" rgba="1 1 0 1" pos="0 0.02 0"/>
+              <geom name="v6wrapgeom" class="wrapping" size="0.02 0.075" pos="0.005 0 -0.03" quat="0.7071 0.7071 0 0"/>
+              <site name="v6_side_site_back" pos="-0.075 0 0.05"/>
+              <site name="v6_side_site_front" pos="0.07 0 -0.08"/>
+              <joint name="v6_y" type="hinge" pos="0.005 0 -0.03" axis="0 1 0" limited="true"
+                stiffness="27.135218504588373" range="-0.5236 0.5411"/>
+              <joint name="v6_x" type="hinge" pos="0.005 0 -0.03" axis="0.9933 -0 0.1154" limited="true"
+                stiffness="45.070201163859252" range="-0.8727 0.8727"/>
+              <body name="vertebra7" pos="-0.0129 0 0.07984">
+                <geom name="v7" contype="2048" conaffinity="259583" mesh="vertebra7"/>
+                <site name="front_right7" rgba="1 0 0 1" pos="0.015 0.01 0"/>
+                <site name="front_left7" rgba="1 0 0 1" pos="0.015 -0.01 0"/>
+                <site name="front7" rgba="1 0 0 1" pos="0.015 0 0"/>
+                <site name="front_left27" rgba="1 0 0 1" pos="0.02 -0.02 -0.01"/>
+                <site name="front_right27" rgba="1 0 0 1" pos="0.02 0.02 -0.01"/>
+                <site name="back7" rgba="1 0 0 1" pos="-0.025 -0 -0"/>
+                <site name="back_left7" rgba="1 0 0 1" pos="-0.02 -0.02 0"/>
+                <site name="back_right7" rgba="1 0 0 1" pos="-0.02 0.02 0"/>
+                <site name="lateral_left7" rgba="1 1 0 1" pos="0 -0.02 0"/>
+                <site name="lateral_right7" rgba="1 1 0 1" pos="0 0.02 0"/>
+                <geom name="v7wrapgeom" class="wrapping" size="0.02 0.075" pos="0.005 0 -0.03"
+                  quat="0.7071 0.7071 0 0"/>
+                <site name="v7_side_site_back" pos="-0.075 0 0.05"/>
+                <site name="v7_side_site_front" pos="0.07 0 -0.08"/>
+                <joint name="v7_y" type="hinge" pos="0.005 0 -0.03" axis="0 1 0" limited="true"
+                  stiffness="26.654076701851714" range="-0.5236 0.576"/>
+                <joint name="v7_x" type="hinge" pos="0.005 0 -0.03" axis="0.9872 -0 0.1595" limited="true"
+                  stiffness="65.380925877223646" range="-0.2793 0.2793"/>
+                <body name="vertebra8" pos="-0.01196 0 0.07903">
+                  <geom name="v8" contype="1024" conaffinity="260863" mesh="vertebra8"/>
+                  <site name="front_right8" rgba="1 0 0 1" pos="0.015 0.01 0"/>
+                  <site name="front_left8" rgba="1 0 0 1" pos="0.015 -0.01 0"/>
+                  <site name="front8" rgba="1 0 0 1" pos="0.015 0 0"/>
+                  <site name="front_left28" rgba="1 0 0 1" pos="0.02 -0.02 -0.01"/>
+                  <site name="front_right28" rgba="1 0 0 1" pos="0.02 0.02 -0.01"/>
+                  <site name="back8" rgba="1 0 0 1" pos="-0.025 -0 -0"/>
+                  <site name="back_left8" rgba="1 0 0 1" pos="-0.02 -0.02 0"/>
+                  <site name="back_right8" rgba="1 0 0 1" pos="-0.02 0.02 0"/>
+                  <site name="lateral_left8" rgba="1 1 0 1" pos="0 -0.02 0"/>
+                  <site name="lateral_right8" rgba="1 1 0 1" pos="0 0.02 0"/>
+                  <geom name="v8wrapgeom" class="wrapping" size="0.02 0.075" pos="0.005 0 -0.03"
+                    quat="0.7071 0.7071 0 0"/>
+                  <site name="v8_side_site_back" pos="-0.075 0 0.05"/>
+                  <site name="v8_side_site_front" pos="0.07 0 -0.08"/>
+                  <joint name="v8_y" type="hinge" pos="0.005 0 -0.03" axis="0 1 0" limited="true"
+                    stiffness="25.588421005245836" range="-0.6458 0.5411"/>
+                  <joint name="v8_x" type="hinge" pos="0.005 0 -0.03" axis="0.9887 -0 0.1496" limited="true"
+                    stiffness="65.380925877223646" range="-0.2793 0.2793"/>
+                  <body name="vertebra9" pos="-0.009982 0 0.08314">
+                    <geom name="v9" contype="512" conaffinity="261503" mesh="vertebra9"/>
+                    <site name="front_right9" rgba="1 0 0 1" pos="0.015 0.01 0"/>
+                    <site name="front_left9" rgba="1 0 0 1" pos="0.015 -0.01 0"/>
+                    <site name="front9" rgba="1 0 0 1" pos="0.015 0 0"/>
+                    <site name="front_left29" rgba="1 0 0 1" pos="0.02 -0.02 -0.01"/>
+                    <site name="front_right29" rgba="1 0 0 1" pos="0.02 0.02 -0.01"/>
+                    <site name="back9" rgba="1 0 0 1" pos="-0.025 -0 -0"/>
+                    <site name="back_left9" rgba="1 0 0 1" pos="-0.02 -0.02 0"/>
+                    <site name="back_right9" rgba="1 0 0 1" pos="-0.02 0.02 0"/>
+                    <site name="lateral_left9" rgba="1 1 0 1" pos="0 -0.02 0"/>
+                    <site name="lateral_right9" rgba="1 1 0 1" pos="0 0.02 0"/>
+                    <geom name="v9wrapgeom" class="wrapping" size="0.02 0.075" pos="0 0 -0.03"
+                      quat="0.7071 0.7071 0 0"/>
+                    <site name="v9_side_site_back" pos="-0.075 0 0.05"/>
+                    <site name="v9_side_site_front" pos="0.07 0 -0.08"/>
+                    <joint name="v9_y" type="hinge" pos="0 0 -0.03" axis="0 1 0" limited="true"
+                      stiffness="29.110148118838934" range="-0.4887 0.4538"/>
+                    <joint name="v9_x" type="hinge" pos="0 0 -0.03" axis="0.9929 -0 0.1192" limited="true"
+                      stiffness="66.99299118858501" range="-0.2443 0.2443"/>
+                    <body name="vertebra10" pos="-0.00571 0 0.07628">
+                      <geom name="v10" contype="256" conaffinity="261823" mesh="vertebra10"/>
+                      <site name="front_right10" rgba="1 0 0 1" pos="0.015 0.01 0"/>
+                      <site name="front_left10" rgba="1 0 0 1" pos="0.015 -0.01 0"/>
+                      <site name="front10" rgba="1 0 0 1" pos="0.015 0 0"/>
+                      <site name="front_left210" rgba="1 0 0 1" pos="0.02 -0.02 -0.01"/>
+                      <site name="front_right210" rgba="1 0 0 1" pos="0.02 0.02 -0.01"/>
+                      <site name="back10" rgba="1 0 0 1" pos="-0.025 -0 -0"/>
+                      <site name="back_left10" rgba="1 0 0 1" pos="-0.02 -0.02 0"/>
+                      <site name="back_right10" rgba="1 0 0 1" pos="-0.02 0.02 0"/>
+                      <site name="lateral_left10" rgba="1 1 0 1" pos="0 -0.02 0"/>
+                      <site name="lateral_right10" rgba="1 1 0 1" pos="0 0.02 0"/>
+                      <geom name="v10wrapgeom" class="wrapping" size="0.02 0.075" pos="0 0 -0.03"
+                        quat="0.7071 0.7071 0 0"/>
+                      <site name="v10_side_site_back" pos="-0.075 0 0.05"/>
+                      <site name="v10_side_site_front" pos="0.07 0 -0.08"/>
+                      <joint name="v10_y" type="hinge" pos="0 0 -0.03" axis="0 1 0" limited="true"
+                        stiffness="20.475249773272829" range="-0.4538 0.4189"/>
+                      <joint name="v10_x" type="hinge" pos="0 0 -0.03" axis="0.9972 -0 0.07465" limited="true"
+                        stiffness="66.17992474959439" range="-0.2618 0.2618"/>
+                      <body name="vertebra11" pos="0.003247 0 0.06778">
+                        <geom name="v11" contype="128" conaffinity="261983" mesh="vertebra11"/>
+                        <site name="front_right11" rgba="1 0 0 1" pos="0.015 0.01 0"/>
+                        <site name="front_left11" rgba="1 0 0 1" pos="0.015 -0.01 0"/>
+                        <site name="front11" rgba="1 0 0 1" pos="0.015 0 0"/>
+                        <site name="front_left211" rgba="1 0 0 1" pos="0.02 -0.02 -0.01"/>
+                        <site name="front_right211" rgba="1 0 0 1" pos="0.02 0.02 -0.01"/>
+                        <site name="back11" rgba="1 0 0 1" pos="-0.025 -0 -0"/>
+                        <site name="back_left11" rgba="1 0 0 1" pos="-0.02 -0.02 0"/>
+                        <site name="back_right11" rgba="1 0 0 1" pos="-0.02 0.02 0"/>
+                        <site name="lateral_left11" rgba="1 1 0 1" pos="0 -0.02 0"/>
+                        <site name="lateral_right11" rgba="1 1 0 1" pos="0 0.02 0"/>
+                        <geom name="v11wrapgeom" class="wrapping" size="0.015 0.075" pos="-0.005 0 -0.03"
+                          quat="0.7071 0.7071 0 0"/>
+                        <site name="v11_side_site_back" pos="-0.075 0 0.05"/>
+                        <site name="v11_side_site_front" pos="0.07 0 -0.08"/>
+                        <joint name="v11_y" type="hinge" pos="-0.005 0 -0.03" axis="0 1 0" limited="true"
+                          stiffness="25.588421005245836" range="-0.8727 0.3142"/>
+                        <joint name="v11_x" type="hinge" pos="-0.005 0 -0.03" axis="0.9989 0 -0.04785" limited="true"
+                          stiffness="62.320800882819476" range="-0.3491 0.3491"/>
+                        <body name="vertebra12" pos="0.00417 0 0.07292">
+                          <geom name="v12" contype="64" conaffinity="262063" mesh="vertebra12"/>
+                          <site name="front_right12" rgba="1 0 0 1" pos="0.015 0.01 0"/>
+                          <site name="front_left12" rgba="1 0 0 1" pos="0.015 -0.01 0"/>
+                          <site name="front12" rgba="1 0 0 1" pos="0.015 0 0"/>
+                          <site name="front_left212" rgba="1 0 0 1" pos="0.02 -0.02 -0.01"/>
+                          <site name="front_right212" rgba="1 0 0 1" pos="0.02 0.02 -0.01"/>
+                          <site name="back12" rgba="1 0 0 1" pos="-0.025 -0 -0"/>
+                          <site name="back_left12" rgba="1 0 0 1" pos="-0.02 -0.02 0"/>
+                          <site name="back_right12" rgba="1 0 0 1" pos="-0.02 0.02 0"/>
+                          <site name="lateral_left12" rgba="1 1 0 1" pos="0 -0.02 0"/>
+                          <site name="lateral_right12" rgba="1 1 0 1" pos="0 0.02 0"/>
+                          <geom name="v12wrapgeom" class="wrapping" size="0.015 0.075" pos="-0.005 0 -0.03"
+                            quat="0.7071 0.7071 0 0"/>
+                          <site name="v12_side_site_back" pos="-0.075 0 0.05"/>
+                          <site name="v12_side_site_front" pos="0.07 0 -0.08"/>
+                          <joint name="v12_y" type="hinge" pos="-0.005 0 -0.03" axis="0 1 0" limited="true"
+                            stiffness="25.211582796971441" range="-0.8727 0.3491"/>
+                          <joint name="v12_x" type="hinge" pos="-0.005 0 -0.03" axis="0.9984 0 -0.05709" limited="true"
+                            stiffness="59.467026129190735" range="-0.4189 0.4189"/>
+                          <body name="vertebra13" pos="0.01375 0 0.06776">
+                            <geom name="v13" contype="32" conaffinity="262103" mesh="vertebra13"/>
+                            <site name="front_right13" rgba="1 0 0 1" pos="0.015 0.01 0"/>
+                            <site name="front_left13" rgba="1 0 0 1" pos="0.015 -0.01 0"/>
+                            <site name="front13" rgba="1 0 0 1" pos="0.015 0 0"/>
+                            <site name="front_left213" rgba="1 0 0 1" pos="0.01 -0.02 -0.01"/>
+                            <site name="front_right213" rgba="1 0 0 1" pos="0.01 0.02 -0.01"/>
+                            <site name="back13" rgba="1 0 0 1" pos="-0.025 -0 -0"/>
+                            <site name="back_left13" rgba="1 0 0 1" pos="-0.01 -0.02 0.01"/>
+                            <site name="back_right13" rgba="1 0 0 1" pos="-0.01 0.02 0.01"/>
+                            <site name="lateral_left13" rgba="1 1 0 1" pos="0 -0.02 0"/>
+                            <site name="lateral_right13" rgba="1 1 0 1" pos="0 0.02 0"/>
+                            <geom name="v13wrapgeom" class="wrapping" size="0.015 0.075" pos="-0.005 0 -0.03"
+                              quat="0.7071 0.7071 0 0"/>
+                            <site name="v13_side_site_back" pos="-0.075 0 0.05"/>
+                            <site name="v13_side_site_front" pos="0.07 0 -0.08"/>
+                            <joint name="v13_y" type="hinge" pos="-0.005 0 -0.03" axis="0 1 0" limited="true"
+                              stiffness="23.6759726305825953" range="-1.047 0.3491"/>
+                            <joint name="v13_x" type="hinge" pos="-0.005 0 -0.03" axis="0.98 0 -0.1989" limited="true"
+                              stiffness="59.467026129190735" range="-0.4189 0.4189"/>
+                            <body name="vertebra14" pos="0.02693 0 0.05387">
+                              <geom name="v14" contype="16" conaffinity="262123" mesh="vertebra14"/>
+                              <site name="front_right14" rgba="1 0 0 1" pos="0.005 0.01 -0.005"/>
+                              <site name="front_left14" rgba="1 0 0 1" pos="0.005 -0.01 -0.005"/>
+                              <site name="front14" rgba="1 0 0 1" pos="0.005 0 -0.005"/>
+                              <site name="front_left214" rgba="1 0 0 1" pos="0.01 -0.015 -0.025"/>
+                              <site name="front_right214" rgba="1 0 0 1" pos="0.01 0.015 -0.025"/>
+                              <site name="back14" rgba="1 0 0 1" pos="-0.015 -0 0.005"/>
+                              <site name="back_left14" rgba="1 0 0 1" pos="-0.01 -0.02 0.01"/>
+                              <site name="back_right14" rgba="1 0 0 1" pos="-0.01 0.02 0.01"/>
+                              <site name="lateral_left14" rgba="1 1 0 1" pos="0 -0.02 0"/>
+                              <site name="lateral_right14" rgba="1 1 0 1" pos="0 0.02 0"/>
+                              <geom name="v14wrapgeom" class="wrapping" size="0.015 0.075" pos="-0.02 0 -0.03"
+                                quat="0.7071 0.7071 0 0"/>
+                              <site name="v14_side_site_back" pos="-0.085 0 0.045"/>
+                              <site name="v14_side_site_front" pos="0.08 0 -0.075"/>
+                              <joint name="v14_y" type="hinge" pos="-0.02 0 -0.03" axis="0 1 0" limited="true"
+                                stiffness="23.6759726305825953" range="-1.047 0.3491"/>
+                              <joint name="v14_x" type="hinge" pos="-0.02 0 -0.03" axis="0.8945 0 -0.4471"
+                                limited="true" stiffness="58.11313436456274" range="-0.4538 0.4538"/>
+                              <body name="vertebra15" pos="0.03403 0 0.03603">
+                                <geom name="v15" contype="8" conaffinity="262133" mesh="vertebra15"/>
+                                <site name="front_right15" rgba="1 0 0 1" pos="0 0.01 -0.01"/>
+                                <site name="front_left15" rgba="1 0 0 1" pos="0 -0.01 -0.01"/>
+                                <site name="front15" rgba="1 0 0 1" pos="0 0 -0.01"/>
+                                <site name="front_left215" rgba="1 0 0 1" pos="0 -0.015 -0.02"/>
+                                <site name="front_right215" rgba="1 0 0 1" pos="0 0.015 -0.02"/>
+                                <site name="back15" rgba="1 0 0 1" pos="-0.01 -0 0.01"/>
+                                <site name="back_left15" rgba="1 0 0 1" pos="-0.01 -0.02 0.01"/>
+                                <site name="back_right15" rgba="1 0 0 1" pos="-0.01 0.02 0.01"/>
+                                <site name="lateral_left15" rgba="1 1 0 1" pos="0 -0.02 0"/>
+                                <site name="lateral_right15" rgba="1 1 0 1" pos="0 0.02 0"/>
+                                <geom name="v15wrapgeom" class="wrapping" size="0.015 0.075" pos="-0.02 0 -0.02"
+                                  quat="0.7071 0.7071 0 0"/>
+                                <site name="v15_side_site_back" pos="-0.09 0 0.04"/>
+                                <site name="v15_side_site_front" pos="0.085 0 -0.07"/>
+                                <joint name="v15_y" type="hinge" pos="-0.02 0 -0.02" axis="0 1 0" limited="true"
+                                  stiffness="37.683183192465275" range="-0.1745 0.4363"/>
+                                <joint name="v15_x" type="hinge" pos="-0.02 0 -0.02" axis="0.727 0 -0.6866"
+                                  limited="true" stiffness="60.8690121516353" range="-0.384 0.384"/>
+                                <body name="vertebra16" pos="0.03892 0 0.01991">
+                                  <geom name="v16" contype="4" conaffinity="262138" mesh="vertebra16"/>
+                                  <site name="front_right16" rgba="1 0 0 1" pos="0 0.01 -0.01"/>
+                                  <site name="front_left16" rgba="1 0 0 1" pos="0 -0.01 -0.01"/>
+                                  <site name="front16" rgba="1 0 0 1" pos="0 0 -0.01"/>
+                                  <site name="front_left216" rgba="1 0 0 1" pos="0 -0.015 -0.02"/>
+                                  <site name="front_right216" rgba="1 0 0 1" pos="0 0.015 -0.02"/>
+                                  <site name="back16" rgba="1 0 0 1" pos="-0.01 -0 0.01"/>
+                                  <site name="back_left16" rgba="1 0 0 1" pos="-0.01 -0.02 0.01"/>
+                                  <site name="back_right16" rgba="1 0 0 1" pos="-0.01 0.02 0.01"/>
+                                  <site name="lateral_left16" rgba="1 1 0 1" pos="0 -0.02 0"/>
+                                  <site name="lateral_right16" rgba="1 1 0 1" pos="0 0.02 0"/>
+                                  <geom name="v16wrapgeom" class="wrapping" size="0.01 0.075" pos="-0.02 0 -0.01"
+                                    quat="0.7071 0.7071 0 0"/>
+                                  <site name="v16_side_site_back" pos="-0.09 0 0.04"/>
+                                  <site name="v16_side_site_front" pos="0.085 0 -0.07"/>
+                                  <joint name="v16_y" type="hinge" pos="-0.02 0 -0.01" axis="0 1 0" limited="true"
+                                    stiffness="41.05518843070466" range="-0.1745 0.3491"/>
+                                  <joint name="v16_x" type="hinge" pos="-0.02 0 -0.01" axis="0.4554 0 -0.8903"
+                                    limited="true" stiffness="59.467026129190735" range="-0.4189 0.4189"/>
+                                  <body name="vertebra17" pos="0.03299 0 0.01069">
+                                    <geom name="v17" contype="2" conaffinity="262141" mesh="vertebra17"/>
+                                    <site name="front_right17" rgba="1 0 0 1" pos="0 0.01 -0.01"/>
+                                    <site name="front_left17" rgba="1 0 0 1" pos="0 -0.01 -0.01"/>
+                                    <site name="front17" rgba="1 0 0 1" pos="0 0 -0.01"/>
+                                    <site name="front_left217" rgba="1 0 0 1" pos="0 -0.015 -0.02"/>
+                                    <site name="front_right217" rgba="1 0 0 1" pos="0 0.015 -0.02"/>
+                                    <site name="back17" rgba="1 0 0 1" pos="-0.01 -0 0.01"/>
+                                    <site name="back_left17" rgba="1 0 0 1" pos="-0.01 -0.02 0.01"/>
+                                    <site name="back_right17" rgba="1 0 0 1" pos="-0.01 0.02 0.01"/>
+                                    <site name="lateral_left17" rgba="1 1 0 1" pos="0 -0.02 0"/>
+                                    <site name="lateral_right17" rgba="1 1 0 1" pos="0 0.02 0"/>
+                                    <geom name="v17wrapgeom" class="wrapping" size="0.01 0.075" pos="-0.02 0 -0.01"
+                                      quat="0.7071 0.7071 0 0"/>
+                                    <site name="v17_side_site_back" pos="-0.09 0 0.04"/>
+                                    <site name="v17_side_site_front" pos="0.085 0 -0.07"/>
+                                    <joint name="v17_y" type="hinge" pos="-0.02 0 -0.01" axis="0 1 0" limited="true"
+                                      stiffness="42.577643276422037" range="-0.3142 0.1745"/>
+                                    <joint name="v17_x" type="hinge" pos="-0.02 0 -0.01" axis="0.3083 0 -0.9513"
+                                      limited="true" stiffness="59.467026129190735" range="-0.4189 0.4189"/>
+                                    <body name="head" pos="0.05511 -0.004378 0.03702">
+                                      <geom name="head" mesh="head"/>
+                                      <site name="head_back" pos="0 0 -0.01"/>
+                                      <site name="head_back_left" pos="0 -0.05 -0.01"/>
+                                      <site name="head_back_right" pos="0 0.05 -0.01"/>
+                                      <site name="beak" type="sphere" size="0.03" pos="0.12 0 -0.08"
+                                        rgba="0.3 0.6 0.3 0.5" group="4"/>
+                                      <joint name="head_y" type="hinge" pos="-0.02 0 -0.01" axis="0 1 0" limited="true"
+                                        range="-0.3142 0.3491"/>
+                                      <joint name="head_x" type="hinge" pos="-0.02 0 -0.01" axis="0.5564 0 -0.8283"
+                                        limited="true" range="-0.4538 0.4538"/>
+                                      <inertial pos="0.01232 0.0007918 -0.008275" quat="0.02618 0.8923 0.05524 0.4474"
+                                        mass="1.59069" diaginertia="0.006546 0.006346 0.00245"/>
+                                    </body>
+                                    <inertial pos="0 0 0" quat="0.3498 0.3497 -0.6139 0.6152" mass="0.0319292"
+                                      diaginertia="1.068e-05 5.118e-05 3.943e-06"/>
+                                  </body>
+                                  <inertial pos="0 0 0" quat="0.3762 0.3768 -0.5983 0.5987" mass="0.0357702"
+                                    diaginertia="1.187e-05 5.657e-05 4.659e-06"/>
+                                </body>
+                                <inertial pos="0 0 0" quat="0.2916 0.2915 -0.6441 0.6443" mass="0.0554885"
+                                  diaginertia="1.986e-05 9.406e-05 1.161e-05"/>
+                              </body>
+                              <inertial pos="0 0 0" quat="0.672 0.675 0.2147 -0.2159" mass="0.076035"
+                                diaginertia="2.768e-05 0.0001222 2.45e-05"/>
+                            </body>
+                            <inertial pos="0 0 0" quat="0.7013 0.7029 0.08363 -0.08451" mass="0.0868927"
+                              diaginertia="3.035e-05 0.0001365 2.491e-05"/>
+                          </body>
+                          <inertial pos="0 0 0" quat="0.7027 0.7044 0.07124 -0.07118" mass="0.102299"
+                            diaginertia="3.471e-05 0.0001535 3.152e-05"/>
+                        </body>
+                        <inertial pos="0 0 0" quat="0.7043 0.7064 0.04958 -0.04961" mass="0.115043"
+                          diaginertia="3.874e-05 0.0001686 3.819e-05"/>
+                      </body>
+                      <inertial pos="0 0 0" quat="0.7061 0.7081 0.0003276 -0.0005647" mass="0.129983"
+                        diaginertia="4.701e-05 0.0002142 4.492e-05"/>
+                    </body>
+                    <inertial pos="0 0 0" quat="0.706 0.7082 0.001312 -0.001216" mass="0.141159"
+                      diaginertia="5.083e-05 0.0002288 5.145e-05"/>
+                  </body>
+                  <inertial pos="0 0 0" quat="0.7034 0.7075 -0.04764 0.04793" mass="0.161848"
+                    diaginertia="5.828e-05 0.0002575 6.4e-05"/>
+                </body>
+                <inertial pos="0 0 0" quat="0.7051 0.7061 -0.04669 0.04621" mass="0.184346"
+                  diaginertia="6.583e-05 0.0002863 7.705e-05"/>
+              </body>
+              <inertial pos="0 0 0" quat="0.7049 0.7052 -0.05348 0.05355" mass="0.214042"
+                diaginertia="7.553e-05 0.0003232 9.419e-05"/>
+            </body>
+            <inertial pos="0 0 0" quat="0.7072 0.7036 -0.04956 0.04915" mass="0.227148"
+              diaginertia="8.014e-05 0.0003415 0.0001017"/>
+          </body>
+          <inertial pos="0 0 0" quat="0.7074 0.7067 0.006876 -0.006442" mass="0.290805"
+            diaginertia="0.0001078 0.000469 0.0001528"/>
+        </body>
+        <inertial pos="0 0 0" quat="0.6975 0.6967 0.1188 -0.1182" mass="0.300351"
+          diaginertia="0.0001119 0.0004853 0.0001614"/>
+      </body>
+      <inertial pos="0 0 0" quat="0.655 0.6608 0.2591 -0.2592" mass="0.274371"
+        diaginertia="0.0001088 0.000447 0.0001834"/>
+    </body>
+    <inertial pos="0 0 0" quat="0.4409 0.4386 -0.555 0.5524" mass="0.412089"
+      diaginertia="0.0001608 0.0006408 0.0002869"/>
+  </body>
+</mujoco>

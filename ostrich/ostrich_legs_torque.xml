@@ -1,0 +1,50 @@
+<mujoco model="ostrich_legs_torque">
+  <compiler meshdir="assets" angle="radian" eulerseq="xyz" balanceinertia="true"/>
+
+  <option timestep="0.0025"/>
+
+  <default>
+    <joint limited="true" solimplimit="0 0.99 0.01" stiffness="10" armature="0.01" damping="5"/>
+    <site group="4" rgba="0 1 0 1" size="0.01 0.01 0.01"/>
+    <motor ctrllimited="true" ctrlrange="-1 1"/>
+
+    <default class="ostrich">
+      <geom type="mesh" contype="1" conaffinity="0" group="0" friction="0.7" solref="0.015 1" solimp="0.95 0.99 0.003"
+        material="bone"/>
+
+      <default class="leg">
+        <geom contype="3" conaffinity="2"/>
+      </default>
+
+      <default class="wrapping">
+        <geom type="cylinder" contype="0" conaffinity="0" group="5" rgba="0 0 0.8 0.5"/>
+      </default>
+    </default>
+  </default>
+
+  <include file="assets/bones/assets.xml"/>
+
+  <worldbody>
+    <body name="ostrich" childclass="ostrich" pos="0 0 1.05">
+      <camera name="side" mode="trackcom" pos="0 -3.5 1" euler="-5 0 0"/>
+      <camera name="back" mode="trackcom" pos="-3.5 0 1.3" xyaxes="0 -1 0 1 0 3"/>
+
+      <joint name="root_x" type="slide" pos="0 0 0" axis="1 0 0" limited="false" stiffness="0"/>
+      <joint name="root_y" type="slide" pos="0 0 0" axis="0 1 0" limited="false" stiffness="0"/>
+      <joint name="root_z" type="slide" pos="0 0 0" axis="0 0 1" limited="false" stiffness="0"/>
+      <joint name="root_rot_x" pos="0 0 0" axis="1 0 0" limited="false" stiffness="0"/>
+      <joint name="root_rot_y" pos="0 0 0" axis="0 1 0" limited="false" stiffness="0"/>
+      <joint name="root_rot_z" pos="0 0 0" axis="0 0 1" limited="false" stiffness="0"/>
+
+      <include file="assets/bones/legs.xml"/>
+      <include file="assets/bones/torso.xml"/>
+    </body>
+  </worldbody>
+
+  <include file="assets/actuators/legs_torque.xml"/>
+
+  <sensor>
+    <subtreelinvel name="torso_subtreelinvel" body="ostrich"/>
+    <subtreecom name="body_com" body="ostrich"/>
+  </sensor>
+</mujoco>
