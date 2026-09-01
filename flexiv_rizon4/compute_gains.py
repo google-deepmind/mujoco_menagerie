@@ -1,5 +1,5 @@
 # /// script
-# dependencies = ["mujoco", "numpy"]
+# dependencies = ["mujoco>=3.10", "numpy"]
 # ///
 """Compute PD gains for the Flexiv Rizon4 from effective inertia.
 
@@ -40,7 +40,7 @@ def compute_gains(model_path: Path) -> None:
 
   # Dense mass matrix at qpos0.
   M = np.zeros((model.nv, model.nv))
-  mujoco.mj_fullM(model, M, data.qM)
+  mujoco.mj_fullM(model, data, M)
   effective_inertia = np.diag(M)
 
   delta_theta = math.radians(SATURATION_ANGLE_DEG)
@@ -51,7 +51,8 @@ def compute_gains(model_path: Path) -> None:
     joint_id = model.actuator_trnid[i, 0]
     name = mujoco.mj_id2name(model, mujoco.mjtObj.mjOBJ_JOINT, joint_id)
     frc_max = model.jnt_actfrcrange[joint_id, 1]
-    m_ii = effective_inertia[joint_id]
+    # The mass matrix diagonal is indexed by DOF address, not joint id.
+    m_ii = effective_inertia[model.jnt_dofadr[joint_id]]
     # Use forcerange as class key.
     key = frc_max
     if key not in classes:
