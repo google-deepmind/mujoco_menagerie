@@ -147,7 +147,36 @@ MODEL_MAP = {
   'iit_softfoot/softfoot': ModelType.BIOMECHANICAL,
   'ms_human_700/MS-Human-700': ModelType.BIOMECHANICAL,
   'seeed_rebot_devarm/seeed_rebot_devarm': ModelType.ARM,
+  'musculoskeletal_dog/dog_muscles_Millard': ModelType.BIOMECHANICAL,
 }
+
+# Per-model visualization group overrides for the thumbnail render. Each
+# value maps an MjvOption group array to the groups that stay visible; every
+# other group in that array is switched off. Use sparingly — only when the
+# default groups hide what makes a model interesting.
+VISIBLE_GROUPS = {
+  # The dog's default view is an opaque body skin. Show the skeleton
+  # (`bone`/`visible_bone` geoms) and the muscle tendons instead, and switch
+  # off the body skin, the 262 per-muscle skins, and the muscle-path sites
+  # (which otherwise speckle the render with unattached dots).
+  'musculoskeletal_dog/dog_muscles_Millard': {
+    'geomgroup': (1, 5),
+    'skingroup': (),
+    'sitegroup': (),
+  },
+}
+
+
+def scene_option(robot):
+  """Thumbnail visualization options, with per-model group overrides."""
+  opt = mujoco.MjvOption()
+  for field, visible in VISIBLE_GROUPS.get(robot, {}).items():
+    groups = getattr(opt, field)
+    groups[:] = 0
+    for group in visible:
+      groups[group] = 1
+  return opt
+
 
 # Per-model camera overrides. Populated only when auto-camera produces a
 # bad thumbnail; the dict can stay empty otherwise. Example entry:
@@ -217,6 +246,9 @@ PREVIEW_OVERRIDES = {
   'pal_tiago/tiago': 'pal_tiago/scene_position.xml',
   'pal_tiago_dual/tiago_dual': 'pal_tiago_dual/scene_position.xml',
   'ms_human_700/MS-Human-700': 'ms_human_700/scene.xml',
+  'musculoskeletal_dog/dog_muscles_Millard': (
+    'musculoskeletal_dog/scene_muscles_Millard.xml'
+  ),
 }
 
 
@@ -249,6 +281,9 @@ VIEW_ANGLE_OVERRIDE = {
   # Default biomechanical angle catches MS-Human-700 from the side; nudge
   # to a near-frontal 3/4.
   'ms_human_700/MS-Human-700': (20, 15),
+  # The default 110° puts the camera behind the dog; pull it forward of the
+  # shoulder for a front-quarter view of the left flank.
+  'musculoskeletal_dog/dog_muscles_Millard': (75, 18),
 }
 
 
@@ -525,15 +560,16 @@ def main(argv):
         mujoco.mj_resetData(model, data)
       mujoco.mj_forward(model, data)
 
+      opt = scene_option(robot)
       renderer = mujoco.Renderer(model, height=500, width=500)
-      renderer.update_scene(data, camera='thumbnail')
+      renderer.update_scene(data, camera='thumbnail', scene_option=opt)
       img = renderer.render()
       # Build the alpha mask from a segmentation render so background
       # pixels become transparent without nuking any geom (chroma-keying
       # against the white skybox would eat white robot parts like UR5e's
       # aluminum links).
       renderer.enable_segmentation_rendering()
-      renderer.update_scene(data, camera='thumbnail')
+      renderer.update_scene(data, camera='thumbnail', scene_option=opt)
       mask = renderer.render()[..., 0] != -1
       renderer.disable_segmentation_rendering()
 
