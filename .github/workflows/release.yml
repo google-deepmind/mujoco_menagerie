@@ -1,36 +1,52 @@
-# Push a `vYYYY.M.N` tag matching python/pyproject.toml. Model archives go to
-# the long-lived `assets` GitHub release and are re-verified from their public
-# URLs before anything reaches PyPI, which is immutable. Archive names are
-# content-addressed, so unchanged models are neither rebuilt nor re-uploaded.
+# Every merge that touches a model directory or the package is released as
+# vYYYY.M.N. Archives go to the long-lived `assets` GitHub release and are
+# re-verified from their public URLs before anything reaches PyPI, which is
+# immutable; the tag is pushed last so a failed publish leaves no tag behind.
 name: release
 
 on:
   push:
-    tags: ['v*']
+    branches: [main]
+  workflow_dispatch:
+
+concurrency: release
 
 jobs:
   release:
     runs-on: ubuntu-latest
     environment: pypi
     permissions:
-      contents: write   # upload release assets
+      contents: write   # release assets, tag
       id-token: write   # trusted publishing
     steps:
       - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+        with:
+          fetch-depth: 0
       - uses: astral-sh/setup-uv@fac544c07dec837d0ccb6301d7b5580bf5edae39 # v8.2.0
         with:
           version: "0.12.1"
       - run: uv python install 3.12
 
-      - name: Tag must match python/pyproject.toml
+      - name: Pick the version, or stop if nothing to release
+        id: version
         run: |
-          version=$(uv run --no-project python -c 'import tomllib;print(tomllib.load(open("python/pyproject.toml","rb"))["project"]["version"])')
-          test "v$version" = "$GITHUB_REF_NAME" || { echo "tag $GITHUB_REF_NAME != v$version"; exit 1; }
+          last=$(git tag --list 'v*' --sort=-v:refname | head -1)
+          if [ -n "$last" ] && [ "$GITHUB_EVENT_NAME" = push ] && ! git diff --name-only "$last" HEAD \
+             | grep -vE '^(\.|assets/|test/)' | grep -qE '/|^(catalog|build_registry)\.py$'; then
+            echo "no model directory or package change since $last"; exit 0
+          fi
+          month=$(date -u +%Y.%-m)
+          n=$(git tag --list "v$month.*" | sed "s/^v$month\.//" | sort -n | tail -1)
+          version="$month.$(( ${n:--1} + 1 ))"
+          sed -i "s/^version = .*/version = \"$version\"/" python/pyproject.toml
+          echo "version=$version" >> "$GITHUB_OUTPUT"
 
       - name: Build model archives and registry
+        if: steps.version.outputs.version
         run: uv run --no-project build_registry.py --jobs "$(nproc)"
 
       - name: Upload new archives
+        if: steps.version.outputs.version
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
@@ -42,6 +58,7 @@ jobs:
           done
 
       - name: Re-verify every archive from its public URL
+        if: steps.version.outputs.version
         env:
           PYTHONPATH: python/src
         run: |
@@ -53,11 +70,16 @@ jobs:
               assert hashlib.sha256(data).hexdigest() == r['sha256'] and len(data) == r['download_size'], name
           EOF
 
-      - name: Build
-        run: uv build python --out-dir dist
-      - name: Smoke test (wheel)
-        run: uv run --isolated --no-project --with dist/*.whl python/tests/smoke_test.py
-      - name: Smoke test (source distribution)
-        run: uv run --isolated --no-project --with dist/*.tar.gz python/tests/smoke_test.py
-      - name: Publish
-        run: uv publish
+      - name: Build, smoke test, publish
+        if: steps.version.outputs.version
+        run: |
+          uv build python --out-dir dist
+          uv run --isolated --no-project --with dist/*.whl python/tests/smoke_test.py
+          uv run --isolated --no-project --with dist/*.tar.gz python/tests/smoke_test.py
+          uv publish
+
+      - name: Tag
+        if: steps.version.outputs.version
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
+        run: git tag "v$VERSION" && git push origin "v$VERSION"

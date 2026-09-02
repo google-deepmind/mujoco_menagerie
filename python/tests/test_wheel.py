@@ -72,4 +72,4 @@ def test_wheel_installs_and_imports(wheel, tmp_path):
   out = subprocess.run(
     [python, '-c', code], check=True, capture_output=True, text=True, env={}
   ).stdout.split()
-  assert int(out[0]) >= 60 and out[1] == '2026.9.0'
+  assert int(out[0]) >= 60 and out[1] == '0.0.0'

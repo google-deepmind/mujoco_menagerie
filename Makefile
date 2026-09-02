@@ -4,7 +4,7 @@
 #   make install   # one-time: install pre-commit + git hook
 #   make all       # run every check CI runs
 
-.PHONY: help install check test gallery registry archives python-test build publish-test publish all
+.PHONY: help install check test gallery registry archives python-test build all
 
 help:
 	@echo "MuJoCo Menagerie developer commands:"
@@ -16,7 +16,6 @@ help:
 	@echo "  make archives     Build the model archives + registry for a release (slow)"
 	@echo "  make python-test  Test the mujoco-menagerie package (builds the registry first)"
 	@echo "  make build        Build the wheel + sdist into dist/ and smoke test both"
-	@echo "  make publish      Publish dist/ to PyPI (UV_PUBLISH_TOKEN, or trusted publishing)"
 	@echo "  make all          Run check + test + python-test (everything CI runs)"
 
 install:
@@ -45,11 +44,5 @@ build: archives
 	rm -rf dist && uv build python --out-dir dist
 	uv run --isolated --no-project --with dist/*.whl python/tests/smoke_test.py
 	uv run --isolated --no-project --with dist/*.tar.gz python/tests/smoke_test.py
-
-publish-test: build
-	uv publish --publish-url https://test.pypi.org/legacy/
-
-publish: build
-	uv publish
 
 all: check test python-test

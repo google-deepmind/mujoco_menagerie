@@ -114,6 +114,6 @@ MENAGERIE_ROOT=. uv run --project python python -c "import mujoco_menagerie as m
 
 **Release**
 
-Bump `version` in `python/pyproject.toml` (`2026.9.0`, no leading zero), add to `CHANGELOG.md`, tag `v2026.9.0` and push. `release.yml` uploads the model archives, re-verifies them, then builds, smoke tests and publishes the wheel; it needs a PyPI trusted publisher (workflow `release.yml`, environment `pypi`) and a `pypi` GitHub environment. Manual: `make build`, then `UV_PUBLISH_TOKEN=... make publish`.
+Every merge to `main` that touches a model directory or `python/` is published as `YYYY.M.N` by `release.yml`, which builds and uploads the model archives, re-verifies them, then builds, smoke tests and publishes the wheel and pushes the tag. Run it by hand from the Actions tab. It needs a PyPI trusted publisher (workflow `release.yml`, environment `pypi`) and a `pypi` GitHub environment.
 
 The package is Apache-2.0. Each model ships its own `LICENSE`; `r.license` reports it.
