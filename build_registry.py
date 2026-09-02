@@ -53,7 +53,7 @@ def compile_error(xml: pathlib.Path) -> str | None:
 
 
 def process(
-  name: str, oid: str, archives: pathlib.Path | None
+  name: str, oid: str, archives: pathlib.Path | None, published: dict
 ) -> tuple[str, dict]:
   d = ROOT / name
   entry_points = {
@@ -95,7 +95,11 @@ def process(
     'installed_size': sum(f.stat().st_size for f in files),
     'entry_points': entry_points,
   }
-  if archives:
+  if (
+    asset in published
+  ):  # already on the release: never rebuild, take its digest
+    r.update(published[asset])
+  elif archives:
     out = archives / asset
     if not out.exists():
       _archive.write_archive(d, files, out, prefix=name)
@@ -160,6 +164,11 @@ def main() -> None:
     default=ROOT / 'python/dist-assets',
   )
   ap.add_argument('--no-archives', action='store_true')
+  ap.add_argument(
+    '--published',
+    type=pathlib.Path,
+    help='JSON {asset: {sha256, download_size}} of archives already released',
+  )
   ap.add_argument('--only', nargs='+', metavar='DIR')
   ap.add_argument('--jobs', type=int, default=os.cpu_count())
   ap.add_argument(
@@ -193,6 +202,7 @@ def main() -> None:
     sys.exit(
       f'uncommitted changes in model dirs; commit them or pass --allow-dirty:\n{dirty}'
     )
+  published = json.loads(a.published.read_text()) if a.published else {}
   archives = None if a.no_archives else a.archives
   if archives:
     archives.mkdir(parents=True, exist_ok=True)
@@ -200,7 +210,11 @@ def main() -> None:
   robots = {}
   with concurrent.futures.ProcessPoolExecutor(a.jobs) as pool:
     for name, r in pool.map(
-      process, dirs, [oids[d] for d in dirs], [archives] * len(dirs)
+      process,
+      dirs,
+      [oids[d] for d in dirs],
+      [archives] * len(dirs),
+      [published] * len(dirs),
     ):
       robots[name] = {**defaults(name, r['entry_points']), **r}
       size = f'{r["installed_size"] / 2**20:7.1f} MB'

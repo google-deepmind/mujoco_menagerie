@@ -41,9 +41,13 @@ jobs:
           sed -i "s/^version = .*/version = \"$version\"/" python/pyproject.toml
           echo "version=$version" >> "$GITHUB_OUTPUT"
 
-      - name: Build model archives and registry
+      - name: Build the archives not yet released, and the registry
         if: steps.version.outputs.version
-        run: uv run --no-project build_registry.py --jobs "$(nproc)"
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release view assets --json assets --jq '[.assets[] | select(.digest) | {key: .name, value: {sha256: (.digest | ltrimstr("sha256:")), download_size: .size}}] | from_entries' > published.json || echo '{}' > published.json
+          uv run --no-project build_registry.py --jobs "$(nproc)" --published published.json
 
       - name: Upload new archives
         if: steps.version.outputs.version
