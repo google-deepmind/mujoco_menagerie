@@ -17,3 +17,6 @@ ignore = [
 [tool.ruff.lint.isort]
 force-single-line = true
 known-first-party = ["catalog", "mujoco_menagerie"]
+
+[tool.pytest.ini_options]
+testpaths = ["test"]
