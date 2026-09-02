@@ -39,6 +39,10 @@ def main(argv: list[str] | None = None) -> None:
   sub.add_parser(
     'prune', help='delete cached models this version no longer references'
   )
+  sub.add_parser(
+    'verify',
+    help='check cached models against the digests recorded at download',
+  ).add_argument('names', nargs='*')
   a = p.parse_args(argv)
   try:
     if a.cmd == 'names':
@@ -61,6 +65,16 @@ def main(argv: list[str] | None = None) -> None:
       mm.prefetch(a.names)
     elif a.cmd == 'prune':
       print(*mm.prune(), sep='\n')
+    elif a.cmd == 'verify':
+      cache = mm.Cache()
+      bad = {
+        r.name: cache.verify(r)
+        for r in map(mm.get, a.names or mm.names())
+        if cache.is_cached(r)
+      }
+      for name, files in bad.items():
+        print(name, 'ok' if not files else 'changed: ' + ' '.join(files))
+      sys.exit(any(bad.values()))
   except mm.MenagerieError as e:
     sys.exit(f'error: {e}')
 

@@ -133,6 +133,15 @@ def test_environment_supplies_defaults(monkeypatch, tmp_path):
   assert Cache(base_url='file:///x').base_url == 'file:///x'
 
 
+def test_verify_detects_changed_files(robot, base_url, cache_dir):
+  cache = Cache(cache_dir, base_url)
+  path = cache.resolve(robot)
+  assert cache.verify(robot) == []
+  (path / 'fake.xml').write_text('<mujoco/>')
+  (path / 'assets/cube.obj').unlink()
+  assert cache.verify(robot) == ['assets/cube.obj', 'fake.xml']
+
+
 def test_versions_coexist_and_prune(fake_model, archives, base_url, cache_dir):
   v1 = make_robot(fake_model, archives, oid='1' * 40)
   (fake_model / 'README.md').write_text('# v2\n')

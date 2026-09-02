@@ -93,7 +93,7 @@ A warm cache can be read-only. Concurrent cold starts on one model are safe: a m
 **Command line**
 
 ```bash
-uvx mujoco-menagerie names | info NAME | path NAME [ENTRY] | view NAME [ENTRY] | prefetch [NAME...] | prune
+uvx mujoco-menagerie names | info NAME | path NAME [ENTRY] | view NAME [ENTRY] | prefetch [NAME...] | verify [NAME...] | prune
 ```
 
 **Speed**, laptop, local mirror

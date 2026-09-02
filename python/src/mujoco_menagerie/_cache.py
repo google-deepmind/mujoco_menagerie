@@ -139,7 +139,14 @@ class Cache:
       tree = stage / robot.name
       if not tree.is_dir():
         raise DownloadError(f'{robot.asset} has no top-level {robot.name}/')
-      (tree / SENTINEL).write_text(json.dumps({'oid': robot.oid}))
+      files = {
+        p.relative_to(tree).as_posix(): sha256_file(p)
+        for p in sorted(tree.rglob('*'))
+        if p.is_file()
+      }
+      (tree / SENTINEL).write_text(
+        json.dumps({'oid': robot.oid, 'files': files})
+      )
       _fsync_tree(tree)
       target.parent.mkdir(parents=True, exist_ok=True)
       with contextlib.suppress(OSError):  # lost a race to another process
@@ -149,6 +156,16 @@ class Cache:
         _fsync(target.parent)
     finally:
       shutil.rmtree(stage, ignore_errors=True)
+
+  def verify(self, robot: Robot) -> list[str]:
+    """Files missing or changed since the model was published."""
+    target = self.model_path(robot)
+    files = json.loads((target / SENTINEL).read_text())['files']
+    return [
+      f
+      for f, h in files.items()
+      if not (target / f).is_file() or sha256_file(target / f) != h
+    ]
 
   def prune(self, keep: Iterable[Robot]) -> list[pathlib.Path]:
     # Like uninstalling a package: not safe for models other processes are using.
