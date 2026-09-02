@@ -1,0 +1,36 @@
+[project]
+name = "mujoco-menagerie"
+version = "2026.9.0"
+description = "Every robot in MuJoCo Menagerie, one pip install away."
+readme = "DOC.md"
+license = "Apache-2.0"
+license-files = ["LICENSE"]
+requires-python = ">=3.10.12"  # tarfile filter= (PEP 706)
+authors = [{ name = "Google DeepMind", email = "mujoco@deepmind.com" }]
+dependencies = ["mujoco>=3.2.0"]
+
+[project.urls]
+Repository = "https://github.com/google-deepmind/mujoco_menagerie"
+
+[project.scripts]
+mujoco-menagerie = "mujoco_menagerie.__main__:main"
+
+[build-system]
+requires = ["uv_build>=0.12.1,<0.13.0"]
+build-backend = "uv_build"
+
+[tool.uv.build-backend]
+source-exclude = ["**/.DS_Store"]
+
+[dependency-groups]
+dev = ["pytest>=8", "pytest-xdist>=3", "numpy"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+filterwarnings = ["error"]
+
+[tool.ruff]
+extend = "../pyproject.toml"
+
+[tool.ruff.lint.per-file-ignores]
+"__init__.py" = ["F401"]

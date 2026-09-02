@@ -28,6 +28,7 @@ well right out of the gate.
   - [Prerequisites](#prerequisites)
   - [Overview](#overview)
   - [Usage](#usage)
+    - [Via `pip`](#via-pip)
     - [Via `robot-descriptions`](#via-robot-descriptions)
     - [Via `git clone`](#via-git-clone)
 - [Model Quality and Contributing](#model-quality-and-contributing)
@@ -88,6 +89,22 @@ defined in the kinematic tree. We leave additional body definitions for the
 [`scene.xml`](shadow_hand/scene_right.xml).
 
 ### Usage
+
+#### Via `pip`
+
+```bash
+pip install mujoco-menagerie
+```
+
+```python
+import mujoco_menagerie as mm
+
+model = mm.load('unitree_go2')          # downloads once, compiles scene.xml
+path = mm.get('unitree_go2').path()     # the model directory on disk
+```
+
+Models download on first use and are pinned to the package version; see
+[`python/DOC.md`](python/DOC.md).
 
 #### Via `robot-descriptions`
 

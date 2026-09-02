@@ -22,3 +22,15 @@ jobs:
           cache-dependency-glob: test/requirements.txt
       - name: Test with pytest
         run: uv run --with-requirements test/requirements.txt pytest -n auto
+
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+      - uses: astral-sh/setup-uv@fac544c07dec837d0ccb6301d7b5580bf5edae39 # v8.2.0
+        with:
+          python-version: "3.12"
+      - name: Derive the registry
+        run: uv run --no-project build_registry.py --no-archives --jobs "$(nproc)"
+      - name: Test the package
+        run: cd python && uv run --group dev pytest -n auto

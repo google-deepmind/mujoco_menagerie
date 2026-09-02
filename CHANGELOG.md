@@ -2,6 +2,10 @@
 
 All notable changes to this repository will be documented here.
 
+## [2026-09-01]
+
+- Added the `mujoco-menagerie` Python package under `python/`: models download on first use into a content-addressed cache, pinned by package version. `build_registry.py` derives the registry from the checkout; `release.yml` publishes archives and the wheel on a `vYYYY.M.N` tag. Extracted the gallery's catalog tables into `catalog.py`, shared by both tools, and registered seven model directories that were missing from the README gallery.
+
 ## [2026-07-04]
 
 - Cleaned up manual `<statistic>` camera overrides across scene XMLs to improve visualizer default framings. Removed arbitrary `center` attributes, only keeping `extent` where finite floor surfaces or heightfields require custom framing bounds.

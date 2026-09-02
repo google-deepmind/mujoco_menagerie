@@ -1,0 +1,63 @@
+# Push a `vYYYY.M.N` tag matching python/pyproject.toml. Model archives go to
+# the long-lived `assets` GitHub release and are re-verified from their public
+# URLs before anything reaches PyPI, which is immutable. Archive names are
+# content-addressed, so unchanged models are neither rebuilt nor re-uploaded.
+name: release
+
+on:
+  push:
+    tags: ['v*']
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    environment: pypi
+    permissions:
+      contents: write   # upload release assets
+      id-token: write   # trusted publishing
+    steps:
+      - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+      - uses: astral-sh/setup-uv@fac544c07dec837d0ccb6301d7b5580bf5edae39 # v8.2.0
+        with:
+          version: "0.12.1"
+      - run: uv python install 3.12
+
+      - name: Tag must match python/pyproject.toml
+        run: |
+          version=$(uv run --no-project python -c 'import tomllib;print(tomllib.load(open("python/pyproject.toml","rb"))["project"]["version"])')
+          test "v$version" = "$GITHUB_REF_NAME" || { echo "tag $GITHUB_REF_NAME != v$version"; exit 1; }
+
+      - name: Build model archives and registry
+        run: uv run --no-project build_registry.py --jobs "$(nproc)"
+
+      - name: Upload new archives
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release view assets >/dev/null 2>&1 || gh release create assets --title "Model archives" \
+            --notes "Content-addressed archives used by the mujoco-menagerie package. Do not delete." --target "$GITHUB_SHA"
+          existing=$(gh release view assets --json assets --jq '.assets[].name')
+          for f in python/dist-assets/*.tar.xz; do
+            grep -qx "$(basename "$f")" <<<"$existing" || gh release upload assets "$f"
+          done
+
+      - name: Re-verify every archive from its public URL
+        env:
+          PYTHONPATH: python/src
+        run: |
+          uv run --no-project python - <<'EOF'
+          import hashlib, json, urllib.request
+          from mujoco_menagerie._cache import DEFAULT_BASE_URL
+          for name, r in json.load(open('python/src/mujoco_menagerie/registry.json'))['robots'].items():
+              data = urllib.request.urlopen(f"{DEFAULT_BASE_URL}/{r['asset']}").read()
+              assert hashlib.sha256(data).hexdigest() == r['sha256'] and len(data) == r['download_size'], name
+          EOF
+
+      - name: Build
+        run: uv build python --out-dir dist
+      - name: Smoke test (wheel)
+        run: uv run --isolated --no-project --with dist/*.whl python/tests/smoke_test.py
+      - name: Smoke test (source distribution)
+        run: uv run --isolated --no-project --with dist/*.tar.gz python/tests/smoke_test.py
+      - name: Publish
+        run: uv publish
