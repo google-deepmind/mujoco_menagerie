@@ -75,6 +75,11 @@ def prefetch(
   return [get(n).path(cache, progress) for n in names_ or names()]
 
 
+def clear(cache: Cache | None = None) -> None:
+  """Deletes the whole cache directory."""
+  (cache or Cache()).clear()
+
+
 def prune(cache: Cache | None = None) -> list[pathlib.Path]:
   """Deletes cached models this version no longer references."""
   return (cache or Cache()).prune(robots())

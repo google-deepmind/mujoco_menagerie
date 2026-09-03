@@ -212,6 +212,16 @@ class Cache:
           shutil.rmtree(d, ignore_errors=True)
     return removed
 
+  def clear(self) -> None:
+    """Deletes the whole cache directory."""
+    if not self.dir.is_dir():
+      return
+    if not set(os.listdir(self.dir)) <= {'models', 'tmp', 'locks', '.DS_Store'}:
+      raise MenagerieError(
+        f'{self.dir} holds files this package did not create; not deleting it'
+      )
+    shutil.rmtree(self.dir)
+
   @contextlib.contextmanager
   def _lock(self, name: str):
     # Best effort, never relied on. flock, not lockf: lockf is released by any close().

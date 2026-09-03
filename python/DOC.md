@@ -79,6 +79,7 @@ r.assets('scene')  # the same as {relative path: bytes}, for MjModel.from_xml_st
 ```python
 mm.prefetch(['unitree_g1'])  # download ahead of time; no argument means everything, 253 MB
 mm.prune()  # delete models this version no longer references
+mm.clear()  # delete the whole cache
 mm.load('unitree_g1', cache=mm.Cache(dir='/shared/menagerie'))
 ```
 
@@ -90,10 +91,12 @@ mm.load('unitree_g1', cache=mm.Cache(dir='/shared/menagerie'))
 
 A warm cache can be read-only. Concurrent cold starts on one model are safe: a model directory is either complete or absent.
 
+Uninstalling the package leaves the cache in place, as with pip and uv; run `mujoco-menagerie clear` first to remove it.
+
 **Command line**
 
 ```bash
-uvx mujoco-menagerie names | info NAME | path NAME [ENTRY] | view NAME [ENTRY] | prefetch [NAME...] | verify [NAME...] | prune
+uvx mujoco-menagerie names | info NAME | path NAME [ENTRY] | view NAME [ENTRY] | prefetch [NAME...] | verify [NAME...] | prune | clear [-y]
 ```
 
 **Speed**, laptop, local mirror

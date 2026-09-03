@@ -39,6 +39,9 @@ def main(argv: list[str] | None = None) -> None:
   sub.add_parser(
     'prune', help='delete cached models this version no longer references'
   )
+  sub.add_parser('clear', help='delete the whole cache directory').add_argument(
+    '-y', '--yes', action='store_true', help='skip the confirmation'
+  )
   sub.add_parser(
     'verify',
     help='check cached models against the digests recorded at download',
@@ -65,6 +68,10 @@ def main(argv: list[str] | None = None) -> None:
       mm.prefetch(a.names)
     elif a.cmd == 'prune':
       print(*mm.prune(), sep='\n')
+    elif a.cmd == 'clear':
+      cache = mm.Cache()
+      if a.yes or input(f'Delete {cache.dir}? [y/N] ').lower() == 'y':
+        cache.clear()
     elif a.cmd == 'verify':
       cache = mm.Cache()
       bad = {

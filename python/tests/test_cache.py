@@ -160,6 +160,19 @@ def test_verify_detects_changed_files(robot, base_url, cache_dir):
   assert cache.verify(robot) == ['assets/cube.obj', 'fake.xml']
 
 
+def test_clear_deletes_only_our_cache(robot, base_url, cache_dir):
+  cache = Cache(cache_dir, base_url)
+  cache.resolve(robot)
+  cache.clear()
+  assert not cache_dir.exists()
+  cache.clear()  # absent is fine
+  cache_dir.mkdir()
+  (cache_dir / 'thesis.tex').write_text('')
+  with pytest.raises(MenagerieError, match='did not create'):
+    cache.clear()
+  assert (cache_dir / 'thesis.tex').exists()
+
+
 def test_versions_coexist_and_prune(fake_model, archives, base_url, cache_dir):
   v1 = make_robot(fake_model, archives, oid='1' * 40)
   (fake_model / 'README.md').write_text('# v2\n')
