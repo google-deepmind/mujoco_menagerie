@@ -40,24 +40,29 @@ except metadata.PackageNotFoundError:
 
 
 def names() -> list[str]:
+  """Every robot name, sorted. No I/O."""
   return bundled().names()
 
 
 def robots(category: str | None = None) -> list[Robot]:
+  """Every robot, or those of one category. No I/O."""
   return [
     r for r in map(bundled().get, names()) if category in (None, r.category)
   ]
 
 
 def get(name: str) -> Robot:
+  """Metadata for one robot. No I/O."""
   return bundled().get(name)
 
 
 def commit() -> str:
+  """The Menagerie commit this registry was built from."""
   return bundled().commit
 
 
 def load(name: str, entry: str | None = None, cache: Cache | None = None):
+  """Compiles a robot's entry point; the default scene when `entry` is None."""
   return get(name).model(entry, cache)
 
 
@@ -66,8 +71,10 @@ def prefetch(
   cache: Cache | None = None,
   progress: Progress | None = print_progress,
 ) -> list[pathlib.Path]:
+  """Downloads models ahead of time; all of them when `names_` is None."""
   return [get(n).path(cache, progress) for n in names_ or names()]
 
 
 def prune(cache: Cache | None = None) -> list[pathlib.Path]:
+  """Deletes cached models this version no longer references."""
   return (cache or Cache()).prune(robots())

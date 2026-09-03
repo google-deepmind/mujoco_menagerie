@@ -29,6 +29,7 @@ def write_archive(
   out: pathlib.Path,
   prefix: str,
 ) -> None:
+  """Writes `files` under `model_dir` as `<prefix>/<relative path>` members of a reproducible .tar.xz."""
   model_dir = pathlib.Path(model_dir).resolve()
   members = sorted(
     (pathlib.Path(f).resolve().relative_to(model_dir).as_posix(), f)
@@ -45,6 +46,7 @@ def write_archive(
 
 
 def sha256_file(path: pathlib.Path) -> str:
+  """Hex SHA-256 of a file."""
   h = hashlib.sha256()
   with open(path, 'rb') as fh:
     while chunk := fh.read(1 << 20):

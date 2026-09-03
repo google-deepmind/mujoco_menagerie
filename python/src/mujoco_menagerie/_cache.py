@@ -54,6 +54,7 @@ Progress = Callable[[str, int, int], None]
 
 
 def default_cache_dir() -> pathlib.Path:
+  """Per-platform cache directory used when MENAGERIE_CACHE_DIR is unset."""
   if sys.platform == 'win32':
     local = (
       os.environ.get('LOCALAPPDATA') or pathlib.Path.home() / 'AppData/Local'
@@ -66,6 +67,7 @@ def default_cache_dir() -> pathlib.Path:
 
 
 def print_progress(name: str, done: int, total: int) -> None:
+  """Draws a download progress bar on stderr when it is a terminal."""
   if not sys.stderr.isatty():
     return
   bar = '#' * (30 * done // total) if total else ''
@@ -76,6 +78,16 @@ def print_progress(name: str, done: int, total: int) -> None:
 
 
 class Cache:
+  """Downloads model archives into a content-addressed directory tree.
+
+
+
+
+  Arguments default to MENAGERIE_CACHE_DIR, MENAGERIE_BASE_URL and MENAGERIE_ROOT.
+
+
+  """
+
   def __init__(
     self,
     dir: pathlib.Path | str | None = None,
@@ -92,14 +104,17 @@ class Cache:
     self.root = pathlib.Path(root) if root else None
 
   def model_path(self, robot: Robot) -> pathlib.Path:
+    """Where `robot` lives once published; does not imply it is present."""
     return self.dir / 'models' / f'{robot.name}-{robot.oid[:16]}'
 
   def is_cached(self, robot: Robot) -> bool:
+    """Whether `robot` is published in the cache."""
     return (self.model_path(robot) / SENTINEL).is_file()
 
   def resolve(
     self, robot: Robot, progress: Progress | None = print_progress
   ) -> pathlib.Path:
+    """The model directory, downloading and publishing it first if needed."""
     if self.root:
       path = self.root / robot.name
       if not path.is_dir():
@@ -176,7 +191,10 @@ class Cache:
     ]
 
   def prune(self, keep: Iterable[Robot]) -> list[pathlib.Path]:
-    # Like uninstalling a package: not safe for models other processes are using.
+    """Deletes models not in `keep` and staging dirs idle for an hour.
+
+    Like uninstalling a package: not safe for models other processes are using.
+    """
     keep = {self.model_path(r).name for r in keep}
     tmp = self.dir / 'tmp'
     removed = []

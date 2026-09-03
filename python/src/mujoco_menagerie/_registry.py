@@ -38,6 +38,8 @@ SCHEMA = 1
 
 @dataclasses.dataclass(frozen=True)
 class EntryPoint:
+  """A top-level XML that compiles on its own."""
+
   name: str
   kind: str  # 'scene' or 'robot'
   file: str
@@ -49,6 +51,8 @@ class EntryPoint:
 
 @dataclasses.dataclass(frozen=True)
 class Robot:
+  """One Menagerie model directory. Metadata is free; the resolving methods download."""
+
   name: str
   display_name: str
   category: str
@@ -67,6 +71,7 @@ class Robot:
     return tuple(e.name for e in self.entry_points)
 
   def entry(self, name: str | None = None) -> EntryPoint:
+    """The entry point called `name`; None means the default scene, else the default model."""
     if name is None:
       name = self.default_scene or self.default_model
     for e in self.entry_points:
@@ -77,27 +82,32 @@ class Robot:
   def path(
     self, cache: Cache | None = None, progress: Progress | None = print_progress
   ) -> pathlib.Path:
+    """The model directory on disk, downloaded on first use."""
     return (cache or Cache()).resolve(self, progress)
 
   def xml(
     self, entry: str | None = None, cache: Cache | None = None
   ) -> pathlib.Path:
+    """Path to an entry point's XML file."""
     return self.path(cache) / self.entry(entry).file
 
   def files(
     self, entry: str | None = None, cache: Cache | None = None
   ) -> list[pathlib.Path]:
+    """Every file an entry point depends on."""
     root = self.path(cache)
     return closure(root / self.entry(entry).file, root)
 
   def assets(
     self, entry: str | None = None, cache: Cache | None = None
   ) -> dict[str, bytes]:
+    """The closure as `{relative path: bytes}`, for `MjModel.from_xml_string`."""
     return assets_dict(self.files(entry, cache), self.path(cache))
 
   def model(
     self, entry: str | None = None, cache: Cache | None = None
   ) -> mujoco.MjModel:
+    """Compiles an entry point; the default scene when `entry` is None."""
     import mujoco  # deferred: importing this package must not import MuJoCo
 
     return mujoco.MjModel.from_xml_path(str(self.xml(entry, cache)))
@@ -105,12 +115,14 @@ class Robot:
   def spec(
     self, entry: str | None = None, cache: Cache | None = None
   ) -> mujoco.MjSpec:
+    """Parses an entry point into an editable `mujoco.MjSpec`."""
     import mujoco
 
     return mujoco.MjSpec.from_file(str(self.xml(entry, cache)))
 
   @classmethod
   def from_dict(cls, name: str, d: dict) -> Robot:
+    """Builds a Robot from its registry.json entry."""
     entry_points = tuple(
       EntryPoint(k, **v) for k, v in d['entry_points'].items()
     )
@@ -120,19 +132,24 @@ class Robot:
 
 @dataclasses.dataclass(frozen=True)
 class Registry:
+  """Every robot, plus the Menagerie commit the registry was built from."""
+
   commit: str
   robots: dict[str, Robot]
 
   def names(self) -> list[str]:
+    """Sorted robot names."""
     return sorted(self.robots)
 
   def get(self, name: str) -> Robot:
+    """The robot called `name`; raises UnknownRobotError with a near match."""
     if name not in self.robots:
       raise UnknownRobotError(name, self.robots)
     return self.robots[name]
 
   @classmethod
   def from_dict(cls, d: dict) -> Registry:
+    """Builds a Registry from parsed registry.json."""
     if d.get('schema') != SCHEMA:
       raise RegistryError(f'unsupported registry schema {d.get("schema")!r}')
     robots = {n: Robot.from_dict(n, r) for n, r in d['robots'].items()}
@@ -140,11 +157,13 @@ class Registry:
 
   @classmethod
   def load(cls, path: pathlib.Path) -> Registry:
+    """Reads a registry.json file."""
     return cls.from_dict(json.loads(pathlib.Path(path).read_text()))
 
 
 @functools.lru_cache(maxsize=1)
 def bundled() -> Registry:
+  """The registry shipped inside this wheel."""
   try:
     text = resources.files(__package__).joinpath('registry.json').read_text()
     return Registry.from_dict(json.loads(text))

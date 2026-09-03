@@ -25,6 +25,7 @@ from mujoco_menagerie._errors import MenagerieError
 def closure(
   entry_xml: pathlib.Path, model_dir: pathlib.Path
 ) -> list[pathlib.Path]:
+  """Every file `entry_xml` depends on, transitively, as sorted absolute paths inside `model_dir`."""
   model_dir = pathlib.Path(model_dir).resolve()
   entry_xml = pathlib.Path(entry_xml).resolve()
   roots: dict[pathlib.Path, tuple[ET.Element, pathlib.Path]] = {}
@@ -81,6 +82,7 @@ def _find(
 def assets_dict(
   files: Iterable[pathlib.Path], model_dir: pathlib.Path
 ) -> dict[str, bytes]:
+  """The files as `{path relative to model_dir: bytes}`; raises AssetCollisionError on a repeated basename."""
   model_dir = pathlib.Path(model_dir).resolve()
   seen: dict[str, str] = {}
   out = {}
