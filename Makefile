@@ -13,7 +13,7 @@ help:
 	@echo "  make test         Run the pytest model + structural test suite (slow)"
 	@echo "  make gallery      Re-render thumbnails and update the gallery in README.md"
 	@echo "  make registry     Derive python/src/mujoco_menagerie/registry.json (no archives)"
-	@echo "  make archives     Build the model archives + registry for a release (slow)"
+	@echo "  make archives     Build every model archive under python/dist-assets/ to test downloads locally (slow)"
 	@echo "  make python-test  Test the mujoco-menagerie package (builds the registry first)"
 	@echo "  make build        Build the wheel + sdist into dist/ and smoke test both"
 	@echo "  make all          Run check + test + python-test (everything CI runs)"
@@ -35,7 +35,7 @@ registry:
 	uv run --no-project build_registry.py --no-archives --allow-dirty
 
 archives:
-	uv run --no-project build_registry.py
+	uv run --no-project build_registry.py --allow-dirty
 
 python-test: registry
 	cd python && uv run --group dev pytest -n auto

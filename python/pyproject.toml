@@ -19,9 +19,6 @@ mujoco-menagerie = "mujoco_menagerie.__main__:main"
 requires = ["uv_build>=0.12.1,<0.13.0"]
 build-backend = "uv_build"
 
-[tool.uv.build-backend]
-source-exclude = ["**/.DS_Store"]
-
 [dependency-groups]
 dev = ["pytest>=8", "pytest-xdist>=3", "numpy"]
 

@@ -47,9 +47,7 @@ def test_wheel_contents(wheel):
   assert not [
     n
     for n in names
-    if '__pycache__' in n
-    or n.endswith(('.DS_Store', '.xz'))
-    or n.startswith('tests/')
+    if '__pycache__' in n or n.endswith('.xz') or n.startswith('tests/')
   ]
 
 
