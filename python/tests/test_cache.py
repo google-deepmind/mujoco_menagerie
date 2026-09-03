@@ -32,6 +32,7 @@ from mujoco_menagerie import ChecksumError
 from mujoco_menagerie import DownloadError
 from mujoco_menagerie import MenagerieError
 from mujoco_menagerie._cache import SENTINEL
+from mujoco_menagerie._cache import default_cache_dir
 from mujoco_menagerie._cache import fcntl
 
 
@@ -118,6 +119,23 @@ def test_root_serves_a_checkout(robot, fake_model, cache_dir):
   assert cache.resolve(robot) == fake_model and not cache_dir.exists()
   with pytest.raises(MenagerieError, match='MENAGERIE_ROOT'):
     cache.resolve(dataclasses.replace(robot, name='absent'))
+
+
+def test_default_cache_dir_per_platform(monkeypatch, tmp_path):
+  monkeypatch.setenv('HOME', str(tmp_path))
+  monkeypatch.setenv('LOCALAPPDATA', str(tmp_path / 'AppData/Local'))
+  monkeypatch.delenv('XDG_CACHE_HOME', raising=False)
+  expected = {
+    'linux': tmp_path / '.cache/mujoco_menagerie',
+    'darwin': tmp_path / 'Library/Caches/mujoco_menagerie',
+    'win32': tmp_path / 'AppData/Local/mujoco_menagerie/cache',
+  }
+  for platform, path in expected.items():
+    monkeypatch.setattr(sys, 'platform', platform)
+    assert default_cache_dir() == path
+  monkeypatch.setattr(sys, 'platform', 'linux')
+  monkeypatch.setenv('XDG_CACHE_HOME', str(tmp_path / 'xdg'))
+  assert default_cache_dir() == tmp_path / 'xdg/mujoco_menagerie'
 
 
 def test_environment_supplies_defaults(monkeypatch, tmp_path):

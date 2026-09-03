@@ -59,6 +59,8 @@ def default_cache_dir() -> pathlib.Path:
       os.environ.get('LOCALAPPDATA') or pathlib.Path.home() / 'AppData/Local'
     )
     return pathlib.Path(local) / 'mujoco_menagerie' / 'cache'
+  if sys.platform == 'darwin':
+    return pathlib.Path.home() / 'Library/Caches/mujoco_menagerie'
   cache = os.environ.get('XDG_CACHE_HOME') or pathlib.Path.home() / '.cache'
   return pathlib.Path(cache) / 'mujoco_menagerie'
 

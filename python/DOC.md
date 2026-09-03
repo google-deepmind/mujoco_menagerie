@@ -84,7 +84,7 @@ mm.load('unitree_g1', cache=mm.Cache(dir='/shared/menagerie'))
 
 | | argument | environment | default |
 |---|---|---|---|
-| cache directory | `mm.Cache(dir=)` | `MENAGERIE_CACHE_DIR` | `~/.cache/mujoco_menagerie` |
+| cache directory | `mm.Cache(dir=)` | `MENAGERIE_CACHE_DIR` | `~/.cache/mujoco_menagerie`, `~/Library/Caches/mujoco_menagerie` on macOS, `%LOCALAPPDATA%\mujoco_menagerie\cache` on Windows |
 | archive source | `mm.Cache(base_url=)` | `MENAGERIE_BASE_URL` | the GitHub release |
 | checkout to use instead | `mm.Cache(root=)` | `MENAGERIE_ROOT` | unset |
 
