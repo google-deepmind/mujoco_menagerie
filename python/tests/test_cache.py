@@ -220,7 +220,8 @@ def test_prune_never_exposes_a_partial_model(
         except FileNotFoundError:
           continue
         seen += 1
-        assert SENTINEL in entries, entries
+        # An empty listing means the inode was renamed away and emptied mid-read.
+        assert SENTINEL in entries or not d.exists(), entries
     for j in jobs:
       j.get()
   assert seen
