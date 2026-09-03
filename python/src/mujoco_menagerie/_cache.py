@@ -114,6 +114,12 @@ class Cache:
       raise DownloadError(
         f'the registry has no archive for {robot.name!r}; set MENAGERIE_ROOT or rebuild it with archives'
       )
+    try:
+      import lzma  # noqa: F401
+    except ImportError:
+      raise MenagerieError(
+        'this Python was built without lzma support, which the model archives need; reinstall it with xz'
+      ) from None
     with self._lock(target.name):
       if not (target / SENTINEL).is_file():
         self._publish(robot, target, progress)
