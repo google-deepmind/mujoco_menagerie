@@ -15,7 +15,7 @@ help:
 	@echo "  make registry     Derive python/src/mujoco_menagerie/registry.json (no archives)"
 	@echo "  make archives     Build every model archive under python/dist-assets/ to test downloads locally (slow)"
 	@echo "  make python-test  Test the mujoco-menagerie package (builds the registry first)"
-	@echo "  make build        Build the wheel + sdist into dist/ and smoke test both"
+	@echo "  make build        Build the wheel + sdist into dist/ (version from the tag at HEAD, else 0.0.0) and smoke test both"
 	@echo "  make all          Run check + test + python-test (everything CI runs)"
 
 install:
@@ -41,7 +41,8 @@ python-test: registry
 	cd python && uv run --group dev pytest -n auto
 
 build: archives
-	rm -rf dist && uv build python --out-dir dist
+	rm -rf dist && version=$$(git describe --tags --exact-match 2>/dev/null || echo v0.0.0) && sed -i.orig "s/^version = .*/version = \"$${version#v}\"/" python/pyproject.toml
+	uv build python --out-dir dist; mv python/pyproject.toml.orig python/pyproject.toml
 	uv run --isolated --no-project --with dist/*.whl python/tests/smoke_test.py
 	uv run --isolated --no-project --with dist/*.tar.gz python/tests/smoke_test.py
 

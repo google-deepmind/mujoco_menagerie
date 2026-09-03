@@ -1,6 +1,6 @@
 [project]
 name = "mujoco-menagerie"
-version = "0.0.0"  # set by release.yml
+version = "0.0.0"  # make build sets it from the git tag
 description = "Every robot in MuJoCo Menagerie, one pip install away."
 readme = "DOC.md"
 license = "Apache-2.0"

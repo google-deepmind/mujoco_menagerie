@@ -1,7 +1,8 @@
 # Every merge that touches a model directory or the package is released as
 # vYYYY.M.N. Archives go to the long-lived `assets` GitHub release and are
 # re-verified from their public URLs before anything reaches PyPI, which is
-# immutable; the tag is pushed last so a failed publish leaves no tag behind.
+# immutable. The version is read from the tag, which is pushed last so a failed
+# publish leaves no tag behind.
 name: release
 
 on:
@@ -38,7 +39,7 @@ jobs:
           month=$(date -u +%Y.%-m)
           n=$(git tag --list "v$month.*" | sed "s/^v$month\.//" | sort -n | tail -1)
           version="$month.$(( ${n:--1} + 1 ))"
-          sed -i "s/^version = .*/version = \"$version\"/" python/pyproject.toml
+          git tag "v$version"  # local until publish succeeds; the build reads the version from it
           echo "version=$version" >> "$GITHUB_OUTPUT"
 
       - name: Build the archives not yet released, and the registry
@@ -76,14 +77,15 @@ jobs:
 
       - name: Build, smoke test, publish
         if: steps.version.outputs.version
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
         run: |
-          uv build python --out-dir dist
-          uv run --isolated --no-project --with dist/*.whl python/tests/smoke_test.py
-          uv run --isolated --no-project --with dist/*.tar.gz python/tests/smoke_test.py
+          make build
+          ls "dist/mujoco_menagerie-$VERSION-py3-none-any.whl"
           uv publish
 
       - name: Tag
         if: steps.version.outputs.version
         env:
           VERSION: ${{ steps.version.outputs.version }}
-        run: git tag "v$VERSION" && git push origin "v$VERSION"
+        run: git push origin "v$VERSION"
