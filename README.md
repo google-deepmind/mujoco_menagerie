@@ -9,6 +9,9 @@
   <a href="https://mujoco.readthedocs.io/en/latest/models.html" alt="Documentation">
     <img src="https://readthedocs.org/projects/mujoco/badge/?version=latest">
   </a>
+  <a href="https://pypi.org/project/mujoco-menagerie/" alt="PyPI">
+    <img src="https://img.shields.io/pypi/v/mujoco-menagerie">
+  </a>
   <a href="https://github.com/google-deepmind/mujoco_menagerie/blob/main/CONTRIBUTING.md">
     <img src="https://img.shields.io/badge/PRs-welcome-green.svg" alt="PRs" height="20">
   </a>
