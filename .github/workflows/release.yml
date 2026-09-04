@@ -1,0 +1,91 @@
+# Every merge that touches a model directory or the package is released as
+# vYYYY.M.N. Archives go to the long-lived `assets` GitHub release and are
+# re-verified from their public URLs before anything reaches PyPI, which is
+# immutable. The version is read from the tag, which is pushed last so a failed
+# publish leaves no tag behind.
+name: release
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency: release
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    environment: pypi
+    permissions:
+      contents: write   # release assets, tag
+      id-token: write   # trusted publishing
+    steps:
+      - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+        with:
+          fetch-depth: 0
+      - uses: astral-sh/setup-uv@fac544c07dec837d0ccb6301d7b5580bf5edae39 # v8.2.0
+        with:
+          version: "0.12.1"
+      - run: uv python install 3.12
+
+      - name: Pick the version, or stop if nothing to release
+        id: version
+        run: |
+          last=$(git tag --list 'v*' --sort=-v:refname | head -1)
+          if [ -n "$last" ] && [ "$GITHUB_EVENT_NAME" = push ] && ! git diff --name-only "$last" HEAD \
+             | grep -vE '^(\.|assets/|test/)' | grep -qE '/|^(catalog|build_registry)\.py$'; then
+            echo "no model directory or package change since $last"; exit 0
+          fi
+          month=$(date -u +%Y.%-m)
+          n=$(git tag --list "v$month.*" | sed "s/^v$month\.//" | sort -n | tail -1)
+          version="$month.$(( ${n:--1} + 1 ))"
+          git tag "v$version"  # local until publish succeeds; the build reads the version from it
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+
+      - name: Build the archives not yet released, and the registry
+        if: steps.version.outputs.version
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release view assets --json assets --jq '[.assets[] | select(.digest) | {key: .name, value: {sha256: (.digest | ltrimstr("sha256:")), download_size: .size}}] | from_entries' > published.json || echo '{}' > published.json
+          uv run --no-project build_registry.py --jobs "$(nproc)" --published published.json
+
+      - name: Upload new archives
+        if: steps.version.outputs.version
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release view assets >/dev/null 2>&1 || gh release create assets --title "Model archives" \
+            --notes "Content-addressed archives used by the mujoco-menagerie package. Do not delete." --target "$GITHUB_SHA"
+          existing=$(gh release view assets --json assets --jq '.assets[].name')
+          for f in python/dist-assets/*.tar.xz; do
+            grep -qx "$(basename "$f")" <<<"$existing" || gh release upload assets "$f"
+          done
+
+      - name: Re-verify every archive from its public URL
+        if: steps.version.outputs.version
+        env:
+          PYTHONPATH: python/src
+        run: |
+          uv run --no-project python - <<'EOF'
+          import hashlib, json, urllib.request
+          from mujoco_menagerie._cache import DEFAULT_BASE_URL
+          for name, r in json.load(open('python/src/mujoco_menagerie/registry.json'))['robots'].items():
+              data = urllib.request.urlopen(f"{DEFAULT_BASE_URL}/{r['asset']}").read()
+              assert hashlib.sha256(data).hexdigest() == r['sha256'] and len(data) == r['download_size'], name
+          EOF
+
+      - name: Build, smoke test, publish
+        if: steps.version.outputs.version
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          make build
+          ls "dist/mujoco_menagerie-$VERSION-py3-none-any.whl"
+          uv publish
+
+      - name: Tag
+        if: steps.version.outputs.version
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
+        run: git push origin "v$VERSION"

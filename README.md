@@ -28,8 +28,7 @@ well right out of the gate.
   - [Prerequisites](#prerequisites)
   - [Overview](#overview)
   - [Usage](#usage)
-    - [Via `robot-descriptions`](#via-robot-descriptions)
-    - [Via `git clone`](#via-git-clone)
+- [Python Package](#python-package)
 - [Model Quality and Contributing](#model-quality-and-contributing)
   - [Quick contributor setup](#quick-contributor-setup)
 - [Menagerie Models](#menagerie-models)
@@ -89,45 +88,47 @@ defined in the kinematic tree. We leave additional body definitions for the
 
 ### Usage
 
-#### Via `robot-descriptions`
-
-You can use the opensource
-[`robot_descriptions`](https://github.com/robot-descriptions/robot_descriptions.py)
-package to load any model in Menagerie. It is available on PyPI and can be
-installed via `pip install robot_descriptions`.
-
-Once installed, you can load a model of your choice as follows:
-
-```python
-import mujoco
-
-# Loading a specific model description as an imported module.
-from robot_descriptions import panda_mj_description
-model = mujoco.MjModel.from_xml_path(panda_mj_description.MJCF_PATH)
-
-# Directly loading an instance of MjModel.
-from robot_descriptions.loaders.mujoco import load_robot_description
-model = load_robot_description("panda_mj_description")
-
-# Loading a variant of the model, e.g. panda without a gripper.
-model = load_robot_description("panda_mj_description", variant="panda_nohand")
-```
-
-#### Via `git clone`
-
-You can also directly clone this repository in the directory of your choice:
+The [Python package](#python-package) is the easiest way to use Menagerie from
+Python. You can also clone this repository in the directory of your choice:
 
 ```bash
 git clone https://github.com/google-deepmind/mujoco_menagerie.git
 ```
 
-You can then interactively explore the model using the Python viewer:
+and explore a model interactively using the Python viewer:
 
 ```bash
 python -m mujoco.viewer --mjcf mujoco_menagerie/unitree_go2/scene.xml
 ```
 
+Menagerie models are also available through the third-party
+[`robot_descriptions`](https://github.com/robot-descriptions/robot_descriptions.py)
+package.
+
 If you have further questions, please check out our [FAQ](FAQ.md).
+
+## Python Package
+
+```bash
+pip install mujoco-menagerie
+```
+
+```python
+import mujoco_menagerie as mm
+
+model = mm.load('unitree_go2')  # downloads once, compiles scene.xml
+spec = mm.get('unitree_go2').spec()  # editable mujoco.MjSpec
+```
+
+Each model is downloaded the first time it is loaded, into a per-user cache,
+and `mujoco-menagerie==2026.9.0` pins every model to that release. To open a
+model straight from the command line, with nothing installed:
+
+```bash
+uvx mujoco-menagerie view unitree_go2
+```
+
+See [`python/DOC.md`](python/DOC.md) for the full API.
 
 ## Model Quality and Contributing
 
