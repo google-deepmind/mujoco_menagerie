@@ -46,6 +46,16 @@ finer control:
 
 CI runs the same things, so a green `make all` locally means a green CI.
 
+## Releases
+
+Menagerie ships as the `mujoco-menagerie` package ([`python/`](python/DOC.md)).
+Every merge that touches a model directory or the package is released
+automatically as `YYYY.M.N`, so every model fix has a version. Everything in
+the package is derived from the checkout by `build_registry.py`, which CI runs
+on every PR. Every model directory must appear in `catalog.py`'s `MODEL_MAP`; a
+directory with several `scene*.xml` and no `scene.xml` names its default in
+`PREVIEW_OVERRIDES`.
+
 ## XML style
 
 You can browse existing models to get a general sense of the style we adopt for

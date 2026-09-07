@@ -45,12 +45,12 @@ def get_base_license(root: pathlib.Path) -> str:
   """
   opensource_license = root / 'opensource' / 'LICENSE'
   if opensource_license.exists():
-    return opensource_license.read_text()
+    return opensource_license.read_text(encoding='utf-8')
 
   # Fall back to extracting from the existing concatenated LICENSE.
   existing = root / 'LICENSE'
   if existing.exists():
-    sections = existing.read_text().split(HLINE + '\n')
+    sections = existing.read_text(encoding='utf-8').split(HLINE + '\n')
     if sections:
       return sections[-1]
 
@@ -84,7 +84,7 @@ def generate_license(root: pathlib.Path) -> str:
     out += HLINE
     out += f"License for contents in the directory '{lf.parent.name}/'\n"
     out += HLINE + '\n'
-    out += lf.read_text() + '\n\n'
+    out += lf.read_text(encoding='utf-8') + '\n\n'
 
   out += HLINE
   out += 'The following license applies to all other contents\n'
@@ -115,7 +115,7 @@ def main():
       print('FAIL: LICENSE file does not exist.', file=sys.stderr)
       sys.exit(1)
 
-    current = license_path.read_text()
+    current = license_path.read_text(encoding='utf-8')
     if current != generated:
       print(
         'FAIL: LICENSE file is out of date. '
@@ -127,7 +127,7 @@ def main():
     print('OK: LICENSE file is up to date.')
     return
 
-  license_path.write_text(generated)
+  license_path.write_text(generated, encoding='utf-8')
   print(f'LICENSE file regenerated at {license_path}')
 
 
