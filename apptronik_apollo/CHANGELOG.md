@@ -2,6 +2,10 @@
 
 All notable changes to this model will be documented in this file.
 
+## [2026-09-19]
+- Reordered the `stand` keyframe controls to match the actuator order (fixes
+https://github.com/google-deepmind/mujoco_menagerie/issues/318).
+
 ## [2025-05-02]
 - Changed acuator order to match joint order and moved kv to damping for better
 sim2real transfer.
