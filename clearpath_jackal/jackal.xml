@@ -1,0 +1,86 @@
+<mujoco model="jackal">
+  <compiler angle="radian" autolimits="true"/>
+
+  <option integrator="Euler" timestep="0.005" iterations="5" ls_iterations="5">
+    <flag eulerdamp="disable"/>
+  </option>
+
+  <asset>
+    <mesh name="jackal-fender" file="assets/jackal-fender.stl"/>
+    <mesh name="d435" file="assets/d435.stl"/>
+    <mesh name="t265" file="assets/t265.stl"/>
+    <mesh name="VLP16-base-1" file="assets/VLP16_base_1.stl"/>
+    <mesh name="VLP16-base-2" file="assets/VLP16_base_2.stl"/>
+    <mesh name="VLP16-scan" file="assets/VLP16_scan.stl"/>
+    <mesh name="VLP16-tower" file="assets/velodyne_tower.stl"/>
+  </asset>
+
+  <default>
+    <mesh maxhullvert="16"/>
+    <default class="throttle">
+      <joint type="hinge" axis="0 1 0" frictionloss="0.001" damping="0.01" armature="0.01" limited="false"/>
+    </default>
+    <default class="jackal_wheel">
+      <geom fitscale="1" type="mesh" friction="2 0.005 0.0001" condim="1" contype="0" conaffinity="1" mesh="jackal-wheel" mass="0.477"/>
+    </default>
+  </default>
+
+  <worldbody>
+    <light name="spotlight" mode="targetbodycom" target="base_link" pos="3 0 4"/>
+    <body name="base_link" pos="0.0 0.0 0.1" euler="0 0 0">
+      <joint type="free"/>
+      <body name="base_footprint" pos="0 0 0.092">
+        <inertial pos="0.0  0.0 0.0" mass="16.523" diaginertia="0.3136 0.3922 0.4485"/>
+        <geom size="0.21 0.155 0.092" mass="16.523" condim="1" contype="0" conaffinity="1" type="box" rgba="0.2 0.2 0.2 1"/>
+      </body>
+      <geom type="mesh" rgba="0.8 0.8 0 1" condim="1" contype="0" conaffinity="1" mesh="jackal-fender"/>
+      <geom pos="0 0 0" quat="0 0 0 1" type="mesh" rgba="0.8 0.8 0 1" contype="0" conaffinity="1" mesh="jackal-fender"/>
+      <site name="imu" pos="0 0 0.2" group="5"/>
+      <body name="front_left_wheel_link" pos="0.131 0.187795 0.0345">
+        <inertial pos="0 0 0" quat="0.707107 0 0 0.707107" mass="0.477" diaginertia="0.0024 0.0013 0.0013"/>
+        <joint class="throttle" name="front_left_wheel" pos="0 0 0" axis="0 1 0"/>
+        <geom name="front_left_wheel" size="0.095 0.00001" quat="0.707107 0.707107 0 0" type="capsule" contype="0" conaffinity="1" friction="1 0.005 0.0001" rgba="0.15 0.15 0.15 1"/>
+      </body>
+      <body name="front_right_wheel_link" pos="0.131 -0.187795 0.0345">
+        <inertial pos="0 0 0" quat="0.707107 0 0 0.707107" mass="0.477" diaginertia="0.0024 0.0013 0.0013"/>
+        <joint class="throttle" name="front_right_wheel" pos="0 0 0" axis="0 1 0"/>
+        <geom name="front_right_wheel" size="0.095 0.00001" quat="0.707107 0.707107 0 0" type="capsule" contype="0" conaffinity="1" friction="1 0.005 0.0001" rgba="0.15 0.15 0.15 1"/>
+      </body>
+      <body name="rear_left_wheel_link" pos="-0.131 0.187795 0.0345">
+        <inertial pos="0 0 0" quat="0.707107 0 0 0.707107" mass="0.477" diaginertia="0.0024 0.0013 0.0013"/>
+        <joint class="throttle" name="rear_left_wheel" pos="0 0 0" axis="0 1 0"/>
+        <geom name="rear_left_wheel" size="0.095 0.00001" quat="0.707107 0.707107 0 0" type="capsule" contype="0" conaffinity="1" friction="1 0.005 0.0001" rgba="0.15 0.15 0.15 1"/>
+      </body>
+      <body name="rear_right_wheel_link" pos="-0.131 -0.187795 0.0345">
+        <inertial pos="0 0 0" quat="0.707107 0 0 0.707107" mass="0.477" diaginertia="0.0024 0.0013 0.0013"/>
+        <joint class="throttle" name="rear_right_wheel" pos="0 0 0" axis="0 1 0"/>
+        <geom name="rear_right_wheel" size="0.095 0.00001" quat="0.707107 0.707107 0 0" type="capsule" contype="0" conaffinity="1" friction="1 0.005 0.0001" rgba="0.15 0.15 0.15 1"/>
+      </body>
+      <geom pos="0 0 0.266" type="mesh" mass="0.1" condim="1" contype="0" conaffinity="1" mesh="VLP16-base-1"/>
+      <geom pos="0 0 0.266" type="mesh" mass="0.1" condim="1" contype="0" conaffinity="1" mesh="VLP16-base-2"/>
+      <geom pos="0 0 0.266" type="mesh" mass="0.63" condim="1" contype="0" conaffinity="1" mesh="VLP16-scan"/>
+      <geom pos="0 0 0.184" type="mesh" mass="0.63" condim="1" contype="0" conaffinity="1" mesh="VLP16-tower"/>
+      <geom pos="0.215 0 0.225" quat="0.5 0.5 0.5 0.5" type="mesh" contype="0" conaffinity="1" mass="0.072" mesh="d435"/>
+      <geom pos="0.2 0 0.2" quat="0.5 0.5 0.5 0.5" type="mesh" contype="0" conaffinity="1" mass="0.055" mesh="t265"/>
+    </body>
+  </worldbody>
+
+  <actuator>
+    <velocity ctrllimited="true" ctrlrange="-26 26" name="front_left_wheel_velocity" joint="front_left_wheel"/>
+    <velocity ctrllimited="true" ctrlrange="-26 26" name="front_right_wheel_velocity" joint="front_right_wheel"/>
+    <velocity ctrllimited="true" ctrlrange="-26 26" name="rear_left_wheel_velocity" joint="rear_left_wheel"/>
+    <velocity ctrllimited="true" ctrlrange="-26 26" name="rear_right_wheel_velocity" joint="rear_right_wheel"/>
+  </actuator>
+
+  <sensor>
+    <gyro site="imu" name="local_angvel"/>
+    <velocimeter site="imu" name="local_linvel"/>
+    <accelerometer site="imu" name="local_linaccel"/>
+    <framepos objtype="site" objname="imu" name="base_link"/>
+    <framezaxis objtype="site" objname="imu" name="upvector"/>
+    <framexaxis objtype="site" objname="imu" name="forwardvector"/>
+    <framelinvel objtype="site" objname="imu" name="global_linvel"/>
+    <frameangvel objtype="site" objname="imu" name="global_angvel"/>
+    <framequat objtype="site" objname="imu" name="orientation"/>
+  </sensor>
+</mujoco>
