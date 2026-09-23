@@ -205,12 +205,12 @@
                     quat="0.958280 -0.285792 -0.001556 0.004547" fovy="61"/>
                   <geom type="mesh" mass="0.012" class="visual" pos="0 -0.000218 0.00095" quat="0 1 0 0"
                     mesh="wrist_roll_follower_so101_camera_mount" material="wrist_roll_follower_so101_v1_material"/>
-                  <geom name="wrist_camera_pcb" type="box" size="0.019 0.019 0.0005"
-                    pos="-0.00101 0.05958 -0.04515" quat="0.958280 -0.285792 -0.001556 0.004547"
-                    group="2" material="sts3215_03a_v1_material" contype="0" conaffinity="0"/>
+                  <geom name="wrist_camera_pcb" type="box" size="0.019 0.019 0.0005" pos="-0.00101 0.05958 -0.04515"
+                    quat="0.958280 -0.285792 -0.001556 0.004547" group="2" material="sts3215_03a_v1_material"
+                    contype="0" conaffinity="0"/>
                   <geom name="wrist_camera_lens" type="cylinder" size="0.007 0.00475" mass="0"
-                    pos="-0.00298 0.05669 -0.04954" quat="0.958280 -0.285792 -0.001556 0.004547"
-                    group="1" material="sts3215_03a_v1_material" contype="0" conaffinity="0"/>
+                    pos="-0.00298 0.05669 -0.04954" quat="0.958280 -0.285792 -0.001556 0.004547" group="1"
+                    material="sts3215_03a_v1_material" contype="0" conaffinity="0"/>
                   <geom name="camera_box1" class="collision_gripper" type="box" size="0.015 0.015 0.003"
                     pos="-0.0025 0.03 -0.03"/>
                   <geom name="camera_box2" class="collision_gripper" type="box" size="0.021 0.021 0.003"
