@@ -10,7 +10,7 @@ See [CHANGELOG.md](./CHANGELOG.md) for a full history of changes.
 ## Overview
 
 This package contains a simplified robot description (MJCF) of the [LBR iiwa](https://www.kuka.com/en-us/products/robotics-systems/industrial-robots/lbr-iiwa) 14kg developed
-by [KUKA Robotics](https://www.kuka.com/en-us). It is derived from the [publicly available](https://github.com/RobotLocomotion/drake/blob/master/manipulation/models/iiwa_description/urdf/iiwa14_spheres_dense_collision.urdf)
+by [KUKA Robotics](https://www.kuka.com/en-us). It is derived from the [publicly available](https://github.com/RobotLocomotion/drake/blob/v1.27.0/manipulation/models/iiwa_description/urdf/iiwa14_spheres_dense_collision.urdf)
 URDF description created by the [Drake](https://github.com/RobotLocomotion/drake) developers.
 
 <p float="left">
@@ -20,7 +20,7 @@ URDF description created by the [Drake](https://github.com/RobotLocomotion/drake
 ## URDF → MJCF derivation steps
 
 1. Added `<mujoco> <compiler discardvisual="false"/> </mujoco>` to the
-   [URDF](https://github.com/RobotLocomotion/drake/blob/master/manipulation/models/iiwa_description/urdf/iiwa14_spheres_dense_collision.urdf)'s
+   [URDF](https://github.com/RobotLocomotion/drake/blob/v1.27.0/manipulation/models/iiwa_description/urdf/iiwa14_spheres_dense_collision.urdf)'s
    `<robot>` clause in order to preserve visual geometries.
 2. Loaded the URDF into MuJoCo and saved a corresponding MJCF.
 3. Created base body and added its corresponding inertial properties.

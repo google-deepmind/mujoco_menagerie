@@ -12,7 +12,7 @@ See [CHANGELOG.md](./CHANGELOG.md) for a full history of changes.
 This package contains a simplified robot description (MJCF) of the [YAM robot](https://i2rt.com/products/yam-manipulator) developed by [I2
 RT Robotics](https://i2rt.com/). It is derived from the [publicly available
 URDF
-description](https://github.com/i2rt-robotics/i2rt/blob/main/robot_models/yam/yam.urdf).
+description](https://github.com/i2rt-robotics/i2rt/blob/d4efb66d81bd8bde42909880b16591d4af82e8c0/robot_models/yam/yam.urdf).
 
 <p float="left">
   <img src="yam.png" width="400">
