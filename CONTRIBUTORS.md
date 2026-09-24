@@ -25,6 +25,7 @@ Built by the Google DeepMind team with contributions from the open-source commun
 - [Chintan Desai](https://github.com/hello-chintan)
 - [Christian Rauch](https://github.com/christianrauch)
 - [Dada Tian](https://github.com/lonelyfluency)
+- [Duc Cuong Vu](https://github.com/duccuongvu)
 - [Eugene Frizza](https://github.com/eufrizz)
 - [Haochen Shi](https://github.com/hshi74)
 - [Ian Noh](https://github.com/dongridong)
@@ -46,6 +47,7 @@ Built by the Google DeepMind team with contributions from the open-source commun
 - [Thomas Peyrucain](https://github.com/thomaspeyrucain)
 - [Tony Ma](https://github.com/toekneema)
 - [Varad Vaidya](https://github.com/varadVaidya)
+- [Viet Khanh Nguyen](https://github.com/vietkhanh-nguyen)
 - [Yanan Sui](https://github.com/yanansui)
 
 ---
