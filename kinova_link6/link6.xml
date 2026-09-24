@@ -1,0 +1,165 @@
+<mujoco model="link6_nominal">
+  <compiler angle="radian" meshdir="assets/" balanceinertia="true"/>
+  <option integrator="implicitfast" timestep="0.002"/>
+
+  <default>
+    <default class="visual">
+      <geom type="mesh" contype="0" conaffinity="0" group="2" rgba="0.529412 0.529412 0.529412 1"/>
+    </default>
+
+    <default class="collision">
+      <geom group="3" contype="1" conaffinity="1" solimp="0.95 0.99 0.003" solref="-400 -80"/>
+    </default>
+
+    <default class="big_joint">
+      <joint damping="3.0" armature="0.030" frictionloss="0.06"/>
+    </default>
+    <default class="mid_joint">
+      <joint damping="2.2" armature="0.020" frictionloss="0.05"/>
+    </default>
+    <default class="wrist_joint">
+      <joint damping="0.6" armature="0.006" frictionloss="0.03"/>
+    </default>
+
+    <default class="large_actuator">
+      <position kp="6000" kv="230" forcerange="-300 300"/>
+    </default>
+    <default class="small_actuator">
+      <position kp="700" kv="45" forcerange="-100 100"/>
+    </default>
+
+    <site size="0.005" rgba="0.5 0.5 0.5 0.8" group="4"/>
+  </default>
+
+  <asset>
+    <mesh name="base_link" file="base_link.stl"/>
+    <mesh name="shoulder_link" file="shoulder_link.stl"/>
+    <mesh name="arm_link" file="arm_link.stl"/>
+    <mesh name="forearm_link" file="forearm_link.stl"/>
+    <mesh name="lower_wrist_link" file="lower_wrist_link.stl"/>
+    <mesh name="upper_wrist_link" file="upper_wrist_link.stl"/>
+    <mesh name="wrist_interface_link" file="wrist_interface_link.stl"/>
+  </asset>
+
+  <worldbody>
+    <body name="base_link">
+      <inertial pos="-0.00721418 -0.00010978 0.03709101" quat="0.99827321 -0.00279093 0.05866908 -0.00086296"
+        mass="1.86878181" diaginertia="0.00330895 0.00464688 0.00542015"/>
+      <geom class="visual" mesh="base_link"/>
+      <geom class="collision" type="sphere" size="0.1"/>
+      <body name="shoulder_link" pos="0 0 0.053" quat="0 1 0 0">
+        <inertial pos="0.03930119 -0.00705889 -0.08462154" quat="0.42175869 0.83491972 -0.14162376 0.32399287"
+          mass="4.82569870" diaginertia="0.01126288 0.02720213 0.03303714"/>
+        <joint class="big_joint" name="joint_1" pos="0 0 0" axis="0 0 1" range="-6.283185307179586 6.283185307179586"/>
+        <geom class="visual" mesh="shoulder_link"/>
+        <geom class="collision" type="sphere" size="0.09" pos="0 0 -0.04"/>
+        <geom class="collision" type="sphere" size="0.095" pos="0.06065737 -0.01 -0.08144986"/>
+        <geom class="collision" type="sphere" size="0.09" pos="0 0 -0.11"/>
+        <geom class="collision" type="sphere" size="0.095" pos="0.1078564 -0.02138667 -0.1392602"/>
+        <geom class="collision" type="sphere" size="0.095" pos="0.04343076 -0.003456797 -0.1306261"/>
+
+        <body name="arm_link" pos="0.11024 -0.069257 -0.1375" quat="0.707107 -0.707107 0 0">
+          <inertial pos="0.00000253 0.18829586 -0.03988382" quat="0.47725827 0.52180831 0.47703171 0.52190169"
+            mass="5.98601487" diaginertia="0.01564580 0.25482538 0.25899206"/>
+          <joint class="mid_joint" name="joint_2" pos="0 0 0" axis="0 0 1" range="-6.283185307179586 6.283185307179586"/>
+          <geom class="visual" mesh="arm_link"/>
+          <geom class="collision" type="sphere" size="0.08" pos="0.0 0.0 -0.01524985"/>
+          <geom class="collision" type="sphere" size="0.085" pos="0.0 0.003107564 -0.05411892"/>
+          <geom class="collision" type="sphere" size="0.08" pos="0.0 0.04674223 -0.07957917"/>
+          <geom class="collision" type="sphere" size="0.08" pos="0.0 0.1114492 -0.07957917"/>
+          <geom class="collision" type="sphere" size="0.08" pos="0.0 0.179992 -0.07957917"/>
+          <geom class="collision" type="sphere" size="0.08" pos="0.0 0.2487042 -0.07957917"/>
+          <geom class="collision" type="sphere" size="0.08" pos="0.0 0.3173259 -0.07957917"/>
+          <geom class="collision" type="sphere" size="0.08" pos="0.0 0.3835145 -0.07957917"/>
+          <geom class="collision" type="sphere" size="0.08" pos="0.0 0.4415521 -0.07957917"/>
+          <geom class="collision" type="sphere" size="0.085" pos="0.0 0.4824647 -0.05411892"/>
+          <geom class="collision" type="sphere" size="0.08" pos="0.0 0.4848319 -0.01524985"/>
+
+          <body name="forearm_link" pos="0 0.485 0" quat="0 -1 0 0">
+            <inertial pos="0.00000464 -0.02451414 -0.02997969" quat="0.64665510 0.28632595 0.64737503 0.28418339"
+              mass="3.41588342" diaginertia="0.00645749 0.01686302 0.01742044"/>
+            <joint class="mid_joint" name="joint_3" pos="0 0 0" axis="0 0 1"
+              range="-6.283185307179586 6.283185307179586"/>
+            <geom class="visual" mesh="forearm_link"/>
+            <geom class="collision" type="sphere" size="0.08" pos="0.0 0.0 -0.01478543"/>
+            <geom class="collision" type="sphere" size="0.085" pos="0.0 -0.002774531 -0.05402248"/>
+            <geom class="collision" type="sphere" size="0.08" pos="0.0 -0.02792384 -0.08310601"/>
+            <geom class="collision" type="sphere" size="0.075" pos="0.0 -0.07494865 -0.09085903"/>
+            <geom class="collision" type="sphere" size="0.075" pos="0.0 -0.1212274 -0.091767"/>
+
+            <body name="lower_wrist_link" pos="0 -0.15216 -0.091704" quat="0.707107 -0.707107 0 0">
+              <inertial pos="-0.00010793 -0.01056422 -0.08091102" quat="0.06015269 -0.70426339 0.04344890 -0.70605022"
+                mass="2.08494922" diaginertia="0.00248256 0.02432336 0.02454290"/>
+              <joint class="wrist_joint" name="joint_4" pos="0 0 0" axis="0 0 1"
+                range="-6.283185307179586 6.283185307179586"/>
+              <geom class="visual" mesh="lower_wrist_link"/>
+              <geom class="collision" type="sphere" size="0.07" pos="0.0 0.0 -0.01025881"/>
+              <geom class="collision" type="sphere" size="0.07" pos="0.0 0.0 -0.06014508"/>
+              <geom class="collision" type="sphere" size="0.07" pos="0.0 0.0 -0.1106502"/>
+              <geom class="collision" type="sphere" size="0.07" pos="0.0 0.0 -0.1607216"/>
+              <geom class="collision" type="sphere" size="0.07" pos="0.0 -0.001607588 -0.2100781"/>
+              <geom class="collision" type="sphere" size="0.07" pos="0.0 -0.03559661 -0.222183"/>
+
+              <body name="upper_wrist_link" pos="0 -0.062957 -0.22275" quat="0.707107 -0.707107 0 0">
+                <inertial pos="0.01243595 0.03284165 -0.04091434" quat="0.66759196 -0.03630621 -0.46678850 0.57888802"
+                  mass="2.00757510" diaginertia="0.00278168 0.00607540 0.00903167"/>
+                <joint class="wrist_joint" name="joint_5" pos="0 0 0" axis="0 0 1"
+                  range="-6.283185307179586 6.283185307179586"/>
+                <geom class="visual" mesh="upper_wrist_link"/>
+                <geom class="collision" type="sphere" size="0.07" pos="0.0 0.0 -0.02579783"/>
+                <geom class="collision" type="sphere" size="0.07" pos="0.0 0.0 -0.06192018"/>
+                <geom class="collision" type="sphere" size="0.075" pos="0.00760242 0.03851649 -0.07210818"/>
+                <geom class="collision" type="sphere" size="0.075" pos="0.01731829 0.07948508 -0.07309098"/>
+                <geom class="collision" type="sphere" size="0.07" pos="0.06120646 0.0860149 -0.07708402"/>
+
+                <body name="wrist_interface_link" pos="0.087028 0.086 -0.076922" quat="0.707107 0 -0.707107 0">
+                  <inertial pos="0 0.00050624 -0.00388589" quat="0.66048695 0.25295379 0.65793755 -0.25863014"
+                    mass="1.51926049" diaginertia="0.00139261 0.00390637 0.00390866"/>
+                  <joint class="wrist_joint" name="joint_6" pos="0 0 0" axis="0 0 1"
+                    range="-6.283185307179586 6.283185307179586"/>
+                  <geom class="visual" mesh="wrist_interface_link"/>
+                  <geom class="collision" type="sphere" size="0.07" pos="0.0 0.0 -0.02647703"/>
+                  <geom class="collision" type="sphere" size="0.07" pos="0.0 0.0 -0.06063214"/>
+
+                  <body name="end_effector_link" pos="0 0 -0.092" quat="0 1 0 0">
+                    <site name="tool0" pos="0 0 0" quat="1 0 0 0"/>
+                    <site name="pinch_site" pos="0 0 0" quat="1 0 0 0"/>
+                  </body>
+
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+
+  <actuator>
+    <position class="large_actuator" name="joint_1" joint="joint_1" kp="10000" kv="210" forcerange="-3500 3500"
+      timeconst="0.06" ctrlrange="-3.0543261909900767 3.0543261909900767"/>
+
+    <position class="large_actuator" name="joint_2" joint="joint_2" kp="1600" kv="80" timeconst="0.06"
+      forcerange="-300 300" ctrlrange="-2.792526803190927 1.5707963267948966"/>
+
+    <position class="large_actuator" name="joint_3" joint="joint_3" kp="1400" kv="75" timeconst="0.05"
+      forcerange="-280 280" ctrlrange="-1.0471975511965976 2.792526803190927"/>
+
+
+    <position class="small_actuator" name="joint_4" joint="joint_4" kp="800" kv="50"
+      ctrlrange="-3.0543261909900767 3.0543261909900767"/>
+
+    <position class="small_actuator" name="joint_5" joint="joint_5" kp="700" kv="45"
+      ctrlrange="-2.0943951023931953 2.0943951023931953"/>
+
+    <position class="small_actuator" name="joint_6" joint="joint_6" kp="700" kv="45"
+      ctrlrange="-3.0543261909900767 3.0543261909900767"/>
+  </actuator>
+
+  <keyframe>
+    <key name="home" qpos="0 0.26179939 3.14159265 -2.26892803 0 0.95993109"
+      ctrl="0 0.26179939 3.14159265 -2.26892803 0 0.95993109"/>
+    <key name="retract" qpos="0 -0.34906585 3.14159265 -2.54818071 0 -0.87266463"
+      ctrl="0 -0.34906585 3.14159265 -2.54818071 0 -0.87266463"/>
+  </keyframe>
+</mujoco>
