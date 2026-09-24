@@ -72,7 +72,7 @@ r.files('scene')  # every file scene.xml depends on; copy these to vendor, and n
 r.assets('scene')  # the same as {relative path: bytes}, for MjModel.from_xml_string
 ```
 
-`assets()` raises for `robotis_op3`, `ufactory_lite6` and `sharpa_wave`, whose meshes share basenames MuJoCo cannot tell apart in memory.
+`assets()` raises for `pal_talos`, `robotis_op3` and `ufactory_lite6`, whose meshes share basenames MuJoCo cannot tell apart in memory.
 
 **Cache**
 
