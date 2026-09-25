@@ -238,6 +238,7 @@ full breakdown.
 | <a href='https://live.mujoco.org/?model=github:google-deepmind/mujoco_menagerie/main/hello_robot_stretch_3/scene.xml' title='Open live preview for Hello Robot Stretch 3'><img src='assets/hello_robot_stretch_3-stretch.png' width=120></a> | Hello Robot Stretch 3 | 20 | [Apache-2.0](hello_robot_stretch_3/LICENSE) |
 | <a href='https://live.mujoco.org/?model=github:google-deepmind/mujoco_menagerie/main/pal_tiago/scene_position.xml' title='Open live preview for TIAGo'><img src='assets/pal_tiago-tiago.png' width=120></a> | TIAGo | 22 | [Apache-2.0](pal_tiago/LICENSE) |
 | <a href='https://live.mujoco.org/?model=github:google-deepmind/mujoco_menagerie/main/pal_tiago_dual/scene_position.xml' title='Open live preview for TIAGo++'><img src='assets/pal_tiago_dual-tiago_dual.png' width=120></a> | TIAGo++ | 25 | [Apache-2.0](pal_tiago_dual/LICENSE) |
+| <a href='https://live.mujoco.org/?model=github:google-deepmind/mujoco_menagerie/main/rainbow_robotics_rby1/scene_rby1a_1.2.xml' title='Open live preview for Rainbow Robotics RBY1'><img src='assets/rainbow_robotics_rby1-rby1a_1.2.png' width=120></a> | Rainbow Robotics RBY1 | 28 | [Apache-2.0](rainbow_robotics_rby1/LICENSE) |
 
 **Drones.**
 
@@ -270,6 +271,10 @@ full breakdown.
 | <a href='https://live.mujoco.org/?model=github:google-deepmind/mujoco_menagerie/main/low_cost_robot_arm/scene.xml' title='Open live preview for Low-Cost Robot Arm'><img src='assets/low_cost_robot_arm-low_cost_robot_arm.png' width=120></a> | Low-Cost Robot Arm | 6 | [Apache-2.0](low_cost_robot_arm/LICENSE) |
 | <a href='https://live.mujoco.org/?model=github:google-deepmind/mujoco_menagerie/main/i2rt_yam/scene.xml' title='Open live preview for Yet Another Manipulator (YAM)'><img src='assets/i2rt_yam-yam.png' width=120></a> | Yet Another Manipulator (YAM) | 8 | [MIT](i2rt_yam/LICENSE) |
 | <a href='https://live.mujoco.org/?model=github:google-deepmind/mujoco_menagerie/main/seeed_rebot_devarm/scene.xml' title='Open live preview for Seeed Studio reBot DevArm'><img src='assets/seeed_rebot_devarm-seeed_rebot_devarm.png' width=120></a> | Seeed Studio reBot DevArm | 8 | [MIT](seeed_rebot_devarm/LICENSE) |
+| <a href='https://live.mujoco.org/?model=github:google-deepmind/mujoco_menagerie/main/dynamixel_2r/scene.xml' title='Open live preview for Dynamixel 2R'><img src='assets/dynamixel_2r-dynamixel_2r.png' width=120></a> | Dynamixel 2R | 2 | [MIT](dynamixel_2r/LICENSE) |
+| <a href='https://live.mujoco.org/?model=github:google-deepmind/mujoco_menagerie/main/franka_fr3_v2/scene.xml' title='Open live preview for Franka Robotics FR3 v2'><img src='assets/franka_fr3_v2-fr3v2.png' width=120></a> | Franka Robotics FR3 v2 | 7 | [Apache-2.0](franka_fr3_v2/LICENSE) |
+| <a href='https://live.mujoco.org/?model=github:google-deepmind/mujoco_menagerie/main/robotstudio_so101/scene.xml' title='Open live preview for The Robot Studio SO101'><img src='assets/robotstudio_so101-so101.png' width=120></a> | The Robot Studio SO101 | 6 | [Apache-2.0](robotstudio_so101/LICENSE) |
+| <a href='https://live.mujoco.org/?model=github:google-deepmind/mujoco_menagerie/main/trossen_wxai/scene.xml' title='Open live preview for Trossen WXAI'><img src='assets/trossen_wxai-wxai_follower.png' width=120></a> | Trossen WXAI | 8 | [BSD-3-Clause](trossen_wxai/LICENSE) |
 
 **End-effectors.**
 
@@ -284,6 +289,8 @@ full breakdown.
 | <a href='https://live.mujoco.org/?model=github:google-deepmind/mujoco_menagerie/main/leap_hand/scene_left.xml' title='Open live preview for Leap Hand'><img src='assets/leap_hand-left_hand.png' width=120></a> | Leap Hand | 16 | [MIT](leap_hand/LICENSE) |
 | <a href='https://live.mujoco.org/?model=github:google-deepmind/mujoco_menagerie/main/umi_gripper/scene.xml' title='Open live preview for UMI-Gripper'><img src='assets/umi_gripper-umi_gripper.png' width=120></a> | UMI-Gripper | 8 | [MIT](umi_gripper/LICENSE) |
 | <a href='https://live.mujoco.org/?model=github:google-deepmind/mujoco_menagerie/main/sharpa_wave/scene_left.xml' title='Open live preview for Sharpa Wave'><img src='assets/sharpa_wave-left_hand.png' width=120></a> | Sharpa Wave | 22 | [Apache-2.0](sharpa_wave/LICENSE) |
+| <a href='https://live.mujoco.org/?model=github:google-deepmind/mujoco_menagerie/main/robotiq_2f85_v4/scene.xml' title='Open live preview for Robotiq 2F-85 v4'><img src='assets/robotiq_2f85_v4-2f85.png' width=120></a> | Robotiq 2F-85 v4 | 6 | [BSD-2-Clause](robotiq_2f85_v4/LICENSE) |
+| <a href='https://live.mujoco.org/?model=github:google-deepmind/mujoco_menagerie/main/tetheria_aero_hand_open/scene_right.xml' title='Open live preview for Tetheria Aero Hand Open'><img src='assets/tetheria_aero_hand_open-right_hand.png' width=120></a> | Tetheria Aero Hand Open | 16 | [Apache-2.0](tetheria_aero_hand_open/LICENSE) |
 
 **Mobile Bases.**
 
