@@ -1,0 +1,36 @@
+<mujoco model="link5">
+  <default>
+    <default class="visual">
+      <geom group="2" type="mesh" contype="0" conaffinity="0"/>
+    </default>
+    <default class="collision">
+      <geom group="3" type="mesh"/>
+    </default>
+  </default>
+  <asset>
+    <material name="7016_Buttons_Logos_Banderole" specular="0.0" shininess="0.25" rgba="0.038204 0.049707 0.056129 1.000000"/>
+    <material name="Axis_Number" specular="0.0" shininess="0.25" rgba="0.970930 1.000000 0.998062 1.000000"/>
+    <material name="Reference_Triangles" specular="0.0" shininess="0.25" rgba="0.667369 0.678494 0.681913 1.000000"/>
+    <material name="Rotation_Direction" specular="0.0" shininess="0.25" rgba="0.966878 0.989899 0.967645 1.000000"/>
+    <material name="Shell_White" specular="0.0" shininess="0.25" rgba="1.000000 1.000000 1.000000 1.000000"/>
+    <mesh file="link5_0.obj"/>
+    <mesh file="link5_1.obj"/>
+    <mesh file="link5_2.obj"/>
+    <mesh file="link5_3.obj"/>
+    <mesh file="link5_4.obj"/>
+  </asset>
+  <worldbody>
+    <body name="link5">
+      <geom mesh="link5_0" material="Axis_Number" class="visual"/>
+      <geom mesh="link5_1" material="Reference_Triangles" class="visual"/>
+      <geom mesh="link5_2" material="Rotation_Direction" class="visual"/>
+      <geom mesh="link5_3" material="Shell_White" class="visual"/>
+      <geom mesh="link5_4" material="7016_Buttons_Logos_Banderole" class="visual"/>
+      <geom mesh="link5_0" class="collision"/>
+      <geom mesh="link5_1" class="collision"/>
+      <geom mesh="link5_2" class="collision"/>
+      <geom mesh="link5_3" class="collision"/>
+      <geom mesh="link5_4" class="collision"/>
+    </body>
+  </worldbody>
+</mujoco>
