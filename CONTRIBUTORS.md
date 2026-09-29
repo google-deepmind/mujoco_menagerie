@@ -41,6 +41,7 @@ Built by the Google DeepMind team with contributions from the open-source commun
 - [Nan Wang](https://github.com/Nan-Tetheria)
 - [Nikita Cherniadev](https://github.com/chernyadev)
 - [Omar Rayyan](https://github.com/omarrayyann)
+- [Rishabh Sai](https://github.com/rishabhsai)
 - [Sai Kishor Kothakota](https://github.com/saikishor)
 - [Taehyeong Kim](https://github.com/kimtaehyeong99)
 - [Taylor Howell](https://github.com/thowell)
