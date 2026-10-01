@@ -6,3 +6,4 @@ python/src/mujoco_menagerie/registry.json
 python/dist-assets/
 python/dist/
 dist/
+__pycache__/
