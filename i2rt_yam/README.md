@@ -57,9 +57,20 @@ Robotics](https://i2rt.com/):
    80/80/80/40/10/10, `kv` 5/5/5/1.5/1.5/1.5) to match I2RT's `yam_pro` +
    `linear_4310` SDK configuration.
 3. Replaced the gripper on `link_6` with the `linear_4310` housing and sliding
-   fingers (`left_finger`, `right_finger`, range `0` to `0.0475` m), modeled
-   with primitive box colliders (`finger_collision` on the inner grip pads) and
-   a 2×3 grid of `sphere_collision` geoms per fingertip.
+   fingers (`left_finger`, `right_finger`). Finger travel is `0` (pads touching,
+   the calibrated closed stop) to `0.0475` m; the joint and control ranges
+   extend 5 mm past the stop so a closed command keeps squeezing a grasped
+   object, as the real motor does under its force limiter. The gripper
+   position actuator uses `kp` 2000 / `kv` 150 with a ±100 N force range (each
+   pad presses with half of it, 50 N, the SDK's grip force limit). Each finger
+   is modeled with primitive boxes fitted to `tip_left.stl` / `tip_right.stl`:
+   a central `finger_collision` grip pad (`pad`) flanked by two tapered edge
+   strips (`pad_edge_a`, `pad_edge_b`) whose faces lie on one plane (the tooth
+   mid-height of the mesh), and `finger_body_collision` boxes for the rail
+   slider, carriage, distal back bevels, and the two struts of the triangular
+   frame, whose inner faces leave the pad plane at the pad seam on the mesh's
+   3.4° plane. Only the pads collide with each other; everything collides with
+   the world.
 4. Added `wrist_camera` on `link_6` at the optical-frame extrinsics from
    `yam_station_linear_4310_d405.xml`, with a `wrist_cam` camera using RealSense
    D405 intrinsics, four collision boxes covering the D405 housing and bracket,

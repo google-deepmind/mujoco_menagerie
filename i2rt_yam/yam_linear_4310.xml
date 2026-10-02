@@ -20,17 +20,29 @@
       </default>
       <default class="collision">
         <geom group="3" type="capsule"/>
+        <!-- Finger geoms other than the pads. contype 1 / conaffinity 0 on both
+          fingers never matches, so the only finger-to-finger contact is pad on
+          pad; everything still collides with the world (contype 1 x conaffinity
+          1). -->
+        <default class="finger_body_collision">
+          <geom type="box" contype="1" conaffinity="0" rgba="0.381493 0.492734 0.780446 1"/>
+        </default>
         <default class="finger_collision">
-          <geom type="box" condim="6" friction="1 5e-3 5e-4" solref=".01 1" priority="1"
+          <geom type="box" condim="6" friction="1 5e-3 5e-4" solref=".01 1" priority="1" contype="3" conaffinity="2"
             rgba="0.381493 0.492734 0.780446 1"/>
-          <default class="sphere_collision">
-            <geom size="0.0006 0 0" type="sphere" rgba="1 0 0 1"/>
-          </default>
         </default>
       </default>
       <default class="finger">
-        <joint type="slide" axis="0 0 -1" range="0 0.0475" armature="0.1" frictionloss="0.1"/>
-        <position ctrlrange="0.0 0.0475" kp="100" kv="10" inheritrange="0"/>
+        <!-- Finger travel in meters along the rail: 0 is the pads touching (the
+          calibrated closed stop of the real gripper), 0.0475 fully open. The joint
+          and control ranges extend 5 mm past the stop so that a closed command
+          keeps squeezing the pads or a grasped object, as the real motor does under
+          its force limiter. The actuator drives the left finger and the coupled
+          right finger follows, so each pad presses with half the actuator force:
+          5 N when closed on nothing, capped by the forcerange at the SDK's 50 N
+          grip limit. -->
+        <joint type="slide" axis="0 0 -1" range="-0.005 0.0475" armature="0.1" frictionloss="0.1"/>
+        <position ctrlrange="-0.005 0.0475" kp="2000" kv="150" forcerange="-100 100" inheritrange="0"/>
       </default>
     </default>
   </default>
@@ -121,19 +133,34 @@
                       <geom class="visual" pos="0.129783 0.00999321 -0.0914614" quat="0.499998 0.5 0.500002 0.5"
                         mesh="tip_left"/>
                       <frame pos="0.0545598 0.0238985 -0.0450618" quat="0.499998 0.5 0.5 0.500002">
-                        <geom name="left_carriage" class="collision" type="box" pos="0 0.0125 -0.075"
-                          size="0.034 0.0365 0.011" rgba="0.381493 0.492734 0.780446 1"/>
-                        <geom name="left_finger_base" class="collision" type="box" pos="0 -0.01075 -0.1"
-                          size="0.02 0.00925 0.014" rgba="0.381493 0.492734 0.780446 1"/>
-                        <geom name="left_finger_tip" class="collision" type="box" pos="0 -0.005 -0.13"
-                          size="0.012 0.004 0.016" rgba="0.381493 0.492734 0.780446 1"/>
-                        <geom name="left_pad" class="finger_collision" pos="0 -0.001 -0.133" size="0.008 0.001 0.012"/>
-                        <geom class="sphere_collision" pos="0.004 -0.0004 -0.141"/>
-                        <geom class="sphere_collision" pos="-0.004 -0.0004 -0.141"/>
-                        <geom class="sphere_collision" pos="0.004 -0.0004 -0.133"/>
-                        <geom class="sphere_collision" pos="-0.004 -0.0004 -0.133"/>
-                        <geom class="sphere_collision" pos="0.004 -0.0004 -0.125"/>
-                        <geom class="sphere_collision" pos="-0.004 -0.0004 -0.125"/>
+                        <geom name="left_rail_base" class="finger_body_collision" pos="-0.0238 0.0235 -0.0612"
+                          size="0.01 0.0247 0.0102"/>
+                        <geom name="left_rail_lip" class="finger_body_collision" pos="-0.011 0.0235 -0.0568"
+                          size="0.0028 0.0247 0.0058"/>
+                        <geom name="left_carriage" class="finger_body_collision" pos="-0.0106 -0.0126 -0.0686"
+                          size="0.0232 0.0104 0.0032"/>
+                        <geom name="left_base_plate" class="finger_body_collision" pos="0 -0.0127 -0.0744"
+                          size="0.0335 0.0101 0.0032"/>
+                        <geom name="left_base_web" class="finger_body_collision" pos="0 -0.0077 -0.0812"
+                          size="0.0215 0.0053 0.0038"/>
+                        <geom name="left_strut_top" class="finger_body_collision" pos="0.0183 -0.0044 -0.1027"
+                          quat="0.98186 0.02943 0.1872 0.00561" size="0.0052 0.0026 0.0295"/>
+                        <geom name="left_tip_bevel_top" class="finger_body_collision" pos="0.0097 -0.0055 -0.124"
+                          quat="-0.01978 0.18198 -0.10624 0.97735" size="0.0052 0.0012 0.0189"/>
+                        <geom name="left_strut_top_back" class="finger_body_collision" pos="0.021 -0.0124 -0.0944"
+                          quat="-0.03203 0.17278 -0.17946 0.96794" size="0.0052 0.0035 0.0227"/>
+                        <geom name="left_strut_bot" class="finger_body_collision" pos="-0.0183 -0.0044 -0.1027"
+                          quat="0.98186 0.02943 -0.1872 -0.00561" size="0.0052 0.0026 0.0295"/>
+                        <geom name="left_tip_bevel_bot" class="finger_body_collision" pos="-0.0097 -0.0055 -0.124"
+                          quat="0.01978 -0.18198 -0.10624 0.97735" size="0.0052 0.0012 0.0189"/>
+                        <geom name="left_strut_bot_back" class="finger_body_collision" pos="-0.021 -0.0124 -0.0944"
+                          quat="0.03203 -0.17278 -0.17946 0.96794" size="0.0052 0.0035 0.0227"/>
+                        <geom name="left_pad" class="finger_collision" pos="0 -0.0017 -0.1362"
+                          size="0.0072 0.0017 0.0082"/>
+                        <geom name="left_pad_edge_a" class="finger_body_collision" pos="0.0078 -0.0017 -0.134"
+                          quat="0.98236 0 0.18699 0" size="0.003 0.0017 0.0088"/>
+                        <geom name="left_pad_edge_b" class="finger_body_collision" pos="-0.0078 -0.0017 -0.134"
+                          quat="0.98236 0 -0.18699 0" size="0.003 0.0017 0.0088"/>
                       </frame>
                     </body>
                     <body name="right_finger" pos="0.0238981 -0.0450619 -0.0545599" quat="0.707105 0.707108 0 0"
@@ -145,20 +172,34 @@
                         mesh="tip_right"/>
                       <frame pos="-0.0238981 0.0545597 -0.0450621" quat="0.707105 -0.707108 0 0">
                         <frame quat="0 0 0 1">
-                          <geom name="right_carriage" class="collision" type="box" pos="0 0.0125 -0.075"
-                            size="0.034 0.0365 0.011" rgba="0.381493 0.492734 0.780446 1"/>
-                          <geom name="right_finger_base" class="collision" type="box" pos="0 -0.01075 -0.1"
-                            size="0.02 0.00925 0.014" rgba="0.381493 0.492734 0.780446 1"/>
-                          <geom name="right_finger_tip" class="collision" type="box" pos="0 -0.005 -0.13"
-                            size="0.012 0.004 0.016" rgba="0.381493 0.492734 0.780446 1"/>
-                          <geom name="right_pad" class="finger_collision" pos="0 -0.001 -0.133"
-                            size="0.008 0.001 0.012"/>
-                          <geom class="sphere_collision" pos="0.004 -0.0004 -0.141"/>
-                          <geom class="sphere_collision" pos="-0.004 -0.0004 -0.141"/>
-                          <geom class="sphere_collision" pos="0.004 -0.0004 -0.133"/>
-                          <geom class="sphere_collision" pos="-0.004 -0.0004 -0.133"/>
-                          <geom class="sphere_collision" pos="0.004 -0.0004 -0.125"/>
-                          <geom class="sphere_collision" pos="-0.004 -0.0004 -0.125"/>
+                          <geom name="right_rail_base" class="finger_body_collision" pos="-0.0238 0.0235 -0.0612"
+                            size="0.01 0.0247 0.0102"/>
+                          <geom name="right_rail_lip" class="finger_body_collision" pos="-0.011 0.0235 -0.0568"
+                            size="0.0028 0.0247 0.0058"/>
+                          <geom name="right_carriage" class="finger_body_collision" pos="-0.0106 -0.0126 -0.0686"
+                            size="0.0232 0.0104 0.0032"/>
+                          <geom name="right_base_plate" class="finger_body_collision" pos="0 -0.0127 -0.0744"
+                            size="0.0335 0.0101 0.0032"/>
+                          <geom name="right_base_web" class="finger_body_collision" pos="0 -0.0077 -0.0812"
+                            size="0.0215 0.0053 0.0038"/>
+                          <geom name="right_strut_top" class="finger_body_collision" pos="0.0183 -0.0044 -0.1027"
+                            quat="0.98186 0.02943 0.1872 0.00561" size="0.0052 0.0026 0.0295"/>
+                          <geom name="right_tip_bevel_top" class="finger_body_collision" pos="0.0097 -0.0055 -0.124"
+                            quat="-0.01978 0.18198 -0.10624 0.97735" size="0.0052 0.0012 0.0189"/>
+                          <geom name="right_strut_top_back" class="finger_body_collision" pos="0.021 -0.0124 -0.0944"
+                            quat="-0.03203 0.17278 -0.17946 0.96794" size="0.0052 0.0035 0.0227"/>
+                          <geom name="right_strut_bot" class="finger_body_collision" pos="-0.0183 -0.0044 -0.1027"
+                            quat="0.98186 0.02943 -0.1872 -0.00561" size="0.0052 0.0026 0.0295"/>
+                          <geom name="right_tip_bevel_bot" class="finger_body_collision" pos="-0.0097 -0.0055 -0.124"
+                            quat="0.01978 -0.18198 -0.10624 0.97735" size="0.0052 0.0012 0.0189"/>
+                          <geom name="right_strut_bot_back" class="finger_body_collision" pos="-0.021 -0.0124 -0.0944"
+                            quat="0.03203 -0.17278 -0.17946 0.96794" size="0.0052 0.0035 0.0227"/>
+                          <geom name="right_pad" class="finger_collision" pos="0 -0.0017 -0.1362"
+                            size="0.0072 0.0017 0.0082"/>
+                          <geom name="right_pad_edge_a" class="finger_body_collision" pos="0.0078 -0.0017 -0.134"
+                            quat="0.98236 0 0.18699 0" size="0.003 0.0017 0.0088"/>
+                          <geom name="right_pad_edge_b" class="finger_body_collision" pos="-0.0078 -0.0017 -0.134"
+                            quat="0.98236 0 -0.18699 0" size="0.003 0.0017 0.0088"/>
                         </frame>
                       </frame>
                     </body>
@@ -178,8 +219,8 @@
                       quat="0.3799 0.5964 0.5964 -0.3799" size="0.003 0.027 0.017"/>
                     <geom name="bracket_arm" class="collision" type="box" pos="0.0017 0.0078 -0.0254"
                       quat="0.5 0.5 0.5 -0.5" size="0.0025 0.0265 0.018"/>
-                    <geom name="bracket_clamp" class="collision" type="box" pos="-0.0026 -0.0002 -0.0397"
-                      quat="0.5 0.5 0.5 -0.5" size="0.0118 0.0281 0.0099"/>
+                    <geom name="bracket_clamp" class="collision" type="box" pos="0.001 -0.0002 -0.029"
+                      quat="0.5 0.5 0.5 -0.5" size="0.006 0.0281 0.0099"/>
                     <camera name="wrist_cam" quat="0 1 0 0" focal="1.93e-3 1.93e-3" resolution="1280 720"
                       sensorsize="3896e-6 2140e-6"/>
                   </body>
@@ -197,7 +238,6 @@
     <exclude body1="link_6" body2="left_finger"/>
     <exclude body1="link_6" body2="right_finger"/>
     <exclude body1="link_6" body2="wrist_camera"/>
-    <exclude body1="left_finger" body2="right_finger"/>
   </contact>
 
   <equality>
@@ -215,6 +255,6 @@
   </actuator>
 
   <keyframe>
-    <key name="home" qpos="0 1.047 1.047 0 0 0 0 0" ctrl="0 1.047 1.047 0 0 0 0"/>
+    <key name="home" qpos="0 1.047 1.047 0 0 0 0 0" ctrl="0 1.047 1.047 0 0 0 -0.005"/>
   </keyframe>
 </mujoco>
