@@ -3,6 +3,11 @@
 
   <option integrator="implicitfast"/>
 
+  <visual>
+    <scale contactwidth="0.03" contactheight="0.01" forcewidth="0.01"/>
+  </visual>
+
+
   <default>
     <default class="yam">
       <position inheritrange="1"/>
@@ -20,15 +25,11 @@
       </default>
       <default class="collision">
         <geom group="3" type="capsule"/>
-        <!-- Finger geoms other than the pads. contype 1 / conaffinity 0 on both
-          fingers never matches, so the only finger-to-finger contact is pad on
-          pad; everything still collides with the world (contype 1 x conaffinity
-          1). -->
         <default class="finger_body_collision">
-          <geom type="box" contype="1" conaffinity="0" rgba="0.381493 0.492734 0.780446 1"/>
+          <geom type="box" rgba="0.381493 0.492734 0.780446 1"/>
         </default>
         <default class="finger_collision">
-          <geom type="box" condim="6" friction="1 5e-3 5e-4" solref=".01 1" priority="1" contype="3" conaffinity="2"
+          <geom type="box" condim="6" friction="1 5e-3 5e-4" solref=".01 1" priority="1"
             rgba="0.381493 0.492734 0.780446 1"/>
         </default>
       </default>
@@ -149,8 +150,10 @@
                           quat="0.01978 -0.18198 -0.10624 0.97735" size="0.0052 0.0012 0.0189"/>
                         <geom name="left_strut_bot_back" class="finger_body_collision" pos="-0.021 -0.0124 -0.0944"
                           quat="0.03203 -0.17278 -0.17946 0.96794" size="0.0052 0.0035 0.0227"/>
-                        <geom name="left_pad" class="finger_collision" pos="0 -0.0017 -0.1362"
-                          size="0.0072 0.0017 0.0082"/>
+                        <body name="left_pad" gravcomp="1">
+                          <geom name="left_pad" class="finger_collision" pos="0 -0.0017 -0.1362"
+                            size="0.0072 0.0017 0.0082"/>
+                        </body>
                         <geom name="left_pad_edge_a" class="finger_body_collision" pos="0.0078 -0.0017 -0.134"
                           quat="0.98236 0 0.18699 0" size="0.003 0.0017 0.0088"/>
                         <geom name="left_pad_edge_b" class="finger_body_collision" pos="-0.0078 -0.0017 -0.134"
@@ -188,8 +191,10 @@
                             quat="0.01978 -0.18198 -0.10624 0.97735" size="0.0052 0.0012 0.0189"/>
                           <geom name="right_strut_bot_back" class="finger_body_collision" pos="-0.021 -0.0124 -0.0944"
                             quat="0.03203 -0.17278 -0.17946 0.96794" size="0.0052 0.0035 0.0227"/>
-                          <geom name="right_pad" class="finger_collision" pos="0 -0.0017 -0.1362"
-                            size="0.0072 0.0017 0.0082"/>
+                          <body name="right_pad" gravcomp="1">
+                            <geom name="right_pad" class="finger_collision" pos="0 -0.0017 -0.1362"
+                              size="0.0072 0.0017 0.0082"/>
+                          </body>
                           <geom name="right_pad_edge_a" class="finger_body_collision" pos="0.0078 -0.0017 -0.134"
                             quat="0.98236 0 0.18699 0" size="0.003 0.0017 0.0088"/>
                           <geom name="right_pad_edge_b" class="finger_body_collision" pos="-0.0078 -0.0017 -0.134"
@@ -232,6 +237,9 @@
     <exclude body1="link_6" body2="left_finger"/>
     <exclude body1="link_6" body2="right_finger"/>
     <exclude body1="link_6" body2="wrist_camera"/>
+    <exclude body1="left_finger" body2="right_finger"/>
+    <exclude body1="left_finger" body2="right_pad"/>
+    <exclude body1="right_finger" body2="left_pad"/>
   </contact>
 
   <equality>
