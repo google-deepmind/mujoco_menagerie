@@ -1,7 +1,7 @@
 # Yet Another Manipulator (YAM) Description (MJCF)
 
 > [!IMPORTANT]
-> Requires MuJoCo 3.2.0 or later (`yam_linear_4310.xml`), or 3.1.3 (`yam.xml`).
+> Requires MuJoCo 3.2.0 or later.
 
 ## Changelog
 
@@ -41,40 +41,15 @@ Robotics](https://i2rt.com/):
 
 ## `linear_4310` gripper and wrist camera variant (`yam_linear_4310.xml`)
 
-[`yam_linear_4310.xml`](yam_linear_4310.xml) shares the arm links, meshes
-(`model2.stl`..`model2__11.stl`), and primitive capsule collision geoms of
-`yam.xml`, and replaces the gripper on `link_6` using I2RT's `v1.3.6` models
-(`i2rt/robot_models/arm/yam_pro/v1/yam_pro.xml`,
-`i2rt/robot_models/gripper/linear_4310/linear_4310.xml`, and
-`i2rt/robot_models/station/yam_station_linear_4310_d405/yam_station_linear_4310_d405.xml`):
+Derived from `yam.xml` and I2RT's SDK repository ([i2rt-robotics/i2rt](https://github.com/i2rt-robotics/i2rt), tag `v1.3.6`):
 
-1. Copied unmodified STL meshes from `i2rt` tag `v1.3.6` into
-   `assets/linear_4310/`:
-   - `gripper.stl`, `tip_left.stl`, `tip_right.stl` from
-     `i2rt/robot_models/gripper/linear_4310/assets/`
-   - `d405_wrist_linear_4310.stl` from `i2rt/robot_models/station/assets/`
-2. Updated the arm joint ranges and position actuator PD gains (`kp`
-   80/80/80/40/10/10, `kv` 5/5/5/1.5/1.5/1.5) to match I2RT's `yam_pro` +
-   `linear_4310` SDK configuration.
-3. Replaced the gripper on `link_6` with the `linear_4310` housing and sliding
-   fingers (`left_finger`, `right_finger`). Finger travel is `0` (pads touching,
-   the calibrated closed stop) to `0.0475` m; the joint and control ranges
-   extend 5 mm past the stop so a closed command keeps squeezing a grasped
-   object, as the real motor does under its force limiter. The gripper
-   position actuator uses `kp` 2000 / `kv` 150 with a ±100 N force range (each
-   pad presses with half of it, 50 N, the SDK's grip force limit). Each finger
-   is modeled with primitive boxes fitted to `tip_left.stl` / `tip_right.stl`:
-   a central `finger_collision` grip pad (`pad`) flanked by two tapered edge
-   strips (`pad_edge_a`, `pad_edge_b`) whose faces lie on one plane (the tooth
-   mid-height of the mesh), and `finger_body_collision` boxes for the rail
-   slider, carriage, distal back bevels, and the two struts of the triangular
-   frame, whose inner faces leave the pad plane at the pad seam on the mesh's
-   3.4° plane. Only the pads collide with each other; everything collides with
-   the world.
-4. Added `wrist_camera` on `link_6` at the optical-frame extrinsics from
-   `yam_station_linear_4310_d405.xml`, with a `wrist_cam` camera using RealSense
-   D405 intrinsics, four collision boxes covering the D405 housing and bracket,
-   and an inertial for the 60 g D405 plus solid PLA bracket.
+1. Added meshes for the `linear_4310` gripper and D405 bracket into `assets/linear_4310/`.
+2. Updated arm joint ranges and actuator PD gains to match the YAM Pro + `linear_4310` SDK configuration.
+3. Replaced the gripper on `link_6` with the `linear_4310` linear gripper:
+   - Finger travel is 0 to 47.5 mm, with joint and control limits extending 5 mm past closed to allow grasp squeezing.
+   - Actuator PD gains and force limits match the hardware's 50 N per-pad grip force limit.
+   - Modeled finger collision geometry using box primitives fitted to the visual meshes, with flat contact pads aligned for parallel grasping.
+4. Added the wrist-mounted Intel RealSense D405 camera on `link_6` using extrinsics, intrinsics, and mass properties from I2RT's CAD station model.
 
 ## License
 

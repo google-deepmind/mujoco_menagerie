@@ -33,14 +33,8 @@
         </default>
       </default>
       <default class="finger">
-        <!-- Finger travel in meters along the rail: 0 is the pads touching (the
-          calibrated closed stop of the real gripper), 0.0475 fully open. The joint
-          and control ranges extend 5 mm past the stop so that a closed command
-          keeps squeezing the pads or a grasped object, as the real motor does under
-          its force limiter. The actuator drives the left finger and the coupled
-          right finger follows, so each pad presses with half the actuator force:
-          5 N when closed on nothing, capped by the forcerange at the SDK's 50 N
-          grip limit. -->
+        <!-- Rail travel: 0 is closed, 0.0475 m is open. The range extends 5 mm
+          past closed to allow squeezing grasped objects (up to 50 N per pad). -->
         <joint type="slide" axis="0 0 -1" range="-0.005 0.0475" armature="0.1" frictionloss="0.1"/>
         <position ctrlrange="-0.005 0.0475" kp="2000" kv="150" forcerange="-100 100" inheritrange="0"/>
       </default>
