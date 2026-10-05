@@ -7,7 +7,6 @@
     <scale contactwidth="0.03" contactheight="0.01" forcewidth="0.01"/>
   </visual>
 
-
   <default>
     <default class="yam">
       <position inheritrange="1"/>
