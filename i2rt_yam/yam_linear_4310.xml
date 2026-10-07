@@ -219,8 +219,8 @@
                       quat="0.5 0.5 0.5 -0.5" size="0.0025 0.0265 0.018"/>
                     <geom name="bracket_clamp" class="collision" type="box" pos="0.001 -0.0002 -0.029"
                       quat="0.5 0.5 0.5 -0.5" size="0.006 0.0281 0.0099"/>
-                    <camera name="wrist_cam" quat="0 1 0 0" focal="1.93e-3 1.93e-3" resolution="1280 720"
-                      sensorsize="3896e-6 2140e-6"/>
+                    <camera name="wrist_cam" quat="0 1 0 0" focal="1.93e-3 1.93e-3" resolution="640 480"
+                      sensorsize="3138e-6 2356e-6"/>
                   </body>
                 </body>
               </body>
