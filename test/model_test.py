@@ -17,6 +17,7 @@ import pathlib
 from collections.abc import Iterator
 
 import mujoco
+import numpy as np
 from absl.testing import absltest
 from absl.testing import parameterized
 
@@ -83,6 +84,30 @@ class ModelsTest(parameterized.TestCase):
         ]
       )
       self.fail(f'MuJoCo warning(s) encountered:\n{warning_info}')
+  def test_so101_elbow_range_avoids_self_collision(self) -> None:
+    """The full positive elbow range must not intersect the shoulder."""
+    model = mujoco.MjModel.from_xml_path(
+        str(_ROOT_DIR / 'robotstudio_so101' / 'so101.xml'))
+    data = mujoco.MjData(model)
+    joint_id = mujoco.mj_name2id(
+        model, mujoco.mjtObj.mjOBJ_JOINT, 'elbow_flex')
+    actuator_id = mujoco.mj_name2id(
+        model, mujoco.mjtObj.mjOBJ_ACTUATOR, 'elbow_flex')
+    lower, upper = model.jnt_range[joint_id]
+    np.testing.assert_allclose(
+        model.actuator_ctrlrange[actuator_id], [lower, upper])
+
+    # Sample the elbow's positive range with the other joints at home.
+    qpos_id = model.jnt_qposadr[joint_id]
+    for angle in np.linspace(0, upper, 41):
+      mujoco.mj_resetData(model, data)
+      data.qpos[qpos_id] = angle
+      mujoco.mj_forward(model, data)
+      if data.ncon:
+        closest = min(contact.dist for contact in data.contact[:data.ncon])
+        self.fail(
+            f'SO101 elbow self-collides at {angle:.4f} rad: '
+            f'{data.ncon} contacts; closest {closest:.4f} m')
 
 
 if __name__ == '__main__':

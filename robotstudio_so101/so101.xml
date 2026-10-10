@@ -133,7 +133,7 @@
           <body name="lower_arm" pos="-0.11257 -0.028 0" quat="1 0 0 1">
             <!-- Joint from upper_arm to lower_arm -->
             <!-- Note: 5-degree calibration offset applied to joint range -->
-            <joint axis="0 0 1" name="elbow_flex" type="hinge" range="-1.69 1.69" class="sts3215"/>
+            <joint axis="0 0 1" name="elbow_flex" type="hinge" range="-1.69 1.45" class="sts3215"/>
             <inertial pos="-0.098070 0.0032438 0.018283" mass="0.104"
               fullinertia="2.87438e-05 0.000159844 0.00014529 7.41152e-06 1.26409e-06 -4.90188e-08"/>
             <!-- Part under_arm_so101_v1 -->
@@ -254,7 +254,7 @@
   <actuator>
     <position class="sts3215" name="shoulder_pan" joint="shoulder_pan" ctrlrange="-1.91986 1.91986"/>
     <position class="sts3215" name="shoulder_lift" joint="shoulder_lift" ctrlrange="-1.74533 1.74533"/>
-    <position class="sts3215" name="elbow_flex" joint="elbow_flex" ctrlrange="-1.69 1.69"/>
+    <position class="sts3215" name="elbow_flex" joint="elbow_flex" ctrlrange="-1.69 1.45"/>
     <position class="sts3215" name="wrist_flex" joint="wrist_flex" ctrlrange="-1.65806 1.65806"/>
     <position class="sts3215" name="wrist_roll" joint="wrist_roll" ctrlrange="-2.74385 2.84121"/>
     <position class="sts3215" name="gripper" joint="gripper" ctrlrange="-0.17453 1.74533"/>
