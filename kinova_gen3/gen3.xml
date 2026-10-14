@@ -10,6 +10,7 @@
     <default class="collision">
       <geom type="mesh" group="3"/>
     </default>
+    <joint armature="0.1"/>
     <default class="large_actuator">
       <position kp="2000" kv="100" forcerange="-105 105"/>
     </default>
