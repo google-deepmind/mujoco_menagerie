@@ -396,6 +396,8 @@ def main(argv):
       renderer.update_scene(data, camera='thumbnail')
       mask = renderer.render()[..., 0] != -1
       renderer.disable_segmentation_rendering()
+      renderer.close()
+      del renderer
 
       filename = f'assets/{robot_maker}-{robot_name}.png'
       paths.append((robot, filename, preview_path(robot, robot_maker)))
