@@ -2,6 +2,10 @@
 
 All notable changes to this repository will be documented here.
 
+## [2026-09-12]
+
+- Corrected the list of models whose `assets()` raises in `python/DOC.md`: `pal_talos` collides on `base_link.stl`, `sharpa_wave` does not collide on any entry point. Added a test that derives the list from the checkout.
+
 ## [2026-09-01]
 
 - Added the `mujoco-menagerie` Python package under `python/`: models download on first use into a content-addressed cache, pinned by package version. `build_registry.py` derives the registry from the checkout; `release.yml` publishes archives and the wheel on a `vYYYY.M.N` tag. Extracted the gallery's catalog tables into `catalog.py`, shared by both tools, and registered seven model directories that were missing from the README gallery.

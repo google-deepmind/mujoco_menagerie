@@ -104,3 +104,17 @@ def test_real_assets_dict(repo_root):
   a = mujoco.MjModel.from_xml_path(str(src / 'scene.xml'))
   b = mujoco.MjModel.from_xml_string(assets['scene.xml'].decode(), assets)
   np.testing.assert_array_equal(a.mesh_vert, b.mesh_vert)
+
+
+def test_real_assets_dict_collisions(repo_root):
+  colliding = set()
+  for d in sorted(repo_root.iterdir()):
+    if d.name in {'assets', 'test', 'python'} or not any(d.glob('*.xml')):
+      continue
+    for entry in sorted(d.glob('*.xml')):
+      try:
+        assets_dict(closure(entry, d), d)
+      except AssetCollisionError:
+        colliding.add(d.name)
+  # python/DOC.md names these; keep the two in sync.
+  assert colliding == {'pal_talos', 'robotis_op3', 'ufactory_lite6'}
