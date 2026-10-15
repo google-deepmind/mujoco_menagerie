@@ -90,6 +90,7 @@
                     <inertial pos="0 0.0001 0.0544" mass="1.403" diaginertia="0.0032 0.0032 0.0018"/>
                     <joint name="joint7" pos="0 0 0" axis="0 0 1" range="-3.0543 3.0543" actuatorfrcrange="-39 39"/>
                     <site name="ft_site7" pos="0 0 0" size="0.01" rgba="0 0 1 0.5"/>
+                    <site name="attachment_site" pos="0 0 0.124" quat="0 0 0 1"/>
                   </body>
                 </body>
               </body>
