@@ -2,6 +2,10 @@
 
 All notable changes to this repository will be documented here.
 
+## [2026-10-16]
+
+- Added [Hello Robot Stretch 4](hello_robot_stretch_4/README.md) from Hello Robot, with both the SG4 (standard) and PG4 (parallel jaw) grippers. Cross-linked it with the Stretch 3 model directory.
+
 ## [2026-09-12]
 
 - Corrected the list of models whose `assets()` raises in `python/DOC.md`: `pal_talos` collides on `base_link.stl`, `sharpa_wave` does not collide on any entry point. Added a test that derives the list from the checkout.
