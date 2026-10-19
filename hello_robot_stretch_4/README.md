@@ -153,6 +153,9 @@ line sensor hits to [Rerun](https://rerun.io) at 10 Hz. It is a single-file
 port of `stretch4_mujoco`'s `examples/keyboard_teleop.py` with the same key
 bindings, and needs `pynput` and `rerun-sdk` as well.
 
+Note: `keyboard_teleop.py` runs at 30FPS and 1.0 Real Time Factor on an Nvidia 4090 with `export MUJOCO_GL=egl` backend on Ubuntu 24.04.
+
+
 ```sh
 python keyboard_teleop.py
 ```
