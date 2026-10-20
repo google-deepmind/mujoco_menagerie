@@ -2,6 +2,10 @@
 
 All notable changes to this model will be documented in this file.
 
+## [2026-10-19]
+
+- Add `mjlab` variant [g1_mjlab.xml](g1_mjlab.xml) (derived from [g1_mjx.xml](g1_mjx.xml) with capsule foot colliders, active self-collisions, and actuators/solver options removed for programmatic specification).
+
 ## [2025-08-7]
 - Update the right hip joint limit of [g1_mjx.xml](g1_mjx.xml) to match the real robot limits
 
