@@ -1,55 +1,38 @@
 name: MuJoCo Live
 
 on:
-  pull_request_target:
+  pull_request:
     paths:
       - '**/*.xml'
 
+permissions:
+  contents: read
+  pull-requests: read
+
 jobs:
   generate-previews:
+    name: 🚀 MuJoCo Live Previews
     runs-on: ubuntu-latest
-    permissions:
-      checks: write
     steps:
       - name: Collect list of XML files
         id: changed-xml-files
-        uses: step-security/changed-files@v47
+        uses: step-security/changed-files@2e07db73e5ccdb319b9a6c7766bd46d39d304bad # v47.0.5
         with:
           files: '**/*.xml'
 
       - name: Publish MuJoCo Live links
         if: steps.changed-xml-files.outputs.any_changed == 'true'
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CHANGED_FILES: ${{ steps.changed-xml-files.outputs.all_changed_files }}
+          REPO: ${{ github.repository }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
         run: |
-          # Construct a Markdown document and publish it to GitHub Checks
-          MD_TEXT=""
-
-          for file in ${{ steps.changed-xml-files.outputs.all_changed_files }}; do
-            URL="https://live.mujoco.org/?model=github:${{ github.repository }}/pull/${{ github.event.pull_request.number }}/head/$file"
-            MD_TEXT="$MD_TEXT- [\`$file\`]($URL)"$'\n'
-          done
-
-          # 2. Safely construct the JSON payload using jq to prevent escaping issues
-          jq -n \
-            --arg head_sha "${{ github.event.pull_request.head.sha }}" \
-            --arg text "$MD_TEXT" \
-            '{
-              name: "🚀 MuJoCo Live Previews",
-              head_sha: $head_sha,
-              status: "completed",
-              conclusion: "success",
-              output: {
-                title: "MuJoCo Live",
-                summary: "Preview links for modified XML files in this Pull Request.",
-                text: $text
-              }
-            }' > payload.json
-
-          # 3. Send to GitHub Checks API
-          gh api \
-            --method POST \
-            -H "Accept: application/vnd.github+json" \
-            -H "X-GitHub-Api-Version: 2022-11-28" \
-            /repos/${{ github.repository }}/check-runs \
-            --input payload.json
+          {
+            echo "### 🚀 MuJoCo Live Previews"
+            echo "Preview links for modified XML files in this Pull Request:"
+            echo ""
+            for file in $CHANGED_FILES; do
+              URL="https://live.mujoco.org/?model=github:${REPO}/pull/${PR_NUMBER}/head/${file}"
+              echo "- [\`${file}\`](${URL})"
+            done
+          } >> "$GITHUB_STEP_SUMMARY"
