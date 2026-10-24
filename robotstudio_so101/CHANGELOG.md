@@ -2,6 +2,12 @@
 
 All notable changes to this model will be documented in this file.
 
+## [2026-10-10]
+
+- Limit positive elbow flexion to 1.474 rad, matching the actuator control
+  limit. The first shoulder/gripper contact in the zero-pose sweep occurs
+  at approximately 1.47401 rad (MuJoCo 3.15.0).
+
 ## [2026-09-27]
 
 - Fix the `wrist_roll` joint range upper limit to match the source and the actuator `ctrlrange`.
