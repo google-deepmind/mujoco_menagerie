@@ -501,6 +501,9 @@
     <exclude body1="link_wrist_yaw" body2="link_arm_l2"/>
     <exclude body1="link_wrist_yaw" body2="link_arm_l3"/>
     <exclude body1="link_wrist_yaw" body2="link_arm_l4"/>
+    <exclude body1="base_link" body2="link_DW3_wrist_pitch"/>
+    <exclude body1="link_right_wheel" body2="link_DW3_wrist_pitch"/>
+    <exclude body1="link_aruco_right_base" body2="link_DW3_wrist_pitch"/>
     <exclude body1="link_gripper_finger_left" body2="link_DW3_wrist_pitch"/>
     <exclude body1="link_gripper_finger_right" body2="link_DW3_wrist_pitch"/>
     <exclude body1="link_gripper_finger_left" body2="link_wrist_yaw"/>
