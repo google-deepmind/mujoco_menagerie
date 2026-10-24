@@ -1,0 +1,141 @@
+<mujoco model="ur7e">
+  <compiler angle="radian" meshdir="assets" autolimits="true"/>
+
+  <option integrator="implicitfast"/>
+
+  <default>
+    <default class="ur7e">
+      <material specular="0.5" shininess="0.25"/>
+      <joint axis="0 1 0" range="-6.28319 6.28319" armature="0.1"/>
+      <general gaintype="fixed" biastype="affine" ctrlrange="-6.28319 6.28319"/>
+      <default class="shoulder">
+        <general gainprm="13000" biasprm="0 -13000 -1100" forcerange="-150 150"/>
+      </default>
+      <default class="elbow">
+        <joint range="-3.14159 3.14159"/>
+        <general ctrlrange="-3.14159 3.14159" gainprm="4100" biasprm="0 -4100 -160" forcerange="-150 150"/>
+      </default>
+      <default class="wrist">
+        <general gainprm="560" biasprm="0 -560 -17" forcerange="-28 28"/>
+      </default>
+      <default class="visual">
+        <geom type="mesh" contype="0" conaffinity="0" group="2"/>
+      </default>
+      <default class="collision">
+        <geom type="capsule" group="3"/>
+        <default class="eef_collision">
+          <geom type="cylinder"/>
+        </default>
+      </default>
+      <site size="0.001" rgba="0.5 0.5 0.5 0.3" group="4"/>
+    </default>
+  </default>
+
+  <asset>
+    <material class="ur7e" name="black" rgba="0.033 0.033 0.033 1"/>
+    <material class="ur7e" name="jointgray" rgba="0.278 0.278 0.278 1"/>
+    <material class="ur7e" name="linkgray" rgba="0.82 0.82 0.82 1"/>
+    <material class="ur7e" name="urblue" rgba="0.49 0.678 0.8 1"/>
+
+    <mesh file="base_0.obj"/>
+    <mesh file="base_1.obj"/>
+    <mesh file="shoulder_0.obj"/>
+    <mesh file="shoulder_1.obj"/>
+    <mesh file="shoulder_2.obj"/>
+    <mesh file="upperarm_0.obj"/>
+    <mesh file="upperarm_1.obj"/>
+    <mesh file="upperarm_2.obj"/>
+    <mesh file="upperarm_3.obj"/>
+    <mesh file="forearm_0.obj"/>
+    <mesh file="forearm_1.obj"/>
+    <mesh file="forearm_2.obj"/>
+    <mesh file="forearm_3.obj"/>
+    <mesh file="wrist1_0.obj"/>
+    <mesh file="wrist1_1.obj"/>
+    <mesh file="wrist1_2.obj"/>
+    <mesh file="wrist2_0.obj"/>
+    <mesh file="wrist2_1.obj"/>
+    <mesh file="wrist2_2.obj"/>
+    <mesh file="wrist3.obj"/>
+  </asset>
+
+  <worldbody>
+    <light name="spotlight" mode="targetbodycom" target="wrist_2_link" pos="0 -1 2"/>
+    <body name="base" quat="0 0 0 -1" childclass="ur7e">
+      <inertial mass="4" pos="0 0 0" diaginertia="0.00443333 0.00443333 0.0072"/>
+      <geom mesh="base_0" material="black" class="visual"/>
+      <geom mesh="base_1" material="linkgray" class="visual"/>
+      <body name="shoulder_link" pos="0 0 0.1625">
+        <inertial mass="3.761" pos="0 0.00193 -0.02561" quat="0.674731 -0.202067 0.365098 0.608778"
+          diaginertia="0.00602478 0.0070003 0.00703079"/>
+        <joint name="shoulder_pan_joint" class="shoulder" axis="0 0 1"/>
+        <geom mesh="shoulder_0" material="black" class="visual"/>
+        <geom mesh="shoulder_1" material="jointgray" class="visual"/>
+        <geom mesh="shoulder_2" material="urblue" class="visual"/>
+        <geom class="collision" pos="0 0 0.0187" size="0.0601 0.0225"/>
+        <body name="upper_arm_link" pos="0 0.138 0" quat="1 0 1 0">
+          <inertial mass="8.058" pos="0 -0.02464 0.2125" quat="0.707167 0.000448246 -0.707047 0.00046071"
+            diaginertia="0.0150588 0.332472 0.333881"/>
+          <joint name="shoulder_lift_joint" class="shoulder"/>
+          <geom mesh="upperarm_0" material="black" class="visual"/>
+          <geom mesh="upperarm_1" material="jointgray" class="visual"/>
+          <geom mesh="upperarm_2" material="linkgray" class="visual"/>
+          <geom mesh="upperarm_3" material="urblue" class="visual"/>
+          <geom class="collision" pos="0 -0.0632 0" quat="1 1 0 0" size="0.0604 0.104"/>
+          <geom class="collision" pos="0 0 0.213" size="0.043 0.175"/>
+          <body name="forearm_link" pos="0 -0.131 0.425">
+            <inertial mass="2.846" pos="0 0.0195 0.2422" quat="0.707168 0.00206471 -0.706882 0.0150871"
+              diaginertia="0.00397103 0.0785102 0.0787927"/>
+            <joint name="elbow_joint" class="elbow"/>
+            <geom mesh="forearm_0" material="black" class="visual"/>
+            <geom mesh="forearm_1" material="jointgray" class="visual"/>
+            <geom mesh="forearm_2" material="linkgray" class="visual"/>
+            <geom mesh="forearm_3" material="urblue" class="visual"/>
+            <geom class="collision" pos="0 0.0797 0" quat="1 1 0 0" size="0.0605 0.0922"/>
+            <geom class="collision" pos="0 0 0.196" size="0.0381 0.166"/>
+            <body name="wrist_1_link" pos="0 0 0.3922" quat="1 0 1 0">
+              <inertial mass="1.37" pos="0 0.1245 0.01634" quat="0.682895 0.189908 -0.675611 -0.202828"
+                diaginertia="0.00119868 0.00142363 0.00165502"/>
+              <joint name="wrist_1_joint" class="wrist"/>
+              <geom mesh="wrist1_0" material="black" class="visual"/>
+              <geom mesh="wrist1_1" material="jointgray" class="visual"/>
+              <geom mesh="wrist1_2" material="urblue" class="visual"/>
+              <geom class="collision" pos="0 0.054 0" quat="1 1 0 0" size="0.0397 0.0907"/>
+              <body name="wrist_2_link" pos="0 0.1263 0">
+                <inertial mass="1.3" pos="0 0.01634 0.0979" quat="0.545739 0.444067 0.528847 0.474652"
+                  diaginertia="0.00095814 0.00128607 0.00135637"/>
+                <joint name="wrist_2_joint" class="wrist" axis="0 0 1"/>
+                <geom mesh="wrist2_0" material="black" class="visual"/>
+                <geom mesh="wrist2_1" material="jointgray" class="visual"/>
+                <geom mesh="wrist2_2" material="urblue" class="visual"/>
+                <geom class="collision" pos="0 0 0.041" size="0.0399 0.0774"/>
+                <geom class="collision" pos="0 -0.0018 0.0997" quat="1 1 0 0" size="0.0395 0.0352"/>
+                <body name="wrist_3_link" pos="0 0 0.0997">
+                  <inertial mass="0.365" pos="0 0.098441 0" quat="0.702265 0.711786 -0.00879346 0.0103744"
+                    diaginertia="0.000186938 0.000189069 0.000257573"/>
+                  <joint name="wrist_3_joint" class="wrist"/>
+                  <geom mesh="wrist3" material="linkgray" class="visual"/>
+                  <geom class="eef_collision" pos="0 0.0768 0" quat="1 1 0 0" size="0.0437 0.0229"/>
+                  <site name="attachment_site" pos="0 0.0996 0" quat="-1 1 0 0"/>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+
+  <actuator>
+    <general class="shoulder" name="shoulder_pan" joint="shoulder_pan_joint"/>
+    <general class="shoulder" name="shoulder_lift" joint="shoulder_lift_joint"/>
+    <general class="elbow" name="elbow" joint="elbow_joint"/>
+    <general class="wrist" name="wrist_1" joint="wrist_1_joint"/>
+    <general class="wrist" name="wrist_2" joint="wrist_2_joint"/>
+    <general class="wrist" name="wrist_3" joint="wrist_3_joint"/>
+  </actuator>
+
+  <keyframe>
+    <key name="home" qpos="-1.5708 -1.5708 1.5708 -1.5708 -1.5708 0" ctrl="-1.5708 -1.5708 1.5708 -1.5708 -1.5708 0"/>
+  </keyframe>
+</mujoco>
