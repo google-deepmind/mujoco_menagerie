@@ -2,6 +2,10 @@
 
 All notable changes to this repository will be documented here.
 
+## [2026-10-24]
+
+- Added the Universal Robots [UR3](universal_robots_ur3/README.md), [UR3e](universal_robots_ur3e/README.md), [UR5](universal_robots_ur5/README.md), [UR7e](universal_robots_ur7e/README.md), [UR8 Long](universal_robots_ur8long/README.md), [UR10](universal_robots_ur10/README.md), [UR10g-1750](universal_robots_ur10g_1750/README.md), [UR12e](universal_robots_ur12e/README.md), [UR15](universal_robots_ur15/README.md), [UR16e](universal_robots_ur16e/README.md), [UR17g-1300](universal_robots_ur17g_1300/README.md), [UR18](universal_robots_ur18/README.md), [UR18g-950](universal_robots_ur18g_950/README.md), [UR20](universal_robots_ur20/README.md) and [UR30](universal_robots_ur30/README.md) from Universal Robots, in the layout of the UR5e and UR10e models. Contribution by @HamidRobotics.
+
 ## [2026-09-12]
 
 - Corrected the list of models whose `assets()` raises in `python/DOC.md`: `pal_talos` collides on `base_link.stl`, `sharpa_wave` does not collide on any entry point. Added a test that derives the list from the checkout.
