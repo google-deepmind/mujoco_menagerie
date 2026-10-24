@@ -1,0 +1,331 @@
+<mujoco model="stewart_platform">
+  <compiler angle="radian" meshdir="assets" autolimits="true" inertiafromgeom="true"/>
+
+  <option integrator="implicitfast"/>
+
+  <default>
+    <default class="stewart">
+      <geom type="mesh" contype="0" conaffinity="0"/>
+
+      <default class="hinge">
+        <joint type="hinge"/>
+      </default>
+      <default class="slide">
+        <joint type="slide" axis="0 0 1" springdamper="0.1 7" range="-0.1 0.35"/>
+      </default>
+
+      <default class="leg_actuator">
+        <general gear="1 0 0 0 0 0" ctrlrange="-400 400" forcerange="-400 400"/>
+      </default>
+      <default class="disturbance">
+        <general ctrlrange="-500 500" forcerange="-500 500"/>
+      </default>
+
+      <default class="base">
+        <geom mesh="base" material="base_mat" mass="20"/>
+      </default>
+      <default class="upper">
+        <geom mesh="upper" material="upper_mat" mass="20"/>
+      </default>
+      <default class="cardan1">
+        <geom mesh="cardan1" material="cardan_mat" mass="0.05"/>
+      </default>
+      <default class="cardan2">
+        <geom mesh="cardan2" material="cardan_mat" mass="0.02"/>
+      </default>
+      <default class="legbot">
+        <geom mesh="legbot" material="leg_lower_mat" mass="10"/>
+      </default>
+      <default class="legup">
+        <geom mesh="legup" material="leg_upper_mat" mass="5"/>
+      </default>
+    </default>
+  </default>
+
+  <asset>
+    <material name="base_mat" rgba="0.5 0.5 0.5 1"/>
+    <material name="upper_mat" rgba="0.2 0.45 0.85 1"/>
+    <material name="cardan_mat" rgba="0.9 0.55 0.1 1"/>
+    <material name="leg_lower_mat" rgba="0.75 0.75 0.78 1"/>
+    <material name="leg_upper_mat" rgba="0.55 0.55 0.58 1"/>
+
+    <mesh name="base" file="base.stl"/>
+    <mesh name="cardan1" file="cardan1.stl"/>
+    <mesh name="cardan2" file="cardan2.stl"/>
+    <mesh name="legbot" file="legbot.stl"/>
+    <mesh name="legup" file="legup.stl"/>
+    <mesh name="upper" file="upper.stl"/>
+  </asset>
+
+  <worldbody>
+    <!-- Base body -->
+    <body name="base" childclass="stewart">
+      <geom class="base"/>
+      <site name="base_center" type="sphere"/>
+    </body>
+
+    <!-- Leg 1 -->
+    <body name="cardan1_1" childclass="stewart" pos="0.48295431 -0.12941450 0.08690238"
+      quat="-0.99025308 0.09347874 0.04275547 -0.09398155">
+      <geom class="cardan1"/>
+      <body name="cardan2_1" pos="-0.0003651 0.0117000 0.0506940" quat="0.0115254 0.7070127 0.7070130 0.0115254">
+        <joint name="joint_c2_1" class="hinge" axis="1 0 0" pos="0.0208000 0.0000000 0.0112000"/>
+        <geom class="cardan2"/>
+        <body name="legbot_1" pos="-0.0087894 0.0005000 -0.0282264" quat="0.0215864 0.7067774 0.7067770 0.0215864">
+          <joint name="joint_lb_1" class="hinge" axis="1 0 0" pos="0.0325000 -0.0000000 -0.0395000"/>
+          <geom class="legbot"/>
+          <body name="legup_1" pos="0.0000000 0.0000000 0.2237482" quat="0.8504553 -0.0000000 0.0000000 -0.5260473">
+            <joint name="joint_lu_1" class="slide"/>
+            <geom class="legup"/>
+            <body name="cardan1_7" pos="0.0000000 0.0000000 0.6260000"
+              quat="-0.8354843 -0.0000000 0.0000000 -0.5495143">
+              <joint name="joint_c1_7" class="hinge" axis="0 0 1"/>
+              <geom class="cardan1"/>
+              <body name="cardan2_7" pos="0.0118762 0.0005000 0.0290198"
+                quat="0.9995139 0.0000000 -0.0311750 0.0000003">
+                <joint name="joint_c2_7" class="hinge" axis="0 1 0" pos="-0.0112000 0.0320000 0.0112000"/>
+                <geom class="cardan2"/>
+                <body name="cardan1_13" pos="-0.0107000 -0.0045955 0.0504318"
+                  quat="0.0412026 -0.7059055 0.7059052 0.0412025">
+                  <joint name="joint_c1_13" class="hinge" axis="0 1 0" pos="-0.0000000 0.0280000 0.0395000"/>
+                  <geom class="cardan1"/>
+                  <site name="site_c1_13" type="sphere"/>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+
+    <!-- Leg 2 -->
+    <body name="cardan1_2" childclass="stewart" pos="0.12940089 0.48295792 0.08690238"
+      quat="0.41447690 -0.00962823 0.10234062 -0.90423592">
+      <geom class="cardan1"/>
+      <body name="cardan2_2" pos="-0.0115170 0.0005000 0.0286262" quat="-0.0000003 0.0143599 0.0000000 0.9998969">
+        <joint name="joint_c2_2" class="hinge" axis="0 1 0" pos="-0.0112000 -0.0320000 0.0112000"/>
+        <geom class="cardan2"/>
+        <body name="legbot_2" pos="-0.0117000 -0.0021153 0.0506433" quat="0.9996412 0.0267851 -0.0000000 0.0000003">
+          <joint name="joint_lb_2" class="hinge" axis="1 0 0" pos="0.0325000 -0.0000000 -0.0395000"/>
+          <geom class="legbot"/>
+          <body name="legup_2" pos="0.0000000 0.0000000 0.2214335" quat="0.9733343 -0.0000000 0.0000000 0.2293911">
+            <joint name="joint_lu_2" class="slide"/>
+            <geom class="legup"/>
+            <body name="cardan1_8" pos="0.0000000 -0.0000000 0.6260000"
+              quat="0.9663277 0.0000000 -0.0000000 -0.2573144">
+              <joint name="joint_c1_8" class="hinge" axis="0 0 1"/>
+              <geom class="cardan1"/>
+              <body name="cardan2_8" pos="0.0119132 0.0005000 0.0290619"
+                quat="0.9994572 0.0000000 -0.0329439 0.0000003">
+                <joint name="joint_c2_8" class="hinge" axis="0 1 0" pos="-0.0112000 0.0320000 0.0112000"/>
+                <geom class="cardan2"/>
+                <body name="cardan1_14" pos="-0.0107000 0.0042945 0.0504659"
+                  quat="0.0384964 0.7060583 -0.7060579 0.0384964">
+                  <joint name="joint_c1_14" class="hinge" axis="0 1 0" pos="-0.0000000 0.0280000 0.0395000"/>
+                  <geom class="cardan1"/>
+                  <site name="site_c1_14" type="sphere"/>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+
+    <!-- Leg 3 -->
+    <body name="cardan1_3" childclass="stewart" pos="-0.12941813 0.48295792 0.08690238"
+      quat="0.90828520 0.10224054 -0.01063847 -0.40552645">
+      <geom class="cardan1"/>
+      <body name="cardan2_3" pos="-0.0003132 -0.0107000 0.0283044" quat="-0.7070379 0.0098859 -0.0098859 0.7070375">
+        <joint name="joint_c2_3" class="hinge" axis="1 0 0" pos="-0.0432000 0.0000000 0.0112000"/>
+        <geom class="cardan2"/>
+        <body name="legbot_3" pos="-0.0090335 0.0005000 0.0506405" quat="0.7068408 -0.0193995 0.0193995 -0.7068404">
+          <joint name="joint_lb_3" class="hinge" axis="1 0 0" pos="0.0325000 -0.0000000 -0.0395000"/>
+          <geom class="legbot"/>
+          <body name="legup_3" pos="0.0000000 0.0000000 0.2215220" quat="0.9733343 -0.0000000 0.0000000 0.2293911">
+            <joint name="joint_lu_3" class="slide"/>
+            <geom class="legup"/>
+            <body name="cardan1_9" pos="-0.0000000 -0.0000000 0.6260000"
+              quat="0.5450449 0.0000000 0.0000000 -0.8384069">
+              <joint name="joint_c1_9" class="hinge" axis="0 0 1"/>
+              <geom class="cardan1"/>
+              <body name="cardan2_9" pos="0.0099095 0.0005000 0.0271436"
+                quat="0.9985028 -0.0000000 0.0547013 0.0000003">
+                <joint name="joint_c2_9" class="hinge" axis="0 1 0" pos="-0.0112000 0.0320000 0.0112000"/>
+                <geom class="cardan2"/>
+                <body name="cardan1_15" pos="-0.0107000 -0.0026058 0.0506140"
+                  quat="0.0233366 -0.7067218 0.7067214 0.0233366">
+                  <joint name="joint_c1_15" class="hinge" axis="0 1 0" pos="-0.0000000 0.0280000 0.0395000"/>
+                  <geom class="cardan1"/>
+                  <site name="site_c1_15" type="sphere"/>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+
+    <!-- Leg 4 -->
+    <body name="cardan1_4" childclass="stewart" pos="-0.48297152 -0.12941450 0.08690238"
+      quat="0.99006116 -0.09356494 0.04256650 -0.09598227">
+      <geom class="cardan1"/>
+      <body name="cardan2_4" pos="-0.0115380 0.0005000 0.0286485" quat="-0.0000003 0.0153233 0.0000000 0.9998826">
+        <joint name="joint_c2_4" class="hinge" axis="0 1 0" pos="-0.0112000 -0.0320000 0.0112000"/>
+        <geom class="cardan2"/>
+        <body name="legbot_4" pos="-0.0117000 -0.0024210 0.0506257" quat="0.9995299 0.0306600 -0.0000000 0.0000003">
+          <joint name="joint_lb_4" class="hinge" axis="1 0 0" pos="0.0325000 -0.0000000 -0.0395000"/>
+          <geom class="legbot"/>
+          <body name="legup_4" pos="0.0000000 0.0000000 0.2238731" quat="0.9733343 -0.0000000 0.0000000 0.2293911">
+            <joint name="joint_lu_4" class="slide"/>
+            <geom class="legup"/>
+            <body name="cardan1_10" pos="-0.0000000 0.0000000 0.6260000"
+              quat="-0.2543864 0.0000000 0.0000000 -0.9671027">
+              <joint name="joint_c1_10" class="hinge" axis="0 0 1"/>
+              <geom class="cardan1"/>
+              <body name="cardan2_10" pos="-0.0007171 -0.0107000 0.0283230"
+                quat="-0.7067442 0.0226472 -0.0226471 0.7067438">
+                <joint name="joint_c2_10" class="hinge" axis="1 0 0" pos="-0.0432000 0.0000000 0.0112000"/>
+                <geom class="cardan2"/>
+                <body name="cardan1_16" pos="-0.0066027 0.0005000 0.0504316"
+                  quat="-0.0000000 0.9982996 0.0000003 -0.0582920">
+                  <joint name="joint_c1_16" class="hinge" axis="0 1 0" pos="-0.0000000 -0.0270000 0.0395000"/>
+                  <geom class="cardan1"/>
+                  <site name="site_c1_16" type="sphere"/>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+
+    <!-- Leg 5 -->
+    <body name="cardan1_5" childclass="stewart" pos="-0.35356201 -0.35355835 0.08690238"
+      quat="0.80591009 0.06025194 0.08328271 0.58304598">
+      <geom class="cardan1"/>
+      <body name="cardan2_5" pos="-0.0004173 -0.0107000 0.0283078" quat="-0.7069842 0.0131745 -0.0131745 0.7069839">
+        <joint name="joint_c2_5" class="hinge" axis="1 0 0" pos="-0.0432000 0.0000000 0.0112000"/>
+        <geom class="cardan2"/>
+        <body name="legbot_5" pos="-0.0089925 0.0005000 0.0506383" quat="0.7068306 -0.0197669 0.0197669 -0.7068303">
+          <joint name="joint_lb_5" class="hinge" axis="1 0 0" pos="0.0325000 -0.0000000 -0.0395000"/>
+          <geom class="legbot"/>
+          <body name="legup_5" pos="0.0000000 0.0000000 0.2228070" quat="0.9733343 -0.0000000 0.0000000 0.2293911">
+            <joint name="joint_lu_5" class="slide"/>
+            <geom class="legup"/>
+            <body name="cardan1_11" pos="0.0000000 -0.0000000 0.6260000"
+              quat="-0.9777430 -0.0000000 0.0000000 0.2098060">
+              <joint name="joint_c1_11" class="hinge" axis="0 0 1"/>
+              <geom class="cardan1"/>
+              <body name="cardan2_11" pos="0.0118145 0.0005000 0.0289502"
+                quat="0.9996011 0.0000000 -0.0282423 0.0000003">
+                <joint name="joint_c2_11" class="hinge" axis="0 1 0" pos="-0.0112000 0.0320000 0.0112000"/>
+                <geom class="cardan2"/>
+                <body name="cardan1_17" pos="-0.0107000 -0.0043817 0.0504562"
+                  quat="0.0392797 -0.7060151 0.7060148 0.0392797">
+                  <joint name="joint_c1_17" class="hinge" axis="0 1 0" pos="-0.0000000 0.0280000 0.0395000"/>
+                  <geom class="cardan1"/>
+                  <site name="site_c1_17" type="sphere"/>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+
+    <!-- Leg 6 -->
+    <body name="cardan1_6" childclass="stewart" pos="0.35354476 -0.35355835 0.08690238"
+      quat="0.57400711 -0.08395056 -0.05931786 0.81237278">
+      <geom class="cardan1"/>
+      <body name="cardan2_6" pos="-0.0004173 -0.0107000 0.0283078" quat="-0.7069842 0.0131748 -0.0131748 0.7069839">
+        <joint name="joint_c2_6" class="hinge" axis="1 0 0" pos="-0.0432000 0.0000000 0.0112000"/>
+        <geom class="cardan2"/>
+        <body name="legbot_6" pos="-0.0133176 0.0005000 0.0506432" quat="0.7068527 0.0189608 -0.0189608 -0.7068523">
+          <joint name="joint_lb_6" class="hinge" axis="1 0 0" pos="0.0325000 -0.0000000 -0.0395000"/>
+          <geom class="legbot"/>
+          <body name="legup_6" pos="0.0000000 0.0000000 0.2226102" quat="0.9733343 -0.0000000 0.0000000 0.2293911">
+            <joint name="joint_lu_6" class="slide"/>
+            <geom class="legup"/>
+            <body name="cardan1_12" pos="0.0000000 0.0000000 0.6260000"
+              quat="-0.8680631 -0.0000000 0.0000000 -0.4964539">
+              <joint name="joint_c1_12" class="hinge" axis="0 0 1"/>
+              <geom class="cardan1"/>
+              <body name="cardan2_12" pos="-0.0099094 0.0005000 0.0518565"
+                quat="0.0547040 0.0000003 -0.9985026 0.0000000">
+                <joint name="joint_c2_12" class="hinge" axis="0 1 0" pos="-0.0112000 0.0320000 0.0112000"/>
+                <geom class="cardan2"/>
+                <body name="cardan1_18" pos="-0.0107000 0.0022891 -0.0282336"
+                  quat="0.7068098 0.0204980 -0.0204980 0.7068094">
+                  <joint name="joint_c1_18" class="hinge" axis="0 1 0" pos="-0.0000000 0.0280000 0.0395000"/>
+                  <geom class="cardan1"/>
+                  <site name="site_c1_18" type="sphere"/>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+
+    <!-- Upper (moving) platform -->
+    <body name="upper" childclass="stewart" pos="0.0002058 0.0051264 1.1000000">
+      <freejoint name="upper_joint"/>
+      <geom class="upper"/>
+      <site name="upper_center" type="sphere"/>
+      <site name="site_upper_1" type="sphere" pos="0.3380740 0.0905866 -0.0419024"
+        quat="0.0134171 -0.7891510 0.6055365 -0.1019131"/>
+      <site name="site_upper_2" type="sphere" pos="0.2474874 0.2474874 -0.0419024"
+        quat="0.0949679 -0.9189857 0.3806561 0.0393370"/>
+      <site name="site_upper_3" type="sphere" pos="-0.2474874 0.2474874 -0.0419024"
+        quat="0.0949679 -0.9189857 0.3806561 0.0393370"/>
+      <site name="site_upper_4" type="sphere" pos="-0.3380740 0.0905866 -0.0419024"
+        quat="-0.1019131 -0.6055369 0.7891506 0.0134171"/>
+      <site name="site_upper_5" type="sphere" pos="-0.0905867 -0.3380740 -0.0419024"
+        quat="-0.0815508 0.1298345 0.9861930 -0.0625761"/>
+      <site name="site_upper_6" type="sphere" pos="0.0905867 -0.3380740 -0.0419024"
+        quat="-0.1019131 -0.6055365 -0.7891510 -0.0134171"/>
+    </body>
+  </worldbody>
+
+  <equality>
+    <weld name="w_1" site1="site_c1_13" site2="site_upper_1" solref="0.0001 1" solimp="0.9999 0.9999 0.0001 0.5 2"/>
+    <weld name="w_2" site1="site_c1_14" site2="site_upper_2" solref="0.0001 1" solimp="0.9999 0.9999 0.0001 0.5 2"/>
+    <weld name="w_3" site1="site_c1_15" site2="site_upper_3" solref="0.0001 1" solimp="0.9999 0.9999 0.0001 0.5 2"/>
+    <weld name="w_4" site1="site_c1_16" site2="site_upper_4" solref="0.0001 1" solimp="0.9999 0.9999 0.0001 0.5 2"/>
+    <weld name="w_5" site1="site_c1_17" site2="site_upper_5" solref="0.0001 1" solimp="0.9999 0.9999 0.0001 0.5 2"/>
+    <weld name="w_6" site1="site_c1_18" site2="site_upper_6" solref="0.0001 1" solimp="0.9999 0.9999 0.0001 0.5 2"/>
+  </equality>
+
+  <actuator>
+    <general name="leg1_ctrl" joint="joint_lu_1" class="leg_actuator"/>
+    <general name="leg2_ctrl" joint="joint_lu_2" class="leg_actuator"/>
+    <general name="leg3_ctrl" joint="joint_lu_3" class="leg_actuator"/>
+    <general name="leg4_ctrl" joint="joint_lu_4" class="leg_actuator"/>
+    <general name="leg5_ctrl" joint="joint_lu_5" class="leg_actuator"/>
+    <general name="leg6_ctrl" joint="joint_lu_6" class="leg_actuator"/>
+
+    <!-- External disturbance wrench applied to the upper platform -->
+    <general name="upper_f_x" class="disturbance" site="upper_center" gear="1 0 0 0 0 0"/>
+    <general name="upper_f_y" class="disturbance" site="upper_center" gear="0 1 0 0 0 0"/>
+    <general name="upper_f_z" class="disturbance" site="upper_center" gear="0 0 1 0 0 0"/>
+    <general name="upper_t_x" class="disturbance" site="upper_center" gear="0 0 0 1 0 0"/>
+    <general name="upper_t_y" class="disturbance" site="upper_center" gear="0 0 0 0 1 0"/>
+    <general name="upper_t_z" class="disturbance" site="upper_center" gear="0 0 0 0 0 1"/>
+  </actuator>
+
+  <sensor>
+    <framepos name="upper_position" objtype="site" objname="upper_center" reftype="site" refname="base_center"/>
+    <framequat name="upper_quaternion" objtype="site" objname="upper_center" reftype="site" refname="base_center"/>
+    <framelinvel name="upper_linvel" objtype="site" objname="upper_center" reftype="site" refname="base_center"/>
+    <framelinacc name="upper_linacc" objtype="site" objname="upper_center"/>
+    <frameangvel name="upper_angvel" objtype="site" objname="upper_center" reftype="site" refname="base_center"/>
+    <frameangacc name="upper_angacc" objtype="site" objname="upper_center"/>
+    <actuatorpos name="leg1_len_sensor" actuator="leg1_ctrl"/>
+    <actuatorpos name="leg2_len_sensor" actuator="leg2_ctrl"/>
+    <actuatorpos name="leg3_len_sensor" actuator="leg3_ctrl"/>
+    <actuatorpos name="leg4_len_sensor" actuator="leg4_ctrl"/>
+    <actuatorpos name="leg5_len_sensor" actuator="leg5_ctrl"/>
+    <actuatorpos name="leg6_len_sensor" actuator="leg6_ctrl"/>
+  </sensor>
+</mujoco>
