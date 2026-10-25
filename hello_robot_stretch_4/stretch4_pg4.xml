@@ -1,0 +1,509 @@
+<mujoco model="stretch4_pg4">
+  <compiler angle="radian" assetdir="assets" autolimits="true"/>
+
+  <option integrator="implicitfast" impratio="20" cone="elliptic" noslip_iterations="5">
+    <flag multiccd="enable"/>
+  </option>
+
+  <default>
+    <default class="stretch">
+      <geom mass="0" solref="0.005 1"/>
+      <general biastype="affine"/>
+      <default class="wheel">
+        <velocity kv="1" gear="6" forcerange="-100 100"/>
+      </default>
+      <default class="lift">
+        <joint damping="20" stiffness="0.03" armature="0.01" frictionloss="1.5"/>
+        <general forcerange="-200 200"/>
+        <position kp="8000" kv="200"/>
+      </default>
+      <default class="telescope">
+        <joint damping="20" stiffness="0.02" armature="0.01" frictionloss="1.5"/>
+        <general forcerange="-175 175"/>
+        <position kp="2500" kv="120"/>
+      </default>
+      <default class="wrist">
+        <general forcerange="-400 400"/>
+        <joint axis="0 0 1" damping="1"/>
+        <position kp="10"/>
+        <default class="wrist_yaw">
+          <joint armature="0.01" damping="2" frictionloss="0.1"/>
+          <position kp="400" kv="4.3"/>
+        </default>
+        <default class="wrist_pitch">
+          <joint armature="0.01" damping="2" frictionloss="0.1"/>
+          <position kp="400" kv="3.5"/>
+        </default>
+        <default class="wrist_roll">
+          <joint armature="0.01" damping="2" frictionloss="0.1"/>
+          <position kp="250" kv="1.2"/>
+        </default>
+        <default class="parallel_gripper_finger">
+          <joint range="-0.04 0" damping="10" armature="0.1" frictionloss="0.1"/>
+          <position ctrlrange="-0.04 0" kp="1000" kv="20" forcerange="-30 30"/>
+        </default>
+      </default>
+      <default class="visualgeom">
+        <geom group="2" type="mesh" contype="0" conaffinity="0"/>
+      </default>
+      <default class="collision">
+        <geom group="3" type="mesh"/>
+        <default class="rubber">
+          <geom condim="6" friction="1.8 0.01 0.001" priority="1" solref="0.01 1" solimp="0.95 0.999 0.005"
+            conaffinity="1" contype="1"/>
+        </default>
+        <default class="omniwheel_collision">
+          <geom type="capsule" size="0.1 0.01" condim="6" friction="0.05 0.8 0.001" contype="6" conaffinity="4"
+            group="4"/>
+        </default>
+      </default>
+    </default>
+  </default>
+
+  <asset>
+    <texture name="head" type="2d" file="head_link.png"/>
+    <material name="head" texture="head"/>
+    <!-- Both head rings share this material, so one colour change drives both. -->
+    <material name="led_ring" rgba="0.76 0.42 0.95 1" emission="0.6"/>
+    <material name="black" rgba="0.15 0.15 0.15 1"/>
+    <material name="blue" rgba="0.05 0.62 0.85 1"/>
+    <material name="grey" rgba="0.5 0.5 0.5 1"/>
+    <material name="off_white" rgba="0.9 0.9 0.88 1"/>
+    <material name="white" rgba="1 1 1 1"/>
+    <mesh file="arm_l0_collision_link.STL"/>
+    <mesh file="arm_l0_link.STL"/>
+    <mesh file="arm_l1_collision_link.STL"/>
+    <mesh file="arm_l1_link.STL"/>
+    <mesh file="arm_l2_collision_link.STL"/>
+    <mesh file="arm_l2_link.STL"/>
+    <mesh file="arm_l3_collision_link.STL"/>
+    <mesh file="arm_l3_link.STL"/>
+    <mesh file="arm_l4_collision_link.STL"/>
+    <mesh file="arm_l4_link.STL"/>
+    <mesh file="aruco_fingertip_left_collision_link.STL"/>
+    <mesh file="aruco_fingertip_left_link.STL"/>
+    <mesh file="aruco_fingertip_right_collision_link.STL"/>
+    <mesh file="aruco_fingertip_right_link.STL"/>
+    <mesh file="base_collision_link.STL"/>
+    <mesh file="base_link.STL"/>
+    <mesh file="finger_left_collision_link.STL"/>
+    <mesh file="finger_left_link.STL"/>
+    <mesh file="finger_right_collision_link.STL"/>
+    <mesh file="finger_right_link.STL"/>
+    <mesh file="gripper_camera_collision_link.STL"/>
+    <mesh file="gripper_camera_link.STL"/>
+    <mesh file="head_collision_link.STL"/>
+    <mesh file="head_link.obj"/>
+    <mesh file="led_ring.obj"/>
+    <mesh file="lift_collision_link.STL"/>
+    <mesh file="lift_link.STL"/>
+    <mesh file="mast_collision_link.STL"/>
+    <mesh file="mast_link.STL"/>
+    <mesh file="pjg_body_collision_link.STL"/>
+    <mesh file="pjg_body_link.STL"/>
+    <mesh file="tool_attachment_site_collision_link.STL"/>
+    <mesh file="tool_attachment_site_link.STL"/>
+    <mesh file="wheel_0_collision_link.STL"/>
+    <mesh file="wheel_0_link.STL"/>
+    <mesh file="wheel_1_collision_link.STL"/>
+    <mesh file="wheel_1_link.STL"/>
+    <mesh file="wheel_2_collision_link.STL"/>
+    <mesh file="wheel_2_link.STL"/>
+    <mesh file="wrist_aruco_collision_link.STL"/>
+    <mesh file="wrist_aruco_link.STL"/>
+    <mesh file="wrist_collision_link.STL"/>
+    <mesh file="wrist_link.STL"/>
+    <mesh file="wrist_pitch_collision_link.STL"/>
+    <mesh file="wrist_pitch_link.STL"/>
+    <mesh file="wrist_reflector_collision_link.STL"/>
+    <mesh file="wrist_reflector_link.STL"/>
+    <mesh file="wrist_roll_collision_link.STL"/>
+    <mesh file="wrist_roll_link.STL"/>
+    <mesh file="wrist_yaw_collision_link.STL"/>
+    <mesh file="wrist_yaw_link.STL"/>
+  </asset>
+
+  <worldbody>
+    <body name="stretch4" pos="0 0 0.0565">
+      <freejoint name="floating_base"/>
+      <body name="base_link" pos="0 0 0.028">
+        <inertial diaginertia="0.214993 0.22301 0.327846" mass="18.9261" pos="0.000438849 -0.00177715 0.0964684"/>
+        <geom name="base_link_collision" class="collision" mesh="base_collision_link"/>
+        <geom name="base_link_visual" class="visualgeom" material="off_white" mesh="base_link"/>
+        <!-- Line sensors are ray cast from a site at each emitter, see stretch4_sensors.py -->
+        <body name="line_sensor_5_link" pos="0.0613832 0.178319 0.0527014" quat="0.843829 -0.112476 0.194813 0.487185">
+          <inertial diaginertia="2.88698e-07 2.34959e-07 6.64616e-08" mass="0.00213836"
+            pos="0.00114502 -0.000126775 0.0119762"/>
+          <site name="line_sensor_5" pos="0.0036 0 0.024"/>
+          <body name="line_sensor_5_optical_link" pos="0.00286 0 0" quat="0.5 -0.5 0.5 -0.5"/>
+        </body>
+        <body name="line_sensor_4_link" pos="-0.0613832 0.178319 0.0527014" quat="0.487185 -0.194813 0.112476 0.843829">
+          <inertial diaginertia="2.88698e-07 2.34959e-07 6.64616e-08" mass="0.00213836"
+            pos="0.00114502 -0.000126775 0.0119762"/>
+          <site name="line_sensor_4" pos="0.0036 0 0.024"/>
+          <body name="line_sensor_4_optical_link" pos="0.00286 0 0" quat="0.5 -0.5 0.5 -0.5"/>
+        </body>
+        <body name="line_sensor_3_link" pos="-0.18512 -0.036 0.0527014"
+          quat="1.57414e-15 0.224951 3.63418e-16 -0.97437">
+          <inertial diaginertia="2.88698e-07 2.34959e-07 6.64616e-08" mass="0.00213836"
+            pos="0.00114502 -0.000126775 0.0119762"/>
+          <site name="line_sensor_3" pos="0.0036 0 0.024"/>
+          <body name="line_sensor_3_optical_link" pos="0.00286 0 0" quat="0.5 -0.5 0.5 -0.5"/>
+        </body>
+        <body name="line_sensor_2_link" pos="-0.123737 -0.142319 0.0527014" quat="0.487185 0.194813 0.112476 -0.843829">
+          <inertial diaginertia="2.88698e-07 2.34959e-07 6.64616e-08" mass="0.00213836"
+            pos="0.00114502 -0.000126775 0.0119762"/>
+          <site name="line_sensor_2" pos="0.0036 0 0.024"/>
+          <body name="line_sensor_2_optical_link" pos="0.00286 0 0" quat="0.5 -0.5 0.5 -0.5"/>
+        </body>
+        <body name="line_sensor_1_link" pos="0.123737 -0.142319 0.0527014" quat="0.843829 0.112476 0.194813 -0.487185">
+          <inertial diaginertia="2.88698e-07 2.34959e-07 6.64616e-08" mass="0.00213836"
+            pos="0.00114502 -0.000126775 0.0119762"/>
+          <site name="line_sensor_1" pos="0.0036 0 0.024"/>
+          <body name="line_sensor_1_optical_link" pos="0.00286 0 0" quat="0.5 -0.5 0.5 -0.5"/>
+        </body>
+        <body name="line_sensor_0_link" pos="0.18512 -0.036 0.0527014" quat="0.97437 0 0.224951 0">
+          <inertial diaginertia="2.88698e-07 2.34959e-07 6.64616e-08" mass="0.00213836"
+            pos="0.00114502 -0.000126775 0.0119762"/>
+          <site name="line_sensor_0" pos="0.0036 0 0.024"/>
+          <body name="line_sensor_0_optical_link" pos="0.00286 0 0" quat="0.5 -0.5 0.5 -0.5"/>
+        </body>
+        <body name="head_link" pos="-0.093 -0.098 1.559">
+          <inertial diaginertia="0.0382732 0.0306327 0.0640021" mass="5.61844" pos="0.0578831 0.098591 -0.0270263"/>
+          <geom name="head_link_collision" class="collision" mesh="head_collision_link"/>
+          <geom name="head_link_visual" class="visualgeom" material="head" mesh="head_link"/>
+          <geom name="led_ring_left" class="visualgeom" material="led_ring" mesh="led_ring"
+            pos="0.189468 0.173234 -0.029925" quat="0.432179 -0.011969 0.901708 0.000000"/>
+          <geom name="led_ring_right" class="visualgeom" material="led_ring" mesh="led_ring"
+            pos="0.189467 0.022785 -0.029907" quat="0.432451 0.010977 0.901591 -0.000000"/>
+          <body name="lidar_right_link" pos="0.131744 -0.0264137 -0.058328"
+            quat="-0.339444 -0.353553 -0.853553 0.176704">
+            <site name="lidar_right"/>
+          </body>
+          <body name="lidar_left_link" pos="0.131744 0.222414 -0.058328" quat="0.176704 -0.853553 -0.353553 -0.339444">
+            <site name="lidar_left"/>
+          </body>
+          <body name="camera_right_link" pos="0.171841 0.023 -0.0157567" quat="0.648459 0.648459 0.281958 -0.281958">
+            <body name="camera_right_optical_link" pos="0.0212 0 0" quat="0.5 -0.5 0.5 -0.5">
+              <!-- Pinhole part of the fisheye calibration; the fisheye itself is rendered by stretch4_sensors.py -->
+              <camera name="camera_right_link" quat="6.12323e-17 1 0 0" resolution="1920 1200"
+                focalpixel="519.0945 518.4189" principalpixel="-14.2541 -24.4573" sensorsize="0.00576 0.0036"/>
+            </body>
+          </body>
+          <body name="camera_left_link" pos="0.171841 0.173 -0.0157567" quat="0.648459 -0.648459 0.281958 0.281958">
+            <body name="camera_left_optical_link" pos="0.0212 0 0" quat="0.5 -0.5 0.5 -0.5">
+              <!-- Pinhole part of the fisheye calibration; the fisheye itself is rendered by stretch4_sensors.py -->
+              <camera name="camera_left_link" quat="6.12323e-17 1 0 0" resolution="1920 1200"
+                focalpixel="516.9768 517.3645" principalpixel="26.8862 12.4086" sensorsize="0.00576 0.0036"/>
+            </body>
+          </body>
+          <body name="camera_center_link" pos="0.177246 0.098 -0.0239069" quat="0.67438 0.67438 0.212631 -0.212631">
+            <body name="camera_center_optical_link" pos="0.0017 0 0" quat="0.5 -0.5 0.5 -0.5">
+              <!-- Calibrated intrinsics; principalpixel is (W/2 - cx, cy - H/2), see README -->
+              <camera name="camera_center_link" quat="6.12323e-17 1 0 0" resolution="4034 3040"
+                focalpixel="2329.4044 2338.7901" principalpixel="-44.7050 -1.9775" sensorsize="0.0062527 0.004712"/>
+            </body>
+          </body>
+        </body>
+        <body name="mast_link" pos="-0.093 -0.098 0.004">
+          <inertial diaginertia="1.96276 1.96594 0.00577662" mass="10.8925" pos="2.77556e-17 -0.00165283 0.815"/>
+          <body name="lift_link" pos="0 -0.0014 0.241" gravcomp="1">
+            <joint name="lift_joint" class="lift" type="slide" axis="0 0 1" range="0 1.2"/>
+            <inertial diaginertia="0.0114664 0.00956614 0.0132436" mass="2.73452"
+              pos="-0.0233092 0.0564207 0.00671885"/>
+            <geom name="lift_link_collision" class="collision" mesh="lift_collision_link"/>
+            <geom name="lift_link_visual" class="visualgeom" material="off_white" mesh="lift_link"/>
+            <body name="arm_l0_link" pos="0.01675 0.0994 -0.0128595">
+              <inertial diaginertia="0.000273561 0.00070876 0.000740563" mass="0.218977"
+                pos="0.0737362 -1.74715e-16 0.00216424"/>
+              <geom name="arm_l0_link_collision" class="collision" mesh="arm_l0_collision_link"/>
+              <geom name="arm_l0_link_visual" class="visualgeom" material="grey" mesh="arm_l0_link"/>
+              <body name="arm_l1_link" pos="-0.01375 0 0">
+                <joint name="arm_l1_joint" class="telescope" type="slide" axis="1 0 0" range="0 0.13"/>
+                <inertial diaginertia="0.000227675 0.000730799 0.000759408" mass="0.211729"
+                  pos="0.0983194 -4.84142e-17 0.00214616"/>
+                <geom name="arm_l1_link_collision" class="collision" mesh="arm_l1_collision_link"/>
+                <geom name="arm_l1_link_visual" class="visualgeom" material="grey" mesh="arm_l1_link"/>
+                <body name="arm_l2_link" pos="-0.0135 0 0">
+                  <joint name="arm_l2_joint" class="telescope" type="slide" axis="1 0 0" range="0 0.13"/>
+                  <inertial diaginertia="0.000180704 0.000676905 0.000701572" mass="0.197181"
+                    pos="0.126545 -4.72556e-17 0.00212533"/>
+                  <geom name="arm_l2_link_collision" class="collision" mesh="arm_l2_collision_link"/>
+                  <geom name="arm_l2_link_visual" class="visualgeom" material="grey" mesh="arm_l2_link"/>
+                  <body name="arm_l3_link" pos="-0.0135 0 0">
+                    <joint name="arm_l3_joint" class="telescope" type="slide" axis="1 0 0" range="0 0.13"/>
+                    <inertial diaginertia="0.000140464 0.000623711 0.000644687" mass="0.18238"
+                      pos="0.154806 -3.07038e-17 0.00210076"/>
+                    <geom name="arm_l3_link_collision" class="collision" mesh="arm_l3_collision_link"/>
+                    <geom name="arm_l3_link_visual" class="visualgeom" material="grey" mesh="arm_l3_link"/>
+                    <body name="arm_l4_link" pos="-0.0055 0 0">
+                      <joint name="arm_l4_joint" class="telescope" type="slide" axis="1 0 0" range="0 0.13"/>
+                      <inertial diaginertia="7.61244e-05 0.000514641 0.000527876" mass="0.131482"
+                        pos="0.15125 3.40653e-16 0.00206007"/>
+                      <geom name="arm_l4_link_collision" class="collision" mesh="arm_l4_collision_link"/>
+                      <geom name="arm_l4_link_visual" class="visualgeom" material="off_white" mesh="arm_l4_link"/>
+                      <body name="wrist_link" pos="0.2934 0 -0.03672" gravcomp="1">
+                        <inertial diaginertia="0.00012247 0.000171521 0.000141511" mass="0.228849"
+                          pos="-0.00943224 -2.24073e-08 0.035067"/>
+                        <geom name="wrist_link_collision" class="collision" mesh="wrist_collision_link"/>
+                        <geom name="wrist_link_visual" class="visualgeom" material="black" mesh="wrist_link"/>
+                        <body name="wrist_yaw_link">
+                          <joint name="wrist_yaw_joint" class="wrist_yaw" type="hinge" axis="0 0 1"
+                            range="-1.135 4.276"/>
+                          <inertial diaginertia="0.000154148 0.000122233 0.000116712" mass="0.217322"
+                            pos="-8.08039e-08 -0.00772612 -0.0363543"/>
+                          <geom name="wrist_yaw_link_collision" class="collision" mesh="wrist_yaw_collision_link"/>
+                          <geom name="wrist_yaw_link_visual" class="visualgeom" material="black" mesh="wrist_yaw_link"/>
+                          <body name="wrist_pitch_link" pos="0 -0.04222 -0.0452">
+                            <joint name="wrist_pitch_joint" class="wrist_pitch" type="hinge" axis="0 1 0"
+                              range="-1.135 4.276"/>
+                            <inertial diaginertia="0.000122233 0.000116712 0.000154148" mass="0.217322"
+                              pos="0.00772612 -0.0363543 8.08039e-08"/>
+                            <geom name="wrist_pitch_link_collision" class="collision"
+                              mesh="wrist_pitch_collision_link"/>
+                            <geom name="wrist_pitch_link_visual" class="visualgeom" material="black"
+                              mesh="wrist_pitch_link"/>
+                            <body name="wrist_roll_link" pos="0.04222 -0.0452 0">
+                              <joint name="wrist_roll_joint" class="wrist_roll" type="hinge" axis="1 0 0"
+                                range="-1.135 4.276"/>
+                              <inertial diaginertia="7.36573e-05 5.31097e-05 2.50173e-05" mass="0.0875519"
+                                pos="0.0125796 0.0013906 0.0122312"/>
+                              <geom name="wrist_roll_link_collision" class="collision"
+                                mesh="wrist_roll_collision_link"/>
+                              <geom name="wrist_roll_link_visual" class="visualgeom" material="black"
+                                mesh="wrist_roll_link"/>
+                              <body name="gripper_camera_link" pos="0.0192 0 0.057" quat="0.999657 0 0.0261769 0"
+                                gravcomp="1">
+                                <inertial diaginertia="1.60194e-05 6.92268e-06 1.36285e-05" mass="0.044776"
+                                  pos="-0.0121348 0 0.00187096"/>
+                                <geom name="gripper_camera_link_collision" class="collision"
+                                  mesh="gripper_camera_collision_link"/>
+                                <geom name="gripper_camera_link_visual" class="visualgeom" material="black"
+                                  mesh="gripper_camera_link"/>
+                                <body name="gripper_stereo_camera_color_optical_frame"
+                                  quat="0.512917 -0.48674 0.48674 -0.512917" gravcomp="1"/>
+                                <body name="gripper_right_camera_color_optical_frame" pos="0 -0.01 0"
+                                  quat="0.512917 -0.48674 0.48674 -0.512917" gravcomp="1"/>
+                                <body name="gripper_left_camera_color_optical_frame" pos="0 0.01 0"
+                                  quat="0.512917 -0.48674 0.48674 -0.512917" gravcomp="1"/>
+                                <!-- Calibrated intrinsics; principalpixel is (W/2 - cx, cy - H/2), see README -->
+                                <camera name="gripper_camera_left_rgb" pos="0 0.01 0"
+                                  quat="-0.48674 -0.512917 0.512917 0.48674" resolution="640 400"
+                                  focalpixel="396.8432 396.9340" principalpixel="6.4996 14.9808"
+                                  sensorsize="0.00384 0.0024"/>
+                                <camera name="gripper_camera_right_rgb" pos="0 -0.01 0"
+                                  quat="-0.48674 -0.512917 0.512917 0.48674" resolution="640 400"
+                                  focalpixel="396.8432 396.9340" principalpixel="6.4996 14.9808"
+                                  sensorsize="0.00384 0.0024"/>
+                                <camera name="gripper_camera_stereo_depth" quat="-0.48674 -0.512917 0.512917 0.48674"
+                                  resolution="640 400" focalpixel="396.8432 396.9340" principalpixel="6.4996 14.9808"
+                                  sensorsize="0.00384 0.0024"/>
+                              </body>
+                              <body name="tool_attachment_site_link" pos="0.0186 0 0">
+                                <inertial diaginertia="7.36573e-05 5.31097e-05 2.50173e-05" mass="0.0875519"
+                                  pos="-0.00602038 0.0013906 0.0122312"/>
+                                <geom name="tool_attachment_site_link_collision" class="collision"
+                                  mesh="tool_attachment_site_collision_link"/>
+                                <geom name="tool_attachment_site_link_visual" class="visualgeom" material="black"
+                                  mesh="tool_attachment_site_link"/>
+                                <body name="quick_connect_interface_link">
+                                  <body name="pjg_body_link" gravcomp="1">
+                                    <inertial diaginertia="0.000503295 0.000186568 0.000530332" mass="0.381434"
+                                      pos="0.0402106 6.8299e-06 6.21368e-05"/>
+                                    <geom name="pjg_body_link_collision" class="collision"
+                                      mesh="pjg_body_collision_link"/>
+                                    <geom name="pjg_body_link_visual" class="visualgeom" material="black"
+                                      mesh="pjg_body_link"/>
+                                    <body name="finger_right_link" pos="0.166855 0 0" quat="0.707107 0 0 0.707107"
+                                      gravcomp="1">
+                                      <joint name="finger_right_joint" class="parallel_gripper_finger" type="slide"
+                                        axis="1 0 0" range="-0.04 0"/>
+                                      <inertial diaginertia="6.72897e-06 5.38962e-06 4.61768e-06" mass="0.024652"
+                                        pos="-0.0147377 0.0878099 4.24106e-08"/>
+                                      <geom name="finger_right_link_collision" class="rubber"
+                                        mesh="finger_right_collision_link"/>
+                                      <geom name="finger_right_link_visual" class="visualgeom" material="blue"
+                                        mesh="finger_right_link"/>
+                                      <body name="aruco_fingertip_right_link" pos="-0.01225 0.06704 0.017"
+                                        quat="1.61554e-15 0 0 -1">
+                                        <inertial diaginertia="3.33209e-09 3.32884e-09 6.65796e-09" mass="0.000123521"
+                                          pos="-3.3044e-06 -9.90744e-06 -0.000211788"/>
+                                        <geom name="aruco_fingertip_right_link_collision" class="collision"
+                                          mesh="aruco_fingertip_right_collision_link"/>
+                                        <geom name="aruco_fingertip_right_link_visual" class="visualgeom"
+                                          material="white" mesh="aruco_fingertip_right_link"/>
+                                      </body>
+                                    </body>
+                                    <body name="finger_left_link" pos="0.166855 0 0" quat="0.707107 0 0 -0.707107"
+                                      gravcomp="1">
+                                      <joint name="finger_left_joint" class="parallel_gripper_finger" type="slide"
+                                        axis="1 0 0" range="-0.04 0"/>
+                                      <inertial diaginertia="6.72897e-06 5.38962e-06 4.61768e-06" mass="0.024652"
+                                        pos="-0.0147377 -0.0878099 -4.24106e-08"/>
+                                      <geom name="finger_left_link_collision" class="rubber"
+                                        mesh="finger_left_collision_link"/>
+                                      <geom name="finger_left_link_visual" class="visualgeom" material="blue"
+                                        mesh="finger_left_link"/>
+                                      <body name="aruco_fingertip_left_link" pos="-0.01225 -0.06704 0.017">
+                                        <inertial diaginertia="3.33209e-09 3.32884e-09 6.65796e-09" mass="0.000123521"
+                                          pos="-3.3044e-06 -9.90744e-06 -0.000211788"/>
+                                        <geom name="aruco_fingertip_left_link_collision" class="collision"
+                                          mesh="aruco_fingertip_left_collision_link"/>
+                                        <geom name="aruco_fingertip_left_link_visual" class="visualgeom"
+                                          material="white" mesh="aruco_fingertip_left_link"/>
+                                      </body>
+                                    </body>
+                                    <body name="grasp_center_link" pos="0.166855 0 0"/>
+                                  </body>
+                                </body>
+                              </body>
+                            </body>
+                          </body>
+                        </body>
+                        <body name="wrist_aruco_link" pos="-0.00867 0 0.0681105">
+                          <inertial diaginertia="3.83491e-08 3.83685e-08 7.66889e-08" mass="0.000520488"
+                            pos="-8.97014e-06 2.99076e-06 -0.000313517"/>
+                          <geom name="wrist_aruco_link_collision" class="collision" mesh="wrist_aruco_collision_link"/>
+                          <geom name="wrist_aruco_link_visual" class="visualgeom" material="white"
+                            mesh="wrist_aruco_link"/>
+                        </body>
+                        <body name="wrist_reflector_link" pos="0.00665 0 0.0677605">
+                          <inertial diaginertia="1.51128e-07 1.64146e-08 1.47242e-07" mass="0.00171618"
+                            pos="0.00377532 -3.85556e-12 0.00351761"/>
+                          <geom name="wrist_reflector_link_collision" class="collision"
+                            mesh="wrist_reflector_collision_link"/>
+                          <geom name="wrist_reflector_link_visual" class="visualgeom" material="black"
+                            mesh="wrist_reflector_link"/>
+                        </body>
+                      </body>
+                    </body>
+                  </body>
+                </body>
+              </body>
+            </body>
+          </body>
+          <geom class="visualgeom" mesh="mast_link"/>
+          <geom class="collision" mesh="mast_collision_link" mass="4.25"/>
+        </body>
+        <body name="right_wheel_link" pos="0 -0.174 0.072" quat="0.707107 -0.707107 0 0">
+          <joint name="right_wheel_joint" type="hinge" axis="0 0 1"/>
+          <inertial diaginertia="0.0154035 0.015408 0.0297083" mass="6.06821"
+            pos="1.25477e-05 5.22307e-06 -0.000275018"/>
+          <geom name="wheel_2_link_visual" class="visualgeom" material="black" mesh="wheel_2_link"/>
+          <geom name="right_wheel_link" class="omniwheel_collision"/>
+        </body>
+        <body name="back_wheel_link" pos="-0.150688 0.087 0.072" quat="0.353553 -0.353553 0.612372 -0.612372">
+          <joint name="back_wheel_joint" type="hinge" axis="0 0 1"/>
+          <inertial diaginertia="0.0154035 0.015408 0.0297083" mass="6.06821"
+            pos="1.25478e-05 5.22294e-06 -0.000275017"/>
+          <geom name="wheel_1_link_visual" class="visualgeom" material="black" mesh="wheel_1_link"/>
+          <geom name="back_wheel_link" class="omniwheel_collision"/>
+        </body>
+        <body name="left_wheel_link" pos="0.150688 0.087 0.072" quat="0.353553 -0.353553 -0.612372 0.612372">
+          <joint name="left_wheel_joint" type="hinge" axis="0 0 1"/>
+          <inertial diaginertia="0.0154035 0.015408 0.0297083" mass="6.06821"
+            pos="1.25475e-05 5.22292e-06 -0.000275017"/>
+          <geom name="wheel_0_link_visual" class="visualgeom" material="black" mesh="wheel_0_link"/>
+          <geom name="left_wheel_link" class="omniwheel_collision"/>
+        </body>
+        <body name="docking_contact_link" pos="0 0.1768 0.1075"/>
+      </body>
+      <site name="base_footprint_site"/>
+      <site name="imu" size="0.01"/>
+    </body>
+  </worldbody>
+
+  <contact>
+    <exclude body1="left_wheel_link" body2="base_link"/>
+    <exclude body1="right_wheel_link" body2="base_link"/>
+    <exclude body1="back_wheel_link" body2="base_link"/>
+    <exclude body1="base_link" body2="mast_link"/>
+    <exclude body1="lift_link" body2="mast_link"/>
+    <exclude body1="base_link" body2="docking_contact_link"/>
+    <exclude body1="wrist_link" body2="base_link"/>
+    <exclude body1="wrist_yaw_link" body2="base_link"/>
+    <exclude body1="wrist_pitch_link" body2="base_link"/>
+    <exclude body1="wrist_roll_link" body2="base_link"/>
+    <exclude body1="quick_connect_interface_link" body2="base_link"/>
+    <exclude body1="tool_attachment_site_link" body2="base_link"/>
+    <exclude body1="pjg_body_link" body2="base_link"/>
+    <exclude body1="finger_left_link" body2="base_link"/>
+    <exclude body1="finger_right_link" body2="base_link"/>
+    <exclude body1="wrist_link" body2="docking_contact_link"/>
+    <exclude body1="wrist_yaw_link" body2="docking_contact_link"/>
+    <exclude body1="wrist_pitch_link" body2="docking_contact_link"/>
+    <exclude body1="wrist_roll_link" body2="docking_contact_link"/>
+    <exclude body1="quick_connect_interface_link" body2="docking_contact_link"/>
+    <exclude body1="tool_attachment_site_link" body2="docking_contact_link"/>
+    <exclude body1="pjg_body_link" body2="docking_contact_link"/>
+    <exclude body1="finger_left_link" body2="docking_contact_link"/>
+    <exclude body1="finger_right_link" body2="docking_contact_link"/>
+    <exclude body1="arm_l4_link" body2="arm_l3_link"/>
+    <exclude body1="arm_l4_link" body2="arm_l2_link"/>
+    <exclude body1="arm_l4_link" body2="arm_l1_link"/>
+    <exclude body1="arm_l4_link" body2="lift_link"/>
+    <exclude body1="arm_l3_link" body2="arm_l1_link"/>
+    <exclude body1="arm_l3_link" body2="lift_link"/>
+    <exclude body1="arm_l2_link" body2="lift_link"/>
+    <exclude body1="arm_l2_link" body2="arm_l1_link"/>
+    <exclude body1="arm_l1_link" body2="lift_link"/>
+    <exclude body1="wrist_yaw_link" body2="arm_l4_link"/>
+    <exclude body1="wrist_yaw_link" body2="arm_l3_link"/>
+    <exclude body1="wrist_yaw_link" body2="arm_l2_link"/>
+    <exclude body1="wrist_yaw_link" body2="arm_l1_link"/>
+    <exclude body1="wrist_yaw_link" body2="arm_l0_link"/>
+    <exclude body1="arm_l3_link" body2="arm_l0_link"/>
+    <exclude body1="arm_l2_link" body2="arm_l0_link"/>
+    <exclude body1="arm_l1_link" body2="arm_l0_link"/>
+    <exclude body1="arm_l4_link" body2="arm_l0_link"/>
+    <exclude body1="finger_left_link" body2="wrist_pitch_link"/>
+    <exclude body1="finger_right_link" body2="wrist_pitch_link"/>
+    <exclude body1="finger_left_link" body2="wrist_yaw_link"/>
+    <exclude body1="finger_right_link" body2="wrist_yaw_link"/>
+    <exclude body1="finger_left_link" body2="grasp_center_link"/>
+    <exclude body1="finger_right_link" body2="grasp_center_link"/>
+    <exclude body1="finger_left_link" body2="finger_right_link"/>
+    <exclude body1="aruco_fingertip_left_link" body2="aruco_fingertip_right_link"/>
+    <exclude body1="aruco_fingertip_left_link" body2="finger_right_link"/>
+    <exclude body1="aruco_fingertip_right_link" body2="finger_left_link"/>
+  </contact>
+
+  <tendon>
+    <fixed name="extend">
+      <joint joint="arm_l4_joint" coef="1"/>
+      <joint joint="arm_l3_joint" coef="1"/>
+      <joint joint="arm_l2_joint" coef="1"/>
+      <joint joint="arm_l1_joint" coef="1"/>
+    </fixed>
+  </tendon>
+
+  <equality>
+    <joint joint1="arm_l4_joint" joint2="arm_l3_joint"/>
+    <joint joint1="arm_l3_joint" joint2="arm_l2_joint"/>
+    <joint joint1="arm_l2_joint" joint2="arm_l1_joint"/>
+  </equality>
+
+  <actuator>
+    <velocity name="back_wheel_vel" joint="back_wheel_joint" class="wheel"/>
+    <velocity name="right_wheel_vel" joint="right_wheel_joint" class="wheel"/>
+    <velocity name="left_wheel_vel" joint="left_wheel_joint" class="wheel"/>
+    <position name="lift" joint="lift_joint" class="lift" ctrlrange="0 1.2"/>
+    <position name="arm" tendon="extend" class="telescope" ctrlrange="0 0.52"/>
+    <position name="wrist_yaw" joint="wrist_yaw_joint" class="wrist_yaw" ctrlrange="-1.135 4.276"/>
+    <position name="wrist_pitch" joint="wrist_pitch_joint" class="wrist_pitch" ctrlrange="-1.135 4.276"/>
+    <position name="wrist_roll" joint="wrist_roll_joint" class="wrist_roll" ctrlrange="-1.135 4.276"/>
+    <position name="gripper_right_finger" joint="finger_right_joint" class="parallel_gripper_finger"
+      ctrlrange="-0.04 0"/>
+    <position name="gripper_left_finger" joint="finger_left_joint" class="parallel_gripper_finger" ctrlrange="-0.04 0"/>
+  </actuator>
+
+  <sensor>
+    <gyro name="base_gyro" site="imu"/>
+    <accelerometer name="base_accel" site="imu"/>
+  </sensor>
+
+  <keyframe>
+    <key name="home" qpos="0 0 0 1 0 0 0 0.6 0.025 0.025 0.025 0.025 0 0 0 0 0 0 0 0" ctrl="0 0 0 0.6 0.1 0 0 0 0 0"/>
+    <key name="stow" qpos="0 0 0 1 0 0 0 0.23 0 0 0 0 3.14 -0.4 0 0 0 0 0 0" ctrl="0 0 0 0.23 0 3.14 -0.4 0 0 0"/>
+  </keyframe>
+</mujoco>
