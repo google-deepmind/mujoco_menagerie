@@ -142,5 +142,29 @@ class ContributorsTest(absltest.TestCase):
         )
 
 
+class CatalogConsistencyTest(absltest.TestCase):
+  """Checks that catalog.py metadata entries point to real files and directories."""
+
+  def test_catalog_models_exist(self) -> None:
+    for robot in catalog.MODEL_MAP:
+      maker = robot.split('/')[0]
+      self.assertTrue(
+        (_ROOT_DIR / maker).is_dir(),
+        f'catalog.MODEL_MAP references unknown model directory: {maker}',
+      )
+
+  def test_catalog_preview_overrides_exist(self) -> None:
+    for robot, target in catalog.PREVIEW_OVERRIDES.items():
+      self.assertIn(
+        robot,
+        catalog.MODEL_MAP,
+        f'catalog.PREVIEW_OVERRIDES key {robot!r} is not registered in catalog.MODEL_MAP.',
+      )
+      self.assertTrue(
+        (_ROOT_DIR / target).is_file(),
+        f'catalog.PREVIEW_OVERRIDES target does not exist: {target}',
+      )
+
+
 if __name__ == '__main__':
   absltest.main()
