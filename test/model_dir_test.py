@@ -89,6 +89,23 @@ class ModelDirLayoutTest(parameterized.TestCase):
       'directory must have at least one entry in catalog.MODEL_MAP.',
     )
 
+  @parameterized.named_parameters(_MODEL_DIRS)
+  def test_multi_scene_requires_preview_override(
+    self, model_dir: pathlib.Path
+  ) -> None:
+    scenes = list(model_dir.glob('scene*.xml'))
+    if len(scenes) > 1 and not (model_dir / 'scene.xml').is_file():
+      robots = [
+        k for k in catalog.MODEL_MAP if k.startswith(model_dir.name + '/')
+      ]
+      for robot in robots:
+        self.assertIn(
+          robot,
+          catalog.PREVIEW_OVERRIDES,
+          f'{model_dir.name} has multiple scenes {sorted(s.name for s in scenes)} '
+          'and no default scene.xml; pick one in catalog.PREVIEW_OVERRIDES.',
+        )
+
 
 class ContributorsTest(absltest.TestCase):
   """Checks CONTRIBUTORS.md sections are sorted alphabetically by first name."""
