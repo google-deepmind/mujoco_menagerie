@@ -14,14 +14,15 @@
 """Lint that every model directory ships the expected files."""
 
 import pathlib
+import sys
 
 from absl.testing import absltest
 from absl.testing import parameterized
 
-# Internal import.
-
-
 _ROOT_DIR = pathlib.Path(__file__).parent.parent
+sys.path.insert(0, str(_ROOT_DIR))
+
+import catalog  # noqa: E402
 
 # Non-model top-level directories.
 _SKIP_DIRS = {'assets', 'test', '.git', '.github', 'opensource'}
@@ -77,6 +78,15 @@ class ModelDirLayoutTest(parameterized.TestCase):
     self.assertTrue(
       any(model_dir.glob('scene*.xml')),
       f'{model_dir.name} has no scene*.xml.',
+    )
+
+  @parameterized.named_parameters(_MODEL_DIRS)
+  def test_registered_in_catalog(self, model_dir: pathlib.Path) -> None:
+    keys = [k for k in catalog.MODEL_MAP if k.startswith(model_dir.name + '/')]
+    self.assertTrue(
+      bool(keys),
+      f'{model_dir.name} is not registered in catalog.MODEL_MAP. Every model '
+      'directory must have at least one entry in catalog.MODEL_MAP.',
     )
 
 
