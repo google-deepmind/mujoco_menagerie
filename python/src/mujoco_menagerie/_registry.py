@@ -158,14 +158,20 @@ class Registry:
   @classmethod
   def load(cls, path: pathlib.Path) -> Registry:
     """Reads a registry.json file."""
-    return cls.from_dict(json.loads(pathlib.Path(path).read_text()))
+    return cls.from_dict(
+      json.loads(pathlib.Path(path).read_text(encoding='utf-8'))
+    )
 
 
 @functools.lru_cache(maxsize=1)
 def bundled() -> Registry:
   """The registry shipped inside this wheel."""
   try:
-    text = resources.files(__package__).joinpath('registry.json').read_text()
+    text = (
+      resources.files(__package__)
+      .joinpath('registry.json')
+      .read_text(encoding='utf-8')
+    )
     return Registry.from_dict(json.loads(text))
   except FileNotFoundError:
     raise RegistryError(
