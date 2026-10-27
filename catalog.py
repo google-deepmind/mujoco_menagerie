@@ -117,6 +117,7 @@ MODEL_MAP = {
   'flexiv_rizon4/flexiv_rizon4': ModelType.ARM,
   'arx_l5/arx_l5': ModelType.ARM,
   'flexiv_rizon4s/flexiv_rizon4s': ModelType.ARM,
+  'flexiv_grav/flexiv_grav': ModelType.END_EFFECTOR,
   'trossen_wx250s/wx250s': ModelType.ARM,
   'trs_so_arm100/so_arm100': ModelType.ARM,
   'low_cost_robot_arm/low_cost_robot_arm': ModelType.ARM,
