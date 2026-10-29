@@ -1,0 +1,144 @@
+<mujoco model="fanuc_crx5ia">
+  <compiler angle="radian" meshdir="assets" autolimits="true"/>
+
+  <option integrator="implicitfast"/>
+
+  <default>
+    <default class="crx5ia">
+      <material specular="0.5" shininess="0.25"/>
+      <joint axis="0 0 1" armature="0.1" damping="2.0" frictionloss="0.1"/>
+      <position inheritrange="1" kp="400" kv="40" forcerange="-160 160"/>
+      <default class="wrist">
+        <joint armature="0.02" damping="2.0" frictionloss="0.02"/>
+        <position kp="200" kv="8" forcerange="-40 40"/>
+      </default>
+      <default class="visual">
+        <geom type="mesh" contype="0" conaffinity="0" group="2"/>
+      </default>
+      <default class="collision">
+        <geom type="mesh" group="3"/>
+        <mesh scale="0.001 0.001 0.001"/>
+      </default>
+      <site size="0.001" rgba="0.5 0.5 0.5 0.3" group="4"/>
+    </default>
+  </default>
+
+  <asset>
+    <material class="crx5ia" name="white" rgba="1 1 1 1"/>
+    <material class="crx5ia" name="green" rgba="0.122 0.749 0.122 1"/>
+    <material class="crx5ia" name="light_gray" rgba="0.8 0.8 0.8 1"/>
+    <material class="crx5ia" name="gray" rgba="0.698 0.698 0.698 1"/>
+    <material class="crx5ia" name="dark_gray" rgba="0.502 0.502 0.502 1"/>
+    <material class="crx5ia" name="charcoal" rgba="0.278 0.278 0.278 1"/>
+    <material class="crx5ia" name="black" rgba="0.102 0.102 0.102 1"/>
+    <material class="crx5ia" name="red" rgba="1 0 0 1"/>
+
+    <mesh file="base_0.obj"/>
+    <mesh file="base_1.obj"/>
+    <mesh file="base_2.obj"/>
+    <mesh file="base_3.obj"/>
+    <mesh file="base_4.obj"/>
+    <mesh file="j1_0.obj"/>
+    <mesh file="j1_1.obj"/>
+    <mesh file="j2.obj"/>
+    <mesh file="j3_0.obj"/>
+    <mesh file="j3_1.obj"/>
+    <mesh file="j4_0.obj"/>
+    <mesh file="j4_1.obj"/>
+    <mesh file="j4_2.obj"/>
+    <mesh file="j5_0.obj"/>
+    <mesh file="j5_1.obj"/>
+    <mesh file="j6_0.obj"/>
+    <mesh file="j6_1.obj"/>
+
+    <mesh class="collision" file="base_collision.stl"/>
+    <mesh class="collision" file="j1_collision.stl"/>
+    <mesh class="collision" file="j2_collision.stl"/>
+    <mesh class="collision" file="j3_collision.stl"/>
+    <mesh class="collision" file="j4_collision.stl"/>
+    <mesh class="collision" file="j5_collision.stl"/>
+    <mesh class="collision" file="j6_collision.stl"/>
+  </asset>
+
+  <worldbody>
+    <light name="top" pos="0 0 2" mode="trackcom"/>
+    <body name="base_link" childclass="crx5ia">
+      <inertial pos="-0.02329 -0.00113 0.04668" quat="0.0449243 0.766245 0.0103763 0.640893" mass="2.695"
+        diaginertia="0.0100092 0.00872988 0.00387875"/>
+      <geom class="visual" mesh="base_0" material="gray"/>
+      <geom class="visual" mesh="base_1" material="charcoal"/>
+      <geom class="visual" mesh="base_2" material="black"/>
+      <geom class="visual" mesh="base_3" material="dark_gray"/>
+      <geom class="visual" mesh="base_4" material="light_gray"/>
+      <geom class="collision" mesh="base_collision"/>
+      <body name="J1_link" pos="0 0 0.185" gravcomp="1">
+        <inertial pos="-0.00223 -0.04084 -0.03" quat="0.457393 0.889238 -0.00217275 -0.00652995" mass="5.173"
+          diaginertia="0.027101 0.0236098 0.0117026"/>
+        <joint name="J1" range="-3.4906585 3.4906585"/>
+        <geom class="visual" pos="0 0 -0.185" mesh="j1_0" material="white"/>
+        <geom class="visual" pos="0 0 -0.185" mesh="j1_1" material="green"/>
+        <geom class="collision" pos="0 0 -0.185" quat="0.70710678 0 0 -0.70710678" mesh="j1_collision"/>
+        <body name="J2_link" gravcomp="1">
+          <inertial pos="0.00013 -0.14378 0.18566" quat="0.999163 0.0407935 -0.000442901 -0.00311892" mass="5.014"
+            diaginertia="0.183168 0.179784 0.0122821"/>
+          <joint name="J2" axis="0 1 0" range="-3.1398473 3.1398473"/>
+          <geom class="visual" pos="0 0 -0.185" mesh="j2" material="white"/>
+          <geom class="collision" pos="0 0 -0.185" quat="0.70710678 0 0 -0.70710678" mesh="j2_collision"/>
+          <body name="J3_link" pos="0 0 0.41" gravcomp="1">
+            <inertial pos="0.0303 -0.01286 -0.0002" quat="0.540227 0.625239 0.332213 0.454824" mass="3.133"
+              diaginertia="0.00911124 0.00908195 0.00522878"/>
+            <joint name="J3" axis="0 -1 0" range="-1.1868239 4.3284165"/>
+            <geom class="visual" pos="0 0 -0.595" mesh="j3_0" material="white"/>
+            <geom class="visual" pos="0 0 -0.595" mesh="j3_1" material="green"/>
+            <geom class="collision" pos="0 0 -0.595" quat="0.70710678 0 0 -0.70710678" mesh="j3_collision"/>
+            <body name="J4_link" gravcomp="1">
+              <inertial pos="0.28287 0.00109 0.00019" quat="-0.122803 0.6999 -0.100028 0.696459" mass="3.508"
+                diaginertia="0.0537928 0.0537804 0.00322269"/>
+              <joint name="J4" class="wrist" axis="-1 0 0" range="-3.3161256 3.3161256"/>
+              <geom class="visual" pos="0 0 -0.595" mesh="j4_0" material="white"/>
+              <geom class="visual" pos="0 0 -0.595" mesh="j4_1" material="black"/>
+              <geom class="visual" pos="0 0 -0.595" mesh="j4_2" material="red"/>
+              <geom class="collision" pos="0 0 -0.595" quat="0.70710678 0 0 -0.70710678" mesh="j4_collision"/>
+              <body name="J5_link" pos="0.43 0 0" gravcomp="1">
+                <inertial pos="0.01442 -0.09491 0.00164" quat="0.602561 0.44724 -0.578307 0.32009" mass="2.434"
+                  diaginertia="0.00732803 0.00673403 0.00332064"/>
+                <joint name="J5" class="wrist" axis="0 -1 0" range="-3.1398473 3.1398473"/>
+                <geom class="visual" pos="-0.43 0 -0.595" mesh="j5_0" material="white"/>
+                <geom class="visual" pos="-0.43 0 -0.595" mesh="j5_1" material="green"/>
+                <geom class="collision" pos="-0.43 0 -0.595" quat="0.70710678 0 0 -0.70710678" mesh="j5_collision"/>
+                <body name="J6_link" pos="0 -0.13 0" gravcomp="1">
+                  <inertial pos="0.10028 0.00052 2e-05" quat="0.703951 0.707615 0.04425 0.0421385" mass="1.272"
+                    diaginertia="0.0014412 0.00139978 0.00135335"/>
+                  <joint name="J6" class="wrist" axis="-1 0 0" range="-3.9269908 3.9269908"/>
+                  <geom class="visual" pos="-0.43 0.13 -0.595" mesh="j6_0" material="gray"/>
+                  <geom class="visual" pos="-0.43 0.13 -0.595" mesh="j6_1" material="black"/>
+                  <geom class="collision" mesh="j6_collision"/>
+                  <site name="attachment_site" pos="0.145 0 0" quat="0.70710678 0 0.70710678 0"/>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+
+  <contact>
+    <exclude body1="base_link" body2="J1_link"/>
+    <exclude body1="base_link" body2="J2_link"/>
+    <exclude body1="J2_link" body2="J4_link"/>
+  </contact>
+
+  <actuator>
+    <position class="crx5ia" name="J1" joint="J1"/>
+    <position class="crx5ia" name="J2" joint="J2"/>
+    <position class="crx5ia" name="J3" joint="J3"/>
+    <position class="wrist" name="J4" joint="J4"/>
+    <position class="wrist" name="J5" joint="J5"/>
+    <position class="wrist" name="J6" joint="J6"/>
+  </actuator>
+
+  <keyframe>
+    <key name="home" qpos="0 0 0 0 0 0" ctrl="0 0 0 0 0 0"/>
+  </keyframe>
+</mujoco>
