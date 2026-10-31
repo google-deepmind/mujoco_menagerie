@@ -6,6 +6,7 @@ Built by the Google DeepMind team with contributions from the open-source commun
 
 - [Alessio Quaglino](https://github.com/quagla) — Google DeepMind
 - [Baruch Tabanpour](https://github.com/btaba) — Google DeepMind
+- [Cem Gokmen](https://github.com/cgokmen) — Google DeepMind 
 - [Kevin Zakka](https://github.com/kevinzakka) — Maintainer, Google DeepMind
 - [Nimrod Gileadi](https://github.com/nimrod-gileadi) — Google DeepMind
 - [Saran Tunyasuvunakool](https://github.com/saran-t) — Google DeepMind
