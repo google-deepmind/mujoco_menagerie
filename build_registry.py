@@ -202,7 +202,9 @@ def main() -> None:
     sys.exit(
       f'uncommitted changes in model dirs; commit them or pass --allow-dirty:\n{dirty}'
     )
-  published = json.loads(a.published.read_text()) if a.published else {}
+  published = (
+    json.loads(a.published.read_text(encoding='utf-8')) if a.published else {}
+  )
   archives = None if a.no_archives else a.archives
   if archives:
     archives.mkdir(parents=True, exist_ok=True)
@@ -229,7 +231,9 @@ def main() -> None:
     'menagerie_commit': commit,
     'robots': dict(sorted(robots.items())),
   }
-  a.output.write_text(json.dumps(registry, indent=1, sort_keys=True) + '\n')
+  a.output.write_text(
+    json.dumps(registry, indent=1, sort_keys=True) + '\n', encoding='utf-8'
+  )
   print(
     f'wrote {a.output}: {len(robots)} robots at {commit[:12]}{" (dirty)" if dirty else ""}'
   )
