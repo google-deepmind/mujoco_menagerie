@@ -28,6 +28,7 @@ Notes:
 - All robot files use a free base joint: `joint name="world_j" type="free"`.
 - Gripper variants include finger coupling in `<equality>` for mirrored finger motion.
 - `no_gripper` variants remove gripper joints/actuators and do not include gripper equality constraints.
+- Each robot file defines the default classes used by its geoms (`visual`, `collision`, `in-model-collision`).
 
 ### Scene files (`scene_*.xml`)
 
@@ -43,11 +44,10 @@ Each scene file provides:
 - simulation options (`timestep=0.002`, Newton solver, `implicitfast`)
 - skybox and ground plane
 - light source
-- default classes used by robot geoms (`visual`, `collision`, `in-model-collision`)
 
 ## Recommended usage
 
-Open one of the `scene_*.xml` files in MuJoCo (instead of opening `rby1*.xml` directly), because class defaults and environment setup are defined in the scene file.
+Open one of the `scene_*.xml` files in MuJoCo (instead of opening `rby1*.xml` directly), because the simulation options and environment setup are defined in the scene file.
 
 ## MJCF derivation summary
 
@@ -63,7 +63,7 @@ Actuator values in this package are simulation-oriented and may differ from real
 
 ## License
 
-This model is released under an [Apache License 2.0](LICENSE.txt).
+This model is released under an [Apache License 2.0](LICENSE).
 
 ## Publications
 
