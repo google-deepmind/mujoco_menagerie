@@ -83,3 +83,14 @@ def clear(cache: Cache | None = None) -> None:
 def prune(cache: Cache | None = None) -> list[pathlib.Path]:
   """Deletes cached models this version no longer references."""
   return (cache or Cache()).prune(robots())
+
+
+def verify(
+  names_: Iterable[str] | None = None,
+  cache: Cache | None = None,
+) -> dict[str, list[str]]:
+  """Files missing or changed since cached models were published."""
+  c = cache or Cache()
+  return {
+    r.name: c.verify(r) for r in map(get, names_ or names()) if c.is_cached(r)
+  }

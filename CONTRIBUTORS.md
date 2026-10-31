@@ -28,6 +28,7 @@ Built by the Google DeepMind team with contributions from the open-source commun
 - [eclare](https://github.com/eclare)
 - [Eugene Frizza](https://github.com/eufrizz)
 - [Haochen Shi](https://github.com/hshi74)
+- [Hardik Kaurani](https://github.com/hardikkaurani)
 - [Ian Noh](https://github.com/dongridong)
 - [Jason Chen](https://github.com/chenxin199305)
 - [Johnny Nunez](https://github.com/johnnynunez)
