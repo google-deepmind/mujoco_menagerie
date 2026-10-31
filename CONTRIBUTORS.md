@@ -25,6 +25,7 @@ Built by the Google DeepMind team with contributions from the open-source commun
 - [Chintan Desai](https://github.com/hello-chintan)
 - [Christian Rauch](https://github.com/christianrauch)
 - [Dada Tian](https://github.com/lonelyfluency)
+- [eclare](https://github.com/eclare)
 - [Eugene Frizza](https://github.com/eufrizz)
 - [Haochen Shi](https://github.com/hshi74)
 - [Ian Noh](https://github.com/dongridong)
