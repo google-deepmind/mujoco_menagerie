@@ -2,6 +2,10 @@
 
 All notable changes to this model will be documented in this file.
 
+## [2026-10-30]
+
+- Removed spotlight from robot spec.
+
 ## [2026-10-02]
 
 - Added [`yam_linear_4310.xml`](yam_linear_4310.xml) and

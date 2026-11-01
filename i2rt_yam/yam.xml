@@ -55,7 +55,6 @@
   </asset>
 
   <worldbody>
-    <light name="spotlight" mode="targetbodycom" target="link_6" pos="0 0 1"/>
     <body name="arm" childclass="yam">
       <geom class="visual" pos="0 0 -0.0006" quat="1 0 0 1" mesh="model2"/>
       <geom class="collision" size="0.033 0.01" pos="0.0 0.0 0.026" quat="1 0 0 0"/>
