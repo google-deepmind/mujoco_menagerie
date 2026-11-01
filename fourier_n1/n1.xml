@@ -76,7 +76,6 @@
   </asset>
 
   <worldbody>
-    <light mode="targetbodycom" target="base_link" pos="1.40 0 1.40"/>
     <body name="base_link" pos="0 0 0.7">
       <freejoint name="base_free_joint"/>
       <inertial pos="0.00025493 1.049e-05 -0.05502" quat="0.704566 0.709615 0.00402273 -0.00405522" mass="3.18"

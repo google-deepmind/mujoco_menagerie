@@ -49,7 +49,6 @@
   </default>
 
   <worldbody>
-    <light pos="1 0 3.5" dir="0 0 -1" directional="true"/>
     <body name="Trunk" pos="0 0 .7" childclass="t1">
       <freejoint/>
       <inertial pos="0.0551365 -1.42058e-06 0.105062" quat="0.99996 1.40561e-05 -0.00899532 -1.39249e-05" mass="11.7"

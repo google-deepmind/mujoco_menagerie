@@ -67,7 +67,6 @@
   </asset>
 
   <worldbody>
-    <light name="spotlight" mode="targetbodycom" target="trunk" pos="0 -1 2"/>
     <body name="trunk" pos="0 0 0.43" childclass="a1">
       <freejoint/>
       <inertial mass="4.713" pos="0 0.0041 -0.0005"
