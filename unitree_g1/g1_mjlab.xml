@@ -59,7 +59,6 @@
 
   <worldbody>
     <body name="pelvis" pos="0 0 0.793" childclass="g1">
-      <light pos="0 0 2" mode="trackcom" castshadow="false"/>
       <camera name="tracking" pos="1.734 -1.135 .35" xyaxes="0.552 0.834 -0.000 -0.170 0.112 0.979" mode="trackcom"/>
       <inertial pos="0 0 -0.07605" quat="1 0 -0.000399148 0" mass="3.813" diaginertia="0.010549 0.0093089 0.0079184"/>
       <freejoint name="floating_base_joint"/>

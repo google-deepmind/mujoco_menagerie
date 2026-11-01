@@ -70,7 +70,6 @@
   </default>
 
   <worldbody>
-    <light mode="targetbodycom" target="gripper_link" pos="1 0 1"/>
     <body name="base_link" childclass="vx300s">
       <inertial pos="-0.0534774 -0.000562575 0.0205961" quat="-0.00292324 0.712517 0.00480387 0.701633" mass="0.969034"
         diaginertia="0.0071633 0.00602451 0.00169819"/>

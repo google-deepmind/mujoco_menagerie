@@ -37,7 +37,6 @@
   </default>
 
   <worldbody>
-    <light mode="targetbodycom" target="wx250s/gripper_link" pos="1 0 1"/>
     <body name="wx250s/base_link" childclass="wx250s">
       <inertial pos="-0.0380446 0.000613892 0.0193354" quat="0.509292 0.490887 -0.496359 0.503269" mass="0.538736"
         diaginertia="0.00252518 0.00211519 0.000690737"/>

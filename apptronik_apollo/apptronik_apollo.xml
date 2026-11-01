@@ -7,7 +7,6 @@
     <geom contype="0" conaffinity="0" condim="1" margin="0.000500" solref="0.005 1" group="1"/>
     <equality solref="0.005 1" solimp="0.99 0.999 0.00001"/>
     <joint limited="true"/>
-    <light castshadow="true" diffuse="0.8 0.8 0.8"/>
     <default class="active_adhesion">
       <geom rgba=".8 .5 .5 1" margin="0.010000" gap="0.010000"/>
     </default>
@@ -432,7 +431,6 @@
       </body>
     </body>
     <body name="world_link" pos="0 0 0"/>
-    <light directional="false" diffuse="0.2 0.2 0.2" pos="0 0 3" dir="0 0 -1" mode="trackcom"/>
   </worldbody>
 
   <sensor>

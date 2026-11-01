@@ -60,7 +60,6 @@
   </asset>
 
   <worldbody>
-    <light name="spotlight" mode="targetbodycom" target="torso" pos="0 -1 2"/>
     <body name="torso" childclass="berkeley_humanoid" pos="0 0 0.6">
       <freejoint/>
       <site name="imu"/>

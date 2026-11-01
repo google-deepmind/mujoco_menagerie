@@ -53,7 +53,6 @@
   </asset>
 
   <worldbody>
-    <light name="spotlight" mode="targetbodycom" target="cassie-pelvis" pos="0 -1 2"/>
     <body name="cassie-pelvis" pos="0 0 1.1" childclass="cassie">
       <camera name="track" pos="0 -3 1" zaxis="0 -1 0.5" mode="track"/>
       <inertial pos="0.05066 0.000346 0.02841" mass="10.33"

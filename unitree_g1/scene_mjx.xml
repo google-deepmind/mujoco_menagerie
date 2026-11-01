@@ -20,6 +20,7 @@
   </asset>
 
   <worldbody>
+    <light pos="0 -2 4" dir="0 0.5 -0.9"/>
     <geom name="floor" size="0 0 0.01" type="plane" material="groundplane"/>
   </worldbody>
 

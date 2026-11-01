@@ -61,7 +61,6 @@
   </asset>
 
   <worldbody>
-    <light name="top" pos="0 0 2" mode="trackcom"/>
     <body name="base_link" childclass="crx5ia">
       <inertial pos="-0.02329 -0.00113 0.04668" quat="0.0449243 0.766245 0.0103763 0.640893" mass="2.695"
         diaginertia="0.0100092 0.00872988 0.00387875"/>
