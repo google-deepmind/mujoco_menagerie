@@ -144,6 +144,21 @@ MODEL_MAP = {
   'tetheria_aero_hand_open/right_hand': ModelType.END_EFFECTOR,
   'trossen_wxai/wxai_follower': ModelType.ARM,
   'fanuc_crx5ia/crx5ia': ModelType.ARM,
+  'universal_robots_ur3/ur3': ModelType.ARM,
+  'universal_robots_ur3e/ur3e': ModelType.ARM,
+  'universal_robots_ur5/ur5': ModelType.ARM,
+  'universal_robots_ur7e/ur7e': ModelType.ARM,
+  'universal_robots_ur8long/ur8long': ModelType.ARM,
+  'universal_robots_ur10/ur10': ModelType.ARM,
+  'universal_robots_ur10g_1750/ur10g_1750': ModelType.ARM,
+  'universal_robots_ur12e/ur12e': ModelType.ARM,
+  'universal_robots_ur15/ur15': ModelType.ARM,
+  'universal_robots_ur16e/ur16e': ModelType.ARM,
+  'universal_robots_ur17g_1300/ur17g_1300': ModelType.ARM,
+  'universal_robots_ur18/ur18': ModelType.ARM,
+  'universal_robots_ur18g_950/ur18g_950': ModelType.ARM,
+  'universal_robots_ur20/ur20': ModelType.ARM,
+  'universal_robots_ur30/ur30': ModelType.ARM,
 }
 
 

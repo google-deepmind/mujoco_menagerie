@@ -7618,6 +7618,37 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
 ================================================================================
+License for contents in the directory 'universal_robots_ur10/'
+================================================================================
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+
+   * Redistributions of source code must retain the above copyright
+     notice, this list of conditions and the following disclaimer.
+
+   * Redistributions in binary form must reproduce the above copyright
+     notice, this list of conditions and the following disclaimer in the
+     documentation and/or other materials provided with the distribution.
+
+   * Neither the name of the copyright holder nor the names of its
+     contributors may be used to endorse or promote products derived from
+     this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE
+LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+POSSIBILITY OF SUCH DAMAGE.
+
+
+================================================================================
 License for contents in the directory 'universal_robots_ur10e/'
 ================================================================================
 
@@ -7650,6 +7681,1015 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
 ================================================================================
+License for contents in the directory 'universal_robots_ur10g_1750/'
+================================================================================
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+
+   * Redistributions of source code must retain the above copyright
+     notice, this list of conditions and the following disclaimer.
+
+   * Redistributions in binary form must reproduce the above copyright
+     notice, this list of conditions and the following disclaimer in the
+     documentation and/or other materials provided with the distribution.
+
+   * Neither the name of the copyright holder nor the names of its
+     contributors may be used to endorse or promote products derived from
+     this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE
+LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+POSSIBILITY OF SUCH DAMAGE.
+
+--------------------------------------------------------------------------------
+
+The mesh and texture files in the assets/ directory are Graphical Documentation
+of Universal Robots A/S. They are not covered by the license above and are
+subject to the following terms:
+
+TERMS AND CONDITIONS FOR USE OF GRAPHICAL DOCUMENTATION
+
+Version: 1.01 / release date: 2023-09-12
+
+These Terms and Conditions for Use of Graphical Documentation (the “T&Cs”) govern your use of graphical files and documents*, including the contents hereof, (the “Graphical Documentation”) provided or made available to you by Universal Robots A/S (“Universal Robots”) for the purposes of creating simulations, visualizations, digital representations, path planning, collision avoidance and algorithms of or for Universal Robots’ products. The T&Cs constitute a binding agreement between you and Universal Robots. By accessing, storing, copying, sharing, opening, or otherwise using or disposing of the Graphical Documentation, you acknowledge that you are bound by the T&Cs.
+
+1. PERMITTED USE OF THE GRAPHICAL DOCUMENTATION
+
+1.1. You may use the Graphical Documentation for the purposes of creating simulations, visualizations, digital representations, path planning, collision avoidance and algorithms of or for Universal Robots’ products, provided that your use does not constitute comparative advertising and is not otherwise unfair, disloyal, or disparaging to Universal Robots.
+
+1.2. Hobbyists, students and/or researchers are allowed to use the Graphical Documentation to create models or similar solely for non-commercial purposes as part of their hobby, academic studies, or research. However, no one is allowed to use the Graphical Documentation to create a physical model or similar for commercial purposes, nor to create or improve a product that is capable of competing, either directly or indirectly, with any of Universal Robots’ or its affiliates’ current or future robots.
+
+1.3. You are permitted to create a product or solution that simulates, visualizes, or digitally represents a Universal Robots product, regardless of the origin of the underlying software, and regardless of whether Universal Robots or its affiliates have released a product that competes with the underlying software. However, you may not in any way use the Graphical Documentation to create a product or solution that simulates, visualizes or represents a product that is capable of competing, either directly or indirectly, with any of Universal Robots’ or its affiliates’ current or future products without Universal Robots’ prior written permission.
+
+1.4. You may share the Graphical Documentation or any whole or partial copies thereof with a third party (i) if and to the extent it is necessary for you to do so in order for you to engage in use permitted pursuant to this Section 1, and (ii) you provide the recipient with a copy of the T&Cs. However, you may only make the Graphical Documentation or any whole or partial copies thereof available to the public via download if it is part of a downloadable software package that includes a copy of the T&Cs. If you download a software package that includes the Graphical Documentation, your use of the Graphical Documentation will be subject to and governed by the latest version of the T&Cs, which can be found here: https://www.universal-robots.com/legal/terms-and-conditions/terms_and_conditions_for_use_of_graphical_documentation.txt , regardless of whether they are included in the software package or not.
+
+1.4.1. You are not allowed to alter, obscure, remove or replace any copyright or other legal notices, trademarks, business names and/or logos embedded in, superimposed on, affixed to, or otherwise included in, the Graphical Documentation without Universal Robots’ prior written permission.
+
+1.4.2. You may show the Graphical Documentation in whole or in part to a third party or the public in the course of you engaging in the use permitted pursuant to this Section 1, provided that you display any copyright notice already contained in the Graphical Documentation, cf. also Section 1.4.1.
+
+1.4.3. You may show graphical representations of Universal Robots’ products based on the Graphical Documentation to a third party or the public in the course of you engaging in the use permitted pursuant to this Section 1, if you, to the extent possible, display the following copyright notice in connection with such use: “© 2023 Universal Robots A/S. Use hereof is subject to Universal Robots A/S’ Terms and Conditions for Use of Graphical Documentation.” If the medium that you use limits or does not support the possibility of displaying the copyright notice, you may in good faith disregard this requirement.
+
+1.5. You may under no circumstances use the Graphical Documentation for planning, construction, maintenance, operation, or use, directly or indirectly, in nuclear power plants, missile technology, chemical or biological weapons applications or flight, navigation, or communication of aircraft or ground support equipment.
+
+1.6. Any use of the Graphical Documentation that is not expressly permitted pursuant to this Section 1 constitutes a material breach of the T&Cs.
+
+1.7. If your intended use of the Graphical Documentation is not permitted pursuant to the T&Cs, you may contact Universal Robots via email at legal@universal-robots.com and request a special permission to engage in your particular intended use.
+
+
+2. INTELLECTUAL PROPERTY RIGHTS
+
+2.1. You acknowledge and agree that the Graphical Documentation and all intellectual property rights contained and/or embodied therein, including, but not limited to, rights under the Danish Marketing Practices Act or under similar rules of law, patents, utility models, copyrights and related rights, software, trademarks, semiconductors, designs, know-how, rights in databases, trade secrets, and all applications or pending applications for such in all cases, whether or not registrable in any country, and all rights and forms of protection of a similar nature or having equivalent or similar effect anywhere in the world, shall be and remain the sole property of Universal Robots. Nothing in the T&Cs shall be construed as granting you any license to such rights, including, without limitation, any licenses to use Universal Robots’ trademarks, patents, or designs, except as strictly necessary in order for you to engage in the use permitted pursuant to Section 1.
+
+2.2. If you create any derivative works based on the Graphical Documentation, Universal Robots shall own the intellectual property rights in and to such derivative works. The foregoing notwithstanding, you may use such derivative works in connection with your use of the Graphical Documentation in accordance with Section 1.
+
+
+3. NO WARRANTIES, LIMITATIONS OF LIABILITY
+
+3.1. THE GRAPHICAL DOCUMENTATION IS PROVIDED ON AN “AS IS” BASIS AND UNIVERSAL ROBOTS MAKES NO WARRANTY OF ANY KIND WITH RESPECT TO THE GRAPHICAL DOCUMENTATION AND WE HEREBY EXPRESSLY EXCLUDE ANY WARRANTIES WITH RESPECT THERETO, WHETHER EXPRESS, IMPLIED, STATUTORY OR OTHERWISE, INCLUDING BUT NOT LIMITED TO ANY IMPLIED WARRANTIES OF MERCHANTABILITY, SATISFACTORY QUALITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, NONINFRINGEMENT, ACCURACY OR ANY OTHER WARRANTIES OR GUARANTEES THAT MAY ARISE FROM COURSE OF DEALING, USAGE, OR TRADE PRACTICE. NEITHER UNIVERSAL ROBOTS NOR ITS SUPPLIERS, INCLUDING – WITHOUT LIMITATION – ITS LICENSORS, MAKE ANY REPRESENTATION, WARRANTY, OR OTHER COMMITMENT REGARDING (1) THE USE OR INABILITY TO USE THE GRAPHICAL DOCUMENTATION; OR (2) ANY RESULTS OF SUCH USE IN TERMS OF CORRECTNESS, ACCURACY, OR RELIABILITY. YOU UNDERSTAND AND AGREE THAT YOU ASSUME THE ENTIRE RISK AS TO YOUR USE OF THE GRAPHICAL DOCUMENTATION.
+
+3.2. TO THE EXTENT PERMITTED BY LAW, IN NO EVENT WILL UNIVERSAL ROBOTS BE LIABLE FOR ANY LOSSES OR DAMAGES INCURRED BY YOU, WHETHER DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY OR CONSEQUENTIAL, INCLUDING LOST OR ANTICIPATED PROFITS, SAVINGS, INTERRUPTION TO BUSINESS, LOSS OF BUSINESS OPPORTUNITIES, LOSS OF BUSINESS INFORMATION OR OTHER DATA, THE COST OF RECOVERING SUCH LOST INFORMATION OR DATA, THE COST OF SUBSTITUTE INTELLECTUAL PROPERTY OR ANY OTHER PECUNIARY LOSS ARISING FROM THE USE OF, OR THE INABILITY TO USE, THE GRAPHICAL DOCUMENTATION REGARDLESS OF WHETHER UNIVERSAL ROBOTS HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. THE FOREGOING LIMITATIONS APPLY REGARDLESS OF THE CAUSE OR CIRCUMSTANCES GIVING RISE TO SUCH LOSS, DAMAGE OR LIABILITY, EVEN IF SUCH LOSS, DAMAGE OR LIABILITY IS BASED ON NEGLIGENCE OR OTHER TORTS OR BREACH OF CONTRACT.
+
+
+4. INDEMNIFICATION
+
+4.1. You shall defend, indemnify, and hold Universal Robots and its affiliates, employees, and agents harmless, from and against all sums, claims, costs, duties, liabilities, losses, obligations, suits, actions, damages, penalties, awards, fines, interest, and other expenses (including investigation expenses and attorneys’ fees) that Universal Robots may incur or be obligated to pay as a result of your unauthorized use, modification, resale, transfer, shipment, or export of the Graphical Documentation.
+
+
+5. MISCELLANEOUS
+
+5.1. Entire Agreement. Except as otherwise explicitly provided for herein, the T&Cs constitute the entire agreement and supersedes all prior negotiations, promises, understandings, and agreements between the parties with respect to the subject matter hereof.
+
+5.2. Changes to the T&Cs. Universal Robots reserves the right, in its sole and absolute discretion, to change the terms of the T&Cs by providing you with ninety (90) days’ notice.
+
+5.3. Obligations on Legal Successors. The parties undertake to impose the obligations under the T&Cs on their statutory or contractual legal successors, if any.
+
+5.4. Export Laws. You agree to comply with all applicable laws and regulations, including export laws of the United States and any other applicable country or jurisdiction. You agree that the Graphical Documentation will not be shipped, transferred, or exported into any country or used in any manner prohibited by the United States Export Administration Act or any other country’s export laws, restrictions, or regulations (collectively the “Export Laws”). In addition, if the Graphical Documentation are identified as export controlled items under the Export Laws, you represent and warrant that you are not a citizen, or otherwise located within, an embargoed nation and that you are not otherwise prohibited under the Export Laws from receiving the Graphical Documentation.
+
+5.5. No Agency. The parties are independent contractors and nothing in the T&Cs shall be construed as to create an agency, joint venture, partnership, or other form of business association between the parties.
+
+5.6. Survival. If the contents of individual provisions of the T&Cs are intended to survive the termination or expiration of the T&Cs, such provisions, including but not limited to provisions governing warranties and representations and the transfer of rights, title and interest to Universal Robots, shall to this extent remain in effect and be fully enforceable also after the termination or expiration of the T&Cs for whatever reason.
+
+
+6. TERM AND TERMINATION
+
+6.1. The T&Cs shall enter into force upon your receipt of, or you accessing, the Graphical Documentation and continue to be in force until terminated in accordance with this Section 6. The T&Cs shall automatically expire at such time as you are no longer permitted to use the Graphical Documentation in accordance with Section 1.
+
+6.2. You may terminate the T&Cs for convenience at any time by deleting all copies of the Graphical Documentation in your possession. Universal Robots may terminate the T&Cs for convenience by providing you with ninety (90) days’ notice.
+
+6.3. Universal Robots may terminate the T&Cs for cause with immediate effect in case of your material breach of the T&Cs.
+
+
+7. EFFECTS OF TERMINATION
+
+7.1. Upon expiration or termination of the T&Cs, for whatever reason, you must immediately cease use of the Graphical Documentation and delete all copies of the Graphical Documentation in your possession.
+
+8. GOVERNING LAW AND VENUE
+
+8.1. The T&Cs shall be governed by and construed in accordance with the laws of Denmark, without giving effect to conflict of law provisions thereof. The parties expressly disclaim the applicability of the United Nations Convention on Contracts for the International Sale of Goods.
+
+8.2. Any and all disputes arising out of or in connection with the T&Cs shall be submitted to the International Chamber of Commerce and shall be settled under the Rules of Arbitration of the International Chamber of Commerce by one (1) arbitrator appointed in accordance with said Rules. The place of arbitration shall be Copenhagen, Denmark. The arbitration shall be conducted in the English language. The foregoing notwithstanding, Universal Robots may seek preliminary, temporary, or permanent injunctive relief and other equitable remedies in any court of competent jurisdiction prior to or during arbitration and may enforce the award of the arbitrator in any court of competent jurisdiction.
+
+
+* E.g., STEP-Files (ISO 10303-21), Collada (.dae), STL files (.stl), GLB files (.glb), GLFT files (.glft) , Jupiter Tessellation files (.jt), E-plan files (.emp), electrical schematics, CAD files, and drawings including the contents of these technical files. “Software”, as defined in Universal Robots End User Software License Agreement, does not constitute “Technical Documentation” and your use thereof is, unless otherwise agreed with Universal Robots in writing, governed by Universal Robots’ End User Software License Agreement.
+
+
+================================================================================
+License for contents in the directory 'universal_robots_ur12e/'
+================================================================================
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+
+   * Redistributions of source code must retain the above copyright
+     notice, this list of conditions and the following disclaimer.
+
+   * Redistributions in binary form must reproduce the above copyright
+     notice, this list of conditions and the following disclaimer in the
+     documentation and/or other materials provided with the distribution.
+
+   * Neither the name of the copyright holder nor the names of its
+     contributors may be used to endorse or promote products derived from
+     this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE
+LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+POSSIBILITY OF SUCH DAMAGE.
+
+
+================================================================================
+License for contents in the directory 'universal_robots_ur15/'
+================================================================================
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+
+   * Redistributions of source code must retain the above copyright
+     notice, this list of conditions and the following disclaimer.
+
+   * Redistributions in binary form must reproduce the above copyright
+     notice, this list of conditions and the following disclaimer in the
+     documentation and/or other materials provided with the distribution.
+
+   * Neither the name of the copyright holder nor the names of its
+     contributors may be used to endorse or promote products derived from
+     this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE
+LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+POSSIBILITY OF SUCH DAMAGE.
+
+--------------------------------------------------------------------------------
+
+The mesh and texture files in the assets/ directory are Graphical Documentation
+of Universal Robots A/S. They are not covered by the license above and are
+subject to the following terms:
+
+TERMS AND CONDITIONS FOR USE OF GRAPHICAL DOCUMENTATION
+
+Version: 1.01 / release date: 2023-09-12
+
+These Terms and Conditions for Use of Graphical Documentation (the “T&Cs”) govern your use of graphical files and documents*, including the contents hereof, (the “Graphical Documentation”) provided or made available to you by Universal Robots A/S (“Universal Robots”) for the purposes of creating simulations, visualizations, digital representations, path planning, collision avoidance and algorithms of or for Universal Robots’ products. The T&Cs constitute a binding agreement between you and Universal Robots. By accessing, storing, copying, sharing, opening, or otherwise using or disposing of the Graphical Documentation, you acknowledge that you are bound by the T&Cs.
+
+1. PERMITTED USE OF THE GRAPHICAL DOCUMENTATION
+
+1.1. You may use the Graphical Documentation for the purposes of creating simulations, visualizations, digital representations, path planning, collision avoidance and algorithms of or for Universal Robots’ products, provided that your use does not constitute comparative advertising and is not otherwise unfair, disloyal, or disparaging to Universal Robots.
+
+1.2. Hobbyists, students and/or researchers are allowed to use the Graphical Documentation to create models or similar solely for non-commercial purposes as part of their hobby, academic studies, or research. However, no one is allowed to use the Graphical Documentation to create a physical model or similar for commercial purposes, nor to create or improve a product that is capable of competing, either directly or indirectly, with any of Universal Robots’ or its affiliates’ current or future robots.
+
+1.3. You are permitted to create a product or solution that simulates, visualizes, or digitally represents a Universal Robots product, regardless of the origin of the underlying software, and regardless of whether Universal Robots or its affiliates have released a product that competes with the underlying software. However, you may not in any way use the Graphical Documentation to create a product or solution that simulates, visualizes or represents a product that is capable of competing, either directly or indirectly, with any of Universal Robots’ or its affiliates’ current or future products without Universal Robots’ prior written permission.
+
+1.4. You may share the Graphical Documentation or any whole or partial copies thereof with a third party (i) if and to the extent it is necessary for you to do so in order for you to engage in use permitted pursuant to this Section 1, and (ii) you provide the recipient with a copy of the T&Cs. However, you may only make the Graphical Documentation or any whole or partial copies thereof available to the public via download if it is part of a downloadable software package that includes a copy of the T&Cs. If you download a software package that includes the Graphical Documentation, your use of the Graphical Documentation will be subject to and governed by the latest version of the T&Cs, which can be found here: https://www.universal-robots.com/legal/terms-and-conditions/terms_and_conditions_for_use_of_graphical_documentation.txt , regardless of whether they are included in the software package or not.
+
+1.4.1. You are not allowed to alter, obscure, remove or replace any copyright or other legal notices, trademarks, business names and/or logos embedded in, superimposed on, affixed to, or otherwise included in, the Graphical Documentation without Universal Robots’ prior written permission.
+
+1.4.2. You may show the Graphical Documentation in whole or in part to a third party or the public in the course of you engaging in the use permitted pursuant to this Section 1, provided that you display any copyright notice already contained in the Graphical Documentation, cf. also Section 1.4.1.
+
+1.4.3. You may show graphical representations of Universal Robots’ products based on the Graphical Documentation to a third party or the public in the course of you engaging in the use permitted pursuant to this Section 1, if you, to the extent possible, display the following copyright notice in connection with such use: “© 2023 Universal Robots A/S. Use hereof is subject to Universal Robots A/S’ Terms and Conditions for Use of Graphical Documentation.” If the medium that you use limits or does not support the possibility of displaying the copyright notice, you may in good faith disregard this requirement.
+
+1.5. You may under no circumstances use the Graphical Documentation for planning, construction, maintenance, operation, or use, directly or indirectly, in nuclear power plants, missile technology, chemical or biological weapons applications or flight, navigation, or communication of aircraft or ground support equipment.
+
+1.6. Any use of the Graphical Documentation that is not expressly permitted pursuant to this Section 1 constitutes a material breach of the T&Cs.
+
+1.7. If your intended use of the Graphical Documentation is not permitted pursuant to the T&Cs, you may contact Universal Robots via email at legal@universal-robots.com and request a special permission to engage in your particular intended use.
+
+
+2. INTELLECTUAL PROPERTY RIGHTS
+
+2.1. You acknowledge and agree that the Graphical Documentation and all intellectual property rights contained and/or embodied therein, including, but not limited to, rights under the Danish Marketing Practices Act or under similar rules of law, patents, utility models, copyrights and related rights, software, trademarks, semiconductors, designs, know-how, rights in databases, trade secrets, and all applications or pending applications for such in all cases, whether or not registrable in any country, and all rights and forms of protection of a similar nature or having equivalent or similar effect anywhere in the world, shall be and remain the sole property of Universal Robots. Nothing in the T&Cs shall be construed as granting you any license to such rights, including, without limitation, any licenses to use Universal Robots’ trademarks, patents, or designs, except as strictly necessary in order for you to engage in the use permitted pursuant to Section 1.
+
+2.2. If you create any derivative works based on the Graphical Documentation, Universal Robots shall own the intellectual property rights in and to such derivative works. The foregoing notwithstanding, you may use such derivative works in connection with your use of the Graphical Documentation in accordance with Section 1.
+
+
+3. NO WARRANTIES, LIMITATIONS OF LIABILITY
+
+3.1. THE GRAPHICAL DOCUMENTATION IS PROVIDED ON AN “AS IS” BASIS AND UNIVERSAL ROBOTS MAKES NO WARRANTY OF ANY KIND WITH RESPECT TO THE GRAPHICAL DOCUMENTATION AND WE HEREBY EXPRESSLY EXCLUDE ANY WARRANTIES WITH RESPECT THERETO, WHETHER EXPRESS, IMPLIED, STATUTORY OR OTHERWISE, INCLUDING BUT NOT LIMITED TO ANY IMPLIED WARRANTIES OF MERCHANTABILITY, SATISFACTORY QUALITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, NONINFRINGEMENT, ACCURACY OR ANY OTHER WARRANTIES OR GUARANTEES THAT MAY ARISE FROM COURSE OF DEALING, USAGE, OR TRADE PRACTICE. NEITHER UNIVERSAL ROBOTS NOR ITS SUPPLIERS, INCLUDING – WITHOUT LIMITATION – ITS LICENSORS, MAKE ANY REPRESENTATION, WARRANTY, OR OTHER COMMITMENT REGARDING (1) THE USE OR INABILITY TO USE THE GRAPHICAL DOCUMENTATION; OR (2) ANY RESULTS OF SUCH USE IN TERMS OF CORRECTNESS, ACCURACY, OR RELIABILITY. YOU UNDERSTAND AND AGREE THAT YOU ASSUME THE ENTIRE RISK AS TO YOUR USE OF THE GRAPHICAL DOCUMENTATION.
+
+3.2. TO THE EXTENT PERMITTED BY LAW, IN NO EVENT WILL UNIVERSAL ROBOTS BE LIABLE FOR ANY LOSSES OR DAMAGES INCURRED BY YOU, WHETHER DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY OR CONSEQUENTIAL, INCLUDING LOST OR ANTICIPATED PROFITS, SAVINGS, INTERRUPTION TO BUSINESS, LOSS OF BUSINESS OPPORTUNITIES, LOSS OF BUSINESS INFORMATION OR OTHER DATA, THE COST OF RECOVERING SUCH LOST INFORMATION OR DATA, THE COST OF SUBSTITUTE INTELLECTUAL PROPERTY OR ANY OTHER PECUNIARY LOSS ARISING FROM THE USE OF, OR THE INABILITY TO USE, THE GRAPHICAL DOCUMENTATION REGARDLESS OF WHETHER UNIVERSAL ROBOTS HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. THE FOREGOING LIMITATIONS APPLY REGARDLESS OF THE CAUSE OR CIRCUMSTANCES GIVING RISE TO SUCH LOSS, DAMAGE OR LIABILITY, EVEN IF SUCH LOSS, DAMAGE OR LIABILITY IS BASED ON NEGLIGENCE OR OTHER TORTS OR BREACH OF CONTRACT.
+
+
+4. INDEMNIFICATION
+
+4.1. You shall defend, indemnify, and hold Universal Robots and its affiliates, employees, and agents harmless, from and against all sums, claims, costs, duties, liabilities, losses, obligations, suits, actions, damages, penalties, awards, fines, interest, and other expenses (including investigation expenses and attorneys’ fees) that Universal Robots may incur or be obligated to pay as a result of your unauthorized use, modification, resale, transfer, shipment, or export of the Graphical Documentation.
+
+
+5. MISCELLANEOUS
+
+5.1. Entire Agreement. Except as otherwise explicitly provided for herein, the T&Cs constitute the entire agreement and supersedes all prior negotiations, promises, understandings, and agreements between the parties with respect to the subject matter hereof.
+
+5.2. Changes to the T&Cs. Universal Robots reserves the right, in its sole and absolute discretion, to change the terms of the T&Cs by providing you with ninety (90) days’ notice.
+
+5.3. Obligations on Legal Successors. The parties undertake to impose the obligations under the T&Cs on their statutory or contractual legal successors, if any.
+
+5.4. Export Laws. You agree to comply with all applicable laws and regulations, including export laws of the United States and any other applicable country or jurisdiction. You agree that the Graphical Documentation will not be shipped, transferred, or exported into any country or used in any manner prohibited by the United States Export Administration Act or any other country’s export laws, restrictions, or regulations (collectively the “Export Laws”). In addition, if the Graphical Documentation are identified as export controlled items under the Export Laws, you represent and warrant that you are not a citizen, or otherwise located within, an embargoed nation and that you are not otherwise prohibited under the Export Laws from receiving the Graphical Documentation.
+
+5.5. No Agency. The parties are independent contractors and nothing in the T&Cs shall be construed as to create an agency, joint venture, partnership, or other form of business association between the parties.
+
+5.6. Survival. If the contents of individual provisions of the T&Cs are intended to survive the termination or expiration of the T&Cs, such provisions, including but not limited to provisions governing warranties and representations and the transfer of rights, title and interest to Universal Robots, shall to this extent remain in effect and be fully enforceable also after the termination or expiration of the T&Cs for whatever reason.
+
+
+6. TERM AND TERMINATION
+
+6.1. The T&Cs shall enter into force upon your receipt of, or you accessing, the Graphical Documentation and continue to be in force until terminated in accordance with this Section 6. The T&Cs shall automatically expire at such time as you are no longer permitted to use the Graphical Documentation in accordance with Section 1.
+
+6.2. You may terminate the T&Cs for convenience at any time by deleting all copies of the Graphical Documentation in your possession. Universal Robots may terminate the T&Cs for convenience by providing you with ninety (90) days’ notice.
+
+6.3. Universal Robots may terminate the T&Cs for cause with immediate effect in case of your material breach of the T&Cs.
+
+
+7. EFFECTS OF TERMINATION
+
+7.1. Upon expiration or termination of the T&Cs, for whatever reason, you must immediately cease use of the Graphical Documentation and delete all copies of the Graphical Documentation in your possession.
+
+8. GOVERNING LAW AND VENUE
+
+8.1. The T&Cs shall be governed by and construed in accordance with the laws of Denmark, without giving effect to conflict of law provisions thereof. The parties expressly disclaim the applicability of the United Nations Convention on Contracts for the International Sale of Goods.
+
+8.2. Any and all disputes arising out of or in connection with the T&Cs shall be submitted to the International Chamber of Commerce and shall be settled under the Rules of Arbitration of the International Chamber of Commerce by one (1) arbitrator appointed in accordance with said Rules. The place of arbitration shall be Copenhagen, Denmark. The arbitration shall be conducted in the English language. The foregoing notwithstanding, Universal Robots may seek preliminary, temporary, or permanent injunctive relief and other equitable remedies in any court of competent jurisdiction prior to or during arbitration and may enforce the award of the arbitrator in any court of competent jurisdiction.
+
+
+* E.g., STEP-Files (ISO 10303-21), Collada (.dae), STL files (.stl), GLB files (.glb), GLFT files (.glft) , Jupiter Tessellation files (.jt), E-plan files (.emp), electrical schematics, CAD files, and drawings including the contents of these technical files. “Software”, as defined in Universal Robots End User Software License Agreement, does not constitute “Technical Documentation” and your use thereof is, unless otherwise agreed with Universal Robots in writing, governed by Universal Robots’ End User Software License Agreement.
+
+
+================================================================================
+License for contents in the directory 'universal_robots_ur16e/'
+================================================================================
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+
+   * Redistributions of source code must retain the above copyright
+     notice, this list of conditions and the following disclaimer.
+
+   * Redistributions in binary form must reproduce the above copyright
+     notice, this list of conditions and the following disclaimer in the
+     documentation and/or other materials provided with the distribution.
+
+   * Neither the name of the copyright holder nor the names of its
+     contributors may be used to endorse or promote products derived from
+     this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE
+LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+POSSIBILITY OF SUCH DAMAGE.
+
+
+================================================================================
+License for contents in the directory 'universal_robots_ur17g_1300/'
+================================================================================
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+
+   * Redistributions of source code must retain the above copyright
+     notice, this list of conditions and the following disclaimer.
+
+   * Redistributions in binary form must reproduce the above copyright
+     notice, this list of conditions and the following disclaimer in the
+     documentation and/or other materials provided with the distribution.
+
+   * Neither the name of the copyright holder nor the names of its
+     contributors may be used to endorse or promote products derived from
+     this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE
+LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+POSSIBILITY OF SUCH DAMAGE.
+
+--------------------------------------------------------------------------------
+
+The mesh and texture files in the assets/ directory are Graphical Documentation
+of Universal Robots A/S. They are not covered by the license above and are
+subject to the following terms:
+
+TERMS AND CONDITIONS FOR USE OF GRAPHICAL DOCUMENTATION
+
+Version: 1.01 / release date: 2023-09-12
+
+These Terms and Conditions for Use of Graphical Documentation (the “T&Cs”) govern your use of graphical files and documents*, including the contents hereof, (the “Graphical Documentation”) provided or made available to you by Universal Robots A/S (“Universal Robots”) for the purposes of creating simulations, visualizations, digital representations, path planning, collision avoidance and algorithms of or for Universal Robots’ products. The T&Cs constitute a binding agreement between you and Universal Robots. By accessing, storing, copying, sharing, opening, or otherwise using or disposing of the Graphical Documentation, you acknowledge that you are bound by the T&Cs.
+
+1. PERMITTED USE OF THE GRAPHICAL DOCUMENTATION
+
+1.1. You may use the Graphical Documentation for the purposes of creating simulations, visualizations, digital representations, path planning, collision avoidance and algorithms of or for Universal Robots’ products, provided that your use does not constitute comparative advertising and is not otherwise unfair, disloyal, or disparaging to Universal Robots.
+
+1.2. Hobbyists, students and/or researchers are allowed to use the Graphical Documentation to create models or similar solely for non-commercial purposes as part of their hobby, academic studies, or research. However, no one is allowed to use the Graphical Documentation to create a physical model or similar for commercial purposes, nor to create or improve a product that is capable of competing, either directly or indirectly, with any of Universal Robots’ or its affiliates’ current or future robots.
+
+1.3. You are permitted to create a product or solution that simulates, visualizes, or digitally represents a Universal Robots product, regardless of the origin of the underlying software, and regardless of whether Universal Robots or its affiliates have released a product that competes with the underlying software. However, you may not in any way use the Graphical Documentation to create a product or solution that simulates, visualizes or represents a product that is capable of competing, either directly or indirectly, with any of Universal Robots’ or its affiliates’ current or future products without Universal Robots’ prior written permission.
+
+1.4. You may share the Graphical Documentation or any whole or partial copies thereof with a third party (i) if and to the extent it is necessary for you to do so in order for you to engage in use permitted pursuant to this Section 1, and (ii) you provide the recipient with a copy of the T&Cs. However, you may only make the Graphical Documentation or any whole or partial copies thereof available to the public via download if it is part of a downloadable software package that includes a copy of the T&Cs. If you download a software package that includes the Graphical Documentation, your use of the Graphical Documentation will be subject to and governed by the latest version of the T&Cs, which can be found here: https://www.universal-robots.com/legal/terms-and-conditions/terms_and_conditions_for_use_of_graphical_documentation.txt , regardless of whether they are included in the software package or not.
+
+1.4.1. You are not allowed to alter, obscure, remove or replace any copyright or other legal notices, trademarks, business names and/or logos embedded in, superimposed on, affixed to, or otherwise included in, the Graphical Documentation without Universal Robots’ prior written permission.
+
+1.4.2. You may show the Graphical Documentation in whole or in part to a third party or the public in the course of you engaging in the use permitted pursuant to this Section 1, provided that you display any copyright notice already contained in the Graphical Documentation, cf. also Section 1.4.1.
+
+1.4.3. You may show graphical representations of Universal Robots’ products based on the Graphical Documentation to a third party or the public in the course of you engaging in the use permitted pursuant to this Section 1, if you, to the extent possible, display the following copyright notice in connection with such use: “© 2023 Universal Robots A/S. Use hereof is subject to Universal Robots A/S’ Terms and Conditions for Use of Graphical Documentation.” If the medium that you use limits or does not support the possibility of displaying the copyright notice, you may in good faith disregard this requirement.
+
+1.5. You may under no circumstances use the Graphical Documentation for planning, construction, maintenance, operation, or use, directly or indirectly, in nuclear power plants, missile technology, chemical or biological weapons applications or flight, navigation, or communication of aircraft or ground support equipment.
+
+1.6. Any use of the Graphical Documentation that is not expressly permitted pursuant to this Section 1 constitutes a material breach of the T&Cs.
+
+1.7. If your intended use of the Graphical Documentation is not permitted pursuant to the T&Cs, you may contact Universal Robots via email at legal@universal-robots.com and request a special permission to engage in your particular intended use.
+
+
+2. INTELLECTUAL PROPERTY RIGHTS
+
+2.1. You acknowledge and agree that the Graphical Documentation and all intellectual property rights contained and/or embodied therein, including, but not limited to, rights under the Danish Marketing Practices Act or under similar rules of law, patents, utility models, copyrights and related rights, software, trademarks, semiconductors, designs, know-how, rights in databases, trade secrets, and all applications or pending applications for such in all cases, whether or not registrable in any country, and all rights and forms of protection of a similar nature or having equivalent or similar effect anywhere in the world, shall be and remain the sole property of Universal Robots. Nothing in the T&Cs shall be construed as granting you any license to such rights, including, without limitation, any licenses to use Universal Robots’ trademarks, patents, or designs, except as strictly necessary in order for you to engage in the use permitted pursuant to Section 1.
+
+2.2. If you create any derivative works based on the Graphical Documentation, Universal Robots shall own the intellectual property rights in and to such derivative works. The foregoing notwithstanding, you may use such derivative works in connection with your use of the Graphical Documentation in accordance with Section 1.
+
+
+3. NO WARRANTIES, LIMITATIONS OF LIABILITY
+
+3.1. THE GRAPHICAL DOCUMENTATION IS PROVIDED ON AN “AS IS” BASIS AND UNIVERSAL ROBOTS MAKES NO WARRANTY OF ANY KIND WITH RESPECT TO THE GRAPHICAL DOCUMENTATION AND WE HEREBY EXPRESSLY EXCLUDE ANY WARRANTIES WITH RESPECT THERETO, WHETHER EXPRESS, IMPLIED, STATUTORY OR OTHERWISE, INCLUDING BUT NOT LIMITED TO ANY IMPLIED WARRANTIES OF MERCHANTABILITY, SATISFACTORY QUALITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, NONINFRINGEMENT, ACCURACY OR ANY OTHER WARRANTIES OR GUARANTEES THAT MAY ARISE FROM COURSE OF DEALING, USAGE, OR TRADE PRACTICE. NEITHER UNIVERSAL ROBOTS NOR ITS SUPPLIERS, INCLUDING – WITHOUT LIMITATION – ITS LICENSORS, MAKE ANY REPRESENTATION, WARRANTY, OR OTHER COMMITMENT REGARDING (1) THE USE OR INABILITY TO USE THE GRAPHICAL DOCUMENTATION; OR (2) ANY RESULTS OF SUCH USE IN TERMS OF CORRECTNESS, ACCURACY, OR RELIABILITY. YOU UNDERSTAND AND AGREE THAT YOU ASSUME THE ENTIRE RISK AS TO YOUR USE OF THE GRAPHICAL DOCUMENTATION.
+
+3.2. TO THE EXTENT PERMITTED BY LAW, IN NO EVENT WILL UNIVERSAL ROBOTS BE LIABLE FOR ANY LOSSES OR DAMAGES INCURRED BY YOU, WHETHER DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY OR CONSEQUENTIAL, INCLUDING LOST OR ANTICIPATED PROFITS, SAVINGS, INTERRUPTION TO BUSINESS, LOSS OF BUSINESS OPPORTUNITIES, LOSS OF BUSINESS INFORMATION OR OTHER DATA, THE COST OF RECOVERING SUCH LOST INFORMATION OR DATA, THE COST OF SUBSTITUTE INTELLECTUAL PROPERTY OR ANY OTHER PECUNIARY LOSS ARISING FROM THE USE OF, OR THE INABILITY TO USE, THE GRAPHICAL DOCUMENTATION REGARDLESS OF WHETHER UNIVERSAL ROBOTS HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. THE FOREGOING LIMITATIONS APPLY REGARDLESS OF THE CAUSE OR CIRCUMSTANCES GIVING RISE TO SUCH LOSS, DAMAGE OR LIABILITY, EVEN IF SUCH LOSS, DAMAGE OR LIABILITY IS BASED ON NEGLIGENCE OR OTHER TORTS OR BREACH OF CONTRACT.
+
+
+4. INDEMNIFICATION
+
+4.1. You shall defend, indemnify, and hold Universal Robots and its affiliates, employees, and agents harmless, from and against all sums, claims, costs, duties, liabilities, losses, obligations, suits, actions, damages, penalties, awards, fines, interest, and other expenses (including investigation expenses and attorneys’ fees) that Universal Robots may incur or be obligated to pay as a result of your unauthorized use, modification, resale, transfer, shipment, or export of the Graphical Documentation.
+
+
+5. MISCELLANEOUS
+
+5.1. Entire Agreement. Except as otherwise explicitly provided for herein, the T&Cs constitute the entire agreement and supersedes all prior negotiations, promises, understandings, and agreements between the parties with respect to the subject matter hereof.
+
+5.2. Changes to the T&Cs. Universal Robots reserves the right, in its sole and absolute discretion, to change the terms of the T&Cs by providing you with ninety (90) days’ notice.
+
+5.3. Obligations on Legal Successors. The parties undertake to impose the obligations under the T&Cs on their statutory or contractual legal successors, if any.
+
+5.4. Export Laws. You agree to comply with all applicable laws and regulations, including export laws of the United States and any other applicable country or jurisdiction. You agree that the Graphical Documentation will not be shipped, transferred, or exported into any country or used in any manner prohibited by the United States Export Administration Act or any other country’s export laws, restrictions, or regulations (collectively the “Export Laws”). In addition, if the Graphical Documentation are identified as export controlled items under the Export Laws, you represent and warrant that you are not a citizen, or otherwise located within, an embargoed nation and that you are not otherwise prohibited under the Export Laws from receiving the Graphical Documentation.
+
+5.5. No Agency. The parties are independent contractors and nothing in the T&Cs shall be construed as to create an agency, joint venture, partnership, or other form of business association between the parties.
+
+5.6. Survival. If the contents of individual provisions of the T&Cs are intended to survive the termination or expiration of the T&Cs, such provisions, including but not limited to provisions governing warranties and representations and the transfer of rights, title and interest to Universal Robots, shall to this extent remain in effect and be fully enforceable also after the termination or expiration of the T&Cs for whatever reason.
+
+
+6. TERM AND TERMINATION
+
+6.1. The T&Cs shall enter into force upon your receipt of, or you accessing, the Graphical Documentation and continue to be in force until terminated in accordance with this Section 6. The T&Cs shall automatically expire at such time as you are no longer permitted to use the Graphical Documentation in accordance with Section 1.
+
+6.2. You may terminate the T&Cs for convenience at any time by deleting all copies of the Graphical Documentation in your possession. Universal Robots may terminate the T&Cs for convenience by providing you with ninety (90) days’ notice.
+
+6.3. Universal Robots may terminate the T&Cs for cause with immediate effect in case of your material breach of the T&Cs.
+
+
+7. EFFECTS OF TERMINATION
+
+7.1. Upon expiration or termination of the T&Cs, for whatever reason, you must immediately cease use of the Graphical Documentation and delete all copies of the Graphical Documentation in your possession.
+
+8. GOVERNING LAW AND VENUE
+
+8.1. The T&Cs shall be governed by and construed in accordance with the laws of Denmark, without giving effect to conflict of law provisions thereof. The parties expressly disclaim the applicability of the United Nations Convention on Contracts for the International Sale of Goods.
+
+8.2. Any and all disputes arising out of or in connection with the T&Cs shall be submitted to the International Chamber of Commerce and shall be settled under the Rules of Arbitration of the International Chamber of Commerce by one (1) arbitrator appointed in accordance with said Rules. The place of arbitration shall be Copenhagen, Denmark. The arbitration shall be conducted in the English language. The foregoing notwithstanding, Universal Robots may seek preliminary, temporary, or permanent injunctive relief and other equitable remedies in any court of competent jurisdiction prior to or during arbitration and may enforce the award of the arbitrator in any court of competent jurisdiction.
+
+
+* E.g., STEP-Files (ISO 10303-21), Collada (.dae), STL files (.stl), GLB files (.glb), GLFT files (.glft) , Jupiter Tessellation files (.jt), E-plan files (.emp), electrical schematics, CAD files, and drawings including the contents of these technical files. “Software”, as defined in Universal Robots End User Software License Agreement, does not constitute “Technical Documentation” and your use thereof is, unless otherwise agreed with Universal Robots in writing, governed by Universal Robots’ End User Software License Agreement.
+
+
+================================================================================
+License for contents in the directory 'universal_robots_ur18/'
+================================================================================
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+
+   * Redistributions of source code must retain the above copyright
+     notice, this list of conditions and the following disclaimer.
+
+   * Redistributions in binary form must reproduce the above copyright
+     notice, this list of conditions and the following disclaimer in the
+     documentation and/or other materials provided with the distribution.
+
+   * Neither the name of the copyright holder nor the names of its
+     contributors may be used to endorse or promote products derived from
+     this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE
+LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+POSSIBILITY OF SUCH DAMAGE.
+
+--------------------------------------------------------------------------------
+
+The mesh and texture files in the assets/ directory are Graphical Documentation
+of Universal Robots A/S. They are not covered by the license above and are
+subject to the following terms:
+
+TERMS AND CONDITIONS FOR USE OF GRAPHICAL DOCUMENTATION
+
+Version: 1.01 / release date: 2023-09-12
+
+These Terms and Conditions for Use of Graphical Documentation (the “T&Cs”) govern your use of graphical files and documents*, including the contents hereof, (the “Graphical Documentation”) provided or made available to you by Universal Robots A/S (“Universal Robots”) for the purposes of creating simulations, visualizations, digital representations, path planning, collision avoidance and algorithms of or for Universal Robots’ products. The T&Cs constitute a binding agreement between you and Universal Robots. By accessing, storing, copying, sharing, opening, or otherwise using or disposing of the Graphical Documentation, you acknowledge that you are bound by the T&Cs.
+
+1. PERMITTED USE OF THE GRAPHICAL DOCUMENTATION
+
+1.1. You may use the Graphical Documentation for the purposes of creating simulations, visualizations, digital representations, path planning, collision avoidance and algorithms of or for Universal Robots’ products, provided that your use does not constitute comparative advertising and is not otherwise unfair, disloyal, or disparaging to Universal Robots.
+
+1.2. Hobbyists, students and/or researchers are allowed to use the Graphical Documentation to create models or similar solely for non-commercial purposes as part of their hobby, academic studies, or research. However, no one is allowed to use the Graphical Documentation to create a physical model or similar for commercial purposes, nor to create or improve a product that is capable of competing, either directly or indirectly, with any of Universal Robots’ or its affiliates’ current or future robots.
+
+1.3. You are permitted to create a product or solution that simulates, visualizes, or digitally represents a Universal Robots product, regardless of the origin of the underlying software, and regardless of whether Universal Robots or its affiliates have released a product that competes with the underlying software. However, you may not in any way use the Graphical Documentation to create a product or solution that simulates, visualizes or represents a product that is capable of competing, either directly or indirectly, with any of Universal Robots’ or its affiliates’ current or future products without Universal Robots’ prior written permission.
+
+1.4. You may share the Graphical Documentation or any whole or partial copies thereof with a third party (i) if and to the extent it is necessary for you to do so in order for you to engage in use permitted pursuant to this Section 1, and (ii) you provide the recipient with a copy of the T&Cs. However, you may only make the Graphical Documentation or any whole or partial copies thereof available to the public via download if it is part of a downloadable software package that includes a copy of the T&Cs. If you download a software package that includes the Graphical Documentation, your use of the Graphical Documentation will be subject to and governed by the latest version of the T&Cs, which can be found here: https://www.universal-robots.com/legal/terms-and-conditions/terms_and_conditions_for_use_of_graphical_documentation.txt , regardless of whether they are included in the software package or not.
+
+1.4.1. You are not allowed to alter, obscure, remove or replace any copyright or other legal notices, trademarks, business names and/or logos embedded in, superimposed on, affixed to, or otherwise included in, the Graphical Documentation without Universal Robots’ prior written permission.
+
+1.4.2. You may show the Graphical Documentation in whole or in part to a third party or the public in the course of you engaging in the use permitted pursuant to this Section 1, provided that you display any copyright notice already contained in the Graphical Documentation, cf. also Section 1.4.1.
+
+1.4.3. You may show graphical representations of Universal Robots’ products based on the Graphical Documentation to a third party or the public in the course of you engaging in the use permitted pursuant to this Section 1, if you, to the extent possible, display the following copyright notice in connection with such use: “© 2023 Universal Robots A/S. Use hereof is subject to Universal Robots A/S’ Terms and Conditions for Use of Graphical Documentation.” If the medium that you use limits or does not support the possibility of displaying the copyright notice, you may in good faith disregard this requirement.
+
+1.5. You may under no circumstances use the Graphical Documentation for planning, construction, maintenance, operation, or use, directly or indirectly, in nuclear power plants, missile technology, chemical or biological weapons applications or flight, navigation, or communication of aircraft or ground support equipment.
+
+1.6. Any use of the Graphical Documentation that is not expressly permitted pursuant to this Section 1 constitutes a material breach of the T&Cs.
+
+1.7. If your intended use of the Graphical Documentation is not permitted pursuant to the T&Cs, you may contact Universal Robots via email at legal@universal-robots.com and request a special permission to engage in your particular intended use.
+
+
+2. INTELLECTUAL PROPERTY RIGHTS
+
+2.1. You acknowledge and agree that the Graphical Documentation and all intellectual property rights contained and/or embodied therein, including, but not limited to, rights under the Danish Marketing Practices Act or under similar rules of law, patents, utility models, copyrights and related rights, software, trademarks, semiconductors, designs, know-how, rights in databases, trade secrets, and all applications or pending applications for such in all cases, whether or not registrable in any country, and all rights and forms of protection of a similar nature or having equivalent or similar effect anywhere in the world, shall be and remain the sole property of Universal Robots. Nothing in the T&Cs shall be construed as granting you any license to such rights, including, without limitation, any licenses to use Universal Robots’ trademarks, patents, or designs, except as strictly necessary in order for you to engage in the use permitted pursuant to Section 1.
+
+2.2. If you create any derivative works based on the Graphical Documentation, Universal Robots shall own the intellectual property rights in and to such derivative works. The foregoing notwithstanding, you may use such derivative works in connection with your use of the Graphical Documentation in accordance with Section 1.
+
+
+3. NO WARRANTIES, LIMITATIONS OF LIABILITY
+
+3.1. THE GRAPHICAL DOCUMENTATION IS PROVIDED ON AN “AS IS” BASIS AND UNIVERSAL ROBOTS MAKES NO WARRANTY OF ANY KIND WITH RESPECT TO THE GRAPHICAL DOCUMENTATION AND WE HEREBY EXPRESSLY EXCLUDE ANY WARRANTIES WITH RESPECT THERETO, WHETHER EXPRESS, IMPLIED, STATUTORY OR OTHERWISE, INCLUDING BUT NOT LIMITED TO ANY IMPLIED WARRANTIES OF MERCHANTABILITY, SATISFACTORY QUALITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, NONINFRINGEMENT, ACCURACY OR ANY OTHER WARRANTIES OR GUARANTEES THAT MAY ARISE FROM COURSE OF DEALING, USAGE, OR TRADE PRACTICE. NEITHER UNIVERSAL ROBOTS NOR ITS SUPPLIERS, INCLUDING – WITHOUT LIMITATION – ITS LICENSORS, MAKE ANY REPRESENTATION, WARRANTY, OR OTHER COMMITMENT REGARDING (1) THE USE OR INABILITY TO USE THE GRAPHICAL DOCUMENTATION; OR (2) ANY RESULTS OF SUCH USE IN TERMS OF CORRECTNESS, ACCURACY, OR RELIABILITY. YOU UNDERSTAND AND AGREE THAT YOU ASSUME THE ENTIRE RISK AS TO YOUR USE OF THE GRAPHICAL DOCUMENTATION.
+
+3.2. TO THE EXTENT PERMITTED BY LAW, IN NO EVENT WILL UNIVERSAL ROBOTS BE LIABLE FOR ANY LOSSES OR DAMAGES INCURRED BY YOU, WHETHER DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY OR CONSEQUENTIAL, INCLUDING LOST OR ANTICIPATED PROFITS, SAVINGS, INTERRUPTION TO BUSINESS, LOSS OF BUSINESS OPPORTUNITIES, LOSS OF BUSINESS INFORMATION OR OTHER DATA, THE COST OF RECOVERING SUCH LOST INFORMATION OR DATA, THE COST OF SUBSTITUTE INTELLECTUAL PROPERTY OR ANY OTHER PECUNIARY LOSS ARISING FROM THE USE OF, OR THE INABILITY TO USE, THE GRAPHICAL DOCUMENTATION REGARDLESS OF WHETHER UNIVERSAL ROBOTS HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. THE FOREGOING LIMITATIONS APPLY REGARDLESS OF THE CAUSE OR CIRCUMSTANCES GIVING RISE TO SUCH LOSS, DAMAGE OR LIABILITY, EVEN IF SUCH LOSS, DAMAGE OR LIABILITY IS BASED ON NEGLIGENCE OR OTHER TORTS OR BREACH OF CONTRACT.
+
+
+4. INDEMNIFICATION
+
+4.1. You shall defend, indemnify, and hold Universal Robots and its affiliates, employees, and agents harmless, from and against all sums, claims, costs, duties, liabilities, losses, obligations, suits, actions, damages, penalties, awards, fines, interest, and other expenses (including investigation expenses and attorneys’ fees) that Universal Robots may incur or be obligated to pay as a result of your unauthorized use, modification, resale, transfer, shipment, or export of the Graphical Documentation.
+
+
+5. MISCELLANEOUS
+
+5.1. Entire Agreement. Except as otherwise explicitly provided for herein, the T&Cs constitute the entire agreement and supersedes all prior negotiations, promises, understandings, and agreements between the parties with respect to the subject matter hereof.
+
+5.2. Changes to the T&Cs. Universal Robots reserves the right, in its sole and absolute discretion, to change the terms of the T&Cs by providing you with ninety (90) days’ notice.
+
+5.3. Obligations on Legal Successors. The parties undertake to impose the obligations under the T&Cs on their statutory or contractual legal successors, if any.
+
+5.4. Export Laws. You agree to comply with all applicable laws and regulations, including export laws of the United States and any other applicable country or jurisdiction. You agree that the Graphical Documentation will not be shipped, transferred, or exported into any country or used in any manner prohibited by the United States Export Administration Act or any other country’s export laws, restrictions, or regulations (collectively the “Export Laws”). In addition, if the Graphical Documentation are identified as export controlled items under the Export Laws, you represent and warrant that you are not a citizen, or otherwise located within, an embargoed nation and that you are not otherwise prohibited under the Export Laws from receiving the Graphical Documentation.
+
+5.5. No Agency. The parties are independent contractors and nothing in the T&Cs shall be construed as to create an agency, joint venture, partnership, or other form of business association between the parties.
+
+5.6. Survival. If the contents of individual provisions of the T&Cs are intended to survive the termination or expiration of the T&Cs, such provisions, including but not limited to provisions governing warranties and representations and the transfer of rights, title and interest to Universal Robots, shall to this extent remain in effect and be fully enforceable also after the termination or expiration of the T&Cs for whatever reason.
+
+
+6. TERM AND TERMINATION
+
+6.1. The T&Cs shall enter into force upon your receipt of, or you accessing, the Graphical Documentation and continue to be in force until terminated in accordance with this Section 6. The T&Cs shall automatically expire at such time as you are no longer permitted to use the Graphical Documentation in accordance with Section 1.
+
+6.2. You may terminate the T&Cs for convenience at any time by deleting all copies of the Graphical Documentation in your possession. Universal Robots may terminate the T&Cs for convenience by providing you with ninety (90) days’ notice.
+
+6.3. Universal Robots may terminate the T&Cs for cause with immediate effect in case of your material breach of the T&Cs.
+
+
+7. EFFECTS OF TERMINATION
+
+7.1. Upon expiration or termination of the T&Cs, for whatever reason, you must immediately cease use of the Graphical Documentation and delete all copies of the Graphical Documentation in your possession.
+
+8. GOVERNING LAW AND VENUE
+
+8.1. The T&Cs shall be governed by and construed in accordance with the laws of Denmark, without giving effect to conflict of law provisions thereof. The parties expressly disclaim the applicability of the United Nations Convention on Contracts for the International Sale of Goods.
+
+8.2. Any and all disputes arising out of or in connection with the T&Cs shall be submitted to the International Chamber of Commerce and shall be settled under the Rules of Arbitration of the International Chamber of Commerce by one (1) arbitrator appointed in accordance with said Rules. The place of arbitration shall be Copenhagen, Denmark. The arbitration shall be conducted in the English language. The foregoing notwithstanding, Universal Robots may seek preliminary, temporary, or permanent injunctive relief and other equitable remedies in any court of competent jurisdiction prior to or during arbitration and may enforce the award of the arbitrator in any court of competent jurisdiction.
+
+
+* E.g., STEP-Files (ISO 10303-21), Collada (.dae), STL files (.stl), GLB files (.glb), GLFT files (.glft) , Jupiter Tessellation files (.jt), E-plan files (.emp), electrical schematics, CAD files, and drawings including the contents of these technical files. “Software”, as defined in Universal Robots End User Software License Agreement, does not constitute “Technical Documentation” and your use thereof is, unless otherwise agreed with Universal Robots in writing, governed by Universal Robots’ End User Software License Agreement.
+
+
+================================================================================
+License for contents in the directory 'universal_robots_ur18g_950/'
+================================================================================
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+
+   * Redistributions of source code must retain the above copyright
+     notice, this list of conditions and the following disclaimer.
+
+   * Redistributions in binary form must reproduce the above copyright
+     notice, this list of conditions and the following disclaimer in the
+     documentation and/or other materials provided with the distribution.
+
+   * Neither the name of the copyright holder nor the names of its
+     contributors may be used to endorse or promote products derived from
+     this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE
+LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+POSSIBILITY OF SUCH DAMAGE.
+
+--------------------------------------------------------------------------------
+
+The mesh and texture files in the assets/ directory are Graphical Documentation
+of Universal Robots A/S. They are not covered by the license above and are
+subject to the following terms:
+
+TERMS AND CONDITIONS FOR USE OF GRAPHICAL DOCUMENTATION
+
+Version: 1.01 / release date: 2023-09-12
+
+These Terms and Conditions for Use of Graphical Documentation (the “T&Cs”) govern your use of graphical files and documents*, including the contents hereof, (the “Graphical Documentation”) provided or made available to you by Universal Robots A/S (“Universal Robots”) for the purposes of creating simulations, visualizations, digital representations, path planning, collision avoidance and algorithms of or for Universal Robots’ products. The T&Cs constitute a binding agreement between you and Universal Robots. By accessing, storing, copying, sharing, opening, or otherwise using or disposing of the Graphical Documentation, you acknowledge that you are bound by the T&Cs.
+
+1. PERMITTED USE OF THE GRAPHICAL DOCUMENTATION
+
+1.1. You may use the Graphical Documentation for the purposes of creating simulations, visualizations, digital representations, path planning, collision avoidance and algorithms of or for Universal Robots’ products, provided that your use does not constitute comparative advertising and is not otherwise unfair, disloyal, or disparaging to Universal Robots.
+
+1.2. Hobbyists, students and/or researchers are allowed to use the Graphical Documentation to create models or similar solely for non-commercial purposes as part of their hobby, academic studies, or research. However, no one is allowed to use the Graphical Documentation to create a physical model or similar for commercial purposes, nor to create or improve a product that is capable of competing, either directly or indirectly, with any of Universal Robots’ or its affiliates’ current or future robots.
+
+1.3. You are permitted to create a product or solution that simulates, visualizes, or digitally represents a Universal Robots product, regardless of the origin of the underlying software, and regardless of whether Universal Robots or its affiliates have released a product that competes with the underlying software. However, you may not in any way use the Graphical Documentation to create a product or solution that simulates, visualizes or represents a product that is capable of competing, either directly or indirectly, with any of Universal Robots’ or its affiliates’ current or future products without Universal Robots’ prior written permission.
+
+1.4. You may share the Graphical Documentation or any whole or partial copies thereof with a third party (i) if and to the extent it is necessary for you to do so in order for you to engage in use permitted pursuant to this Section 1, and (ii) you provide the recipient with a copy of the T&Cs. However, you may only make the Graphical Documentation or any whole or partial copies thereof available to the public via download if it is part of a downloadable software package that includes a copy of the T&Cs. If you download a software package that includes the Graphical Documentation, your use of the Graphical Documentation will be subject to and governed by the latest version of the T&Cs, which can be found here: https://www.universal-robots.com/legal/terms-and-conditions/terms_and_conditions_for_use_of_graphical_documentation.txt , regardless of whether they are included in the software package or not.
+
+1.4.1. You are not allowed to alter, obscure, remove or replace any copyright or other legal notices, trademarks, business names and/or logos embedded in, superimposed on, affixed to, or otherwise included in, the Graphical Documentation without Universal Robots’ prior written permission.
+
+1.4.2. You may show the Graphical Documentation in whole or in part to a third party or the public in the course of you engaging in the use permitted pursuant to this Section 1, provided that you display any copyright notice already contained in the Graphical Documentation, cf. also Section 1.4.1.
+
+1.4.3. You may show graphical representations of Universal Robots’ products based on the Graphical Documentation to a third party or the public in the course of you engaging in the use permitted pursuant to this Section 1, if you, to the extent possible, display the following copyright notice in connection with such use: “© 2023 Universal Robots A/S. Use hereof is subject to Universal Robots A/S’ Terms and Conditions for Use of Graphical Documentation.” If the medium that you use limits or does not support the possibility of displaying the copyright notice, you may in good faith disregard this requirement.
+
+1.5. You may under no circumstances use the Graphical Documentation for planning, construction, maintenance, operation, or use, directly or indirectly, in nuclear power plants, missile technology, chemical or biological weapons applications or flight, navigation, or communication of aircraft or ground support equipment.
+
+1.6. Any use of the Graphical Documentation that is not expressly permitted pursuant to this Section 1 constitutes a material breach of the T&Cs.
+
+1.7. If your intended use of the Graphical Documentation is not permitted pursuant to the T&Cs, you may contact Universal Robots via email at legal@universal-robots.com and request a special permission to engage in your particular intended use.
+
+
+2. INTELLECTUAL PROPERTY RIGHTS
+
+2.1. You acknowledge and agree that the Graphical Documentation and all intellectual property rights contained and/or embodied therein, including, but not limited to, rights under the Danish Marketing Practices Act or under similar rules of law, patents, utility models, copyrights and related rights, software, trademarks, semiconductors, designs, know-how, rights in databases, trade secrets, and all applications or pending applications for such in all cases, whether or not registrable in any country, and all rights and forms of protection of a similar nature or having equivalent or similar effect anywhere in the world, shall be and remain the sole property of Universal Robots. Nothing in the T&Cs shall be construed as granting you any license to such rights, including, without limitation, any licenses to use Universal Robots’ trademarks, patents, or designs, except as strictly necessary in order for you to engage in the use permitted pursuant to Section 1.
+
+2.2. If you create any derivative works based on the Graphical Documentation, Universal Robots shall own the intellectual property rights in and to such derivative works. The foregoing notwithstanding, you may use such derivative works in connection with your use of the Graphical Documentation in accordance with Section 1.
+
+
+3. NO WARRANTIES, LIMITATIONS OF LIABILITY
+
+3.1. THE GRAPHICAL DOCUMENTATION IS PROVIDED ON AN “AS IS” BASIS AND UNIVERSAL ROBOTS MAKES NO WARRANTY OF ANY KIND WITH RESPECT TO THE GRAPHICAL DOCUMENTATION AND WE HEREBY EXPRESSLY EXCLUDE ANY WARRANTIES WITH RESPECT THERETO, WHETHER EXPRESS, IMPLIED, STATUTORY OR OTHERWISE, INCLUDING BUT NOT LIMITED TO ANY IMPLIED WARRANTIES OF MERCHANTABILITY, SATISFACTORY QUALITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, NONINFRINGEMENT, ACCURACY OR ANY OTHER WARRANTIES OR GUARANTEES THAT MAY ARISE FROM COURSE OF DEALING, USAGE, OR TRADE PRACTICE. NEITHER UNIVERSAL ROBOTS NOR ITS SUPPLIERS, INCLUDING – WITHOUT LIMITATION – ITS LICENSORS, MAKE ANY REPRESENTATION, WARRANTY, OR OTHER COMMITMENT REGARDING (1) THE USE OR INABILITY TO USE THE GRAPHICAL DOCUMENTATION; OR (2) ANY RESULTS OF SUCH USE IN TERMS OF CORRECTNESS, ACCURACY, OR RELIABILITY. YOU UNDERSTAND AND AGREE THAT YOU ASSUME THE ENTIRE RISK AS TO YOUR USE OF THE GRAPHICAL DOCUMENTATION.
+
+3.2. TO THE EXTENT PERMITTED BY LAW, IN NO EVENT WILL UNIVERSAL ROBOTS BE LIABLE FOR ANY LOSSES OR DAMAGES INCURRED BY YOU, WHETHER DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY OR CONSEQUENTIAL, INCLUDING LOST OR ANTICIPATED PROFITS, SAVINGS, INTERRUPTION TO BUSINESS, LOSS OF BUSINESS OPPORTUNITIES, LOSS OF BUSINESS INFORMATION OR OTHER DATA, THE COST OF RECOVERING SUCH LOST INFORMATION OR DATA, THE COST OF SUBSTITUTE INTELLECTUAL PROPERTY OR ANY OTHER PECUNIARY LOSS ARISING FROM THE USE OF, OR THE INABILITY TO USE, THE GRAPHICAL DOCUMENTATION REGARDLESS OF WHETHER UNIVERSAL ROBOTS HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. THE FOREGOING LIMITATIONS APPLY REGARDLESS OF THE CAUSE OR CIRCUMSTANCES GIVING RISE TO SUCH LOSS, DAMAGE OR LIABILITY, EVEN IF SUCH LOSS, DAMAGE OR LIABILITY IS BASED ON NEGLIGENCE OR OTHER TORTS OR BREACH OF CONTRACT.
+
+
+4. INDEMNIFICATION
+
+4.1. You shall defend, indemnify, and hold Universal Robots and its affiliates, employees, and agents harmless, from and against all sums, claims, costs, duties, liabilities, losses, obligations, suits, actions, damages, penalties, awards, fines, interest, and other expenses (including investigation expenses and attorneys’ fees) that Universal Robots may incur or be obligated to pay as a result of your unauthorized use, modification, resale, transfer, shipment, or export of the Graphical Documentation.
+
+
+5. MISCELLANEOUS
+
+5.1. Entire Agreement. Except as otherwise explicitly provided for herein, the T&Cs constitute the entire agreement and supersedes all prior negotiations, promises, understandings, and agreements between the parties with respect to the subject matter hereof.
+
+5.2. Changes to the T&Cs. Universal Robots reserves the right, in its sole and absolute discretion, to change the terms of the T&Cs by providing you with ninety (90) days’ notice.
+
+5.3. Obligations on Legal Successors. The parties undertake to impose the obligations under the T&Cs on their statutory or contractual legal successors, if any.
+
+5.4. Export Laws. You agree to comply with all applicable laws and regulations, including export laws of the United States and any other applicable country or jurisdiction. You agree that the Graphical Documentation will not be shipped, transferred, or exported into any country or used in any manner prohibited by the United States Export Administration Act or any other country’s export laws, restrictions, or regulations (collectively the “Export Laws”). In addition, if the Graphical Documentation are identified as export controlled items under the Export Laws, you represent and warrant that you are not a citizen, or otherwise located within, an embargoed nation and that you are not otherwise prohibited under the Export Laws from receiving the Graphical Documentation.
+
+5.5. No Agency. The parties are independent contractors and nothing in the T&Cs shall be construed as to create an agency, joint venture, partnership, or other form of business association between the parties.
+
+5.6. Survival. If the contents of individual provisions of the T&Cs are intended to survive the termination or expiration of the T&Cs, such provisions, including but not limited to provisions governing warranties and representations and the transfer of rights, title and interest to Universal Robots, shall to this extent remain in effect and be fully enforceable also after the termination or expiration of the T&Cs for whatever reason.
+
+
+6. TERM AND TERMINATION
+
+6.1. The T&Cs shall enter into force upon your receipt of, or you accessing, the Graphical Documentation and continue to be in force until terminated in accordance with this Section 6. The T&Cs shall automatically expire at such time as you are no longer permitted to use the Graphical Documentation in accordance with Section 1.
+
+6.2. You may terminate the T&Cs for convenience at any time by deleting all copies of the Graphical Documentation in your possession. Universal Robots may terminate the T&Cs for convenience by providing you with ninety (90) days’ notice.
+
+6.3. Universal Robots may terminate the T&Cs for cause with immediate effect in case of your material breach of the T&Cs.
+
+
+7. EFFECTS OF TERMINATION
+
+7.1. Upon expiration or termination of the T&Cs, for whatever reason, you must immediately cease use of the Graphical Documentation and delete all copies of the Graphical Documentation in your possession.
+
+8. GOVERNING LAW AND VENUE
+
+8.1. The T&Cs shall be governed by and construed in accordance with the laws of Denmark, without giving effect to conflict of law provisions thereof. The parties expressly disclaim the applicability of the United Nations Convention on Contracts for the International Sale of Goods.
+
+8.2. Any and all disputes arising out of or in connection with the T&Cs shall be submitted to the International Chamber of Commerce and shall be settled under the Rules of Arbitration of the International Chamber of Commerce by one (1) arbitrator appointed in accordance with said Rules. The place of arbitration shall be Copenhagen, Denmark. The arbitration shall be conducted in the English language. The foregoing notwithstanding, Universal Robots may seek preliminary, temporary, or permanent injunctive relief and other equitable remedies in any court of competent jurisdiction prior to or during arbitration and may enforce the award of the arbitrator in any court of competent jurisdiction.
+
+
+* E.g., STEP-Files (ISO 10303-21), Collada (.dae), STL files (.stl), GLB files (.glb), GLFT files (.glft) , Jupiter Tessellation files (.jt), E-plan files (.emp), electrical schematics, CAD files, and drawings including the contents of these technical files. “Software”, as defined in Universal Robots End User Software License Agreement, does not constitute “Technical Documentation” and your use thereof is, unless otherwise agreed with Universal Robots in writing, governed by Universal Robots’ End User Software License Agreement.
+
+
+================================================================================
+License for contents in the directory 'universal_robots_ur20/'
+================================================================================
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+
+   * Redistributions of source code must retain the above copyright
+     notice, this list of conditions and the following disclaimer.
+
+   * Redistributions in binary form must reproduce the above copyright
+     notice, this list of conditions and the following disclaimer in the
+     documentation and/or other materials provided with the distribution.
+
+   * Neither the name of the copyright holder nor the names of its
+     contributors may be used to endorse or promote products derived from
+     this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE
+LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+POSSIBILITY OF SUCH DAMAGE.
+
+--------------------------------------------------------------------------------
+
+The mesh and texture files in the assets/ directory are Graphical Documentation
+of Universal Robots A/S. They are not covered by the license above and are
+subject to the following terms:
+
+TERMS AND CONDITIONS FOR USE OF GRAPHICAL DOCUMENTATION
+
+Version: 1.01 / release date: 2023-09-12
+
+These Terms and Conditions for Use of Graphical Documentation (the “T&Cs”) govern your use of graphical files and documents*, including the contents hereof, (the “Graphical Documentation”) provided or made available to you by Universal Robots A/S (“Universal Robots”) for the purposes of creating simulations, visualizations, digital representations, path planning, collision avoidance and algorithms of or for Universal Robots’ products. The T&Cs constitute a binding agreement between you and Universal Robots. By accessing, storing, copying, sharing, opening, or otherwise using or disposing of the Graphical Documentation, you acknowledge that you are bound by the T&Cs.
+
+1. PERMITTED USE OF THE GRAPHICAL DOCUMENTATION
+
+1.1. You may use the Graphical Documentation for the purposes of creating simulations, visualizations, digital representations, path planning, collision avoidance and algorithms of or for Universal Robots’ products, provided that your use does not constitute comparative advertising and is not otherwise unfair, disloyal, or disparaging to Universal Robots.
+
+1.2. Hobbyists, students and/or researchers are allowed to use the Graphical Documentation to create models or similar solely for non-commercial purposes as part of their hobby, academic studies, or research. However, no one is allowed to use the Graphical Documentation to create a physical model or similar for commercial purposes, nor to create or improve a product that is capable of competing, either directly or indirectly, with any of Universal Robots’ or its affiliates’ current or future robots.
+
+1.3. You are permitted to create a product or solution that simulates, visualizes, or digitally represents a Universal Robots product, regardless of the origin of the underlying software, and regardless of whether Universal Robots or its affiliates have released a product that competes with the underlying software. However, you may not in any way use the Graphical Documentation to create a product or solution that simulates, visualizes or represents a product that is capable of competing, either directly or indirectly, with any of Universal Robots’ or its affiliates’ current or future products without Universal Robots’ prior written permission.
+
+1.4. You may share the Graphical Documentation or any whole or partial copies thereof with a third party (i) if and to the extent it is necessary for you to do so in order for you to engage in use permitted pursuant to this Section 1, and (ii) you provide the recipient with a copy of the T&Cs. However, you may only make the Graphical Documentation or any whole or partial copies thereof available to the public via download if it is part of a downloadable software package that includes a copy of the T&Cs. If you download a software package that includes the Graphical Documentation, your use of the Graphical Documentation will be subject to and governed by the latest version of the T&Cs, which can be found here: https://www.universal-robots.com/legal/terms-and-conditions/terms_and_conditions_for_use_of_graphical_documentation.txt , regardless of whether they are included in the software package or not.
+
+1.4.1. You are not allowed to alter, obscure, remove or replace any copyright or other legal notices, trademarks, business names and/or logos embedded in, superimposed on, affixed to, or otherwise included in, the Graphical Documentation without Universal Robots’ prior written permission.
+
+1.4.2. You may show the Graphical Documentation in whole or in part to a third party or the public in the course of you engaging in the use permitted pursuant to this Section 1, provided that you display any copyright notice already contained in the Graphical Documentation, cf. also Section 1.4.1.
+
+1.4.3. You may show graphical representations of Universal Robots’ products based on the Graphical Documentation to a third party or the public in the course of you engaging in the use permitted pursuant to this Section 1, if you, to the extent possible, display the following copyright notice in connection with such use: “© 2023 Universal Robots A/S. Use hereof is subject to Universal Robots A/S’ Terms and Conditions for Use of Graphical Documentation.” If the medium that you use limits or does not support the possibility of displaying the copyright notice, you may in good faith disregard this requirement.
+
+1.5. You may under no circumstances use the Graphical Documentation for planning, construction, maintenance, operation, or use, directly or indirectly, in nuclear power plants, missile technology, chemical or biological weapons applications or flight, navigation, or communication of aircraft or ground support equipment.
+
+1.6. Any use of the Graphical Documentation that is not expressly permitted pursuant to this Section 1 constitutes a material breach of the T&Cs.
+
+1.7. If your intended use of the Graphical Documentation is not permitted pursuant to the T&Cs, you may contact Universal Robots via email at legal@universal-robots.com and request a special permission to engage in your particular intended use.
+
+
+2. INTELLECTUAL PROPERTY RIGHTS
+
+2.1. You acknowledge and agree that the Graphical Documentation and all intellectual property rights contained and/or embodied therein, including, but not limited to, rights under the Danish Marketing Practices Act or under similar rules of law, patents, utility models, copyrights and related rights, software, trademarks, semiconductors, designs, know-how, rights in databases, trade secrets, and all applications or pending applications for such in all cases, whether or not registrable in any country, and all rights and forms of protection of a similar nature or having equivalent or similar effect anywhere in the world, shall be and remain the sole property of Universal Robots. Nothing in the T&Cs shall be construed as granting you any license to such rights, including, without limitation, any licenses to use Universal Robots’ trademarks, patents, or designs, except as strictly necessary in order for you to engage in the use permitted pursuant to Section 1.
+
+2.2. If you create any derivative works based on the Graphical Documentation, Universal Robots shall own the intellectual property rights in and to such derivative works. The foregoing notwithstanding, you may use such derivative works in connection with your use of the Graphical Documentation in accordance with Section 1.
+
+
+3. NO WARRANTIES, LIMITATIONS OF LIABILITY
+
+3.1. THE GRAPHICAL DOCUMENTATION IS PROVIDED ON AN “AS IS” BASIS AND UNIVERSAL ROBOTS MAKES NO WARRANTY OF ANY KIND WITH RESPECT TO THE GRAPHICAL DOCUMENTATION AND WE HEREBY EXPRESSLY EXCLUDE ANY WARRANTIES WITH RESPECT THERETO, WHETHER EXPRESS, IMPLIED, STATUTORY OR OTHERWISE, INCLUDING BUT NOT LIMITED TO ANY IMPLIED WARRANTIES OF MERCHANTABILITY, SATISFACTORY QUALITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, NONINFRINGEMENT, ACCURACY OR ANY OTHER WARRANTIES OR GUARANTEES THAT MAY ARISE FROM COURSE OF DEALING, USAGE, OR TRADE PRACTICE. NEITHER UNIVERSAL ROBOTS NOR ITS SUPPLIERS, INCLUDING – WITHOUT LIMITATION – ITS LICENSORS, MAKE ANY REPRESENTATION, WARRANTY, OR OTHER COMMITMENT REGARDING (1) THE USE OR INABILITY TO USE THE GRAPHICAL DOCUMENTATION; OR (2) ANY RESULTS OF SUCH USE IN TERMS OF CORRECTNESS, ACCURACY, OR RELIABILITY. YOU UNDERSTAND AND AGREE THAT YOU ASSUME THE ENTIRE RISK AS TO YOUR USE OF THE GRAPHICAL DOCUMENTATION.
+
+3.2. TO THE EXTENT PERMITTED BY LAW, IN NO EVENT WILL UNIVERSAL ROBOTS BE LIABLE FOR ANY LOSSES OR DAMAGES INCURRED BY YOU, WHETHER DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY OR CONSEQUENTIAL, INCLUDING LOST OR ANTICIPATED PROFITS, SAVINGS, INTERRUPTION TO BUSINESS, LOSS OF BUSINESS OPPORTUNITIES, LOSS OF BUSINESS INFORMATION OR OTHER DATA, THE COST OF RECOVERING SUCH LOST INFORMATION OR DATA, THE COST OF SUBSTITUTE INTELLECTUAL PROPERTY OR ANY OTHER PECUNIARY LOSS ARISING FROM THE USE OF, OR THE INABILITY TO USE, THE GRAPHICAL DOCUMENTATION REGARDLESS OF WHETHER UNIVERSAL ROBOTS HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. THE FOREGOING LIMITATIONS APPLY REGARDLESS OF THE CAUSE OR CIRCUMSTANCES GIVING RISE TO SUCH LOSS, DAMAGE OR LIABILITY, EVEN IF SUCH LOSS, DAMAGE OR LIABILITY IS BASED ON NEGLIGENCE OR OTHER TORTS OR BREACH OF CONTRACT.
+
+
+4. INDEMNIFICATION
+
+4.1. You shall defend, indemnify, and hold Universal Robots and its affiliates, employees, and agents harmless, from and against all sums, claims, costs, duties, liabilities, losses, obligations, suits, actions, damages, penalties, awards, fines, interest, and other expenses (including investigation expenses and attorneys’ fees) that Universal Robots may incur or be obligated to pay as a result of your unauthorized use, modification, resale, transfer, shipment, or export of the Graphical Documentation.
+
+
+5. MISCELLANEOUS
+
+5.1. Entire Agreement. Except as otherwise explicitly provided for herein, the T&Cs constitute the entire agreement and supersedes all prior negotiations, promises, understandings, and agreements between the parties with respect to the subject matter hereof.
+
+5.2. Changes to the T&Cs. Universal Robots reserves the right, in its sole and absolute discretion, to change the terms of the T&Cs by providing you with ninety (90) days’ notice.
+
+5.3. Obligations on Legal Successors. The parties undertake to impose the obligations under the T&Cs on their statutory or contractual legal successors, if any.
+
+5.4. Export Laws. You agree to comply with all applicable laws and regulations, including export laws of the United States and any other applicable country or jurisdiction. You agree that the Graphical Documentation will not be shipped, transferred, or exported into any country or used in any manner prohibited by the United States Export Administration Act or any other country’s export laws, restrictions, or regulations (collectively the “Export Laws”). In addition, if the Graphical Documentation are identified as export controlled items under the Export Laws, you represent and warrant that you are not a citizen, or otherwise located within, an embargoed nation and that you are not otherwise prohibited under the Export Laws from receiving the Graphical Documentation.
+
+5.5. No Agency. The parties are independent contractors and nothing in the T&Cs shall be construed as to create an agency, joint venture, partnership, or other form of business association between the parties.
+
+5.6. Survival. If the contents of individual provisions of the T&Cs are intended to survive the termination or expiration of the T&Cs, such provisions, including but not limited to provisions governing warranties and representations and the transfer of rights, title and interest to Universal Robots, shall to this extent remain in effect and be fully enforceable also after the termination or expiration of the T&Cs for whatever reason.
+
+
+6. TERM AND TERMINATION
+
+6.1. The T&Cs shall enter into force upon your receipt of, or you accessing, the Graphical Documentation and continue to be in force until terminated in accordance with this Section 6. The T&Cs shall automatically expire at such time as you are no longer permitted to use the Graphical Documentation in accordance with Section 1.
+
+6.2. You may terminate the T&Cs for convenience at any time by deleting all copies of the Graphical Documentation in your possession. Universal Robots may terminate the T&Cs for convenience by providing you with ninety (90) days’ notice.
+
+6.3. Universal Robots may terminate the T&Cs for cause with immediate effect in case of your material breach of the T&Cs.
+
+
+7. EFFECTS OF TERMINATION
+
+7.1. Upon expiration or termination of the T&Cs, for whatever reason, you must immediately cease use of the Graphical Documentation and delete all copies of the Graphical Documentation in your possession.
+
+8. GOVERNING LAW AND VENUE
+
+8.1. The T&Cs shall be governed by and construed in accordance with the laws of Denmark, without giving effect to conflict of law provisions thereof. The parties expressly disclaim the applicability of the United Nations Convention on Contracts for the International Sale of Goods.
+
+8.2. Any and all disputes arising out of or in connection with the T&Cs shall be submitted to the International Chamber of Commerce and shall be settled under the Rules of Arbitration of the International Chamber of Commerce by one (1) arbitrator appointed in accordance with said Rules. The place of arbitration shall be Copenhagen, Denmark. The arbitration shall be conducted in the English language. The foregoing notwithstanding, Universal Robots may seek preliminary, temporary, or permanent injunctive relief and other equitable remedies in any court of competent jurisdiction prior to or during arbitration and may enforce the award of the arbitrator in any court of competent jurisdiction.
+
+
+* E.g., STEP-Files (ISO 10303-21), Collada (.dae), STL files (.stl), GLB files (.glb), GLFT files (.glft) , Jupiter Tessellation files (.jt), E-plan files (.emp), electrical schematics, CAD files, and drawings including the contents of these technical files. “Software”, as defined in Universal Robots End User Software License Agreement, does not constitute “Technical Documentation” and your use thereof is, unless otherwise agreed with Universal Robots in writing, governed by Universal Robots’ End User Software License Agreement.
+
+
+================================================================================
+License for contents in the directory 'universal_robots_ur3/'
+================================================================================
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+
+   * Redistributions of source code must retain the above copyright
+     notice, this list of conditions and the following disclaimer.
+
+   * Redistributions in binary form must reproduce the above copyright
+     notice, this list of conditions and the following disclaimer in the
+     documentation and/or other materials provided with the distribution.
+
+   * Neither the name of the copyright holder nor the names of its
+     contributors may be used to endorse or promote products derived from
+     this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE
+LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+POSSIBILITY OF SUCH DAMAGE.
+
+
+================================================================================
+License for contents in the directory 'universal_robots_ur30/'
+================================================================================
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+
+   * Redistributions of source code must retain the above copyright
+     notice, this list of conditions and the following disclaimer.
+
+   * Redistributions in binary form must reproduce the above copyright
+     notice, this list of conditions and the following disclaimer in the
+     documentation and/or other materials provided with the distribution.
+
+   * Neither the name of the copyright holder nor the names of its
+     contributors may be used to endorse or promote products derived from
+     this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE
+LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+POSSIBILITY OF SUCH DAMAGE.
+
+--------------------------------------------------------------------------------
+
+The mesh and texture files in the assets/ directory are Graphical Documentation
+of Universal Robots A/S. They are not covered by the license above and are
+subject to the following terms:
+
+TERMS AND CONDITIONS FOR USE OF GRAPHICAL DOCUMENTATION
+
+Version: 1.01 / release date: 2023-09-12
+
+These Terms and Conditions for Use of Graphical Documentation (the “T&Cs”) govern your use of graphical files and documents*, including the contents hereof, (the “Graphical Documentation”) provided or made available to you by Universal Robots A/S (“Universal Robots”) for the purposes of creating simulations, visualizations, digital representations, path planning, collision avoidance and algorithms of or for Universal Robots’ products. The T&Cs constitute a binding agreement between you and Universal Robots. By accessing, storing, copying, sharing, opening, or otherwise using or disposing of the Graphical Documentation, you acknowledge that you are bound by the T&Cs.
+
+1. PERMITTED USE OF THE GRAPHICAL DOCUMENTATION
+
+1.1. You may use the Graphical Documentation for the purposes of creating simulations, visualizations, digital representations, path planning, collision avoidance and algorithms of or for Universal Robots’ products, provided that your use does not constitute comparative advertising and is not otherwise unfair, disloyal, or disparaging to Universal Robots.
+
+1.2. Hobbyists, students and/or researchers are allowed to use the Graphical Documentation to create models or similar solely for non-commercial purposes as part of their hobby, academic studies, or research. However, no one is allowed to use the Graphical Documentation to create a physical model or similar for commercial purposes, nor to create or improve a product that is capable of competing, either directly or indirectly, with any of Universal Robots’ or its affiliates’ current or future robots.
+
+1.3. You are permitted to create a product or solution that simulates, visualizes, or digitally represents a Universal Robots product, regardless of the origin of the underlying software, and regardless of whether Universal Robots or its affiliates have released a product that competes with the underlying software. However, you may not in any way use the Graphical Documentation to create a product or solution that simulates, visualizes or represents a product that is capable of competing, either directly or indirectly, with any of Universal Robots’ or its affiliates’ current or future products without Universal Robots’ prior written permission.
+
+1.4. You may share the Graphical Documentation or any whole or partial copies thereof with a third party (i) if and to the extent it is necessary for you to do so in order for you to engage in use permitted pursuant to this Section 1, and (ii) you provide the recipient with a copy of the T&Cs. However, you may only make the Graphical Documentation or any whole or partial copies thereof available to the public via download if it is part of a downloadable software package that includes a copy of the T&Cs. If you download a software package that includes the Graphical Documentation, your use of the Graphical Documentation will be subject to and governed by the latest version of the T&Cs, which can be found here: https://www.universal-robots.com/legal/terms-and-conditions/terms_and_conditions_for_use_of_graphical_documentation.txt , regardless of whether they are included in the software package or not.
+
+1.4.1. You are not allowed to alter, obscure, remove or replace any copyright or other legal notices, trademarks, business names and/or logos embedded in, superimposed on, affixed to, or otherwise included in, the Graphical Documentation without Universal Robots’ prior written permission.
+
+1.4.2. You may show the Graphical Documentation in whole or in part to a third party or the public in the course of you engaging in the use permitted pursuant to this Section 1, provided that you display any copyright notice already contained in the Graphical Documentation, cf. also Section 1.4.1.
+
+1.4.3. You may show graphical representations of Universal Robots’ products based on the Graphical Documentation to a third party or the public in the course of you engaging in the use permitted pursuant to this Section 1, if you, to the extent possible, display the following copyright notice in connection with such use: “© 2023 Universal Robots A/S. Use hereof is subject to Universal Robots A/S’ Terms and Conditions for Use of Graphical Documentation.” If the medium that you use limits or does not support the possibility of displaying the copyright notice, you may in good faith disregard this requirement.
+
+1.5. You may under no circumstances use the Graphical Documentation for planning, construction, maintenance, operation, or use, directly or indirectly, in nuclear power plants, missile technology, chemical or biological weapons applications or flight, navigation, or communication of aircraft or ground support equipment.
+
+1.6. Any use of the Graphical Documentation that is not expressly permitted pursuant to this Section 1 constitutes a material breach of the T&Cs.
+
+1.7. If your intended use of the Graphical Documentation is not permitted pursuant to the T&Cs, you may contact Universal Robots via email at legal@universal-robots.com and request a special permission to engage in your particular intended use.
+
+
+2. INTELLECTUAL PROPERTY RIGHTS
+
+2.1. You acknowledge and agree that the Graphical Documentation and all intellectual property rights contained and/or embodied therein, including, but not limited to, rights under the Danish Marketing Practices Act or under similar rules of law, patents, utility models, copyrights and related rights, software, trademarks, semiconductors, designs, know-how, rights in databases, trade secrets, and all applications or pending applications for such in all cases, whether or not registrable in any country, and all rights and forms of protection of a similar nature or having equivalent or similar effect anywhere in the world, shall be and remain the sole property of Universal Robots. Nothing in the T&Cs shall be construed as granting you any license to such rights, including, without limitation, any licenses to use Universal Robots’ trademarks, patents, or designs, except as strictly necessary in order for you to engage in the use permitted pursuant to Section 1.
+
+2.2. If you create any derivative works based on the Graphical Documentation, Universal Robots shall own the intellectual property rights in and to such derivative works. The foregoing notwithstanding, you may use such derivative works in connection with your use of the Graphical Documentation in accordance with Section 1.
+
+
+3. NO WARRANTIES, LIMITATIONS OF LIABILITY
+
+3.1. THE GRAPHICAL DOCUMENTATION IS PROVIDED ON AN “AS IS” BASIS AND UNIVERSAL ROBOTS MAKES NO WARRANTY OF ANY KIND WITH RESPECT TO THE GRAPHICAL DOCUMENTATION AND WE HEREBY EXPRESSLY EXCLUDE ANY WARRANTIES WITH RESPECT THERETO, WHETHER EXPRESS, IMPLIED, STATUTORY OR OTHERWISE, INCLUDING BUT NOT LIMITED TO ANY IMPLIED WARRANTIES OF MERCHANTABILITY, SATISFACTORY QUALITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, NONINFRINGEMENT, ACCURACY OR ANY OTHER WARRANTIES OR GUARANTEES THAT MAY ARISE FROM COURSE OF DEALING, USAGE, OR TRADE PRACTICE. NEITHER UNIVERSAL ROBOTS NOR ITS SUPPLIERS, INCLUDING – WITHOUT LIMITATION – ITS LICENSORS, MAKE ANY REPRESENTATION, WARRANTY, OR OTHER COMMITMENT REGARDING (1) THE USE OR INABILITY TO USE THE GRAPHICAL DOCUMENTATION; OR (2) ANY RESULTS OF SUCH USE IN TERMS OF CORRECTNESS, ACCURACY, OR RELIABILITY. YOU UNDERSTAND AND AGREE THAT YOU ASSUME THE ENTIRE RISK AS TO YOUR USE OF THE GRAPHICAL DOCUMENTATION.
+
+3.2. TO THE EXTENT PERMITTED BY LAW, IN NO EVENT WILL UNIVERSAL ROBOTS BE LIABLE FOR ANY LOSSES OR DAMAGES INCURRED BY YOU, WHETHER DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY OR CONSEQUENTIAL, INCLUDING LOST OR ANTICIPATED PROFITS, SAVINGS, INTERRUPTION TO BUSINESS, LOSS OF BUSINESS OPPORTUNITIES, LOSS OF BUSINESS INFORMATION OR OTHER DATA, THE COST OF RECOVERING SUCH LOST INFORMATION OR DATA, THE COST OF SUBSTITUTE INTELLECTUAL PROPERTY OR ANY OTHER PECUNIARY LOSS ARISING FROM THE USE OF, OR THE INABILITY TO USE, THE GRAPHICAL DOCUMENTATION REGARDLESS OF WHETHER UNIVERSAL ROBOTS HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. THE FOREGOING LIMITATIONS APPLY REGARDLESS OF THE CAUSE OR CIRCUMSTANCES GIVING RISE TO SUCH LOSS, DAMAGE OR LIABILITY, EVEN IF SUCH LOSS, DAMAGE OR LIABILITY IS BASED ON NEGLIGENCE OR OTHER TORTS OR BREACH OF CONTRACT.
+
+
+4. INDEMNIFICATION
+
+4.1. You shall defend, indemnify, and hold Universal Robots and its affiliates, employees, and agents harmless, from and against all sums, claims, costs, duties, liabilities, losses, obligations, suits, actions, damages, penalties, awards, fines, interest, and other expenses (including investigation expenses and attorneys’ fees) that Universal Robots may incur or be obligated to pay as a result of your unauthorized use, modification, resale, transfer, shipment, or export of the Graphical Documentation.
+
+
+5. MISCELLANEOUS
+
+5.1. Entire Agreement. Except as otherwise explicitly provided for herein, the T&Cs constitute the entire agreement and supersedes all prior negotiations, promises, understandings, and agreements between the parties with respect to the subject matter hereof.
+
+5.2. Changes to the T&Cs. Universal Robots reserves the right, in its sole and absolute discretion, to change the terms of the T&Cs by providing you with ninety (90) days’ notice.
+
+5.3. Obligations on Legal Successors. The parties undertake to impose the obligations under the T&Cs on their statutory or contractual legal successors, if any.
+
+5.4. Export Laws. You agree to comply with all applicable laws and regulations, including export laws of the United States and any other applicable country or jurisdiction. You agree that the Graphical Documentation will not be shipped, transferred, or exported into any country or used in any manner prohibited by the United States Export Administration Act or any other country’s export laws, restrictions, or regulations (collectively the “Export Laws”). In addition, if the Graphical Documentation are identified as export controlled items under the Export Laws, you represent and warrant that you are not a citizen, or otherwise located within, an embargoed nation and that you are not otherwise prohibited under the Export Laws from receiving the Graphical Documentation.
+
+5.5. No Agency. The parties are independent contractors and nothing in the T&Cs shall be construed as to create an agency, joint venture, partnership, or other form of business association between the parties.
+
+5.6. Survival. If the contents of individual provisions of the T&Cs are intended to survive the termination or expiration of the T&Cs, such provisions, including but not limited to provisions governing warranties and representations and the transfer of rights, title and interest to Universal Robots, shall to this extent remain in effect and be fully enforceable also after the termination or expiration of the T&Cs for whatever reason.
+
+
+6. TERM AND TERMINATION
+
+6.1. The T&Cs shall enter into force upon your receipt of, or you accessing, the Graphical Documentation and continue to be in force until terminated in accordance with this Section 6. The T&Cs shall automatically expire at such time as you are no longer permitted to use the Graphical Documentation in accordance with Section 1.
+
+6.2. You may terminate the T&Cs for convenience at any time by deleting all copies of the Graphical Documentation in your possession. Universal Robots may terminate the T&Cs for convenience by providing you with ninety (90) days’ notice.
+
+6.3. Universal Robots may terminate the T&Cs for cause with immediate effect in case of your material breach of the T&Cs.
+
+
+7. EFFECTS OF TERMINATION
+
+7.1. Upon expiration or termination of the T&Cs, for whatever reason, you must immediately cease use of the Graphical Documentation and delete all copies of the Graphical Documentation in your possession.
+
+8. GOVERNING LAW AND VENUE
+
+8.1. The T&Cs shall be governed by and construed in accordance with the laws of Denmark, without giving effect to conflict of law provisions thereof. The parties expressly disclaim the applicability of the United Nations Convention on Contracts for the International Sale of Goods.
+
+8.2. Any and all disputes arising out of or in connection with the T&Cs shall be submitted to the International Chamber of Commerce and shall be settled under the Rules of Arbitration of the International Chamber of Commerce by one (1) arbitrator appointed in accordance with said Rules. The place of arbitration shall be Copenhagen, Denmark. The arbitration shall be conducted in the English language. The foregoing notwithstanding, Universal Robots may seek preliminary, temporary, or permanent injunctive relief and other equitable remedies in any court of competent jurisdiction prior to or during arbitration and may enforce the award of the arbitrator in any court of competent jurisdiction.
+
+
+* E.g., STEP-Files (ISO 10303-21), Collada (.dae), STL files (.stl), GLB files (.glb), GLFT files (.glft) , Jupiter Tessellation files (.jt), E-plan files (.emp), electrical schematics, CAD files, and drawings including the contents of these technical files. “Software”, as defined in Universal Robots End User Software License Agreement, does not constitute “Technical Documentation” and your use thereof is, unless otherwise agreed with Universal Robots in writing, governed by Universal Robots’ End User Software License Agreement.
+
+
+================================================================================
+License for contents in the directory 'universal_robots_ur3e/'
+================================================================================
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+
+   * Redistributions of source code must retain the above copyright
+     notice, this list of conditions and the following disclaimer.
+
+   * Redistributions in binary form must reproduce the above copyright
+     notice, this list of conditions and the following disclaimer in the
+     documentation and/or other materials provided with the distribution.
+
+   * Neither the name of the copyright holder nor the names of its
+     contributors may be used to endorse or promote products derived from
+     this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE
+LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+POSSIBILITY OF SUCH DAMAGE.
+
+
+================================================================================
+License for contents in the directory 'universal_robots_ur5/'
+================================================================================
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+
+   * Redistributions of source code must retain the above copyright
+     notice, this list of conditions and the following disclaimer.
+
+   * Redistributions in binary form must reproduce the above copyright
+     notice, this list of conditions and the following disclaimer in the
+     documentation and/or other materials provided with the distribution.
+
+   * Neither the name of the copyright holder nor the names of its
+     contributors may be used to endorse or promote products derived from
+     this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE
+LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+POSSIBILITY OF SUCH DAMAGE.
+
+
+================================================================================
 License for contents in the directory 'universal_robots_ur5e/'
 ================================================================================
 
@@ -7679,6 +8719,159 @@ LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
 ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+
+================================================================================
+License for contents in the directory 'universal_robots_ur7e/'
+================================================================================
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+
+   * Redistributions of source code must retain the above copyright
+     notice, this list of conditions and the following disclaimer.
+
+   * Redistributions in binary form must reproduce the above copyright
+     notice, this list of conditions and the following disclaimer in the
+     documentation and/or other materials provided with the distribution.
+
+   * Neither the name of the copyright holder nor the names of its
+     contributors may be used to endorse or promote products derived from
+     this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE
+LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+POSSIBILITY OF SUCH DAMAGE.
+
+
+================================================================================
+License for contents in the directory 'universal_robots_ur8long/'
+================================================================================
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+
+   * Redistributions of source code must retain the above copyright
+     notice, this list of conditions and the following disclaimer.
+
+   * Redistributions in binary form must reproduce the above copyright
+     notice, this list of conditions and the following disclaimer in the
+     documentation and/or other materials provided with the distribution.
+
+   * Neither the name of the copyright holder nor the names of its
+     contributors may be used to endorse or promote products derived from
+     this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE
+LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+POSSIBILITY OF SUCH DAMAGE.
+
+--------------------------------------------------------------------------------
+
+The mesh and texture files in the assets/ directory are Graphical Documentation
+of Universal Robots A/S. They are not covered by the license above and are
+subject to the following terms:
+
+TERMS AND CONDITIONS FOR USE OF GRAPHICAL DOCUMENTATION
+
+Version: 1.01 / release date: 2023-09-12
+
+These Terms and Conditions for Use of Graphical Documentation (the “T&Cs”) govern your use of graphical files and documents*, including the contents hereof, (the “Graphical Documentation”) provided or made available to you by Universal Robots A/S (“Universal Robots”) for the purposes of creating simulations, visualizations, digital representations, path planning, collision avoidance and algorithms of or for Universal Robots’ products. The T&Cs constitute a binding agreement between you and Universal Robots. By accessing, storing, copying, sharing, opening, or otherwise using or disposing of the Graphical Documentation, you acknowledge that you are bound by the T&Cs.
+
+1. PERMITTED USE OF THE GRAPHICAL DOCUMENTATION
+
+1.1. You may use the Graphical Documentation for the purposes of creating simulations, visualizations, digital representations, path planning, collision avoidance and algorithms of or for Universal Robots’ products, provided that your use does not constitute comparative advertising and is not otherwise unfair, disloyal, or disparaging to Universal Robots.
+
+1.2. Hobbyists, students and/or researchers are allowed to use the Graphical Documentation to create models or similar solely for non-commercial purposes as part of their hobby, academic studies, or research. However, no one is allowed to use the Graphical Documentation to create a physical model or similar for commercial purposes, nor to create or improve a product that is capable of competing, either directly or indirectly, with any of Universal Robots’ or its affiliates’ current or future robots.
+
+1.3. You are permitted to create a product or solution that simulates, visualizes, or digitally represents a Universal Robots product, regardless of the origin of the underlying software, and regardless of whether Universal Robots or its affiliates have released a product that competes with the underlying software. However, you may not in any way use the Graphical Documentation to create a product or solution that simulates, visualizes or represents a product that is capable of competing, either directly or indirectly, with any of Universal Robots’ or its affiliates’ current or future products without Universal Robots’ prior written permission.
+
+1.4. You may share the Graphical Documentation or any whole or partial copies thereof with a third party (i) if and to the extent it is necessary for you to do so in order for you to engage in use permitted pursuant to this Section 1, and (ii) you provide the recipient with a copy of the T&Cs. However, you may only make the Graphical Documentation or any whole or partial copies thereof available to the public via download if it is part of a downloadable software package that includes a copy of the T&Cs. If you download a software package that includes the Graphical Documentation, your use of the Graphical Documentation will be subject to and governed by the latest version of the T&Cs, which can be found here: https://www.universal-robots.com/legal/terms-and-conditions/terms_and_conditions_for_use_of_graphical_documentation.txt , regardless of whether they are included in the software package or not.
+
+1.4.1. You are not allowed to alter, obscure, remove or replace any copyright or other legal notices, trademarks, business names and/or logos embedded in, superimposed on, affixed to, or otherwise included in, the Graphical Documentation without Universal Robots’ prior written permission.
+
+1.4.2. You may show the Graphical Documentation in whole or in part to a third party or the public in the course of you engaging in the use permitted pursuant to this Section 1, provided that you display any copyright notice already contained in the Graphical Documentation, cf. also Section 1.4.1.
+
+1.4.3. You may show graphical representations of Universal Robots’ products based on the Graphical Documentation to a third party or the public in the course of you engaging in the use permitted pursuant to this Section 1, if you, to the extent possible, display the following copyright notice in connection with such use: “© 2023 Universal Robots A/S. Use hereof is subject to Universal Robots A/S’ Terms and Conditions for Use of Graphical Documentation.” If the medium that you use limits or does not support the possibility of displaying the copyright notice, you may in good faith disregard this requirement.
+
+1.5. You may under no circumstances use the Graphical Documentation for planning, construction, maintenance, operation, or use, directly or indirectly, in nuclear power plants, missile technology, chemical or biological weapons applications or flight, navigation, or communication of aircraft or ground support equipment.
+
+1.6. Any use of the Graphical Documentation that is not expressly permitted pursuant to this Section 1 constitutes a material breach of the T&Cs.
+
+1.7. If your intended use of the Graphical Documentation is not permitted pursuant to the T&Cs, you may contact Universal Robots via email at legal@universal-robots.com and request a special permission to engage in your particular intended use.
+
+
+2. INTELLECTUAL PROPERTY RIGHTS
+
+2.1. You acknowledge and agree that the Graphical Documentation and all intellectual property rights contained and/or embodied therein, including, but not limited to, rights under the Danish Marketing Practices Act or under similar rules of law, patents, utility models, copyrights and related rights, software, trademarks, semiconductors, designs, know-how, rights in databases, trade secrets, and all applications or pending applications for such in all cases, whether or not registrable in any country, and all rights and forms of protection of a similar nature or having equivalent or similar effect anywhere in the world, shall be and remain the sole property of Universal Robots. Nothing in the T&Cs shall be construed as granting you any license to such rights, including, without limitation, any licenses to use Universal Robots’ trademarks, patents, or designs, except as strictly necessary in order for you to engage in the use permitted pursuant to Section 1.
+
+2.2. If you create any derivative works based on the Graphical Documentation, Universal Robots shall own the intellectual property rights in and to such derivative works. The foregoing notwithstanding, you may use such derivative works in connection with your use of the Graphical Documentation in accordance with Section 1.
+
+
+3. NO WARRANTIES, LIMITATIONS OF LIABILITY
+
+3.1. THE GRAPHICAL DOCUMENTATION IS PROVIDED ON AN “AS IS” BASIS AND UNIVERSAL ROBOTS MAKES NO WARRANTY OF ANY KIND WITH RESPECT TO THE GRAPHICAL DOCUMENTATION AND WE HEREBY EXPRESSLY EXCLUDE ANY WARRANTIES WITH RESPECT THERETO, WHETHER EXPRESS, IMPLIED, STATUTORY OR OTHERWISE, INCLUDING BUT NOT LIMITED TO ANY IMPLIED WARRANTIES OF MERCHANTABILITY, SATISFACTORY QUALITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, NONINFRINGEMENT, ACCURACY OR ANY OTHER WARRANTIES OR GUARANTEES THAT MAY ARISE FROM COURSE OF DEALING, USAGE, OR TRADE PRACTICE. NEITHER UNIVERSAL ROBOTS NOR ITS SUPPLIERS, INCLUDING – WITHOUT LIMITATION – ITS LICENSORS, MAKE ANY REPRESENTATION, WARRANTY, OR OTHER COMMITMENT REGARDING (1) THE USE OR INABILITY TO USE THE GRAPHICAL DOCUMENTATION; OR (2) ANY RESULTS OF SUCH USE IN TERMS OF CORRECTNESS, ACCURACY, OR RELIABILITY. YOU UNDERSTAND AND AGREE THAT YOU ASSUME THE ENTIRE RISK AS TO YOUR USE OF THE GRAPHICAL DOCUMENTATION.
+
+3.2. TO THE EXTENT PERMITTED BY LAW, IN NO EVENT WILL UNIVERSAL ROBOTS BE LIABLE FOR ANY LOSSES OR DAMAGES INCURRED BY YOU, WHETHER DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY OR CONSEQUENTIAL, INCLUDING LOST OR ANTICIPATED PROFITS, SAVINGS, INTERRUPTION TO BUSINESS, LOSS OF BUSINESS OPPORTUNITIES, LOSS OF BUSINESS INFORMATION OR OTHER DATA, THE COST OF RECOVERING SUCH LOST INFORMATION OR DATA, THE COST OF SUBSTITUTE INTELLECTUAL PROPERTY OR ANY OTHER PECUNIARY LOSS ARISING FROM THE USE OF, OR THE INABILITY TO USE, THE GRAPHICAL DOCUMENTATION REGARDLESS OF WHETHER UNIVERSAL ROBOTS HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. THE FOREGOING LIMITATIONS APPLY REGARDLESS OF THE CAUSE OR CIRCUMSTANCES GIVING RISE TO SUCH LOSS, DAMAGE OR LIABILITY, EVEN IF SUCH LOSS, DAMAGE OR LIABILITY IS BASED ON NEGLIGENCE OR OTHER TORTS OR BREACH OF CONTRACT.
+
+
+4. INDEMNIFICATION
+
+4.1. You shall defend, indemnify, and hold Universal Robots and its affiliates, employees, and agents harmless, from and against all sums, claims, costs, duties, liabilities, losses, obligations, suits, actions, damages, penalties, awards, fines, interest, and other expenses (including investigation expenses and attorneys’ fees) that Universal Robots may incur or be obligated to pay as a result of your unauthorized use, modification, resale, transfer, shipment, or export of the Graphical Documentation.
+
+
+5. MISCELLANEOUS
+
+5.1. Entire Agreement. Except as otherwise explicitly provided for herein, the T&Cs constitute the entire agreement and supersedes all prior negotiations, promises, understandings, and agreements between the parties with respect to the subject matter hereof.
+
+5.2. Changes to the T&Cs. Universal Robots reserves the right, in its sole and absolute discretion, to change the terms of the T&Cs by providing you with ninety (90) days’ notice.
+
+5.3. Obligations on Legal Successors. The parties undertake to impose the obligations under the T&Cs on their statutory or contractual legal successors, if any.
+
+5.4. Export Laws. You agree to comply with all applicable laws and regulations, including export laws of the United States and any other applicable country or jurisdiction. You agree that the Graphical Documentation will not be shipped, transferred, or exported into any country or used in any manner prohibited by the United States Export Administration Act or any other country’s export laws, restrictions, or regulations (collectively the “Export Laws”). In addition, if the Graphical Documentation are identified as export controlled items under the Export Laws, you represent and warrant that you are not a citizen, or otherwise located within, an embargoed nation and that you are not otherwise prohibited under the Export Laws from receiving the Graphical Documentation.
+
+5.5. No Agency. The parties are independent contractors and nothing in the T&Cs shall be construed as to create an agency, joint venture, partnership, or other form of business association between the parties.
+
+5.6. Survival. If the contents of individual provisions of the T&Cs are intended to survive the termination or expiration of the T&Cs, such provisions, including but not limited to provisions governing warranties and representations and the transfer of rights, title and interest to Universal Robots, shall to this extent remain in effect and be fully enforceable also after the termination or expiration of the T&Cs for whatever reason.
+
+
+6. TERM AND TERMINATION
+
+6.1. The T&Cs shall enter into force upon your receipt of, or you accessing, the Graphical Documentation and continue to be in force until terminated in accordance with this Section 6. The T&Cs shall automatically expire at such time as you are no longer permitted to use the Graphical Documentation in accordance with Section 1.
+
+6.2. You may terminate the T&Cs for convenience at any time by deleting all copies of the Graphical Documentation in your possession. Universal Robots may terminate the T&Cs for convenience by providing you with ninety (90) days’ notice.
+
+6.3. Universal Robots may terminate the T&Cs for cause with immediate effect in case of your material breach of the T&Cs.
+
+
+7. EFFECTS OF TERMINATION
+
+7.1. Upon expiration or termination of the T&Cs, for whatever reason, you must immediately cease use of the Graphical Documentation and delete all copies of the Graphical Documentation in your possession.
+
+8. GOVERNING LAW AND VENUE
+
+8.1. The T&Cs shall be governed by and construed in accordance with the laws of Denmark, without giving effect to conflict of law provisions thereof. The parties expressly disclaim the applicability of the United Nations Convention on Contracts for the International Sale of Goods.
+
+8.2. Any and all disputes arising out of or in connection with the T&Cs shall be submitted to the International Chamber of Commerce and shall be settled under the Rules of Arbitration of the International Chamber of Commerce by one (1) arbitrator appointed in accordance with said Rules. The place of arbitration shall be Copenhagen, Denmark. The arbitration shall be conducted in the English language. The foregoing notwithstanding, Universal Robots may seek preliminary, temporary, or permanent injunctive relief and other equitable remedies in any court of competent jurisdiction prior to or during arbitration and may enforce the award of the arbitrator in any court of competent jurisdiction.
+
+
+* E.g., STEP-Files (ISO 10303-21), Collada (.dae), STL files (.stl), GLB files (.glb), GLFT files (.glft) , Jupiter Tessellation files (.jt), E-plan files (.emp), electrical schematics, CAD files, and drawings including the contents of these technical files. “Software”, as defined in Universal Robots End User Software License Agreement, does not constitute “Technical Documentation” and your use thereof is, unless otherwise agreed with Universal Robots in writing, governed by Universal Robots’ End User Software License Agreement.
 
 
 ================================================================================
