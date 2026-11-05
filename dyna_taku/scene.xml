@@ -1,0 +1,16 @@
+<mujoco model="dyna Taku scene">
+  <include file="taku.xml"/>
+  <statistic center="0 0 0.8" extent="1.4"/>
+  <visual>
+    <headlight diffuse="0.5 0.5 0.5" ambient="0.3 0.3 0.3" specular="0.3 0.3 0.3"/>
+    <global azimuth="135" elevation="-15" offwidth="1920" offheight="1080"/>
+  </visual>
+  <asset>
+    <texture type="skybox" builtin="gradient" rgb1="0.35 0.43 0.5" rgb2="0.75 0.8 0.85" width="512" height="3072"/>
+    <material name="floor" rgba="0.3 0.34 0.38 1" specular="0.25" shininess="0.3" reflectance="0.12"/>
+  </asset>
+  <worldbody>
+    <light pos="2 -2 4" dir="-0.5 0.5 -1" diffuse="0.8 0.8 0.8"/>
+    <geom name="floor" type="plane" size="0 0 0.05" material="floor"/>
+  </worldbody>
+</mujoco>
