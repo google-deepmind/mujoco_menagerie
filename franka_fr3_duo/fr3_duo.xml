@@ -127,8 +127,8 @@
           <geom mesh="link1_2" material="white" class="visual"/>
           <geom mesh="link1_3" material="white" class="visual"/>
           <body name="left_fr3v2_link2" quat="0.707107 -0.707107 0 0">
-            <inertial pos="0.004541 -0.180691 -0.010479" quat="0.644329 0.758803 -0.0323054 0.0895283"
-              mass="2.2375" diaginertia="0.0192001 0.0173406 0.0052593"/>
+            <inertial pos="0.004541 -0.180691 -0.010479" quat="0.644329 0.758803 -0.0323054 0.0895283" mass="2.2375"
+              diaginertia="0.0192001 0.0173406 0.0052593"/>
             <joint name="left_fr3v2_joint2" pos="0 0 0" axis="0 0 1" range="-1.83609 1.83609" damping="0.003"
               frictionloss="0.2"/>
             <geom name="left_fr3v2_link2_collision" class="collision" mesh="link2_coll"/>
@@ -137,8 +137,8 @@
             <geom mesh="link2_2" material="white" class="visual"/>
             <geom mesh="link2_3" material="white" class="visual"/>
             <body name="left_fr3v2_link3" pos="0 -0.316 0" quat="0.707107 0.707107 0 0">
-              <inertial pos="0.08254 0.019082 0.042027" quat="0.877348 -0.0280595 -0.265819 0.398514"
-                mass="2.19308" diaginertia="0.0146052 0.0104212 0.00447362"/>
+              <inertial pos="0.08254 0.019082 0.042027" quat="0.877348 -0.0280595 -0.265819 0.398514" mass="2.19308"
+                diaginertia="0.0146052 0.0104212 0.00447362"/>
               <joint name="left_fr3v2_joint3" pos="0 0 0" axis="0 0 1" range="-2.90074 2.90074" damping="0.003"
                 frictionloss="0.2"/>
               <geom name="left_fr3v2_link3_collision" class="collision" mesh="link3_coll"/>
@@ -147,8 +147,8 @@
               <geom mesh="link3_2" material="white" class="visual"/>
               <geom mesh="link3_3" material="white" class="visual"/>
               <body name="left_fr3v2_link4" pos="0.0825 0 0" quat="0.707107 0.707107 0 0">
-                <inertial pos="-0.087533 0.096335 0.01012" quat="0.725019 0.567552 -0.379628 -0.0900829"
-                  mass="2.18154" diaginertia="0.0126388 0.00973606 0.00442618"/>
+                <inertial pos="-0.087533 0.096335 0.01012" quat="0.725019 0.567552 -0.379628 -0.0900829" mass="2.18154"
+                  diaginertia="0.0126388 0.00973606 0.00442618"/>
                 <joint name="left_fr3v2_joint4" pos="0 0 0" axis="0 0 1" range="-3.07702 -0.116937" damping="0.003"
                   frictionloss="0.2"/>
                 <geom name="left_fr3v2_link4_collision" class="collision" mesh="link4_coll"/>
@@ -230,8 +230,8 @@
           <geom mesh="link1_2" material="white" class="visual"/>
           <geom mesh="link1_3" material="white" class="visual"/>
           <body name="right_fr3v2_link2" quat="0.707107 -0.707107 0 0">
-            <inertial pos="0.004541 -0.180691 -0.010479" quat="0.644329 0.758803 -0.0323054 0.0895283"
-              mass="2.2375" diaginertia="0.0192001 0.0173406 0.0052593"/>
+            <inertial pos="0.004541 -0.180691 -0.010479" quat="0.644329 0.758803 -0.0323054 0.0895283" mass="2.2375"
+              diaginertia="0.0192001 0.0173406 0.0052593"/>
             <joint name="right_fr3v2_joint2" pos="0 0 0" axis="0 0 1" range="-1.83609 1.83609" damping="0.003"
               frictionloss="0.2"/>
             <geom name="right_fr3v2_link2_collision" class="collision" mesh="link2_coll"/>
@@ -240,8 +240,8 @@
             <geom mesh="link2_2" material="white" class="visual"/>
             <geom mesh="link2_3" material="white" class="visual"/>
             <body name="right_fr3v2_link3" pos="0 -0.316 0" quat="0.707107 0.707107 0 0">
-              <inertial pos="0.08254 0.019082 0.042027" quat="0.877348 -0.0280595 -0.265819 0.398514"
-                mass="2.19308" diaginertia="0.0146052 0.0104212 0.00447362"/>
+              <inertial pos="0.08254 0.019082 0.042027" quat="0.877348 -0.0280595 -0.265819 0.398514" mass="2.19308"
+                diaginertia="0.0146052 0.0104212 0.00447362"/>
               <joint name="right_fr3v2_joint3" pos="0 0 0" axis="0 0 1" range="-2.90074 2.90074" damping="0.003"
                 frictionloss="0.2"/>
               <geom name="right_fr3v2_link3_collision" class="collision" mesh="link3_coll"/>
@@ -250,8 +250,8 @@
               <geom mesh="link3_2" material="white" class="visual"/>
               <geom mesh="link3_3" material="white" class="visual"/>
               <body name="right_fr3v2_link4" pos="0.0825 0 0" quat="0.707107 0.707107 0 0">
-                <inertial pos="-0.087533 0.096335 0.01012" quat="0.725019 0.567552 -0.379628 -0.0900829"
-                  mass="2.18154" diaginertia="0.0126388 0.00973606 0.00442618"/>
+                <inertial pos="-0.087533 0.096335 0.01012" quat="0.725019 0.567552 -0.379628 -0.0900829" mass="2.18154"
+                  diaginertia="0.0126388 0.00973606 0.00442618"/>
                 <joint name="right_fr3v2_joint4" pos="0 0 0" axis="0 0 1" range="-3.07702 -0.116937" damping="0.003"
                   frictionloss="0.2"/>
                 <geom name="right_fr3v2_link4_collision" class="collision" mesh="link4_coll"/>
@@ -351,9 +351,7 @@
   </actuator>
 
   <keyframe>
-    <key
-      name="home"
-      qpos="0 0 0 -1.57079 0 1.57079 -0.7853 0 0 0 -1.57079 0 1.57079 -0.7853"
+    <key name="home" qpos="0 0 0 -1.57079 0 1.57079 -0.7853 0 0 0 -1.57079 0 1.57079 -0.7853"
       ctrl="0 0 0 -1.57079 0 1.57079 -0.7853 0 0 0 -1.57079 0 1.57079 -0.7853"/>
   </keyframe>
 </mujoco>

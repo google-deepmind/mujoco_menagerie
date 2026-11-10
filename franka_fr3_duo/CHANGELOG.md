@@ -10,4 +10,3 @@ All notable changes to this model will be documented in this file.
   (`franka_head_v0_2`), plus an optional floor-standing column variant
   (`fr3_duo_with_spine.xml`, `franka_spine_v0_1`).
 - Derived from `frankarobotics/franka_description` version 2.9.0.
-
