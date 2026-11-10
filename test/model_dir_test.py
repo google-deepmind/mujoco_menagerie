@@ -14,14 +14,15 @@
 """Lint that every model directory ships the expected files."""
 
 import pathlib
+import sys
 
 from absl.testing import absltest
 from absl.testing import parameterized
 
-# Internal import.
-
-
 _ROOT_DIR = pathlib.Path(__file__).parent.parent
+sys.path.insert(0, str(_ROOT_DIR))
+
+import catalog  # noqa: E402
 
 # Non-model top-level directories.
 _SKIP_DIRS = {'assets', 'test', '.git', '.github', 'opensource'}
@@ -79,6 +80,32 @@ class ModelDirLayoutTest(parameterized.TestCase):
       f'{model_dir.name} has no scene*.xml.',
     )
 
+  @parameterized.named_parameters(_MODEL_DIRS)
+  def test_registered_in_catalog(self, model_dir: pathlib.Path) -> None:
+    keys = [k for k in catalog.MODEL_MAP if k.startswith(model_dir.name + '/')]
+    self.assertTrue(
+      bool(keys),
+      f'{model_dir.name} is not registered in catalog.MODEL_MAP. Every model '
+      'directory must have at least one entry in catalog.MODEL_MAP.',
+    )
+
+  @parameterized.named_parameters(_MODEL_DIRS)
+  def test_multi_scene_requires_preview_override(
+    self, model_dir: pathlib.Path
+  ) -> None:
+    scenes = list(model_dir.glob('scene*.xml'))
+    if len(scenes) > 1 and not (model_dir / 'scene.xml').is_file():
+      robots = [
+        k for k in catalog.MODEL_MAP if k.startswith(model_dir.name + '/')
+      ]
+      for robot in robots:
+        self.assertIn(
+          robot,
+          catalog.PREVIEW_OVERRIDES,
+          f'{model_dir.name} has multiple scenes {sorted(s.name for s in scenes)} '
+          'and no default scene.xml; pick one in catalog.PREVIEW_OVERRIDES.',
+        )
+
 
 class ContributorsTest(absltest.TestCase):
   """Checks CONTRIBUTORS.md sections are sorted alphabetically by first name."""
@@ -113,6 +140,30 @@ class ContributorsTest(absltest.TestCase):
           f'sorted. First out-of-order entry: {lines[first_bad]!r} '
           f'(expected {sorted_lines[first_bad]!r}).'
         )
+
+
+class CatalogConsistencyTest(absltest.TestCase):
+  """Checks that catalog.py metadata entries point to real files and directories."""
+
+  def test_catalog_models_exist(self) -> None:
+    for robot in catalog.MODEL_MAP:
+      maker = robot.split('/')[0]
+      self.assertTrue(
+        (_ROOT_DIR / maker).is_dir(),
+        f'catalog.MODEL_MAP references unknown model directory: {maker}',
+      )
+
+  def test_catalog_preview_overrides_exist(self) -> None:
+    for robot, target in catalog.PREVIEW_OVERRIDES.items():
+      self.assertIn(
+        robot,
+        catalog.MODEL_MAP,
+        f'catalog.PREVIEW_OVERRIDES key {robot!r} is not registered in catalog.MODEL_MAP.',
+      )
+      self.assertTrue(
+        (_ROOT_DIR / target).is_file(),
+        f'catalog.PREVIEW_OVERRIDES target does not exist: {target}',
+      )
 
 
 if __name__ == '__main__':
