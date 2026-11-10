@@ -298,7 +298,6 @@
   <worldbody>
     <body name="thorax" childclass="body">
       <freejoint name="free"/>
-      <light name="right" mode="trackcom" pos="0 -1 1" dir="0 1 -1" diffuse="0.3 0.3 0.3"/>
       <camera name="track1" mode="trackcom" pos="0.6 0.6 0.22" quat="0.312 0.221 0.533 0.754"/>
       <camera name="track2" mode="trackcom" pos="0 -1.1 0.1" quat="0.707 0.707 0 0"/>
       <camera name="track3" mode="trackcom" pos="-0.9 -0.9 0.9" quat="0.82 0.425 -0.176 -0.34"/>
@@ -306,8 +305,6 @@
       <camera name="side" mode="track" pos="-0.045 0.424 -0.035" xyaxes="-1 0 0 0 0 1"/>
       <camera name="bottom" mode="track" pos="0.01 0 -0.516" xyaxes="0 1 0 0.991 0 0.136"/>
       <camera name="hero" mode="track" pos="0.271 0.27 -0.044" xyaxes="-0.641 0.767 0 -0.045 -0.037 0.998"/>
-      <light name="left" mode="trackcom" pos="0 1 1" dir="0 -1 -1" diffuse="0.3 0.3 0.3"/>
-      <light name="tracking" mode="trackcom" pos="0 0 1"/>
       <site name="thorax"/>
       <site name="hover_up_dir" pos="0.0262 0 0.0262" quat="0.915 0 0.403 0"/>
       <geom name="thorax" mass="0.00034" pos="-0.00791 0 -0.123" quat="0 0 0 -1" mesh="thorax"/>

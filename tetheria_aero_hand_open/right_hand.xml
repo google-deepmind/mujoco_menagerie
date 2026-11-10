@@ -179,7 +179,6 @@
   </contact>
 
   <worldbody>
-    <light name="spotlight" mode="targetbodycom" target="palm" pos="3 0 4"/>
     <body name="tetheria_mount" pos="0 0 -0.03" quat="1 0 0 0" childclass="tetheria_rh">
       <geom name="tetheria_mount_visual" pos="0.04 0.01 -0.012" quat="0.4085 -0.5730 0.5730 -0.4085" class="visual"
         mesh="tetheria_mount"/>

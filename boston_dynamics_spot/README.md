@@ -29,7 +29,9 @@ available URDF description](https://github.com/bdaiinstitute/spot_ros2).
 4. Added a `<freejoint/>` to the base, and a tracking light.
 5. Manually edited the MJCF to extract common properties into the `<default>` section.
 6. Added `<exclude>` clauses to prevent collisions between the base and the upper legs.
-7. Added position actuators (not tuned).
+7. Added position actuators with heuristic gains (`kp`/`kv`) and heuristic Spot Arm
+   joint `armature` values (not identified from hardware; arm and wrist `forcerange`
+   limits follow the Spot Arm URDF joint effort limits).
 8. Added a home keyframe.
 9. Added `scene.xml` which includes the robot, with a textured groundplane, skybox, and haze.
 

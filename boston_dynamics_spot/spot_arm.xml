@@ -70,8 +70,18 @@
   <default>
     <default class="spot">
       <geom solref="0.004 1"/>
-      <joint actuatorfrcrange="-1000 1000"/>
-      <position kp="500" kv="40" inheritrange="1"/>
+      <position kp="500" kv="40" forcerange="-1000 1000" inheritrange="1"/>
+      <default class="arm">
+        <joint armature="0.01"/>
+        <position kp="100" kv="10" forcerange="-90 90" inheritrange="1"/>
+        <default class="wrist">
+          <position kp="40" kv="4" forcerange="-30 30" inheritrange="1"/>
+        </default>
+        <default class="gripper">
+          <joint armature="0.005"/>
+          <position kp="40" kv="4" forcerange="-30 30" inheritrange="1"/>
+        </default>
+      </default>
       <default class="visual">
         <geom group="2" type="mesh" contype="0" conaffinity="0"/>
       </default>
@@ -86,9 +96,7 @@
   </default>
 
   <worldbody>
-    <light name="spotlight" mode="targetbodycom" target="body" pos="3 0 4" cutoff="30"/>
     <body name="body" childclass="spot" pos="0 0 .75">
-      <light name="tracking" mode="trackcom" pos="0 0 2"/>
       <freejoint name="freejoint"/>
       <inertial pos="0.0063944 -9.81216e-05 0.000911379" mass="32.86" diaginertia="0.13144 0.13144 0.13144"/>
       <geom mesh="body_0" material="BlackAbs" class="visual"/>
@@ -181,7 +189,7 @@
       <body name="arm_link_sh0" pos="0.292 0 0.188">
         <inertial pos="-0.0123727 -4.52114e-05 -0.021032" quat="0.707107 0.707107 0 0" mass="2.3364"
           diaginertia="0.0090143 0.00778748 0.0058351"/>
-        <joint name="arm_sh0" axis="0 0 1" range="-2.61799 3.14159"/>
+        <joint name="arm_sh0" class="arm" axis="0 0 1" range="-2.61799 3.14159"/>
         <geom material="BlackAbs" mesh="arm_link_sh0" class="visual" rgba=".1 .1 .1 1"/>
         <geom class="collision" mesh="arm_link_sh0_base_coll"/>
         <geom class="collision" mesh="arm_link_sh0_left_motor_coll"/>
@@ -189,7 +197,7 @@
         <body name="arm_link_sh1">
           <inertial pos="2.41764e-05 2.41161e-06 -1.00591e-05" quat="1 1 -1 1" mass="0.2596"
             diaginertia="0.00020385 0.000202928 0.000170786"/>
-          <joint name="arm_sh1" axis="0 1 0" range="-3.14159 0.523599"/>
+          <joint name="arm_sh1" class="arm" axis="0 1 0" range="-3.14159 0.523599"/>
           <geom mesh="arm_link_sh1_0" material="wrap" class="visual"/>
           <geom mesh="arm_link_sh1_1" material="BlackAbs" class="visual"/>
           <body name="arm_link_hr0">
@@ -199,13 +207,13 @@
             <body name="arm_link_el0" pos="0.3385 0 0">
               <inertial pos="0.0553741 0.000236034 0.048272" quat="1 1 1 1" mass="0.725"
                 diaginertia="0.00200479 0.00197228 0.000821537"/>
-              <joint name="arm_el0" axis="0 1 0" range="0 3.14159"/>
+              <joint name="arm_el0" class="arm" axis="0 1 0" range="0 3.14159"/>
               <geom material="BlackAbs" mesh="arm_link_el0" class="visual"/>
               <geom mesh="arm_link_el0_coll" class="collision"/>
               <body name="arm_link_el1" pos="0.4033 0 0.075">
                 <inertial pos="-0.125784 -0.0136845 0.000101579" quat="0 1 0 1" mass="0.725"
                   diaginertia="0.00451592 0.00440245 0.000625481"/>
-                <joint name="arm_el1" axis="1 0 0" range="-2.79253 2.79253"/>
+                <joint name="arm_el1" class="arm" axis="1 0 0" range="-2.79253 2.79253"/>
                 <geom mesh="arm_link_el1_0" material="wrap" class="visual"/>
                 <geom mesh="arm_link_el1_1" material="BlackAbs" class="visual"/>
                 <geom class="collision" mesh="arm_link_el1_main_coll"/>
@@ -213,14 +221,14 @@
                 <body name="arm_link_wr0">
                   <inertial pos="0.00821068 -0.012051 3.14348e-05" quat="1 1 -1 1" mass="0.98"
                     diaginertia="0.00123549 0.000985132 0.000891615"/>
-                  <joint name="arm_wr0" axis="0 1 0" range="-1.8326 1.8326"/>
+                  <joint name="arm_wr0" class="wrist" axis="0 1 0" range="-1.8326 1.8326"/>
                   <geom mesh="arm_link_wr0_0" material="wrap" class="visual"/>
                   <geom mesh="arm_link_wr0_1" material="BlackAbs" class="visual"/>
                   <geom class="collision" mesh="arm_link_wr0_coll"/>
                   <body name="arm_link_wr1">
                     <inertial pos="0.125168 0.000101374 -0.013998" quat="1 1 1 1" mass="0.785"
                       diaginertia="0.00176281 0.00168181 0.000767414"/>
-                    <joint name="arm_wr1" axis="1 0 0" range="-2.87979 2.87979"/>
+                    <joint name="arm_wr1" class="wrist" axis="1 0 0" range="-2.87979 2.87979"/>
                     <geom mesh="arm_link_wr1_0" material="wrap" class="visual"/>
                     <geom mesh="arm_link_wr1_1" material="BlackAbs" class="visual"/>
                     <geom class="collision" mesh="arm_link_wr1_coll"/>
@@ -230,7 +238,7 @@
                     <body name="arm_link_fngr" pos="0.11745 0 0.01482">
                       <inertial pos="0.0478787 -0.000206768 -0.0162879" quat="0 1 0 1" mass="0.2"
                         diaginertia="0.000391278 0.000300713 0.000143996"/>
-                      <joint name="arm_f1x" axis="0 1 0" range="-1.57 0"/>
+                      <joint name="arm_f1x" class="gripper" axis="0 1 0" range="-1.57 0"/>
                       <geom mesh="arm_link_fngr_0" material="wrap" class="visual"/>
                       <geom mesh="arm_link_fngr_1" material="BlackAbs" class="visual"/>
                       <geom class="collision" mesh="left_hinge_coll"/>
@@ -271,13 +279,13 @@
     <position class="spot" name="hr_hy" joint="hr_hy"/>
     <position class="spot" name="hr_kn" joint="hr_kn"/>
 
-    <position class="spot" name="arm_sh0" joint="arm_sh0"/>
-    <position class="spot" name="arm_sh1" joint="arm_sh1"/>
-    <position class="spot" name="arm_el0" joint="arm_el0"/>
-    <position class="spot" name="arm_el1" joint="arm_el1"/>
-    <position class="spot" name="arm_wr0" joint="arm_wr0"/>
-    <position class="spot" name="arm_wr1" joint="arm_wr1"/>
-    <position class="spot" name="arm_f1x" joint="arm_f1x"/>
+    <position class="arm" name="arm_sh0" joint="arm_sh0"/>
+    <position class="arm" name="arm_sh1" joint="arm_sh1"/>
+    <position class="arm" name="arm_el0" joint="arm_el0"/>
+    <position class="arm" name="arm_el1" joint="arm_el1"/>
+    <position class="wrist" name="arm_wr0" joint="arm_wr0"/>
+    <position class="wrist" name="arm_wr1" joint="arm_wr1"/>
+    <position class="gripper" name="arm_f1x" joint="arm_f1x"/>
   </actuator>
 
   <keyframe>

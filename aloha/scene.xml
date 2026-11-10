@@ -45,6 +45,8 @@
   </default>
 
   <worldbody>
+    <light pos="-0.5 0.7 2.5" dir="0.1 -0.3 -1"/>
+    <light pos="0.5 0.7 2.5" dir="-0.1 -0.3 -1"/>
     <light pos="0 0.1 2.5"/>
     <geom name="floor" size="2 2 0.05" type="plane" material="groundplane" pos="0 0 -.75"/>
     <site name="worldref" pos="0 0 -0.75"/>

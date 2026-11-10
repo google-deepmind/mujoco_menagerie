@@ -30,7 +30,6 @@
   </asset>
 
   <worldbody>
-    <light name="spotlight" mode="targetbodycom" target="x2" pos="0 -1 2"/>
     <body name="x2" pos="0 0 0.1" childclass="x2">
       <freejoint/>
       <camera name="track" pos="-1 0 .5" xyaxes="0 -1 0 1 0 2" mode="trackcom"/>

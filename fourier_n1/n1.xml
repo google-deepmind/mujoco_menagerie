@@ -13,22 +13,22 @@
         <site group="4" type="sphere" size="0.005" rgba="1 1 1 1"/>
       </default>
       <default class="joint_8029E">
-        <joint armature="0.12109824" range="0 0" actuatorfrcrange="-95 95"/>
+        <joint armature="0.12109824" range="0 0"/>
       </default>
       <default class="joint_6043E">
-        <joint armature="0.167592" range="0 0" actuatorfrcrange="-54 54"/>
+        <joint armature="0.167592" range="0 0"/>
       </default>
       <default class="joint_4530E">
-        <joint armature="0.0312822" range="0 0" actuatorfrcrange="-30 30"/>
+        <joint armature="0.0312822" range="0 0"/>
       </default>
       <default class="motor_8029E">
-        <motor ctrlrange="-95 95"/>
+        <motor ctrlrange="-95 95" forcerange="-95 95"/>
       </default>
       <default class="motor_6043E">
-        <motor ctrlrange="-54 54"/>
+        <motor ctrlrange="-54 54" forcerange="-54 54"/>
       </default>
       <default class="motor_4530E">
-        <motor ctrlrange="-30 30"/>
+        <motor ctrlrange="-30 30" forcerange="-30 30"/>
       </default>
     </default>
   </default>
@@ -76,7 +76,6 @@
   </asset>
 
   <worldbody>
-    <light mode="targetbodycom" target="base_link" pos="1.40 0 1.40"/>
     <body name="base_link" pos="0 0 0.7">
       <freejoint name="base_free_joint"/>
       <inertial pos="0.00025493 1.049e-05 -0.05502" quat="0.704566 0.709615 0.00402273 -0.00405522" mass="3.18"

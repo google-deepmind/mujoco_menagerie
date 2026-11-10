@@ -40,7 +40,6 @@
   </asset>
 
   <worldbody>
-    <light name="top" pos="0 0 2" mode="trackcom"/>
     <body name="base" childclass="Rizon4">
       <geom name="convex_mesh" mesh="link0"/>
       <body name="link1" pos="0 0 0.155" quat="0 0 0 1" gravcomp="1">

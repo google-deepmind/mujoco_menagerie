@@ -6,24 +6,24 @@
       <joint axis="0 0 1"/>
       <position inheritrange="1"/>
       <default class="hxx">
-        <joint armature="0.0056" frictionloss="0.3" actuatorfrcrange="-20 20" range="-0.610865 0.610865"/>
-        <position kp="10" kv="1.5"/>
+        <joint armature="0.0056" frictionloss="0.3" range="-0.610865 0.610865"/>
+        <position kp="10" kv="1.5" forcerange="-20 20"/>
       </default>
       <default class="hfe">
-        <joint armature="0.007614" frictionloss="0.3" actuatorfrcrange="-30 30" range="-1.74533 0.523599"/>
-        <position kp="15" kv="1.5"/>
+        <joint armature="0.007614" frictionloss="0.3" range="-1.74533 0.523599"/>
+        <position kp="15" kv="1.5" forcerange="-30 30"/>
       </default>
       <default class="kfe">
-        <joint armature="0.0056" frictionloss="1.0" actuatorfrcrange="-30 30" range="0 2.0944"/>
-        <position kp="1" kv=".1"/>
+        <joint armature="0.0056" frictionloss="1.0" range="0 2.0944"/>
+        <position kp="1" kv=".1" forcerange="-30 30"/>
       </default>
       <default class="ffe">
-        <joint armature="0.0056" frictionloss="1.0" actuatorfrcrange="-20 20" range="-0.523599 0.698132"/>
-        <position kp="1" kv=".1"/>
+        <joint armature="0.0056" frictionloss="1.0" range="-0.523599 0.698132"/>
+        <position kp="1" kv=".1" forcerange="-20 20"/>
       </default>
       <default class="faa">
-        <joint armature="0.0004941" frictionloss=".1" actuatorfrcrange="-5 5" range="-0.523599 0.523599"/>
-        <position kp="1" kv=".1"/>
+        <joint armature="0.0004941" frictionloss=".1" range="-0.523599 0.523599"/>
+        <position kp="1" kv=".1" forcerange="-5 5"/>
       </default>
       <default class="visual">
         <geom type="mesh" contype="0" conaffinity="0" density="0" group="2" material="metal"/>
@@ -60,7 +60,6 @@
   </asset>
 
   <worldbody>
-    <light name="spotlight" mode="targetbodycom" target="torso" pos="0 -1 2"/>
     <body name="torso" childclass="berkeley_humanoid" pos="0 0 0.6">
       <freejoint/>
       <site name="imu"/>

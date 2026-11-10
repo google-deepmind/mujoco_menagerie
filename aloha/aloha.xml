@@ -93,8 +93,6 @@
   </default>
 
   <worldbody>
-    <light mode="targetbodycom" target="left/gripper_link" pos="-.5 .7 2.5" cutoff="55"/>
-    <light mode="targetbodycom" target="right/gripper_link" pos=".5 .7 2.5" cutoff="55"/>
     <camera name="teleoperator_pov" pos="0 -1.354 0.685" xyaxes="1 0 0 0 0.2 .8"/>
     <camera name="collaborator_pov" pos="0 1.5 0.8" xyaxes="-1 0 0 0 -0.2 .8"/>
 

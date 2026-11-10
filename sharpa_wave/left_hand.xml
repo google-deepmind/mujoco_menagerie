@@ -20,19 +20,19 @@
         </default>
       </default>
       <default class="CMC_joint">
-        <joint actuatorfrcrange="-3.3 3.3" armature="0.00451" damping="4.2e-05" frictionloss="0.132"/>
+        <joint armature="0.00451" damping="4.2e-05" frictionloss="0.132"/>
       </default>
       <default class="PCMC_joint">
-        <joint actuatorfrcrange="-0.5285 0.5285" armature="0.000136" damping="4.2e-05" frictionloss="0.012"/>
+        <joint armature="0.000136" damping="4.2e-05" frictionloss="0.012"/>
       </default>
       <default class="MCP_joint">
-        <joint actuatorfrcrange="-1.864 1.864" armature="0.00129" damping="2.38e-05" frictionloss="0.07456"/>
+        <joint armature="0.00129" damping="2.38e-05" frictionloss="0.07456"/>
       </default>
       <default class="PIP_joint">
-        <joint actuatorfrcrange="-0.638 0.638" armature="0.000415" damping="4.06e-06" frictionloss="0.01276"/>
+        <joint armature="0.000415" damping="4.06e-06" frictionloss="0.01276"/>
       </default>
       <default class="DIP_joint">
-        <joint actuatorfrcrange="-0.189369 0.189369" armature="2.42e-05" damping="1.21e-06" frictionloss="0.00378738"/>
+        <joint armature="2.42e-05" damping="1.21e-06" frictionloss="0.00378738"/>
       </default>
     </default>
   </default>
@@ -347,27 +347,49 @@
   </contact>
 
   <actuator>
-    <position class="sharpa" name="left_thumb_CMC_FE" joint="left_thumb_CMC_FE" kp="6.95" dampratio="0.9"/>
-    <position class="sharpa" name="left_thumb_CMC_AA" joint="left_thumb_CMC_AA" kp="13.2" dampratio="0.9"/>
-    <position class="sharpa" name="left_thumb_MCP_FE" joint="left_thumb_MCP_FE" kp="4.76" dampratio="0.9"/>
-    <position class="sharpa" name="left_thumb_MCP_AA" joint="left_thumb_MCP_AA" kp="6.62" dampratio="0.9"/>
-    <position class="sharpa" name="left_thumb_IP" joint="left_thumb_IP" kp="0.9" dampratio="0.9"/>
-    <position class="sharpa" name="left_index_MCP_FE" joint="left_index_MCP_FE" kp="4.76" dampratio="0.9"/>
-    <position class="sharpa" name="left_index_MCP_AA" joint="left_index_MCP_AA" kp="6.62" dampratio="0.9"/>
-    <position class="sharpa" name="left_index_PIP" joint="left_index_PIP" kp="0.9" dampratio="0.9"/>
-    <position class="sharpa" name="left_index_DIP" joint="left_index_DIP" kp="0.9" dampratio="0.9"/>
-    <position class="sharpa" name="left_middle_MCP_FE" joint="left_middle_MCP_FE" kp="4.76" dampratio="0.9"/>
-    <position class="sharpa" name="left_middle_MCP_AA" joint="left_middle_MCP_AA" kp="6.62" dampratio="0.9"/>
-    <position class="sharpa" name="left_middle_PIP" joint="left_middle_PIP" kp="0.9" dampratio="0.9"/>
-    <position class="sharpa" name="left_middle_DIP" joint="left_middle_DIP" kp="0.9" dampratio="0.9"/>
-    <position class="sharpa" name="left_ring_MCP_FE" joint="left_ring_MCP_FE" kp="4.76" dampratio="0.9"/>
-    <position class="sharpa" name="left_ring_MCP_AA" joint="left_ring_MCP_AA" kp="6.62" dampratio="0.9"/>
-    <position class="sharpa" name="left_ring_PIP" joint="left_ring_PIP" kp="0.9" dampratio="0.9"/>
-    <position class="sharpa" name="left_ring_DIP" joint="left_ring_DIP" kp="0.9" dampratio="0.9"/>
-    <position class="sharpa" name="left_pinky_CMC" joint="left_pinky_CMC" kp="1.38" dampratio="0.9"/>
-    <position class="sharpa" name="left_pinky_MCP_FE" joint="left_pinky_MCP_FE" kp="4.76" dampratio="0.9"/>
-    <position class="sharpa" name="left_pinky_MCP_AA" joint="left_pinky_MCP_AA" kp="6.62" dampratio="0.9"/>
-    <position class="sharpa" name="left_pinky_PIP" joint="left_pinky_PIP" kp="0.9" dampratio="0.9"/>
-    <position class="sharpa" name="left_pinky_DIP" joint="left_pinky_DIP" kp="0.9" dampratio="0.9"/>
+    <position class="sharpa" name="left_thumb_CMC_FE" joint="left_thumb_CMC_FE" kp="6.95" dampratio="0.9"
+      forcerange="-3.3 3.3"/>
+    <position class="sharpa" name="left_thumb_CMC_AA" joint="left_thumb_CMC_AA" kp="13.2" dampratio="0.9"
+      forcerange="-3.3 3.3"/>
+    <position class="sharpa" name="left_thumb_MCP_FE" joint="left_thumb_MCP_FE" kp="4.76" dampratio="0.9"
+      forcerange="-1.864 1.864"/>
+    <position class="sharpa" name="left_thumb_MCP_AA" joint="left_thumb_MCP_AA" kp="6.62" dampratio="0.9"
+      forcerange="-1.864 1.864"/>
+    <position class="sharpa" name="left_thumb_IP" joint="left_thumb_IP" kp="0.9" dampratio="0.9"
+      forcerange="-0.638 0.638"/>
+    <position class="sharpa" name="left_index_MCP_FE" joint="left_index_MCP_FE" kp="4.76" dampratio="0.9"
+      forcerange="-1.864 1.864"/>
+    <position class="sharpa" name="left_index_MCP_AA" joint="left_index_MCP_AA" kp="6.62" dampratio="0.9"
+      forcerange="-1.864 1.864"/>
+    <position class="sharpa" name="left_index_PIP" joint="left_index_PIP" kp="0.9" dampratio="0.9"
+      forcerange="-0.638 0.638"/>
+    <position class="sharpa" name="left_index_DIP" joint="left_index_DIP" kp="0.9" dampratio="0.9"
+      forcerange="-0.189369 0.189369"/>
+    <position class="sharpa" name="left_middle_MCP_FE" joint="left_middle_MCP_FE" kp="4.76" dampratio="0.9"
+      forcerange="-1.864 1.864"/>
+    <position class="sharpa" name="left_middle_MCP_AA" joint="left_middle_MCP_AA" kp="6.62" dampratio="0.9"
+      forcerange="-1.864 1.864"/>
+    <position class="sharpa" name="left_middle_PIP" joint="left_middle_PIP" kp="0.9" dampratio="0.9"
+      forcerange="-0.638 0.638"/>
+    <position class="sharpa" name="left_middle_DIP" joint="left_middle_DIP" kp="0.9" dampratio="0.9"
+      forcerange="-0.189369 0.189369"/>
+    <position class="sharpa" name="left_ring_MCP_FE" joint="left_ring_MCP_FE" kp="4.76" dampratio="0.9"
+      forcerange="-1.864 1.864"/>
+    <position class="sharpa" name="left_ring_MCP_AA" joint="left_ring_MCP_AA" kp="6.62" dampratio="0.9"
+      forcerange="-1.864 1.864"/>
+    <position class="sharpa" name="left_ring_PIP" joint="left_ring_PIP" kp="0.9" dampratio="0.9"
+      forcerange="-0.638 0.638"/>
+    <position class="sharpa" name="left_ring_DIP" joint="left_ring_DIP" kp="0.9" dampratio="0.9"
+      forcerange="-0.189369 0.189369"/>
+    <position class="sharpa" name="left_pinky_CMC" joint="left_pinky_CMC" kp="1.38" dampratio="0.9"
+      forcerange="-0.5285 0.5285"/>
+    <position class="sharpa" name="left_pinky_MCP_FE" joint="left_pinky_MCP_FE" kp="4.76" dampratio="0.9"
+      forcerange="-1.864 1.864"/>
+    <position class="sharpa" name="left_pinky_MCP_AA" joint="left_pinky_MCP_AA" kp="6.62" dampratio="0.9"
+      forcerange="-1.864 1.864"/>
+    <position class="sharpa" name="left_pinky_PIP" joint="left_pinky_PIP" kp="0.9" dampratio="0.9"
+      forcerange="-0.638 0.638"/>
+    <position class="sharpa" name="left_pinky_DIP" joint="left_pinky_DIP" kp="0.9" dampratio="0.9"
+      forcerange="-0.189369 0.189369"/>
   </actuator>
 </mujoco>
