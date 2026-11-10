@@ -160,6 +160,26 @@ def test_verify_detects_changed_files(robot, base_url, cache_dir):
   assert cache.verify(robot) == ['assets/cube.obj', 'fake.xml']
 
 
+def test_top_level_verify(robot, base_url, cache_dir, monkeypatch):
+  import mujoco_menagerie as mm
+
+  cache = Cache(cache_dir, base_url)
+  monkeypatch.setattr(
+    mm,
+    'bundled',
+    lambda: type(
+      'Registry',
+      (),
+      {'names': lambda s: [robot.name], 'get': lambda s, n: robot},
+    )(),
+  )
+  assert mm.verify(cache=cache) == {}
+  path = cache.resolve(robot)
+  assert mm.verify(cache=cache) == {robot.name: []}
+  (path / 'fake.xml').write_text('<mujoco/>')
+  assert mm.verify(cache=cache) == {robot.name: ['fake.xml']}
+
+
 def test_clear_deletes_only_our_cache(robot, base_url, cache_dir):
   cache = Cache(cache_dir, base_url)
   cache.resolve(robot)

@@ -2,6 +2,11 @@
 
 All notable changes to this repository will be documented here.
 
+## [2026-10-27]
+
+- Corrected `format_xml.py` usage docstrings to reference the root `format_xml.py` script path instead of a nonexistent `scripts/` prefix.
+- Exposed top-level `verify()` function in `mujoco_menagerie` package alongside `clear()` and `prune()`, simplifying the CLI implementation and providing a programmatic interface to verify cached model integrity against published digests.
+
 ## [2026-09-12]
 
 - Corrected the list of models whose `assets()` raises in `python/DOC.md`: `pal_talos` collides on `base_link.stl`, `sharpa_wave` does not collide on any entry point. Added a test that derives the list from the checkout.

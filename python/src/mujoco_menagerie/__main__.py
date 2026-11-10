@@ -73,12 +73,7 @@ def main(argv: list[str] | None = None) -> None:
       if a.yes or input(f'Delete {cache.dir}? [y/N] ').lower() == 'y':
         cache.clear()
     elif a.cmd == 'verify':
-      cache = mm.Cache()
-      bad = {
-        r.name: cache.verify(r)
-        for r in map(mm.get, a.names or mm.names())
-        if cache.is_cached(r)
-      }
+      bad = mm.verify(a.names)
       for name, files in bad.items():
         print(name, 'ok' if not files else 'changed: ' + ' '.join(files))
       sys.exit(any(bad.values()))
