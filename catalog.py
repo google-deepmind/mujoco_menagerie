@@ -144,6 +144,7 @@ MODEL_MAP = {
   'tetheria_aero_hand_open/right_hand': ModelType.END_EFFECTOR,
   'trossen_wxai/wxai_follower': ModelType.ARM,
   'fanuc_crx5ia/crx5ia': ModelType.ARM,
+  'franka_fr3_duo/fr3_duo': ModelType.DUAL_ARM,
 }
 
 
