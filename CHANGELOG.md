@@ -2,6 +2,10 @@
 
 All notable changes to this repository will be documented here.
 
+## [2026-10-27]
+
+- Explicitly specify UTF-8 encoding for registry and cache file I/O operations across `build_registry.py`, `sharpa_wave/make_right.py`, `python/src/mujoco_menagerie/_registry.py`, and `python/src/mujoco_menagerie/_cache.py` to prevent locale-dependent encoding errors on Windows and non-UTF-8 environments.
+
 ## [2026-09-12]
 
 - Corrected the list of models whose `assets()` raises in `python/DOC.md`: `pal_talos` collides on `base_link.stl`, `sharpa_wave` does not collide on any entry point. Added a test that derives the list from the checkout.
