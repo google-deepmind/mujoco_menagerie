@@ -106,6 +106,7 @@ MODEL_MAP = {
   'hello_robot_stretch/stretch': ModelType.MOBILE_MANIPULATOR,
   'google_barkour_vb/barkour_vb': ModelType.QUADRUPED,
   'unitree_go2/go2': ModelType.QUADRUPED,
+  'rainbow_robotics_rbq10/rbq': ModelType.QUADRUPED,
   'boston_dynamics_spot/spot_arm': ModelType.QUADRUPED,
   'shadow_dexee/shadow_dexee': ModelType.END_EFFECTOR,
   'pal_talos/talos': ModelType.HUMANOID,
