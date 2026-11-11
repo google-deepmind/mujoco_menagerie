@@ -145,6 +145,7 @@ MODEL_MAP = {
   'trossen_wxai/wxai_follower': ModelType.ARM,
   'stewart_platform/stewart_platform': ModelType.MISC,
   'fanuc_crx5ia/crx5ia': ModelType.ARM,
+  'franka_fr3_duo/fr3_duo': ModelType.DUAL_ARM,
 }
 
 
