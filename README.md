@@ -17,6 +17,10 @@
   </a>
 </p>
 
+<p align="center">
+  <b>English</b> · <a href="README.zh.md">简体中文</a>
+</p>
+
 **Menagerie** is a collection of high-quality models for the
 [MuJoCo](https://github.com/google-deepmind/mujoco) physics engine, curated by
 Google DeepMind.
