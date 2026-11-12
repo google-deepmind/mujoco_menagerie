@@ -2,6 +2,10 @@
 
 All notable changes to this repository will be documented here.
 
+## [2026-10-29]
+
+- Added `AGENTS.md` with guidelines for AI coding agents on the URDF-to-MJCF workflow, MJCF conventions, and repository checks.
+
 ## [2026-09-12]
 
 - Corrected the list of models whose `assets()` raises in `python/DOC.md`: `pal_talos` collides on `base_link.stl`, `sharpa_wave` does not collide on any entry point. Added a test that derives the list from the checkout.
