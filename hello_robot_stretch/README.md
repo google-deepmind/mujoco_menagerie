@@ -9,7 +9,9 @@ See [CHANGELOG.md](./CHANGELOG.md) for a full history of changes.
 
 ## Overview
 
-This package contains a simplified robot description (MJCF) of the [Hello Robot Stretch 2](https://hello-robot.com/product) developed by [Hello Robot](https://hello-robot.com/). The original URDF and assets were provided directly by Hello Robot under the [Clear BSD License](LICENSE).
+This package contains a simplified robot description (MJCF) of the [Hello Robot Stretch 2](https://hello-stretch3.com/) developed by [Hello Robot](https://hello-robot.com/). The original URDF and assets were provided directly by Hello Robot under the [Clear BSD License](LICENSE).
+
+The next generations of the robot are available at [hello_robot_stretch_4](../hello_robot_stretch_4) and [hello_robot_stretch_3](../hello_robot_stretch_3).
 
 <p float="left">
   <img src="stretch.png" width="400">

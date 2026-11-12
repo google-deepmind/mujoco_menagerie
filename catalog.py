@@ -125,6 +125,7 @@ MODEL_MAP = {
   'sharpa_wave/left_hand': ModelType.END_EFFECTOR,
   'stanford_tidybot/tidybot': ModelType.MOBILE_MANIPULATOR,
   'hello_robot_stretch_3/stretch': ModelType.MOBILE_MANIPULATOR,
+  'hello_robot_stretch_4/stretch4': ModelType.MOBILE_MANIPULATOR,
   'pal_tiago/tiago': ModelType.MOBILE_MANIPULATOR,
   'pal_tiago_dual/tiago_dual': ModelType.MOBILE_MANIPULATOR,
   'robot_soccer_kit/robot_soccer_kit': ModelType.MOBILE_BASE,

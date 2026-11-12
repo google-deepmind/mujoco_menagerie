@@ -9,7 +9,9 @@ See [CHANGELOG.md](./CHANGELOG.md) for a full history of changes.
 
 ## Overview
 
-This package contains the robot description (MJCF) of the [Hello Robot Stretch 3](https://hello-robot.com/product) developed by [Hello Robot](https://hello-robot.com/). This model was directly provided by Hello Robot under the [Apache 2.0](LICENSE).
+This package contains the robot description (MJCF) of the [Hello Robot Stretch 3](https://hello-stretch3.com/) developed by [Hello Robot](https://hello-robot.com/). This model was directly provided by Hello Robot under the [Apache 2.0](LICENSE).
+
+The next generation of the robot is available as [hello_robot_stretch_4](../hello_robot_stretch_4), and the previous one as [hello_robot_stretch](../hello_robot_stretch) (Stretch 2).
 
 <p float="left">
   <img src="stretch.png" width="400">
