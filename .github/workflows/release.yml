@@ -33,7 +33,7 @@ jobs:
         run: |
           last=$(git tag --list 'v*' --sort=-v:refname | head -1)
           if [ -n "$last" ] && [ "$GITHUB_EVENT_NAME" = push ] && ! git diff --name-only "$last" HEAD \
-             | grep -vE '^(\.|assets/|test/)' | grep -qE '/|^(catalog|build_registry)\.py$'; then
+             | grep -vE '^(\.|assets/|test/|python/tests/|python/DOC\.md$)' | grep -qE '/|^(catalog|build_registry)\.py$'; then
             echo "no model directory or package change since $last"; exit 0
           fi
           month=$(date -u +%Y.%-m)
@@ -58,6 +58,7 @@ jobs:
           gh release view assets >/dev/null 2>&1 || gh release create assets --title "Model archives" \
             --notes "Content-addressed archives used by the mujoco-menagerie package. Do not delete." --target "$GITHUB_SHA"
           existing=$(gh release view assets --json assets --jq '.assets[].name')
+          shopt -s nullglob
           for f in python/dist-assets/*.tar.xz; do
             grep -qx "$(basename "$f")" <<<"$existing" || gh release upload assets "$f"
           done
