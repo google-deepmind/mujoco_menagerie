@@ -27,64 +27,80 @@
 
       <default class="hip">
         <default class="hip_pitch">
-          <joint axis="0 1 0" range="-2.5307 2.8798" actuatorfrcrange="-88 88" armature="0.01017752004"/>
+          <joint axis="0 1 0" range="-2.5307 2.8798" armature="0.01017752004"/>
+          <position forcerange="-88 88"/>
         </default>
         <default class="hip_roll">
-          <joint axis="1 0 0" actuatorfrcrange="-139 139" armature="0.025101925"/>
+          <joint axis="1 0 0" armature="0.025101925"/>
+          <position forcerange="-139 139"/>
         </default>
         <default class="hip_yaw">
-          <joint axis="0 0 1" range="-2.7576 2.7576" actuatorfrcrange="-88 88" armature="0.01017752004"/>
+          <joint axis="0 0 1" range="-2.7576 2.7576" armature="0.01017752004"/>
+          <position forcerange="-88 88"/>
         </default>
       </default>
       <default class="knee">
-        <joint axis="0 1 0" range="-0.087267 2.8798" actuatorfrcrange="-139 139" armature="0.025101925"/>
+        <joint axis="0 1 0" range="-0.087267 2.8798" armature="0.025101925"/>
+        <position forcerange="-139 139"/>
       </default>
       <default class="ankle">
         <position kp="20" kv="2"/>
         <default class="ankle_pitch">
-          <joint axis="0 1 0" range="-0.87267 0.5236" actuatorfrcrange="-50 50" armature="0.00721945"/>
+          <joint axis="0 1 0" range="-0.87267 0.5236" armature="0.00721945"/>
+          <position forcerange="-50 50"/>
         </default>
         <default class="ankle_roll">
-          <joint axis="1 0 0" range="-0.2618 0.2618" actuatorfrcrange="-50 50" armature="0.00721945"/>
+          <joint axis="1 0 0" range="-0.2618 0.2618" armature="0.00721945"/>
+          <position forcerange="-50 50"/>
         </default>
       </default>
 
       <default class="waist_yaw">
-        <joint axis="0 0 1" range="-2.618 2.618" actuatorfrcrange="-88 88" armature="0.01017752004"/>
+        <joint axis="0 0 1" range="-2.618 2.618" armature="0.01017752004"/>
+        <position forcerange="-88 88"/>
       </default>
       <default class="waist_pitch">
-        <joint axis="0 1 0" range="-0.52 0.52" actuatorfrcrange="-50 50" armature="0.00721945"/>
+        <joint axis="0 1 0" range="-0.52 0.52" armature="0.00721945"/>
+        <position forcerange="-50 50"/>
       </default>
       <default class="waist_roll">
-        <joint axis="1 0 0" range="-0.52 0.52" actuatorfrcrange="-50 50" armature="0.00721945"/>
+        <joint axis="1 0 0" range="-0.52 0.52" armature="0.00721945"/>
+        <position forcerange="-50 50"/>
       </default>
 
       <default class="shoulder">
         <default class="shoulder_pitch">
-          <joint axis="0 1 0" range="-3.0892 2.6704" actuatorfrcrange="-25 25" armature="0.003609725"/>
+          <joint axis="0 1 0" range="-3.0892 2.6704" armature="0.003609725"/>
+          <position forcerange="-25 25"/>
         </default>
         <default class="shoulder_roll">
-          <joint axis="1 0 0" actuatorfrcrange="-25 25" armature="0.003609725"/>
+          <joint axis="1 0 0" armature="0.003609725"/>
+          <position forcerange="-25 25"/>
         </default>
         <default class="shoulder_yaw">
-          <joint axis="0 0 1" range="-2.618 2.618" actuatorfrcrange="-25 25" armature="0.003609725"/>
+          <joint axis="0 0 1" range="-2.618 2.618" armature="0.003609725"/>
+          <position forcerange="-25 25"/>
         </default>
       </default>
 
       <default class="elbow">
-        <joint axis="0 1 0" range="-1.0472 2.0944" actuatorfrcrange="-25 25" armature="0.003609725"/>
+        <joint axis="0 1 0" range="-1.0472 2.0944" armature="0.003609725"/>
+        <position forcerange="-25 25"/>
       </default>
 
       <default class="wrist">
         <position kp="20" kv="2"/>
         <default class="wrist_roll">
-          <joint axis="1 0 0" range="-1.97222 1.97222" actuatorfrcrange="-25 25" armature="0.003609725"/>
+          <joint axis="1 0 0" range="-1.97222 1.97222" armature="0.003609725"/>
+          <position forcerange="-25 25"/>
         </default>
         <default class="wrist_pitch">
-          <joint axis="0 1 0" range="-1.61443 1.61443" actuatorfrcrange="-5 5" armature="0.00425"/>
+          <joint axis="0 1 0" range="-1.61443 1.61443" armature="0.00425"/>
+          <position forcerange="-5 5"/>
         </default>
         <default class="wrist_yaw">
-          <joint axis="0 0 1" range="-1.61443 1.61443" actuatorfrcrange="-5 5" armature="0.00425"/>
+          <joint axis="0 0 1" range="-1.61443 1.61443" armature="0.00425"/>
+          <position forcerange="-5 5"/>
         </default>
       </default>
     </default>
@@ -132,7 +148,6 @@
   </asset>
 
   <worldbody>
-    <light name="spotlight" mode="targetbodycom" target="pelvis" pos="0 -2 4" exponent="20"/>
     <body name="pelvis" pos="0 0 0.793" childclass="g1">
       <camera name="track" pos="1.734 -1.135 .35" xyaxes="0.552 0.834 -0.000 -0.170 0.112 0.979" mode="trackcom"/>
       <inertial pos="0 0 -0.07605" quat="1 0 -0.000399148 0" mass="3.813" diaginertia="0.010549 0.0093089 0.0079184"/>

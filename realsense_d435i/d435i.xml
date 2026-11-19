@@ -38,7 +38,6 @@
   </asset>
 
   <worldbody>
-    <light pos="0 0 1.5" dir="0 0 -1" directional="true"/>
     <body name="d435i" childclass="d435i">
       <geom mesh="d435i_0" material="IR_Lens" class="visual"/>
       <geom mesh="d435i_1" material="IR_Emitter_Lens" class="visual"/>

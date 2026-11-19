@@ -82,7 +82,6 @@
   </default>
 
   <worldbody>
-    <light pos="0 0 3"/>
     <body name="base_link" childclass="robot" pos="0 0 0.06205">
       <!-- geom for base -->
       <geom class="visual" mesh="link_base_v"/>

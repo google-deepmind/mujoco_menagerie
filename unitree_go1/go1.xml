@@ -76,7 +76,6 @@
   </asset>
 
   <worldbody>
-    <light name="spotlight" mode="targetbodycom" target="trunk" pos="0 -1 2"/>
     <body name="trunk" pos="0 0 0.445" childclass="go1">
       <camera name="tracking" mode="trackcom" pos="0 -1 0.8" xyaxes="1 0 0 0 1 1"/>
       <site name="head" pos="0.3 0 0" rgba="1 0 0 1" size="0.02" group="5"/>

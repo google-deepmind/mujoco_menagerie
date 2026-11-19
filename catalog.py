@@ -95,6 +95,7 @@ MODEL_MAP = {
   'aloha/aloha': ModelType.DUAL_ARM,
   'rethink_robotics_sawyer/sawyer': ModelType.ARM,
   'robotis_op3/op3': ModelType.HUMANOID,
+  'robotis_omy_3m/omy_3m': ModelType.ARM,
   'universal_robots_ur10e/ur10e': ModelType.ARM,
   'kuka_iiwa_14/iiwa14': ModelType.ARM,
   'trossen_vx300s/vx300s': ModelType.ARM,
@@ -142,6 +143,8 @@ MODEL_MAP = {
   'robotstudio_so101/so101': ModelType.ARM,
   'tetheria_aero_hand_open/right_hand': ModelType.END_EFFECTOR,
   'trossen_wxai/wxai_follower': ModelType.ARM,
+  'fanuc_crx5ia/crx5ia': ModelType.ARM,
+  'franka_fr3_duo/fr3_duo': ModelType.DUAL_ARM,
   'limx_luna/luna': ModelType.HUMANOID,
   'limx_oli/oli': ModelType.HUMANOID,
 }

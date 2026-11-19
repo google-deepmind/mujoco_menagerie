@@ -6,6 +6,7 @@ Built by the Google DeepMind team with contributions from the open-source commun
 
 - [Alessio Quaglino](https://github.com/quagla) — Google DeepMind
 - [Baruch Tabanpour](https://github.com/btaba) — Google DeepMind
+- [Cem Gokmen](https://github.com/cgokmen) — Google DeepMind
 - [Kevin Zakka](https://github.com/kevinzakka) — Maintainer, Google DeepMind
 - [Nimrod Gileadi](https://github.com/nimrod-gileadi) — Google DeepMind
 - [Saran Tunyasuvunakool](https://github.com/saran-t) — Google DeepMind
@@ -15,6 +16,7 @@ Built by the Google DeepMind team with contributions from the open-source commun
 
 ## Community Contributors
 
+- [Adil Dostmohamed](https://github.com/adildostmohamed)
 - [Albert Li](https://github.com/alberthli)
 - [Alper Ahmetoglu](https://github.com/alper111)
 - [Andreas Kuhner](https://github.com/AndreasKuhner)
@@ -25,6 +27,7 @@ Built by the Google DeepMind team with contributions from the open-source commun
 - [Chintan Desai](https://github.com/hello-chintan)
 - [Christian Rauch](https://github.com/christianrauch)
 - [Dada Tian](https://github.com/lonelyfluency)
+- [eclare](https://github.com/eclare)
 - [Eugene Frizza](https://github.com/eufrizz)
 - [Gwen](https://github.com/GwenCCC)
 - [Haochen Shi](https://github.com/hshi74)
@@ -32,6 +35,7 @@ Built by the Google DeepMind team with contributions from the open-source commun
 - [Jason Chen](https://github.com/chenxin199305)
 - [Johnny Nunez](https://github.com/johnnynunez)
 - [Jonathan Zamora](https://github.com/jonzamora)
+- [Jooyoung Lim](https://github.com/mmporong)
 - [Kallinteris Andreas](https://github.com/Kallinteris-Andreas)
 - [Lev Kozlov](https://github.com/lvjonok)
 - [Lorenzo Amatucci](https://github.com/lorenzo96-cmd)
@@ -41,10 +45,15 @@ Built by the Google DeepMind team with contributions from the open-source commun
 - [Nan Wang](https://github.com/Nan-Tetheria)
 - [Nikita Cherniadev](https://github.com/chernyadev)
 - [Omar Rayyan](https://github.com/omarrayyann)
+- [Rishabh Sai](https://github.com/rishabhsai)
 - [Sai Kishor Kothakota](https://github.com/saikishor)
+- [Sylvester Kaczmarek](https://github.com/sylvesterkaczmarek)
+- [Taehyeong Kim](https://github.com/kimtaehyeong99)
 - [Taylor Howell](https://github.com/thowell)
 - [Thomas Lips](https://github.com/tlpss)
 - [Thomas Peyrucain](https://github.com/thomaspeyrucain)
+- [Tobias Jülg](https://github.com/juelg)
+- [Tony Ma](https://github.com/toekneema)
 - [Varad Vaidya](https://github.com/varadVaidya)
 - [Yanan Sui](https://github.com/yanansui)
 

@@ -18,6 +18,8 @@
   </asset>
 
   <worldbody>
+    <light pos="3 0 4" dir="-0.6 0 -0.8"/>
+    <light pos="0 0 2.5"/>
     <geom name="floor" size="0 0 0.05" type="plane" material="groundplane"/>
   </worldbody>
 </mujoco>

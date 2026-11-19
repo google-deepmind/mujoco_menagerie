@@ -14,6 +14,7 @@
 """Tests for all models."""
 
 import pathlib
+import xml.etree.ElementTree as ET
 from collections.abc import Iterator
 
 import mujoco
@@ -35,6 +36,9 @@ def _get_xmls(pattern: str) -> Iterator[tuple[str, pathlib.Path]]:
 
 
 _MODEL_XMLS = list(_get_xmls('scene*.xml'))
+_BASE_XMLS = [
+  (name, f) for name, f in _get_xmls('*.xml') if 'scene' not in f.name
+]
 
 # Total simulation duration, in seconds.
 _MAX_SIM_TIME = 0.1
@@ -83,6 +87,14 @@ class ModelsTest(parameterized.TestCase):
         ]
       )
       self.fail(f'MuJoCo warning(s) encountered:\n{warning_info}')
+
+  @parameterized.named_parameters(_BASE_XMLS)
+  def test_no_lights_in_base_xml(self, xml_path: pathlib.Path) -> None:
+    root = ET.parse(xml_path).getroot()
+    self.assertEmpty(
+      list(root.iter('light')),
+      f'{xml_path} defines <light>; move lights to scene*.xml.',
+    )
 
 
 if __name__ == '__main__':

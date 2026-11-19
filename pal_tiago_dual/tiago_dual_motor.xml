@@ -3,38 +3,38 @@
   <include file="tiago_dual.xml"/>
   <actuator>
     <!-- Omni base actuators -->
-    <velocity name="wheel_front_right_joint_velocity" joint="wheel_front_right_joint" kv="2000"/>
-    <velocity name="wheel_front_left_joint_velocity" joint="wheel_front_left_joint" kv="2000"/>
-    <velocity name="wheel_rear_right_joint_velocity" joint="wheel_rear_right_joint" kv="2000"/>
-    <velocity name="wheel_rear_left_joint_velocity" joint="wheel_rear_left_joint" kv="2000"/>
+    <velocity name="wheel_front_right_joint_velocity" joint="wheel_front_right_joint" kv="2000" forcerange="-400 400"/>
+    <velocity name="wheel_front_left_joint_velocity" joint="wheel_front_left_joint" kv="2000" forcerange="-400 400"/>
+    <velocity name="wheel_rear_right_joint_velocity" joint="wheel_rear_right_joint" kv="2000" forcerange="-400 400"/>
+    <velocity name="wheel_rear_left_joint_velocity" joint="wheel_rear_left_joint" kv="2000" forcerange="-400 400"/>
 
     <!-- Torso actuator -->
-    <position name="torso_lift_joint_position" joint="torso_lift_joint" kp="50000"/>
+    <position name="torso_lift_joint_position" joint="torso_lift_joint" kp="50000" forcerange="-500 500"/>
     <!-- Head actuators -->
-    <position name="head_1_joint_position" joint="head_1_joint" kp="20"/>
-    <position name="head_2_joint_position" joint="head_2_joint" kp="20"/>
+    <position name="head_1_joint_position" joint="head_1_joint" kp="20" forcerange="-5.197 5.197"/>
+    <position name="head_2_joint_position" joint="head_2_joint" kp="20" forcerange="-5.197 5.197"/>
 
     <!-- Left arm actuators -->
-    <motor name="arm_left_1_joint_torque" joint="arm_left_1_joint"/>
-    <motor name="arm_left_2_joint_torque" joint="arm_left_2_joint"/>
-    <motor name="arm_left_3_joint_torque" joint="arm_left_3_joint"/>
-    <motor name="arm_left_4_joint_torque" joint="arm_left_4_joint"/>
-    <motor name="arm_left_5_joint_torque" joint="arm_left_5_joint"/>
-    <motor name="arm_left_6_joint_torque" joint="arm_left_6_joint"/>
-    <motor name="arm_left_7_joint_torque" joint="arm_left_7_joint"/>
+    <motor name="arm_left_1_joint_torque" joint="arm_left_1_joint" forcerange="-43 43"/>
+    <motor name="arm_left_2_joint_torque" joint="arm_left_2_joint" forcerange="-43 43"/>
+    <motor name="arm_left_3_joint_torque" joint="arm_left_3_joint" forcerange="-26 26"/>
+    <motor name="arm_left_4_joint_torque" joint="arm_left_4_joint" forcerange="-26 26"/>
+    <motor name="arm_left_5_joint_torque" joint="arm_left_5_joint" forcerange="-3 3"/>
+    <motor name="arm_left_6_joint_torque" joint="arm_left_6_joint" forcerange="-6.6 6.6"/>
+    <motor name="arm_left_7_joint_torque" joint="arm_left_7_joint" forcerange="-6.6 6.6"/>
     <position name="gripper_left_left_finger_joint_position" joint="gripper_left_left_finger_joint" kp="500"
       inheritrange="0.999"/>
     <position name="gripper_left_right_finger_joint_position" joint="gripper_left_right_finger_joint" kp="500"
       inheritrange="0.999"/>
 
     <!-- Right arm actuators -->
-    <motor name="arm_right_1_joint_torque" joint="arm_right_1_joint"/>
-    <motor name="arm_right_2_joint_torque" joint="arm_right_2_joint"/>
-    <motor name="arm_right_3_joint_torque" joint="arm_right_3_joint"/>
-    <motor name="arm_right_4_joint_torque" joint="arm_right_4_joint"/>
-    <motor name="arm_right_5_joint_torque" joint="arm_right_5_joint"/>
-    <motor name="arm_right_6_joint_torque" joint="arm_right_6_joint"/>
-    <motor name="arm_right_7_joint_torque" joint="arm_right_7_joint"/>
+    <motor name="arm_right_1_joint_torque" joint="arm_right_1_joint" forcerange="-43 43"/>
+    <motor name="arm_right_2_joint_torque" joint="arm_right_2_joint" forcerange="-43 43"/>
+    <motor name="arm_right_3_joint_torque" joint="arm_right_3_joint" forcerange="-26 26"/>
+    <motor name="arm_right_4_joint_torque" joint="arm_right_4_joint" forcerange="-26 26"/>
+    <motor name="arm_right_5_joint_torque" joint="arm_right_5_joint" forcerange="-3 3"/>
+    <motor name="arm_right_6_joint_torque" joint="arm_right_6_joint" forcerange="-6.6 6.6"/>
+    <motor name="arm_right_7_joint_torque" joint="arm_right_7_joint" forcerange="-6.6 6.6"/>
     <position name="gripper_right_left_finger_joint_position" joint="gripper_right_left_finger_joint" kp="500"
       inheritrange="0.999"/>
     <position name="gripper_right_right_finger_joint_position" joint="gripper_right_right_finger_joint" kp="500"

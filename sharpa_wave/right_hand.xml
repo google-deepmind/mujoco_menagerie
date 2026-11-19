@@ -20,19 +20,19 @@
         </default>
       </default>
       <default class="CMC_joint">
-        <joint actuatorfrcrange="-3.3 3.3" armature="0.00451" damping="4.2e-05" frictionloss="0.132"/>
+        <joint armature="0.00451" damping="4.2e-05" frictionloss="0.132"/>
       </default>
       <default class="PCMC_joint">
-        <joint actuatorfrcrange="-0.5285 0.5285" armature="0.000136" damping="4.2e-05" frictionloss="0.012"/>
+        <joint armature="0.000136" damping="4.2e-05" frictionloss="0.012"/>
       </default>
       <default class="MCP_joint">
-        <joint actuatorfrcrange="-1.864 1.864" armature="0.00129" damping="2.38e-05" frictionloss="0.07456"/>
+        <joint armature="0.00129" damping="2.38e-05" frictionloss="0.07456"/>
       </default>
       <default class="PIP_joint">
-        <joint actuatorfrcrange="-0.638 0.638" armature="0.000415" damping="4.06e-06" frictionloss="0.01276"/>
+        <joint armature="0.000415" damping="4.06e-06" frictionloss="0.01276"/>
       </default>
       <default class="DIP_joint">
-        <joint actuatorfrcrange="-0.189369 0.189369" armature="2.42e-05" damping="1.21e-06" frictionloss="0.00378738"/>
+        <joint armature="2.42e-05" damping="1.21e-06" frictionloss="0.00378738"/>
       </default>
     </default>
   </default>
@@ -346,48 +346,48 @@
 
   <actuator>
     <general name="right_thumb_CMC_FE" class="sharpa" joint="right_thumb_CMC_FE" ctrlrange="-0.1745 1.9199"
-      gainprm="6.95" biasprm="0 -6.95 0.9"/>
+      gainprm="6.95" biasprm="0 -6.95 0.9" forcerange="-3.3 3.3"/>
     <general name="right_thumb_CMC_AA" class="sharpa" joint="right_thumb_CMC_AA" ctrlrange="-0.3491 0.3491"
-      gainprm="13.2" biasprm="0 -13.2 0.9"/>
+      gainprm="13.2" biasprm="0 -13.2 0.9" forcerange="-3.3 3.3"/>
     <general name="right_thumb_MCP_FE" class="sharpa" joint="right_thumb_MCP_FE" ctrlrange="-0.5236 1.3963"
-      gainprm="4.76" biasprm="0 -4.76 0.9"/>
+      gainprm="4.76" biasprm="0 -4.76 0.9" forcerange="-1.864 1.864"/>
     <general name="right_thumb_MCP_AA" class="sharpa" joint="right_thumb_MCP_AA" ctrlrange="-0.3491 0.3491"
-      gainprm="6.62" biasprm="0 -6.62 0.9"/>
+      gainprm="6.62" biasprm="0 -6.62 0.9" forcerange="-1.864 1.864"/>
     <general name="right_thumb_IP" class="sharpa" joint="right_thumb_IP" ctrlrange="0 1.7453" gainprm="0.9"
-      biasprm="0 -0.9 0.9"/>
+      biasprm="0 -0.9 0.9" forcerange="-0.638 0.638"/>
     <general name="right_index_MCP_FE" class="sharpa" joint="right_index_MCP_FE" ctrlrange="-0.174533 1.5708"
-      gainprm="4.76" biasprm="0 -4.76 0.9"/>
+      gainprm="4.76" biasprm="0 -4.76 0.9" forcerange="-1.864 1.864"/>
     <general name="right_index_MCP_AA" class="sharpa" joint="right_index_MCP_AA" ctrlrange="-0.3491 0.3491"
-      gainprm="6.62" biasprm="0 -6.62 0.9"/>
+      gainprm="6.62" biasprm="0 -6.62 0.9" forcerange="-1.864 1.864"/>
     <general name="right_index_PIP" class="sharpa" joint="right_index_PIP" ctrlrange="0 1.7453" gainprm="0.9"
-      biasprm="0 -0.9 0.9"/>
+      biasprm="0 -0.9 0.9" forcerange="-0.638 0.638"/>
     <general name="right_index_DIP" class="sharpa" joint="right_index_DIP" ctrlrange="0 1.3963" gainprm="0.9"
-      biasprm="0 -0.9 0.9"/>
+      biasprm="0 -0.9 0.9" forcerange="-0.189369 0.189369"/>
     <general name="right_middle_MCP_FE" class="sharpa" joint="right_middle_MCP_FE" ctrlrange="-0.174533 1.5708"
-      gainprm="4.76" biasprm="0 -4.76 0.9"/>
+      gainprm="4.76" biasprm="0 -4.76 0.9" forcerange="-1.864 1.864"/>
     <general name="right_middle_MCP_AA" class="sharpa" joint="right_middle_MCP_AA" ctrlrange="-0.3491 0.3491"
-      gainprm="6.62" biasprm="0 -6.62 0.9"/>
+      gainprm="6.62" biasprm="0 -6.62 0.9" forcerange="-1.864 1.864"/>
     <general name="right_middle_PIP" class="sharpa" joint="right_middle_PIP" ctrlrange="0 1.7453" gainprm="0.9"
-      biasprm="0 -0.9 0.9"/>
+      biasprm="0 -0.9 0.9" forcerange="-0.638 0.638"/>
     <general name="right_middle_DIP" class="sharpa" joint="right_middle_DIP" ctrlrange="0 1.3963" gainprm="0.9"
-      biasprm="0 -0.9 0.9"/>
+      biasprm="0 -0.9 0.9" forcerange="-0.189369 0.189369"/>
     <general name="right_ring_MCP_FE" class="sharpa" joint="right_ring_MCP_FE" ctrlrange="-0.174533 1.5708"
-      gainprm="4.76" biasprm="0 -4.76 0.9"/>
+      gainprm="4.76" biasprm="0 -4.76 0.9" forcerange="-1.864 1.864"/>
     <general name="right_ring_MCP_AA" class="sharpa" joint="right_ring_MCP_AA" ctrlrange="-0.3491 0.3491" gainprm="6.62"
-      biasprm="0 -6.62 0.9"/>
+      biasprm="0 -6.62 0.9" forcerange="-1.864 1.864"/>
     <general name="right_ring_PIP" class="sharpa" joint="right_ring_PIP" ctrlrange="0 1.7453" gainprm="0.9"
-      biasprm="0 -0.9 0.9"/>
+      biasprm="0 -0.9 0.9" forcerange="-0.638 0.638"/>
     <general name="right_ring_DIP" class="sharpa" joint="right_ring_DIP" ctrlrange="0 1.3963" gainprm="0.9"
-      biasprm="0 -0.9 0.9"/>
+      biasprm="0 -0.9 0.9" forcerange="-0.189369 0.189369"/>
     <general name="right_pinky_CMC" class="sharpa" joint="right_pinky_CMC" ctrlrange="0 0.2618" gainprm="1.38"
-      biasprm="0 -1.38 0.9"/>
+      biasprm="0 -1.38 0.9" forcerange="-0.5285 0.5285"/>
     <general name="right_pinky_MCP_FE" class="sharpa" joint="right_pinky_MCP_FE" ctrlrange="-0.174533 1.5708"
-      gainprm="4.76" biasprm="0 -4.76 0.9"/>
+      gainprm="4.76" biasprm="0 -4.76 0.9" forcerange="-1.864 1.864"/>
     <general name="right_pinky_MCP_AA" class="sharpa" joint="right_pinky_MCP_AA" ctrlrange="-0.3491 0.3491"
-      gainprm="6.62" biasprm="0 -6.62 0.9"/>
+      gainprm="6.62" biasprm="0 -6.62 0.9" forcerange="-1.864 1.864"/>
     <general name="right_pinky_PIP" class="sharpa" joint="right_pinky_PIP" ctrlrange="0 1.7453" gainprm="0.9"
-      biasprm="0 -0.9 0.9"/>
+      biasprm="0 -0.9 0.9" forcerange="-0.638 0.638"/>
     <general name="right_pinky_DIP" class="sharpa" joint="right_pinky_DIP" ctrlrange="0 1.3963" gainprm="0.9"
-      biasprm="0 -0.9 0.9"/>
+      biasprm="0 -0.9 0.9" forcerange="-0.189369 0.189369"/>
   </actuator>
 </mujoco>

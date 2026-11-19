@@ -148,7 +148,6 @@
     <exclude body1="left_ring_f_link" body2="left_pinky_f_link"/>
   </contact>
   <worldbody>
-    <light name="spotlight" mode="targetbodycom" target="palm" pos="3 0 4"/>
     <body name="tetheria_mount" pos="0 0 -0.03" quat="1 0 0 0" childclass="tetheria_rh">
       <geom name="tetheria_mount_visual" pos="0.04 -0.01 -0.012"
         quat="0.4104745136 0.575769636 0.575769636 0.4104745136" class="visual" mesh="tetheria_mount"/>

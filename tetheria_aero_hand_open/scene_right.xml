@@ -17,6 +17,7 @@
   </asset>
 
   <worldbody>
+    <light pos="3 0 4" dir="-0.6 0 -0.8"/>
     <camera name="side" pos="-0.183 0.396 0.296" xyaxes="-0.783 -0.622 -0.000 0.332 -0.419 0.845"/>
     <geom name="floor" pos="0 0 -0.25" size="0 0 0.01" type="plane" material="groundplane" contype="2" conaffinity="2"/>
   </worldbody>
