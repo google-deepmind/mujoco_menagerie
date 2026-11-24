@@ -102,6 +102,10 @@
     <position class="small_actuator" name="joint_7" joint="joint_7"/>
   </actuator>
 
+  <contact>
+    <exclude body1="base_link" body2="shoulder_link"/>
+  </contact>
+
   <keyframe>
     <key name="home" qpos="0 0.26179939 3.14159265 -2.26892803 0 0.95993109 1.57079633"
       ctrl="0 0.26179939 3.14159265 -2.26892803 0 0.95993109 1.57079633"/>

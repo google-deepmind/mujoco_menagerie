@@ -2,6 +2,9 @@
 
 All notable changes to this model will be documented in this file.
 
+## [2026-11-13]
+- Excluded base-to-shoulder collision contacts so joint 1 can reach its commanded positions.
+
 ## [2026-09-13]
 - Added joint armature to stabilise the low-inertia joints with the existing position-controller gains.
 
