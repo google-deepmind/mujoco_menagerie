@@ -29,6 +29,8 @@ Built by the Google DeepMind team with contributions from the open-source commun
 - [Dada Tian](https://github.com/lonelyfluency)
 - [eclare](https://github.com/eclare)
 - [Eugene Frizza](https://github.com/eufrizz)
+- [Geuntae Kim](https://github.com/gnteKim)
+- [Hanah Jang](https://github.com/hanah-jang)
 - [Haochen Shi](https://github.com/hshi74)
 - [Ian Noh](https://github.com/dongridong)
 - [Jason Chen](https://github.com/chenxin199305)
