@@ -227,6 +227,7 @@ full breakdown.
 | Preview | Name | DoFs | License |
 |:---:|---|---|---|
 | <a href='https://live.mujoco.org/?model=github:google-deepmind/mujoco_menagerie/main/aloha/scene.xml' title='Open live preview for ALOHA'><img src='assets/aloha-aloha.png' width=120></a> | ALOHA | 16 | [BSD-3-Clause](aloha/LICENSE) |
+| <a href='https://live.mujoco.org/?model=github:google-deepmind/mujoco_menagerie/main/franka_fr3_duo/scene.xml' title='Open live preview for Franka Robotics FR3 Duo'><img src='assets/franka_fr3_duo-fr3_duo.png' width=120></a> | Franka Robotics FR3 Duo | 14 | [Apache-2.0](franka_fr3_duo/LICENSE) |
 
 **Mobile Manipulators.**
 
@@ -276,6 +277,7 @@ full breakdown.
 | <a href='https://live.mujoco.org/?model=github:google-deepmind/mujoco_menagerie/main/franka_fr3_v2/scene.xml' title='Open live preview for Franka Robotics FR3 v2'><img src='assets/franka_fr3_v2-fr3v2.png' width=120></a> | Franka Robotics FR3 v2 | 7 | [Apache-2.0](franka_fr3_v2/LICENSE) |
 | <a href='https://live.mujoco.org/?model=github:google-deepmind/mujoco_menagerie/main/robotstudio_so101/scene.xml' title='Open live preview for The Robot Studio SO101'><img src='assets/robotstudio_so101-so101.png' width=120></a> | The Robot Studio SO101 | 6 | [Apache-2.0](robotstudio_so101/LICENSE) |
 | <a href='https://live.mujoco.org/?model=github:google-deepmind/mujoco_menagerie/main/trossen_wxai/scene.xml' title='Open live preview for Trossen WXAI'><img src='assets/trossen_wxai-wxai_follower.png' width=120></a> | Trossen WXAI | 8 | [BSD-3-Clause](trossen_wxai/LICENSE) |
+| <a href='https://live.mujoco.org/?model=github:google-deepmind/mujoco_menagerie/main/fanuc_crx5ia/scene.xml' title='Open live preview for FANUC CRX-5iA'><img src='assets/fanuc_crx5ia-crx5ia.png' width=120></a> | FANUC CRX-5iA | 6 | [Apache-2.0](fanuc_crx5ia/LICENSE) |
 
 **End-effectors.**
 
