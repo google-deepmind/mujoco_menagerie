@@ -87,7 +87,7 @@ Do **not** manually transcribe link masses, inertia tensors, or body transforms 
 
 ### 4. Repository Registration
 
-- **`catalog.py`**: Add `'<model_dir>/<xml_stem>': ModelType.<TYPE>` to `MODEL_MAP` (one entry per standalone robot XML). Add `PREVIEW_OVERRIDES` or `DISPLAY_NAME_OVERRIDE` only when defaults are insufficient.
+- **`catalog.py`**: Append `'<model_dir>/<xml_stem>': ModelType.<TYPE>` at the bottom of `MODEL_MAP` (one entry per standalone robot XML; dict insertion order controls row order within each gallery section). Pick the `ModelType` carefully — it determines the README gallery section, the default thumbnail camera angle in `generate_gallery.py`'s `VIEW_ANGLES`, and the package `category` in `registry.json`. Add `PREVIEW_OVERRIDES` or `DISPLAY_NAME_OVERRIDE` only when defaults are insufficient.
 - **`CONTRIBUTORS.md`**: Add your name once (no duplicates), sorted alphabetically by first name in the appropriate section.
 - **Top-level `LICENSE`**: Run `uv run regenerate_license.py` after formatting.
 
@@ -104,4 +104,4 @@ When reviewing a PR (or self-reviewing before opening one), check both automated
    - No wholesale self-collision disabling; `<exclude>` only for fixed-base-to-first-link or legitimately overlapping non-adjacent pairs.
 4. **Repo hygiene**:
    - No committed gallery edits (`README.md` table, `assets/*.png`), no `registry.json`, no per-model tests in `test/model_test.py`, and no stray `.gitignore` or unrelated-model edits.
-   - Model-local `CHANGELOG.md` uses `## [YYYY-MM-DD]` (single initial entry for new models), `CONTRIBUTORS.md` has no duplicates and stays sorted, hero `<model>.png` is unclipped, and `catalog.py` + regenerated root `LICENSE` are included.
+   - Model-local `CHANGELOG.md` uses `## [YYYY-MM-DD]` (single initial entry for new models), `CONTRIBUTORS.md` has no duplicates and stays sorted, hero `<model>.png` is unclipped, `catalog.py` appends the right `ModelType` at the bottom of `MODEL_MAP`, and the regenerated root `LICENSE` is included.
