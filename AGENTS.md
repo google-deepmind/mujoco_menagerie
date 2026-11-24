@@ -11,6 +11,7 @@ make install      # One-time: install pre-commit and git hook
 make check        # Fast: ruff lint/format, MJCF XML formatting, top-level LICENSE
 make test         # Slow: pytest simulation + structural checks over all models
 make python-test  # Derives registry.json and runs mujoco-menagerie package tests
+make gallery      # Maintainers: re-render thumbnails in assets/ and update README.md gallery
 make all          # Everything CI runs (check + test + python-test)
 ```
 
@@ -32,7 +33,8 @@ uv run --with mujoco python -m mujoco.viewer --mjcf <model_dir>/scene.xml
 
 ### Generated Files & Formatting Order
 
-- **Do not hand-edit generated files**: root `LICENSE` (use `regenerate_license.py`), `python/src/mujoco_menagerie/registry.json` (built by `make registry`), or the root `README.md` gallery table (`<!-- BEGIN MODELS -->` ... `<!-- END MODELS -->`) and `assets/*.png` thumbnails (built by `make gallery`). Maintainers regenerate the gallery after merge, so do not commit gallery edits in model PRs.
+- **Do not hand-edit generated files**: root `LICENSE` (use `regenerate_license.py`), `python/src/mujoco_menagerie/registry.json` (built by `make registry`), or the root `README.md` gallery table (`<!-- BEGIN MODELS -->` ... `<!-- END MODELS -->`) and `assets/*.png` thumbnails (built by `make gallery`).
+- **Gallery updates (maintainers only)**: No CI workflow runs `make gallery`. To avoid merge conflicts and cross-GPU thumbnail churn, contributors should **not** commit gallery changes in model PRs; after new models merge to `main`, maintainers run `make gallery` (set `MUJOCO_GL=egl` on headless Linux), revert unrelated modified `assets/*.png` files, verify `git diff README.md` only adds the new rows, and open a PR with the new `assets/<model_dir>-<stem>.png` thumbnails and updated `README.md`.
 - **Formatting order gotcha**: Run `format_xml.py --write` and `make check` (specifically `end-of-file-fixer`) **before** `uv run regenerate_license.py`. Fixing a missing trailing newline in `<model_dir>/LICENSE` changes the concatenated root `LICENSE`.
 
 ## Commits & PR Hygiene
