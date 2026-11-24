@@ -145,6 +145,8 @@ MODEL_MAP = {
   'trossen_wxai/wxai_follower': ModelType.ARM,
   'fanuc_crx5ia/crx5ia': ModelType.ARM,
   'franka_fr3_duo/fr3_duo': ModelType.DUAL_ARM,
+  'limx_luna/luna': ModelType.HUMANOID,
+  'limx_oli/oli': ModelType.HUMANOID,
 }
 
 
