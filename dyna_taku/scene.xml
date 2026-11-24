@@ -5,11 +5,13 @@
     <global azimuth="135" elevation="-15" offwidth="1920" offheight="1080"/>
   </visual>
   <asset>
-    <texture type="skybox" builtin="gradient" rgb1="0.35 0.43 0.5" rgb2="0.75 0.8 0.85" width="512" height="3072"/>
-    <material name="floor" rgba="0.3 0.34 0.38 1" specular="0.25" shininess="0.3" reflectance="0.12"/>
+    <texture type="skybox" builtin="gradient" rgb1="0.8 0.83 0.86" rgb2="0.94 0.95 0.96" width="512" height="3072"/>
+    <material name="floor" rgba="0.65 0.68 0.71 1" specular="0.2" shininess="0.3" reflectance="0.06"/>
   </asset>
   <worldbody>
-    <light pos="2 -2 4" dir="-0.5 0.5 -1" diffuse="0.8 0.8 0.8"/>
+    <light name="key" pos="2 -2 4" dir="-0.5 0.5 -1" diffuse="0.8 0.8 0.8"/>
+    <light name="fill" pos="1 3 3" dir="-0.25 -0.75 -1" diffuse="0.35 0.35 0.35" specular="0.1 0.1 0.1"
+      castshadow="false"/>
     <geom name="floor" type="plane" size="0 0 0.05" material="floor"/>
   </worldbody>
 </mujoco>
