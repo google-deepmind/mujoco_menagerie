@@ -72,7 +72,6 @@ def display_name(robot):
 
 
 MODEL_MAP = {
-  'dyna_taku/taku': ModelType.MOBILE_MANIPULATOR,
   'franka_emika_panda/panda': ModelType.ARM,
   'franka_emika_panda/hand': ModelType.END_EFFECTOR,
   'franka_fr3/fr3': ModelType.ARM,
@@ -146,6 +145,7 @@ MODEL_MAP = {
   'trossen_wxai/wxai_follower': ModelType.ARM,
   'fanuc_crx5ia/crx5ia': ModelType.ARM,
   'franka_fr3_duo/fr3_duo': ModelType.DUAL_ARM,
+  'dyna_taku/taku': ModelType.MOBILE_MANIPULATOR,
 }
 
 

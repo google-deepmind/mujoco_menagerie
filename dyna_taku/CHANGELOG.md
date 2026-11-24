@@ -1,10 +1,5 @@
 # Changelog
 
-## 2026-11-05
+## [2026-11-24]
 
-- Refine gripper collision geometry and enable torsional friction.
-
-## 2026-11-03
-
-- Simplify mesh and update surface quality.
-- Restore collision.
+- Initial release.

@@ -1,13 +1,10 @@
 <mujoco model="dyna_taku">
   <compiler angle="radian" meshdir="assets" autolimits="true"/>
-  <option timestep="0.001" integrator="implicitfast">
-    <flag filterparent="enable"/>
-  </option>
-  <size njmax="500" nconmax="100" nuser_actuator="1"/>
+  <option timestep="0.001" integrator="implicitfast"/>
   <default>
-    <default class="torso_taku">
+    <default class="taku">
       <joint frictionloss="0.1" armature="0.005"/>
-      <position kp="50" dampratio="1"/>
+      <position kp="50" inheritrange="1"/>
       <default class="visual">
         <geom type="mesh" contype="0" conaffinity="0" group="2"/>
       </default>
@@ -16,19 +13,19 @@
       </default>
       <default class="folding_low_joint">
         <joint axis="0 1 0" range="-0.61 0.6807" armature="6.609855" frictionloss="22.54" damping="50"/>
-        <position forcerange="-180 180" kp="1000" kv="50" user="1"/>
+        <position forcerange="-180 180" kp="5000" kv="200"/>
       </default>
       <default class="folding_high_joint">
         <joint axis="0 1 0" range="-0.785 1.482" armature="6.609855" frictionloss="22.54" damping="50"/>
-        <position forcerange="-180 180" kp="1000" kv="50" user="1"/>
+        <position forcerange="-180 180" kp="5000" kv="200"/>
       </default>
       <default class="waist_pitch_joint">
         <joint axis="0 1 0" range="-1.953 1.081" armature="6.609855" frictionloss="22.54" damping="50"/>
-        <position forcerange="-180 180" kp="1000" kv="50" user="1"/>
+        <position forcerange="-180 180" kp="1000" kv="50"/>
       </default>
       <default class="waist_yaw_joint">
         <joint axis="0 0 1" range="-1.133 1.133" armature="0.625" frictionloss="9.3" damping="5.3"/>
-        <position forcerange="-53 53" kp="500" kv="10" user="1"/>
+        <position forcerange="-53 53" kp="500" kv="10"/>
       </default>
       <default class="head_yaw_joint">
         <joint axis="0 0 1" range="-1.046 1.046" armature="0.0005418" frictionloss="0.04367" damping="0.001"/>
@@ -40,11 +37,11 @@
       </default>
       <default class="head_pitch_joint">
         <joint axis="0 1 0" range="0 0.523" armature="0.0005418" frictionloss="0.04367" damping="0.001"/>
-        <position forcerange="-3.6 3.6" kp="1" kv="0.1"/>
+        <position forcerange="-3.6 3.6" kp="30" kv="1"/>
       </default>
       <default class="shoulder_pitch_joint">
         <joint armature="0.04597" frictionloss="0.2904" damping="0.171" axis="0 1 0"/>
-        <position forcerange="-55.6 55.6" kp="120" kv="5" user="1"/>
+        <position forcerange="-55.6 55.6" kp="120" kv="5"/>
         <default class="right_shoulder_pitch_joint">
           <joint range="-3.194650663 1.119820701"/>
         </default>
@@ -54,7 +51,7 @@
       </default>
       <default class="shoulder_roll_joint">
         <joint armature="0.04597" damping="0.171" frictionloss="0.2904" axis="1 0 0"/>
-        <position forcerange="-55.6 55.6" kp="120" kv="5" user="1"/>
+        <position forcerange="-55.6 55.6" kp="120" kv="5"/>
         <default class="right_shoulder_roll_joint">
           <joint range="-2.418747091 0.284314135"/>
         </default>
@@ -64,7 +61,7 @@
       </default>
       <default class="shoulder_yaw_joint">
         <joint armature="0.03067" damping="0.01" frictionloss="1.22" axis="0 0 1"/>
-        <position forcerange="-21.4 21.4" kp="100" kv="5" user="1"/>
+        <position forcerange="-21.4 21.4" kp="100" kv="5"/>
         <default class="right_shoulder_yaw_joint">
           <joint range="-2.021248353 2.006744667"/>
         </default>
@@ -74,7 +71,7 @@
       </default>
       <default class="elbow_joint">
         <joint axis="0 1 0" armature="0.03067" frictionloss="1.22" damping="0.01"/>
-        <position forcerange="-21.4 21.4" kp="100" kv="5" user="1"/>
+        <position forcerange="-21.4 21.4" kp="100" kv="5"/>
         <default class="right_elbow_joint">
           <joint range="-2.286381320 0.056653388"/>
         </default>
@@ -84,7 +81,7 @@
       </default>
       <default class="wrist_yaw_joint">
         <joint axis="0 0 1" armature="0.01358" frictionloss="0.2878" damping="0.01758"/>
-        <position forcerange="-15 15" kp="60" kv="5" user="1"/>
+        <position forcerange="-15 15" kp="60" kv="5"/>
         <default class="right_wrist_yaw_joint">
           <joint range="-2.002939850 1.988052191"/>
         </default>
@@ -94,7 +91,7 @@
       </default>
       <default class="wrist_pitch_joint">
         <joint axis="0 1 0" frictionloss="0.2878" armature="0.01358" damping="0.01758"/>
-        <position forcerange="-15 15" kp="60" kv="5" user="1"/>
+        <position forcerange="-15 15" kp="60" kv="5"/>
         <default class="right_wrist_pitch_joint">
           <joint range="-1.004227545 1.157589626"/>
         </default>
@@ -104,7 +101,7 @@
       </default>
       <default class="wrist_roll_joint">
         <joint axis="1 0 0" frictionloss="0.2878" armature="0.01358" damping="0.01758"/>
-        <position forcerange="-15 15" kp="60" kv="5" user="1"/>
+        <position forcerange="-15 15" kp="60" kv="5"/>
         <default class="right_wrist_roll_joint">
           <joint range="-1.575683249 1.577254045"/>
         </default>
@@ -114,7 +111,7 @@
       </default>
       <default class="finger_joint">
         <joint type="slide" armature="0.01358" frictionloss="0.2878" damping="0.01758" axis="0 1 0"/>
-        <position forcerange="-15 15" kp="400" kv="20" user="0.044"/>
+        <position forcerange="-15 15" kp="400" kv="20"/>
         <default class="finger_joint_active">
           <joint range="-0.0055 0.0345"/>
         </default>
@@ -124,7 +121,7 @@
       </default>
       <default class="swerve_steer_joint">
         <joint armature="0.003018" damping="0.007101" frictionloss="0.03478"/>
-        <position forcerange="-6 6" kp="50" kv="6" user="2"/>
+        <position forcerange="-6 6" kp="50" kv="6" inheritrange="0"/>
       </default>
       <default class="swerve_rotate_joint">
         <joint armature="0.003018" damping="0.007101" frictionloss="0.03478"/>
@@ -144,7 +141,10 @@
     <mesh name="agv_base_link_surface_3" file="meshes/agv_base_link_surface_3.obj" maxhullvert="64"/>
     <mesh name="agv_base_link_surface_4" file="meshes/agv_base_link_surface_4.obj" maxhullvert="64"/>
     <mesh name="agv_base_link_surface_5" file="meshes/agv_base_link_surface_5.obj" maxhullvert="64"/>
-    <mesh name="agv_base_link_collision" file="collision/agv_base_link_collision.stl" maxhullvert="64"/>
+    <mesh name="agv_base_rear_collision" file="collision/agv_base_rear_collision.stl" maxhullvert="64"/>
+    <mesh name="agv_base_left_collision" file="collision/agv_base_left_collision.stl" maxhullvert="64"/>
+    <mesh name="agv_base_right_collision" file="collision/agv_base_right_collision.stl" maxhullvert="64"/>
+    <mesh name="agv_base_lidar_collision" file="collision/agv_base_lidar_collision.stl" maxhullvert="64"/>
     <mesh name="agv_right_back_steering_link_surface_1" file="meshes/agv_right_back_steering_link_surface_1.obj"
       maxhullvert="64"/>
     <mesh name="agv_right_back_steering_link_surface_2" file="meshes/agv_right_back_steering_link_surface_2.obj"
@@ -354,7 +354,7 @@
     <mesh name="gripper_rear_segment_16" file="collision/gripper/gripper_rear_segment_16.obj" maxhullvert="128"/>
   </asset>
   <worldbody>
-    <body name="agv_base_link" pos="0 0 0" childclass="torso_taku">
+    <body name="agv_base_link" pos="0 0 0" childclass="taku">
       <freejoint name="floating_base"/>
       <inertial pos="-0.0139199 0.00323457 0.156937" mass="49.8504"
         fullinertia="1.87353 1.98646 3.33669 0.0520977 -0.111204 -0.00733825"/>
@@ -543,16 +543,8 @@
                               fullinertia="0.00179377 0.00261574 0.00192236 -4.22146e-06 -7.72653e-05 -3.57567e-07"/>
                             <joint name="right_wrist_roll_joint" pos="0 0 0" axis="1 0 0" type="hinge"
                               class="right_wrist_roll_joint"/>
-                            <body name="right_ee_fk_target_frame" pos="-0.02852 0 -0.088527"
-                              quat="0.7071055 0 0 -0.7071081">
-                              <inertial pos="0 0 0" quat="1 0 0 0" mass="1e-9" diaginertia="0 0 0"/>
-                              <site name="right_ee_x_axis_frame" type="cylinder" fromto="0 0 0 0.06 0 0" size="0.005"
-                                rgba="1 0 0 1" group="3"/>
-                              <site name="right_ee_y_axis_frame" type="cylinder" fromto="0 0 0 0 0.06 0" size="0.005"
-                                rgba="0 1 0 1" group="3"/>
-                              <site name="right_ee_z_axis_frame" type="cylinder" fromto="0 0 0 0 0 0.06" size="0.005"
-                                rgba="0 0 1 1" group="3"/>
-                            </body>
+                            <site name="right_ee_fk_target_frame" pos="-0.02852 0 -0.088527"
+                              quat="0.7071055 0 0 -0.7071081" size="0.003" group="3"/>
                             <camera name="right_gripper_camera_frame" pos="0.056204 0 -0.150766"
                               quat="0.68301270 -0.18301270 0.18301270 -0.68301270" fovy="60" resolution="640 480"/>
                             <body name="right_gripper_front_link" pos="-0.028953 -0.023048 -0.166971">
@@ -560,9 +552,8 @@
                                 fullinertia="7.58005e-05 7.25109e-05 1.66604e-05 2.53038e-07 9.59111e-07 7.99867e-06"/>
                               <joint name="right_gripper_front_joint" pos="0 0 0" axis="0 1 0" type="slide"
                                 class="finger_joint_coupled"/>
-                              <body name="right_gripper_front_tip_frame" pos="0.000433 0.023068 -0.080556">
-                                <inertial pos="0 0 0" mass="1e-9" diaginertia="0 0 0"/>
-                              </body>
+                              <site name="right_gripper_front_tip_frame" pos="0.000433 0.023068 -0.080556" size="0.003"
+                                group="3"/>
                               <geom name="right_gripper_front_link_visual_1" class="visual"
                                 mesh="right_gripper_front_link_surface_1" material="photo_green"/>
                               <geom name="right_gripper_front_link_visual_2" class="visual"
@@ -605,9 +596,8 @@
                                 fullinertia="7.58005e-05 7.25109e-05 1.66604e-05 2.53038e-07 -9.59111e-07 -7.99867e-06"/>
                               <joint name="right_gripper_rear_joint" pos="0 0 0" axis="0 1 0" type="slide"
                                 class="finger_joint_active"/>
-                              <body name="right_gripper_rear_tip_frame" pos="-0.000432 -0.023068 -0.080556">
-                                <inertial pos="0 0 0" mass="1e-9" diaginertia="0 0 0"/>
-                              </body>
+                              <site name="right_gripper_rear_tip_frame" pos="-0.000432 -0.023068 -0.080556" size="0.003"
+                                group="3"/>
                               <geom name="right_gripper_rear_link_visual_1" class="visual"
                                 mesh="right_gripper_rear_link_surface_1" material="photo_green"/>
                               <geom name="right_gripper_rear_link_visual_2" class="visual"
@@ -748,16 +738,8 @@
                               fullinertia="0.00179377 0.00261574 0.00192236 -4.22146e-06 -7.72653e-05 -3.57567e-07"/>
                             <joint name="left_wrist_roll_joint" pos="0 0 0" axis="1 0 0" type="hinge"
                               class="left_wrist_roll_joint"/>
-                            <body name="left_ee_fk_target_frame" pos="-0.02852 0 -0.088527"
-                              quat="0.7071055 0 0 -0.7071081">
-                              <inertial pos="0 0 0" quat="1 0 0 0" mass="1e-9" diaginertia="0 0 0"/>
-                              <site name="left_ee_x_axis_frame" type="cylinder" fromto="0 0 0 0.06 0 0" size="0.005"
-                                rgba="1 0 0 1" group="3"/>
-                              <site name="left_ee_y_axis_frame" type="cylinder" fromto="0 0 0 0 0.06 0" size="0.005"
-                                rgba="0 1 0 1" group="3"/>
-                              <site name="left_ee_z_axis_frame" type="cylinder" fromto="0 0 0 0 0 0.06" size="0.005"
-                                rgba="0 0 1 1" group="3"/>
-                            </body>
+                            <site name="left_ee_fk_target_frame" pos="-0.02852 0 -0.088527"
+                              quat="0.7071055 0 0 -0.7071081" size="0.003" group="3"/>
                             <camera name="left_gripper_camera_frame" pos="0.056204 0 -0.150766"
                               quat="0.68301270 -0.18301270 0.18301270 -0.68301270" fovy="60" resolution="640 480"/>
                             <body name="left_gripper_front_link" pos="-0.028953 -0.023048 -0.166971">
@@ -765,9 +747,8 @@
                                 fullinertia="7.58005e-05 7.25109e-05 1.66604e-05 2.53038e-07 9.59111e-07 7.99867e-06"/>
                               <joint name="left_gripper_front_joint" pos="0 0 0" axis="0 1 0" type="slide"
                                 class="finger_joint_coupled"/>
-                              <body name="left_gripper_front_tip_frame" pos="0.000433 0.023068 -0.080556">
-                                <inertial pos="0 0 0" mass="1e-9" diaginertia="0 0 0"/>
-                              </body>
+                              <site name="left_gripper_front_tip_frame" pos="0.000433 0.023068 -0.080556" size="0.003"
+                                group="3"/>
                               <geom name="left_gripper_front_link_visual_1" class="visual"
                                 mesh="left_gripper_front_link_surface_1" material="photo_green"/>
                               <geom name="left_gripper_front_link_visual_2" class="visual"
@@ -810,9 +791,8 @@
                                 fullinertia="7.58005e-05 7.25109e-05 1.66604e-05 2.53038e-07 -9.59111e-07 -7.99867e-06"/>
                               <joint name="left_gripper_rear_joint" pos="0 0 0" axis="0 1 0" type="slide"
                                 class="finger_joint_active"/>
-                              <body name="left_gripper_rear_tip_frame" pos="-0.000432 -0.023068 -0.080556">
-                                <inertial pos="0 0 0" mass="1e-9" diaginertia="0 0 0"/>
-                              </body>
+                              <site name="left_gripper_rear_tip_frame" pos="-0.000432 -0.023068 -0.080556" size="0.003"
+                                group="3"/>
                               <geom name="left_gripper_rear_link_visual_1" class="visual"
                                 mesh="left_gripper_rear_link_surface_1" material="photo_green"/>
                               <geom name="left_gripper_rear_link_visual_2" class="visual"
@@ -968,51 +948,12 @@
       <geom name="agv_base_link_visual_3" class="visual" mesh="agv_base_link_surface_3" material="photo_gray"/>
       <geom name="agv_base_link_visual_4" class="visual" mesh="agv_base_link_surface_4" material="photo_black"/>
       <geom name="agv_base_link_visual_5" class="visual" mesh="agv_base_link_surface_5" material="photo_white"/>
-      <geom name="agv_base_link_collision_1" class="collision" type="mesh" pos="-0.0139199 0.00323457 0.156937"
-        mesh="agv_base_link_collision"/>
+      <geom name="agv_base_rear_collision" type="mesh" mesh="agv_base_rear_collision" class="collision"/>
+      <geom name="agv_base_left_collision" type="mesh" mesh="agv_base_left_collision" class="collision"/>
+      <geom name="agv_base_right_collision" type="mesh" mesh="agv_base_right_collision" class="collision"/>
+      <geom name="agv_base_lidar_collision" type="mesh" mesh="agv_base_lidar_collision" class="collision"/>
     </body>
   </worldbody>
-  <actuator>
-    <position class="swerve_steer_joint" name="agv_right_front_steering_joint" joint="agv_right_front_steering_joint"/>
-    <position class="swerve_steer_joint" name="agv_right_back_steering_joint" joint="agv_right_back_steering_joint"/>
-    <position class="swerve_steer_joint" name="agv_left_front_steering_joint" joint="agv_left_front_steering_joint"/>
-    <position class="swerve_steer_joint" name="agv_left_back_steering_joint" joint="agv_left_back_steering_joint"/>
-    <velocity class="swerve_rotate_joint" name="agv_right_front_rotate_joint" joint="agv_right_front_rotate_joint"/>
-    <velocity class="swerve_rotate_joint" name="agv_right_back_rotate_joint" joint="agv_right_back_rotate_joint"/>
-    <velocity class="swerve_rotate_joint" name="agv_left_front_rotate_joint" joint="agv_left_front_rotate_joint"/>
-    <velocity class="swerve_rotate_joint" name="agv_left_back_rotate_joint" joint="agv_left_back_rotate_joint"/>
-    <position class="folding_low_joint" name="folding_low_joint" joint="folding_low_joint"/>
-    <position class="folding_high_joint" name="folding_high_joint" joint="folding_high_joint"/>
-    <position class="waist_pitch_joint" name="waist_pitch_joint" joint="waist_pitch_joint"/>
-    <position class="waist_yaw_joint" name="waist_yaw_joint" joint="waist_yaw_joint"/>
-    <position class="head_yaw_joint" name="head_yaw_joint" joint="head_yaw_joint"/>
-    <position class="head_roll_joint" name="head_roll_joint" joint="head_roll_joint" ctrlrange="-0.523 0.523"/>
-    <position class="head_pitch_joint" name="head_pitch_joint" joint="head_pitch_joint"/>
-    <position class="shoulder_pitch_joint" name="left_shoulder_pitch_joint" joint="left_shoulder_pitch_joint"/>
-    <position class="left_shoulder_roll_joint" name="left_shoulder_roll_joint" joint="left_shoulder_roll_joint"/>
-    <position class="left_shoulder_yaw_joint" name="left_shoulder_yaw_joint" joint="left_shoulder_yaw_joint"/>
-    <position class="elbow_joint" name="left_elbow_joint" joint="left_elbow_joint"/>
-    <position class="left_wrist_yaw_joint" name="left_wrist_yaw_joint" joint="left_wrist_yaw_joint"/>
-    <position class="wrist_pitch_joint" name="left_wrist_pitch_joint" joint="left_wrist_pitch_joint"/>
-    <position class="wrist_roll_joint" name="left_wrist_roll_joint" joint="left_wrist_roll_joint"/>
-    <position class="finger_joint_active" name="left_gripper_joint" joint="left_gripper_rear_joint"/>
-    <position class="shoulder_pitch_joint" name="right_shoulder_pitch_joint" joint="right_shoulder_pitch_joint"/>
-    <position class="right_shoulder_roll_joint" name="right_shoulder_roll_joint" joint="right_shoulder_roll_joint"/>
-    <position class="right_shoulder_yaw_joint" name="right_shoulder_yaw_joint" joint="right_shoulder_yaw_joint"/>
-    <position class="elbow_joint" name="right_elbow_joint" joint="right_elbow_joint"/>
-    <position class="right_wrist_yaw_joint" name="right_wrist_yaw_joint" joint="right_wrist_yaw_joint"/>
-    <position class="wrist_pitch_joint" name="right_wrist_pitch_joint" joint="right_wrist_pitch_joint"/>
-    <position class="wrist_roll_joint" name="right_wrist_roll_joint" joint="right_wrist_roll_joint"/>
-    <position class="finger_joint_active" name="right_gripper_joint" joint="right_gripper_rear_joint"/>
-  </actuator>
-  <equality>
-    <joint joint1="left_gripper_front_joint" joint2="left_gripper_rear_joint" polycoef="0 -1 0 0 0"/>
-    <joint joint1="right_gripper_front_joint" joint2="right_gripper_rear_joint" polycoef="0 -1 0 0 0"/>
-  </equality>
-  <keyframe>
-    <key name="home" qpos="0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0.24 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"
-      ctrl="0 0 0 0 0 0 0 0 0.24 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"/>
-  </keyframe>
   <contact>
     <!-- Exclude structurally-adjacent body pairs (within 3 kinematic hops) whose
          Adjacent mesh collision geoms can overlap at the neutral assembly.
@@ -1036,4 +977,46 @@
     <exclude body1="right_wrist_yaw_link" body2="right_wrist_roll_link"/>
     <exclude body1="left_wrist_yaw_link" body2="left_wrist_roll_link"/>
   </contact>
+  <equality>
+    <joint joint1="left_gripper_front_joint" joint2="left_gripper_rear_joint" polycoef="0 -1 0 0 0"/>
+    <joint joint1="right_gripper_front_joint" joint2="right_gripper_rear_joint" polycoef="0 -1 0 0 0"/>
+  </equality>
+  <actuator>
+    <position class="swerve_steer_joint" name="agv_right_front_steering_joint" joint="agv_right_front_steering_joint"/>
+    <position class="swerve_steer_joint" name="agv_right_back_steering_joint" joint="agv_right_back_steering_joint"/>
+    <position class="swerve_steer_joint" name="agv_left_front_steering_joint" joint="agv_left_front_steering_joint"/>
+    <position class="swerve_steer_joint" name="agv_left_back_steering_joint" joint="agv_left_back_steering_joint"/>
+    <velocity class="swerve_rotate_joint" name="agv_right_front_rotate_joint" joint="agv_right_front_rotate_joint"/>
+    <velocity class="swerve_rotate_joint" name="agv_right_back_rotate_joint" joint="agv_right_back_rotate_joint"/>
+    <velocity class="swerve_rotate_joint" name="agv_left_front_rotate_joint" joint="agv_left_front_rotate_joint"/>
+    <velocity class="swerve_rotate_joint" name="agv_left_back_rotate_joint" joint="agv_left_back_rotate_joint"/>
+    <position class="folding_low_joint" name="folding_low_joint" joint="folding_low_joint"/>
+    <position class="folding_high_joint" name="folding_high_joint" joint="folding_high_joint"/>
+    <position class="waist_pitch_joint" name="waist_pitch_joint" joint="waist_pitch_joint"/>
+    <position class="waist_yaw_joint" name="waist_yaw_joint" joint="waist_yaw_joint"/>
+    <position class="head_yaw_joint" name="head_yaw_joint" joint="head_yaw_joint"/>
+    <position class="head_roll_joint" name="head_roll_joint" joint="head_roll_joint"/>
+    <position class="head_pitch_joint" name="head_pitch_joint" joint="head_pitch_joint"/>
+    <position class="shoulder_pitch_joint" name="left_shoulder_pitch_joint" joint="left_shoulder_pitch_joint"/>
+    <position class="left_shoulder_roll_joint" name="left_shoulder_roll_joint" joint="left_shoulder_roll_joint"/>
+    <position class="left_shoulder_yaw_joint" name="left_shoulder_yaw_joint" joint="left_shoulder_yaw_joint"/>
+    <position class="elbow_joint" name="left_elbow_joint" joint="left_elbow_joint"/>
+    <position class="left_wrist_yaw_joint" name="left_wrist_yaw_joint" joint="left_wrist_yaw_joint"/>
+    <position class="wrist_pitch_joint" name="left_wrist_pitch_joint" joint="left_wrist_pitch_joint"/>
+    <position class="wrist_roll_joint" name="left_wrist_roll_joint" joint="left_wrist_roll_joint"/>
+    <position class="finger_joint_active" name="left_gripper_joint" joint="left_gripper_rear_joint"/>
+    <position class="shoulder_pitch_joint" name="right_shoulder_pitch_joint" joint="right_shoulder_pitch_joint"/>
+    <position class="right_shoulder_roll_joint" name="right_shoulder_roll_joint" joint="right_shoulder_roll_joint"/>
+    <position class="right_shoulder_yaw_joint" name="right_shoulder_yaw_joint" joint="right_shoulder_yaw_joint"/>
+    <position class="elbow_joint" name="right_elbow_joint" joint="right_elbow_joint"/>
+    <position class="right_wrist_yaw_joint" name="right_wrist_yaw_joint" joint="right_wrist_yaw_joint"/>
+    <position class="wrist_pitch_joint" name="right_wrist_pitch_joint" joint="right_wrist_pitch_joint"/>
+    <position class="wrist_roll_joint" name="right_wrist_roll_joint" joint="right_wrist_roll_joint"/>
+    <position class="finger_joint_active" name="right_gripper_joint" joint="right_gripper_rear_joint"/>
+  </actuator>
+  <keyframe>
+    <key name="home"
+      qpos="0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 -0.15 0.6 -0.45 0 0 0 0 0 0 0 0 0 0 0 -0.01 0.01 0 0 0 0 0 0 0 -0.01 0.01"
+      ctrl="0 0 0 0 0 0 0 0 -0.15 0.6 -0.45 0 0 0 0 0 0 0 0 0 0 0 0.01 0 0 0 0 0 0 0 0.01"/>
+  </keyframe>
 </mujoco>

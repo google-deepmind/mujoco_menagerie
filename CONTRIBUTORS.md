@@ -44,7 +44,7 @@ Built by the Google DeepMind team with contributions from the open-source commun
 - [Nan Wang](https://github.com/Nan-Tetheria)
 - [Nikita Cherniadev](https://github.com/chernyadev)
 - [Omar Rayyan](https://github.com/omarrayyann)
-- [Qiang](https://github.com/qiang-dyna) — dyna robotics
+- [Qiang](https://github.com/qiang-dyna)
 - [Rishabh Sai](https://github.com/rishabhsai)
 - [Sai Kishor Kothakota](https://github.com/saikishor)
 - [Sylvester Kaczmarek](https://github.com/sylvesterkaczmarek)
