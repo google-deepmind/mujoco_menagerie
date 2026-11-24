@@ -898,7 +898,7 @@
                   pos="0.00330953 0.0761901 0.000289533" mesh="left_shoulder_pitch_link_collision"/>
               </body>
               <geom name="torso_body_link_visual_1" class="visual" mesh="torso_body_link_surface_1"
-                material="photo_black"/>
+                material="photo_white"/>
               <geom name="torso_body_link_visual_2" class="visual" mesh="torso_body_link_surface_2"
                 material="photo_gray"/>
               <geom name="torso_body_link_visual_3" class="visual" mesh="torso_body_link_surface_3"

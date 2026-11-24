@@ -21,8 +21,9 @@ Based on the existing MJCF model in
 [dyna-robotics/dyna_robot_description at `afa6168`](https://github.com/dyna-robotics/dyna_robot_description/tree/afa6168/dyna_taku).
 This package adapts that MJCF directly; it does not perform a new URDF conversion.
 
-- Retain the source visual meshes, materials, physical link transforms, masses,
-  inertias, joint limits and actuator force limits.
+- Retain the source visual meshes, physical link transforms, masses, inertias,
+  joint limits and actuator force limits. Match the neck shell material to the
+  white head shell; other source materials are retained.
 - Retain the source segmented DynaClaw collision meshes and finger coupling.
 - Replace the solid base hull with separate convex hulls of the left, right and
   rear exterior shells plus the rear lidar, preserving the central U-shaped gap.
