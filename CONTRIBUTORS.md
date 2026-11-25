@@ -39,6 +39,7 @@ Built by the Google DeepMind team with contributions from the open-source commun
 - [Lev Kozlov](https://github.com/lvjonok)
 - [Lorenzo Amatucci](https://github.com/lorenzo96-cmd)
 - [Louis Le Lay](https://github.com/louislelay)
+- [Mark Finean](https://github.com/mfinean)
 - [Martin Günther](https://github.com/muhrix)
 - [Mohamed Fazil](https://github.com/hello-fazil)
 - [Nan Wang](https://github.com/Nan-Tetheria)
