@@ -1,6 +1,6 @@
 <mujoco model="dyna_taku">
   <compiler angle="radian" meshdir="assets" autolimits="true"/>
-  <option timestep="0.001" integrator="implicitfast"/>
+  <option timestep="0.001" integrator="implicitfast" cone="elliptic" impratio="10" tolerance="1e-10"/>
   <default>
     <default class="taku">
       <joint frictionloss="0.1" armature="0.005"/>
@@ -128,14 +128,52 @@
         <velocity forcerange="-10 10" ctrlrange="-26.18 26.18" kv="1.2"/>
       </default>
     </default>
+    <default class="dynaclaw">
+      <default class="dynaclaw_visual">
+        <geom type="mesh" contype="0" conaffinity="0" group="2"/>
+      </default>
+      <default class="dynaclaw_collision">
+        <geom group="3" condim="4" density="0"/>
+        <default class="dynaclaw_soft_pad">
+          <geom priority="1" friction="1.5 0.005 0.0001" solref="0.01 1" solimp="0.95 0.99 0.001"/>
+        </default>
+        <default class="dynaclaw_rigid_nail">
+          <geom priority="1" friction="1 0.005 0.0001" solref="0.003 1" solimp="0.95 0.99 0.001"/>
+        </default>
+      </default>
+    </default>
   </default>
   <asset>
+    <material name="dynaclaw_green" rgba="0.20 0.62 0.30 1" specular="0.25" shininess="0.25"/>
+    <material name="dynaclaw_black" rgba="0.015 0.015 0.015 1" specular="0.25" shininess="0.25"/>
+    <material name="dynaclaw_aluminum" rgba="0.65 0.67 0.70 1" specular="0.8" shininess="0.7"/>
+    <mesh name="dynaclaw_front_nail_visual" file="gripper/visual/front_nail.obj"/>
+    <mesh name="dynaclaw_rear_nail_visual" file="gripper/visual/rear_nail.obj"/>
+    <mesh name="dynaclaw_front_surface_1" file="gripper/visual/front_surface_1.obj"/>
+    <mesh name="dynaclaw_front_surface_2" file="gripper/visual/front_surface_2.obj"/>
+    <mesh name="dynaclaw_rear_surface_1" file="gripper/visual/rear_surface_1.obj"/>
+    <mesh name="dynaclaw_rear_surface_2" file="gripper/visual/rear_surface_2.obj"/>
+    <mesh name="dynaclaw_taper" file="gripper/collision/taper.obj" maxhullvert="64"/>
+    <mesh name="dynaclaw_relief_1" file="gripper/collision/relief_1.obj" maxhullvert="64"/>
+    <mesh name="dynaclaw_relief_2" file="gripper/collision/relief_2.obj" maxhullvert="64"/>
+    <mesh name="dynaclaw_relief_3" file="gripper/collision/relief_3.obj" maxhullvert="64"/>
+    <mesh name="dynaclaw_relief_4" file="gripper/collision/relief_4.obj" maxhullvert="64"/>
+    <mesh name="dynaclaw_tip_support" file="gripper/collision/tip_support.obj" maxhullvert="64"/>
     <texture name="chest" type="2d" file="assets/textures/chest_albedo.png"/>
-    <material name="photo_white" rgba="1 1 1 1" specular="0.3" shininess="0.35"/>
+    <material name="photo_white" rgba="1 1 1 1" specular="0.12" shininess="0.12"/>
+    <material name="upper_arm_gray" rgba="0.65 0.65 0.65 1" specular="0.12" shininess="0.12"/>
+    <material name="head_warm" rgba="0.93 0.88164 0.8184 1" specular="0.12" shininess="0.12"/>
+    <material name="emergency_stop_red" rgba="0.8 0.015 0.015 1" specular="0.15" shininess="0.15"/>
+    <material name="connector_silver" rgba="0.72 0.74 0.77 1" specular="0.8" shininess="0.65"/>
     <material name="photo_black" rgba="0.015 0.015 0.015 1" specular="0.25" shininess="0.25"/>
-    <material name="photo_gray" rgba="0.65 0.65 0.65 1" specular="0.25" shininess="0.25"/>
+    <material name="photo_gray" rgba="0.8549019608 0.8549019608 0.8549019608 1" specular="0.12" shininess="0.12"/>
     <material name="photo_green" rgba="0.20 0.62 0.30 1" specular="0.25" shininess="0.25"/>
     <material name="chest_logo" texture="chest" rgba="1 1 1 1" specular=".3" shininess=".35"/>
+    <mesh name="agv_rear_buttons" file="meshes/agv_rear_buttons.obj"/>
+    <mesh name="agv_rear_connector" file="meshes/agv_rear_connector.obj"/>
+    <mesh name="agv_lower_skirt" file="meshes/agv_lower_skirt.obj"/>
+    <mesh name="agv_rear_lidar_cover" file="meshes/agv_rear_lidar_cover.obj"/>
+    <mesh name="agv_emergency_stop_cap" file="meshes/agv_emergency_stop_cap.obj"/>
     <mesh name="agv_base_link_surface_1" file="meshes/agv_base_link_surface_1.obj" maxhullvert="64"/>
     <mesh name="agv_base_link_surface_2" file="meshes/agv_base_link_surface_2.obj" maxhullvert="64"/>
     <mesh name="agv_base_link_surface_3" file="meshes/agv_base_link_surface_3.obj" maxhullvert="64"/>
@@ -197,18 +235,18 @@
       maxhullvert="64"/>
     <mesh name="folding_lower_joint_link_surface_2" file="meshes/folding_lower_joint_link_surface_2.obj"
       maxhullvert="64"/>
-    <mesh name="folding_lower_joint_link_collision" file="collision/folding_lower_joint_link_collision.stl"
+    <mesh name="folding_lower_joint_link_collision" file="collision/folding_lower_joint_link_collision.obj"
       maxhullvert="64"/>
     <mesh name="folding_to_waist_link_surface_1" file="meshes/folding_to_waist_link_surface_1.obj" maxhullvert="64"/>
     <mesh name="folding_to_waist_link_surface_2" file="meshes/folding_to_waist_link_surface_2.obj" maxhullvert="64"/>
     <mesh name="folding_to_waist_link_surface_3" file="meshes/folding_to_waist_link_surface_3.obj" maxhullvert="64"/>
     <mesh name="folding_to_waist_link_surface_4" file="meshes/folding_to_waist_link_surface_4.obj" maxhullvert="64"/>
-    <mesh name="folding_to_waist_link_collision" file="collision/folding_to_waist_link_collision.stl" maxhullvert="64"/>
+    <mesh name="folding_to_waist_link_collision" file="collision/folding_to_waist_link_collision.obj" maxhullvert="64"/>
     <mesh name="torso_waist_pitch_link_surface_1" file="meshes/torso_waist_pitch_link_surface_1.obj" maxhullvert="64"/>
     <mesh name="torso_waist_pitch_link_surface_2" file="meshes/torso_waist_pitch_link_surface_2.obj" maxhullvert="64"/>
     <mesh name="torso_waist_pitch_link_surface_3" file="meshes/torso_waist_pitch_link_surface_3.obj" maxhullvert="64"/>
     <mesh name="torso_waist_pitch_link_surface_4" file="meshes/torso_waist_pitch_link_surface_4.obj" maxhullvert="64"/>
-    <mesh name="torso_waist_pitch_link_collision" file="collision/torso_waist_pitch_link_collision.stl"
+    <mesh name="torso_waist_pitch_link_collision" file="collision/torso_waist_pitch_link_collision.obj"
       maxhullvert="64"/>
     <mesh name="torso_body_link_surface_1" file="meshes/torso_body_link_surface_1.obj" maxhullvert="64"/>
     <mesh name="torso_body_link_surface_2" file="meshes/torso_body_link_surface_2.obj" maxhullvert="64"/>
@@ -216,26 +254,24 @@
     <mesh name="torso_body_link_surface_4" file="meshes/torso_body_link_surface_4.obj" maxhullvert="64"/>
     <mesh name="torso_body_link_surface_5" file="meshes/torso_body_link_surface_5.obj" maxhullvert="64"/>
     <mesh name="torso_body_link_surface_6" file="meshes/torso_body_link_surface_6.obj" maxhullvert="64"/>
-    <mesh name="torso_body_link_collision" file="collision/torso_body_link_collision.stl" maxhullvert="64"/>
-    <mesh name="head_yaw_link_collision" file="collision/head_yaw_link_collision.stl" maxhullvert="64"/>
-    <mesh name="head_pitch_link_collision" file="collision/head_pitch_link_collision.stl" maxhullvert="64"/>
+    <mesh name="torso_body_link_collision" file="collision/torso_body_link_collision.obj" maxhullvert="64"/>
     <mesh name="head_roll_link_surface_1" file="meshes/head_roll_link_surface_1.obj" maxhullvert="64"/>
     <mesh name="head_roll_link_surface_2" file="meshes/head_roll_link_surface_2.obj" maxhullvert="64"/>
     <mesh name="head_roll_link_surface_3" file="meshes/head_roll_link_surface_3.obj" maxhullvert="64"/>
-    <mesh name="head_roll_link_collision" file="collision/head_roll_link_collision.stl" maxhullvert="64"/>
+    <mesh name="head_roll_link_collision" file="collision/head_roll_link_collision.obj" maxhullvert="64"/>
     <mesh name="right_shoulder_pitch_link_surface_1" file="meshes/right_shoulder_pitch_link_surface_1.obj"
       maxhullvert="64"/>
     <mesh name="right_shoulder_pitch_link_surface_2" file="meshes/right_shoulder_pitch_link_surface_2.obj"
       maxhullvert="64"/>
     <mesh name="right_shoulder_pitch_link_surface_3" file="meshes/right_shoulder_pitch_link_surface_3.obj"
       maxhullvert="64"/>
-    <mesh name="right_shoulder_pitch_link_collision" file="collision/right_shoulder_pitch_link_collision.stl"
+    <mesh name="right_shoulder_pitch_link_collision" file="collision/right_shoulder_pitch_link_collision.obj"
       maxhullvert="64"/>
     <mesh name="right_shoulder_roll_link_surface_1" file="meshes/right_shoulder_roll_link_surface_1.obj"
       maxhullvert="64"/>
     <mesh name="right_shoulder_roll_link_surface_2" file="meshes/right_shoulder_roll_link_surface_2.obj"
       maxhullvert="64"/>
-    <mesh name="right_shoulder_roll_link_collision" file="collision/right_shoulder_roll_link_collision.stl"
+    <mesh name="right_shoulder_roll_link_collision" file="collision/right_shoulder_roll_link_collision.obj"
       maxhullvert="64"/>
     <mesh name="right_shoulder_yaw_link_surface_1" file="meshes/right_shoulder_yaw_link_surface_1.obj"
       maxhullvert="64"/>
@@ -245,113 +281,69 @@
       maxhullvert="64"/>
     <mesh name="right_shoulder_yaw_link_surface_4" file="meshes/right_shoulder_yaw_link_surface_4.obj"
       maxhullvert="64"/>
-    <mesh name="right_shoulder_yaw_link_collision" file="collision/right_shoulder_yaw_link_collision.stl"
+    <mesh name="right_shoulder_yaw_link_collision" file="collision/right_shoulder_yaw_link_collision.obj"
       maxhullvert="64"/>
     <mesh name="right_elbow_link_surface_1" file="meshes/right_elbow_link_surface_1.obj" maxhullvert="64"/>
     <mesh name="right_elbow_link_surface_2" file="meshes/right_elbow_link_surface_2.obj" maxhullvert="64"/>
     <mesh name="right_elbow_link_surface_3" file="meshes/right_elbow_link_surface_3.obj" maxhullvert="64"/>
     <mesh name="right_elbow_link_surface_4" file="meshes/right_elbow_link_surface_4.obj" maxhullvert="64"/>
-    <mesh name="right_elbow_link_collision" file="collision/right_elbow_link_collision.stl" maxhullvert="64"/>
+    <mesh name="right_elbow_link_collision" file="collision/right_elbow_link_collision.obj" maxhullvert="64"/>
     <mesh name="right_wrist_yaw_link_surface_1" file="meshes/right_wrist_yaw_link_surface_1.obj" maxhullvert="64"/>
     <mesh name="right_wrist_yaw_link_surface_2" file="meshes/right_wrist_yaw_link_surface_2.obj" maxhullvert="64"/>
     <mesh name="right_wrist_yaw_link_surface_3" file="meshes/right_wrist_yaw_link_surface_3.obj" maxhullvert="64"/>
     <mesh name="right_wrist_yaw_link_surface_4" file="meshes/right_wrist_yaw_link_surface_4.obj" maxhullvert="64"/>
-    <mesh name="right_wrist_yaw_link_collision" file="collision/right_wrist_yaw_link_collision.stl" maxhullvert="64"/>
+    <mesh name="right_wrist_yaw_link_collision" file="collision/right_wrist_yaw_link_collision.obj" maxhullvert="64"/>
     <mesh name="right_wrist_pitch_link_surface_1" file="meshes/right_wrist_pitch_link_surface_1.obj" maxhullvert="64"/>
     <mesh name="right_wrist_pitch_link_surface_2" file="meshes/right_wrist_pitch_link_surface_2.obj" maxhullvert="64"/>
-    <mesh name="right_wrist_pitch_link_collision" file="collision/right_wrist_pitch_link_collision.stl"
+    <mesh name="right_wrist_pitch_link_collision" file="collision/right_wrist_pitch_link_collision.obj"
       maxhullvert="64"/>
     <mesh name="right_wrist_roll_link_surface_1" file="meshes/right_wrist_roll_link_surface_1.obj" maxhullvert="64"/>
     <mesh name="right_wrist_roll_link_surface_2" file="meshes/right_wrist_roll_link_surface_2.obj" maxhullvert="64"/>
     <mesh name="right_wrist_roll_link_surface_3" file="meshes/right_wrist_roll_link_surface_3.obj" maxhullvert="64"/>
     <mesh name="right_wrist_roll_link_surface_4" file="meshes/right_wrist_roll_link_surface_4.obj" maxhullvert="64"/>
     <mesh name="right_wrist_roll_link_surface_5" file="meshes/right_wrist_roll_link_surface_5.obj" maxhullvert="64"/>
-    <mesh name="right_wrist_roll_link_collision" file="collision/right_wrist_roll_link_collision.stl" maxhullvert="64"/>
-    <mesh name="right_gripper_front_link_surface_1" file="meshes/right_gripper_front_link_surface_1.obj"
-      maxhullvert="64"/>
-    <mesh name="right_gripper_front_link_surface_2" file="meshes/right_gripper_front_link_surface_2.obj"
-      maxhullvert="64"/>
-    <mesh name="right_gripper_rear_link_surface_1" file="meshes/right_gripper_rear_link_surface_1.obj"
-      maxhullvert="64"/>
-    <mesh name="right_gripper_rear_link_surface_2" file="meshes/right_gripper_rear_link_surface_2.obj"
-      maxhullvert="64"/>
+    <mesh name="right_housing_part_1" file="collision/gripper_housing/right_part_1.obj" maxhullvert="128"/>
+    <mesh name="right_housing_part_2" file="collision/gripper_housing/right_part_2.obj" maxhullvert="128"/>
     <mesh name="left_shoulder_pitch_link_surface_1" file="meshes/left_shoulder_pitch_link_surface_1.obj"
       maxhullvert="64"/>
     <mesh name="left_shoulder_pitch_link_surface_2" file="meshes/left_shoulder_pitch_link_surface_2.obj"
       maxhullvert="64"/>
     <mesh name="left_shoulder_pitch_link_surface_3" file="meshes/left_shoulder_pitch_link_surface_3.obj"
       maxhullvert="64"/>
-    <mesh name="left_shoulder_pitch_link_collision" file="collision/left_shoulder_pitch_link_collision.stl"
+    <mesh name="left_shoulder_pitch_link_collision" file="collision/left_shoulder_pitch_link_collision.obj"
       maxhullvert="64"/>
     <mesh name="left_shoulder_roll_link_surface_1" file="meshes/left_shoulder_roll_link_surface_1.obj"
       maxhullvert="64"/>
     <mesh name="left_shoulder_roll_link_surface_2" file="meshes/left_shoulder_roll_link_surface_2.obj"
       maxhullvert="64"/>
-    <mesh name="left_shoulder_roll_link_collision" file="collision/left_shoulder_roll_link_collision.stl"
+    <mesh name="left_shoulder_roll_link_collision" file="collision/left_shoulder_roll_link_collision.obj"
       maxhullvert="64"/>
     <mesh name="left_shoulder_yaw_link_surface_1" file="meshes/left_shoulder_yaw_link_surface_1.obj" maxhullvert="64"/>
     <mesh name="left_shoulder_yaw_link_surface_2" file="meshes/left_shoulder_yaw_link_surface_2.obj" maxhullvert="64"/>
     <mesh name="left_shoulder_yaw_link_surface_3" file="meshes/left_shoulder_yaw_link_surface_3.obj" maxhullvert="64"/>
     <mesh name="left_shoulder_yaw_link_surface_4" file="meshes/left_shoulder_yaw_link_surface_4.obj" maxhullvert="64"/>
-    <mesh name="left_shoulder_yaw_link_collision" file="collision/left_shoulder_yaw_link_collision.stl"
+    <mesh name="left_shoulder_yaw_link_collision" file="collision/left_shoulder_yaw_link_collision.obj"
       maxhullvert="64"/>
     <mesh name="left_elbow_link_surface_1" file="meshes/left_elbow_link_surface_1.obj" maxhullvert="64"/>
     <mesh name="left_elbow_link_surface_2" file="meshes/left_elbow_link_surface_2.obj" maxhullvert="64"/>
     <mesh name="left_elbow_link_surface_3" file="meshes/left_elbow_link_surface_3.obj" maxhullvert="64"/>
     <mesh name="left_elbow_link_surface_4" file="meshes/left_elbow_link_surface_4.obj" maxhullvert="64"/>
-    <mesh name="left_elbow_link_collision" file="collision/left_elbow_link_collision.stl" maxhullvert="64"/>
+    <mesh name="left_elbow_link_collision" file="collision/left_elbow_link_collision.obj" maxhullvert="64"/>
     <mesh name="left_wrist_yaw_link_surface_1" file="meshes/left_wrist_yaw_link_surface_1.obj" maxhullvert="64"/>
     <mesh name="left_wrist_yaw_link_surface_2" file="meshes/left_wrist_yaw_link_surface_2.obj" maxhullvert="64"/>
     <mesh name="left_wrist_yaw_link_surface_3" file="meshes/left_wrist_yaw_link_surface_3.obj" maxhullvert="64"/>
     <mesh name="left_wrist_yaw_link_surface_4" file="meshes/left_wrist_yaw_link_surface_4.obj" maxhullvert="64"/>
-    <mesh name="left_wrist_yaw_link_collision" file="collision/left_wrist_yaw_link_collision.stl" maxhullvert="64"/>
+    <mesh name="left_wrist_yaw_link_collision" file="collision/left_wrist_yaw_link_collision.obj" maxhullvert="64"/>
     <mesh name="left_wrist_pitch_link_surface_1" file="meshes/left_wrist_pitch_link_surface_1.obj" maxhullvert="64"/>
     <mesh name="left_wrist_pitch_link_surface_2" file="meshes/left_wrist_pitch_link_surface_2.obj" maxhullvert="64"/>
-    <mesh name="left_wrist_pitch_link_collision" file="collision/left_wrist_pitch_link_collision.stl" maxhullvert="64"/>
+    <mesh name="left_wrist_pitch_link_collision" file="collision/left_wrist_pitch_link_collision.obj" maxhullvert="64"/>
     <mesh name="left_wrist_roll_link_surface_1" file="meshes/left_wrist_roll_link_surface_1.obj" maxhullvert="64"/>
     <mesh name="left_wrist_roll_link_surface_2" file="meshes/left_wrist_roll_link_surface_2.obj" maxhullvert="64"/>
     <mesh name="left_wrist_roll_link_surface_3" file="meshes/left_wrist_roll_link_surface_3.obj" maxhullvert="64"/>
     <mesh name="left_wrist_roll_link_surface_4" file="meshes/left_wrist_roll_link_surface_4.obj" maxhullvert="64"/>
-    <mesh name="left_wrist_roll_link_collision" file="collision/left_wrist_roll_link_collision.stl" maxhullvert="64"/>
-    <mesh name="left_gripper_front_link_surface_1" file="meshes/left_gripper_front_link_surface_1.obj"
-      maxhullvert="64"/>
-    <mesh name="left_gripper_front_link_surface_2" file="meshes/left_gripper_front_link_surface_2.obj"
-      maxhullvert="64"/>
-    <mesh name="left_gripper_rear_link_surface_1" file="meshes/left_gripper_rear_link_surface_1.obj" maxhullvert="64"/>
-    <mesh name="left_gripper_rear_link_surface_2" file="meshes/left_gripper_rear_link_surface_2.obj" maxhullvert="64"/>
+    <mesh name="left_housing_part_1" file="collision/gripper_housing/left_part_1.obj" maxhullvert="128"/>
+    <mesh name="left_housing_part_2" file="collision/gripper_housing/left_part_2.obj" maxhullvert="128"/>
     <mesh name="torso_body_link_logo" file="meshes/torso_body_link_logo.obj"/>
-    <mesh name="gripper_front_segment_1" file="collision/gripper/gripper_front_segment_1.obj" maxhullvert="128"/>
-    <mesh name="gripper_front_segment_2" file="collision/gripper/gripper_front_segment_2.obj" maxhullvert="128"/>
-    <mesh name="gripper_front_segment_3" file="collision/gripper/gripper_front_segment_3.obj" maxhullvert="128"/>
-    <mesh name="gripper_front_segment_4" file="collision/gripper/gripper_front_segment_4.obj" maxhullvert="128"/>
-    <mesh name="gripper_front_segment_5" file="collision/gripper/gripper_front_segment_5.obj" maxhullvert="128"/>
-    <mesh name="gripper_front_segment_6" file="collision/gripper/gripper_front_segment_6.obj" maxhullvert="128"/>
-    <mesh name="gripper_front_segment_7" file="collision/gripper/gripper_front_segment_7.obj" maxhullvert="128"/>
-    <mesh name="gripper_front_segment_8" file="collision/gripper/gripper_front_segment_8.obj" maxhullvert="128"/>
-    <mesh name="gripper_front_segment_9" file="collision/gripper/gripper_front_segment_9.obj" maxhullvert="128"/>
-    <mesh name="gripper_front_segment_10" file="collision/gripper/gripper_front_segment_10.obj" maxhullvert="128"/>
-    <mesh name="gripper_front_segment_11" file="collision/gripper/gripper_front_segment_11.obj" maxhullvert="128"/>
-    <mesh name="gripper_front_segment_12" file="collision/gripper/gripper_front_segment_12.obj" maxhullvert="128"/>
-    <mesh name="gripper_front_segment_13" file="collision/gripper/gripper_front_segment_13.obj" maxhullvert="128"/>
-    <mesh name="gripper_front_segment_14" file="collision/gripper/gripper_front_segment_14.obj" maxhullvert="128"/>
-    <mesh name="gripper_front_segment_15" file="collision/gripper/gripper_front_segment_15.obj" maxhullvert="128"/>
-    <mesh name="gripper_front_segment_16" file="collision/gripper/gripper_front_segment_16.obj" maxhullvert="128"/>
-    <mesh name="gripper_rear_segment_1" file="collision/gripper/gripper_rear_segment_1.obj" maxhullvert="128"/>
-    <mesh name="gripper_rear_segment_2" file="collision/gripper/gripper_rear_segment_2.obj" maxhullvert="128"/>
-    <mesh name="gripper_rear_segment_3" file="collision/gripper/gripper_rear_segment_3.obj" maxhullvert="128"/>
-    <mesh name="gripper_rear_segment_4" file="collision/gripper/gripper_rear_segment_4.obj" maxhullvert="128"/>
-    <mesh name="gripper_rear_segment_5" file="collision/gripper/gripper_rear_segment_5.obj" maxhullvert="128"/>
-    <mesh name="gripper_rear_segment_6" file="collision/gripper/gripper_rear_segment_6.obj" maxhullvert="128"/>
-    <mesh name="gripper_rear_segment_7" file="collision/gripper/gripper_rear_segment_7.obj" maxhullvert="128"/>
-    <mesh name="gripper_rear_segment_8" file="collision/gripper/gripper_rear_segment_8.obj" maxhullvert="128"/>
-    <mesh name="gripper_rear_segment_9" file="collision/gripper/gripper_rear_segment_9.obj" maxhullvert="128"/>
-    <mesh name="gripper_rear_segment_10" file="collision/gripper/gripper_rear_segment_10.obj" maxhullvert="128"/>
-    <mesh name="gripper_rear_segment_11" file="collision/gripper/gripper_rear_segment_11.obj" maxhullvert="128"/>
-    <mesh name="gripper_rear_segment_12" file="collision/gripper/gripper_rear_segment_12.obj" maxhullvert="128"/>
-    <mesh name="gripper_rear_segment_13" file="collision/gripper/gripper_rear_segment_13.obj" maxhullvert="128"/>
-    <mesh name="gripper_rear_segment_14" file="collision/gripper/gripper_rear_segment_14.obj" maxhullvert="128"/>
-    <mesh name="gripper_rear_segment_15" file="collision/gripper/gripper_rear_segment_15.obj" maxhullvert="128"/>
-    <mesh name="gripper_rear_segment_16" file="collision/gripper/gripper_rear_segment_16.obj" maxhullvert="128"/>
   </asset>
   <worldbody>
     <body name="agv_base_link" pos="0 0 0" childclass="taku">
@@ -495,19 +487,15 @@
                         fovy="60" resolution="640 480"/>
                     </body>
                     <geom name="head_roll_link_visual_1" class="visual" mesh="head_roll_link_surface_1"
-                      material="photo_white"/>
+                      material="head_warm"/>
                     <geom name="head_roll_link_visual_2" class="visual" mesh="head_roll_link_surface_2"
-                      material="photo_white"/>
+                      material="head_warm"/>
                     <geom name="head_roll_link_visual_3" class="visual" mesh="head_roll_link_surface_3"
                       material="photo_black"/>
                     <geom name="head_roll_link_collision_1" class="collision" type="mesh"
                       pos="0.0227563 -5.99682e-05 0.0337785" mesh="head_roll_link_collision"/>
                   </body>
-                  <geom name="head_pitch_link_collision_1" class="collision" type="mesh"
-                    pos="-0.017082 -0.001963 0.000698" mesh="head_pitch_link_collision"/>
                 </body>
-                <geom name="head_yaw_link_collision_1" class="collision" type="mesh" pos="-4.2e-05 0.000258 0.083657"
-                  mesh="head_yaw_link_collision"/>
               </body>
               <body name="right_shoulder_pitch_link" pos="0 -0.105 0.243">
                 <inertial pos="0.00333768 -0.0762098 0.000662013" mass="1.45458"
@@ -552,88 +540,87 @@
                                 fullinertia="7.58005e-05 7.25109e-05 1.66604e-05 2.53038e-07 9.59111e-07 7.99867e-06"/>
                               <joint name="right_gripper_front_joint" pos="0 0 0" axis="0 1 0" type="slide"
                                 class="finger_joint_coupled"/>
-                              <site name="right_gripper_front_tip_frame" pos="0.000433 0.023068 -0.080556" size="0.003"
-                                group="3"/>
-                              <geom name="right_gripper_front_link_visual_1" class="visual"
-                                mesh="right_gripper_front_link_surface_1" material="photo_green"/>
-                              <geom name="right_gripper_front_link_visual_2" class="visual"
-                                mesh="right_gripper_front_link_surface_2" material="photo_black"/>
-                              <geom name="right_gripper_front_collision_1" class="collision" type="mesh" pos="0 0 0"
-                                mesh="gripper_front_segment_1" condim="4"/>
-                              <geom name="right_gripper_front_collision_2" class="collision" type="mesh" pos="0 0 0"
-                                mesh="gripper_front_segment_2" condim="4"/>
-                              <geom name="right_gripper_front_collision_3" class="collision" type="mesh" pos="0 0 0"
-                                mesh="gripper_front_segment_3" condim="4"/>
-                              <geom name="right_gripper_front_collision_4" class="collision" type="mesh" pos="0 0 0"
-                                mesh="gripper_front_segment_4" condim="4"/>
-                              <geom name="right_gripper_front_collision_5" class="collision" type="mesh" pos="0 0 0"
-                                mesh="gripper_front_segment_5" condim="4"/>
-                              <geom name="right_gripper_front_collision_6" class="collision" type="mesh" pos="0 0 0"
-                                mesh="gripper_front_segment_6" condim="4"/>
-                              <geom name="right_gripper_front_collision_7" class="collision" type="mesh" pos="0 0 0"
-                                mesh="gripper_front_segment_7" condim="4"/>
-                              <geom name="right_gripper_front_collision_8" class="collision" type="mesh" pos="0 0 0"
-                                mesh="gripper_front_segment_8" condim="4"/>
-                              <geom name="right_gripper_front_collision_9" class="collision" type="mesh" pos="0 0 0"
-                                mesh="gripper_front_segment_9" condim="4"/>
-                              <geom name="right_gripper_front_collision_10" class="collision" type="mesh" pos="0 0 0"
-                                mesh="gripper_front_segment_10" condim="4"/>
-                              <geom name="right_gripper_front_collision_11" class="collision" type="mesh" pos="0 0 0"
-                                mesh="gripper_front_segment_11" condim="4"/>
-                              <geom name="right_gripper_front_collision_12" class="collision" type="mesh" pos="0 0 0"
-                                mesh="gripper_front_segment_12" condim="4"/>
-                              <geom name="right_gripper_front_collision_13" class="collision" type="mesh" pos="0 0 0"
-                                mesh="gripper_front_segment_13" condim="4"/>
-                              <geom name="right_gripper_front_collision_14" class="collision" type="mesh" pos="0 0 0"
-                                mesh="gripper_front_segment_14" condim="4"/>
-                              <geom name="right_gripper_front_collision_15" class="collision" type="mesh" pos="0 0 0"
-                                mesh="gripper_front_segment_15" condim="4"/>
-                              <geom name="right_gripper_front_collision_16" class="collision" type="mesh" pos="0 0 0"
-                                mesh="gripper_front_segment_16" condim="4"/>
+                              <site name="right_gripper_front_tip_frame" pos="0.000433 0.022472691825467 -0.080556"
+                                size="0.003" group="3"/>
+                              <geom name="right_gripper_front_link_visual_1" class="dynaclaw_visual"
+                                mesh="dynaclaw_front_surface_1" material="dynaclaw_green"
+                                pos="0 -0.00059530817453299961 0"/>
+                              <geom name="right_gripper_front_link_visual_2" class="dynaclaw_visual"
+                                mesh="dynaclaw_front_surface_2" material="dynaclaw_black"
+                                pos="0 -0.00059530817453299961 0"/>
+                              <geom name="right_gripper_front_nail_visual" class="dynaclaw_visual"
+                                mesh="dynaclaw_front_nail_visual" material="dynaclaw_aluminum"
+                                pos="0 -0.00059530817453299961 0"/>
+                              <geom name="right_gripper_front_collision_inner_pad" class="dynaclaw_soft_pad" type="box"
+                                pos="0.00043281 0.020071601358767 -0.066191440168499996"
+                                size="0.006 0.0009 0.00903636388117" quat="0.999048221582 0.0436193873653 0 0"/>
+                              <geom name="right_gripper_front_collision_outer_back" class="dynaclaw_soft_pad" type="box"
+                                pos="0.00043281 0.0024538240535270004 -0.046882851938"
+                                size="0.006 0.0004 0.00484957129392" quat="0.258819045103 -0.965925826289 0 0"/>
+                              <geom name="right_gripper_front_collision_taper" class="dynaclaw_soft_pad" type="mesh"
+                                mesh="dynaclaw_taper" pos="0 -0.00059530817453299961 0"/>
+                              <geom name="right_gripper_front_collision_relief_1" class="dynaclaw_soft_pad" type="mesh"
+                                mesh="dynaclaw_relief_1" pos="0 -0.00059530817453299961 0"/>
+                              <geom name="right_gripper_front_collision_relief_2" class="dynaclaw_soft_pad" type="mesh"
+                                mesh="dynaclaw_relief_2" pos="0 -0.00059530817453299961 0"/>
+                              <geom name="right_gripper_front_collision_relief_3" class="dynaclaw_soft_pad" type="mesh"
+                                mesh="dynaclaw_relief_3" pos="0 -0.00059530817453299961 0"/>
+                              <geom name="right_gripper_front_collision_relief_4" class="dynaclaw_soft_pad" type="mesh"
+                                mesh="dynaclaw_relief_4" pos="0 -0.00059530817453299961 0"/>
+                              <geom name="right_gripper_front_collision_tip_support" class="dynaclaw_soft_pad"
+                                type="mesh" mesh="dynaclaw_tip_support" pos="0 -0.00059530817453299961 0"/>
+                              <geom name="right_gripper_front_collision_nail" class="dynaclaw_rigid_nail" type="box"
+                                pos="0.000432810746 0.013723793929766999 -0.065218504094100002"
+                                size="0.006000000052 0.000992002455033 0.0166644072284"
+                                quat="0.965925826289 0.258819045103 0 0"/>
+                              <geom name="right_gripper_front_collision_nail_tip" class="dynaclaw_rigid_nail"
+                                type="capsule"
+                                fromto="-0.0045751868509700004 0.022055997543967001 -0.079650304092899998 0.0054408083429699997 0.022055997543967001 -0.079650304092899998"
+                                size="0.000992002455033"/>
                             </body>
                             <body name="right_gripper_rear_link" pos="-0.028088 0.023048 -0.166971">
                               <inertial pos="0 0 0" mass="0.0850961"
                                 fullinertia="7.58005e-05 7.25109e-05 1.66604e-05 2.53038e-07 -9.59111e-07 -7.99867e-06"/>
                               <joint name="right_gripper_rear_joint" pos="0 0 0" axis="0 1 0" type="slide"
                                 class="finger_joint_active"/>
-                              <site name="right_gripper_rear_tip_frame" pos="-0.000432 -0.023068 -0.080556" size="0.003"
-                                group="3"/>
-                              <geom name="right_gripper_rear_link_visual_1" class="visual"
-                                mesh="right_gripper_rear_link_surface_1" material="photo_green"/>
-                              <geom name="right_gripper_rear_link_visual_2" class="visual"
-                                mesh="right_gripper_rear_link_surface_2" material="photo_black"/>
-                              <geom name="right_gripper_rear_collision_1" class="collision" type="mesh" pos="0 0 0"
-                                mesh="gripper_rear_segment_1" condim="4"/>
-                              <geom name="right_gripper_rear_collision_2" class="collision" type="mesh" pos="0 0 0"
-                                mesh="gripper_rear_segment_2" condim="4"/>
-                              <geom name="right_gripper_rear_collision_3" class="collision" type="mesh" pos="0 0 0"
-                                mesh="gripper_rear_segment_3" condim="4"/>
-                              <geom name="right_gripper_rear_collision_4" class="collision" type="mesh" pos="0 0 0"
-                                mesh="gripper_rear_segment_4" condim="4"/>
-                              <geom name="right_gripper_rear_collision_5" class="collision" type="mesh" pos="0 0 0"
-                                mesh="gripper_rear_segment_5" condim="4"/>
-                              <geom name="right_gripper_rear_collision_6" class="collision" type="mesh" pos="0 0 0"
-                                mesh="gripper_rear_segment_6" condim="4"/>
-                              <geom name="right_gripper_rear_collision_7" class="collision" type="mesh" pos="0 0 0"
-                                mesh="gripper_rear_segment_7" condim="4"/>
-                              <geom name="right_gripper_rear_collision_8" class="collision" type="mesh" pos="0 0 0"
-                                mesh="gripper_rear_segment_8" condim="4"/>
-                              <geom name="right_gripper_rear_collision_9" class="collision" type="mesh" pos="0 0 0"
-                                mesh="gripper_rear_segment_9" condim="4"/>
-                              <geom name="right_gripper_rear_collision_10" class="collision" type="mesh" pos="0 0 0"
-                                mesh="gripper_rear_segment_10" condim="4"/>
-                              <geom name="right_gripper_rear_collision_11" class="collision" type="mesh" pos="0 0 0"
-                                mesh="gripper_rear_segment_11" condim="4"/>
-                              <geom name="right_gripper_rear_collision_12" class="collision" type="mesh" pos="0 0 0"
-                                mesh="gripper_rear_segment_12" condim="4"/>
-                              <geom name="right_gripper_rear_collision_13" class="collision" type="mesh" pos="0 0 0"
-                                mesh="gripper_rear_segment_13" condim="4"/>
-                              <geom name="right_gripper_rear_collision_14" class="collision" type="mesh" pos="0 0 0"
-                                mesh="gripper_rear_segment_14" condim="4"/>
-                              <geom name="right_gripper_rear_collision_15" class="collision" type="mesh" pos="0 0 0"
-                                mesh="gripper_rear_segment_15" condim="4"/>
-                              <geom name="right_gripper_rear_collision_16" class="collision" type="mesh" pos="0 0 0"
-                                mesh="gripper_rear_segment_16" condim="4"/>
+                              <site name="right_gripper_rear_tip_frame" pos="-0.000432 -0.022472691825467 -0.080556"
+                                size="0.003" group="3"/>
+                              <geom name="right_gripper_rear_link_visual_1" class="dynaclaw_visual"
+                                mesh="dynaclaw_rear_surface_1" material="dynaclaw_green"
+                                pos="0 0.00059530817453299961 0"/>
+                              <geom name="right_gripper_rear_link_visual_2" class="dynaclaw_visual"
+                                mesh="dynaclaw_rear_surface_2" material="dynaclaw_black"
+                                pos="0 0.00059530817453299961 0"/>
+                              <geom name="right_gripper_rear_nail_visual" class="dynaclaw_visual"
+                                mesh="dynaclaw_rear_nail_visual" material="dynaclaw_aluminum"
+                                pos="0 0.00059530817453299961 0"/>
+                              <geom name="right_gripper_rear_collision_inner_pad" class="dynaclaw_soft_pad" type="box"
+                                pos="-0.00043281 -0.020071601358767 -0.066191440168499996"
+                                size="0.006 0.0009 0.00903636388117" quat="0 0 0.0436193873653 0.999048221582"/>
+                              <geom name="right_gripper_rear_collision_outer_back" class="dynaclaw_soft_pad" type="box"
+                                pos="-0.00043281 -0.0024538240535270004 -0.046882851938"
+                                size="0.006 0.0004 0.00484957129392" quat="0 0 -0.965925826289 0.258819045103"/>
+                              <geom name="right_gripper_rear_collision_taper" class="dynaclaw_soft_pad" type="mesh"
+                                mesh="dynaclaw_taper" quat="0 0 0 1" pos="0 0.00059530817453299961 0"/>
+                              <geom name="right_gripper_rear_collision_relief_1" class="dynaclaw_soft_pad" type="mesh"
+                                mesh="dynaclaw_relief_1" quat="0 0 0 1" pos="0 0.00059530817453299961 0"/>
+                              <geom name="right_gripper_rear_collision_relief_2" class="dynaclaw_soft_pad" type="mesh"
+                                mesh="dynaclaw_relief_2" quat="0 0 0 1" pos="0 0.00059530817453299961 0"/>
+                              <geom name="right_gripper_rear_collision_relief_3" class="dynaclaw_soft_pad" type="mesh"
+                                mesh="dynaclaw_relief_3" quat="0 0 0 1" pos="0 0.00059530817453299961 0"/>
+                              <geom name="right_gripper_rear_collision_relief_4" class="dynaclaw_soft_pad" type="mesh"
+                                mesh="dynaclaw_relief_4" quat="0 0 0 1" pos="0 0.00059530817453299961 0"/>
+                              <geom name="right_gripper_rear_collision_tip_support" class="dynaclaw_soft_pad"
+                                type="mesh" mesh="dynaclaw_tip_support" quat="0 0 0 1"
+                                pos="0 0.00059530817453299961 0"/>
+                              <geom name="right_gripper_rear_collision_nail" class="dynaclaw_rigid_nail" type="box"
+                                pos="-0.000432810746 -0.013723793929766999 -0.065218504094100002"
+                                size="0.006000000052 0.000992002455033 0.0166644072284"
+                                quat="5.91458985689e-17 1.58480957572e-17 0.258819045103 0.965925826289"/>
+                              <geom name="right_gripper_rear_collision_nail_tip" class="dynaclaw_rigid_nail"
+                                type="capsule"
+                                fromto="0.0045751868509700004 -0.022055997543967001 -0.079650304092899998 -0.0054408083429699997 -0.022055997543967001 -0.079650304092899998"
+                                size="0.000992002455033"/>
                             </body>
                             <geom name="right_wrist_roll_link_visual_1" class="visual"
                               mesh="right_wrist_roll_link_surface_1" material="photo_white"/>
@@ -646,7 +633,9 @@
                             <geom name="right_wrist_roll_link_visual_5" class="visual"
                               mesh="right_wrist_roll_link_surface_5" material="photo_gray"/>
                             <geom name="right_wrist_roll_link_collision_1" class="collision" type="mesh"
-                              pos="-0.0050494 -0.000170931 -0.097341" mesh="right_wrist_roll_link_collision"/>
+                              mesh="right_housing_part_1"/>
+                            <geom name="right_wrist_roll_link_collision_2" class="collision" type="mesh"
+                              mesh="right_housing_part_2"/>
                           </body>
                           <geom name="right_wrist_pitch_link_visual_1" class="visual"
                             mesh="right_wrist_pitch_link_surface_1" material="photo_gray"/>
@@ -678,9 +667,9 @@
                         pos="-0.00924702 -0.000855873 -0.0659457" mesh="right_elbow_link_collision"/>
                     </body>
                     <geom name="right_shoulder_yaw_link_visual_1" class="visual"
-                      mesh="right_shoulder_yaw_link_surface_1" material="photo_gray"/>
+                      mesh="right_shoulder_yaw_link_surface_1" material="upper_arm_gray"/>
                     <geom name="right_shoulder_yaw_link_visual_2" class="visual"
-                      mesh="right_shoulder_yaw_link_surface_2" material="photo_gray"/>
+                      mesh="right_shoulder_yaw_link_surface_2" material="photo_white"/>
                     <geom name="right_shoulder_yaw_link_visual_3" class="visual"
                       mesh="right_shoulder_yaw_link_surface_3" material="photo_gray"/>
                     <geom name="right_shoulder_yaw_link_visual_4" class="visual"
@@ -747,88 +736,86 @@
                                 fullinertia="7.58005e-05 7.25109e-05 1.66604e-05 2.53038e-07 9.59111e-07 7.99867e-06"/>
                               <joint name="left_gripper_front_joint" pos="0 0 0" axis="0 1 0" type="slide"
                                 class="finger_joint_coupled"/>
-                              <site name="left_gripper_front_tip_frame" pos="0.000433 0.023068 -0.080556" size="0.003"
-                                group="3"/>
-                              <geom name="left_gripper_front_link_visual_1" class="visual"
-                                mesh="left_gripper_front_link_surface_1" material="photo_green"/>
-                              <geom name="left_gripper_front_link_visual_2" class="visual"
-                                mesh="left_gripper_front_link_surface_2" material="photo_black"/>
-                              <geom name="left_gripper_front_collision_1" class="collision" type="mesh" pos="0 0 0"
-                                mesh="gripper_front_segment_1" condim="4"/>
-                              <geom name="left_gripper_front_collision_2" class="collision" type="mesh" pos="0 0 0"
-                                mesh="gripper_front_segment_2" condim="4"/>
-                              <geom name="left_gripper_front_collision_3" class="collision" type="mesh" pos="0 0 0"
-                                mesh="gripper_front_segment_3" condim="4"/>
-                              <geom name="left_gripper_front_collision_4" class="collision" type="mesh" pos="0 0 0"
-                                mesh="gripper_front_segment_4" condim="4"/>
-                              <geom name="left_gripper_front_collision_5" class="collision" type="mesh" pos="0 0 0"
-                                mesh="gripper_front_segment_5" condim="4"/>
-                              <geom name="left_gripper_front_collision_6" class="collision" type="mesh" pos="0 0 0"
-                                mesh="gripper_front_segment_6" condim="4"/>
-                              <geom name="left_gripper_front_collision_7" class="collision" type="mesh" pos="0 0 0"
-                                mesh="gripper_front_segment_7" condim="4"/>
-                              <geom name="left_gripper_front_collision_8" class="collision" type="mesh" pos="0 0 0"
-                                mesh="gripper_front_segment_8" condim="4"/>
-                              <geom name="left_gripper_front_collision_9" class="collision" type="mesh" pos="0 0 0"
-                                mesh="gripper_front_segment_9" condim="4"/>
-                              <geom name="left_gripper_front_collision_10" class="collision" type="mesh" pos="0 0 0"
-                                mesh="gripper_front_segment_10" condim="4"/>
-                              <geom name="left_gripper_front_collision_11" class="collision" type="mesh" pos="0 0 0"
-                                mesh="gripper_front_segment_11" condim="4"/>
-                              <geom name="left_gripper_front_collision_12" class="collision" type="mesh" pos="0 0 0"
-                                mesh="gripper_front_segment_12" condim="4"/>
-                              <geom name="left_gripper_front_collision_13" class="collision" type="mesh" pos="0 0 0"
-                                mesh="gripper_front_segment_13" condim="4"/>
-                              <geom name="left_gripper_front_collision_14" class="collision" type="mesh" pos="0 0 0"
-                                mesh="gripper_front_segment_14" condim="4"/>
-                              <geom name="left_gripper_front_collision_15" class="collision" type="mesh" pos="0 0 0"
-                                mesh="gripper_front_segment_15" condim="4"/>
-                              <geom name="left_gripper_front_collision_16" class="collision" type="mesh" pos="0 0 0"
-                                mesh="gripper_front_segment_16" condim="4"/>
+                              <site name="left_gripper_front_tip_frame" pos="0.000433 0.022472691825467 -0.080556"
+                                size="0.003" group="3"/>
+                              <geom name="left_gripper_front_link_visual_1" class="dynaclaw_visual"
+                                mesh="dynaclaw_front_surface_1" material="dynaclaw_green"
+                                pos="0 -0.00059530817453299961 0"/>
+                              <geom name="left_gripper_front_link_visual_2" class="dynaclaw_visual"
+                                mesh="dynaclaw_front_surface_2" material="dynaclaw_black"
+                                pos="0 -0.00059530817453299961 0"/>
+                              <geom name="left_gripper_front_nail_visual" class="dynaclaw_visual"
+                                mesh="dynaclaw_front_nail_visual" material="dynaclaw_aluminum"
+                                pos="0 -0.00059530817453299961 0"/>
+                              <geom name="left_gripper_front_collision_inner_pad" class="dynaclaw_soft_pad" type="box"
+                                pos="0.00043281 0.020071601358767 -0.066191440168499996"
+                                size="0.006 0.0009 0.00903636388117" quat="0.999048221582 0.0436193873653 0 0"/>
+                              <geom name="left_gripper_front_collision_outer_back" class="dynaclaw_soft_pad" type="box"
+                                pos="0.00043281 0.0024538240535270004 -0.046882851938"
+                                size="0.006 0.0004 0.00484957129392" quat="0.258819045103 -0.965925826289 0 0"/>
+                              <geom name="left_gripper_front_collision_taper" class="dynaclaw_soft_pad" type="mesh"
+                                mesh="dynaclaw_taper" pos="0 -0.00059530817453299961 0"/>
+                              <geom name="left_gripper_front_collision_relief_1" class="dynaclaw_soft_pad" type="mesh"
+                                mesh="dynaclaw_relief_1" pos="0 -0.00059530817453299961 0"/>
+                              <geom name="left_gripper_front_collision_relief_2" class="dynaclaw_soft_pad" type="mesh"
+                                mesh="dynaclaw_relief_2" pos="0 -0.00059530817453299961 0"/>
+                              <geom name="left_gripper_front_collision_relief_3" class="dynaclaw_soft_pad" type="mesh"
+                                mesh="dynaclaw_relief_3" pos="0 -0.00059530817453299961 0"/>
+                              <geom name="left_gripper_front_collision_relief_4" class="dynaclaw_soft_pad" type="mesh"
+                                mesh="dynaclaw_relief_4" pos="0 -0.00059530817453299961 0"/>
+                              <geom name="left_gripper_front_collision_tip_support" class="dynaclaw_soft_pad"
+                                type="mesh" mesh="dynaclaw_tip_support" pos="0 -0.00059530817453299961 0"/>
+                              <geom name="left_gripper_front_collision_nail" class="dynaclaw_rigid_nail" type="box"
+                                pos="0.000432810746 0.013723793929766999 -0.065218504094100002"
+                                size="0.006000000052 0.000992002455033 0.0166644072284"
+                                quat="0.965925826289 0.258819045103 0 0"/>
+                              <geom name="left_gripper_front_collision_nail_tip" class="dynaclaw_rigid_nail"
+                                type="capsule"
+                                fromto="-0.0045751868509700004 0.022055997543967001 -0.079650304092899998 0.0054408083429699997 0.022055997543967001 -0.079650304092899998"
+                                size="0.000992002455033"/>
                             </body>
                             <body name="left_gripper_rear_link" pos="-0.028088 0.023048 -0.166971">
                               <inertial pos="0 0 0" mass="0.0850961"
                                 fullinertia="7.58005e-05 7.25109e-05 1.66604e-05 2.53038e-07 -9.59111e-07 -7.99867e-06"/>
                               <joint name="left_gripper_rear_joint" pos="0 0 0" axis="0 1 0" type="slide"
                                 class="finger_joint_active"/>
-                              <site name="left_gripper_rear_tip_frame" pos="-0.000432 -0.023068 -0.080556" size="0.003"
-                                group="3"/>
-                              <geom name="left_gripper_rear_link_visual_1" class="visual"
-                                mesh="left_gripper_rear_link_surface_1" material="photo_green"/>
-                              <geom name="left_gripper_rear_link_visual_2" class="visual"
-                                mesh="left_gripper_rear_link_surface_2" material="photo_black"/>
-                              <geom name="left_gripper_rear_collision_1" class="collision" type="mesh" pos="0 0 0"
-                                mesh="gripper_rear_segment_1" condim="4"/>
-                              <geom name="left_gripper_rear_collision_2" class="collision" type="mesh" pos="0 0 0"
-                                mesh="gripper_rear_segment_2" condim="4"/>
-                              <geom name="left_gripper_rear_collision_3" class="collision" type="mesh" pos="0 0 0"
-                                mesh="gripper_rear_segment_3" condim="4"/>
-                              <geom name="left_gripper_rear_collision_4" class="collision" type="mesh" pos="0 0 0"
-                                mesh="gripper_rear_segment_4" condim="4"/>
-                              <geom name="left_gripper_rear_collision_5" class="collision" type="mesh" pos="0 0 0"
-                                mesh="gripper_rear_segment_5" condim="4"/>
-                              <geom name="left_gripper_rear_collision_6" class="collision" type="mesh" pos="0 0 0"
-                                mesh="gripper_rear_segment_6" condim="4"/>
-                              <geom name="left_gripper_rear_collision_7" class="collision" type="mesh" pos="0 0 0"
-                                mesh="gripper_rear_segment_7" condim="4"/>
-                              <geom name="left_gripper_rear_collision_8" class="collision" type="mesh" pos="0 0 0"
-                                mesh="gripper_rear_segment_8" condim="4"/>
-                              <geom name="left_gripper_rear_collision_9" class="collision" type="mesh" pos="0 0 0"
-                                mesh="gripper_rear_segment_9" condim="4"/>
-                              <geom name="left_gripper_rear_collision_10" class="collision" type="mesh" pos="0 0 0"
-                                mesh="gripper_rear_segment_10" condim="4"/>
-                              <geom name="left_gripper_rear_collision_11" class="collision" type="mesh" pos="0 0 0"
-                                mesh="gripper_rear_segment_11" condim="4"/>
-                              <geom name="left_gripper_rear_collision_12" class="collision" type="mesh" pos="0 0 0"
-                                mesh="gripper_rear_segment_12" condim="4"/>
-                              <geom name="left_gripper_rear_collision_13" class="collision" type="mesh" pos="0 0 0"
-                                mesh="gripper_rear_segment_13" condim="4"/>
-                              <geom name="left_gripper_rear_collision_14" class="collision" type="mesh" pos="0 0 0"
-                                mesh="gripper_rear_segment_14" condim="4"/>
-                              <geom name="left_gripper_rear_collision_15" class="collision" type="mesh" pos="0 0 0"
-                                mesh="gripper_rear_segment_15" condim="4"/>
-                              <geom name="left_gripper_rear_collision_16" class="collision" type="mesh" pos="0 0 0"
-                                mesh="gripper_rear_segment_16" condim="4"/>
+                              <site name="left_gripper_rear_tip_frame" pos="-0.000432 -0.022472691825467 -0.080556"
+                                size="0.003" group="3"/>
+                              <geom name="left_gripper_rear_link_visual_1" class="dynaclaw_visual"
+                                mesh="dynaclaw_rear_surface_1" material="dynaclaw_green"
+                                pos="0 0.00059530817453299961 0"/>
+                              <geom name="left_gripper_rear_link_visual_2" class="dynaclaw_visual"
+                                mesh="dynaclaw_rear_surface_2" material="dynaclaw_black"
+                                pos="0 0.00059530817453299961 0"/>
+                              <geom name="left_gripper_rear_nail_visual" class="dynaclaw_visual"
+                                mesh="dynaclaw_rear_nail_visual" material="dynaclaw_aluminum"
+                                pos="0 0.00059530817453299961 0"/>
+                              <geom name="left_gripper_rear_collision_inner_pad" class="dynaclaw_soft_pad" type="box"
+                                pos="-0.00043281 -0.020071601358767 -0.066191440168499996"
+                                size="0.006 0.0009 0.00903636388117" quat="0 0 0.0436193873653 0.999048221582"/>
+                              <geom name="left_gripper_rear_collision_outer_back" class="dynaclaw_soft_pad" type="box"
+                                pos="-0.00043281 -0.0024538240535270004 -0.046882851938"
+                                size="0.006 0.0004 0.00484957129392" quat="0 0 -0.965925826289 0.258819045103"/>
+                              <geom name="left_gripper_rear_collision_taper" class="dynaclaw_soft_pad" type="mesh"
+                                mesh="dynaclaw_taper" quat="0 0 0 1" pos="0 0.00059530817453299961 0"/>
+                              <geom name="left_gripper_rear_collision_relief_1" class="dynaclaw_soft_pad" type="mesh"
+                                mesh="dynaclaw_relief_1" quat="0 0 0 1" pos="0 0.00059530817453299961 0"/>
+                              <geom name="left_gripper_rear_collision_relief_2" class="dynaclaw_soft_pad" type="mesh"
+                                mesh="dynaclaw_relief_2" quat="0 0 0 1" pos="0 0.00059530817453299961 0"/>
+                              <geom name="left_gripper_rear_collision_relief_3" class="dynaclaw_soft_pad" type="mesh"
+                                mesh="dynaclaw_relief_3" quat="0 0 0 1" pos="0 0.00059530817453299961 0"/>
+                              <geom name="left_gripper_rear_collision_relief_4" class="dynaclaw_soft_pad" type="mesh"
+                                mesh="dynaclaw_relief_4" quat="0 0 0 1" pos="0 0.00059530817453299961 0"/>
+                              <geom name="left_gripper_rear_collision_tip_support" class="dynaclaw_soft_pad" type="mesh"
+                                mesh="dynaclaw_tip_support" quat="0 0 0 1" pos="0 0.00059530817453299961 0"/>
+                              <geom name="left_gripper_rear_collision_nail" class="dynaclaw_rigid_nail" type="box"
+                                pos="-0.000432810746 -0.013723793929766999 -0.065218504094100002"
+                                size="0.006000000052 0.000992002455033 0.0166644072284"
+                                quat="5.91458985689e-17 1.58480957572e-17 0.258819045103 0.965925826289"/>
+                              <geom name="left_gripper_rear_collision_nail_tip" class="dynaclaw_rigid_nail"
+                                type="capsule"
+                                fromto="0.0045751868509700004 -0.022055997543967001 -0.079650304092899998 -0.0054408083429699997 -0.022055997543967001 -0.079650304092899998"
+                                size="0.000992002455033"/>
                             </body>
                             <geom name="left_wrist_roll_link_visual_1" class="visual"
                               mesh="left_wrist_roll_link_surface_1" material="photo_white"/>
@@ -839,7 +826,9 @@
                             <geom name="left_wrist_roll_link_visual_4" class="visual"
                               mesh="left_wrist_roll_link_surface_4" material="photo_white"/>
                             <geom name="left_wrist_roll_link_collision_1" class="collision" type="mesh"
-                              pos="-0.0050494 -0.000170931 -0.097341" mesh="left_wrist_roll_link_collision"/>
+                              mesh="left_housing_part_1"/>
+                            <geom name="left_wrist_roll_link_collision_2" class="collision" type="mesh"
+                              mesh="left_housing_part_2"/>
                           </body>
                           <geom name="left_wrist_pitch_link_visual_1" class="visual"
                             mesh="left_wrist_pitch_link_surface_1" material="photo_gray"/>
@@ -871,9 +860,9 @@
                         pos="-0.00943674 -0.000355444 -0.0659221" mesh="left_elbow_link_collision"/>
                     </body>
                     <geom name="left_shoulder_yaw_link_visual_1" class="visual" mesh="left_shoulder_yaw_link_surface_1"
-                      material="photo_gray"/>
+                      material="upper_arm_gray"/>
                     <geom name="left_shoulder_yaw_link_visual_2" class="visual" mesh="left_shoulder_yaw_link_surface_2"
-                      material="photo_gray"/>
+                      material="photo_white"/>
                     <geom name="left_shoulder_yaw_link_visual_3" class="visual" mesh="left_shoulder_yaw_link_surface_3"
                       material="photo_gray"/>
                     <geom name="left_shoulder_yaw_link_visual_4" class="visual" mesh="left_shoulder_yaw_link_surface_4"
@@ -943,10 +932,16 @@
         <geom name="folding_lower_joint_link_collision_1" class="collision" type="mesh"
           pos="0.0904125 -0.0422445 0.0653873" mesh="folding_lower_joint_link_collision"/>
       </body>
+      <geom name="agv_rear_buttons_visual" class="visual" mesh="agv_rear_buttons" material="photo_black"/>
+      <geom name="agv_rear_connector_visual" class="visual" mesh="agv_rear_connector" material="connector_silver"/>
+      <geom name="agv_lower_skirt_visual" class="visual" mesh="agv_lower_skirt" material="photo_gray"/>
+      <geom name="agv_rear_lidar_cover_visual" class="visual" mesh="agv_rear_lidar_cover" material="photo_black"/>
+      <geom name="agv_emergency_stop_cap_visual" class="visual" mesh="agv_emergency_stop_cap"
+        material="emergency_stop_red"/>
       <geom name="agv_base_link_visual_1" class="visual" mesh="agv_base_link_surface_1" material="photo_black"/>
       <geom name="agv_base_link_visual_2" class="visual" mesh="agv_base_link_surface_2" material="photo_white"/>
       <geom name="agv_base_link_visual_3" class="visual" mesh="agv_base_link_surface_3" material="photo_gray"/>
-      <geom name="agv_base_link_visual_4" class="visual" mesh="agv_base_link_surface_4" material="photo_black"/>
+      <geom name="agv_base_link_visual_4" class="visual" mesh="agv_base_link_surface_4" material="photo_white"/>
       <geom name="agv_base_link_visual_5" class="visual" mesh="agv_base_link_surface_5" material="photo_white"/>
       <geom name="agv_base_rear_collision" type="mesh" mesh="agv_base_rear_collision" class="collision"/>
       <geom name="agv_base_left_collision" type="mesh" mesh="agv_base_left_collision" class="collision"/>
@@ -955,10 +950,6 @@
     </body>
   </worldbody>
   <contact>
-    <!-- Exclude structurally-adjacent body pairs (within 3 kinematic hops) whose
-         Adjacent mesh collision geoms can overlap at the neutral assembly.
-         Direct parent-child pairs are filtered automatically via option/flag
-         filterparent; these are the remaining grandparent/same-chain overlaps. -->
     <exclude body1="agv_base_link" body2="folding_to_waist_link"/>
     <exclude body1="agv_base_link" body2="torso_waist_pitch_link"/>
     <exclude body1="agv_base_link" body2="agv_right_front_wheel_link"/>

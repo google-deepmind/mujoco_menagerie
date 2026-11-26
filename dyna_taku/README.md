@@ -1,6 +1,6 @@
 # dyna Taku Description (MJCF)
 
-Tested with MuJoCo 3.3.7 and 3.4.1.
+Updated model tested with MuJoCo 3.3.7 and 4.0.1.
 
 ## Overview
 
@@ -21,10 +21,16 @@ Based on the existing MJCF model in
 [dyna-robotics/dyna_robot_description at `afa6168`](https://github.com/dyna-robotics/dyna_robot_description/tree/afa6168/dyna_taku).
 This package adapts that MJCF directly; it does not perform a new URDF conversion.
 
-- Retain the source visual meshes, physical link transforms, masses, inertias,
-  joint limits and actuator force limits. Match the neck shell material to the
-  white head shell; other source materials are retained.
-- Retain the source segmented DynaClaw collision meshes and finger coupling.
+- Incorporate cleaned visual meshes, soft-touch shell colors and DynaClaw
+  geometry from [source revision `b5687ce`](https://github.com/dyna-robotics/dyna_robot_description/tree/b5687ce57cbe727be90f9732f53a9c522196ea04).
+  Preserve the reviewed physical link transforms, masses, inertias, joint limits,
+  actuator force limits and home keyframe.
+- Use continuous pad/nail faces with box and capsule nail colliders, reducing
+  each finger from 16 to 10 collision geoms. Preserve finger coupling and joint
+  ranges; shift fingertip sites by approximately 0.595 mm to follow the calibrated
+  visuals and colliders. Names remain unchanged.
+- Split each wrist housing collider into two convex pieces and remove internal
+  head yaw/pitch colliders that have no corresponding visual shell.
 - Replace the solid base hull with separate convex hulls of the left, right and
   rear exterior shells plus the rear lidar, preserving the central U-shaped gap.
 - Apply Menagerie XML formatting and defaults, inherit position control ranges
@@ -38,6 +44,20 @@ Joint `damping`, `armature` and `frictionloss` values are inherited from the sou
 their measurement provenance is not documented here. Actuator `kp` and `kv` values
 are inherited or manually tuned for simulation. None of these parameters is
 claimed to be system-identified or validated against hardware measurements.
+
+## Contact approximation
+
+Green pads use sliding friction 1.5 and `solref="0.01 1"`; metal nails use
+sliding friction 1.0 and `solref="0.003 1"`. Both use `condim=4`,
+`solimp="0.95 0.99 0.001"` and torsional/rolling friction 0.005/0.0001.
+Elliptic cones, `impratio=10` and tolerance 1e-10 reduce numerical creep.
+These are provisional compliant contacts on rigid links, not deformable rubber
+or hardware-calibrated material parameters. The solver changes apply globally.
+
+Both hands, extracted from this model, held and released a 3 mm plate and a
+cylinder at 1 ms and 0.5 ms timesteps without warnings (eight runs). Peak
+penetration was 0.15–0.25 mm. This is a limited gripper regression, not a full
+robot grasp benchmark or exhaustive collision validation.
 
 ## License
 
