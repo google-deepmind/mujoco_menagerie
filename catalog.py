@@ -145,6 +145,7 @@ MODEL_MAP = {
   'trossen_wxai/wxai_follower': ModelType.ARM,
   'fanuc_crx5ia/crx5ia': ModelType.ARM,
   'franka_fr3_duo/fr3_duo': ModelType.DUAL_ARM,
+  'dyna_taku/taku': ModelType.MOBILE_MANIPULATOR,
 }
 
 

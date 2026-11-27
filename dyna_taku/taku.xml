@@ -1,0 +1,1013 @@
+<mujoco model="dyna_taku">
+  <compiler angle="radian" meshdir="assets" autolimits="true"/>
+  <option timestep="0.001" integrator="implicitfast" cone="elliptic" impratio="10" tolerance="1e-10"/>
+  <default>
+    <default class="taku">
+      <joint frictionloss="0.1" armature="0.005"/>
+      <position kp="50" inheritrange="1"/>
+      <default class="visual">
+        <geom type="mesh" contype="0" conaffinity="0" group="2"/>
+      </default>
+      <default class="collision">
+        <geom group="3"/>
+      </default>
+      <default class="folding_low_joint">
+        <joint axis="0 1 0" range="-0.61 0.6807" armature="6.609855" frictionloss="22.54" damping="50"/>
+        <position forcerange="-180 180" kp="5000" kv="200"/>
+      </default>
+      <default class="folding_high_joint">
+        <joint axis="0 1 0" range="-0.785 1.482" armature="6.609855" frictionloss="22.54" damping="50"/>
+        <position forcerange="-180 180" kp="5000" kv="200"/>
+      </default>
+      <default class="waist_pitch_joint">
+        <joint axis="0 1 0" range="-1.953 1.081" armature="6.609855" frictionloss="22.54" damping="50"/>
+        <position forcerange="-180 180" kp="1000" kv="50"/>
+      </default>
+      <default class="waist_yaw_joint">
+        <joint axis="0 0 1" range="-1.133 1.133" armature="0.625" frictionloss="9.3" damping="5.3"/>
+        <position forcerange="-53 53" kp="500" kv="10"/>
+      </default>
+      <default class="head_yaw_joint">
+        <joint axis="0 0 1" range="-1.046 1.046" armature="0.0005418" frictionloss="0.04367" damping="0.001"/>
+        <position forcerange="-3.6 3.6" kp="1" kv="0.1"/>
+      </default>
+      <default class="head_roll_joint">
+        <joint axis="1 0 0" range="-0.523 0.523" armature="0.0005418" frictionloss="0.04367" damping="0.001"/>
+        <position forcerange="-3.6 3.6" kp="1" kv="0.1"/>
+      </default>
+      <default class="head_pitch_joint">
+        <joint axis="0 1 0" range="0 0.523" armature="0.0005418" frictionloss="0.04367" damping="0.001"/>
+        <position forcerange="-3.6 3.6" kp="30" kv="1"/>
+      </default>
+      <default class="shoulder_pitch_joint">
+        <joint armature="0.04597" frictionloss="0.2904" damping="0.171" axis="0 1 0"/>
+        <position forcerange="-55.6 55.6" kp="120" kv="5"/>
+        <default class="right_shoulder_pitch_joint">
+          <joint range="-3.194650663 1.119820701"/>
+        </default>
+        <default class="left_shoulder_pitch_joint">
+          <joint range="-3.194650663 1.119820701"/>
+        </default>
+      </default>
+      <default class="shoulder_roll_joint">
+        <joint armature="0.04597" damping="0.171" frictionloss="0.2904" axis="1 0 0"/>
+        <position forcerange="-55.6 55.6" kp="120" kv="5"/>
+        <default class="right_shoulder_roll_joint">
+          <joint range="-2.418747091 0.284314135"/>
+        </default>
+        <default class="left_shoulder_roll_joint">
+          <joint range="-0.284314135 2.418747091"/>
+        </default>
+      </default>
+      <default class="shoulder_yaw_joint">
+        <joint armature="0.03067" damping="0.01" frictionloss="1.22" axis="0 0 1"/>
+        <position forcerange="-21.4 21.4" kp="100" kv="5"/>
+        <default class="right_shoulder_yaw_joint">
+          <joint range="-2.021248353 2.006744667"/>
+        </default>
+        <default class="left_shoulder_yaw_joint">
+          <joint range="-2.006744667 2.021248353"/>
+        </default>
+      </default>
+      <default class="elbow_joint">
+        <joint axis="0 1 0" armature="0.03067" frictionloss="1.22" damping="0.01"/>
+        <position forcerange="-21.4 21.4" kp="100" kv="5"/>
+        <default class="right_elbow_joint">
+          <joint range="-2.286381320 0.056653388"/>
+        </default>
+        <default class="left_elbow_joint">
+          <joint range="-2.286381320 0.056653388"/>
+        </default>
+      </default>
+      <default class="wrist_yaw_joint">
+        <joint axis="0 0 1" armature="0.01358" frictionloss="0.2878" damping="0.01758"/>
+        <position forcerange="-15 15" kp="60" kv="5"/>
+        <default class="right_wrist_yaw_joint">
+          <joint range="-2.002939850 1.988052191"/>
+        </default>
+        <default class="left_wrist_yaw_joint">
+          <joint range="-1.988052191 2.002939850"/>
+        </default>
+      </default>
+      <default class="wrist_pitch_joint">
+        <joint axis="0 1 0" frictionloss="0.2878" armature="0.01358" damping="0.01758"/>
+        <position forcerange="-15 15" kp="60" kv="5"/>
+        <default class="right_wrist_pitch_joint">
+          <joint range="-1.004227545 1.157589626"/>
+        </default>
+        <default class="left_wrist_pitch_joint">
+          <joint range="-1.004227545 1.157589626"/>
+        </default>
+      </default>
+      <default class="wrist_roll_joint">
+        <joint axis="1 0 0" frictionloss="0.2878" armature="0.01358" damping="0.01758"/>
+        <position forcerange="-15 15" kp="60" kv="5"/>
+        <default class="right_wrist_roll_joint">
+          <joint range="-1.575683249 1.577254045"/>
+        </default>
+        <default class="left_wrist_roll_joint">
+          <joint range="-1.577254045 1.575683249"/>
+        </default>
+      </default>
+      <default class="finger_joint">
+        <joint type="slide" armature="0.01358" frictionloss="0.2878" damping="0.01758" axis="0 1 0"/>
+        <position forcerange="-15 15" kp="400" kv="20"/>
+        <default class="finger_joint_active">
+          <joint range="-0.0055 0.0345"/>
+        </default>
+        <default class="finger_joint_coupled">
+          <joint range="-0.0345 0.0055"/>
+        </default>
+      </default>
+      <default class="swerve_steer_joint">
+        <joint armature="0.003018" damping="0.007101" frictionloss="0.03478"/>
+        <position forcerange="-6 6" kp="50" kv="6" inheritrange="0"/>
+      </default>
+      <default class="swerve_rotate_joint">
+        <joint armature="0.003018" damping="0.007101" frictionloss="0.03478"/>
+        <velocity forcerange="-10 10" ctrlrange="-26.18 26.18" kv="1.2"/>
+      </default>
+    </default>
+    <default class="dynaclaw">
+      <default class="dynaclaw_visual">
+        <geom type="mesh" contype="0" conaffinity="0" group="2"/>
+      </default>
+      <default class="dynaclaw_collision">
+        <geom group="3" condim="4" density="0"/>
+        <default class="dynaclaw_soft_pad">
+          <geom priority="1" friction="1.5 0.005 0.0001" solref="0.01 1" solimp="0.95 0.99 0.001"/>
+        </default>
+        <default class="dynaclaw_rigid_nail">
+          <geom priority="1" friction="1 0.005 0.0001" solref="0.003 1" solimp="0.95 0.99 0.001"/>
+        </default>
+      </default>
+    </default>
+  </default>
+  <asset>
+    <material name="dynaclaw_green" rgba="0.20 0.62 0.30 1" specular="0.25" shininess="0.25"/>
+    <material name="dynaclaw_black" rgba="0.015 0.015 0.015 1" specular="0.25" shininess="0.25"/>
+    <material name="dynaclaw_aluminum" rgba="0.65 0.67 0.70 1" specular="0.8" shininess="0.7"/>
+    <mesh name="dynaclaw_front_nail_visual" file="gripper/visual/front_nail.obj"/>
+    <mesh name="dynaclaw_rear_nail_visual" file="gripper/visual/rear_nail.obj"/>
+    <mesh name="dynaclaw_front_surface_1" file="gripper/visual/front_surface_1.obj"/>
+    <mesh name="dynaclaw_front_surface_2" file="gripper/visual/front_surface_2.obj"/>
+    <mesh name="dynaclaw_rear_surface_1" file="gripper/visual/rear_surface_1.obj"/>
+    <mesh name="dynaclaw_rear_surface_2" file="gripper/visual/rear_surface_2.obj"/>
+    <mesh name="dynaclaw_taper" file="gripper/collision/taper.obj" maxhullvert="64"/>
+    <mesh name="dynaclaw_relief_1" file="gripper/collision/relief_1.obj" maxhullvert="64"/>
+    <mesh name="dynaclaw_relief_2" file="gripper/collision/relief_2.obj" maxhullvert="64"/>
+    <mesh name="dynaclaw_relief_3" file="gripper/collision/relief_3.obj" maxhullvert="64"/>
+    <mesh name="dynaclaw_relief_4" file="gripper/collision/relief_4.obj" maxhullvert="64"/>
+    <mesh name="dynaclaw_tip_support" file="gripper/collision/tip_support.obj" maxhullvert="64"/>
+    <texture name="chest" type="2d" file="assets/textures/chest_albedo.png"/>
+    <material name="photo_white" rgba="1 1 1 1" specular="0.12" shininess="0.12"/>
+    <material name="upper_arm_gray" rgba="0.65 0.65 0.65 1" specular="0.12" shininess="0.12"/>
+    <material name="head_warm" rgba="0.93 0.88164 0.8184 1" specular="0.12" shininess="0.12"/>
+    <material name="emergency_stop_red" rgba="0.8 0.015 0.015 1" specular="0.15" shininess="0.15"/>
+    <material name="connector_silver" rgba="0.72 0.74 0.77 1" specular="0.8" shininess="0.65"/>
+    <material name="photo_black" rgba="0.015 0.015 0.015 1" specular="0.25" shininess="0.25"/>
+    <material name="photo_gray" rgba="0.8549019608 0.8549019608 0.8549019608 1" specular="0.12" shininess="0.12"/>
+    <material name="photo_green" rgba="0.20 0.62 0.30 1" specular="0.25" shininess="0.25"/>
+    <material name="chest_logo" texture="chest" rgba="1 1 1 1" specular=".3" shininess=".35"/>
+    <mesh name="agv_rear_buttons" file="meshes/agv_rear_buttons.obj"/>
+    <mesh name="agv_rear_connector" file="meshes/agv_rear_connector.obj"/>
+    <mesh name="agv_lower_skirt" file="meshes/agv_lower_skirt.obj"/>
+    <mesh name="agv_rear_lidar_cover" file="meshes/agv_rear_lidar_cover.obj"/>
+    <mesh name="agv_emergency_stop_cap" file="meshes/agv_emergency_stop_cap.obj"/>
+    <mesh name="agv_base_link_surface_1" file="meshes/agv_base_link_surface_1.obj" maxhullvert="64"/>
+    <mesh name="agv_base_link_surface_2" file="meshes/agv_base_link_surface_2.obj" maxhullvert="64"/>
+    <mesh name="agv_base_link_surface_3" file="meshes/agv_base_link_surface_3.obj" maxhullvert="64"/>
+    <mesh name="agv_base_link_surface_4" file="meshes/agv_base_link_surface_4.obj" maxhullvert="64"/>
+    <mesh name="agv_base_link_surface_5" file="meshes/agv_base_link_surface_5.obj" maxhullvert="64"/>
+    <mesh name="agv_base_rear_collision" file="collision/agv_base_rear_collision.stl" maxhullvert="64"/>
+    <mesh name="agv_base_left_collision" file="collision/agv_base_left_collision.stl" maxhullvert="64"/>
+    <mesh name="agv_base_right_collision" file="collision/agv_base_right_collision.stl" maxhullvert="64"/>
+    <mesh name="agv_base_lidar_collision" file="collision/agv_base_lidar_collision.stl" maxhullvert="64"/>
+    <mesh name="agv_right_back_steering_link_surface_1" file="meshes/agv_right_back_steering_link_surface_1.obj"
+      maxhullvert="64"/>
+    <mesh name="agv_right_back_steering_link_surface_2" file="meshes/agv_right_back_steering_link_surface_2.obj"
+      maxhullvert="64"/>
+    <mesh name="agv_right_back_steering_link_surface_3" file="meshes/agv_right_back_steering_link_surface_3.obj"
+      maxhullvert="64"/>
+    <mesh name="agv_right_back_steering_link_surface_4" file="meshes/agv_right_back_steering_link_surface_4.obj"
+      maxhullvert="64"/>
+    <mesh name="agv_right_back_wheel_link_surface_1" file="meshes/agv_right_back_wheel_link_surface_1.obj"
+      maxhullvert="64"/>
+    <mesh name="agv_right_back_wheel_link_surface_2" file="meshes/agv_right_back_wheel_link_surface_2.obj"
+      maxhullvert="64"/>
+    <mesh name="agv_right_front_steering_link_surface_1" file="meshes/agv_right_front_steering_link_surface_1.obj"
+      maxhullvert="64"/>
+    <mesh name="agv_right_front_steering_link_surface_2" file="meshes/agv_right_front_steering_link_surface_2.obj"
+      maxhullvert="64"/>
+    <mesh name="agv_right_front_steering_link_surface_3" file="meshes/agv_right_front_steering_link_surface_3.obj"
+      maxhullvert="64"/>
+    <mesh name="agv_right_front_steering_link_surface_4" file="meshes/agv_right_front_steering_link_surface_4.obj"
+      maxhullvert="64"/>
+    <mesh name="agv_right_front_wheel_link_surface_1" file="meshes/agv_right_front_wheel_link_surface_1.obj"
+      maxhullvert="64"/>
+    <mesh name="agv_right_front_wheel_link_surface_2" file="meshes/agv_right_front_wheel_link_surface_2.obj"
+      maxhullvert="64"/>
+    <mesh name="agv_left_front_steering_link_surface_1" file="meshes/agv_left_front_steering_link_surface_1.obj"
+      maxhullvert="64"/>
+    <mesh name="agv_left_front_steering_link_surface_2" file="meshes/agv_left_front_steering_link_surface_2.obj"
+      maxhullvert="64"/>
+    <mesh name="agv_left_front_steering_link_surface_3" file="meshes/agv_left_front_steering_link_surface_3.obj"
+      maxhullvert="64"/>
+    <mesh name="agv_left_front_steering_link_surface_4" file="meshes/agv_left_front_steering_link_surface_4.obj"
+      maxhullvert="64"/>
+    <mesh name="agv_left_front_wheel_link_surface_1" file="meshes/agv_left_front_wheel_link_surface_1.obj"
+      maxhullvert="64"/>
+    <mesh name="agv_left_front_wheel_link_surface_2" file="meshes/agv_left_front_wheel_link_surface_2.obj"
+      maxhullvert="64"/>
+    <mesh name="agv_left_back_steering_link_surface_1" file="meshes/agv_left_back_steering_link_surface_1.obj"
+      maxhullvert="64"/>
+    <mesh name="agv_left_back_steering_link_surface_2" file="meshes/agv_left_back_steering_link_surface_2.obj"
+      maxhullvert="64"/>
+    <mesh name="agv_left_back_steering_link_surface_3" file="meshes/agv_left_back_steering_link_surface_3.obj"
+      maxhullvert="64"/>
+    <mesh name="agv_left_back_steering_link_surface_4" file="meshes/agv_left_back_steering_link_surface_4.obj"
+      maxhullvert="64"/>
+    <mesh name="agv_left_back_wheel_link_surface_1" file="meshes/agv_left_back_wheel_link_surface_1.obj"
+      maxhullvert="64"/>
+    <mesh name="agv_left_back_wheel_link_surface_2" file="meshes/agv_left_back_wheel_link_surface_2.obj"
+      maxhullvert="64"/>
+    <mesh name="folding_lower_joint_link_surface_1" file="meshes/folding_lower_joint_link_surface_1.obj"
+      maxhullvert="64"/>
+    <mesh name="folding_lower_joint_link_surface_2" file="meshes/folding_lower_joint_link_surface_2.obj"
+      maxhullvert="64"/>
+    <mesh name="folding_lower_joint_link_collision" file="collision/folding_lower_joint_link_collision.obj"
+      maxhullvert="64"/>
+    <mesh name="folding_to_waist_link_surface_1" file="meshes/folding_to_waist_link_surface_1.obj" maxhullvert="64"/>
+    <mesh name="folding_to_waist_link_surface_2" file="meshes/folding_to_waist_link_surface_2.obj" maxhullvert="64"/>
+    <mesh name="folding_to_waist_link_surface_3" file="meshes/folding_to_waist_link_surface_3.obj" maxhullvert="64"/>
+    <mesh name="folding_to_waist_link_surface_4" file="meshes/folding_to_waist_link_surface_4.obj" maxhullvert="64"/>
+    <mesh name="folding_to_waist_link_collision" file="collision/folding_to_waist_link_collision.obj" maxhullvert="64"/>
+    <mesh name="torso_waist_pitch_link_surface_1" file="meshes/torso_waist_pitch_link_surface_1.obj" maxhullvert="64"/>
+    <mesh name="torso_waist_pitch_link_surface_2" file="meshes/torso_waist_pitch_link_surface_2.obj" maxhullvert="64"/>
+    <mesh name="torso_waist_pitch_link_surface_3" file="meshes/torso_waist_pitch_link_surface_3.obj" maxhullvert="64"/>
+    <mesh name="torso_waist_pitch_link_surface_4" file="meshes/torso_waist_pitch_link_surface_4.obj" maxhullvert="64"/>
+    <mesh name="torso_waist_pitch_link_collision" file="collision/torso_waist_pitch_link_collision.obj"
+      maxhullvert="64"/>
+    <mesh name="torso_body_link_surface_1" file="meshes/torso_body_link_surface_1.obj" maxhullvert="64"/>
+    <mesh name="torso_body_link_surface_2" file="meshes/torso_body_link_surface_2.obj" maxhullvert="64"/>
+    <mesh name="torso_body_link_surface_3" file="meshes/torso_body_link_surface_3.obj" maxhullvert="64"/>
+    <mesh name="torso_body_link_surface_4" file="meshes/torso_body_link_surface_4.obj" maxhullvert="64"/>
+    <mesh name="torso_body_link_surface_5" file="meshes/torso_body_link_surface_5.obj" maxhullvert="64"/>
+    <mesh name="torso_body_link_surface_6" file="meshes/torso_body_link_surface_6.obj" maxhullvert="64"/>
+    <mesh name="torso_body_link_collision" file="collision/torso_body_link_collision.obj" maxhullvert="64"/>
+    <mesh name="head_roll_link_surface_1" file="meshes/head_roll_link_surface_1.obj" maxhullvert="64"/>
+    <mesh name="head_roll_link_surface_2" file="meshes/head_roll_link_surface_2.obj" maxhullvert="64"/>
+    <mesh name="head_roll_link_surface_3" file="meshes/head_roll_link_surface_3.obj" maxhullvert="64"/>
+    <mesh name="head_roll_link_collision" file="collision/head_roll_link_collision.obj" maxhullvert="64"/>
+    <mesh name="right_shoulder_pitch_link_surface_1" file="meshes/right_shoulder_pitch_link_surface_1.obj"
+      maxhullvert="64"/>
+    <mesh name="right_shoulder_pitch_link_surface_2" file="meshes/right_shoulder_pitch_link_surface_2.obj"
+      maxhullvert="64"/>
+    <mesh name="right_shoulder_pitch_link_surface_3" file="meshes/right_shoulder_pitch_link_surface_3.obj"
+      maxhullvert="64"/>
+    <mesh name="right_shoulder_pitch_link_collision" file="collision/right_shoulder_pitch_link_collision.obj"
+      maxhullvert="64"/>
+    <mesh name="right_shoulder_roll_link_surface_1" file="meshes/right_shoulder_roll_link_surface_1.obj"
+      maxhullvert="64"/>
+    <mesh name="right_shoulder_roll_link_surface_2" file="meshes/right_shoulder_roll_link_surface_2.obj"
+      maxhullvert="64"/>
+    <mesh name="right_shoulder_roll_link_collision" file="collision/right_shoulder_roll_link_collision.obj"
+      maxhullvert="64"/>
+    <mesh name="right_shoulder_yaw_link_surface_1" file="meshes/right_shoulder_yaw_link_surface_1.obj"
+      maxhullvert="64"/>
+    <mesh name="right_shoulder_yaw_link_surface_2" file="meshes/right_shoulder_yaw_link_surface_2.obj"
+      maxhullvert="64"/>
+    <mesh name="right_shoulder_yaw_link_surface_3" file="meshes/right_shoulder_yaw_link_surface_3.obj"
+      maxhullvert="64"/>
+    <mesh name="right_shoulder_yaw_link_surface_4" file="meshes/right_shoulder_yaw_link_surface_4.obj"
+      maxhullvert="64"/>
+    <mesh name="right_shoulder_yaw_link_collision" file="collision/right_shoulder_yaw_link_collision.obj"
+      maxhullvert="64"/>
+    <mesh name="right_elbow_link_surface_1" file="meshes/right_elbow_link_surface_1.obj" maxhullvert="64"/>
+    <mesh name="right_elbow_link_surface_2" file="meshes/right_elbow_link_surface_2.obj" maxhullvert="64"/>
+    <mesh name="right_elbow_link_surface_3" file="meshes/right_elbow_link_surface_3.obj" maxhullvert="64"/>
+    <mesh name="right_elbow_link_surface_4" file="meshes/right_elbow_link_surface_4.obj" maxhullvert="64"/>
+    <mesh name="right_elbow_link_collision" file="collision/right_elbow_link_collision.obj" maxhullvert="64"/>
+    <mesh name="right_wrist_yaw_link_surface_1" file="meshes/right_wrist_yaw_link_surface_1.obj" maxhullvert="64"/>
+    <mesh name="right_wrist_yaw_link_surface_2" file="meshes/right_wrist_yaw_link_surface_2.obj" maxhullvert="64"/>
+    <mesh name="right_wrist_yaw_link_surface_3" file="meshes/right_wrist_yaw_link_surface_3.obj" maxhullvert="64"/>
+    <mesh name="right_wrist_yaw_link_surface_4" file="meshes/right_wrist_yaw_link_surface_4.obj" maxhullvert="64"/>
+    <mesh name="right_wrist_yaw_link_collision" file="collision/right_wrist_yaw_link_collision.obj" maxhullvert="64"/>
+    <mesh name="right_wrist_pitch_link_surface_1" file="meshes/right_wrist_pitch_link_surface_1.obj" maxhullvert="64"/>
+    <mesh name="right_wrist_pitch_link_surface_2" file="meshes/right_wrist_pitch_link_surface_2.obj" maxhullvert="64"/>
+    <mesh name="right_wrist_pitch_link_collision" file="collision/right_wrist_pitch_link_collision.obj"
+      maxhullvert="64"/>
+    <mesh name="right_wrist_roll_link_surface_1" file="meshes/right_wrist_roll_link_surface_1.obj" maxhullvert="64"/>
+    <mesh name="right_wrist_roll_link_surface_2" file="meshes/right_wrist_roll_link_surface_2.obj" maxhullvert="64"/>
+    <mesh name="right_wrist_roll_link_surface_3" file="meshes/right_wrist_roll_link_surface_3.obj" maxhullvert="64"/>
+    <mesh name="right_wrist_roll_link_surface_4" file="meshes/right_wrist_roll_link_surface_4.obj" maxhullvert="64"/>
+    <mesh name="right_wrist_roll_link_surface_5" file="meshes/right_wrist_roll_link_surface_5.obj" maxhullvert="64"/>
+    <mesh name="right_housing_part_1" file="collision/gripper_housing/right_part_1.obj" maxhullvert="128"/>
+    <mesh name="right_housing_part_2" file="collision/gripper_housing/right_part_2.obj" maxhullvert="128"/>
+    <mesh name="left_shoulder_pitch_link_surface_1" file="meshes/left_shoulder_pitch_link_surface_1.obj"
+      maxhullvert="64"/>
+    <mesh name="left_shoulder_pitch_link_surface_2" file="meshes/left_shoulder_pitch_link_surface_2.obj"
+      maxhullvert="64"/>
+    <mesh name="left_shoulder_pitch_link_surface_3" file="meshes/left_shoulder_pitch_link_surface_3.obj"
+      maxhullvert="64"/>
+    <mesh name="left_shoulder_pitch_link_collision" file="collision/left_shoulder_pitch_link_collision.obj"
+      maxhullvert="64"/>
+    <mesh name="left_shoulder_roll_link_surface_1" file="meshes/left_shoulder_roll_link_surface_1.obj"
+      maxhullvert="64"/>
+    <mesh name="left_shoulder_roll_link_surface_2" file="meshes/left_shoulder_roll_link_surface_2.obj"
+      maxhullvert="64"/>
+    <mesh name="left_shoulder_roll_link_collision" file="collision/left_shoulder_roll_link_collision.obj"
+      maxhullvert="64"/>
+    <mesh name="left_shoulder_yaw_link_surface_1" file="meshes/left_shoulder_yaw_link_surface_1.obj" maxhullvert="64"/>
+    <mesh name="left_shoulder_yaw_link_surface_2" file="meshes/left_shoulder_yaw_link_surface_2.obj" maxhullvert="64"/>
+    <mesh name="left_shoulder_yaw_link_surface_3" file="meshes/left_shoulder_yaw_link_surface_3.obj" maxhullvert="64"/>
+    <mesh name="left_shoulder_yaw_link_surface_4" file="meshes/left_shoulder_yaw_link_surface_4.obj" maxhullvert="64"/>
+    <mesh name="left_shoulder_yaw_link_collision" file="collision/left_shoulder_yaw_link_collision.obj"
+      maxhullvert="64"/>
+    <mesh name="left_elbow_link_surface_1" file="meshes/left_elbow_link_surface_1.obj" maxhullvert="64"/>
+    <mesh name="left_elbow_link_surface_2" file="meshes/left_elbow_link_surface_2.obj" maxhullvert="64"/>
+    <mesh name="left_elbow_link_surface_3" file="meshes/left_elbow_link_surface_3.obj" maxhullvert="64"/>
+    <mesh name="left_elbow_link_surface_4" file="meshes/left_elbow_link_surface_4.obj" maxhullvert="64"/>
+    <mesh name="left_elbow_link_collision" file="collision/left_elbow_link_collision.obj" maxhullvert="64"/>
+    <mesh name="left_wrist_yaw_link_surface_1" file="meshes/left_wrist_yaw_link_surface_1.obj" maxhullvert="64"/>
+    <mesh name="left_wrist_yaw_link_surface_2" file="meshes/left_wrist_yaw_link_surface_2.obj" maxhullvert="64"/>
+    <mesh name="left_wrist_yaw_link_surface_3" file="meshes/left_wrist_yaw_link_surface_3.obj" maxhullvert="64"/>
+    <mesh name="left_wrist_yaw_link_surface_4" file="meshes/left_wrist_yaw_link_surface_4.obj" maxhullvert="64"/>
+    <mesh name="left_wrist_yaw_link_collision" file="collision/left_wrist_yaw_link_collision.obj" maxhullvert="64"/>
+    <mesh name="left_wrist_pitch_link_surface_1" file="meshes/left_wrist_pitch_link_surface_1.obj" maxhullvert="64"/>
+    <mesh name="left_wrist_pitch_link_surface_2" file="meshes/left_wrist_pitch_link_surface_2.obj" maxhullvert="64"/>
+    <mesh name="left_wrist_pitch_link_collision" file="collision/left_wrist_pitch_link_collision.obj" maxhullvert="64"/>
+    <mesh name="left_wrist_roll_link_surface_1" file="meshes/left_wrist_roll_link_surface_1.obj" maxhullvert="64"/>
+    <mesh name="left_wrist_roll_link_surface_2" file="meshes/left_wrist_roll_link_surface_2.obj" maxhullvert="64"/>
+    <mesh name="left_wrist_roll_link_surface_3" file="meshes/left_wrist_roll_link_surface_3.obj" maxhullvert="64"/>
+    <mesh name="left_wrist_roll_link_surface_4" file="meshes/left_wrist_roll_link_surface_4.obj" maxhullvert="64"/>
+    <mesh name="left_housing_part_1" file="collision/gripper_housing/left_part_1.obj" maxhullvert="128"/>
+    <mesh name="left_housing_part_2" file="collision/gripper_housing/left_part_2.obj" maxhullvert="128"/>
+    <mesh name="torso_body_link_logo" file="meshes/torso_body_link_logo.obj"/>
+  </asset>
+  <worldbody>
+    <body name="agv_base_link" pos="0 0 0" childclass="taku">
+      <freejoint name="floating_base"/>
+      <inertial pos="-0.0139199 0.00323457 0.156937" mass="49.8504"
+        fullinertia="1.87353 1.98646 3.33669 0.0520977 -0.111204 -0.00733825"/>
+      <site group="3" name="lidar_front_right_frame" pos="0.292236 -0.227959 0.301378"
+        quat="0.436251 0.397562 0.0784119 0.803418"/>
+      <site group="3" name="lidar_front_left_frame" pos="0.292236 0.227959 0.301378"
+        quat="0.43864 -0.397327 0.0795947 -0.802117"/>
+      <site group="3" name="lidar_back_frame" pos="-0.3275 0 0.24995" quat="0.707107 0 0 0.707107"/>
+      <site group="3" name="agv_imu_frame" pos="-0.1642 0.225 0.178" quat="0 0 0 1"/>
+      <body name="agv_right_back_steering_link" pos="-0.2745 -0.2045 0.2109">
+        <inertial pos="-0.00860026 -0.00291743 -0.111846" mass="1.27721"
+          fullinertia="0.0034414 0.00363413 0.00140759 -2.84167e-05 -0.000408752 -0.000147046"/>
+        <joint name="agv_right_back_steering_joint" pos="0 0 0" axis="0 0 1" type="hinge" class="swerve_steer_joint"/>
+        <body name="agv_right_back_wheel_link" pos="-0.015 0 -0.1484">
+          <inertial pos="3.47307e-08 0.00942609 -6.48301e-08" mass="0.613572"
+            fullinertia="0.000682705 0.00116831 0.000682698 1.13957e-10 -2.1138e-10 1.27549e-10"/>
+          <joint name="agv_right_back_rotate_joint" pos="0 0 0" axis="0 1 0" type="hinge" class="swerve_rotate_joint"/>
+          <geom name="agv_right_back_wheel_link_visual_1" class="visual" mesh="agv_right_back_wheel_link_surface_1"
+            material="photo_gray"/>
+          <geom name="agv_right_back_wheel_link_visual_2" class="visual" mesh="agv_right_back_wheel_link_surface_2"
+            material="photo_black"/>
+          <geom class="collision" type="sphere" size="0.0625" pos="0 0 0" friction="0.4 0.02 0.01"
+            name="agv_right_back_wheel_link_collision_1"/>
+        </body>
+        <geom name="agv_right_back_steering_link_visual_1" class="visual" mesh="agv_right_back_steering_link_surface_1"
+          material="photo_gray"/>
+        <geom name="agv_right_back_steering_link_visual_2" class="visual" mesh="agv_right_back_steering_link_surface_2"
+          material="photo_gray"/>
+        <geom name="agv_right_back_steering_link_visual_3" class="visual" mesh="agv_right_back_steering_link_surface_3"
+          material="photo_gray"/>
+        <geom name="agv_right_back_steering_link_visual_4" class="visual" mesh="agv_right_back_steering_link_surface_4"
+          material="photo_gray"/>
+      </body>
+      <body name="agv_right_front_steering_link" pos="0.2745 -0.2045 0.2109">
+        <inertial pos="-0.00860026 -0.00291743 -0.111846" mass="1.27721"
+          fullinertia="0.0034414 0.00363413 0.00140759 -2.84167e-05 -0.000408752 -0.000147046"/>
+        <joint name="agv_right_front_steering_joint" pos="0 0 0" axis="0 0 1" type="hinge" class="swerve_steer_joint"/>
+        <body name="agv_right_front_wheel_link" pos="-0.015 0 -0.1484">
+          <inertial pos="3.47307e-08 0.00942609 -6.48301e-08" mass="0.613572"
+            fullinertia="0.000682705 0.00116831 0.000682698 1.13957e-10 -2.1138e-10 1.27549e-10"/>
+          <joint name="agv_right_front_rotate_joint" pos="0 0 0" axis="0 1 0" type="hinge" class="swerve_rotate_joint"/>
+          <geom name="agv_right_front_wheel_link_visual_1" class="visual" mesh="agv_right_front_wheel_link_surface_1"
+            material="photo_gray"/>
+          <geom name="agv_right_front_wheel_link_visual_2" class="visual" mesh="agv_right_front_wheel_link_surface_2"
+            material="photo_black"/>
+          <geom class="collision" type="sphere" size="0.0625" pos="0 0 0" friction="0.4 0.02 0.01"
+            name="agv_right_front_wheel_link_collision_1"/>
+        </body>
+        <geom name="agv_right_front_steering_link_visual_1" class="visual"
+          mesh="agv_right_front_steering_link_surface_1" material="photo_gray"/>
+        <geom name="agv_right_front_steering_link_visual_2" class="visual"
+          mesh="agv_right_front_steering_link_surface_2" material="photo_gray"/>
+        <geom name="agv_right_front_steering_link_visual_3" class="visual"
+          mesh="agv_right_front_steering_link_surface_3" material="photo_gray"/>
+        <geom name="agv_right_front_steering_link_visual_4" class="visual"
+          mesh="agv_right_front_steering_link_surface_4" material="photo_gray"/>
+      </body>
+      <body name="agv_left_front_steering_link" pos="0.2745 0.2045 0.2109">
+        <inertial pos="-0.00860026 -0.00291743 -0.111846" mass="1.27721"
+          fullinertia="0.0034414 0.00363413 0.00140759 -2.84167e-05 -0.000408752 -0.000147046"/>
+        <joint name="agv_left_front_steering_joint" pos="0 0 0" axis="0 0 1" type="hinge" class="swerve_steer_joint"/>
+        <body name="agv_left_front_wheel_link" pos="-0.015 0 -0.1484">
+          <inertial pos="-3.51604e-08 0.00942609 6.45981e-08" mass="0.613572"
+            fullinertia="0.000682705 0.00116831 0.000682698 -1.13107e-10 -1.64109e-10 -1.28303e-10"/>
+          <joint name="agv_left_front_rotate_joint" pos="0 0 0" axis="0 1 0" type="hinge" class="swerve_rotate_joint"/>
+          <geom name="agv_left_front_wheel_link_visual_1" class="visual" mesh="agv_left_front_wheel_link_surface_1"
+            material="photo_gray"/>
+          <geom name="agv_left_front_wheel_link_visual_2" class="visual" mesh="agv_left_front_wheel_link_surface_2"
+            material="photo_black"/>
+          <geom class="collision" type="sphere" size="0.0625" pos="0 0 0" friction="0.4 0.02 0.01"
+            name="agv_left_front_wheel_link_collision_1"/>
+        </body>
+        <geom name="agv_left_front_steering_link_visual_1" class="visual" mesh="agv_left_front_steering_link_surface_1"
+          material="photo_gray"/>
+        <geom name="agv_left_front_steering_link_visual_2" class="visual" mesh="agv_left_front_steering_link_surface_2"
+          material="photo_gray"/>
+        <geom name="agv_left_front_steering_link_visual_3" class="visual" mesh="agv_left_front_steering_link_surface_3"
+          material="photo_gray"/>
+        <geom name="agv_left_front_steering_link_visual_4" class="visual" mesh="agv_left_front_steering_link_surface_4"
+          material="photo_gray"/>
+      </body>
+      <body name="agv_left_back_steering_link" pos="-0.2745 0.2045 0.2109">
+        <inertial pos="-0.00860026 -0.00291743 -0.111846" mass="1.27721"
+          fullinertia="0.0034414 0.00363413 0.00140759 -2.84167e-05 -0.000408752 -0.000147046"/>
+        <joint name="agv_left_back_steering_joint" pos="0 0 0" axis="0 0 1" type="hinge" class="swerve_steer_joint"/>
+        <body name="agv_left_back_wheel_link" pos="-0.015 0 -0.1484">
+          <inertial pos="3.47307e-08 0.00942609 -6.48301e-08" mass="0.613572"
+            fullinertia="0.000682705 0.00116831 0.000682698 1.13957e-10 -2.1138e-10 1.27549e-10"/>
+          <joint name="agv_left_back_rotate_joint" pos="0 0 0" axis="0 1 0" type="hinge" class="swerve_rotate_joint"/>
+          <geom name="agv_left_back_wheel_link_visual_1" class="visual" mesh="agv_left_back_wheel_link_surface_1"
+            material="photo_gray"/>
+          <geom name="agv_left_back_wheel_link_visual_2" class="visual" mesh="agv_left_back_wheel_link_surface_2"
+            material="photo_black"/>
+          <geom class="collision" type="sphere" size="0.0625" pos="0 0 0" friction="0.4 0.02 0.01"
+            name="agv_left_back_wheel_link_collision_1"/>
+        </body>
+        <geom name="agv_left_back_steering_link_visual_1" class="visual" mesh="agv_left_back_steering_link_surface_1"
+          material="photo_gray"/>
+        <geom name="agv_left_back_steering_link_visual_2" class="visual" mesh="agv_left_back_steering_link_surface_2"
+          material="photo_gray"/>
+        <geom name="agv_left_back_steering_link_visual_3" class="visual" mesh="agv_left_back_steering_link_surface_3"
+          material="photo_gray"/>
+        <geom name="agv_left_back_steering_link_visual_4" class="visual" mesh="agv_left_back_steering_link_surface_4"
+          material="photo_gray"/>
+      </body>
+      <body name="folding_lower_joint_link" pos="-0.125 -0.000199001 0.17">
+        <inertial pos="0.0904125 -0.0422445 0.0653873" mass="8.80752"
+          fullinertia="0.132444 0.247666 0.182163 -0.0335994 -0.105211 -0.0248499"/>
+        <joint name="folding_low_joint" pos="0 0 0" axis="0 1 0" type="hinge" class="folding_low_joint"/>
+        <body name="folding_to_waist_link" pos="0.327498 0 0.308618">
+          <inertial pos="-0.290634 -0.00425122 0.146123" mass="10.1747"
+            fullinertia="0.0850006 0.28424 0.242362 -0.0043675 0.103277 0.00237622"/>
+          <joint name="folding_high_joint" pos="0 0 0" axis="0 1 0" type="hinge" class="folding_high_joint"/>
+          <body name="torso_waist_pitch_link" pos="-0.401053 0 0.204099">
+            <inertial pos="-0.00632749 -0.000609538 0.105235" mass="2.86662"
+              fullinertia="0.0154119 0.0118466 0.00861518 2.84902e-05 0.000310363 0.000155145"/>
+            <joint name="waist_pitch_joint" pos="0 0 0" axis="0 1 0" type="hinge" class="waist_pitch_joint"/>
+            <body name="torso_body_link" pos="-0.007 0 0.172">
+              <inertial pos="-0.00946433 -1.55761e-05 0.188981" mass="7.15859"
+                fullinertia="0.087234 0.0764838 0.0452557 3.18555e-05 -0.00371393 7.12475e-05"/>
+              <joint name="waist_yaw_joint" pos="0 0 0" axis="0 0 1" type="hinge" class="waist_yaw_joint"/>
+              <body name="head_yaw_link" pos="0 0 0.363">
+                <inertial pos="-4.2e-05 0.000258 0.083657" mass="0.35"
+                  fullinertia="0.000568684 0.000478442 0.00017973 3.24e-07 4.53e-07 8.17e-07"/>
+                <joint name="head_yaw_joint" pos="0 0 0" axis="0 0 1" type="hinge" class="head_yaw_joint"/>
+                <body name="head_pitch_link" pos="0 0 0.0415">
+                  <inertial pos="-0.017082 -0.001963 0.000698" mass="0.272"
+                    fullinertia="0.000116452 0.000123028 0.000122456 -2.12e-07 -4.36e-07 4.984e-06"/>
+                  <joint name="head_pitch_joint" pos="0 0 0" axis="0 1 0" type="hinge" class="head_pitch_joint"/>
+                  <body name="head_roll_link" pos="0.002 0 0">
+                    <inertial pos="0.0227563 -5.99682e-05 0.0337785" mass="0.776813"
+                      fullinertia="0.00245258 0.00264397 0.00320227 -1.37975e-06 -1.59421e-05 2.62457e-07"/>
+                    <joint name="head_roll_joint" pos="0 0 0" axis="1 0 0" type="hinge" class="head_roll_joint"/>
+                    <body name="head_camera_base_frame" pos="0.043 0.025 0.0485" quat="0.5 -0.5 0.5 -0.5">
+                      <camera name="head_camera_left_optical_center_frame" pos="-0.005 0.01 0.0332032" quat="0 1 0 0"
+                        fovy="60" resolution="640 480"/>
+                      <camera name="head_camera_right_optical_center_frame" pos="0.055 0.01 0.0332032" quat="0 1 0 0"
+                        fovy="60" resolution="640 480"/>
+                    </body>
+                    <geom name="head_roll_link_visual_1" class="visual" mesh="head_roll_link_surface_1"
+                      material="head_warm"/>
+                    <geom name="head_roll_link_visual_2" class="visual" mesh="head_roll_link_surface_2"
+                      material="head_warm"/>
+                    <geom name="head_roll_link_visual_3" class="visual" mesh="head_roll_link_surface_3"
+                      material="photo_black"/>
+                    <geom name="head_roll_link_collision_1" class="collision" type="mesh"
+                      pos="0.0227563 -5.99682e-05 0.0337785" mesh="head_roll_link_collision"/>
+                  </body>
+                </body>
+              </body>
+              <body name="right_shoulder_pitch_link" pos="0 -0.105 0.243">
+                <inertial pos="0.00333768 -0.0762098 0.000662013" mass="1.45458"
+                  fullinertia="0.00245728 0.00205024 0.00256641 1.57665e-05 1.10279e-05 -2.88738e-05"/>
+                <joint name="right_shoulder_pitch_joint" pos="0 0 0" axis="0 1 0" type="hinge"
+                  class="right_shoulder_pitch_joint"/>
+                <body name="right_shoulder_roll_link" pos="0 -0.085 0">
+                  <inertial pos="0.0017752 -0.0013108 -0.0801002" mass="1.00643"
+                    fullinertia="0.00210994 0.00260102 0.00138217 -3.93696e-06 -0.000158076 5.67168e-05"/>
+                  <joint name="right_shoulder_roll_joint" pos="0 0 0" axis="1 0 0" type="hinge"
+                    class="right_shoulder_roll_joint"/>
+                  <body name="right_shoulder_yaw_link" pos="0 0 -0.125">
+                    <inertial pos="0.0109505 -0.0017754 -0.101904" mass="0.953548"
+                      fullinertia="0.00223198 0.00203124 0.000980893 6.75164e-06 0.000215106 -3.66844e-05"/>
+                    <joint name="right_shoulder_yaw_joint" pos="0 0 0" axis="0 0 1" type="hinge"
+                      class="right_shoulder_yaw_joint"/>
+                    <body name="right_elbow_link" pos="0.015 0 -0.125">
+                      <inertial pos="-0.00924702 -0.000855873 -0.0659457" mass="0.593973"
+                        fullinertia="0.00125216 0.00101821 0.000744026 2.21874e-06 -3.77008e-05 2.15323e-05"/>
+                      <joint name="right_elbow_joint" pos="0 0 0" axis="0 1 0" type="hinge" class="right_elbow_joint"/>
+                      <body name="right_wrist_yaw_link" pos="-0.01 0 -0.1025">
+                        <inertial pos="0.000548538 0.000731089 -0.0670796" mass="0.643157"
+                          fullinertia="0.00111249 0.000970126 0.000711037 2.09913e-07 -1.02771e-05 8.18765e-05"/>
+                        <joint name="right_wrist_yaw_joint" pos="0 0 0" axis="0 0 1" type="hinge"
+                          class="right_wrist_yaw_joint"/>
+                        <body name="right_wrist_pitch_link" pos="0 0 -0.1525">
+                          <inertial pos="0.00388474 -0.000725088 5.72397e-05" mass="0.392278"
+                            fullinertia="0.000204383 0.000243513 0.000258275 -1.61178e-06 -1.03048e-06 -2.66964e-08"/>
+                          <joint name="right_wrist_pitch_joint" pos="0 0 0" axis="0 1 0" type="hinge"
+                            class="right_wrist_pitch_joint"/>
+                          <body name="right_wrist_roll_link" pos="0.0285 0 0">
+                            <inertial pos="-0.0050494 -0.000170931 -0.097341" mass="0.857684"
+                              fullinertia="0.00179377 0.00261574 0.00192236 -4.22146e-06 -7.72653e-05 -3.57567e-07"/>
+                            <joint name="right_wrist_roll_joint" pos="0 0 0" axis="1 0 0" type="hinge"
+                              class="right_wrist_roll_joint"/>
+                            <site name="right_ee_fk_target_frame" pos="-0.02852 0 -0.088527"
+                              quat="0.7071055 0 0 -0.7071081" size="0.003" group="3"/>
+                            <camera name="right_gripper_camera_frame" pos="0.056204 0 -0.150766"
+                              quat="0.68301270 -0.18301270 0.18301270 -0.68301270" fovy="60" resolution="640 480"/>
+                            <body name="right_gripper_front_link" pos="-0.028953 -0.023048 -0.166971">
+                              <inertial pos="0 0 0" mass="0.0850961"
+                                fullinertia="7.58005e-05 7.25109e-05 1.66604e-05 2.53038e-07 9.59111e-07 7.99867e-06"/>
+                              <joint name="right_gripper_front_joint" pos="0 0 0" axis="0 1 0" type="slide"
+                                class="finger_joint_coupled"/>
+                              <site name="right_gripper_front_tip_frame" pos="0.000433 0.022472691825467 -0.080556"
+                                size="0.003" group="3"/>
+                              <geom name="right_gripper_front_link_visual_1" class="dynaclaw_visual"
+                                mesh="dynaclaw_front_surface_1" material="dynaclaw_green"
+                                pos="0 -0.00059530817453299961 0"/>
+                              <geom name="right_gripper_front_link_visual_2" class="dynaclaw_visual"
+                                mesh="dynaclaw_front_surface_2" material="dynaclaw_black"
+                                pos="0 -0.00059530817453299961 0"/>
+                              <geom name="right_gripper_front_nail_visual" class="dynaclaw_visual"
+                                mesh="dynaclaw_front_nail_visual" material="dynaclaw_aluminum"
+                                pos="0 -0.00059530817453299961 0"/>
+                              <geom name="right_gripper_front_collision_inner_pad" class="dynaclaw_soft_pad" type="box"
+                                pos="0.00043281 0.020071601358767 -0.066191440168499996"
+                                size="0.006 0.0009 0.00903636388117" quat="0.999048221582 0.0436193873653 0 0"/>
+                              <geom name="right_gripper_front_collision_outer_back" class="dynaclaw_soft_pad" type="box"
+                                pos="0.00043281 0.0024538240535270004 -0.046882851938"
+                                size="0.006 0.0004 0.00484957129392" quat="0.258819045103 -0.965925826289 0 0"/>
+                              <geom name="right_gripper_front_collision_taper" class="dynaclaw_soft_pad" type="mesh"
+                                mesh="dynaclaw_taper" pos="0 -0.00059530817453299961 0"/>
+                              <geom name="right_gripper_front_collision_relief_1" class="dynaclaw_soft_pad" type="mesh"
+                                mesh="dynaclaw_relief_1" pos="0 -0.00059530817453299961 0"/>
+                              <geom name="right_gripper_front_collision_relief_2" class="dynaclaw_soft_pad" type="mesh"
+                                mesh="dynaclaw_relief_2" pos="0 -0.00059530817453299961 0"/>
+                              <geom name="right_gripper_front_collision_relief_3" class="dynaclaw_soft_pad" type="mesh"
+                                mesh="dynaclaw_relief_3" pos="0 -0.00059530817453299961 0"/>
+                              <geom name="right_gripper_front_collision_relief_4" class="dynaclaw_soft_pad" type="mesh"
+                                mesh="dynaclaw_relief_4" pos="0 -0.00059530817453299961 0"/>
+                              <geom name="right_gripper_front_collision_tip_support" class="dynaclaw_soft_pad"
+                                type="mesh" mesh="dynaclaw_tip_support" pos="0 -0.00059530817453299961 0"/>
+                              <geom name="right_gripper_front_collision_nail" class="dynaclaw_rigid_nail" type="box"
+                                pos="0.000432810746 0.013723793929766999 -0.065218504094100002"
+                                size="0.006000000052 0.000992002455033 0.0166644072284"
+                                quat="0.965925826289 0.258819045103 0 0"/>
+                              <geom name="right_gripper_front_collision_nail_tip" class="dynaclaw_rigid_nail"
+                                type="capsule"
+                                fromto="-0.0045751868509700004 0.022055997543967001 -0.079650304092899998 0.0054408083429699997 0.022055997543967001 -0.079650304092899998"
+                                size="0.000992002455033"/>
+                            </body>
+                            <body name="right_gripper_rear_link" pos="-0.028088 0.023048 -0.166971">
+                              <inertial pos="0 0 0" mass="0.0850961"
+                                fullinertia="7.58005e-05 7.25109e-05 1.66604e-05 2.53038e-07 -9.59111e-07 -7.99867e-06"/>
+                              <joint name="right_gripper_rear_joint" pos="0 0 0" axis="0 1 0" type="slide"
+                                class="finger_joint_active"/>
+                              <site name="right_gripper_rear_tip_frame" pos="-0.000432 -0.022472691825467 -0.080556"
+                                size="0.003" group="3"/>
+                              <geom name="right_gripper_rear_link_visual_1" class="dynaclaw_visual"
+                                mesh="dynaclaw_rear_surface_1" material="dynaclaw_green"
+                                pos="0 0.00059530817453299961 0"/>
+                              <geom name="right_gripper_rear_link_visual_2" class="dynaclaw_visual"
+                                mesh="dynaclaw_rear_surface_2" material="dynaclaw_black"
+                                pos="0 0.00059530817453299961 0"/>
+                              <geom name="right_gripper_rear_nail_visual" class="dynaclaw_visual"
+                                mesh="dynaclaw_rear_nail_visual" material="dynaclaw_aluminum"
+                                pos="0 0.00059530817453299961 0"/>
+                              <geom name="right_gripper_rear_collision_inner_pad" class="dynaclaw_soft_pad" type="box"
+                                pos="-0.00043281 -0.020071601358767 -0.066191440168499996"
+                                size="0.006 0.0009 0.00903636388117" quat="0 0 0.0436193873653 0.999048221582"/>
+                              <geom name="right_gripper_rear_collision_outer_back" class="dynaclaw_soft_pad" type="box"
+                                pos="-0.00043281 -0.0024538240535270004 -0.046882851938"
+                                size="0.006 0.0004 0.00484957129392" quat="0 0 -0.965925826289 0.258819045103"/>
+                              <geom name="right_gripper_rear_collision_taper" class="dynaclaw_soft_pad" type="mesh"
+                                mesh="dynaclaw_taper" quat="0 0 0 1" pos="0 0.00059530817453299961 0"/>
+                              <geom name="right_gripper_rear_collision_relief_1" class="dynaclaw_soft_pad" type="mesh"
+                                mesh="dynaclaw_relief_1" quat="0 0 0 1" pos="0 0.00059530817453299961 0"/>
+                              <geom name="right_gripper_rear_collision_relief_2" class="dynaclaw_soft_pad" type="mesh"
+                                mesh="dynaclaw_relief_2" quat="0 0 0 1" pos="0 0.00059530817453299961 0"/>
+                              <geom name="right_gripper_rear_collision_relief_3" class="dynaclaw_soft_pad" type="mesh"
+                                mesh="dynaclaw_relief_3" quat="0 0 0 1" pos="0 0.00059530817453299961 0"/>
+                              <geom name="right_gripper_rear_collision_relief_4" class="dynaclaw_soft_pad" type="mesh"
+                                mesh="dynaclaw_relief_4" quat="0 0 0 1" pos="0 0.00059530817453299961 0"/>
+                              <geom name="right_gripper_rear_collision_tip_support" class="dynaclaw_soft_pad"
+                                type="mesh" mesh="dynaclaw_tip_support" quat="0 0 0 1"
+                                pos="0 0.00059530817453299961 0"/>
+                              <geom name="right_gripper_rear_collision_nail" class="dynaclaw_rigid_nail" type="box"
+                                pos="-0.000432810746 -0.013723793929766999 -0.065218504094100002"
+                                size="0.006000000052 0.000992002455033 0.0166644072284"
+                                quat="5.91458985689e-17 1.58480957572e-17 0.258819045103 0.965925826289"/>
+                              <geom name="right_gripper_rear_collision_nail_tip" class="dynaclaw_rigid_nail"
+                                type="capsule"
+                                fromto="0.0045751868509700004 -0.022055997543967001 -0.079650304092899998 -0.0054408083429699997 -0.022055997543967001 -0.079650304092899998"
+                                size="0.000992002455033"/>
+                            </body>
+                            <geom name="right_wrist_roll_link_visual_1" class="visual"
+                              mesh="right_wrist_roll_link_surface_1" material="photo_white"/>
+                            <geom name="right_wrist_roll_link_visual_2" class="visual"
+                              mesh="right_wrist_roll_link_surface_2" material="photo_white"/>
+                            <geom name="right_wrist_roll_link_visual_3" class="visual"
+                              mesh="right_wrist_roll_link_surface_3" material="photo_white"/>
+                            <geom name="right_wrist_roll_link_visual_4" class="visual"
+                              mesh="right_wrist_roll_link_surface_4" material="photo_white"/>
+                            <geom name="right_wrist_roll_link_visual_5" class="visual"
+                              mesh="right_wrist_roll_link_surface_5" material="photo_gray"/>
+                            <geom name="right_wrist_roll_link_collision_1" class="collision" type="mesh"
+                              mesh="right_housing_part_1"/>
+                            <geom name="right_wrist_roll_link_collision_2" class="collision" type="mesh"
+                              mesh="right_housing_part_2"/>
+                          </body>
+                          <geom name="right_wrist_pitch_link_visual_1" class="visual"
+                            mesh="right_wrist_pitch_link_surface_1" material="photo_gray"/>
+                          <geom name="right_wrist_pitch_link_visual_2" class="visual"
+                            mesh="right_wrist_pitch_link_surface_2" material="photo_white"/>
+                          <geom name="right_wrist_pitch_link_collision_1" class="collision" type="mesh"
+                            pos="0.00388474 -0.000725088 5.72397e-05" mesh="right_wrist_pitch_link_collision"/>
+                        </body>
+                        <geom name="right_wrist_yaw_link_visual_1" class="visual" mesh="right_wrist_yaw_link_surface_1"
+                          material="photo_gray"/>
+                        <geom name="right_wrist_yaw_link_visual_2" class="visual" mesh="right_wrist_yaw_link_surface_2"
+                          material="photo_white"/>
+                        <geom name="right_wrist_yaw_link_visual_3" class="visual" mesh="right_wrist_yaw_link_surface_3"
+                          material="photo_white"/>
+                        <geom name="right_wrist_yaw_link_visual_4" class="visual" mesh="right_wrist_yaw_link_surface_4"
+                          material="photo_white"/>
+                        <geom name="right_wrist_yaw_link_collision_1" class="collision" type="mesh"
+                          pos="0.000548538 0.000731089 -0.0670796" mesh="right_wrist_yaw_link_collision"/>
+                      </body>
+                      <geom name="right_elbow_link_visual_1" class="visual" mesh="right_elbow_link_surface_1"
+                        material="photo_white"/>
+                      <geom name="right_elbow_link_visual_2" class="visual" mesh="right_elbow_link_surface_2"
+                        material="photo_gray"/>
+                      <geom name="right_elbow_link_visual_3" class="visual" mesh="right_elbow_link_surface_3"
+                        material="photo_white"/>
+                      <geom name="right_elbow_link_visual_4" class="visual" mesh="right_elbow_link_surface_4"
+                        material="photo_gray"/>
+                      <geom name="right_elbow_link_collision_1" class="collision" type="mesh"
+                        pos="-0.00924702 -0.000855873 -0.0659457" mesh="right_elbow_link_collision"/>
+                    </body>
+                    <geom name="right_shoulder_yaw_link_visual_1" class="visual"
+                      mesh="right_shoulder_yaw_link_surface_1" material="upper_arm_gray"/>
+                    <geom name="right_shoulder_yaw_link_visual_2" class="visual"
+                      mesh="right_shoulder_yaw_link_surface_2" material="photo_white"/>
+                    <geom name="right_shoulder_yaw_link_visual_3" class="visual"
+                      mesh="right_shoulder_yaw_link_surface_3" material="photo_gray"/>
+                    <geom name="right_shoulder_yaw_link_visual_4" class="visual"
+                      mesh="right_shoulder_yaw_link_surface_4" material="photo_white"/>
+                    <geom name="right_shoulder_yaw_link_collision_1" class="collision" type="mesh"
+                      pos="0.0109505 -0.0017754 -0.101904" mesh="right_shoulder_yaw_link_collision"/>
+                  </body>
+                  <geom name="right_shoulder_roll_link_visual_1" class="visual"
+                    mesh="right_shoulder_roll_link_surface_1" material="photo_white"/>
+                  <geom name="right_shoulder_roll_link_visual_2" class="visual"
+                    mesh="right_shoulder_roll_link_surface_2" material="photo_white"/>
+                  <geom name="right_shoulder_roll_link_collision_1" class="collision" type="mesh"
+                    pos="0.0017752 -0.0013108 -0.0801002" mesh="right_shoulder_roll_link_collision"/>
+                </body>
+                <geom name="right_shoulder_pitch_link_visual_1" class="visual"
+                  mesh="right_shoulder_pitch_link_surface_1" material="photo_white"/>
+                <geom name="right_shoulder_pitch_link_visual_2" class="visual"
+                  mesh="right_shoulder_pitch_link_surface_2" material="photo_white"/>
+                <geom name="right_shoulder_pitch_link_visual_3" class="visual"
+                  mesh="right_shoulder_pitch_link_surface_3" material="photo_white"/>
+                <geom name="right_shoulder_pitch_link_collision_1" class="collision" type="mesh"
+                  pos="0.00333768 -0.0762098 0.000662013" mesh="right_shoulder_pitch_link_collision"/>
+              </body>
+              <body name="left_shoulder_pitch_link" pos="0 0.105 0.243">
+                <inertial pos="0.00330953 0.0761901 0.000289533" mass="1.45625"
+                  fullinertia="0.0024612 0.0020553 0.00257157 -1.54817e-05 -8.07244e-06 3.45173e-05"/>
+                <joint name="left_shoulder_pitch_joint" pos="0 0 0" axis="0 1 0" type="hinge"
+                  class="left_shoulder_pitch_joint"/>
+                <body name="left_shoulder_roll_link" pos="0 0.085 0">
+                  <inertial pos="0.00206733 0.00209305 -0.079847" mass="0.988342"
+                    fullinertia="0.00207207 0.00258847 0.00134024 1.87896e-05 -0.00015201 -4.52592e-05"/>
+                  <joint name="left_shoulder_roll_joint" pos="0 0 0" axis="1 0 0" type="hinge"
+                    class="left_shoulder_roll_joint"/>
+                  <body name="left_shoulder_yaw_link" pos="0 0 -0.125">
+                    <inertial pos="0.0109212 -0.00176406 -0.101874" mass="0.95423"
+                      fullinertia="0.0022338 0.00203337 0.000981838 6.95419e-06 0.000215688 -3.69452e-05"/>
+                    <joint name="left_shoulder_yaw_joint" pos="0 0 0" axis="0 0 1" type="hinge"
+                      class="left_shoulder_yaw_joint"/>
+                    <body name="left_elbow_link" pos="0.015 0 -0.125">
+                      <inertial pos="-0.00943674 -0.000355444 -0.0659221" mass="0.594314"
+                        fullinertia="0.00125384 0.00101897 0.000745311 2.36312e-06 -3.83583e-05 2.21936e-05"/>
+                      <joint name="left_elbow_joint" pos="0 0 0" axis="0 1 0" type="hinge" class="left_elbow_joint"/>
+                      <body name="left_wrist_yaw_link" pos="-0.01 0 -0.1025">
+                        <inertial pos="0.000604189 0.000732856 -0.0671468" mass="0.641606"
+                          fullinertia="0.0011112 0.000968072 0.000710131 2.3612e-07 -1.12767e-05 8.1849e-05"/>
+                        <joint name="left_wrist_yaw_joint" pos="0 0 0" axis="0 0 1" type="hinge"
+                          class="left_wrist_yaw_joint"/>
+                        <body name="left_wrist_pitch_link" pos="0 0 -0.1525">
+                          <inertial pos="0.00388474 -0.000725088 5.69465e-05" mass="0.392278"
+                            fullinertia="0.000204383 0.000243513 0.000258275 -1.61182e-06 -1.03056e-06 -3.07662e-08"/>
+                          <joint name="left_wrist_pitch_joint" pos="0 0 0" axis="0 1 0" type="hinge"
+                            class="left_wrist_pitch_joint"/>
+                          <body name="left_wrist_roll_link" pos="0.0285 0 0">
+                            <inertial pos="-0.0050494 -0.000170931 -0.097341" mass="0.857684"
+                              fullinertia="0.00179377 0.00261574 0.00192236 -4.22146e-06 -7.72653e-05 -3.57567e-07"/>
+                            <joint name="left_wrist_roll_joint" pos="0 0 0" axis="1 0 0" type="hinge"
+                              class="left_wrist_roll_joint"/>
+                            <site name="left_ee_fk_target_frame" pos="-0.02852 0 -0.088527"
+                              quat="0.7071055 0 0 -0.7071081" size="0.003" group="3"/>
+                            <camera name="left_gripper_camera_frame" pos="0.056204 0 -0.150766"
+                              quat="0.68301270 -0.18301270 0.18301270 -0.68301270" fovy="60" resolution="640 480"/>
+                            <body name="left_gripper_front_link" pos="-0.028953 -0.023048 -0.166971">
+                              <inertial pos="0 0 0" mass="0.0850961"
+                                fullinertia="7.58005e-05 7.25109e-05 1.66604e-05 2.53038e-07 9.59111e-07 7.99867e-06"/>
+                              <joint name="left_gripper_front_joint" pos="0 0 0" axis="0 1 0" type="slide"
+                                class="finger_joint_coupled"/>
+                              <site name="left_gripper_front_tip_frame" pos="0.000433 0.022472691825467 -0.080556"
+                                size="0.003" group="3"/>
+                              <geom name="left_gripper_front_link_visual_1" class="dynaclaw_visual"
+                                mesh="dynaclaw_front_surface_1" material="dynaclaw_green"
+                                pos="0 -0.00059530817453299961 0"/>
+                              <geom name="left_gripper_front_link_visual_2" class="dynaclaw_visual"
+                                mesh="dynaclaw_front_surface_2" material="dynaclaw_black"
+                                pos="0 -0.00059530817453299961 0"/>
+                              <geom name="left_gripper_front_nail_visual" class="dynaclaw_visual"
+                                mesh="dynaclaw_front_nail_visual" material="dynaclaw_aluminum"
+                                pos="0 -0.00059530817453299961 0"/>
+                              <geom name="left_gripper_front_collision_inner_pad" class="dynaclaw_soft_pad" type="box"
+                                pos="0.00043281 0.020071601358767 -0.066191440168499996"
+                                size="0.006 0.0009 0.00903636388117" quat="0.999048221582 0.0436193873653 0 0"/>
+                              <geom name="left_gripper_front_collision_outer_back" class="dynaclaw_soft_pad" type="box"
+                                pos="0.00043281 0.0024538240535270004 -0.046882851938"
+                                size="0.006 0.0004 0.00484957129392" quat="0.258819045103 -0.965925826289 0 0"/>
+                              <geom name="left_gripper_front_collision_taper" class="dynaclaw_soft_pad" type="mesh"
+                                mesh="dynaclaw_taper" pos="0 -0.00059530817453299961 0"/>
+                              <geom name="left_gripper_front_collision_relief_1" class="dynaclaw_soft_pad" type="mesh"
+                                mesh="dynaclaw_relief_1" pos="0 -0.00059530817453299961 0"/>
+                              <geom name="left_gripper_front_collision_relief_2" class="dynaclaw_soft_pad" type="mesh"
+                                mesh="dynaclaw_relief_2" pos="0 -0.00059530817453299961 0"/>
+                              <geom name="left_gripper_front_collision_relief_3" class="dynaclaw_soft_pad" type="mesh"
+                                mesh="dynaclaw_relief_3" pos="0 -0.00059530817453299961 0"/>
+                              <geom name="left_gripper_front_collision_relief_4" class="dynaclaw_soft_pad" type="mesh"
+                                mesh="dynaclaw_relief_4" pos="0 -0.00059530817453299961 0"/>
+                              <geom name="left_gripper_front_collision_tip_support" class="dynaclaw_soft_pad"
+                                type="mesh" mesh="dynaclaw_tip_support" pos="0 -0.00059530817453299961 0"/>
+                              <geom name="left_gripper_front_collision_nail" class="dynaclaw_rigid_nail" type="box"
+                                pos="0.000432810746 0.013723793929766999 -0.065218504094100002"
+                                size="0.006000000052 0.000992002455033 0.0166644072284"
+                                quat="0.965925826289 0.258819045103 0 0"/>
+                              <geom name="left_gripper_front_collision_nail_tip" class="dynaclaw_rigid_nail"
+                                type="capsule"
+                                fromto="-0.0045751868509700004 0.022055997543967001 -0.079650304092899998 0.0054408083429699997 0.022055997543967001 -0.079650304092899998"
+                                size="0.000992002455033"/>
+                            </body>
+                            <body name="left_gripper_rear_link" pos="-0.028088 0.023048 -0.166971">
+                              <inertial pos="0 0 0" mass="0.0850961"
+                                fullinertia="7.58005e-05 7.25109e-05 1.66604e-05 2.53038e-07 -9.59111e-07 -7.99867e-06"/>
+                              <joint name="left_gripper_rear_joint" pos="0 0 0" axis="0 1 0" type="slide"
+                                class="finger_joint_active"/>
+                              <site name="left_gripper_rear_tip_frame" pos="-0.000432 -0.022472691825467 -0.080556"
+                                size="0.003" group="3"/>
+                              <geom name="left_gripper_rear_link_visual_1" class="dynaclaw_visual"
+                                mesh="dynaclaw_rear_surface_1" material="dynaclaw_green"
+                                pos="0 0.00059530817453299961 0"/>
+                              <geom name="left_gripper_rear_link_visual_2" class="dynaclaw_visual"
+                                mesh="dynaclaw_rear_surface_2" material="dynaclaw_black"
+                                pos="0 0.00059530817453299961 0"/>
+                              <geom name="left_gripper_rear_nail_visual" class="dynaclaw_visual"
+                                mesh="dynaclaw_rear_nail_visual" material="dynaclaw_aluminum"
+                                pos="0 0.00059530817453299961 0"/>
+                              <geom name="left_gripper_rear_collision_inner_pad" class="dynaclaw_soft_pad" type="box"
+                                pos="-0.00043281 -0.020071601358767 -0.066191440168499996"
+                                size="0.006 0.0009 0.00903636388117" quat="0 0 0.0436193873653 0.999048221582"/>
+                              <geom name="left_gripper_rear_collision_outer_back" class="dynaclaw_soft_pad" type="box"
+                                pos="-0.00043281 -0.0024538240535270004 -0.046882851938"
+                                size="0.006 0.0004 0.00484957129392" quat="0 0 -0.965925826289 0.258819045103"/>
+                              <geom name="left_gripper_rear_collision_taper" class="dynaclaw_soft_pad" type="mesh"
+                                mesh="dynaclaw_taper" quat="0 0 0 1" pos="0 0.00059530817453299961 0"/>
+                              <geom name="left_gripper_rear_collision_relief_1" class="dynaclaw_soft_pad" type="mesh"
+                                mesh="dynaclaw_relief_1" quat="0 0 0 1" pos="0 0.00059530817453299961 0"/>
+                              <geom name="left_gripper_rear_collision_relief_2" class="dynaclaw_soft_pad" type="mesh"
+                                mesh="dynaclaw_relief_2" quat="0 0 0 1" pos="0 0.00059530817453299961 0"/>
+                              <geom name="left_gripper_rear_collision_relief_3" class="dynaclaw_soft_pad" type="mesh"
+                                mesh="dynaclaw_relief_3" quat="0 0 0 1" pos="0 0.00059530817453299961 0"/>
+                              <geom name="left_gripper_rear_collision_relief_4" class="dynaclaw_soft_pad" type="mesh"
+                                mesh="dynaclaw_relief_4" quat="0 0 0 1" pos="0 0.00059530817453299961 0"/>
+                              <geom name="left_gripper_rear_collision_tip_support" class="dynaclaw_soft_pad" type="mesh"
+                                mesh="dynaclaw_tip_support" quat="0 0 0 1" pos="0 0.00059530817453299961 0"/>
+                              <geom name="left_gripper_rear_collision_nail" class="dynaclaw_rigid_nail" type="box"
+                                pos="-0.000432810746 -0.013723793929766999 -0.065218504094100002"
+                                size="0.006000000052 0.000992002455033 0.0166644072284"
+                                quat="5.91458985689e-17 1.58480957572e-17 0.258819045103 0.965925826289"/>
+                              <geom name="left_gripper_rear_collision_nail_tip" class="dynaclaw_rigid_nail"
+                                type="capsule"
+                                fromto="0.0045751868509700004 -0.022055997543967001 -0.079650304092899998 -0.0054408083429699997 -0.022055997543967001 -0.079650304092899998"
+                                size="0.000992002455033"/>
+                            </body>
+                            <geom name="left_wrist_roll_link_visual_1" class="visual"
+                              mesh="left_wrist_roll_link_surface_1" material="photo_white"/>
+                            <geom name="left_wrist_roll_link_visual_2" class="visual"
+                              mesh="left_wrist_roll_link_surface_2" material="photo_white"/>
+                            <geom name="left_wrist_roll_link_visual_3" class="visual"
+                              mesh="left_wrist_roll_link_surface_3" material="photo_white"/>
+                            <geom name="left_wrist_roll_link_visual_4" class="visual"
+                              mesh="left_wrist_roll_link_surface_4" material="photo_white"/>
+                            <geom name="left_wrist_roll_link_collision_1" class="collision" type="mesh"
+                              mesh="left_housing_part_1"/>
+                            <geom name="left_wrist_roll_link_collision_2" class="collision" type="mesh"
+                              mesh="left_housing_part_2"/>
+                          </body>
+                          <geom name="left_wrist_pitch_link_visual_1" class="visual"
+                            mesh="left_wrist_pitch_link_surface_1" material="photo_gray"/>
+                          <geom name="left_wrist_pitch_link_visual_2" class="visual"
+                            mesh="left_wrist_pitch_link_surface_2" material="photo_white"/>
+                          <geom name="left_wrist_pitch_link_collision_1" class="collision" type="mesh"
+                            pos="0.00388474 -0.000725088 5.69465e-05" mesh="left_wrist_pitch_link_collision"/>
+                        </body>
+                        <geom name="left_wrist_yaw_link_visual_1" class="visual" mesh="left_wrist_yaw_link_surface_1"
+                          material="photo_gray"/>
+                        <geom name="left_wrist_yaw_link_visual_2" class="visual" mesh="left_wrist_yaw_link_surface_2"
+                          material="photo_white"/>
+                        <geom name="left_wrist_yaw_link_visual_3" class="visual" mesh="left_wrist_yaw_link_surface_3"
+                          material="photo_white"/>
+                        <geom name="left_wrist_yaw_link_visual_4" class="visual" mesh="left_wrist_yaw_link_surface_4"
+                          material="photo_white"/>
+                        <geom name="left_wrist_yaw_link_collision_1" class="collision" type="mesh"
+                          pos="0.000604189 0.000732856 -0.0671468" mesh="left_wrist_yaw_link_collision"/>
+                      </body>
+                      <geom name="left_elbow_link_visual_1" class="visual" mesh="left_elbow_link_surface_1"
+                        material="photo_white"/>
+                      <geom name="left_elbow_link_visual_2" class="visual" mesh="left_elbow_link_surface_2"
+                        material="photo_gray"/>
+                      <geom name="left_elbow_link_visual_3" class="visual" mesh="left_elbow_link_surface_3"
+                        material="photo_white"/>
+                      <geom name="left_elbow_link_visual_4" class="visual" mesh="left_elbow_link_surface_4"
+                        material="photo_gray"/>
+                      <geom name="left_elbow_link_collision_1" class="collision" type="mesh"
+                        pos="-0.00943674 -0.000355444 -0.0659221" mesh="left_elbow_link_collision"/>
+                    </body>
+                    <geom name="left_shoulder_yaw_link_visual_1" class="visual" mesh="left_shoulder_yaw_link_surface_1"
+                      material="upper_arm_gray"/>
+                    <geom name="left_shoulder_yaw_link_visual_2" class="visual" mesh="left_shoulder_yaw_link_surface_2"
+                      material="photo_white"/>
+                    <geom name="left_shoulder_yaw_link_visual_3" class="visual" mesh="left_shoulder_yaw_link_surface_3"
+                      material="photo_gray"/>
+                    <geom name="left_shoulder_yaw_link_visual_4" class="visual" mesh="left_shoulder_yaw_link_surface_4"
+                      material="photo_white"/>
+                    <geom name="left_shoulder_yaw_link_collision_1" class="collision" type="mesh"
+                      pos="0.0109212 -0.00176406 -0.101874" mesh="left_shoulder_yaw_link_collision"/>
+                  </body>
+                  <geom name="left_shoulder_roll_link_visual_1" class="visual" mesh="left_shoulder_roll_link_surface_1"
+                    material="photo_white"/>
+                  <geom name="left_shoulder_roll_link_visual_2" class="visual" mesh="left_shoulder_roll_link_surface_2"
+                    material="photo_white"/>
+                  <geom name="left_shoulder_roll_link_collision_1" class="collision" type="mesh"
+                    pos="0.00206733 0.00209305 -0.079847" mesh="left_shoulder_roll_link_collision"/>
+                </body>
+                <geom name="left_shoulder_pitch_link_visual_1" class="visual" mesh="left_shoulder_pitch_link_surface_1"
+                  material="photo_white"/>
+                <geom name="left_shoulder_pitch_link_visual_2" class="visual" mesh="left_shoulder_pitch_link_surface_2"
+                  material="photo_white"/>
+                <geom name="left_shoulder_pitch_link_visual_3" class="visual" mesh="left_shoulder_pitch_link_surface_3"
+                  material="photo_white"/>
+                <geom name="left_shoulder_pitch_link_collision_1" class="collision" type="mesh"
+                  pos="0.00330953 0.0761901 0.000289533" mesh="left_shoulder_pitch_link_collision"/>
+              </body>
+              <geom name="torso_body_link_visual_1" class="visual" mesh="torso_body_link_surface_1"
+                material="photo_white"/>
+              <geom name="torso_body_link_visual_2" class="visual" mesh="torso_body_link_surface_2"
+                material="photo_gray"/>
+              <geom name="torso_body_link_visual_3" class="visual" mesh="torso_body_link_surface_3"
+                material="photo_white"/>
+              <geom name="torso_body_link_visual_4" class="visual" mesh="torso_body_link_surface_4"
+                material="photo_white"/>
+              <geom name="torso_body_link_visual_5" class="visual" mesh="torso_body_link_surface_5"
+                material="photo_gray"/>
+              <geom name="torso_body_link_visual_6" class="visual" mesh="torso_body_link_surface_6"
+                material="photo_gray"/>
+              <geom name="torso_body_link_collision_1" class="collision" type="mesh"
+                pos="-0.00946433 -1.55761e-05 0.188981" mesh="torso_body_link_collision"/>
+              <geom name="torso_body_link_logo_visual" class="visual" mesh="torso_body_link_logo"
+                material="chest_logo"/>
+            </body>
+            <geom name="torso_waist_pitch_link_visual_1" class="visual" mesh="torso_waist_pitch_link_surface_1"
+              material="photo_gray"/>
+            <geom name="torso_waist_pitch_link_visual_2" class="visual" mesh="torso_waist_pitch_link_surface_2"
+              material="photo_white"/>
+            <geom name="torso_waist_pitch_link_visual_3" class="visual" mesh="torso_waist_pitch_link_surface_3"
+              material="photo_gray"/>
+            <geom name="torso_waist_pitch_link_visual_4" class="visual" mesh="torso_waist_pitch_link_surface_4"
+              material="photo_white"/>
+            <geom name="torso_waist_pitch_link_collision_1" class="collision" type="mesh"
+              pos="-0.00632749 -0.000609538 0.105235" mesh="torso_waist_pitch_link_collision"/>
+          </body>
+          <geom name="folding_to_waist_link_visual_1" class="visual" mesh="folding_to_waist_link_surface_1"
+            material="photo_white"/>
+          <geom name="folding_to_waist_link_visual_2" class="visual" mesh="folding_to_waist_link_surface_2"
+            material="photo_white"/>
+          <geom name="folding_to_waist_link_visual_3" class="visual" mesh="folding_to_waist_link_surface_3"
+            material="photo_white"/>
+          <geom name="folding_to_waist_link_visual_4" class="visual" mesh="folding_to_waist_link_surface_4"
+            material="photo_white"/>
+          <geom name="folding_to_waist_link_collision_1" class="collision" type="mesh"
+            pos="-0.290634 -0.00425122 0.146123" mesh="folding_to_waist_link_collision"/>
+        </body>
+        <geom name="folding_lower_joint_link_visual_1" class="visual" mesh="folding_lower_joint_link_surface_1"
+          material="photo_white"/>
+        <geom name="folding_lower_joint_link_visual_2" class="visual" mesh="folding_lower_joint_link_surface_2"
+          material="photo_white"/>
+        <geom name="folding_lower_joint_link_collision_1" class="collision" type="mesh"
+          pos="0.0904125 -0.0422445 0.0653873" mesh="folding_lower_joint_link_collision"/>
+      </body>
+      <geom name="agv_rear_buttons_visual" class="visual" mesh="agv_rear_buttons" material="photo_black"/>
+      <geom name="agv_rear_connector_visual" class="visual" mesh="agv_rear_connector" material="connector_silver"/>
+      <geom name="agv_lower_skirt_visual" class="visual" mesh="agv_lower_skirt" material="photo_gray"/>
+      <geom name="agv_rear_lidar_cover_visual" class="visual" mesh="agv_rear_lidar_cover" material="photo_black"/>
+      <geom name="agv_emergency_stop_cap_visual" class="visual" mesh="agv_emergency_stop_cap"
+        material="emergency_stop_red"/>
+      <geom name="agv_base_link_visual_1" class="visual" mesh="agv_base_link_surface_1" material="photo_black"/>
+      <geom name="agv_base_link_visual_2" class="visual" mesh="agv_base_link_surface_2" material="photo_white"/>
+      <geom name="agv_base_link_visual_3" class="visual" mesh="agv_base_link_surface_3" material="photo_gray"/>
+      <geom name="agv_base_link_visual_4" class="visual" mesh="agv_base_link_surface_4" material="photo_white"/>
+      <geom name="agv_base_link_visual_5" class="visual" mesh="agv_base_link_surface_5" material="photo_white"/>
+      <geom name="agv_base_rear_collision" type="mesh" mesh="agv_base_rear_collision" class="collision"/>
+      <geom name="agv_base_left_collision" type="mesh" mesh="agv_base_left_collision" class="collision"/>
+      <geom name="agv_base_right_collision" type="mesh" mesh="agv_base_right_collision" class="collision"/>
+      <geom name="agv_base_lidar_collision" type="mesh" mesh="agv_base_lidar_collision" class="collision"/>
+    </body>
+  </worldbody>
+  <contact>
+    <exclude body1="agv_base_link" body2="folding_to_waist_link"/>
+    <exclude body1="agv_base_link" body2="torso_waist_pitch_link"/>
+    <exclude body1="agv_base_link" body2="agv_right_front_wheel_link"/>
+    <exclude body1="agv_base_link" body2="agv_right_back_wheel_link"/>
+    <exclude body1="agv_base_link" body2="agv_left_front_wheel_link"/>
+    <exclude body1="agv_base_link" body2="agv_left_back_wheel_link"/>
+    <exclude body1="torso_body_link" body2="head_roll_link"/>
+    <exclude body1="torso_body_link" body2="head_pitch_link"/>
+    <exclude body1="torso_body_link" body2="right_shoulder_roll_link"/>
+    <exclude body1="torso_body_link" body2="right_shoulder_yaw_link"/>
+    <exclude body1="torso_body_link" body2="left_shoulder_roll_link"/>
+    <exclude body1="torso_body_link" body2="left_shoulder_yaw_link"/>
+    <exclude body1="head_yaw_link" body2="head_roll_link"/>
+    <exclude body1="right_shoulder_roll_link" body2="right_elbow_link"/>
+    <exclude body1="left_shoulder_roll_link" body2="left_elbow_link"/>
+    <exclude body1="right_wrist_yaw_link" body2="right_wrist_roll_link"/>
+    <exclude body1="left_wrist_yaw_link" body2="left_wrist_roll_link"/>
+  </contact>
+  <equality>
+    <joint joint1="left_gripper_front_joint" joint2="left_gripper_rear_joint" polycoef="0 -1 0 0 0"/>
+    <joint joint1="right_gripper_front_joint" joint2="right_gripper_rear_joint" polycoef="0 -1 0 0 0"/>
+  </equality>
+  <actuator>
+    <position class="swerve_steer_joint" name="agv_right_front_steering_joint" joint="agv_right_front_steering_joint"/>
+    <position class="swerve_steer_joint" name="agv_right_back_steering_joint" joint="agv_right_back_steering_joint"/>
+    <position class="swerve_steer_joint" name="agv_left_front_steering_joint" joint="agv_left_front_steering_joint"/>
+    <position class="swerve_steer_joint" name="agv_left_back_steering_joint" joint="agv_left_back_steering_joint"/>
+    <velocity class="swerve_rotate_joint" name="agv_right_front_rotate_joint" joint="agv_right_front_rotate_joint"/>
+    <velocity class="swerve_rotate_joint" name="agv_right_back_rotate_joint" joint="agv_right_back_rotate_joint"/>
+    <velocity class="swerve_rotate_joint" name="agv_left_front_rotate_joint" joint="agv_left_front_rotate_joint"/>
+    <velocity class="swerve_rotate_joint" name="agv_left_back_rotate_joint" joint="agv_left_back_rotate_joint"/>
+    <position class="folding_low_joint" name="folding_low_joint" joint="folding_low_joint"/>
+    <position class="folding_high_joint" name="folding_high_joint" joint="folding_high_joint"/>
+    <position class="waist_pitch_joint" name="waist_pitch_joint" joint="waist_pitch_joint"/>
+    <position class="waist_yaw_joint" name="waist_yaw_joint" joint="waist_yaw_joint"/>
+    <position class="head_yaw_joint" name="head_yaw_joint" joint="head_yaw_joint"/>
+    <position class="head_roll_joint" name="head_roll_joint" joint="head_roll_joint"/>
+    <position class="head_pitch_joint" name="head_pitch_joint" joint="head_pitch_joint"/>
+    <position class="shoulder_pitch_joint" name="left_shoulder_pitch_joint" joint="left_shoulder_pitch_joint"/>
+    <position class="left_shoulder_roll_joint" name="left_shoulder_roll_joint" joint="left_shoulder_roll_joint"/>
+    <position class="left_shoulder_yaw_joint" name="left_shoulder_yaw_joint" joint="left_shoulder_yaw_joint"/>
+    <position class="elbow_joint" name="left_elbow_joint" joint="left_elbow_joint"/>
+    <position class="left_wrist_yaw_joint" name="left_wrist_yaw_joint" joint="left_wrist_yaw_joint"/>
+    <position class="wrist_pitch_joint" name="left_wrist_pitch_joint" joint="left_wrist_pitch_joint"/>
+    <position class="wrist_roll_joint" name="left_wrist_roll_joint" joint="left_wrist_roll_joint"/>
+    <position class="finger_joint_active" name="left_gripper_joint" joint="left_gripper_rear_joint"/>
+    <position class="shoulder_pitch_joint" name="right_shoulder_pitch_joint" joint="right_shoulder_pitch_joint"/>
+    <position class="right_shoulder_roll_joint" name="right_shoulder_roll_joint" joint="right_shoulder_roll_joint"/>
+    <position class="right_shoulder_yaw_joint" name="right_shoulder_yaw_joint" joint="right_shoulder_yaw_joint"/>
+    <position class="elbow_joint" name="right_elbow_joint" joint="right_elbow_joint"/>
+    <position class="right_wrist_yaw_joint" name="right_wrist_yaw_joint" joint="right_wrist_yaw_joint"/>
+    <position class="wrist_pitch_joint" name="right_wrist_pitch_joint" joint="right_wrist_pitch_joint"/>
+    <position class="wrist_roll_joint" name="right_wrist_roll_joint" joint="right_wrist_roll_joint"/>
+    <position class="finger_joint_active" name="right_gripper_joint" joint="right_gripper_rear_joint"/>
+  </actuator>
+  <keyframe>
+    <key name="home"
+      qpos="0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 -0.15 0.6 -0.45 0 0 0 0 0 0 0 0 0 0 0 -0.01 0.01 0 0 0 0 0 0 0 -0.01 0.01"
+      ctrl="0 0 0 0 0 0 0 0 -0.15 0.6 -0.45 0 0 0 0 0 0 0 0 0 0 0 0.01 0 0 0 0 0 0 0 0.01"/>
+  </keyframe>
+</mujoco>
