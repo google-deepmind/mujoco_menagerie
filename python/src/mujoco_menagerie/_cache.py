@@ -168,7 +168,7 @@ class Cache:
         if p.is_file()
       }
       (tree / SENTINEL).write_text(
-        json.dumps({'oid': robot.oid, 'files': files})
+        json.dumps({'oid': robot.oid, 'files': files}), encoding='utf-8'
       )
       _fsync_tree(tree)
       target.parent.mkdir(parents=True, exist_ok=True)
@@ -183,7 +183,7 @@ class Cache:
   def verify(self, robot: Robot) -> list[str]:
     """Files missing or changed since the model was published."""
     target = self.model_path(robot)
-    files = json.loads((target / SENTINEL).read_text())['files']
+    files = json.loads((target / SENTINEL).read_text(encoding='utf-8'))['files']
     return [
       f
       for f, h in files.items()

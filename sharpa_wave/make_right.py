@@ -276,7 +276,7 @@ def main():
 
   raw_xml = spec.to_xml()
   rewritten = rewrite_left_to_right(raw_xml)
-  args.out_xml.write_text(rewritten)
+  args.out_xml.write_text(rewritten, encoding='utf-8')
   print(f'wrote {args.out_xml}')
 
   model = mujoco.MjModel.from_xml_path(str(args.out_xml))
