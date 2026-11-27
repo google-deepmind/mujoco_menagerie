@@ -27,10 +27,10 @@ Rules (matching the Red Hat XML extension's defaults for this repo):
   - Preserve comments
 
 Usage:
-  uv run scripts/format_xml.py --check <path>...  # exit 1 if any file is
-                                                  # not formatted
-  uv run scripts/format_xml.py --write <path>...  # rewrite files in place
-  uv run scripts/format_xml.py <path>             # print formatted to stdout
+  uv run format_xml.py --check <path>...  # exit 1 if any file is
+                                          # not formatted
+  uv run format_xml.py --write <path>...  # rewrite files in place
+  uv run format_xml.py <path>             # print formatted to stdout
 """
 
 from __future__ import annotations
