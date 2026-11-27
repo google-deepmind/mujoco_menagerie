@@ -2,6 +2,10 @@
 
 All notable changes to this repository will be documented here.
 
+## [2026-10-27]
+
+- Enforce catalog consistency in `test/model_dir_test.py`: verify all model directories are registered in `catalog.MODEL_MAP`, multi-scene models without a default `scene.xml` declare preview overrides in `catalog.PREVIEW_OVERRIDES`, and all catalog keys and targets point to existing files on disk.
+
 ## [2026-09-12]
 
 - Corrected the list of models whose `assets()` raises in `python/DOC.md`: `pal_talos` collides on `base_link.stl`, `sharpa_wave` does not collide on any entry point. Added a test that derives the list from the checkout.
